@@ -1,0 +1,4 @@
+# Fixed production configuration; does not replace public rtos_config.h.
+set(INSIGHT_PRODUCTION_DEFINITIONS
+    RTOS_PREEMPTIVE=1 RTOS_TESTING=0 RTOS_MUTEX_PI=1 RTOS_TICK_HZ=100
+    RTOS_TIME_SLICE_TICKS=1 INSIGHT_TRACE_ENABLED=0)
