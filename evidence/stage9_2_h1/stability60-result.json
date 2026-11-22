@@ -1,0 +1,22 @@
+{
+  "duration_seconds": 61.01,
+  "target_duration_satisfied": true,
+  "delta_sys_tick": 61029,
+  "expected_sys_tick_rate_hz": 1000.3,
+  "delta_tim2_ms": 61029,
+  "expected_tim2_rate_hz": 1000.3,
+  "delta_lcd_refreshes": 210,
+  "lcd_refresh_rate_hz": 3.44,
+  "delta_task_runs": {
+    "KEY": 0,
+    "Controller": 6103,
+    "LCD": 210,
+    "Monitor": 115
+  },
+  "delta_trace_events": 51229,
+  "total_errors": 0,
+  "assert_failures": 0,
+  "deadlock_detected": false,
+  "tasks_healthy": true,
+  "verdict": "PASS"
+}

@@ -1,0 +1,16 @@
+{
+  "action": "system_reset_run",
+  "post_reset_tick": 2053,
+  "post_reset_tim2": 2054,
+  "post_reset_refreshes": 5,
+  "post_reset_runs": [
+    0,
+    206,
+    5,
+    4
+  ],
+  "post_reset_errors": 0,
+  "post_reset_asserts": 0,
+  "restarted_successfully": true,
+  "verdict": "PASS"
+}

@@ -167,6 +167,13 @@ openocd -f interface/stlink-v2.cfg -f target/stm32f1x.cfg \
 - [诊断验证测试矩阵](docs/diagnostics_design/test_matrix.md)
 
 ### 2. 阶段验收与实机部署证据 (`evidence/`)
+- [**Stage 9.2-H1: 单屏诊断固件实机部署与 60s 稳定性验收报告**](evidence/stage9_2_h1/acceptance.md)
+  - [单屏综合看板实机测试与显存核验报告](evidence/stage9_2_h1/single_screen_test.md)
+  - [死锁诊断硬件实机验证报告](evidence/stage9_2_h1/mutex_diag_hardware.md)
+  - [调度追踪与可解释性运行时报告](evidence/stage9_2_h1/trace_runtime.md)
+  - [60 秒持续运行稳定性验收报告](evidence/stage9_2_h1/stability_60s.md)
+  - [硬件复位与自愈测试报告](evidence/stage9_2_h1/reset_test.md)
+  - [固件精确烧录与回读校验记录](evidence/stage9_2_h1/flash_programming.log)
 - [**Stage 9.2: Mutex 资源依赖与死锁诊断验收报告**](evidence/stage9_2/acceptance.md)
   - [Mutex 依赖关系快照机制设计](evidence/stage9_2/mutex_dependency_design.md)
   - [三色 DFS 死锁环路检测算法分析](evidence/stage9_2/deadlock_detection.md)

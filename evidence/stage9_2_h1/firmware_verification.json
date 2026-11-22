@@ -1,0 +1,19 @@
+{
+  "target": "STM32F103ZET6",
+  "firmware": "artifacts/stage9_2/insightrtos_display_o2_trace.bin",
+  "size_bytes": 43620,
+  "sha256": "44a52a2bb7ed423ac8fc5ac09b7c95f08e5185f50d4c170dbf84d136458201c1",
+  "base_address": "0x08000000",
+  "erase_range": "0x08000000 - 0x0800F800",
+  "erase_pages": "0 - 30 (31 pages * 2048 B = 63,488 B)",
+  "tail_erased_bytes": 19868,
+  "definitions": {
+    "INSIGHT_DISPLAY_RTOS": 1,
+    "INSIGHT_TRACE_ENABLED": 1,
+    "INSIGHT_DIAG_EXPLAIN": 1,
+    "INSIGHT_DIAG_DL": 1,
+    "RTOS_TESTING": 0,
+    "optimization": "-O2"
+  },
+  "verdict": "VERIFIED_PASS"
+}

@@ -1,0 +1,15 @@
+{
+  "firmware_size_bytes": 43620,
+  "firmware_sha256": "44a52a2bb7ed423ac8fc5ac09b7c95f08e5185f50d4c170dbf84d136458201c1",
+  "readback_size_bytes": 43620,
+  "readback_sha256": "44a52a2bb7ed423ac8fc5ac09b7c95f08e5185f50d4c170dbf84d136458201c1",
+  "byte_for_byte_match": true,
+  "hash_match": true,
+  "tail_range": "0x0800AA64 - 0x0800F800",
+  "tail_bytes_count": 19868,
+  "tail_all_0xff": true,
+  "option_bytes_before_hex": "a55aff00ff00ff00ff00ff00ff00ff00",
+  "option_bytes_after_hex": "a55aff00ff00ff00ff00ff00ff00ff00",
+  "option_bytes_unchanged": true,
+  "verdict": "PASS"
+}
