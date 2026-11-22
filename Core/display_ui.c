@@ -507,11 +507,11 @@ void Display_UIConsolidated(bool entering, key_event_t event)
     append_u(line, "按键: ");
     if (KEY_GetRawLevel() == 0U) {
         append_u(line, "按下");
-    } else if (g_event_tracker.last_event == KEY_EVENT_SHORT) {
+    } else if (g_event_tracker.latest_event == KEY_EVENT_SHORT) {
         append_u(line, "单击");
-    } else if (g_event_tracker.last_event == KEY_EVENT_DOUBLE) {
+    } else if (g_event_tracker.latest_event == KEY_EVENT_DOUBLE) {
         append_u(line, "双击");
-    } else if (g_event_tracker.last_event == KEY_EVENT_LONG) {
+    } else if (g_event_tracker.latest_event == KEY_EVENT_LONG) {
         append_u(line, "长按");
     } else {
         append_u(line, "无  ");
@@ -526,27 +526,36 @@ void Display_UIConsolidated(bool entering, key_event_t event)
     const uint32_t now_ms = GetTick_ms();
     const uint32_t elapsed_since_done = (g_event_tracker.completed_ms > 0U && now_ms >= g_event_tracker.completed_ms) ?
                                         (now_ms - g_event_tracker.completed_ms) : 999999U;
+    display_tracked_event_t *latest_ev = Display_FindTrackedEvent(g_event_tracker.latest_id);
+    display_event_stage_t st = (latest_ev != NULL) ? latest_ev->stage : EVENT_STAGE_IDLE;
     bool pipeline_active = false;
-    if (g_event_tracker.stage == EVENT_STAGE_LCD) {
+    if (st == EVENT_STAGE_ACKED) {
         if (elapsed_since_done < 2000U) {
             append_u(line, "识别>KEY>CTRL>LCD");
             pipeline_active = true;
         } else {
             append_u(line, "待机");
         }
-    } else if (g_event_tracker.stage == EVENT_STAGE_CTRL) {
+    } else if (st == EVENT_STAGE_LCD || st == EVENT_STAGE_CTRL) {
         append_u(line, "识别>KEY>CTRL");
         pipeline_active = true;
-    } else if (g_event_tracker.stage == EVENT_STAGE_KEY) {
+    } else if (st == EVENT_STAGE_KEY) {
         append_u(line, "识别>KEY");
         pipeline_active = true;
-    } else if (g_event_tracker.stage == EVENT_STAGE_IDENTIFIED) {
+    } else if (st == EVENT_STAGE_IDENTIFIED) {
         append_u(line, "识别");
         pipeline_active = true;
+    } else if (st == EVENT_STAGE_FAILED) {
+        append_u(line, "异常");
     } else {
-        append_u(line, "待机");
+        if (elapsed_since_done < 2000U) {
+            append_u(line, "识别>KEY>CTRL>LCD");
+            pipeline_active = true;
+        } else {
+            append_u(line, "待机");
+        }
     }
-    cons_row(2U, line, pipeline_active ? GREEN : GRAY, entering);
+    cons_row(2U, line, (st == EVENT_STAGE_FAILED) ? RED : (pipeline_active ? GREEN : GRAY), entering);
 
     /* Row 3: Tasks table header */
     line[0] = '\0';
@@ -591,9 +600,9 @@ void Display_UIConsolidated(bool entering, key_event_t event)
     /* Row 9: Processed count and recent elapsed time */
     line[0] = '\0';
     append_u(line, "已处理:");
-    number_u(line, g_event_tracker.total_processed);
+    number_u(line, g_event_tracker.success_count);
     append_u(line, "  最近:");
-    if (g_event_tracker.total_processed == 0U || g_event_tracker.completed_ms == 0U) {
+    if (g_event_tracker.success_count == 0U || g_event_tracker.completed_ms == 0U) {
         append_u(line, "无");
     } else {
         const uint32_t diff_ms = (now_ms >= g_event_tracker.completed_ms) ? (now_ms - g_event_tracker.completed_ms) : 0U;
@@ -637,31 +646,27 @@ void Display_UIConsolidated(bool entering, key_event_t event)
     number_u(line, total_errors);
     cons_row(10U, line, (dl_ok && total_errors == 0U) ? GREEN : RED, entering);
 
-    /* Row 11: Trace sequence */
+    /* Row 11: Event ACK outcome (Replaces old Trace line) */
     line[0] = '\0';
-    append_u(line, "Trace:");
-#if INSIGHT_DIAG_EXPLAIN
-    rtos_diag_trace_info_t trace_info;
-    if (rtos_diag_trace_info(&trace_info) == RTOS_OK) {
-        number_u(line, (uint32_t)trace_info.next_sequence);
+    append_u(line, "事件: 成功:");
+    number_u(line, g_event_tracker.success_count);
+    if (g_event_tracker.failure_count > 0U) {
+        append_u(line, " 失败:");
+        number_u(line, g_event_tracker.failure_count);
+    } else if (g_event_tracker.retry_count > 0U) {
+        append_u(line, " 重试:");
+        number_u(line, g_event_tracker.retry_count);
     } else {
-        append_u(line, "0");
+        append_u(line, " 失败:0");
     }
-#else
-    append_u(line, "关闭");
-#endif
-    cons_row(11U, line, WHITE, entering);
+    cons_row(11U, line, (g_event_tracker.failure_count > 0U) ? RED : WHITE, entering);
 
     /* Row 12: Details (toggle with double click) */
     line[0] = '\0';
     if (s_detail_mode != 0U) {
-        append_u(line, "详情: 运行:");
+        append_u(line, "详情: 运行次数: ");
         uint32_t runs = (s_selected_task < 4U) ? g_display_statistics.task_runs[s_selected_task] : 0U;
         number_u(line, runs);
-        append_u(line, " 代数:");
-        uint32_t gen = ((view.valid_mask & (UINT32_C(1) << s_selected_task)) != 0U) ?
-                       view.tasks[s_selected_task].identity.generation : 0U;
-        number_u(line, gen);
         cons_row(12U, line, YELLOW, entering);
     } else {
         cons_row(12U, line, BLACK, entering);

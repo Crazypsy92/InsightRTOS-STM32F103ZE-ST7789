@@ -7,11 +7,12 @@
 #define DISPLAY_COMMAND_CAPACITY 32U
 #define DISPLAY_ACK_CAPACITY 4U
 #define DISPLAY_METRIC_CAPACITY 4U
+#define DISPLAY_EVENT_HISTORY 8U
 
-typedef struct { uint32_t event, at_ms; } display_key_t;
-typedef struct { uint32_t sequence, event, at_ms; } display_command_t;
+typedef struct { uint32_t id, event, at_ms; } display_key_t;
+typedef struct { uint32_t sequence, id, event, at_ms; } display_command_t;
 typedef struct {
-    uint32_t sequence, page, automatic, ready, page_started_ms, frame_ms;
+    uint32_t sequence, id, page, automatic, ready, page_started_ms, frame_ms;
     int32_t error;
     uint32_t refreshes;
 } display_ack_t;
@@ -35,25 +36,40 @@ typedef struct {
 
 typedef enum {
     EVENT_STAGE_IDLE = 0,
-    EVENT_STAGE_IDENTIFIED, /* in ISR */
-    EVENT_STAGE_KEY,        /* in KEY task */
-    EVENT_STAGE_CTRL,       /* in Controller task */
-    EVENT_STAGE_LCD         /* in LCD task */
+    EVENT_STAGE_IDENTIFIED, /* in ISR: MultiButton identified event */
+    EVENT_STAGE_KEY,        /* in KEY task: received from raw_keys */
+    EVENT_STAGE_CTRL,       /* in Controller task: received from controller_keys */
+    EVENT_STAGE_LCD,        /* in LCD task: rendered on screen */
+    EVENT_STAGE_ACKED,      /* in Controller task: verified via matching ACK */
+    EVENT_STAGE_FAILED      /* error during execution or queue overflow drop */
 } display_event_stage_t;
 
 typedef struct {
-    uint32_t sequence;
-    key_event_t last_event;
+    uint32_t id;
+    key_event_t event;
     display_event_stage_t stage;
     uint32_t timestamp_ms;
+    uint32_t ack_ms;
+    int32_t error;
+} display_tracked_event_t;
+
+typedef struct {
+    display_tracked_event_t history[DISPLAY_EVENT_HISTORY];
+    uint32_t latest_id;
+    uint32_t confirmed_id;
+    key_event_t latest_event;
     uint32_t completed_ms;
-    uint32_t total_processed;
+    uint32_t success_count;
+    uint32_t failure_count;
+    uint32_t retry_count;
+    uint32_t drop_count;
 } display_event_tracker_t;
 
 extern volatile display_statistics_t g_display_statistics;
 extern volatile display_metric_t g_monitor_last_metric;
 extern volatile display_event_tracker_t g_event_tracker;
 extern rtos_task_ref_t g_display_task_refs[4];
+display_tracked_event_t *Display_FindTrackedEvent(uint32_t id);
 void Display_KeyFromISR(key_event_t event);
 key_event_t Display_ConsumeKeyEvent(void);
 void Display_RequireLCDTask(void);

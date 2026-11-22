@@ -14,9 +14,21 @@ static display_metric_t metric_storage[DISPLAY_METRIC_CAPACITY];
 volatile display_statistics_t g_display_statistics;
 volatile display_metric_t g_monitor_last_metric;
 volatile display_event_tracker_t g_event_tracker = {0};
+static volatile uint32_t s_next_event_id = 0U;
 extern volatile uint32_t g_ll_recover_count;
 extern volatile int32_t g_ll_last_error;
 rtos_task_ref_t g_display_task_refs[4];
+
+display_tracked_event_t *Display_FindTrackedEvent(uint32_t id)
+{
+    if (id == 0U) return NULL;
+    for (unsigned int i = 0U; i < DISPLAY_EVENT_HISTORY; ++i) {
+        if (g_event_tracker.history[i].id == id) {
+            return (display_tracked_event_t *)&g_event_tracker.history[i];
+        }
+    }
+    return NULL;
+}
 
 void Display_RequireLCDTask(void)
 {
@@ -27,16 +39,28 @@ void Display_RequireLCDTask(void)
 }
 void Display_KeyFromISR(key_event_t event)
 {
-    const display_key_t key={(uint32_t)event,GetTick_ms()};
-    const rtos_status_t status=rtos_queue_send_from_isr(&raw_keys,&key);
+    uint32_t id = ++s_next_event_id;
+    if (id == 0U) id = ++s_next_event_id;
+    const uint32_t now = GetTick_ms();
+    const display_key_t key = {id, (uint32_t)event, now};
+    const rtos_status_t status = rtos_queue_send_from_isr(&raw_keys, &key);
     ++g_display_statistics.key_isr_events;
+
+    unsigned int slot = id % DISPLAY_EVENT_HISTORY;
+    g_event_tracker.history[slot].id = id;
+    g_event_tracker.history[slot].event = event;
+    g_event_tracker.history[slot].timestamp_ms = now;
+    g_event_tracker.history[slot].ack_ms = 0U;
+    g_event_tracker.history[slot].error = 0;
+    g_event_tracker.latest_id = id;
+    g_event_tracker.latest_event = event;
+
     if (status != RTOS_OK) {
         ++g_display_statistics.key_overflows;
+        g_event_tracker.history[slot].stage = EVENT_STAGE_FAILED;
+        g_event_tracker.drop_count++;
     } else {
-        g_event_tracker.sequence++;
-        g_event_tracker.last_event = event;
-        g_event_tracker.stage = EVENT_STAGE_IDENTIFIED;
-        g_event_tracker.timestamp_ms = key.at_ms;
+        g_event_tracker.history[slot].stage = EVENT_STAGE_IDENTIFIED;
     }
     /* Overflow is latched and checked by KEY; never overwrite or coalesce. */
 }
@@ -51,7 +75,10 @@ static void key_task(void *argument)
         RTOS_ASSERT(g_display_statistics.key_overflows==0U);
         RTOS_ASSERT(rtos_queue_receive(&raw_keys,&key,RTOS_WAIT_FOREVER)==RTOS_OK);
         RTOS_ASSERT(g_display_statistics.key_overflows==0U);
-        g_event_tracker.stage = EVENT_STAGE_KEY;
+        display_tracked_event_t *ev = Display_FindTrackedEvent(key.id);
+        if (ev != NULL && ev->stage == EVENT_STAGE_IDENTIFIED) {
+            ev->stage = EVENT_STAGE_KEY;
+        }
         ++g_display_statistics.task_runs[0];
         ++g_display_statistics.key_task_events;
         RTOS_ASSERT(rtos_queue_send(&controller_keys,&key,RTOS_WAIT_FOREVER)==RTOS_OK);
@@ -71,14 +98,15 @@ static display_metric_t metrics(void)
     m.tick=rtos_tick_get();
     return m;
 }
-static bool send_command(uint32_t *sequence, uint32_t event, uint32_t at_ms)
+static bool send_command(uint32_t *sequence, uint32_t id, uint32_t event, uint32_t at_ms)
 {
     uint32_t next=*sequence+1U;
     if (next==0U) next=1U; /* Sequence zero is reserved for initialization ACK. */
-    const display_command_t command={next,event,at_ms};
+    const display_command_t command={next,id,event,at_ms};
     const rtos_status_t status=rtos_queue_send(&lcd_commands,&command,0U);
     if (status==RTOS_ERR_FULL) {
         ++g_display_statistics.command_overflows; /* Backpressure attempts, no drop. */
+        g_event_tracker.retry_count++;
         return false;
     }
     RTOS_ASSERT(status==RTOS_OK);
@@ -99,7 +127,28 @@ static void controller_task(void *argument)
             const rtos_status_t s=rtos_queue_receive(&lcd_acks,&ack,0U);
             if (s==RTOS_ERR_UNAVAILABLE) break;
             RTOS_ASSERT(s==RTOS_OK);
-            if (ack.sequence!=0U) { uint32_t next=acknowledged+1U; if(next==0U) next=1U; RTOS_ASSERT(ack.sequence==next); acknowledged=ack.sequence; }
+            if (ack.sequence!=0U) {
+                uint32_t next=acknowledged+1U;
+                if(next==0U) next=1U;
+                RTOS_ASSERT(ack.sequence==next);
+                acknowledged=ack.sequence;
+                if (ack.id != 0U) {
+                    display_tracked_event_t *ev = Display_FindTrackedEvent(ack.id);
+                    if (ev != NULL) {
+                        ev->ack_ms = GetTick_ms();
+                        ev->error = ack.error;
+                        if (ack.error == 0) {
+                            ev->stage = EVENT_STAGE_ACKED;
+                            g_event_tracker.confirmed_id = ack.id;
+                            g_event_tracker.completed_ms = ev->ack_ms;
+                            g_event_tracker.success_count++;
+                        } else {
+                            ev->stage = EVENT_STAGE_FAILED;
+                            g_event_tracker.failure_count++;
+                        }
+                    }
+                }
+            }
             if (ack.page!=view.page) ++g_display_statistics.page_changes;
             view=ack;
             g_display_statistics.page=ack.page; g_display_statistics.automatic=ack.automatic;
@@ -120,17 +169,20 @@ static void controller_task(void *argument)
                 } else if (pending_key.event==KEY_EVENT_DOUBLE) {
                     ++g_display_statistics.key_double;
                 }
-                g_event_tracker.stage = EVENT_STAGE_CTRL;
+                display_tracked_event_t *ev = Display_FindTrackedEvent(pending_key.id);
+                if (ev != NULL && ev->stage == EVENT_STAGE_KEY) {
+                    ev->stage = EVENT_STAGE_CTRL;
+                }
                 ++g_display_statistics.controller_events;
                 key_pending=true;
             }
-            if (!send_command(&sequence,pending_key.event,pending_key.at_ms)) break;
+            if (!send_command(&sequence,pending_key.id,pending_key.event,pending_key.at_ms)) break;
             key_pending=false;
         }
         /* Manual FIFO events take precedence over periodic redraw requests. */
         if (!key_pending && view.ready!=0U && sequence==acknowledged &&
             Display_UpdateDue(GetTick_ms(),view.page,view.automatic,view.page_started_ms,view.frame_ms))
-            (void)send_command(&sequence,KEY_EVENT_NONE,GetTick_ms());
+            (void)send_command(&sequence,0U,KEY_EVENT_NONE,GetTick_ms());
         const uint32_t now=rtos_tick_get();
         if ((uint32_t)(now-last_metric)>=100U) {
             const display_metric_t m=metrics();
@@ -161,9 +213,10 @@ static void lcd_task(void *argument)
         ++g_display_statistics.task_runs[2];
         Display_PagesExecute(&command,&ack);
         if (command.event!=KEY_EVENT_NONE) {
-            g_event_tracker.stage = EVENT_STAGE_LCD;
-            g_event_tracker.completed_ms = GetTick_ms();
-            g_event_tracker.total_processed++;
+            display_tracked_event_t *ev = Display_FindTrackedEvent(command.id);
+            if (ev != NULL && ev->stage == EVENT_STAGE_CTRL) {
+                ev->stage = (ack.error == 0) ? EVENT_STAGE_LCD : EVENT_STAGE_FAILED;
+            }
             ++g_display_statistics.lcd_events;
         }
         if (ack.error!=0) ++g_display_statistics.transport_errors;

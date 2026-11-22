@@ -22,9 +22,10 @@ key_event_t Display_ConsumeKeyEvent(void)
     return value;
 }
 
-static void snapshot(uint32_t sequence, display_ack_t *ack)
+static void snapshot(uint32_t sequence, uint32_t id, display_ack_t *ack)
 {
     ack->sequence = sequence;
+    ack->id = id;
     ack->page = s_page;
     ack->automatic = s_auto_run;
     ack->ready = s_ready;
@@ -48,7 +49,7 @@ void Display_PagesInit(display_ack_t *ack)
     }
     s_page_start_ms = GetTick_ms();
     s_last_frame_ms = s_page_start_ms;
-    snapshot(0U, ack);
+    snapshot(0U, 0U, ack);
 }
 
 void Display_PagesExecute(const display_command_t *cmd, display_ack_t *ack)
@@ -57,7 +58,7 @@ void Display_PagesExecute(const display_command_t *cmd, display_ack_t *ack)
     if (s_ready == 0U) {
         staged_event = (key_event_t)cmd->event;
         (void)Display_ConsumeKeyEvent();
-        snapshot(cmd->sequence, ack);
+        snapshot(cmd->sequence, cmd->id, ack);
         return;
     }
     RTOS_ASSERT(staged_event == KEY_EVENT_NONE);
@@ -71,5 +72,5 @@ void Display_PagesExecute(const display_command_t *cmd, display_ack_t *ack)
     Display_UIConsolidated(false, (key_event_t)cmd->event);
     s_last_frame_ms = GetTick_ms();
     ++refresh_count;
-    snapshot(cmd->sequence, ack);
+    snapshot(cmd->sequence, cmd->id, ack);
 }
