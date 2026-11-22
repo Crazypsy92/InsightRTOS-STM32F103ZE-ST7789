@@ -6,6 +6,8 @@
 
 ---
 
+> **应用层模块化规划：** 参照 [STM32F103-FreeRTOS-MultiButton](https://github.com/Crazypsy92/STM32F103-FreeRTOS-MultiButton) 的统一任务入口和分文件配置风格，先整理应用任务/IPC/事件模块，再开展 Stage 9.3 实时性诊断。实施规范见 [模块化架构方案](docs/architecture/rtos_app_modularization.md)，执行任务见 [Issue #4](https://github.com/Crazypsy92/InsightRTOS-STM32F103ZE-ST7789/issues/4)。当前方案已设计，**尚未完成 C 源码重构**。
+
 > **按需开启远程自动接力：** 外出时可让 ChatGPT 审查 GitHub 验收报告并发布下一轮 Issue，由 Antigravity 后台领取；平时两端均保持暂停。完整开关流程、安全边界与 Antigravity 初始化指令见 [远程任务接力操作规程](docs/remote_task_relay.md)。
 
 ---
