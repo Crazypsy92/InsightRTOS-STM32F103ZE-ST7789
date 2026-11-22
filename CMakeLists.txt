@@ -100,10 +100,5 @@ add_custom_command(TARGET ${CMAKE_PROJECT_NAME} POST_BUILD
     VERBATIM)
 
 if(INSIGHT_DISPLAY_RTOS)
-    get_target_property(display_sources ${CMAKE_PROJECT_NAME} SOURCES)
-    list(FILTER display_sources EXCLUDE REGEX "/(rtos_smoke_app|app_lcd_test)[.]c$")
-    set_property(TARGET ${CMAKE_PROJECT_NAME} PROPERTY SOURCES "${display_sources}")
-    target_sources(${CMAKE_PROJECT_NAME} PRIVATE Core/display_app.c Core/display_pages.c Core/display_policy.c Core/display_ui.c)
-    target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE INSIGHT_DISPLAY_RTOS=1)
-    set_source_files_properties(Core/display_pages.c PROPERTIES COMPILE_OPTIONS "-fno-inline")
+    include(cmake/insight_app.cmake)
 endif()

@@ -10,7 +10,9 @@
 #define __KEY_PORT_H_
 
 #include <stdint.h>
+#if __has_include("main.h")
 #include "main.h"
+#endif
 
 /**
  * @brief 按键事件枚举

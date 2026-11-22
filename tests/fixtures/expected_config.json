@@ -1,0 +1,20 @@
+{
+  "tasks": [
+    {"name": "KEY", "priority": 5, "stack_words": 1024, "role": "Button debouncing and event intake"},
+    {"name": "Controller", "priority": 4, "stack_words": 1024, "role": "Event state machine, LED toggle, ACK correlation"},
+    {"name": "LCD", "priority": 2, "stack_words": 1024, "role": "Exclusive owner of SPI3/DMA ST7789 display"},
+    {"name": "Monitor", "priority": 1, "stack_words": 1024, "role": "System telemetry, task snapshots, queue depths"}
+  ],
+  "reserved_task_stack_slots": 8,
+  "queue_capacities": {
+    "raw_keys": 32,
+    "controller_keys": 32,
+    "lcd_commands": 32,
+    "lcd_acks": 4,
+    "monitor_messages": 4
+  },
+  "event_history_capacity": 8,
+  "tick_hz": 100,
+  "tim2_hz": 1000,
+  "tcb_size_bytes": 72
+}

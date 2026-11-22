@@ -21,6 +21,11 @@ compile_commands.json
 *.orig
 *.swp
 
+# 允许提交受控阶段证据日志
+!evidence/**/logs/*.log
+!evidence/**/logs/*.json
+!evidence/**/logs/*.txt
+
 # 系统文件
 .DS_Store
 Thumbs.db

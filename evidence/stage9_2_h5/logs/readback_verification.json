@@ -1,0 +1,16 @@
+{
+  "target": "STM32F103ZET6",
+  "firmware_binary": "artifacts/stage9_2_h5/insightrtos_display_o2_trace.bin",
+  "firmware_size_bytes": 48876,
+  "firmware_sha256": "a3f08fd962a3989fbb13580197ffe777481d0e8f4136e18fa068bf03958a65f1",
+  "readback_binary": "build/tests/readback_h5.bin",
+  "readback_sha256": "a3f08fd962a3989fbb13580197ffe777481d0e8f4136e18fa068bf03958a65f1",
+  "byte_by_byte_match": true,
+  "erase_pages": "0..30 (0x08000000 to 0x0800F800)",
+  "erase_size_bytes": 63488,
+  "tail_offset": "0x0800BEEC",
+  "tail_size_bytes": 14612,
+  "tail_all_0xff": true,
+  "option_bytes_verified": true,
+  "timestamp": "2026-11-22T23:56:49+0800"
+}

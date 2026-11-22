@@ -1,0 +1,48 @@
+{
+  "stage": "9.2-H5",
+  "name": "InsightRTOS FreeRTOS-style Modular App & Standardized Test Hierarchy",
+  "preset": "DISPLAY_RTOS_O2_Trace",
+  "target": "STM32F103ZET6",
+  "toolchain": "arm-none-eabi-gcc 14.2.1",
+  "build_type": "RelWithDebInfo",
+  "elf_file": "artifacts/stage9_2_h5/insightrtos_display_o2_trace.elf",
+  "bin_file": "artifacts/stage9_2_h5/insightrtos_display_o2_trace.bin",
+  "bin_size_bytes": 48876,
+  "sha256": "a3f08fd962a3989fbb13580197ffe777481d0e8f4136e18fa068bf03958a65f1",
+  "flash_allocation": {
+    "start_address": "0x08000000",
+    "pages_allocated": 31,
+    "page_range": "0..30",
+    "page_size_bytes": 2048,
+    "total_allocated_bytes": 63488,
+    "used_bytes": 48876,
+    "remaining_bytes": 14612,
+    "utilization_pct": 76.98
+  },
+  "diagnostics": {
+    "INSIGHT_TRACE_ENABLED": "ON",
+    "INSIGHT_DIAG_EXPLAIN": "ON",
+    "INSIGHT_DIAG_DL": "ON",
+    "trace_buffer_capacity": 128,
+    "trace_record_size_bytes": 24,
+    "tcb_size_bytes": 72,
+    "tcb_abi_modified": false
+  },
+  "app_modules": {
+    "app_config": "App/Inc/app_config.h",
+    "app_ipc_header": "App/Inc/app_ipc.h",
+    "app_ipc_source": "App/Src/app_ipc.c",
+    "app_events_header": "App/Inc/app_events.h",
+    "app_events_source": "App/Src/app_events.c",
+    "app_tasks_header": "App/Inc/app_tasks.h",
+    "app_tasks_source": "App/Src/app_tasks.c",
+    "display_app_compat": "Core/display_app.c",
+    "cmake_manifest": "cmake/insight_app.cmake"
+  },
+  "tasks": [
+    { "name": "KEY", "priority": 5, "stack_words": 1024, "role": "Button debouncing and event intake" },
+    { "name": "Controller", "priority": 4, "stack_words": 1024, "role": "Event state machine, LED toggle, ACK correlation" },
+    { "name": "LCD", "priority": 2, "stack_words": 1024, "role": "Exclusive owner of SPI3/DMA ST7789 display" },
+    { "name": "Monitor", "priority": 1, "stack_words": 1024, "role": "System telemetry, task snapshots, queue depths" }
+  ]
+}

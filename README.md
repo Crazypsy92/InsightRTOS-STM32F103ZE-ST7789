@@ -1,12 +1,13 @@
 # InsightRTOS — STM32F103ZET6 + ST7789 全功能 RTOS 诊断与驱动平台
 
-> **当前版本：v0.9.2 (Stage 9.2: Explainable Scheduling + Mutex Deadlock Diagnostics)**  
+> **当前版本：v0.9.2 (Stage 9.2-H5: Modular App Tasks & Standardized Test Hierarchy)**  
 > 运行平台：真实硬件 STM32F103ZET6 + ST7789 (1.54" 240×240 IPS TFT)  
-> 固件状态：四任务生产应用已实机部署并固化；具备**可解释调度**与 **Mutex 死锁诊断**双核心能力；零动态内存分配，严格 72 字节 TCB ABI 与 384 字节诊断工作区预算。
+> 固件状态：四任务生产应用已完成 FreeRTOS 风格应用层模块化重构；具备**可解释调度**与 **Mutex 死锁诊断**双核心能力；零动态内存分配，严格 72 字节 TCB ABI 与 384 字节诊断工作区预算。
+> 阶段验收：[Stage 9.2-H5 综合验收报告](evidence/stage9_2_h5/acceptance.md)
 
 ---
 
-> **应用层模块化规划：** 参照 [STM32F103-FreeRTOS-MultiButton](https://github.com/Crazypsy92/STM32F103-FreeRTOS-MultiButton) 的统一任务入口和分文件配置风格，先整理应用任务/IPC/事件模块，再开展 Stage 9.3 实时性诊断。实施规范见 [模块化架构方案](docs/architecture/rtos_app_modularization.md)，执行任务见 [Issue #4](https://github.com/Crazypsy92/InsightRTOS-STM32F103ZE-ST7789/issues/4)。当前方案已设计，**尚未完成 C 源码重构**。
+> **应用层模块化演进：** 参照 [STM32F103-FreeRTOS-MultiButton](https://github.com/Crazypsy92/STM32F103-FreeRTOS-MultiButton) 的清晰任务模板与配置分离原则，已将应用层完整重构至 `App/` 独立目录，实现应用配置、IPC 通信、事件跟踪与任务入口的高内聚低耦合解耦；统一 `tests/` 与 `scripts/test/` 自动化测试脚本资产体系。详细架构规范见 [模块化架构方案](docs/architecture/rtos_app_modularization.md)，执行任务已闭环于 [Issue #4](https://github.com/Crazypsy92/InsightRTOS-STM32F103ZE-ST7789/issues/4)。
 
 > **按需开启远程自动接力：** 外出时可让 ChatGPT 审查 GitHub 验收报告并发布下一轮 Issue，由 Antigravity 后台领取；平时两端均保持暂停。完整开关流程、安全边界与 Antigravity 初始化指令见 [远程任务接力操作规程](docs/remote_task_relay.md)。
 
@@ -61,14 +62,21 @@
 
 ```text
 +-------------------------------------------------------------------------+
-| 应用层 (Application)                                                    |
-|  - Core/display_app.c       : 四任务应用入口、通信队列与任务初始化       |
-|  - BSP/Src/app_lcd_test.c   : 裸机 4 页面回退演示程序                   |
+| 应用层 (App/ - 独立业务模块化)                                           |
+|  - App/Inc/app_config.h     : 四任务优先级、栈深度、队列与事件容量配置    |
+|  - App/Inc/app_ipc.h        : 5 条队列消息结构声明与受控 IPC API 接口    |
+|  - App/Src/app_ipc.c        : 静态队列缓冲区定义与入队出队/深度快照实现  |
+|  - App/Inc/app_events.h     : 唯一单调事件 ID 与 8 槽位环形历史追踪声明  |
+|  - App/Src/app_events.c     : 事件状态机跃迁、闭环 ACK 与重试/丢弃统计   |
+|  - App/Inc/app_tasks.h      : 统一任务启动接口与任务句柄声明             |
+|  - App/Src/app_tasks.c      : KEY/CTRL/LCD/MON 任务模板与 app_tasks_start|
 +-------------------------------------------------------------------------+
-| 界面与策略层 (UI & Policy)                                              |
-|  - Core/display_ui.c        : 15 行综合看板、字符级差分渲染 (零频闪)    |
-|  - Core/display_pages.c     : 页面驱动接口与刷新调用                    |
-|  - Core/display_policy.c    : 250 ms 周期刷新与总线协调策略             |
+| 兼容与界面策略层 (Core/)                                                |
+|  - Core/display_app.c       : 向后兼容桥接层 (display_app_start)         |
+|  - Core/display_ui.c        : 15 行综合看板、字符级差分渲染 (零频闪)     |
+|  - Core/display_pages.c     : 页面驱动接口与刷新调用                     |
+|  - Core/display_policy.c    : 250 ms 周期刷新与总线协调策略              |
+|  - Core/rtos_smoke_app.c    : 独立 RTOS 极简冒烟测试 Profile             |
 +-------------------------------------------------------------------------+
 | 中间件内核层 (Middlewares/InsightRTOS)                                  |
 |  - kernel/scheduler.c      : 抢占式调度器、上下文切换                   |
@@ -81,11 +89,20 @@
 |  - BSP/Src/st7789.c         : ST7789 寄存器配置、画点、矩形、字体渲染    |
 |  - BSP/Src/st7789_port.c    : 片选、背光、延时板级适配                   |
 |  - BSP/Src/key_port.c       : 按键防抖与 multi_button 移植               |
+|  - BSP/Src/lcd_cn16.c       : 16x16 中文点阵字模包与中英混排引擎         |
 +-------------------------------------------------------------------------+
 | 总线抽象与底层硬件 (Bus & LL)                                           |
 |  - BSP/Inc/spi_bus.h        : MCU 无关 SPI 总线所有权契约与状态机       |
 |  - BSP/Src/spi_stm32_ll.c   : SPI3 + DMA2 自动分块传输与动态超时预算     |
 |  - BSP/Src/bsp_spi.c        : 板级时钟、引脚映射与复用配置               |
++-------------------------------------------------------------------------+
+| 统一测试资产体系 (tests/ & scripts/test/)                               |
+|  - tests/host/             : 面向生产源码的单元/集成测试 (test_app_modular)|
+|  - tests/hardware/         : 受控固件烧录核验与 60s 稳定性采样脚本      |
+|  - tests/fixtures/         : 内存布局、Option Bytes 与系统配置期望文件  |
+|  - scripts/test/run_host.sh: 编译并执行 Host 单元测试套件                |
+|  - scripts/test/run_regression.sh: 全量回归测试脚本 (含内核 360 ctest)   |
+|  - scripts/test/run_hardware.sh  : 实机自动化烧录与 60 秒稳定性采样     |
 +-------------------------------------------------------------------------+
 ```
 
@@ -184,7 +201,15 @@ openocd -f interface/stlink-v2.cfg -f target/stm32f1x.cfg \
 - [诊断验证测试矩阵](docs/diagnostics_design/test_matrix.md)
 
 ### 2. 阶段验收与实机部署证据 (`evidence/`)
-- [**Stage 9.2-H2: 中文单屏验收界面与 MultiButton 多事件交互实机验收报告**](evidence/stage9_2_h2/acceptance.md)
+- [**Stage 9.2-H5: 参考 FreeRTOS 任务模板重构应用模块与测试目录综合验收报告**](evidence/stage9_2_h5/acceptance.md)
+  - [软件测试与全量回归报告](evidence/stage9_2_h5/test_results.md)
+  - [实机部署与 60 秒硬件稳定性验收报告](evidence/stage9_2_h5/hardware.md)
+  - [固件与构建清单](evidence/stage9_2_h5/manifest.json)
+  - [Flash 烧录原始日志](evidence/stage9_2_h5/logs/programming.log)
+  - [逐字节回读与校验记录](evidence/stage9_2_h5/logs/readback_verification.json)
+  - [60 秒实机稳定性连续采样数据](evidence/stage9_2_h5/logs/stability_60s.json)
+  - [文件校验哈希汇总](evidence/stage9_2_h5/SHA256SUMS)
+- [**Stage 9.2-H4: 精简中文单屏与事件 ACK 关联修正综合验收报告**](evidence/stage9_2_h4/acceptance.md)
   - [16×16 中文点阵字体集成与渲染架构报告](evidence/stage9_2_h2/chinese_font_report.md)
   - [字模点阵校验与 118 汉字覆盖报告](evidence/stage9_2_h2/font_glyph_verification.md)
   - [MultiButton 事件扩展与时序互斥测试报告](evidence/stage9_2_h2/multibutton_event_tests.md)

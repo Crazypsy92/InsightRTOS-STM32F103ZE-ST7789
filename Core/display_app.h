@@ -1,81 +1,25 @@
 #ifndef INSIGHT_DISPLAY_APP_H
 #define INSIGHT_DISPLAY_APP_H
-#include "rtos.h"
-#include "key_port.h"
-#include <stdint.h>
-#define DISPLAY_KEY_CAPACITY 32U
-#define DISPLAY_COMMAND_CAPACITY 32U
-#define DISPLAY_ACK_CAPACITY 4U
-#define DISPLAY_METRIC_CAPACITY 4U
-#define DISPLAY_EVENT_HISTORY 8U
 
-typedef struct { uint32_t id, event, at_ms; } display_key_t;
-typedef struct { uint32_t sequence, id, event, at_ms; } display_command_t;
-typedef struct {
-    uint32_t sequence, id, page, automatic, ready, page_started_ms, frame_ms;
-    int32_t error;
-    uint32_t refreshes;
-} display_ack_t;
-typedef struct {
-    uint32_t task_runs[4], tick, page, automatic, ready;
-    uint32_t refreshes, page_changes, transport_errors, telemetry_overflows;
-} display_metric_t;
-typedef struct {
-    volatile uint32_t task_runs[4];
-    volatile uint32_t key_isr_events, key_task_events, controller_events, lcd_events;
-    volatile uint32_t key_overflows, command_overflows, telemetry_overflows;
-    volatile uint32_t transport_errors, initialization_errors, lcd_refreshes, page_changes;
-    volatile uint32_t page, automatic, ready, tick, key_short, key_long, key_double;
-    volatile uint32_t queue_depths[5];
-    volatile uint32_t welcome_shows, monitor_refreshes, monitor_rows;
-    volatile uint32_t display_fault;
-    volatile uint32_t ll_recover_count;
-    volatile int32_t last_lcd_error, ll_last_error;
-    rtos_task_snapshot_t snapshots[4];
-} display_statistics_t;
+#include "app_config.h"
+#include "app_ipc.h"
+#include "app_events.h"
+#include "app_tasks.h"
 
-typedef enum {
-    EVENT_STAGE_IDLE = 0,
-    EVENT_STAGE_IDENTIFIED, /* in ISR: MultiButton identified event */
-    EVENT_STAGE_KEY,        /* in KEY task: received from raw_keys */
-    EVENT_STAGE_CTRL,       /* in Controller task: received from controller_keys */
-    EVENT_STAGE_LCD,        /* in LCD task: rendered on screen */
-    EVENT_STAGE_ACKED,      /* in Controller task: verified via matching ACK */
-    EVENT_STAGE_FAILED      /* error during execution or queue overflow drop */
-} display_event_stage_t;
+/* Legacy capacity aliases for backward compatibility */
+#define DISPLAY_KEY_CAPACITY      APP_KEY_QUEUE_CAPACITY
+#define DISPLAY_COMMAND_CAPACITY  APP_COMMAND_QUEUE_CAPACITY
+#define DISPLAY_ACK_CAPACITY      APP_ACK_QUEUE_CAPACITY
+#define DISPLAY_METRIC_CAPACITY   APP_METRIC_QUEUE_CAPACITY
 
-typedef struct {
-    uint32_t id;
-    key_event_t event;
-    display_event_stage_t stage;
-    uint32_t timestamp_ms;
-    uint32_t ack_ms;
-    int32_t error;
-} display_tracked_event_t;
-
-typedef struct {
-    display_tracked_event_t history[DISPLAY_EVENT_HISTORY];
-    uint32_t latest_id;
-    uint32_t confirmed_id;
-    key_event_t latest_event;
-    uint32_t completed_ms;
-    uint32_t success_count;
-    uint32_t failure_count;
-    uint32_t retry_count;
-    uint32_t drop_count;
-} display_event_tracker_t;
-
-extern volatile display_statistics_t g_display_statistics;
-extern volatile display_metric_t g_monitor_last_metric;
-extern volatile display_event_tracker_t g_event_tracker;
-extern rtos_task_ref_t g_display_task_refs[4];
-display_tracked_event_t *Display_FindTrackedEvent(uint32_t id);
 void Display_KeyFromISR(key_event_t event);
 key_event_t Display_ConsumeKeyEvent(void);
 void Display_RequireLCDTask(void);
+display_tracked_event_t *Display_FindTrackedEvent(uint32_t id);
 void Display_PagesInit(display_ack_t *ack);
 void Display_PagesExecute(const display_command_t *cmd, display_ack_t *ack);
 bool Display_UpdateDue(uint32_t now, uint32_t page, uint32_t automatic,
                        uint32_t page_started, uint32_t frame_started);
 _Noreturn void display_app_start(void);
-#endif
+
+#endif /* INSIGHT_DISPLAY_APP_H */
