@@ -1,0 +1,16 @@
+{
+  "SPI3_CR1": 836,
+  "SPI3_CR2": 0,
+  "SPI3_SR": 2,
+  "DMA2_ISR": 0,
+  "DMA2_CH1_CCR": 0,
+  "DMA2_CH2_CCR": 8336,
+  "RCC_CFGR": 1901578,
+  "GPIOB_CRL": 1152693316,
+  "GPIOD_CRH": 1144206404,
+  "GPIOD_ODR": 14336,
+  "AFIO_MAPR": 67108864,
+  "SPI3_BR_divisor": 2,
+  "SPI3_configured_clock_hz": 18000000,
+  "physical_SCK_frequency": "NOT MEASURED"
+}

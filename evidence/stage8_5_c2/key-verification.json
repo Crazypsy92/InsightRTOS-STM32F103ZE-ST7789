@@ -1,0 +1,22 @@
+{
+  "short_delta": 5,
+  "long_delta": 2,
+  "final_page": 4,
+  "pipeline_totals": {
+    "key_isr_events": 13,
+    "key_task_events": 13,
+    "controller_events": 13,
+    "lcd_events": 13
+  },
+  "queue_overflows": 0,
+  "queue_depths": [
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "LED_user_confirmation": true,
+  "status": "PASS",
+  "long_press_count_matches_user": true
+}

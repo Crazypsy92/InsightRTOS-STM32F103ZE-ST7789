@@ -1,0 +1,32 @@
+/home/mythepsy92/program/codex/InsightRTOS/artifacts/stage8_5_c1/debug/insightrtos_zet6_c1_debug.elf  :
+section               size        addr
+.isr_vector            484   134217728
+.text                44584   134218212
+.rodata              30960   134262796
+.ARM.extab               0   134293756
+.ARM                     8   134293756
+.preinit_array           0   134293764
+.init_array              4   134293764
+.fini_array              4   134293768
+.data                  144   536870912
+.tdata                   0   536871056
+.tbss                    0   536871056
+.bss                  4772   536871056
+.user_stacks         32768   536875832
+._user_heap_stack        0   536908600
+.msp_stack            4096   536932352
+.ARM.attributes         41           0
+.comment                38           0
+.debug_info          71403           0
+.debug_abbrev        19806           0
+.debug_aranges        4104           0
+.debug_rnglists       2952           0
+.debug_macro         93384           0
+.debug_line          66375           0
+.debug_str          454572           0
+.debug_frame         14284           0
+.debug_line_str        522           0
+.debug_loclists        989           0
+Total               846294
+
+

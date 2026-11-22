@@ -1,0 +1,25 @@
+case,bytes,target_hz,mode,expected_code,actual_code,model_cycles,model_us,observed
+poll_1,1,18000000,TX+RX,0,0,192,2.667,one byte echo via polling
+poll_15,15,18000000,TX+RX,0,0,1984,27.556,last polling length
+DMA_16,16,18000000,TX+RX,0,0,672,9.333,first DMA length; stale RXNE and OVR cleared
+DMA_tail_delayed,255,18000000,TX,0,0,9216,128.000,TC precedes TXE and BSY release; both waited
+DMA_255,255,18000000,TX,0,0,8320,115.556,one TX chunk
+DMA_65535,65535,18000000,TX,0,0,2097280,29128.889,C1 reproducer passes
+DMA_65536,65536,18000000,TX+RX,0,0,2097472,29131.556,two chunks full echo
+DMA_131071,131071,18000000,TX+RX,0,0,4194752,58260.444,three chunks full echo
+DMA_div4_rounded,65535,17000000,TX+RX,0,0,4194400,58255.556,actual 9 MHz at requested 17 MHz
+DMA_div256,65535,140625,TX+RX,0,0,268431520,3728215.556,actual 140625 Hz
+DMA_RX_TE,65535,18000000,TX+RX,-3,-3,1048672,14564.889,abort before TX TC then recover
+DMA_TX_TE,255,18000000,TX+RX,-3,-3,4192,58.222,abort before RX TC then recover
+DMA_missing_RX_TC,255,18000000,TX+RX,-2,-2,1450304,20143.111,TX TC supplies no second deadline
+DMA_post_TC_TXE_timeout,255,18000000,TX,-2,-2,508288,7059.556,TXE timeout after TC then recover
+DMA_post_TC_BSY_timeout,255,18000000,TX,-2,-2,1508320,20948.889,tail BSY timeout plus bounded recovery
+poll_TXE_timeout,1,18000000,TX,-2,-2,1500064,20834.222,TXE deadline and bounded failed recovery until TXE returns
+poll_RXNE_timeout,1,18000000,TX,-2,-2,500160,6946.667,RXNE deadline then recover
+stuck_RXNE,255,18000000,TX,-2,-2,64,0.889,bounded drain and failed recover until fault clears
+preempt_inflight,65535,18000000,TX+RX,0,0,2097280,29128.889,10 ms CPU gap with DMA autonomous
+preempt_past_deadline_complete,255,18000000,TX+RX,0,0,2162208,30030.667,TC already latched at resume
+preempt_past_deadline_stalled,255,18000000,TX,-2,-2,2162144,30029.778,missing TC at resume then recover
+DWT_wrap,65535,18000000,TX+RX,0,0,2097280,29128.889,wrap during DMA wait
+acquire_busy,0,18000000,TX,-4,-4,0,0.000,acquire rejected while BSY; no bus owner
+recover_busy,0,18000000,TX,-5,-5,1000096,13890.222,persistent BSY causes bounded recovery error followed by clean acquire

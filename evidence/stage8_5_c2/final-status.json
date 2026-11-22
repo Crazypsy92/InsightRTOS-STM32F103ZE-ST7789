@@ -1,0 +1,26 @@
+{
+  "statuses": {
+    "SOFTWARE PACKAGE": "PASS",
+    "HARDWARE IDENTITY": "PASS",
+    "FLASH ERASE": "PASS pages0\u201328 only",
+    "FLASH PROGRAMMING": "PASS C1 O2 57988B",
+    "FLASH READBACK": "PASS independent reconnect + byte/SHA equal",
+    "OPTION BYTES": "PASS unchanged",
+    "RTOS STARTUP": "PASS hardware",
+    "LCD DISPLAY": "PASS USER CONFIRMED",
+    "FIVE PAGES": "PASS USER CONFIRMED + live counters",
+    "KEY INPUT": "PASS USER CONFIRMED + FIFO counts",
+    "SPI/DMA": "PASS observed UI paths; long-block risk OPEN/NOT TESTED",
+    "TASK SCHEDULING": "PASS four task entries + Idle + real context switching",
+    "STABILITY": "PASS >=30min actual free run",
+    "NRST RESET": "PASS physical RESET + user confirmation",
+    "SPI3 PHYSICAL SCK": "NOT MEASURED",
+    "MSP HIGH WATERMARK": "NOT MEASURED"
+  },
+  "hardware": true,
+  "stability_seconds": 1805.0127525859998,
+  "tick_hz": 100.00261756676969,
+  "tim2_hz": 1000.0245136295779,
+  "source_frozen_inputs_preserved": true,
+  "waiting_for_user_final_reset": false
+}

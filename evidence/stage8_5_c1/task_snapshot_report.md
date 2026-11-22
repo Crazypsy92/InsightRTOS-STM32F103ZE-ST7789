@@ -1,0 +1,11 @@
+# 快照真实性与同步
+
+LCD任务调用Display_ReadUIView，使用g_display_task_refs[4]代数句柄逐一调用rtos_task_get_snapshot。合法时显示实际state/base_priority/effective_priority，并按非UNUSED/非TERMINATED的有效快照累计用户任务数；失败时valid_mask不置位、显示UNKNOWN/ERROR，不将API失败伪算为Queue错误。Idle不在四个应用句柄中，故用户数不包含Idle。
+
+Tick使用rtos_tick_get。Qerr/backpressure/refresh/transport/init/lastSPI计数来自g_display_statistics，在一次短PRIMASK临界区复制7个32位字段；复杂任务快照由公开API自行保护，不跨任务无同步读Monitor结构。各任务快照分别一致，整个面板不是同时冻结系统的全局瞬时快照。复制后恢复中断，再格式化并绘图；没有持锁SPI/DMA操作。
+
+Monitor Task继续通过原业务Queue实际接收并保存g_monitor_last_metric，公开快照与queue深度供GDB；LCD不直接无锁读该跨任务复杂结构。4个任务优先级KEY5/Controller4/LCD2/Monitor1，内核有效范围0..31，数值越大越优先；NVIC优先级相反。
+
+真实内核IPC Host模型核对公开snapshot与UI视图的句柄、generation、状态、优先级和tick；独立UI fixture又测试READY/BLOCK/RUN/EXIT、变化的有效优先级、失效句柄与实际计数传递、UINT32_MAX，证明不是写死文本。Host绘制期间注入tick/KEY/Controller切换后原LCD栈继续执行，记录41次模型绘制期间的高优先级切换。此为ucontext软件模型，不证明STM32 R4–R11或真实LCD时序。ARM ABI/SVC/PendSV在原完整QEMU回归中验证，本次板上上下文NOT EXECUTED。
+
+当前应用没有公开CPU使用率或实际上下文切换总数接口，因此不显示。没有新增UART、malloc或测试钩子，没有修改公共内核、TCB或移植汇编。

@@ -1,0 +1,6 @@
+{
+  "state_before_own_debugger_close": "running",
+  "gdb_attached": false,
+  "shutdown_own_openocd": true,
+  "reset_or_halt_command_issued": false
+}

@@ -1,0 +1,3 @@
+case,bytes,target_hz,mode,expected_code,actual_code,model_cycles,model_us,observed
+RTOS_preempt_active_DMA,65535,18000000,TX+RX,0,0,2097280,29128.889,high task ran twice while DMA active; echo verified
+RTOS_preempt_DMA_timeout,255,18000000,TX,-2,-2,1450304,20143.111,high task ran twice; stalled DMA timed out and next acquire passed

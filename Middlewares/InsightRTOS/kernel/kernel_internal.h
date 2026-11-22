@@ -27,6 +27,7 @@ bool rtos_sched_stack_overlaps(uintptr_t begin, uintptr_t end);
 bool rtos_task_stack_valid(const rtos_task_t *task);
 /* Live published user tasks in slot/ID order, masked; no Idle/reservations. */
 size_t rtos_task_snapshot_locked(rtos_task_t **tasks);
+uint32_t rtos_task_slot_generation_locked(uint16_t slot);
 
 /* All three require interrupts masked; request flags and PendSV coalesce. */
 void rtos_sched_request(uint32_t reasons);

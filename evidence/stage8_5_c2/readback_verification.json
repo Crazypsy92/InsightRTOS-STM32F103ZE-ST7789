@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "independent_reconnection": true,
+  "source": "C1 O2 frozen BIN",
+  "base": "0x08000000",
+  "bytes": 57988,
+  "byte_equal": true,
+  "sha256": "526890ff96594c65533c69e129a1a889ec2368768b4b4fca3a3c7052eac72e35",
+  "tail_start": "0x0800e284",
+  "tail_bytes": 1404,
+  "tail_all_ff": true,
+  "end_exclusive": "0x0800e800",
+  "option_bytes_preserved": true
+}

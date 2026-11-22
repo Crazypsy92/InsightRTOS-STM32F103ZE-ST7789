@@ -375,3 +375,14 @@ uint32_t rtos_trace_generation_locked(const rtos_task_t *task)
     return task == &task_pool[slot] ? task_generation[slot] : 0U;
 }
 #endif
+
+uint32_t rtos_task_slot_generation_locked(uint16_t slot)
+{
+    if ((size_t)slot < task_count &&
+        task_pool[slot].state != RTOS_TASK_UNUSED &&
+        task_pool[slot].state != RTOS_TASK_TERMINATED) {
+        return task_generation[slot];
+    }
+    return 0U;
+}
+

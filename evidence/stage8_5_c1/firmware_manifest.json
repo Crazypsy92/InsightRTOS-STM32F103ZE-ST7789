@@ -1,0 +1,114 @@
+{
+  "stage": "8.5-C1",
+  "source_owner": "app/stm32f103ze_st7789",
+  "software": "PASS",
+  "hardware": "NOT EXECUTED",
+  "flash_programming": "NOT EXECUTED",
+  "public_kernel_changes": false,
+  "dma_long_block_timeout": "OPEN confirmed arithmetic shortfall; driver unchanged",
+  "source_manifest_sha256": "89555a7e1ea3136d5886a9c81ae3db4cbcfc11c62439f71ec2a2e94cb23e98fb",
+  "configurations": {
+    "debug": {
+      "bin_bytes": 76188,
+      "bin_sha256": "116400cf6bf4c7903a04de31f94d5d1a7ee02d66b93eac0a9b35540c1e13a1b4",
+      "flash_start": "0x08000000",
+      "flash_end_exclusive": "0x0801299C",
+      "erase_plan_only": {
+        "first_page": 0,
+        "last_page": 37,
+        "page_bytes": 2048,
+        "start": "0x08000000",
+        "end_exclusive": "0x08013000",
+        "executed": false
+      },
+      "static_ram_bytes": 41784,
+      "sram_remaining_bytes": 23752,
+      "msp_bytes": 4096,
+      "user_stack_reserve_bytes": 32768,
+      "heap_bytes": 0,
+      "trace": false
+    },
+    "o2": {
+      "bin_bytes": 57988,
+      "bin_sha256": "526890ff96594c65533c69e129a1a889ec2368768b4b4fca3a3c7052eac72e35",
+      "flash_start": "0x08000000",
+      "flash_end_exclusive": "0x0800E284",
+      "erase_plan_only": {
+        "first_page": 0,
+        "last_page": 28,
+        "page_bytes": 2048,
+        "start": "0x08000000",
+        "end_exclusive": "0x0800E800",
+        "executed": false
+      },
+      "static_ram_bytes": 41776,
+      "sram_remaining_bytes": 23760,
+      "msp_bytes": 4096,
+      "user_stack_reserve_bytes": 32768,
+      "heap_bytes": 0,
+      "trace": false
+    }
+  },
+  "files": {
+    "README.md": {
+      "bytes": 430,
+      "sha256": "8ea626805ebc6853e30c4c0636a995aa11b648c473d63be2e0e35fe95cb0a335"
+    },
+    "build.log": {
+      "bytes": 16063,
+      "sha256": "cdbcf0282e344d9512a0c4e6747e6d424337c6d27c329610d58e5a5ab10f0742"
+    },
+    "debug/build.log": {
+      "bytes": 10407,
+      "sha256": "c53c0b2d77fc0a1c5efc432e29bf5db3e18eed21f1ff0edbbe2ac2fcb91902ba"
+    },
+    "debug/insightrtos_zet6_c1_debug.bin": {
+      "bytes": 76188,
+      "sha256": "116400cf6bf4c7903a04de31f94d5d1a7ee02d66b93eac0a9b35540c1e13a1b4"
+    },
+    "debug/insightrtos_zet6_c1_debug.elf": {
+      "bytes": 956112,
+      "sha256": "43e5cfbe1f1998f0277f9cc0178804d26ccae3c55e005e10a1c030d3712622cf"
+    },
+    "debug/insightrtos_zet6_c1_debug.hex": {
+      "bytes": 214402,
+      "sha256": "464208cbb1540da6bd8ca09f8fd488132622b42dbfc7ce2c85f573e5e99cc538"
+    },
+    "debug/insightrtos_zet6_c1_debug.map": {
+      "bytes": 376894,
+      "sha256": "1228cb661c4ba3df2e5f34c7e217ff56016aa07993929e07c5cad65f88747270"
+    },
+    "firmware-verify.log": {
+      "bytes": 252,
+      "sha256": "f37da41360a7e487c48af14e1fd86bd1754a255fd4b3e628e0795a7889941d58"
+    },
+    "o2/build.log": {
+      "bytes": 5646,
+      "sha256": "089f992be8f6389c591e32635613e3bc7e3ef1609cbb5508b9bb7f7409fa0e68"
+    },
+    "o2/insightrtos_zet6_c1_o2.bin": {
+      "bytes": 57988,
+      "sha256": "526890ff96594c65533c69e129a1a889ec2368768b4b4fca3a3c7052eac72e35"
+    },
+    "o2/insightrtos_zet6_c1_o2.elf": {
+      "bytes": 445452,
+      "sha256": "f92b1d1dfce29011ee2951bbba4aa3a50dc47107a61421ef515c48f02ba9cb42"
+    },
+    "o2/insightrtos_zet6_c1_o2.hex": {
+      "bytes": 163178,
+      "sha256": "77c2619394bcead3602813e8cf9f8e430c3e1dc45e84e99f5e3a47f15fdb6a97"
+    },
+    "o2/insightrtos_zet6_c1_o2.map": {
+      "bytes": 214081,
+      "sha256": "844692ea07f104d00f3730ccebe6dedf42cc85440d186d833960847bdcdd2035"
+    },
+    "debug/manifest.json": {
+      "bytes": 7953,
+      "sha256": "3015384aa66645341598f56c67a44b98e27c443d199229f1b156ed7a6bdccab8"
+    },
+    "o2/manifest.json": {
+      "bytes": 7738,
+      "sha256": "89c5afad60cccbc38b4dc15d8c159ba24c9e13b2704c7dfb8bea57345d1ab494"
+    }
+  }
+}

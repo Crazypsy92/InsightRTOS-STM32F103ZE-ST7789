@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "main_flash_range": [
+    "0x08000000",
+    "0x08080000"
+  ],
+  "erase_pages": [
+    0,
+    255
+  ],
+  "blank_main_flash_bytes": 524288,
+  "blank_main_flash_sha256": "043e238a765f7cfbc62596a50e53c8ffb6b188a99357b0ebede251725d67589f",
+  "blank_full_flash_all_ff": true,
+  "programmed_bin_bytes": 58804,
+  "expected_bin_sha256": "bf85e29f09ae20a2fec28fc106e1a8cc6614b47af379702369595c0789e460dc",
+  "readback_bin_sha256": "bf85e29f09ae20a2fec28fc106e1a8cc6614b47af379702369595c0789e460dc",
+  "readback_bin_equal": true,
+  "full_readback_bytes": 524288,
+  "full_readback_sha256": "fecd0ff67e452d2369f1532519bd1ae46ca60ccca81a404f6dd44b9a8111ba85",
+  "tail_start": "0x0800E5B4",
+  "tail_bytes": 465484,
+  "tail_all_ff": true,
+  "option_bytes_before": "a55aff00ff00ff00ff00ff00ff00ff00",
+  "option_bytes_after": "a55aff00ff00ff00ff00ff00ff00ff00",
+  "option_bytes_equal": true,
+  "prior_firmware_backup": false
+}

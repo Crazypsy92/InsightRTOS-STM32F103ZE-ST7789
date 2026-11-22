@@ -1,0 +1,807 @@
+{
+  "hardware": true,
+  "checks": {
+    "physical_reset_entry": {
+      "pass": true,
+      "detail": {
+        "label": "physical_BOARD_RESET_entry",
+        "pc": 134222008,
+        "lr": 4294967295,
+        "msp": 536936448,
+        "psp": 4227845196,
+        "control": 0,
+        "xpsr": 16777216,
+        "primask": 0,
+        "r4_r11": [
+          134276532,
+          536873392,
+          32,
+          20,
+          4294963196,
+          4294967294,
+          3749838262,
+          167659770
+        ]
+      }
+    },
+    "reset_MSP_and_vector": {
+      "pass": true,
+      "detail": null
+    },
+    "initial_fault_status": {
+      "pass": true,
+      "detail": null
+    },
+    "hit_main": {
+      "pass": true,
+      "detail": 134221708
+    },
+    "hit_rtos_start": {
+      "pass": true,
+      "detail": 134243124
+    },
+    "72MHz_HSE_PLL_tree": {
+      "pass": true,
+      "detail": {
+        "SystemCoreClock": 72000000,
+        "RCC_CR": 50551171,
+        "RCC_CFGR": 1901578,
+        "TIM2_PSC": 71,
+        "TIM2_ARR": 999,
+        "TIM2_CR1": 1,
+        "TIM2_DIER": 1
+      }
+    },
+    "TIM2_1ms_configuration": {
+      "pass": true,
+      "detail": null
+    },
+    "hit_SVC_Handler": {
+      "pass": true,
+      "detail": 134247744
+    },
+    "SVC_exception": {
+      "pass": true,
+      "detail": null
+    },
+    "hit_*0x800756a": {
+      "pass": true,
+      "detail": 134247786
+    },
+    "SVC_EXC_RETURN": {
+      "pass": true,
+      "detail": null
+    },
+    "hit_key_task": {
+      "pass": true,
+      "detail": 134232704
+    },
+    "key_task_PSP_priority": {
+      "pass": true,
+      "detail": {
+        "label": "key_task_real_thread_entry",
+        "pc": 134232704,
+        "lr": 134240861,
+        "msp": 536936448,
+        "psp": 536879920,
+        "control": 2,
+        "xpsr": 16777216,
+        "primask": 0,
+        "r4_r11": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    "hit_controller_task": {
+      "pass": true,
+      "detail": 134232848
+    },
+    "controller_task_PSP_priority": {
+      "pass": true,
+      "detail": {
+        "label": "controller_task_real_thread_entry",
+        "pc": 134232848,
+        "lr": 134240861,
+        "msp": 536936448,
+        "psp": 536884016,
+        "control": 2,
+        "xpsr": 16777216,
+        "primask": 0,
+        "r4_r11": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    "hit_lcd_task": {
+      "pass": true,
+      "detail": 134232456
+    },
+    "lcd_task_PSP_priority": {
+      "pass": true,
+      "detail": {
+        "label": "lcd_task_real_thread_entry",
+        "pc": 134232456,
+        "lr": 134240861,
+        "msp": 536936448,
+        "psp": 536888112,
+        "control": 2,
+        "xpsr": 16777216,
+        "primask": 0,
+        "r4_r11": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    "hit_monitor_task": {
+      "pass": true,
+      "detail": 134232200
+    },
+    "monitor_task_PSP_priority": {
+      "pass": true,
+      "detail": {
+        "label": "monitor_task_real_thread_entry",
+        "pc": 134232200,
+        "lr": 134240861,
+        "msp": 536936448,
+        "psp": 536892208,
+        "control": 2,
+        "xpsr": 16777216,
+        "primask": 0,
+        "r4_r11": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    "hit_idle_entry": {
+      "pass": true,
+      "detail": 134241352
+    },
+    "Idle_PSP": {
+      "pass": true,
+      "detail": {
+        "label": "Idle_real_thread_entry",
+        "pc": 134241352,
+        "lr": 134240861,
+        "msp": 536936448,
+        "psp": 536875472,
+        "control": 2,
+        "xpsr": 16777216,
+        "primask": 0,
+        "r4_r11": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    "interrupt_priorities": {
+      "pass": true,
+      "detail": {
+        "SVC": 0,
+        "PendSV": 240,
+        "SysTick": 128,
+        "TIM2": 160
+      }
+    },
+    "SysTick100Hz_configuration": {
+      "pass": true,
+      "detail": null
+    },
+    "VTOR_approved_Flash_alias": {
+      "pass": true,
+      "detail": 0
+    },
+    "hit_PendSV_Handler": {
+      "pass": true,
+      "detail": 134247796
+    },
+    "PendSV_exception_0": {
+      "pass": true,
+      "detail": null
+    },
+    "R4_R11_saved_0": {
+      "pass": true,
+      "detail": null
+    },
+    "hit_*rtos_port_pendsv_unmask": {
+      "pass": true,
+      "detail": 134247838
+    },
+    "R4_R11_restored_0": {
+      "pass": true,
+      "detail": null
+    },
+    "PendSV_exception_1": {
+      "pass": true,
+      "detail": null
+    },
+    "R4_R11_saved_1": {
+      "pass": true,
+      "detail": null
+    },
+    "R4_R11_restored_1": {
+      "pass": true,
+      "detail": null
+    },
+    "PendSV_exception_2": {
+      "pass": true,
+      "detail": null
+    },
+    "R4_R11_saved_2": {
+      "pass": true,
+      "detail": null
+    },
+    "R4_R11_restored_2": {
+      "pass": true,
+      "detail": null
+    },
+    "real_task_switch_observed": {
+      "pass": true,
+      "detail": null
+    },
+    "hit_*0x8001678": {
+      "pass": true,
+      "detail": 134223480
+    },
+    "LCD_owns_SPI_DMA": {
+      "pass": true,
+      "detail": null
+    },
+    "SPI3_BR_and_DMA_TX_TC": {
+      "pass": true,
+      "detail": {
+        "SPI3_CR1": 836,
+        "SPI3_CR2": 2,
+        "SPI3_SR": 67,
+        "DMA2_ISR": 112,
+        "DMA2_CCR2": 8337,
+        "DMA2_CNDTR2": 0
+      }
+    },
+    "TXE_and_BSY_before_cleanup": {
+      "pass": true,
+      "detail": {
+        "SPI3_CR1": 836,
+        "SPI3_CR2": 2,
+        "SPI3_SR": 67,
+        "DMA2_ISR": 112,
+        "DMA2_CCR2": 8337,
+        "DMA2_CNDTR2": 0
+      }
+    },
+    "hit_*0x8001c12": {
+      "pass": true,
+      "detail": 134224914
+    },
+    "DMA_disabled_and_TC_cleared": {
+      "pass": true,
+      "detail": {
+        "SPI3_CR1": 836,
+        "SPI3_CR2": 0,
+        "SPI3_SR": 67,
+        "DMA2_ISR": 0,
+        "DMA2_CCR2": 8336,
+        "DMA2_CNDTR2": 0
+      }
+    },
+    "active_stack_guards": {
+      "pass": true,
+      "detail": {
+        "KEY": 3735929054,
+        "Controller": 3735929054,
+        "LCD": 3735929054,
+        "Monitor": 3735929054,
+        "Idle": 3735929054
+      }
+    },
+    "no_fault_or_assert": {
+      "pass": true,
+      "detail": null
+    }
+  },
+  "contexts": [
+    {
+      "label": "physical_BOARD_RESET_entry",
+      "pc": 134222008,
+      "lr": 4294967295,
+      "msp": 536936448,
+      "psp": 4227845196,
+      "control": 0,
+      "xpsr": 16777216,
+      "primask": 0,
+      "r4_r11": [
+        134276532,
+        536873392,
+        32,
+        20,
+        4294963196,
+        4294967294,
+        3749838262,
+        167659770
+      ]
+    },
+    {
+      "label": "original_Reset_SystemInit_to_main",
+      "pc": 134221708,
+      "lr": 134222059,
+      "msp": 536936448,
+      "psp": 4227845196,
+      "control": 0,
+      "xpsr": 1627389952,
+      "primask": 0,
+      "r4_r11": [
+        536875824,
+        536873392,
+        32,
+        20,
+        4294963196,
+        4294967294,
+        3749838262,
+        167659770
+      ]
+    },
+    {
+      "label": "rtos_start_entry",
+      "pc": 134243124,
+      "lr": 134233865,
+      "msp": 536936368,
+      "psp": 4227845196,
+      "control": 0,
+      "xpsr": 1627389952,
+      "primask": 0,
+      "r4_r11": [
+        4,
+        536892208,
+        536872264,
+        536936408,
+        536936392,
+        536936392,
+        1024,
+        167659770
+      ]
+    },
+    {
+      "label": "SVC_entry",
+      "pc": 134247744,
+      "lr": 4294967289,
+      "msp": 536936328,
+      "psp": 4227845196,
+      "control": 0,
+      "xpsr": 2164260875,
+      "primask": 0,
+      "r4_r11": [
+        0,
+        536875548,
+        0,
+        1,
+        134241353,
+        536874960,
+        1024,
+        167659770
+      ]
+    },
+    {
+      "label": "SVC_before_exception_return",
+      "pc": 134247786,
+      "lr": 4294967293,
+      "msp": 536936448,
+      "psp": 536879888,
+      "control": 0,
+      "xpsr": 16777227,
+      "primask": 0,
+      "r4_r11": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "label": "key_task_real_thread_entry",
+      "pc": 134232704,
+      "lr": 134240861,
+      "msp": 536936448,
+      "psp": 536879920,
+      "control": 2,
+      "xpsr": 16777216,
+      "primask": 0,
+      "r4_r11": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "label": "controller_task_real_thread_entry",
+      "pc": 134232848,
+      "lr": 134240861,
+      "msp": 536936448,
+      "psp": 536884016,
+      "control": 2,
+      "xpsr": 16777216,
+      "primask": 0,
+      "r4_r11": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "label": "lcd_task_real_thread_entry",
+      "pc": 134232456,
+      "lr": 134240861,
+      "msp": 536936448,
+      "psp": 536888112,
+      "control": 2,
+      "xpsr": 16777216,
+      "primask": 0,
+      "r4_r11": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "label": "monitor_task_real_thread_entry",
+      "pc": 134232200,
+      "lr": 134240861,
+      "msp": 536936448,
+      "psp": 536892208,
+      "control": 2,
+      "xpsr": 16777216,
+      "primask": 0,
+      "r4_r11": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "label": "Idle_real_thread_entry",
+      "pc": 134241352,
+      "lr": 134240861,
+      "msp": 536936448,
+      "psp": 536875472,
+      "control": 2,
+      "xpsr": 16777216,
+      "primask": 0,
+      "r4_r11": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "label": "PendSV_entry_0",
+      "pc": 134247796,
+      "lr": 4294967293,
+      "msp": 536936448,
+      "psp": 536875432,
+      "control": 0,
+      "xpsr": 2164260878,
+      "primask": 0,
+      "r4_r11": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "label": "PendSV_restored_0",
+      "pc": 134247838,
+      "lr": 4294967293,
+      "msp": 536936448,
+      "psp": 536883792,
+      "control": 0,
+      "xpsr": 553648142,
+      "primask": 1,
+      "r4_r11": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        4,
+        0
+      ]
+    },
+    {
+      "label": "PendSV_entry_1",
+      "pc": 134247796,
+      "lr": 4294967293,
+      "msp": 536936448,
+      "psp": 536883792,
+      "control": 0,
+      "xpsr": 2164260878,
+      "primask": 0,
+      "r4_r11": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        4,
+        0
+      ]
+    },
+    {
+      "label": "PendSV_restored_1",
+      "pc": 134247838,
+      "lr": 4294967293,
+      "msp": 536936448,
+      "psp": 536875432,
+      "control": 0,
+      "xpsr": 553648142,
+      "primask": 1,
+      "r4_r11": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "label": "PendSV_entry_2",
+      "pc": 134247796,
+      "lr": 4294967293,
+      "msp": 536936448,
+      "psp": 536875432,
+      "control": 0,
+      "xpsr": 2164260878,
+      "primask": 0,
+      "r4_r11": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "label": "PendSV_restored_2",
+      "pc": 134247838,
+      "lr": 4294967293,
+      "msp": 536936448,
+      "psp": 536883792,
+      "control": 0,
+      "xpsr": 553648142,
+      "primask": 1,
+      "r4_r11": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        4,
+        0
+      ]
+    }
+  ],
+  "task_entries": [
+    {
+      "task": "key_task",
+      "id": 1,
+      "base_priority": 5,
+      "tcb": 536874384,
+      "psp": 536879920
+    },
+    {
+      "task": "controller_task",
+      "id": 2,
+      "base_priority": 4,
+      "tcb": 536874456,
+      "psp": 536884016
+    },
+    {
+      "task": "lcd_task",
+      "id": 3,
+      "base_priority": 2,
+      "tcb": 536874528,
+      "psp": 536888112
+    },
+    {
+      "task": "monitor_task",
+      "id": 4,
+      "base_priority": 1,
+      "tcb": 536874600,
+      "psp": 536892208
+    }
+  ],
+  "pend_sv_switches": [
+    {
+      "old_id": 0,
+      "new_id": 2,
+      "old_tcb": 536875472,
+      "new_tcb": 536874456,
+      "saved": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "restored": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        4,
+        0
+      ]
+    },
+    {
+      "old_id": 2,
+      "new_id": 0,
+      "old_tcb": 536874456,
+      "new_tcb": 536875472,
+      "saved": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        4,
+        0
+      ],
+      "restored": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "old_id": 0,
+      "new_id": 2,
+      "old_tcb": 536875472,
+      "new_tcb": 536874456,
+      "saved": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "restored": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        4,
+        0
+      ]
+    }
+  ],
+  "clocks": {
+    "SystemCoreClock": 72000000,
+    "RCC_CR": 50551171,
+    "RCC_CFGR": 1901578,
+    "TIM2_PSC": 71,
+    "TIM2_ARR": 999,
+    "TIM2_CR1": 1,
+    "TIM2_DIER": 1
+  },
+  "priorities": {
+    "SVC": 0,
+    "PendSV": 240,
+    "SysTick": 128,
+    "TIM2": 160
+  },
+  "vtor": 0,
+  "dma_before_cleanup": {
+    "SPI3_CR1": 836,
+    "SPI3_CR2": 2,
+    "SPI3_SR": 67,
+    "DMA2_ISR": 112,
+    "DMA2_CCR2": 8337,
+    "DMA2_CNDTR2": 0
+  },
+  "dma_after_cleanup": {
+    "SPI3_CR1": 836,
+    "SPI3_CR2": 0,
+    "SPI3_SR": 67,
+    "DMA2_ISR": 0,
+    "DMA2_CCR2": 8336,
+    "DMA2_CNDTR2": 0
+  },
+  "guards": {
+    "KEY": 3735929054,
+    "Controller": 3735929054,
+    "LCD": 3735929054,
+    "Monitor": 3735929054,
+    "Idle": 3735929054
+  },
+  "status": "PASS"
+}

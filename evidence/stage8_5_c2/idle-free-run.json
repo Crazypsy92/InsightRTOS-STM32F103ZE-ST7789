@@ -1,0 +1,89 @@
+{
+  "hardware": true,
+  "idle_tcb_from_frozen_ELF": 536875472,
+  "idle_id": 0,
+  "samples": [
+    {
+      "monotonic": 3975.929071771,
+      "current_tcb": 536875472
+    },
+    {
+      "monotonic": 3975.950133075,
+      "current_tcb": 536875472
+    },
+    {
+      "monotonic": 3975.971336145,
+      "current_tcb": 536875472
+    },
+    {
+      "monotonic": 3975.992308481,
+      "current_tcb": 536875472
+    },
+    {
+      "monotonic": 3976.01331416,
+      "current_tcb": 536875472
+    },
+    {
+      "monotonic": 3976.034811414,
+      "current_tcb": 536875472
+    },
+    {
+      "monotonic": 3976.055843082,
+      "current_tcb": 536875472
+    },
+    {
+      "monotonic": 3976.07701844,
+      "current_tcb": 536874528
+    },
+    {
+      "monotonic": 3976.098138394,
+      "current_tcb": 536875472
+    },
+    {
+      "monotonic": 3976.119162889,
+      "current_tcb": 536875472
+    },
+    {
+      "monotonic": 3976.140109125,
+      "current_tcb": 536875472
+    },
+    {
+      "monotonic": 3976.161259927,
+      "current_tcb": 536875472
+    },
+    {
+      "monotonic": 3976.182353832,
+      "current_tcb": 536875472
+    },
+    {
+      "monotonic": 3976.203471822,
+      "current_tcb": 536875472
+    },
+    {
+      "monotonic": 3976.224482851,
+      "current_tcb": 536875472
+    },
+    {
+      "monotonic": 3976.245685311,
+      "current_tcb": 536875472
+    },
+    {
+      "monotonic": 3976.267602576,
+      "current_tcb": 536875472
+    },
+    {
+      "monotonic": 3976.288612803,
+      "current_tcb": 536875472
+    },
+    {
+      "monotonic": 3976.309716046,
+      "current_tcb": 536875472
+    },
+    {
+      "monotonic": 3976.330944083,
+      "current_tcb": 536875472
+    }
+  ],
+  "idle_current_observed": true,
+  "CPU_utilization": "NOT INFERRED from these biased observations"
+}

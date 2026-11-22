@@ -8,6 +8,15 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     Middlewares/InsightRTOS/port/insight_timebase.c)
 target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE Core Middlewares/InsightRTOS/port)
 target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE INSIGHT_RTOS_ENABLED=1)
+if(INSIGHT_TRACE_ENABLED)
+    target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE INSIGHT_TRACE_ENABLED=1)
+endif()
+if(INSIGHT_DIAG_EXPLAIN)
+    target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE INSIGHT_DIAG_EXPLAIN=1)
+endif()
+if(INSIGHT_DIAG_DL)
+    target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE INSIGHT_DIAG_DL=1)
+endif()
 # Startup weak aliases alone do not extract portasm.S from a static archive.
 # Load production objects, then let --gc-sections discard unused functions.
 target_link_libraries(${CMAKE_PROJECT_NAME}

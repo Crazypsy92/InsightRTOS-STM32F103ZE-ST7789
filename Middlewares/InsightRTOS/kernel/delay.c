@@ -83,6 +83,7 @@ void rtos_delay_process_expired(uint32_t now)
             RTOS_ASSERT(rtos_wait_complete_locked(task, RTOS_WAIT_RESULT_TIMEOUT));
         } else {
             RTOS_ASSERT(rtos_delay_queue_pop_due(now) == task);
+            RTOS_TRACE_DELAY_EXPIRED(task);
             rtos_sched_wake(task);
         }
         task = rtos_delay_queue_peek_due(now);

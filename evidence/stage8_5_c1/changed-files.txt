@@ -1,0 +1,24 @@
+Modified B1.4 application files:
+app/stm32f103ze_st7789/BSP/Src/app_lcd_test.c
+app/stm32f103ze_st7789/CMakeLists.txt
+app/stm32f103ze_st7789/Core/display_app.c
+app/stm32f103ze_st7789/Core/display_app.h
+app/stm32f103ze_st7789/Core/display_pages.c
+app/stm32f103ze_st7789/Core/display_policy.c
+app/stm32f103ze_st7789/README.integration.md
+New application files:
+app/stm32f103ze_st7789/Core/display_ui.c
+app/stm32f103ze_st7789/Core/display_ui.h
+New tests/tools:
+scripts/collect_stage8_5_c1.py
+scripts/verify_stage8_5_c1.py
+tests/stage8_5_c1/CMakeLists.txt
+tests/stage8_5_c1/dma_budget_audit.py
+tests/stage8_5_c1/expect_overflow.py
+tests/stage8_5_c1/fake/main.h
+tests/stage8_5_c1/host_runtime.c
+tests/stage8_5_c1/lcd_bus_contract_test.c
+tests/stage8_5_c1/ui_snapshot_test.c
+New evidence: evidence/stage8_5_c1/
+New firmware: artifacts/stage8_5_c1/
+No modification to external Cube_MX app, public kernel/TCB/assembly, SPI/DMA, original font/MultiButton, or old stage evidence/packages.

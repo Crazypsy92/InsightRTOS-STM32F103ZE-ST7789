@@ -1,0 +1,674 @@
+{
+  "debug": {
+    "flash": 76188,
+    "flash_end_exclusive": 134293916,
+    "data": 144,
+    "bss": 4772,
+    "user_stacks": 32768,
+    "active_user_stacks": 16384,
+    "reserved_unused_user_stacks": 16384,
+    "idle_stack_in_bss": 512,
+    "msp": 4096,
+    "heap": 0,
+    "ram_with_alignment": 41784,
+    "remaining_sram": 23752,
+    "queue_control_bytes": 200,
+    "sections": [
+      {
+        "index": 0,
+        "name": "",
+        "type": 0,
+        "flags": 0,
+        "vma": 0,
+        "offset": 0,
+        "size": 0,
+        "alignment": 0
+      },
+      {
+        "index": 1,
+        "name": ".isr_vector",
+        "type": 1,
+        "flags": 2,
+        "vma": 134217728,
+        "offset": 65536,
+        "size": 484,
+        "alignment": 1
+      },
+      {
+        "index": 2,
+        "name": ".text",
+        "type": 1,
+        "flags": 6,
+        "vma": 134218212,
+        "offset": 66020,
+        "size": 44584,
+        "alignment": 4
+      },
+      {
+        "index": 3,
+        "name": ".rodata",
+        "type": 1,
+        "flags": 2,
+        "vma": 134262796,
+        "offset": 110604,
+        "size": 30960,
+        "alignment": 4
+      },
+      {
+        "index": 4,
+        "name": ".ARM.extab",
+        "type": 1,
+        "flags": 0,
+        "vma": 134293756,
+        "offset": 196752,
+        "size": 0,
+        "alignment": 1
+      },
+      {
+        "index": 5,
+        "name": ".ARM",
+        "type": 1879048193,
+        "flags": 130,
+        "vma": 134293756,
+        "offset": 141564,
+        "size": 8,
+        "alignment": 4
+      },
+      {
+        "index": 6,
+        "name": ".preinit_array",
+        "type": 16,
+        "flags": 3,
+        "vma": 134293764,
+        "offset": 196752,
+        "size": 0,
+        "alignment": 1
+      },
+      {
+        "index": 7,
+        "name": ".init_array",
+        "type": 14,
+        "flags": 2,
+        "vma": 134293764,
+        "offset": 141572,
+        "size": 4,
+        "alignment": 4
+      },
+      {
+        "index": 8,
+        "name": ".fini_array",
+        "type": 15,
+        "flags": 2,
+        "vma": 134293768,
+        "offset": 141576,
+        "size": 4,
+        "alignment": 4
+      },
+      {
+        "index": 9,
+        "name": ".data",
+        "type": 1,
+        "flags": 3,
+        "vma": 536870912,
+        "offset": 196608,
+        "size": 144,
+        "alignment": 4
+      },
+      {
+        "index": 10,
+        "name": ".tdata",
+        "type": 1,
+        "flags": 1027,
+        "vma": 536871056,
+        "offset": 196752,
+        "size": 0,
+        "alignment": 4
+      },
+      {
+        "index": 11,
+        "name": ".tbss",
+        "type": 8,
+        "flags": 1027,
+        "vma": 536871056,
+        "offset": 0,
+        "size": 0,
+        "alignment": 4
+      },
+      {
+        "index": 12,
+        "name": ".bss",
+        "type": 8,
+        "flags": 3,
+        "vma": 536871056,
+        "offset": 196752,
+        "size": 4772,
+        "alignment": 8
+      },
+      {
+        "index": 13,
+        "name": ".user_stacks",
+        "type": 8,
+        "flags": 3,
+        "vma": 536875832,
+        "offset": 201528,
+        "size": 32768,
+        "alignment": 8
+      },
+      {
+        "index": 14,
+        "name": "._user_heap_stack",
+        "type": 1,
+        "flags": 1,
+        "vma": 536908600,
+        "offset": 196752,
+        "size": 0,
+        "alignment": 1
+      },
+      {
+        "index": 15,
+        "name": ".msp_stack",
+        "type": 8,
+        "flags": 3,
+        "vma": 536932352,
+        "offset": 258048,
+        "size": 4096,
+        "alignment": 1
+      },
+      {
+        "index": 16,
+        "name": ".ARM.attributes",
+        "type": 1879048195,
+        "flags": 0,
+        "vma": 0,
+        "offset": 196752,
+        "size": 41,
+        "alignment": 1
+      },
+      {
+        "index": 17,
+        "name": ".comment",
+        "type": 1,
+        "flags": 48,
+        "vma": 0,
+        "offset": 196793,
+        "size": 38,
+        "alignment": 1
+      },
+      {
+        "index": 18,
+        "name": ".debug_info",
+        "type": 1,
+        "flags": 0,
+        "vma": 0,
+        "offset": 196831,
+        "size": 71403,
+        "alignment": 1
+      },
+      {
+        "index": 19,
+        "name": ".debug_abbrev",
+        "type": 1,
+        "flags": 0,
+        "vma": 0,
+        "offset": 268234,
+        "size": 19806,
+        "alignment": 1
+      },
+      {
+        "index": 20,
+        "name": ".debug_aranges",
+        "type": 1,
+        "flags": 0,
+        "vma": 0,
+        "offset": 288040,
+        "size": 4104,
+        "alignment": 8
+      },
+      {
+        "index": 21,
+        "name": ".debug_rnglists",
+        "type": 1,
+        "flags": 0,
+        "vma": 0,
+        "offset": 292144,
+        "size": 2952,
+        "alignment": 1
+      },
+      {
+        "index": 22,
+        "name": ".debug_macro",
+        "type": 1,
+        "flags": 0,
+        "vma": 0,
+        "offset": 295096,
+        "size": 93384,
+        "alignment": 1
+      },
+      {
+        "index": 23,
+        "name": ".debug_line",
+        "type": 1,
+        "flags": 0,
+        "vma": 0,
+        "offset": 388480,
+        "size": 66375,
+        "alignment": 1
+      },
+      {
+        "index": 24,
+        "name": ".debug_str",
+        "type": 1,
+        "flags": 48,
+        "vma": 0,
+        "offset": 454855,
+        "size": 454572,
+        "alignment": 1
+      },
+      {
+        "index": 25,
+        "name": ".debug_frame",
+        "type": 1,
+        "flags": 0,
+        "vma": 0,
+        "offset": 909428,
+        "size": 14284,
+        "alignment": 4
+      },
+      {
+        "index": 26,
+        "name": ".debug_line_str",
+        "type": 1,
+        "flags": 48,
+        "vma": 0,
+        "offset": 923712,
+        "size": 522,
+        "alignment": 1
+      },
+      {
+        "index": 27,
+        "name": ".debug_loclists",
+        "type": 1,
+        "flags": 0,
+        "vma": 0,
+        "offset": 924234,
+        "size": 989,
+        "alignment": 1
+      },
+      {
+        "index": 28,
+        "name": ".symtab",
+        "type": 2,
+        "flags": 0,
+        "vma": 0,
+        "offset": 925224,
+        "size": 19904,
+        "alignment": 4
+      },
+      {
+        "index": 29,
+        "name": ".strtab",
+        "type": 3,
+        "flags": 0,
+        "vma": 0,
+        "offset": 945128,
+        "size": 9405,
+        "alignment": 1
+      },
+      {
+        "index": 30,
+        "name": ".shstrtab",
+        "type": 3,
+        "flags": 0,
+        "vma": 0,
+        "offset": 954533,
+        "size": 337,
+        "alignment": 1
+      }
+    ],
+    "spi3_hw_words": [
+      1073757184,
+      36000000,
+      1073810432,
+      2056,
+      1073810432,
+      4112,
+      1073810432,
+      8224,
+      1073873920,
+      2,
+      1
+    ],
+    "bin_sha256": "116400cf6bf4c7903a04de31f94d5d1a7ee02d66b93eac0a9b35540c1e13a1b4"
+  },
+  "o2": {
+    "flash": 57988,
+    "flash_end_exclusive": 134275716,
+    "data": 144,
+    "bss": 4768,
+    "user_stacks": 32768,
+    "active_user_stacks": 16384,
+    "reserved_unused_user_stacks": 16384,
+    "idle_stack_in_bss": 512,
+    "msp": 4096,
+    "heap": 0,
+    "ram_with_alignment": 41776,
+    "remaining_sram": 23760,
+    "queue_control_bytes": 200,
+    "sections": [
+      {
+        "index": 0,
+        "name": "",
+        "type": 0,
+        "flags": 0,
+        "vma": 0,
+        "offset": 0,
+        "size": 0,
+        "alignment": 0
+      },
+      {
+        "index": 1,
+        "name": ".isr_vector",
+        "type": 1,
+        "flags": 2,
+        "vma": 134217728,
+        "offset": 65536,
+        "size": 484,
+        "alignment": 1
+      },
+      {
+        "index": 2,
+        "name": ".text",
+        "type": 1,
+        "flags": 6,
+        "vma": 134218212,
+        "offset": 66020,
+        "size": 29024,
+        "alignment": 4
+      },
+      {
+        "index": 3,
+        "name": ".rodata",
+        "type": 1,
+        "flags": 2,
+        "vma": 134247236,
+        "offset": 95044,
+        "size": 28320,
+        "alignment": 4
+      },
+      {
+        "index": 4,
+        "name": ".ARM.extab",
+        "type": 1,
+        "flags": 0,
+        "vma": 134275556,
+        "offset": 131216,
+        "size": 0,
+        "alignment": 1
+      },
+      {
+        "index": 5,
+        "name": ".ARM",
+        "type": 1879048193,
+        "flags": 130,
+        "vma": 134275556,
+        "offset": 123364,
+        "size": 8,
+        "alignment": 4
+      },
+      {
+        "index": 6,
+        "name": ".preinit_array",
+        "type": 16,
+        "flags": 3,
+        "vma": 134275564,
+        "offset": 131216,
+        "size": 0,
+        "alignment": 1
+      },
+      {
+        "index": 7,
+        "name": ".init_array",
+        "type": 14,
+        "flags": 2,
+        "vma": 134275564,
+        "offset": 123372,
+        "size": 4,
+        "alignment": 4
+      },
+      {
+        "index": 8,
+        "name": ".fini_array",
+        "type": 15,
+        "flags": 2,
+        "vma": 134275568,
+        "offset": 123376,
+        "size": 4,
+        "alignment": 4
+      },
+      {
+        "index": 9,
+        "name": ".data",
+        "type": 1,
+        "flags": 3,
+        "vma": 536870912,
+        "offset": 131072,
+        "size": 144,
+        "alignment": 4
+      },
+      {
+        "index": 10,
+        "name": ".tdata",
+        "type": 1,
+        "flags": 1027,
+        "vma": 536871056,
+        "offset": 131216,
+        "size": 0,
+        "alignment": 4
+      },
+      {
+        "index": 11,
+        "name": ".tbss",
+        "type": 8,
+        "flags": 1027,
+        "vma": 536871056,
+        "offset": 0,
+        "size": 0,
+        "alignment": 4
+      },
+      {
+        "index": 12,
+        "name": ".bss",
+        "type": 8,
+        "flags": 3,
+        "vma": 536871056,
+        "offset": 131216,
+        "size": 4768,
+        "alignment": 8
+      },
+      {
+        "index": 13,
+        "name": ".user_stacks",
+        "type": 8,
+        "flags": 3,
+        "vma": 536875824,
+        "offset": 135984,
+        "size": 32768,
+        "alignment": 8
+      },
+      {
+        "index": 14,
+        "name": "._user_heap_stack",
+        "type": 1,
+        "flags": 1,
+        "vma": 536908592,
+        "offset": 131216,
+        "size": 0,
+        "alignment": 1
+      },
+      {
+        "index": 15,
+        "name": ".msp_stack",
+        "type": 8,
+        "flags": 3,
+        "vma": 536932352,
+        "offset": 192512,
+        "size": 4096,
+        "alignment": 1
+      },
+      {
+        "index": 16,
+        "name": ".ARM.attributes",
+        "type": 1879048195,
+        "flags": 0,
+        "vma": 0,
+        "offset": 131216,
+        "size": 41,
+        "alignment": 1
+      },
+      {
+        "index": 17,
+        "name": ".comment",
+        "type": 1,
+        "flags": 48,
+        "vma": 0,
+        "offset": 131257,
+        "size": 38,
+        "alignment": 1
+      },
+      {
+        "index": 18,
+        "name": ".debug_info",
+        "type": 1,
+        "flags": 0,
+        "vma": 0,
+        "offset": 131295,
+        "size": 115193,
+        "alignment": 1
+      },
+      {
+        "index": 19,
+        "name": ".debug_abbrev",
+        "type": 1,
+        "flags": 0,
+        "vma": 0,
+        "offset": 246488,
+        "size": 24848,
+        "alignment": 1
+      },
+      {
+        "index": 20,
+        "name": ".debug_loclists",
+        "type": 1,
+        "flags": 0,
+        "vma": 0,
+        "offset": 271336,
+        "size": 40407,
+        "alignment": 1
+      },
+      {
+        "index": 21,
+        "name": ".debug_aranges",
+        "type": 1,
+        "flags": 0,
+        "vma": 0,
+        "offset": 311744,
+        "size": 2984,
+        "alignment": 8
+      },
+      {
+        "index": 22,
+        "name": ".debug_rnglists",
+        "type": 1,
+        "flags": 0,
+        "vma": 0,
+        "offset": 314728,
+        "size": 6375,
+        "alignment": 1
+      },
+      {
+        "index": 23,
+        "name": ".debug_line",
+        "type": 1,
+        "flags": 0,
+        "vma": 0,
+        "offset": 321103,
+        "size": 71801,
+        "alignment": 1
+      },
+      {
+        "index": 24,
+        "name": ".debug_str",
+        "type": 1,
+        "flags": 48,
+        "vma": 0,
+        "offset": 392904,
+        "size": 20622,
+        "alignment": 1
+      },
+      {
+        "index": 25,
+        "name": ".debug_frame",
+        "type": 1,
+        "flags": 0,
+        "vma": 0,
+        "offset": 413528,
+        "size": 7816,
+        "alignment": 4
+      },
+      {
+        "index": 26,
+        "name": ".debug_line_str",
+        "type": 1,
+        "flags": 48,
+        "vma": 0,
+        "offset": 421344,
+        "size": 519,
+        "alignment": 1
+      },
+      {
+        "index": 27,
+        "name": ".symtab",
+        "type": 2,
+        "flags": 0,
+        "vma": 0,
+        "offset": 421864,
+        "size": 15008,
+        "alignment": 4
+      },
+      {
+        "index": 28,
+        "name": ".strtab",
+        "type": 3,
+        "flags": 0,
+        "vma": 0,
+        "offset": 436872,
+        "size": 7053,
+        "alignment": 1
+      },
+      {
+        "index": 29,
+        "name": ".shstrtab",
+        "type": 3,
+        "flags": 0,
+        "vma": 0,
+        "offset": 443925,
+        "size": 324,
+        "alignment": 1
+      }
+    ],
+    "spi3_hw_words": [
+      1073757184,
+      36000000,
+      1073810432,
+      2056,
+      1073810432,
+      4112,
+      1073810432,
+      8224,
+      1073873920,
+      2,
+      1
+    ],
+    "bin_sha256": "526890ff96594c65533c69e129a1a889ec2368768b4b4fca3a3c7052eac72e35"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "reply_verbatim": "正常",
+  "scope": ["welcome", "four original pages", "monitor dynamic values", "short press", "long press", "LED"],
+  "source": "user visual confirmation replying to the full checklist",
+  "current_button_counts_from_independent_mem_ap": {"short": 6, "long": 1, "key_ISR": 7, "LCD_consumed": 7},
+  "exact_press_sequence_confirmed_separately": false
+}

@@ -1,0 +1,55 @@
+stage,configuration,case,bytes,target_hz,mode,expected_code,actual_code,model_cycles,model_us,observed
+C1,Debug,C1_62500_at_equality,62500,18000000,TX,0,0,2000064,27778.667,old works at the mathematical crossover
+C1,Debug,C1_65535_reproduction,65535,18000000,TX,-2,-2,2048640,28453.333,timeout before 2097120 ideal wire cycles
+C3,Debug,poll_1,1,18000000,TX+RX,0,0,192,2.667,one byte echo via polling
+C3,Debug,poll_15,15,18000000,TX+RX,0,0,1984,27.556,last polling length
+C3,Debug,DMA_16,16,18000000,TX+RX,0,0,672,9.333,first DMA length; stale RXNE and OVR cleared
+C3,Debug,DMA_tail_delayed,255,18000000,TX,0,0,9216,128.000,TC precedes TXE and BSY release; both waited
+C3,Debug,DMA_255,255,18000000,TX,0,0,8320,115.556,one TX chunk
+C3,Debug,DMA_65535,65535,18000000,TX,0,0,2097280,29128.889,C1 reproducer passes
+C3,Debug,DMA_65536,65536,18000000,TX+RX,0,0,2097472,29131.556,two chunks full echo
+C3,Debug,DMA_131071,131071,18000000,TX+RX,0,0,4194752,58260.444,three chunks full echo
+C3,Debug,DMA_div4_rounded,65535,17000000,TX+RX,0,0,4194400,58255.556,actual 9 MHz at requested 17 MHz
+C3,Debug,DMA_div256,65535,140625,TX+RX,0,0,268431520,3728215.556,actual 140625 Hz
+C3,Debug,DMA_RX_TE,65535,18000000,TX+RX,-3,-3,1048672,14564.889,abort before TX TC then recover
+C3,Debug,DMA_TX_TE,255,18000000,TX+RX,-3,-3,4192,58.222,abort before RX TC then recover
+C3,Debug,DMA_missing_RX_TC,255,18000000,TX+RX,-2,-2,1450304,20143.111,TX TC supplies no second deadline
+C3,Debug,DMA_post_TC_TXE_timeout,255,18000000,TX,-2,-2,508288,7059.556,TXE timeout after TC then recover
+C3,Debug,DMA_post_TC_BSY_timeout,255,18000000,TX,-2,-2,1508320,20948.889,tail BSY timeout plus bounded recovery
+C3,Debug,poll_TXE_timeout,1,18000000,TX,-2,-2,1500064,20834.222,TXE deadline and bounded failed recovery until TXE returns
+C3,Debug,poll_RXNE_timeout,1,18000000,TX,-2,-2,500160,6946.667,RXNE deadline then recover
+C3,Debug,stuck_RXNE,255,18000000,TX,-2,-2,64,0.889,bounded drain and failed recover until fault clears
+C3,Debug,preempt_inflight,65535,18000000,TX+RX,0,0,2097280,29128.889,10 ms CPU gap with DMA autonomous
+C3,Debug,preempt_past_deadline_complete,255,18000000,TX+RX,0,0,2162208,30030.667,TC already latched at resume
+C3,Debug,preempt_past_deadline_stalled,255,18000000,TX,-2,-2,2162144,30029.778,missing TC at resume then recover
+C3,Debug,DWT_wrap,65535,18000000,TX+RX,0,0,2097280,29128.889,wrap during DMA wait
+C3,Debug,acquire_busy,0,18000000,TX,-4,-4,0,0.000,acquire rejected while BSY; no bus owner
+C3,Debug,recover_busy,0,18000000,TX,-5,-5,1000096,13890.222,persistent BSY causes bounded recovery error followed by clean acquire
+C3,Debug,RTOS_preempt_active_DMA,65535,18000000,TX+RX,0,0,2097280,29128.889,high task ran twice while DMA active; echo verified
+C3,Debug,RTOS_preempt_DMA_timeout,255,18000000,TX,-2,-2,1450304,20143.111,high task ran twice; stalled DMA timed out and next acquire passed
+C3,O2,poll_1,1,18000000,TX+RX,0,0,192,2.667,one byte echo via polling
+C3,O2,poll_15,15,18000000,TX+RX,0,0,1984,27.556,last polling length
+C3,O2,DMA_16,16,18000000,TX+RX,0,0,672,9.333,first DMA length; stale RXNE and OVR cleared
+C3,O2,DMA_tail_delayed,255,18000000,TX,0,0,9216,128.000,TC precedes TXE and BSY release; both waited
+C3,O2,DMA_255,255,18000000,TX,0,0,8320,115.556,one TX chunk
+C3,O2,DMA_65535,65535,18000000,TX,0,0,2097280,29128.889,C1 reproducer passes
+C3,O2,DMA_65536,65536,18000000,TX+RX,0,0,2097472,29131.556,two chunks full echo
+C3,O2,DMA_131071,131071,18000000,TX+RX,0,0,4194752,58260.444,three chunks full echo
+C3,O2,DMA_div4_rounded,65535,17000000,TX+RX,0,0,4194400,58255.556,actual 9 MHz at requested 17 MHz
+C3,O2,DMA_div256,65535,140625,TX+RX,0,0,268431520,3728215.556,actual 140625 Hz
+C3,O2,DMA_RX_TE,65535,18000000,TX+RX,-3,-3,1048672,14564.889,abort before TX TC then recover
+C3,O2,DMA_TX_TE,255,18000000,TX+RX,-3,-3,4192,58.222,abort before RX TC then recover
+C3,O2,DMA_missing_RX_TC,255,18000000,TX+RX,-2,-2,1450304,20143.111,TX TC supplies no second deadline
+C3,O2,DMA_post_TC_TXE_timeout,255,18000000,TX,-2,-2,508288,7059.556,TXE timeout after TC then recover
+C3,O2,DMA_post_TC_BSY_timeout,255,18000000,TX,-2,-2,1508320,20948.889,tail BSY timeout plus bounded recovery
+C3,O2,poll_TXE_timeout,1,18000000,TX,-2,-2,1500064,20834.222,TXE deadline and bounded failed recovery until TXE returns
+C3,O2,poll_RXNE_timeout,1,18000000,TX,-2,-2,500160,6946.667,RXNE deadline then recover
+C3,O2,stuck_RXNE,255,18000000,TX,-2,-2,64,0.889,bounded drain and failed recover until fault clears
+C3,O2,preempt_inflight,65535,18000000,TX+RX,0,0,2097280,29128.889,10 ms CPU gap with DMA autonomous
+C3,O2,preempt_past_deadline_complete,255,18000000,TX+RX,0,0,2162208,30030.667,TC already latched at resume
+C3,O2,preempt_past_deadline_stalled,255,18000000,TX,-2,-2,2162144,30029.778,missing TC at resume then recover
+C3,O2,DWT_wrap,65535,18000000,TX+RX,0,0,2097280,29128.889,wrap during DMA wait
+C3,O2,acquire_busy,0,18000000,TX,-4,-4,0,0.000,acquire rejected while BSY; no bus owner
+C3,O2,recover_busy,0,18000000,TX,-5,-5,1000096,13890.222,persistent BSY causes bounded recovery error followed by clean acquire
+C3,O2,RTOS_preempt_active_DMA,65535,18000000,TX+RX,0,0,2097280,29128.889,high task ran twice while DMA active; echo verified
+C3,O2,RTOS_preempt_DMA_timeout,255,18000000,TX,-2,-2,1450304,20143.111,high task ran twice; stalled DMA timed out and next acquire passed

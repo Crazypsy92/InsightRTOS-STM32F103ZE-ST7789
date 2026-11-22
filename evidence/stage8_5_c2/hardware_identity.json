@@ -1,0 +1,18 @@
+{
+  "serial": "190057000D0000393333574E",
+  "serial_selection_verified": true,
+  "firmware": "V2J45S7 (API v2) VID:PID 0483:3748",
+  "target_voltage_v": 3.272727,
+  "mcu_idcode": "0x10036414",
+  "cpuid": "0x411fc231",
+  "uid_raw_hex": "31ffd8053031533628791143",
+  "flash_kib": 512,
+  "matches_stage8_5_b1_2": true,
+  "option_bytes_before_hex": "a55aff00ff00ff00ff00ff00ff00ff00",
+  "rdp_active": false,
+  "wrp_active": false,
+  "status": "PASS",
+  "matches_stage8_5_b1_3": true,
+  "current_option_bytes_hex": "a55aff00ff00ff00ff00ff00ff00ff00",
+  "identity_source": "this stage actual MEM-AP reads"
+}

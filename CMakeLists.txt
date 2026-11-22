@@ -19,9 +19,17 @@ if(NOT CMAKE_BUILD_TYPE)
 endif()
 
 # Set the project name
+option(INSIGHT_DISPLAY_RTOS "Build the original four-page RTOS application" OFF)
 option(INSIGHT_RTOS_ENABLED "Build the isolated dual-task RTOS smoke image" OFF)
+option(INSIGHT_TRACE_ENABLED "Enable kernel trace" OFF)
+option(INSIGHT_DIAG_EXPLAIN "Enable explainable scheduling" OFF)
+option(INSIGHT_DIAG_DL "Enable mutex deadlock diagnostics" OFF)
 if(INSIGHT_RTOS_ENABLED)
-    set(CMAKE_PROJECT_NAME insightrtos_rtos)
+    if(INSIGHT_DISPLAY_RTOS)
+        set(CMAKE_PROJECT_NAME insightrtos_display)
+    else()
+        set(CMAKE_PROJECT_NAME insightrtos_rtos)
+    endif()
 else()
     set(CMAKE_PROJECT_NAME insightrtos)
 endif()
@@ -86,4 +94,15 @@ endif()
 add_custom_command(TARGET ${CMAKE_PROJECT_NAME} POST_BUILD
     COMMAND ${CMAKE_OBJCOPY} -O binary $<TARGET_FILE:${CMAKE_PROJECT_NAME}>
         ${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_PROJECT_NAME}.bin
+    COMMAND ${CMAKE_OBJCOPY} -O ihex $<TARGET_FILE:${CMAKE_PROJECT_NAME}>
+        ${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_PROJECT_NAME}.hex
     VERBATIM)
+
+if(INSIGHT_DISPLAY_RTOS)
+    get_target_property(display_sources ${CMAKE_PROJECT_NAME} SOURCES)
+    list(FILTER display_sources EXCLUDE REGEX "/(rtos_smoke_app|app_lcd_test)[.]c$")
+    set_property(TARGET ${CMAKE_PROJECT_NAME} PROPERTY SOURCES "${display_sources}")
+    target_sources(${CMAKE_PROJECT_NAME} PRIVATE Core/display_app.c Core/display_pages.c Core/display_policy.c Core/display_ui.c)
+    target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE INSIGHT_DISPLAY_RTOS=1)
+    set_source_files_properties(Core/display_pages.c PROPERTIES COMPILE_OPTIONS "-fno-inline")
+endif()

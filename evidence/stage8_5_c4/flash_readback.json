@@ -1,0 +1,38 @@
+{
+  "phase": "PRE_WRITE_ONLY",
+  "current_content": "MISMATCH_VS_C2_AND_C3",
+  "before_readback": "erase_range_before.bin",
+  "independent_readback": "flash-before-repeat.bin",
+  "before_readback_bytes": 59392,
+  "captured_range": [
+    "0x08000000",
+    "0x0800E800"
+  ],
+  "repeat_equal": true,
+  "sha256": "ba776449afbe93fa463b5efd01fa39e8e223b97d513e954d087e1a706c4ce38e",
+  "expected_c2_region_sha256": "56ae47576027ce79d3499d6d7b16d5b015eaf9623f0d008934e9ccab88ec0471",
+  "first_difference": "0x8000001",
+  "last_difference": "0x80077ff",
+  "different_pages": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14
+  ],
+  "flash_erase": "NOT EXECUTED",
+  "flash_programming": "NOT EXECUTED",
+  "post_write_readback": "NOT TESTED",
+  "post_write_tail": "NOT TESTED",
+  "post_write_option_bytes": "NOT TESTED"
+}

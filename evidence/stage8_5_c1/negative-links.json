@@ -1,0 +1,62 @@
+[
+  {
+    "mode": "debug",
+    "case": "ram-overlap",
+    "status": "EXPECTED REJECTION PASS"
+  },
+  {
+    "mode": "debug",
+    "case": "vector-origin",
+    "status": "EXPECTED REJECTION PASS"
+  },
+  {
+    "mode": "debug",
+    "case": "small-msp",
+    "status": "EXPECTED REJECTION PASS"
+  },
+  {
+    "mode": "debug",
+    "case": "duplicate-svc",
+    "status": "EXPECTED REJECTION PASS"
+  },
+  {
+    "mode": "debug",
+    "case": "heap-forbidden",
+    "status": "EXPECTED REJECTION PASS"
+  },
+  {
+    "mode": "debug",
+    "case": "weak-context-alias",
+    "status": "EXPECTED REJECTION PASS"
+  },
+  {
+    "mode": "o2",
+    "case": "ram-overlap",
+    "status": "EXPECTED REJECTION PASS"
+  },
+  {
+    "mode": "o2",
+    "case": "vector-origin",
+    "status": "EXPECTED REJECTION PASS"
+  },
+  {
+    "mode": "o2",
+    "case": "small-msp",
+    "status": "EXPECTED REJECTION PASS"
+  },
+  {
+    "mode": "o2",
+    "case": "duplicate-svc",
+    "status": "EXPECTED REJECTION PASS"
+  },
+  {
+    "mode": "o2",
+    "case": "heap-forbidden",
+    "status": "EXPECTED REJECTION PASS"
+  },
+  {
+    "mode": "o2",
+    "case": "weak-context-alias",
+    "status": "EXPECTED REJECTION PASS"
+  }
+]

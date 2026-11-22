@@ -1,0 +1,32 @@
+artifacts/stage8_5_c3/debug/insightrtos_zet6_c3_debug.elf  :
+section               size        addr
+.isr_vector            484   134217728
+.text                45812   134218212
+.rodata              30960   134264024
+.ARM.extab               0   134294984
+.ARM                     8   134294984
+.preinit_array           0   134294992
+.init_array              4   134294992
+.fini_array              4   134294996
+.data                  144   536870912
+.tdata                   0   536871056
+.tbss                    0   536871056
+.bss                  4772   536871056
+.user_stacks         32768   536875832
+._user_heap_stack        0   536908600
+.msp_stack            4096   536932352
+.ARM.attributes         41           0
+.comment                38           0
+.debug_info          73544           0
+.debug_abbrev        20237           0
+.debug_aranges        4208           0
+.debug_rnglists       3134           0
+.debug_macro         93384           0
+.debug_line          68101           0
+.debug_str          456173           0
+.debug_frame         14432           0
+.debug_line_str        553           0
+.debug_loclists       3744           0
+Total               856641
+
+

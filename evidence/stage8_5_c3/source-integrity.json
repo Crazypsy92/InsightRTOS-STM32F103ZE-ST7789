@@ -1,0 +1,19 @@
+{
+  "only_production_change": {
+    "BSP/Src/spi_stm32_ll.c": {
+      "c1": "051f8ac830bd502f8abdec0e8e1783b81a17522ceaf7fda338e6ad35613de8ac",
+      "c3": "a0cf9f76077eaf07537f634adb1fc012b58554ebec6ddccefde2f6ed4470ec60"
+    }
+  },
+  "c1_files_compared": 143,
+  "c1_tests_tools_verified": 9,
+  "prior_baseline_unchanged_excluding_driver": 399,
+  "new_test_sha256": {
+    "tests/stage8_5_c3/CMakeLists.txt": "76f76e009d3c36a52423785da6e24fe84d33ffa176c878538499bd1bbda2b7f3",
+    "tests/stage8_5_c3/audit_firmware.py": "85c5a50abf7c99ce5dae01168c6b17411d4d7c0b71d5ee527fb3fef373eaa04f",
+    "tests/stage8_5_c3/boundary_test.c": "8ec01ed4f64befa28a27f0a685ae79dd8e0d7bdc6a2efbffe57aafd537baf58e",
+    "tests/stage8_5_c3/fake/main.h": "240fb8c619fa9e08d83a10352c122f13027403ba80950bc57dd80f6f4b34e9ae",
+    "tests/stage8_5_c3/fake/stm32f1xx_ll_spi.h": "c6bd01aefe23a3aab29607eb6cdc6cfc5f37336beb789d9153dfb585c8de3a93",
+    "tests/stage8_5_c3/host_context.c": "dae6dd0e289ab23c01ba3587c9b7fa57dc147c5dfc26581d168c3b29a0574119"
+  }
+}

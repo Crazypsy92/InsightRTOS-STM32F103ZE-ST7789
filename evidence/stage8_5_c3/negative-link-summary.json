@@ -1,0 +1,6 @@
+{
+  "configurations": 4,
+  "images": 16,
+  "cases_per_image": 8,
+  "expected_rejections": 128
+}

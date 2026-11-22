@@ -66,6 +66,13 @@ void rtos_port_yield(void)
     __asm volatile("dsb\nisb" ::: "memory");
 }
 
+bool rtos_port_in_pendsv(void)
+{
+    uint32_t value;
+    __asm volatile("mrs %0, ipsr" : "=r"(value));
+    return value == 14U;
+}
+
 bool rtos_port_in_handler(void)
 {
     uint32_t value;

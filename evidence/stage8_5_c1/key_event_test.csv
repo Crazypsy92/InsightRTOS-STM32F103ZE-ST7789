@@ -1,0 +1,21 @@
+configuration,test,expected,observed,software,hardware
+Debug,auto before first key,"0→1→2→3, remains3","at 10000ms: page3, all original pages visited once, Monitor not entered",PASS SOFTWARE,NOT EXECUTED
+Debug,100 isolated short presses,"next modulo5, stop auto; 4→0",all100 + 20 Monitor entries,PASS SOFTWARE,NOT EXECUTED
+Debug,2 long presses,"no page change, LED once each",short100/long2/LED102,PASS SOFTWARE,NOT EXECUTED
+Debug,fast double / 5ms bounce,unbound double and noise no extra SINGLE,"102 recognized events, no extra",PASS SOFTWARE,NOT EXECUTED
+Debug,welcome timeout,scheduler delay150tick; then0,"first page about1501ms, tasks continue",PASS SOFTWARE,NOT EXECUTED
+Debug,slow LCD / full command queue,"retain FIFO, continue ACK handling","2224 retries, ISR/KEY/Controller/LCD=102, critical overflow0",PASS SOFTWARE,NOT EXECUTED
+Debug,2 init failures,bounded recover,success attempt3; first page3501ms,PASS SOFTWARE,NOT EXECUTED
+Debug,permanent init failure,"stop attempts at3, diagnostic alive","3 attempts, 102 events drained/rejected, LED/other tasks continue",PASS SOFTWARE,NOT EXECUTED
+Debug,critical queue burst,explicit overflow failure,expected key_overflows production assertion,PASS SOFTWARE,NOT EXECUTED
+Debug,display preemption model,resume synchronous draw after higher priority tasks,41 software context changes during drawing; ARM hardware NOT MEASURED,PASS SOFTWARE,NOT EXECUTED
+O2,auto before first key,"0→1→2→3, remains3","at 10000ms: page3, all original pages visited once, Monitor not entered",PASS SOFTWARE,NOT EXECUTED
+O2,100 isolated short presses,"next modulo5, stop auto; 4→0",all100 + 20 Monitor entries,PASS SOFTWARE,NOT EXECUTED
+O2,2 long presses,"no page change, LED once each",short100/long2/LED102,PASS SOFTWARE,NOT EXECUTED
+O2,fast double / 5ms bounce,unbound double and noise no extra SINGLE,"102 recognized events, no extra",PASS SOFTWARE,NOT EXECUTED
+O2,welcome timeout,scheduler delay150tick; then0,"first page about1501ms, tasks continue",PASS SOFTWARE,NOT EXECUTED
+O2,slow LCD / full command queue,"retain FIFO, continue ACK handling","2224 retries, ISR/KEY/Controller/LCD=102, critical overflow0",PASS SOFTWARE,NOT EXECUTED
+O2,2 init failures,bounded recover,success attempt3; first page3501ms,PASS SOFTWARE,NOT EXECUTED
+O2,permanent init failure,"stop attempts at3, diagnostic alive","3 attempts, 102 events drained/rejected, LED/other tasks continue",PASS SOFTWARE,NOT EXECUTED
+O2,critical queue burst,explicit overflow failure,expected key_overflows production assertion,PASS SOFTWARE,NOT EXECUTED
+O2,display preemption model,resume synchronous draw after higher priority tasks,41 software context changes during drawing; ARM hardware NOT MEASURED,PASS SOFTWARE,NOT EXECUTED

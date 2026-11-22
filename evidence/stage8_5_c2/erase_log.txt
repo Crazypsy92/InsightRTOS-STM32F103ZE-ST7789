@@ -1,0 +1,78 @@
+Open On-Chip Debugger 0.12.0
+Licensed under GNU GPL v2
+For bug reports, read
+	http://openocd.org/doc/doxygen/bugs.html
+Info : STLINK V2J45S7 (API v2) VID:PID 0483:3748
+Info : Target voltage: 3.279098
+Info : Unable to match requested speed 500 kHz, using 480 kHz
+Info : Unable to match requested speed 500 kHz, using 480 kHz
+Info : clock speed 480 kHz
+Info : stlink_dap_op_connect(connect)
+Info : SWD DPIDR 0x1ba01477
+Info : [stm32f1x.cpu] Cortex-M3 r1p1 processor detected
+Info : [stm32f1x.cpu] target has 6 breakpoints, 4 watchpoints
+Info : gdb port disabled
+Warn : [stm32f1x.cpu] target was in unknown state when halt was requested
+Info : device id = 0x10036414
+Info : flash size = 512 KiB
+IDENTITY_AND_256x2KiB_GEOMETRY_RECHECK_PASS
+NEW_PAGES_20_28_FF_RECHECK_PASS
+ERASE_BEGIN page=0 address=0x08000000 size=2048
+ERASE_COMMAND_PASS page=0
+ERASE_BEGIN page=1 address=0x08000800 size=2048
+ERASE_COMMAND_PASS page=1
+ERASE_BEGIN page=2 address=0x08001000 size=2048
+ERASE_COMMAND_PASS page=2
+ERASE_BEGIN page=3 address=0x08001800 size=2048
+ERASE_COMMAND_PASS page=3
+ERASE_BEGIN page=4 address=0x08002000 size=2048
+ERASE_COMMAND_PASS page=4
+ERASE_BEGIN page=5 address=0x08002800 size=2048
+ERASE_COMMAND_PASS page=5
+ERASE_BEGIN page=6 address=0x08003000 size=2048
+ERASE_COMMAND_PASS page=6
+ERASE_BEGIN page=7 address=0x08003800 size=2048
+ERASE_COMMAND_PASS page=7
+ERASE_BEGIN page=8 address=0x08004000 size=2048
+ERASE_COMMAND_PASS page=8
+ERASE_BEGIN page=9 address=0x08004800 size=2048
+ERASE_COMMAND_PASS page=9
+ERASE_BEGIN page=10 address=0x08005000 size=2048
+ERASE_COMMAND_PASS page=10
+ERASE_BEGIN page=11 address=0x08005800 size=2048
+ERASE_COMMAND_PASS page=11
+ERASE_BEGIN page=12 address=0x08006000 size=2048
+ERASE_COMMAND_PASS page=12
+ERASE_BEGIN page=13 address=0x08006800 size=2048
+ERASE_COMMAND_PASS page=13
+ERASE_BEGIN page=14 address=0x08007000 size=2048
+ERASE_COMMAND_PASS page=14
+ERASE_BEGIN page=15 address=0x08007800 size=2048
+ERASE_COMMAND_PASS page=15
+ERASE_BEGIN page=16 address=0x08008000 size=2048
+ERASE_COMMAND_PASS page=16
+ERASE_BEGIN page=17 address=0x08008800 size=2048
+ERASE_COMMAND_PASS page=17
+ERASE_BEGIN page=18 address=0x08009000 size=2048
+ERASE_COMMAND_PASS page=18
+ERASE_BEGIN page=19 address=0x08009800 size=2048
+ERASE_COMMAND_PASS page=19
+ERASE_BEGIN page=20 address=0x0800A000 size=2048
+ERASE_COMMAND_PASS page=20
+ERASE_BEGIN page=21 address=0x0800A800 size=2048
+ERASE_COMMAND_PASS page=21
+ERASE_BEGIN page=22 address=0x0800B000 size=2048
+ERASE_COMMAND_PASS page=22
+ERASE_BEGIN page=23 address=0x0800B800 size=2048
+ERASE_COMMAND_PASS page=23
+ERASE_BEGIN page=24 address=0x0800C000 size=2048
+ERASE_COMMAND_PASS page=24
+ERASE_BEGIN page=25 address=0x0800C800 size=2048
+ERASE_COMMAND_PASS page=25
+ERASE_BEGIN page=26 address=0x0800D000 size=2048
+ERASE_COMMAND_PASS page=26
+ERASE_BEGIN page=27 address=0x0800D800 size=2048
+ERASE_COMMAND_PASS page=27
+ERASE_BEGIN page=28 address=0x0800E000 size=2048
+ERASE_COMMAND_PASS page=28
+shutdown command invoked

@@ -70,6 +70,7 @@ void rtos_sched_switch(void)
     RTOS_ASSERT(rtos_port_interrupts_masked());
 
     rtos_task_t *const previous = rtos_current_task;
+    const bool prev_was_running = (previous != NULL && previous->state == RTOS_TASK_RUNNING);
     uint32_t reasons = pending_reasons;
     pending_reasons = 0U;
     if (previous == NULL) {
@@ -160,6 +161,7 @@ void rtos_sched_switch(void)
     RTOS_ASSERT(rtos_task_stack_valid(next));
     next->state = RTOS_TASK_RUNNING;
     rtos_current_task = next; RTOS_TRACE_SELECT(previous, next, reasons);
+    RTOS_TRACE_CONTEXT_SWITCH(previous, next, reasons, prev_was_running);
 #if RTOS_TESTING
     if (previous != next) {
         rtos_test_switch_hook(previous, next, reasons, rtos_tick_get());
@@ -295,6 +297,7 @@ void rtos_yield(void)
     RTOS_ASSERT(rtos_current_task != NULL);
     RTOS_ASSERT(rtos_current_task->state == RTOS_TASK_RUNNING);
     const rtos_irq_state_t irq_state = rtos_critical_enter();
+    RTOS_TRACE_YIELD(rtos_current_task);
     rtos_sched_request(RTOS_SCHED_REASON_YIELD);
     rtos_critical_exit(irq_state);
 }

@@ -1,0 +1,10 @@
+{
+  "status": "NOT TESTED",
+  "method": "non-halting bracketed TCB/PSP and SPI bus reads",
+  "poll_range": [
+    "0x8001b82",
+    "0x8001b9a"
+  ],
+  "samples": 1313,
+  "elapsed_s": 5.000423909999881
+}

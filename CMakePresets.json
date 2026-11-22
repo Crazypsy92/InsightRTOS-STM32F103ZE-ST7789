@@ -48,6 +48,52 @@
                 "INSIGHT_RTOS_ENABLED": "ON",
                 "CMAKE_C_FLAGS_RELWITHDEBINFO": "-O2 -g -DNDEBUG"
             }
+        },
+        {
+            "name": "DISPLAY_RTOS_Debug",
+            "inherits": "default",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "INSIGHT_RTOS_ENABLED": "ON",
+                "INSIGHT_DISPLAY_RTOS": "ON",
+                "CMAKE_C_FLAGS_RELWITHDEBINFO": "-O2 -g -DNDEBUG"
+            }
+        },
+        {
+            "name": "DISPLAY_RTOS_O2",
+            "inherits": "default",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "RelWithDebInfo",
+                "INSIGHT_RTOS_ENABLED": "ON",
+                "INSIGHT_DISPLAY_RTOS": "ON",
+                "CMAKE_C_FLAGS_RELWITHDEBINFO": "-O2 -g -DNDEBUG"
+            }
+        },
+        {
+            "name": "DISPLAY_RTOS_Debug_Trace",
+            "inherits": "default",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "INSIGHT_RTOS_ENABLED": "ON",
+                "INSIGHT_DISPLAY_RTOS": "ON",
+                "INSIGHT_TRACE_ENABLED": "ON",
+                "INSIGHT_DIAG_EXPLAIN": "ON",
+                "INSIGHT_DIAG_DL": "ON",
+                "CMAKE_C_FLAGS_RELWITHDEBINFO": "-O2 -g -DNDEBUG"
+            }
+        },
+        {
+            "name": "DISPLAY_RTOS_O2_Trace",
+            "inherits": "default",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "RelWithDebInfo",
+                "INSIGHT_RTOS_ENABLED": "ON",
+                "INSIGHT_DISPLAY_RTOS": "ON",
+                "INSIGHT_TRACE_ENABLED": "ON",
+                "INSIGHT_DIAG_EXPLAIN": "ON",
+                "INSIGHT_DIAG_DL": "ON",
+                "CMAKE_C_FLAGS_RELWITHDEBINFO": "-O2 -g -DNDEBUG"
+            }
         }
     ],
     "buildPresets": [
@@ -70,6 +116,22 @@
         {
             "name": "RTOS_O2",
             "configurePreset": "RTOS_O2"
+        },
+        {
+            "name": "DISPLAY_RTOS_Debug",
+            "configurePreset": "DISPLAY_RTOS_Debug"
+        },
+        {
+            "name": "DISPLAY_RTOS_O2",
+            "configurePreset": "DISPLAY_RTOS_O2"
+        },
+        {
+            "name": "DISPLAY_RTOS_Debug_Trace",
+            "configurePreset": "DISPLAY_RTOS_Debug_Trace"
+        },
+        {
+            "name": "DISPLAY_RTOS_O2_Trace",
+            "configurePreset": "DISPLAY_RTOS_O2_Trace"
         }
     ]
 }

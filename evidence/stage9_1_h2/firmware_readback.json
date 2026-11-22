@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "device": "STM32F103ZET6",
+  "idcode": "0x10036414",
+  "uid": "31ffd8053031533628791143",
+  "erased_pages": "0..30 (31 pages, 63488 bytes)",
+  "programmed_bytes": 63384,
+  "expected_sha256": "aa861203b2027b06f088c6be1562ce33803d1485bfa7befa712fc5fac394b91a",
+  "readback_sha256": "aa861203b2027b06f088c6be1562ce33803d1485bfa7befa712fc5fac394b91a",
+  "bytes_match": true,
+  "page30_tail_ff_verified": true,
+  "tail_ff_bytes": 104,
+  "option_bytes_unchanged": true,
+  "option_bytes_hex": "a55aff00ff00ff00ff00ff00ff00ff00"
+}

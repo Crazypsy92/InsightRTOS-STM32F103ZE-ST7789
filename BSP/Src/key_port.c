@@ -9,6 +9,9 @@
 #include "key_port.h"
 #include "multi_button.h"
 #include "delay.h"
+#ifdef INSIGHT_DISPLAY_RTOS
+#include "display_app.h"
+#endif
 
 /* 按键对象 */
 static Button s_key1;
@@ -54,15 +57,25 @@ static void key1_event_callback(Button *btn)
     switch (ev)
     {
         case BTN_SINGLE_CLICK:
+#ifdef INSIGHT_DISPLAY_RTOS
+            s_click_count++;
+            Display_KeyFromISR(KEY_EVENT_SHORT);
+#else
             s_pending_bits |= KEY_BIT_SHORT;
             s_click_count++;
             s_led_toggles++;
+#endif
             break;
 
         case BTN_LONG_PRESS_START:
+#ifdef INSIGHT_DISPLAY_RTOS
+            s_long_count++;
+            Display_KeyFromISR(KEY_EVENT_LONG);
+#else
             s_pending_bits |= KEY_BIT_LONG;
             s_long_count++;
             s_led_toggles++;
+#endif
             break;
 
         default:
@@ -126,6 +139,9 @@ void KEY_Task(void)
 
 key_event_t KEY_GetEvent(void)
 {
+#ifdef INSIGHT_DISPLAY_RTOS
+    return Display_ConsumeKeyEvent();
+#else
     key_event_t ev = KEY_EVENT_NONE;
     uint32_t state = key_critical_enter();
     if (s_pending_bits & KEY_BIT_LONG) {
@@ -137,6 +153,7 @@ key_event_t KEY_GetEvent(void)
     }
     key_critical_exit(state);
     return ev;
+#endif
 }
 
 uint8_t KEY_GetRawLevel(void)

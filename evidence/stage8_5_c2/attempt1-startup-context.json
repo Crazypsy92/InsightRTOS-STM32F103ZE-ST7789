@@ -1,0 +1,58 @@
+{
+  "hardware": true,
+  "checks": {
+    "physical_reset_entry": {
+      "pass": true,
+      "detail": {
+        "label": "physical_BOARD_RESET_entry",
+        "pc": 134221200,
+        "lr": 4294967295,
+        "msp": 536936448,
+        "psp": 536872496,
+        "control": 0,
+        "xpsr": 16777216,
+        "primask": 0,
+        "r4_r11": [
+          134275716,
+          536872576,
+          32,
+          20,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    "reset_MSP_and_vector": {
+      "pass": false,
+      "detail": null
+    }
+  },
+  "contexts": [
+    {
+      "label": "physical_BOARD_RESET_entry",
+      "pc": 134221200,
+      "lr": 4294967295,
+      "msp": 536936448,
+      "psp": 536872496,
+      "control": 0,
+      "xpsr": 16777216,
+      "primask": 0,
+      "r4_r11": [
+        134275716,
+        536872576,
+        32,
+        20,
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "task_entries": [],
+  "pend_sv_switches": [],
+  "status": "FAIL",
+  "error": "reset_MSP_and_vector"
+}

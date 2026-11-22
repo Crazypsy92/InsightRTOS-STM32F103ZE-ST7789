@@ -1,0 +1,147 @@
+{
+  "stage": "9.1-H1",
+  "generated_at": "2026-11-22T12:54:00+08:00",
+  "target_device": "STM32F103ZET6",
+  "mcu_architecture": "ARM Cortex-M3 (r1p1 / r2p0)",
+  "flash_total_bytes": 524288,
+  "flash_page_size_bytes": 2048,
+  "sram_total_bytes": 65536,
+  "firmware_packages": {
+    "DISPLAY_RTOS_O2_Trace": {
+      "profile": "Production O2 with Explainable Scheduling (Diagnostics Enabled)",
+      "configuration": {
+        "INSIGHT_DISPLAY_RTOS": 1,
+        "INSIGHT_TRACE_ENABLED": 1,
+        "INSIGHT_DIAG_EXPLAIN": 1,
+        "RTOS_TESTING": 0,
+        "optimization": "-O2"
+      },
+      "entry_point": "0x080010b9",
+      "vector_table_vma": "0x08000000",
+      "flash_start": "0x08000000",
+      "flash_end": "0x0800f798",
+      "flash_size_bytes": 63384,
+      "flash_pages_required": 31,
+      "flash_erase_range": "0x08000000 - 0x0800f800",
+      "ram_used_bytes": 45280,
+      "ram_percentage": 69.09,
+      "files": {
+        "elf": {
+          "name": "insightrtos_display_o2_trace.elf",
+          "sha256": "00a3653d4719d19afd9c142035125427517a229af2d934fd7df49a6142dc2e59",
+          "bytes": 505896
+        },
+        "bin": {
+          "name": "insightrtos_display_o2_trace.bin",
+          "sha256": "aa861203b2027b06f088c6be1562ce33803d1485bfa7befa712fc5fac394b91a",
+          "bytes": 63384
+        },
+        "hex": {
+          "name": "insightrtos_display_o2_trace.hex",
+          "sha256": "697c33429d1f5a26fd17150f02ebfaeab2767359e44363852b61b20400d4e891"
+        },
+        "map": {
+          "name": "insightrtos_display_o2_trace.map",
+          "sha256": "e615d12e7ec91b8dad83c248db0ada1f2eeed7a83319ead42ffca685848c9527"
+        }
+      }
+    },
+    "DISPLAY_RTOS_Debug_Trace": {
+      "profile": "Debug with Explainable Scheduling (Diagnostics Enabled)",
+      "configuration": {
+        "INSIGHT_DISPLAY_RTOS": 1,
+        "INSIGHT_TRACE_ENABLED": 1,
+        "INSIGHT_DIAG_EXPLAIN": 1,
+        "RTOS_TESTING": 0,
+        "optimization": "-g -O0"
+      },
+      "entry_point": "0x080016c1",
+      "vector_table_vma": "0x08000000",
+      "flash_start": "0x08000000",
+      "flash_end": "0x080143fc",
+      "flash_size_bytes": 82940,
+      "flash_pages_required": 41,
+      "flash_erase_range": "0x08000000 - 0x08014800",
+      "ram_used_bytes": 45276,
+      "ram_percentage": 69.09,
+      "files": {
+        "elf": {
+          "name": "insightrtos_display_debug_trace.elf",
+          "sha256": "9906e060fe6a1d20c45ba17cf04903379a6558ee407d53d47f39e63b189ecf01",
+          "bytes": 990044
+        },
+        "bin": {
+          "name": "insightrtos_display_debug_trace.bin",
+          "sha256": "f13bc21c395ebf5962276f05f884be3e8fde92b7e6cecc682f0345afcf41d6f9",
+          "bytes": 82940
+        },
+        "hex": {
+          "name": "insightrtos_display_debug_trace.hex",
+          "sha256": "d4f9deadc939185f305d52869d8c3448e903c20ccfc01dded3b463546f46abb0"
+        },
+        "map": {
+          "name": "insightrtos_display_debug_trace.map",
+          "sha256": "b387e5fb888beaec72206d28ad14926904c2938df311adcae52e7a80bd026b98"
+        }
+      }
+    },
+    "DISPLAY_RTOS_O2_Baseline": {
+      "profile": "Production O2 Baseline (Diagnostics Closed)",
+      "configuration": {
+        "INSIGHT_DISPLAY_RTOS": 1,
+        "INSIGHT_TRACE_ENABLED": 0,
+        "INSIGHT_DIAG_EXPLAIN": 0,
+        "RTOS_TESTING": 0,
+        "optimization": "-O2"
+      },
+      "entry_point": "0x080010b9",
+      "flash_size_bytes": 59828,
+      "flash_pages_required": 30,
+      "flash_erase_range": "0x08000000 - 0x0800f000",
+      "files": {
+        "elf": {
+          "name": "insightrtos_display_o2.elf",
+          "sha256": "d0f8ad9e4e84819da1585acdbbceccd3613762c4baf4ba4a3cc0cf51e3ac7dae"
+        },
+        "bin": {
+          "name": "insightrtos_display_o2.bin",
+          "sha256": "6e90b13f1d69802ca5a7b4c2b5f7bc1cc473626d546cae232995c98fad4fd924",
+          "bytes": 59828
+        },
+        "hex": {
+          "name": "insightrtos_display_o2.hex",
+          "sha256": "fc443f36067b9f3ac92ae343101688832fc09b9a3e0bf78125c364e513c3c5ce"
+        }
+      }
+    },
+    "DISPLAY_RTOS_Debug_Baseline": {
+      "profile": "Debug Baseline (Diagnostics Closed)",
+      "configuration": {
+        "INSIGHT_DISPLAY_RTOS": 1,
+        "INSIGHT_TRACE_ENABLED": 0,
+        "INSIGHT_DIAG_EXPLAIN": 0,
+        "RTOS_TESTING": 0,
+        "optimization": "-g -O0"
+      },
+      "entry_point": "0x080016c1",
+      "flash_size_bytes": 78344,
+      "flash_pages_required": 39,
+      "flash_erase_range": "0x08000000 - 0x08013800",
+      "files": {
+        "elf": {
+          "name": "insightrtos_display_debug.elf",
+          "sha256": "e430355e3517900f68898be439457f4de29f7fddca88fa4cc64ad8cf3ba14561"
+        },
+        "bin": {
+          "name": "insightrtos_display_debug.bin",
+          "sha256": "eea35032e72d620cde96c34fe1af96182f6497d475cdd9d8ab3de8a78f9bbc9c",
+          "bytes": 78344
+        },
+        "hex": {
+          "name": "insightrtos_display_debug.hex",
+          "sha256": "d5a7521a06c61ec1e29bf0647967d27019314e874eac2407727a4483e4cb8934"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "hardware": true,
+  "scope": "halt after completed continuous30min window",
+  "stacks": {
+    "KEY": {
+      "base": 536875824,
+      "bytes": 4096,
+      "guard": 3735929054,
+      "guard_ok": true,
+      "observed_used_from_fill_bytes": 176,
+      "untouched_pattern_bytes_excluding_guard": 3916
+    },
+    "Controller": {
+      "base": 536879920,
+      "bytes": 4096,
+      "guard": 3735929054,
+      "guard_ok": true,
+      "observed_used_from_fill_bytes": 328,
+      "untouched_pattern_bytes_excluding_guard": 3764
+    },
+    "LCD": {
+      "base": 536884016,
+      "bytes": 4096,
+      "guard": 3735929054,
+      "guard_ok": true,
+      "observed_used_from_fill_bytes": 720,
+      "untouched_pattern_bytes_excluding_guard": 3372
+    },
+    "Monitor": {
+      "base": 536888112,
+      "bytes": 4096,
+      "guard": 3735929054,
+      "guard_ok": true,
+      "observed_used_from_fill_bytes": 248,
+      "untouched_pattern_bytes_excluding_guard": 3844
+    },
+    "Idle": {
+      "base": 536874960,
+      "bytes": 512,
+      "guard": 3735929054,
+      "guard_ok": true,
+      "observed_used_from_fill_bytes": 72,
+      "untouched_pattern_bytes_excluding_guard": 436
+    }
+  },
+  "tasks": [
+    {
+      "id": 1,
+      "sp": 536879744,
+      "stack_base": 536875824,
+      "stack_words": 1024,
+      "state": 4,
+      "base_priority": 5,
+      "effective_priority": 5
+    },
+    {
+      "id": 2,
+      "sp": 536883760,
+      "stack_base": 536879920,
+      "stack_words": 1024,
+      "state": 4,
+      "base_priority": 4,
+      "effective_priority": 4
+    },
+    {
+      "id": 3,
+      "sp": 536887888,
+      "stack_base": 536884016,
+      "stack_words": 1024,
+      "state": 4,
+      "base_priority": 2,
+      "effective_priority": 2
+    },
+    {
+      "id": 4,
+      "sp": 536891960,
+      "stack_base": 536888112,
+      "stack_words": 1024,
+      "state": 4,
+      "base_priority": 1,
+      "effective_priority": 1
+    }
+  ],
+  "registers": {
+    "pc": 134246902,
+    "lr": 134240543,
+    "psp": 536875464,
+    "msp": 536936448,
+    "control": 2,
+    "xPSR": 16777216,
+    "primask": 0
+  },
+  "MSP_bounds_ok": true,
+  "MSP_high_watermark": "NOT MEASURED: MSP reserve was not prefilled by frozen firmware",
+  "faults": {
+    "CFSR": 0,
+    "HFSR": 0,
+    "assert_line": 0
+  },
+  "status": "PASS"
+}

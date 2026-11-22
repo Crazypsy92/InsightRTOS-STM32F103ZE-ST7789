@@ -1,0 +1,277 @@
+CMakeCCompilerId.c:907:5:main	24	static
+
+CMakeCXXCompilerId.cpp:924:5:int main(int, char**)	24	static
+
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/bsp_spi.c:130:9:BSP_SPI_IsBusActive	0	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/bsp_spi.c:138:12:BSP_SPI_GetBus	16	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/bsp_spi.c:150:12:BSP_SPI1_GetBus	8	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/bsp_spi.c:155:12:BSP_SPI2_GetBus	8	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/bsp_spi.c:160:12:BSP_SPI3_GetBus	8	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/bsp_spi.c:165:5:BSP_SPI_RecoverBus	24	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/bsp_spi.c:180:6:BSP_SPI_ResetBuses	16	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/bsp_spi.c:188:5:BSP_SPI3_Recover	8	static
+
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/key_port.c:41:16:key1_read_pin	0	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/key_port.c:50:13:key1_event_callback	8	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/key_port.c:86:6:KEY_Init	48	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/key_port.c:121:6:KEY_OnSysTick1ms	0	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/key_port.c:131:6:KEY_Task	0	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/key_port.c:140:13:KEY_GetEvent	0	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/key_port.c:159:9:KEY_GetRawLevel	0	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/key_port.c:164:10:KEY_GetClickCount	0	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/key_port.c:169:10:KEY_GetLongCount	0	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/key_port.c:174:6:KEY_SetLED	0	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/key_port.c:183:6:KEY_ToggleLED	0	static
+
+
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/multi_button.c:26:6:button_init	24	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/multi_button.c:46:6:button_attach	0	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/multi_button.c:58:6:button_detach	0	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/multi_button.c:69:13:button_get_event	0	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/multi_button.c:80:9:button_get_repeat_count	0	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/multi_button.c:91:6:button_reset	0	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/multi_button.c:106:5:button_is_pressed	0	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/multi_button.c:244:5:button_start	4	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/multi_button.c:264:6:button_stop	0	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/multi_button.c:286:6:button_ticks	8	static
+
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/spi_stm32_ll.c:504:12:ll_in_isr	0	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/spi_stm32_ll.c:45:13:gpio_clock_enable	24	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/spi_stm32_ll.c:239:13:dma_setup_channel	12	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/spi_stm32_ll.c:133:12:ll_configure	32	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/spi_stm32_ll.c:271:25:spi_recover	40	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/spi_stm32_ll.c:473:12:ll_transfer	120	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/spi_stm32_ll.c:494:12:ll_recover_op	8	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/spi_stm32_ll.c:521:6:spi_stm32_ll_init	64	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/spi_stm32_ll.c:587:12:spi_stm32_ll_bus	0	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/spi_stm32_ll.c:592:5:spi_stm32_ll_recover	8	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/spi_stm32_ll.c:601:10:spi_stm32_ll_get_recover_count	0	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/spi_stm32_ll.c:606:9:spi_stm32_ll_get_last_error	0	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/spi_stm32_ll.c:611:6:spi_stm32_ll_clear_error	0	static
+
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/st7789.c:50:19:lcd_write_bytes	32	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/st7789.c:275:12:LCD_GetLastError	0	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/st7789.c:280:6:LCD_ClearError	0	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/st7789.c:291:12:LCD_WR_REG	24	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/st7789.c:313:12:LCD_WR_DATA8	24	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/st7789.c:108:12:LCD_SetRotation	24	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/st7789.c:334:12:LCD_WR_DATA	24	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/st7789.c:357:12:LCD_Address_Set	32	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/st7789.c:400:12:LCD_Fill	40	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/st7789.c:392:12:LCD_Clear	16	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/st7789.c:152:12:ST7789_Init	16	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/st7789.c:442:12:LCD_DrawPoint	32	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/st7789.c:458:12:LCD_DrawLine	64	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/st7789.c:494:12:LCD_DrawLineH	16	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/st7789.c:499:12:LCD_DrawLineV	16	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/st7789.c:504:12:LCD_DrawRect	40	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/st7789.c:520:12:LCD_DrawCircle	72	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/st7789.c:556:12:LCD_FillCircle	48	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/st7789.c:595:12:LCD_ShowChar	56	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/st7789.c:650:12:LCD_ShowString	48	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/st7789.c:671:12:LCD_ShowIntNum	72	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/st7789.c:712:12:LCD_ShowFloatNum	72	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/st7789.c:761:12:LCD_ShowPicture	32	static
+
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/st7789_port.c:105:13:Port_Dc	0	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/st7789_port.c:119:13:Port_Bl	0	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/st7789_port.c:155:13:Port_DelayMs	0	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/st7789_port.c:79:19:Port_Cs	24	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/st7789_port.c:59:13:gpio_clock_enable	24	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/st7789_port.c:133:19:Port_Write	16	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/st7789_port.c:196:12:ST7789_PortInitWithConfig	56	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/BSP/Src/st7789_port.c:253:12:ST7789_PortInit	0	static
+
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Core/Src/gpio.c:42:6:MX_GPIO_Init	56	static
+
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Core/Src/main.c:141:6:SystemClock_Config	0	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Core/Src/main.c:73:5:main	16	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Core/Src/main.c:190:6:Error_Handler	0	static
+
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Core/Src/stm32f1xx_it.c:71:6:NMI_Handler	0	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Core/Src/stm32f1xx_it.c:86:6:HardFault_Handler	0	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Core/Src/stm32f1xx_it.c:101:6:MemManage_Handler	0	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Core/Src/stm32f1xx_it.c:116:6:BusFault_Handler	0	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Core/Src/stm32f1xx_it.c:131:6:UsageFault_Handler	0	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Core/Src/stm32f1xx_it.c:161:6:DebugMon_Handler	0	static
+
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Core/display_app.c:157:13:monitor_task	88	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Core/display_app.c:130:13:lcd_task	64	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Core/display_app.c:35:13:key_task	16	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Core/display_app.c:79:13:controller_task	176	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Core/display_app.c:20:6:Display_RequireLCDTask	16	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Core/display_app.c:27:6:Display_KeyFromISR	16	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Core/display_app.c:182:16:display_app_start	64	static
+
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Core/../BSP/Src/app_lcd_test.c:146:13:lcd_test_anim_task	40	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Core/../BSP/Src/app_lcd_test.c:37:13:lcd_test_draw_colors	48	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Core/../BSP/Src/app_lcd_test.c:130:13:lcd_test_draw_anim	40	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Core/../BSP/Src/app_lcd_test.c:65:13:lcd_test_draw_shapes	32	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Core/../BSP/Src/app_lcd_test.c:89:13:lcd_test_draw_text	48	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Core/../BSP/Src/app_lcd_test.c:186:13:lcd_test_draw_page	8	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Core/../BSP/Src/app_lcd_test.c:212:13:lcd_test_next_page	0	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Core/display_pages.c:19:13:snapshot	24	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Core/../BSP/Src/app_lcd_test.c:218:6:LCD_Test_Init	16	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Core/../BSP/Src/app_lcd_test.c:235:6:LCD_Test_Task	16	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Core/display_pages.c:10:13:Display_ConsumeKeyEvent	8	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Core/display_pages.c:26:6:Display_PagesInit	8	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Core/display_pages.c:34:6:Display_PagesExecute	48	static
+
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Core/display_policy.c:2:6:Display_UpdateDue	0	static
+
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Core/display_ui.c:72:13:row	40	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Core/display_ui.c:54:13:number	40	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Core/display_ui.c:64:13:task_line	24	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Core/display_ui.c:13:6:Display_ReadUIView	24	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Core/display_ui.c:84:6:Display_UIWelcome	168	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Core/display_ui.c:104:6:Display_UIMonitor	168	static
+
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/port/insight_board_port.c:18:16:rtos_assert_fail	0	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/port/insight_board_port.c:12:10:rtos_port_cpu_hz	8	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/port/insight_board_port.c:29:7:_sbrk	8	static
+
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/port/insight_timebase.c:13:6:Timebase_Init	40	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/port/insight_timebase.c:48:6:TIM2_IRQHandler	0	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/port/insight_timebase.c:60:10:GetTick_ms	0	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/port/insight_timebase.c:61:6:Delay_us	0	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/port/insight_timebase.c:67:6:Delay_ms	8	static
+
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/arch/arm/cortex_m3/port.c:13:11:rtos_port_stack_init	16	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/arch/arm/cortex_m3/port.c:35:6:rtos_port_context_valid	0	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/arch/arm/cortex_m3/port.c:47:6:rtos_port_init	8	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/arch/arm/cortex_m3/port.c:57:16:rtos_port_start	0	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/arch/arm/cortex_m3/port.c:63:6:rtos_port_yield	0	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/arch/arm/cortex_m3/port.c:69:6:rtos_port_in_handler	0	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/arch/arm/cortex_m3/port.c:76:6:rtos_port_in_kernel_isr	0	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/arch/arm/cortex_m3/port.c:83:6:rtos_port_in_unmaskable_handler	0	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/arch/arm/cortex_m3/port.c:90:6:rtos_port_interrupts_masked	0	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/arch/arm/cortex_m3/port.c:100:10:rtos_port_irq_save	0	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/arch/arm/cortex_m3/port.c:107:6:rtos_port_irq_restore	0	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/arch/arm/cortex_m3/port.c:112:16:rtos_port_idle	0	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/arch/arm/cortex_m3/port.c:119:6:rtos_port_task_create_context	0	static
+
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/arch/arm/cortex_m3/systick.c:13:6:rtos_port_tick_init	24	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/arch/arm/cortex_m3/systick.c:25:6:rtos_port_tick_start	8	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/arch/arm/cortex_m3/systick.c:36:6:SysTick_Handler	0	static
+
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/arch/arm/cortex_m3/systick_config.c:3:6:rtos_port_systick_reload	0	static
+
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/critical.c:5:18:rtos_critical_enter	8	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/critical.c:12:6:rtos_critical_exit	8	static
+
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/delay.c:10:22:delay_call_context	8	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/delay.c:24:15:rtos_delay	16	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/delay.c:45:15:rtos_delay_until	24	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/delay.c:76:6:rtos_delay_process_expired	16	static
+
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/delay_queue.c:10:6:rtos_delay_queue_insert	16	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/delay_queue.c:51:14:rtos_delay_queue_peek_due	8	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/delay_queue.c:63:14:rtos_delay_queue_pop_due	8	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/delay_queue.c:73:6:rtos_delay_queue_remove	8	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/delay_queue.c:88:6:rtos_delay_queue_empty	8	static
+
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/mutex.c:10:22:mutex_context	8	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/mutex.c:20:6:rtos_mutex_set_owner_locked	16	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/mutex.c:43:15:rtos_mutex_init	16	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/mutex.c:125:6:rtos_mutex_recalculate_locked	8	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/mutex.c:53:15:rtos_mutex_lock	24	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/mutex.c:106:15:rtos_mutex_unlock	24	static
+
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/priority.c:9:6:rtos_task_set_effective_locked	24	static
+
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/priority_graph.c:7:14:rtos_priority_recompute_locked	80	static
+
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/queue.c:9:22:queue_context	8	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/queue.c:47:15:rtos_queue_init	24	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/queue.c:75:15:rtos_queue_wait_head_locked	8	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/queue.c:126:22:queue_transfer	72	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/queue.c:192:15:rtos_queue_send	32	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/queue.c:197:15:rtos_queue_receive	24	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/queue.c:203:15:rtos_queue_send_from_isr	24	static
+
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/ready_queue.c:11:6:rtos_ready_queue_push	8	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/ready_queue.c:36:6:rtos_ready_queue_push_front	8	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/ready_queue.c:59:6:rtos_ready_queue_has_priority	8	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/ready_queue.c:65:14:rtos_ready_queue_pop	8	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/ready_queue.c:101:6:rtos_ready_queue_remove	8	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/ready_queue.c:117:5:rtos_ready_queue_highest_priority	8	static
+
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/scheduler.c:19:13:idle_entry	8	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/scheduler.c:25:6:rtos_sched_started	0	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/scheduler.c:30:6:rtos_sched_stack_overlaps	0	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/scheduler.c:67:6:rtos_sched_switch	16	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/scheduler.c:170:6:rtos_sched_request	8	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/scheduler.c:180:6:rtos_sched_task_ready	8	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/scheduler.c:196:6:rtos_sched_block_current	16	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/scheduler.c:220:6:rtos_sched_wake	16	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/scheduler.c:251:6:rtos_sched_on_tick	8	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/scheduler.c:274:16:rtos_start	8	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/scheduler.c:290:6:rtos_yield	16	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/scheduler.c:302:6:rtos_sched_reconsider	8	static
+
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/semaphore.c:27:13:sem_check	8	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/semaphore.c:10:22:sem_context	8	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/semaphore.c:36:15:rtos_sem_init	16	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/semaphore.c:41:15:rtos_sem_init_counting	24	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/semaphore.c:104:15:rtos_sem_take	24	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/semaphore.c:152:15:rtos_sem_give_locked	8	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/semaphore.c:184:15:rtos_sem_give	16	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/semaphore.c:190:15:rtos_sem_give_from_isr	16	static
+
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/task.c:240:22:task_ref_validate_locked	8	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/task.c:18:6:rtos_task_reclaimable_locked	8	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/task.c:31:6:rtos_task_ref_capture_locked	24	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/task.c:44:14:rtos_task_ref_resolve_locked	24	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/task.c:111:6:rtos_task_stack_valid	4	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/task.c:125:22:task_create_common	56	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/task.c:200:15:rtos_task_create	32	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/task.c:208:15:rtos_task_create_with_ref	32	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/task.c:224:15:rtos_task_self_ref	16	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/task.c:248:15:rtos_task_cancel_wait	24	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/task.c:263:15:rtos_task_get_snapshot	32	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/task.c:278:14:rtos_task_current	0	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/task.c:284:6:rtos_task_stop_pending_locked	8	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/task.c:293:15:rtos_task_request_stop	32	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/task.c:315:15:rtos_task_stop_requested	16	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/task.c:330:16:rtos_task_exit	8	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/task.c:358:8:rtos_task_snapshot_locked	8	static
+
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/tick.c:11:10:rtos_tick_get	8	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/tick.c:19:6:rtos_tick_handler	16	static
+
+
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/wait.c:12:6:rtos_wait_complete_locked	24	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/kernel/wait.c:89:6:rtos_wait_block_allowed_locked	8	static
+
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Middlewares/InsightRTOS/lib/memcpy.c:3:7:memcpy	0	static
+
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Core/Src/system_stm32f1xx.c:175:6:SystemInit	0	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Core/Src/system_stm32f1xx.c:224:6:SystemCoreClockUpdate	0	static
+
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_exti.c:80:10:LL_EXTI_DeInit	0	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_exti.c:105:10:LL_EXTI_Init	0	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_exti.c:186:6:LL_EXTI_StructInit	0	static
+
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_gpio.c:89:13:LL_GPIO_DeInit	0	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_gpio.c:155:13:LL_GPIO_Init	36	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_gpio.c:227:6:LL_GPIO_StructInit	4	static
+
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_pwr.c:56:13:LL_PWR_DeInit	0	static
+
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_rcc.c:101:13:LL_RCC_DeInit	0	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_rcc.c:188:6:LL_RCC_GetSystemClocksFreq	4	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_rcc.c:245:10:LL_RCC_GetUSBClockFreq	0	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_rcc.c:304:10:LL_RCC_GetADCClockFreq	4	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_rcc.c:338:10:RCC_GetSystemClockFreq	0	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_rcc.c:370:10:RCC_GetHCLKClockFreq	0	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_rcc.c:381:10:RCC_GetPCLK1ClockFreq	0	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_rcc.c:392:10:RCC_GetPCLK2ClockFreq	0	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_rcc.c:402:10:RCC_PLL_GetFreqDomain_SYS	0	static
+
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_spi.c:122:13:LL_SPI_DeInit	0	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_spi.c:178:13:LL_SPI_Init	8	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_spi.c:248:6:LL_SPI_StructInit	0	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_spi.c:352:13:LL_I2S_DeInit	0	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_spi.c:367:13:LL_I2S_Init	32	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_spi.c:476:6:LL_I2S_StructInit	0	static
+/home/mythepsy92/program/codex/InsightRTOS/app/stm32f103ze_st7789/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_spi.c:498:6:LL_I2S_ConfigPrescaler	0	static

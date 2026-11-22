@@ -1,0 +1,1201 @@
+{
+  "label": "stability60",
+  "hardware": true,
+  "status": "PASS",
+  "strict_uninterrupted_window": true,
+  "debug_halts_during_window": false,
+  "samples": [
+    {
+      "task_runs": [
+        7,
+        13771,
+        930,
+        222
+      ],
+      "key_isr_events": 7,
+      "key_task_events": 7,
+      "controller_events": 7,
+      "lcd_events": 7,
+      "key_overflows": 0,
+      "command_overflows": 0,
+      "telemetry_overflows": 0,
+      "transport_errors": 0,
+      "initialization_errors": 0,
+      "lcd_refreshes": 929,
+      "page_changes": 9,
+      "page": 4,
+      "automatic": 0,
+      "ready": 1,
+      "tick": 13704,
+      "key_short": 6,
+      "key_long": 1,
+      "queue_depths": [
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "welcome_shows": 1,
+      "monitor_refreshes": 378,
+      "monitor_rows": 874,
+      "display_fault": 0,
+      "ll_recover_count": 0,
+      "last_lcd_error": 0,
+      "ll_last_error": 0,
+      "snapshots": [
+        {
+          "state": 4,
+          "base_priority": 5,
+          "effective_priority": 5,
+          "slot": 0,
+          "generation": 1
+        },
+        {
+          "state": 4,
+          "base_priority": 4,
+          "effective_priority": 4,
+          "slot": 1,
+          "generation": 1
+        },
+        {
+          "state": 4,
+          "base_priority": 2,
+          "effective_priority": 2,
+          "slot": 2,
+          "generation": 1
+        },
+        {
+          "state": 2,
+          "base_priority": 1,
+          "effective_priority": 1,
+          "slot": 3,
+          "generation": 1
+        }
+      ],
+      "kernel_ticks": 13775,
+      "tim2_ms": 137772,
+      "current_tcb": 536875472,
+      "assert_line": 0,
+      "CFSR": 0,
+      "HFSR": 0,
+      "guards": {
+        "KEY": 3735929054,
+        "Controller": 3735929054,
+        "LCD": 3735929054,
+        "Monitor": 3735929054,
+        "Idle": 3735929054
+      },
+      "ll_direct_recoveries": 0,
+      "ll_direct_last_error": 0,
+      "DHCSR": 16842753,
+      "state": "running",
+      "PC13_ODR": 0,
+      "monotonic": 1033.64783781,
+      "sample_read_seconds": 0.09748893100004352,
+      "utc": "2026-11-22T02:56:14Z"
+    },
+    {
+      "task_runs": [
+        7,
+        14281,
+        948,
+        229
+      ],
+      "key_isr_events": 7,
+      "key_task_events": 7,
+      "controller_events": 7,
+      "lcd_events": 7,
+      "key_overflows": 0,
+      "command_overflows": 0,
+      "telemetry_overflows": 0,
+      "transport_errors": 0,
+      "initialization_errors": 0,
+      "lcd_refreshes": 947,
+      "page_changes": 9,
+      "page": 4,
+      "automatic": 0,
+      "ready": 1,
+      "tick": 14200,
+      "key_short": 6,
+      "key_long": 1,
+      "queue_depths": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "welcome_shows": 1,
+      "monitor_refreshes": 396,
+      "monitor_rows": 914,
+      "display_fault": 0,
+      "ll_recover_count": 0,
+      "last_lcd_error": 0,
+      "ll_last_error": 0,
+      "snapshots": [
+        {
+          "state": 4,
+          "base_priority": 5,
+          "effective_priority": 5,
+          "slot": 0,
+          "generation": 1
+        },
+        {
+          "state": 4,
+          "base_priority": 4,
+          "effective_priority": 4,
+          "slot": 1,
+          "generation": 1
+        },
+        {
+          "state": 4,
+          "base_priority": 2,
+          "effective_priority": 2,
+          "slot": 2,
+          "generation": 1
+        },
+        {
+          "state": 2,
+          "base_priority": 1,
+          "effective_priority": 1,
+          "slot": 3,
+          "generation": 1
+        }
+      ],
+      "kernel_ticks": 14285,
+      "tim2_ms": 142869,
+      "current_tcb": 536875472,
+      "assert_line": 0,
+      "CFSR": 0,
+      "HFSR": 0,
+      "guards": {
+        "KEY": 3735929054,
+        "Controller": 3735929054,
+        "LCD": 3735929054,
+        "Monitor": 3735929054,
+        "Idle": 3735929054
+      },
+      "ll_direct_recoveries": 0,
+      "ll_direct_last_error": 0,
+      "DHCSR": 16842753,
+      "state": "running",
+      "PC13_ODR": 0,
+      "monotonic": 1038.746677932,
+      "sample_read_seconds": 0.09836746099995253,
+      "utc": "2026-11-22T02:56:20Z"
+    },
+    {
+      "task_runs": [
+        7,
+        14791,
+        966,
+        237
+      ],
+      "key_isr_events": 7,
+      "key_task_events": 7,
+      "controller_events": 7,
+      "lcd_events": 7,
+      "key_overflows": 0,
+      "command_overflows": 0,
+      "telemetry_overflows": 0,
+      "transport_errors": 0,
+      "initialization_errors": 0,
+      "lcd_refreshes": 965,
+      "page_changes": 9,
+      "page": 4,
+      "automatic": 0,
+      "ready": 1,
+      "tick": 14704,
+      "key_short": 6,
+      "key_long": 1,
+      "queue_depths": [
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "welcome_shows": 1,
+      "monitor_refreshes": 414,
+      "monitor_rows": 956,
+      "display_fault": 0,
+      "ll_recover_count": 0,
+      "last_lcd_error": 0,
+      "ll_last_error": 0,
+      "snapshots": [
+        {
+          "state": 4,
+          "base_priority": 5,
+          "effective_priority": 5,
+          "slot": 0,
+          "generation": 1
+        },
+        {
+          "state": 4,
+          "base_priority": 4,
+          "effective_priority": 4,
+          "slot": 1,
+          "generation": 1
+        },
+        {
+          "state": 4,
+          "base_priority": 2,
+          "effective_priority": 2,
+          "slot": 2,
+          "generation": 1
+        },
+        {
+          "state": 2,
+          "base_priority": 1,
+          "effective_priority": 1,
+          "slot": 3,
+          "generation": 1
+        }
+      ],
+      "kernel_ticks": 14794,
+      "tim2_ms": 147967,
+      "current_tcb": 536875472,
+      "assert_line": 0,
+      "CFSR": 0,
+      "HFSR": 0,
+      "guards": {
+        "KEY": 3735929054,
+        "Controller": 3735929054,
+        "LCD": 3735929054,
+        "Monitor": 3735929054,
+        "Idle": 3735929054
+      },
+      "ll_direct_recoveries": 0,
+      "ll_direct_last_error": 0,
+      "DHCSR": 16842753,
+      "state": "running",
+      "PC13_ODR": 0,
+      "monotonic": 1043.844472534,
+      "sample_read_seconds": 0.097489140000107,
+      "utc": "2026-11-22T02:56:25Z"
+    },
+    {
+      "task_runs": [
+        7,
+        15301,
+        984,
+        244
+      ],
+      "key_isr_events": 7,
+      "key_task_events": 7,
+      "controller_events": 7,
+      "lcd_events": 7,
+      "key_overflows": 0,
+      "command_overflows": 0,
+      "telemetry_overflows": 0,
+      "transport_errors": 0,
+      "initialization_errors": 0,
+      "lcd_refreshes": 982,
+      "page_changes": 9,
+      "page": 4,
+      "automatic": 0,
+      "ready": 1,
+      "tick": 15200,
+      "key_short": 6,
+      "key_long": 1,
+      "queue_depths": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "welcome_shows": 1,
+      "monitor_refreshes": 431,
+      "monitor_rows": 995,
+      "display_fault": 0,
+      "ll_recover_count": 0,
+      "last_lcd_error": 0,
+      "ll_last_error": 0,
+      "snapshots": [
+        {
+          "state": 4,
+          "base_priority": 5,
+          "effective_priority": 5,
+          "slot": 0,
+          "generation": 1
+        },
+        {
+          "state": 4,
+          "base_priority": 4,
+          "effective_priority": 4,
+          "slot": 1,
+          "generation": 1
+        },
+        {
+          "state": 4,
+          "base_priority": 2,
+          "effective_priority": 2,
+          "slot": 2,
+          "generation": 1
+        },
+        {
+          "state": 2,
+          "base_priority": 1,
+          "effective_priority": 1,
+          "slot": 3,
+          "generation": 1
+        }
+      ],
+      "kernel_ticks": 15303,
+      "tim2_ms": 153050,
+      "current_tcb": 536874528,
+      "assert_line": 0,
+      "CFSR": 0,
+      "HFSR": 0,
+      "guards": {
+        "KEY": 3735929054,
+        "Controller": 3735929054,
+        "LCD": 3735929054,
+        "Monitor": 3735929054,
+        "Idle": 3735929054
+      },
+      "ll_direct_recoveries": 0,
+      "ll_direct_last_error": 0,
+      "DHCSR": 16842753,
+      "state": "running",
+      "PC13_ODR": 0,
+      "monotonic": 1048.926339807,
+      "sample_read_seconds": 0.08165546899999754,
+      "utc": "2026-11-22T02:56:30Z"
+    },
+    {
+      "task_runs": [
+        7,
+        15809,
+        1001,
+        253
+      ],
+      "key_isr_events": 7,
+      "key_task_events": 7,
+      "controller_events": 7,
+      "lcd_events": 7,
+      "key_overflows": 0,
+      "command_overflows": 0,
+      "telemetry_overflows": 0,
+      "transport_errors": 0,
+      "initialization_errors": 0,
+      "lcd_refreshes": 1000,
+      "page_changes": 9,
+      "page": 4,
+      "automatic": 0,
+      "ready": 1,
+      "tick": 15800,
+      "key_short": 6,
+      "key_long": 1,
+      "queue_depths": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "welcome_shows": 1,
+      "monitor_refreshes": 449,
+      "monitor_rows": 1036,
+      "display_fault": 0,
+      "ll_recover_count": 0,
+      "last_lcd_error": 0,
+      "ll_last_error": 0,
+      "snapshots": [
+        {
+          "state": 4,
+          "base_priority": 5,
+          "effective_priority": 5,
+          "slot": 0,
+          "generation": 1
+        },
+        {
+          "state": 4,
+          "base_priority": 4,
+          "effective_priority": 4,
+          "slot": 1,
+          "generation": 1
+        },
+        {
+          "state": 4,
+          "base_priority": 2,
+          "effective_priority": 2,
+          "slot": 2,
+          "generation": 1
+        },
+        {
+          "state": 2,
+          "base_priority": 1,
+          "effective_priority": 1,
+          "slot": 3,
+          "generation": 1
+        }
+      ],
+      "kernel_ticks": 15812,
+      "tim2_ms": 158149,
+      "current_tcb": 536875472,
+      "assert_line": 0,
+      "CFSR": 0,
+      "HFSR": 0,
+      "guards": {
+        "KEY": 3735929054,
+        "Controller": 3735929054,
+        "LCD": 3735929054,
+        "Monitor": 3735929054,
+        "Idle": 3735929054
+      },
+      "ll_direct_recoveries": 0,
+      "ll_direct_last_error": 0,
+      "DHCSR": 16842753,
+      "state": "running",
+      "PC13_ODR": 0,
+      "monotonic": 1054.022445791,
+      "sample_read_seconds": 0.0958802810000634,
+      "utc": "2026-11-22T02:56:35Z"
+    },
+    {
+      "task_runs": [
+        8,
+        16319,
+        1020,
+        261
+      ],
+      "key_isr_events": 8,
+      "key_task_events": 8,
+      "controller_events": 8,
+      "lcd_events": 8,
+      "key_overflows": 0,
+      "command_overflows": 0,
+      "telemetry_overflows": 0,
+      "transport_errors": 0,
+      "initialization_errors": 0,
+      "lcd_refreshes": 1018,
+      "page_changes": 9,
+      "page": 4,
+      "automatic": 0,
+      "ready": 1,
+      "tick": 16304,
+      "key_short": 6,
+      "key_long": 2,
+      "queue_depths": [
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "welcome_shows": 1,
+      "monitor_refreshes": 467,
+      "monitor_rows": 1077,
+      "display_fault": 0,
+      "ll_recover_count": 0,
+      "last_lcd_error": 0,
+      "ll_last_error": 0,
+      "snapshots": [
+        {
+          "state": 4,
+          "base_priority": 5,
+          "effective_priority": 5,
+          "slot": 0,
+          "generation": 1
+        },
+        {
+          "state": 4,
+          "base_priority": 4,
+          "effective_priority": 4,
+          "slot": 1,
+          "generation": 1
+        },
+        {
+          "state": 4,
+          "base_priority": 2,
+          "effective_priority": 2,
+          "slot": 2,
+          "generation": 1
+        },
+        {
+          "state": 2,
+          "base_priority": 1,
+          "effective_priority": 1,
+          "slot": 3,
+          "generation": 1
+        }
+      ],
+      "kernel_ticks": 16322,
+      "tim2_ms": 163245,
+      "current_tcb": 536875472,
+      "assert_line": 0,
+      "CFSR": 0,
+      "HFSR": 0,
+      "guards": {
+        "KEY": 3735929054,
+        "Controller": 3735929054,
+        "LCD": 3735929054,
+        "Monitor": 3735929054,
+        "Idle": 3735929054
+      },
+      "ll_direct_recoveries": 0,
+      "ll_direct_last_error": 0,
+      "DHCSR": 16842753,
+      "state": "running",
+      "PC13_ODR": 8192,
+      "monotonic": 1059.120859466,
+      "sample_read_seconds": 0.09820094499991683,
+      "utc": "2026-11-22T02:56:40Z"
+    },
+    {
+      "task_runs": [
+        8,
+        16829,
+        1038,
+        268
+      ],
+      "key_isr_events": 8,
+      "key_task_events": 8,
+      "controller_events": 8,
+      "lcd_events": 8,
+      "key_overflows": 0,
+      "command_overflows": 0,
+      "telemetry_overflows": 0,
+      "transport_errors": 0,
+      "initialization_errors": 0,
+      "lcd_refreshes": 1036,
+      "page_changes": 9,
+      "page": 4,
+      "automatic": 0,
+      "ready": 1,
+      "tick": 16800,
+      "key_short": 6,
+      "key_long": 2,
+      "queue_depths": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "welcome_shows": 1,
+      "monitor_refreshes": 485,
+      "monitor_rows": 1118,
+      "display_fault": 0,
+      "ll_recover_count": 0,
+      "last_lcd_error": 0,
+      "ll_last_error": 0,
+      "snapshots": [
+        {
+          "state": 4,
+          "base_priority": 5,
+          "effective_priority": 5,
+          "slot": 0,
+          "generation": 1
+        },
+        {
+          "state": 4,
+          "base_priority": 4,
+          "effective_priority": 4,
+          "slot": 1,
+          "generation": 1
+        },
+        {
+          "state": 4,
+          "base_priority": 2,
+          "effective_priority": 2,
+          "slot": 2,
+          "generation": 1
+        },
+        {
+          "state": 2,
+          "base_priority": 1,
+          "effective_priority": 1,
+          "slot": 3,
+          "generation": 1
+        }
+      ],
+      "kernel_ticks": 16832,
+      "tim2_ms": 168344,
+      "current_tcb": 536875472,
+      "assert_line": 0,
+      "CFSR": 0,
+      "HFSR": 0,
+      "guards": {
+        "KEY": 3735929054,
+        "Controller": 3735929054,
+        "LCD": 3735929054,
+        "Monitor": 3735929054,
+        "Idle": 3735929054
+      },
+      "ll_direct_recoveries": 0,
+      "ll_direct_last_error": 0,
+      "DHCSR": 16842753,
+      "state": "running",
+      "PC13_ODR": 8192,
+      "monotonic": 1064.218796666,
+      "sample_read_seconds": 0.09774139099999957,
+      "utc": "2026-11-22T02:56:45Z"
+    },
+    {
+      "task_runs": [
+        8,
+        17338,
+        1056,
+        276
+      ],
+      "key_isr_events": 8,
+      "key_task_events": 8,
+      "controller_events": 8,
+      "lcd_events": 8,
+      "key_overflows": 0,
+      "command_overflows": 0,
+      "telemetry_overflows": 0,
+      "transport_errors": 0,
+      "initialization_errors": 0,
+      "lcd_refreshes": 1054,
+      "page_changes": 9,
+      "page": 4,
+      "automatic": 0,
+      "ready": 1,
+      "tick": 17304,
+      "key_short": 6,
+      "key_long": 2,
+      "queue_depths": [
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "welcome_shows": 1,
+      "monitor_refreshes": 503,
+      "monitor_rows": 1160,
+      "display_fault": 0,
+      "ll_recover_count": 0,
+      "last_lcd_error": 0,
+      "ll_last_error": 0,
+      "snapshots": [
+        {
+          "state": 4,
+          "base_priority": 5,
+          "effective_priority": 5,
+          "slot": 0,
+          "generation": 1
+        },
+        {
+          "state": 4,
+          "base_priority": 4,
+          "effective_priority": 4,
+          "slot": 1,
+          "generation": 1
+        },
+        {
+          "state": 4,
+          "base_priority": 2,
+          "effective_priority": 2,
+          "slot": 2,
+          "generation": 1
+        },
+        {
+          "state": 2,
+          "base_priority": 1,
+          "effective_priority": 1,
+          "slot": 3,
+          "generation": 1
+        }
+      ],
+      "kernel_ticks": 17342,
+      "tim2_ms": 173442,
+      "current_tcb": 536875472,
+      "assert_line": 0,
+      "CFSR": 0,
+      "HFSR": 0,
+      "guards": {
+        "KEY": 3735929054,
+        "Controller": 3735929054,
+        "LCD": 3735929054,
+        "Monitor": 3735929054,
+        "Idle": 3735929054
+      },
+      "ll_direct_recoveries": 0,
+      "ll_direct_last_error": 0,
+      "DHCSR": 16842753,
+      "state": "running",
+      "PC13_ODR": 8192,
+      "monotonic": 1069.317594099,
+      "sample_read_seconds": 0.09850524299986319,
+      "utc": "2026-11-22T02:56:50Z"
+    },
+    {
+      "task_runs": [
+        8,
+        17848,
+        1074,
+        283
+      ],
+      "key_isr_events": 8,
+      "key_task_events": 8,
+      "controller_events": 8,
+      "lcd_events": 8,
+      "key_overflows": 0,
+      "command_overflows": 0,
+      "telemetry_overflows": 0,
+      "transport_errors": 0,
+      "initialization_errors": 0,
+      "lcd_refreshes": 1072,
+      "page_changes": 9,
+      "page": 4,
+      "automatic": 0,
+      "ready": 1,
+      "tick": 17800,
+      "key_short": 6,
+      "key_long": 2,
+      "queue_depths": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "welcome_shows": 1,
+      "monitor_refreshes": 521,
+      "monitor_rows": 1200,
+      "display_fault": 0,
+      "ll_recover_count": 0,
+      "last_lcd_error": 0,
+      "ll_last_error": 0,
+      "snapshots": [
+        {
+          "state": 4,
+          "base_priority": 5,
+          "effective_priority": 5,
+          "slot": 0,
+          "generation": 1
+        },
+        {
+          "state": 4,
+          "base_priority": 4,
+          "effective_priority": 4,
+          "slot": 1,
+          "generation": 1
+        },
+        {
+          "state": 4,
+          "base_priority": 2,
+          "effective_priority": 2,
+          "slot": 2,
+          "generation": 1
+        },
+        {
+          "state": 2,
+          "base_priority": 1,
+          "effective_priority": 1,
+          "slot": 3,
+          "generation": 1
+        }
+      ],
+      "kernel_ticks": 17852,
+      "tim2_ms": 178542,
+      "current_tcb": 536875472,
+      "assert_line": 0,
+      "CFSR": 0,
+      "HFSR": 0,
+      "guards": {
+        "KEY": 3735929054,
+        "Controller": 3735929054,
+        "LCD": 3735929054,
+        "Monitor": 3735929054,
+        "Idle": 3735929054
+      },
+      "ll_direct_recoveries": 0,
+      "ll_direct_last_error": 0,
+      "DHCSR": 16842753,
+      "state": "running",
+      "PC13_ODR": 8192,
+      "monotonic": 1074.417633724,
+      "sample_read_seconds": 0.099704623000207,
+      "utc": "2026-11-22T02:56:55Z"
+    },
+    {
+      "task_runs": [
+        8,
+        18358,
+        1091,
+        291
+      ],
+      "key_isr_events": 8,
+      "key_task_events": 8,
+      "controller_events": 8,
+      "lcd_events": 8,
+      "key_overflows": 0,
+      "command_overflows": 0,
+      "telemetry_overflows": 0,
+      "transport_errors": 0,
+      "initialization_errors": 0,
+      "lcd_refreshes": 1089,
+      "page_changes": 9,
+      "page": 4,
+      "automatic": 0,
+      "ready": 1,
+      "tick": 18304,
+      "key_short": 6,
+      "key_long": 2,
+      "queue_depths": [
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "welcome_shows": 1,
+      "monitor_refreshes": 538,
+      "monitor_rows": 1240,
+      "display_fault": 0,
+      "ll_recover_count": 0,
+      "last_lcd_error": 0,
+      "ll_last_error": 0,
+      "snapshots": [
+        {
+          "state": 4,
+          "base_priority": 5,
+          "effective_priority": 5,
+          "slot": 0,
+          "generation": 1
+        },
+        {
+          "state": 4,
+          "base_priority": 4,
+          "effective_priority": 4,
+          "slot": 1,
+          "generation": 1
+        },
+        {
+          "state": 4,
+          "base_priority": 2,
+          "effective_priority": 2,
+          "slot": 2,
+          "generation": 1
+        },
+        {
+          "state": 2,
+          "base_priority": 1,
+          "effective_priority": 1,
+          "slot": 3,
+          "generation": 1
+        }
+      ],
+      "kernel_ticks": 18361,
+      "tim2_ms": 183634,
+      "current_tcb": 536874528,
+      "assert_line": 0,
+      "CFSR": 0,
+      "HFSR": 0,
+      "guards": {
+        "KEY": 3735929054,
+        "Controller": 3735929054,
+        "LCD": 3735929054,
+        "Monitor": 3735929054,
+        "Idle": 3735929054
+      },
+      "ll_direct_recoveries": 0,
+      "ll_direct_last_error": 0,
+      "DHCSR": 16842753,
+      "state": "running",
+      "PC13_ODR": 8192,
+      "monotonic": 1079.509264765,
+      "sample_read_seconds": 0.09118296599990572,
+      "utc": "2026-11-22T02:57:00Z"
+    },
+    {
+      "task_runs": [
+        8,
+        18867,
+        1109,
+        298
+      ],
+      "key_isr_events": 8,
+      "key_task_events": 8,
+      "controller_events": 8,
+      "lcd_events": 8,
+      "key_overflows": 0,
+      "command_overflows": 0,
+      "telemetry_overflows": 0,
+      "transport_errors": 0,
+      "initialization_errors": 0,
+      "lcd_refreshes": 1107,
+      "page_changes": 9,
+      "page": 4,
+      "automatic": 0,
+      "ready": 1,
+      "tick": 18800,
+      "key_short": 6,
+      "key_long": 2,
+      "queue_depths": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "welcome_shows": 1,
+      "monitor_refreshes": 556,
+      "monitor_rows": 1280,
+      "display_fault": 0,
+      "ll_recover_count": 0,
+      "last_lcd_error": 0,
+      "ll_last_error": 0,
+      "snapshots": [
+        {
+          "state": 4,
+          "base_priority": 5,
+          "effective_priority": 5,
+          "slot": 0,
+          "generation": 1
+        },
+        {
+          "state": 4,
+          "base_priority": 4,
+          "effective_priority": 4,
+          "slot": 1,
+          "generation": 1
+        },
+        {
+          "state": 4,
+          "base_priority": 2,
+          "effective_priority": 2,
+          "slot": 2,
+          "generation": 1
+        },
+        {
+          "state": 2,
+          "base_priority": 1,
+          "effective_priority": 1,
+          "slot": 3,
+          "generation": 1
+        }
+      ],
+      "kernel_ticks": 18871,
+      "tim2_ms": 188732,
+      "current_tcb": 536874528,
+      "assert_line": 0,
+      "CFSR": 0,
+      "HFSR": 0,
+      "guards": {
+        "KEY": 3735929054,
+        "Controller": 3735929054,
+        "LCD": 3735929054,
+        "Monitor": 3735929054,
+        "Idle": 3735929054
+      },
+      "ll_direct_recoveries": 0,
+      "ll_direct_last_error": 0,
+      "DHCSR": 16842753,
+      "state": "running",
+      "PC13_ODR": 8192,
+      "monotonic": 1084.606288862,
+      "sample_read_seconds": 0.09681012999999439,
+      "utc": "2026-11-22T02:57:05Z"
+    },
+    {
+      "task_runs": [
+        8,
+        19377,
+        1127,
+        306
+      ],
+      "key_isr_events": 8,
+      "key_task_events": 8,
+      "controller_events": 8,
+      "lcd_events": 8,
+      "key_overflows": 0,
+      "command_overflows": 0,
+      "telemetry_overflows": 0,
+      "transport_errors": 0,
+      "initialization_errors": 0,
+      "lcd_refreshes": 1125,
+      "page_changes": 9,
+      "page": 4,
+      "automatic": 0,
+      "ready": 1,
+      "tick": 19304,
+      "key_short": 6,
+      "key_long": 2,
+      "queue_depths": [
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "welcome_shows": 1,
+      "monitor_refreshes": 574,
+      "monitor_rows": 1322,
+      "display_fault": 0,
+      "ll_recover_count": 0,
+      "last_lcd_error": 0,
+      "ll_last_error": 0,
+      "snapshots": [
+        {
+          "state": 4,
+          "base_priority": 5,
+          "effective_priority": 5,
+          "slot": 0,
+          "generation": 1
+        },
+        {
+          "state": 4,
+          "base_priority": 4,
+          "effective_priority": 4,
+          "slot": 1,
+          "generation": 1
+        },
+        {
+          "state": 4,
+          "base_priority": 2,
+          "effective_priority": 2,
+          "slot": 2,
+          "generation": 1
+        },
+        {
+          "state": 2,
+          "base_priority": 1,
+          "effective_priority": 1,
+          "slot": 3,
+          "generation": 1
+        }
+      ],
+      "kernel_ticks": 19381,
+      "tim2_ms": 193830,
+      "current_tcb": 536875472,
+      "assert_line": 0,
+      "CFSR": 0,
+      "HFSR": 0,
+      "guards": {
+        "KEY": 3735929054,
+        "Controller": 3735929054,
+        "LCD": 3735929054,
+        "Monitor": 3735929054,
+        "Idle": 3735929054
+      },
+      "ll_direct_recoveries": 0,
+      "ll_direct_last_error": 0,
+      "DHCSR": 16842753,
+      "state": "running",
+      "PC13_ODR": 8192,
+      "monotonic": 1089.705164098,
+      "sample_read_seconds": 0.09866371199996138,
+      "utc": "2026-11-22T02:57:10Z"
+    },
+    {
+      "task_runs": [
+        8,
+        19781,
+        1141,
+        312
+      ],
+      "key_isr_events": 8,
+      "key_task_events": 8,
+      "controller_events": 8,
+      "lcd_events": 8,
+      "key_overflows": 0,
+      "command_overflows": 0,
+      "telemetry_overflows": 0,
+      "transport_errors": 0,
+      "initialization_errors": 0,
+      "lcd_refreshes": 1139,
+      "page_changes": 9,
+      "page": 4,
+      "automatic": 0,
+      "ready": 1,
+      "tick": 19704,
+      "key_short": 6,
+      "key_long": 2,
+      "queue_depths": [
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "welcome_shows": 1,
+      "monitor_refreshes": 588,
+      "monitor_rows": 1354,
+      "display_fault": 0,
+      "ll_recover_count": 0,
+      "last_lcd_error": 0,
+      "ll_last_error": 0,
+      "snapshots": [
+        {
+          "state": 4,
+          "base_priority": 5,
+          "effective_priority": 5,
+          "slot": 0,
+          "generation": 1
+        },
+        {
+          "state": 4,
+          "base_priority": 4,
+          "effective_priority": 4,
+          "slot": 1,
+          "generation": 1
+        },
+        {
+          "state": 4,
+          "base_priority": 2,
+          "effective_priority": 2,
+          "slot": 2,
+          "generation": 1
+        },
+        {
+          "state": 2,
+          "base_priority": 1,
+          "effective_priority": 1,
+          "slot": 3,
+          "generation": 1
+        }
+      ],
+      "kernel_ticks": 19785,
+      "tim2_ms": 197872,
+      "current_tcb": 536875472,
+      "assert_line": 0,
+      "CFSR": 0,
+      "HFSR": 0,
+      "guards": {
+        "KEY": 3735929054,
+        "Controller": 3735929054,
+        "LCD": 3735929054,
+        "Monitor": 3735929054,
+        "Idle": 3735929054
+      },
+      "ll_direct_recoveries": 0,
+      "ll_direct_last_error": 0,
+      "DHCSR": 16842753,
+      "state": "running",
+      "PC13_ODR": 8192,
+      "monotonic": 1093.744315836,
+      "sample_read_seconds": 0.0963766959998793,
+      "utc": "2026-11-22T02:57:15Z"
+    }
+  ],
+  "context_switch_total": "NOT IMPLEMENTED",
+  "hardfault_total_counter": "NOT IMPLEMENTED",
+  "elapsed_s": 60.096478025999886,
+  "deltas": {
+    "kernel_ticks": 6010,
+    "tim2_ms": 60100,
+    "lcd_refreshes": 210,
+    "monitor_refreshes": 210,
+    "key_isr_events": 1,
+    "key_short": 0,
+    "key_long": 1,
+    "transport_errors": 0,
+    "ll_direct_recoveries": 0
+  },
+  "task_run_deltas": [
+    1,
+    6010,
+    211,
+    90
+  ],
+  "tick_hz": 100.0058605331224,
+  "TIM2_hz": 1000.058605331224
+}

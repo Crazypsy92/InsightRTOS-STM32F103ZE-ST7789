@@ -1,0 +1,3 @@
+case,bytes,target_hz,mode,expected_code,actual_code,model_cycles,model_us,observed
+C1_62500_at_equality,62500,18000000,TX,0,0,2000064,27778.667,old works at the mathematical crossover
+C1_65535_reproduction,65535,18000000,TX,-2,-2,2048640,28453.333,timeout before 2097120 ideal wire cycles

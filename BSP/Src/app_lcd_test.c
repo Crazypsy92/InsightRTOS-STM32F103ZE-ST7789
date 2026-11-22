@@ -15,7 +15,16 @@
 /* 页面管理                                                                            */
 /* ================================================================================== */
 
+#ifdef INSIGHT_DISPLAY_RTOS
+#include "display_ui.h"
+#if defined(INSIGHT_DIAG_EXPLAIN) && INSIGHT_DIAG_EXPLAIN
+#define LCD_TEST_PAGE_COUNT   6U
+#else
+#define LCD_TEST_PAGE_COUNT   5U
+#endif
+#else
 #define LCD_TEST_PAGE_COUNT   4U
+#endif
 #define LCD_TEST_AUTO_MS      2000U     /* 静态页自动切换间隔 */
 
 static uint8_t  s_page;
@@ -190,6 +199,16 @@ static void lcd_test_draw_page(uint8_t page)
         case 2U:
             lcd_test_draw_text();
             break;
+#ifdef INSIGHT_DISPLAY_RTOS
+        case 4U:
+            Display_UIMonitor(true);
+            s_last_frame_ms = GetTick_ms();
+            break;
+        case 5U:
+            Display_UISchedTrace(true);
+            s_last_frame_ms = GetTick_ms();
+            break;
+#endif
         case 3U:
         default:
             lcd_test_draw_anim();
@@ -214,6 +233,9 @@ void LCD_Test_Init(void)
         /* 初始化失败时保持背光关闭，便于与白屏/花屏区分 */
         return;
     }
+#ifdef INSIGHT_DISPLAY_RTOS
+    if (!Display_UIWelcome()) return;
+#endif
     s_ready = 1U;
     lcd_test_draw_page(s_page);
 }
@@ -238,6 +260,16 @@ void LCD_Test_Task(void)
         return;
     }
 
+#ifdef INSIGHT_DISPLAY_RTOS
+    if (s_page == 4U && (uint32_t)(GetTick_ms() - s_last_frame_ms) >= 250U) {
+        Display_UIMonitor(false);
+        s_last_frame_ms = GetTick_ms();
+    }
+    if (s_page == 5U && (uint32_t)(GetTick_ms() - s_last_frame_ms) >= 250U) {
+        Display_UISchedTrace(false);
+        s_last_frame_ms = GetTick_ms();
+    }
+#endif
     if (s_page == 3U) {
         lcd_test_anim_task();
     }

@@ -1,0 +1,88 @@
+{
+  "task_runs": [
+    13,
+    17850,
+    976,
+    315
+  ],
+  "key_isr_events": 13,
+  "key_task_events": 13,
+  "controller_events": 13,
+  "lcd_events": 13,
+  "key_overflows": 0,
+  "command_overflows": 0,
+  "telemetry_overflows": 0,
+  "transport_errors": 0,
+  "initialization_errors": 0,
+  "lcd_refreshes": 974,
+  "page_changes": 14,
+  "page": 4,
+  "automatic": 0,
+  "ready": 1,
+  "tick": 17800,
+  "key_short": 11,
+  "key_long": 2,
+  "queue_depths": [
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "welcome_shows": 1,
+  "monitor_refreshes": 441,
+  "monitor_rows": 977,
+  "display_fault": 0,
+  "ll_recover_count": 0,
+  "last_lcd_error": 0,
+  "ll_last_error": 0,
+  "snapshots": [
+    {
+      "state": 4,
+      "base_priority": 5,
+      "effective_priority": 5,
+      "slot": 0,
+      "generation": 1
+    },
+    {
+      "state": 4,
+      "base_priority": 4,
+      "effective_priority": 4,
+      "slot": 1,
+      "generation": 1
+    },
+    {
+      "state": 4,
+      "base_priority": 2,
+      "effective_priority": 2,
+      "slot": 2,
+      "generation": 1
+    },
+    {
+      "state": 2,
+      "base_priority": 1,
+      "effective_priority": 1,
+      "slot": 3,
+      "generation": 1
+    }
+  ],
+  "kernel_ticks": 17849,
+  "tim2_ms": 178513,
+  "assert_line": 0,
+  "CFSR": 0,
+  "HFSR": 0,
+  "guards": {
+    "KEY": 3735929054,
+    "Controller": 3735929054,
+    "LCD": 3735929054,
+    "Monitor": 3735929054,
+    "Idle": 3735929054
+  },
+  "ll_direct_recoveries": 0,
+  "ll_direct_last_error": 0,
+  "state": "running",
+  "PC13_ODR": 0,
+  "monotonic": 3716.41263957,
+  "sample_read_seconds": 0.012589803000082611,
+  "utc": "2026-11-20T14:37:50Z"
+}

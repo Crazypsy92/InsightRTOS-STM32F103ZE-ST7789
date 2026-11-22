@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "scope": "after final physical resets",
+  "bytes": 57988,
+  "sha256": "526890ff96594c65533c69e129a1a889ec2368768b4b4fca3a3c7052eac72e35",
+  "option_bytes_unchanged": true,
+  "target_writes": false
+}

@@ -1,151 +1,186 @@
-# insightrtos — STM32F103ZET6 ST7789 屏幕驱动示例
+# InsightRTOS — STM32F103ZET6 + ST7789 全功能 RTOS 诊断与驱动平台
 
-> **状态：v0.1.0-alpha（早期版本）**
-> 已在真实硬件（STM32F103ZET6 + ST7789 1.54" 240×240）上完成上电运行、4 页面显示与按键翻页验证。
-> 内核仍在持续完善，**不是工业级成熟 RTOS**，请勿直接用于安全关键场景。
+> **当前版本：v0.9.2 (Stage 9.2: Explainable Scheduling + Mutex Deadlock Diagnostics)**  
+> 运行平台：真实硬件 STM32F103ZET6 + ST7789 (1.54" 240×240 IPS TFT)  
+> 固件状态：四任务生产应用已实机部署并固化；具备**可解释调度**与 **Mutex 死锁诊断**双核心能力；零动态内存分配，严格 72 字节 TCB ABI 与 384 字节诊断工作区预算。
 
-基于 STM32F103ZET6 + ST7789（1.54" 240×240）的裸机工程。核心是一套 **MCU 无关的 SPI 抽象总线**：同一物理 SPI 外设可被多个设备按事务独占使用，并具备状态机、统一错误码与故障自恢复能力。当前示例设备为 ST7789 TFT，按键切换测试页面；`Middlewares/InsightRTOS` 内置自研 Cortex-M3 内核（v0.7.5 源码快照，来源与 SHA256 见 [`VERSION_MANIFEST.md`](Middlewares/InsightRTOS/VERSION_MANIFEST.md)），可通过构建开关编译成双任务冒烟镜像。
+---
 
-## 硬件与接线
+## 一、系统特性概览
 
-| 功能 | 引脚 | 说明 |
+1. **工业级 SPI/DMA 总线抽象**：
+   - 具备事务排他占有、嵌套重入深度管理、状态机守卫与故障自恢复机制。
+   - LL 后端支持 DMA2 自动分块（绕开 16 位 CNDTR ≤ 65535 字节硬件限制）、基于速率与有效载荷的有界动态超时预算，杜绝长块传输误报超时。
+2. **多任务 RTOS 协同显示体系**：
+   - **KEY Task (优先级 4)**: 扫描 KEY1 按键，事件防抖与状态机分发。
+   - **Controller Task (优先级 3)**: 状态逻辑控制器与消息队列转发。
+   - **LCD Task (优先级 2)**: 独占 SPI3 和 ST7789 控制权，执行微秒级差分刷新。
+   - **Monitor Task (优先级 1)**: 系统健康度、运行计数与总线异常监控。
+   - **Idle Task (优先级 0)**: 低功耗等待 (`__WFI`)。
+3. **可解释调度 (Explainable Scheduling)**：
+   - 128 条记录环形缓冲区、64 位序列号、防覆盖过期游标。
+   - 实时解析任务切换因果：抢占（HIGHER_PREEMPT）、主动让出（YIELD）、时间片轮转（SLICE_ROTATION）、IPC/阻塞唤醒（BLOCK_OR_WAKE_OTHER）与空闲迁移（IDLE_TRANSITION）。
+4. **Mutex 资源依赖与死锁诊断 (Deadlock Diagnostics)**：
+   - 微秒级短临界区快照（关中断 < 3 µs），捕获活动任务、持有与等待依赖图。
+   - 在任务线程上下文执行有界三色 DFS 环路搜索，支持 2 任务 ABBA、3 任务循环等待及多等待者扇入拓扑检测。
+   - 规范化旋转环路输出，识别带超时边界的死锁路径；结合任务插槽世代号（Slot Generation）防范陈旧失效快照。
+5. **240×240 单屏综合状态显示界面**：
+   - 淘汰旧有多页面轮播与开机延迟，重构为单一固定的 15 行系统综合看板。
+   - 字符级差分渲染：整屏无变动时总线开销为 0 µs，局部变更行重绘仅耗时约 0.25 ms，杜绝画面频闪与总线饥饿。
+
+---
+
+## 二、硬件接线与引脚分配
+
+| 功能引脚 | STM32F103ZET6 引脚 | 硬件复用与配置说明 |
 | --- | --- | --- |
-| SPI3_SCK | PB3 | 需关闭 JTAG（SWJ_NOJTAG）后复用 |
-| SPI3_MISO | PB4 | ST7789 只发不收，可不接 |
-| SPI3_MOSI | PB5 | 需关闭 JTAG 后复用 |
-| LCD_CS | PD11 | 软件片选，低有效 |
-| LCD_DC | PD12 | 数据/命令选择 |
-| LCD_BL | PD13 | 背光，高电平点亮 |
-| LCD_RST | 无 | 驱动使用软件复位命令 |
-| KEY1 | PA15 | 上拉输入，按下为低；需 SWJ_NOJTAG |
-| LED | PC13 | 低电平点亮 |
+| **SPI3_SCK** | **PB3** | 上电需调用 `LL_GPIO_AF_Remap_SWJ_NOJTAG()` 关闭 JTAG 复用 |
+| **SPI3_MISO** | **PB4** | 需关闭 JTAG 复用；ST7789 为单向屏幕，可不连接 |
+| **SPI3_MOSI** | **PB5** | 需关闭 JTAG 复用；连接 ST7789 SDA 数据引脚 |
+| **LCD_CS** | **PD11** | 软件片选控制，低电平有效 |
+| **LCD_DC** | **PD12** | 数据/命令控制（高电平数据，低电平命令） |
+| **LCD_BL** | **PD13** | 背光控制，高电平点亮（支持 PWM 调光） |
+| **LCD_RST** | — | 驱动内建软件软复位命令序列，无需占用外部 GPIO |
+| **KEY1** | **PA15** | 输入上拉，按下为低电平（需 SWJ_NOJTAG 解除复用） |
+| **LED** | **PC13** | 板载状态指示灯，低电平点亮 |
 
-SPI3 挂在 APB1（36 MHz），默认 18 MHz / Mode 0 / 启用 DMA。SPI3_TX → DMA2 通道 2，SPI3_RX → DMA2 通道 1。
+> **时钟与 DMA 配置**：
+> - SPI3 挂载于 APB1 总线（36 MHz），默认通信波特率 18 MHz，模式 0（CPOL=0, CPHA=0）。
+> - 发送通道：SPI3_TX → DMA2 通道 2；接收通道：SPI3_RX → DMA2 通道 1。
+> - 独立硬件定时器 TIM2（1 kHz / 1 ms）作为系统高精度时间基准，SysTick 专属于 RTOS 内核调度。
 
-> PB3/PB4/PB5 与 JTAG 复用，工程在 `main()` 中先调用 `LL_GPIO_AF_Remap_SWJ_NOJTAG()`，保留 SWD 调试。
+---
 
-## 软件架构
+## 三、软件架构分层 (Software Architecture)
 
-自下而上分层，换 MCU 只需替换最底层的实现文件：
-
-```
-应用层      app_lcd_test.c        4 个测试页面 / 按键翻页
-协议层      st7789.c             ST7789 命令、初始化、绘图、字符
-移植层      st7789_port.c        SPI3 + PD11/PD12/PD13 的板级适配
-总线抽象    spi_bus.h            所有权 / 嵌套 / 状态机 / 错误码（MCU 无关）
-LL 实现     spi_stm32_ll.c       GPIO 复用、SPI/DMA 配置与阻塞传输
-板级        bsp_spi.c            SPI1 / SPI2 / SPI3 的引脚与时钟表
-```
-
-驱动与移植层只依赖 `spi_bus.h`；`spi_stm32_ll.*` 是全工程唯一产生 SPI 时序的地方。片选（CS）由 port 层管理，总线层不操作任何 CS。
-
-## SPI 总线契约
-
-一次事务必须成对调用：
-
-```c
-spi_bus_acquire(bus, owner, &cfg);   /* 切换速率/模式并占用总线 */
-/* ... spi_bus_transfer(bus, owner, tx, rx, len) ... */
-spi_bus_release(bus, owner);         /* 返回 1 表示完全释放，可拉高 CS */
-```
-
-- **独占**：`acquire..release` 之间总线只属于一个 owner；同 owner 可嵌套，嵌套层级由 `depth` 记录。
-- **ISR 拒绝**：中断上下文中 `acquire` 返回 `SPI_BUS_ERR_ISR`，防止打断主循环的 DMA 事务。
-- **配置一致**：嵌套事务的 `clock_hz/mode/use_dma` 必须与首次一致，否则返回 `SPI_BUS_ERR_CONFIG`。
-- **阻塞传输**：DMA 也等待 TC/BSY 后才返回；传输失败进入 ERROR，下一次 `acquire` 自动尝试 `recover`。
-
-状态机：
-
-```
-UNINIT --configure OK--> READY --acquire--> BUSY
-BUSY   --release(depth==0)--> READY
-BUSY   --transfer 失败--> ERROR
-ERROR  --recover OK--> READY
-ERROR  --下一次 acquire--> 自动 recover
+```text
++-------------------------------------------------------------------------+
+| 应用层 (Application)                                                    |
+|  - Core/display_app.c       : 四任务应用入口、通信队列与任务初始化       |
+|  - BSP/Src/app_lcd_test.c   : 裸机 4 页面回退演示程序                   |
++-------------------------------------------------------------------------+
+| 界面与策略层 (UI & Policy)                                              |
+|  - Core/display_ui.c        : 15 行综合看板、字符级差分渲染 (零频闪)    |
+|  - Core/display_pages.c     : 页面驱动接口与刷新调用                    |
+|  - Core/display_policy.c    : 250 ms 周期刷新与总线协调策略             |
++-------------------------------------------------------------------------+
+| 中间件内核层 (Middlewares/InsightRTOS)                                  |
+|  - kernel/scheduler.c      : 抢占式调度器、上下文切换                   |
+|  - kernel/deadlock.c       : 资源依赖快照提取与三色 DFS 死锁环路分析    |
+|  - kernel/trace.c          : 128 条记录环形缓冲与因果可解释调度日志     |
+|  - kernel/mutex.c          : 优先级继承 (PI) 互斥量                     |
+|  - kernel/task.c           : 任务生命周期与插槽世代号 (Slot Gen) 管理   |
++-------------------------------------------------------------------------+
+| 设备协议与适配层 (Drivers & Ports)                                      |
+|  - BSP/Src/st7789.c         : ST7789 寄存器配置、画点、矩形、字体渲染    |
+|  - BSP/Src/st7789_port.c    : 片选、背光、延时板级适配                   |
+|  - BSP/Src/key_port.c       : 按键防抖与 multi_button 移植               |
++-------------------------------------------------------------------------+
+| 总线抽象与底层硬件 (Bus & LL)                                           |
+|  - BSP/Inc/spi_bus.h        : MCU 无关 SPI 总线所有权契约与状态机       |
+|  - BSP/Src/spi_stm32_ll.c   : SPI3 + DMA2 自动分块传输与动态超时预算     |
+|  - BSP/Src/bsp_spi.c        : 板级时钟、引脚映射与复用配置               |
++-------------------------------------------------------------------------+
 ```
 
-统一错误码 `spi_bus_status_t`：
+---
 
-| 值 | 含义 |
-| --- | --- |
-| `SPI_BUS_OK` = 0 | 成功 |
-| `SPI_BUS_ERR_PARAM` = -1 | 参数非法 |
-| `SPI_BUS_ERR_TIMEOUT` = -2 | TXE/RXNE/BSY/DMA 等待超时 |
-| `SPI_BUS_ERR_DMA` = -3 | DMA 传输错误（TEIF） |
-| `SPI_BUS_ERR_BUSY` = -4 | 外设忙 / 总线被其它设备占用 |
-| `SPI_BUS_ERR_RECOVERY` = -5 | 异常恢复失败 |
-| `SPI_BUS_ERR_ISR` = -6 | 中断上下文中占用总线 |
-| `SPI_BUS_ERR_STATE` = -7 | 状态机不允许该操作 |
-| `SPI_BUS_ERR_CONFIG` = -8 | 嵌套事务配置不一致 |
-| `SPI_BUS_ERR_UNSUPPORTED` = -9 | 实现方未提供该操作 |
+## 四、240×240 综合状态看板
 
-调试接口：`spi_bus_get_state()`、`spi_bus_get_last_error()`、`spi_bus_clear_error()`、`spi_bus_recover()`。
+ST7789 屏幕被划分为 15 行等宽点阵区域，显示系统运行与诊断全貌：
 
-## 屏幕测试程序
-
-上电初始化后自动播放 4 个页面：
-
-| 页面 | 内容 |
-| --- | --- |
-| 0 | 颜色条 |
-| 1 | 图形（线、矩形、圆） |
-| 2 | 文字（ASCII 12/16/20/24/32 字体） |
-| 3 | 动画（小球边界反弹，25 ms 一帧） |
-
-前 3 页每 2 秒自动切换；短按 KEY1 手动翻页并停止自动播放，到动画页后持续运行动画。全程不依赖串口，仅靠屏幕与 PC13 LED 反馈。
-
-ST7789 初始化最后默认调用 `LCD_SetRotation(dev, 180U)`；若实际显示方向不符，调整该调用的角度或 180° 下的显存偏移即可。
-
-## 目录结构
-
-```
-BSP/
-  Inc/  spi_bus.h  spi_stm32_ll.h  bsp_spi.h  st7789.h  st7789_port.h
-        app_lcd_test.h  key_port.h  multi_button.h  lcd_fonts.h  delay.h
-  Src/  spi_stm32_ll.c  bsp_spi.c  st7789.c  st7789_port.c
-        app_lcd_test.c  key_port.c  multi_button.c  lcd_fonts.c  delay.c
-Core/   main.c  gpio.c  ...
-cmake/  stm32cubemx/  gcc-arm-none-eabi.cmake
+```text
++----------------------------------------+
+| 00: InsightRTOS SYSTEM RUNNING         | [青色] 运行状态正常
+| 01: ---------------------------------- |
+| 02: KERNEL: 100Hz TIM2:1kHz TICK:12480 | [白色] 系统心跳与时基
+| 03: ---------------------------------- |
+| 04: TASK STATUS:                       | [黄色] 任务运行状态
+| 05:  KEY : RUN  PRIO:4(4) RUNS: 1248   |
+| 06:  CTRL: BLK  PRIO:3(3) RUNS: 1248   |
+| 07:  LCD : RUN  PRIO:2(2) RUNS:  499   |
+| 08:  MON : BLK  PRIO:1(1) RUNS:  124   |
+| 09: ---------------------------------- |
+| 10: MUTEX DIAGNOSTICS:                 | [黄色] 死锁诊断指标
+| 11:  STATUS: ACTIVE (NO DEADLOCK)      | [绿色/红色] 死锁告警
+| 12:  CYCLE : NONE      PI BOOST: 0     | 环路任务序列与 PI 计数
+| 13:  NODES : 4 (0 EDGES)               | 依赖图节点与出边数
+| 14:  TRACE : 128 REC   ERRORS: 0       | 调度追踪记录与错误数
++----------------------------------------+
 ```
 
-## 构建与烧录
+---
 
-依赖：CMake ≥ 3.22、Ninja、`arm-none-eabi-gcc`（`arm-none-eabi-` 前缀需在 PATH 中）。
+## 五、构建配置与预设矩阵 (CMake Presets)
 
-工程有两套镜像，由 `INSIGHT_RTOS_ENABLED` 切换：
+本项目支持通过 CMake Presets 快速切换编译目标：
 
-| 预设 | 镜像 | 说明 |
-| --- | --- | --- |
-| `Debug` / `Release` / `O2` | `insightrtos` | 裸机 LCD 演示（4 个测试页面） |
-| `RTOS_Debug` / `RTOS_O2` | `insightrtos_rtos` | RTOS 双任务冒烟镜像（`Core/rtos_smoke_app.c`） |
+| 预设名称 (Preset) | 镜像文件目标 | 优化与定义 | 适用场景 |
+|---|---|---|---|
+| **`DISPLAY_RTOS_O2_Trace`** | `insightrtos_display.elf/.bin/.hex` | `-O2`, Trace=1, Diag=1 | **生产推荐固件（包含完整诊断能力）** |
+| `DISPLAY_RTOS_Debug_Trace`| `insightrtos_display.elf/.bin/.hex` | `-g -O0`, Trace=1, Diag=1 | 调试版（包含完整诊断与调试符号） |
+| `DISPLAY_RTOS_O2` | `insightrtos_display.elf/.bin/.hex` | `-O2`, Trace=0, Diag=0 | 生产基线版（关闭诊断与日志记录） |
+| `DISPLAY_RTOS_Debug` | `insightrtos_display.elf/.bin/.hex` | `-g -O0`, Trace=0, Diag=0 | 调试基线版（关闭诊断） |
+| `RTOS_O2` / `RTOS_Debug` | `insightrtos_rtos.elf/.bin/.hex` | `-O2` / `-g` | RTOS 双任务极简冒烟测试镜像 |
+| `O2` / `Debug` / `Release`| `insightrtos.elf/.bin/.hex` | `-O2` / `-g` | 裸机 LCD 4 页面测试演示镜像 |
 
+### 编译命令示例
 ```bash
-cmake --preset Debug          # RTOS 镜像用 RTOS_Debug / RTOS_O2
-cmake --build --preset Debug
+# 配置并编译生产全功能诊断固件 (O2 Trace)
+cmake --preset DISPLAY_RTOS_O2_Trace
+cmake --build --preset DISPLAY_RTOS_O2_Trace
+
+# 或编译裸机演示固件
+cmake --preset O2
+cmake --build --preset O2
 ```
 
-生成物：`build/<preset>/insightrtos.elf`（RTOS 镜像为 `insightrtos_rtos.elf`），以及 `.hex/.bin`。
+构建完成后，固件二进制文件自动存放于 `build/<PresetName>/` 目录下，并自动导出 `.bin` 与 `.hex`。
 
-> 烧录会覆盖目标板 Flash 中的原有固件与数据，请先确认板内无需要保留的内容。
+---
 
-ST-Link + OpenOCD 烧录（按实际镜像名替换）：
+## 六、硬件烧录与部署
+
+使用 ST-Link 与 OpenOCD（或 pyocd / J-Link）将固件烧录至 `0x08000000`：
 
 ```bash
 openocd -f interface/stlink-v2.cfg -f target/stm32f1x.cfg \
-  -c "program build/Debug/insightrtos.elf verify reset exit"
+  -c "program build/DISPLAY_RTOS_O2_Trace/insightrtos_display.hex verify reset exit"
 ```
 
-## 注意事项与已知限制
+> **烧录安全说明**：
+> 生产固件体积仅约 43.6 KiB（占用第 0 ~ 21 页 Flash），擦写操作严格限定在程序占用范围内，不影响芯片 Option Bytes 与后续扇区数据。
 
-- **SPI/DMA 长块传输超时预算（优先修复）**：单次传输的等待超时是固定预算，未随数据量放大，大块传输存在被误判为 `SPI_BUS_ERR_TIMEOUT` 的风险；后续按分块大小动态计算超时。
-- **单 owner 非阻塞不支持**：当前 `release` 必须在 `transfer` 返回后立即执行；若改成异步 DMA，需要把释放移入完成回调并增加超时语义。
-- **ISR 不可直接访问 SPI**：请把请求排队到主循环执行。
-- **recover 要求总线空闲**：`owner != NULL` 时调用返回 `SPI_BUS_ERR_BUSY`；失败会保持 ERROR 状态。
-- **DMA 分块上限**：CNDTR 为 16 位，单次 ≤ 65535 字节，驱动自动分块。
-- **无显存**：逐块/逐行发送，RAM 占用低；大区域填充耗时与 SPI 速率直接相关。
-- **中文字库**：`lcd_fonts.c` 内含 GB2312 点阵，Flash 占用较大；不需要时可裁剪。
-- **PB3/PB4/PB5**：必须关闭 JTAG，否则 SPI3 无法工作。
+---
 
-## 许可证
+## 七、设计与验收文档索引 (Documentation & Evidence)
 
-本仓库暂未添加 `LICENSE` 文件。STM32 驱动库（HAL/LL）、CMSIS、字库等第三方文件的授权仍在审计中，审计完成前代码仅供学习与参考，不构成开源授权。
+本工程包含完整的架构设计基准文档与全流程实机验收证据：
+
+### 1. 核心诊断架构设计 (`docs/diagnostics_design/`)
+- [系统总体诊断架构](docs/diagnostics_design/architecture.md)
+- [可解释调度详细设计](docs/diagnostics_design/explainable_scheduler.md)
+- [Mutex 资源依赖与死锁诊断设计](docs/diagnostics_design/deadlock_diagnostics.md)
+- [内核事件模式与 ABI 契约](docs/diagnostics_design/event_schema.md)
+- [公共诊断 API 规范](docs/diagnostics_design/public_api.md)
+- [内存与耗时预算约束](docs/diagnostics_design/resource_budget.md)
+- [诊断验证测试矩阵](docs/diagnostics_design/test_matrix.md)
+
+### 2. 阶段验收与实机部署证据 (`evidence/`)
+- [**Stage 9.2: Mutex 资源依赖与死锁诊断验收报告**](evidence/stage9_2/acceptance.md)
+  - [Mutex 依赖关系快照机制设计](evidence/stage9_2/mutex_dependency_design.md)
+  - [三色 DFS 死锁环路检测算法分析](evidence/stage9_2/deadlock_detection.md)
+  - [单元测试与 QEMU ARM 场景测试报告](evidence/stage9_2/test_results.md)
+  - [内存预算与栈消耗审计报告](evidence/stage9_2/resource_report.md)
+  - [综合看板界面验收报告](evidence/stage9_2/ui_acceptance.md)
+- [**Stage 9.1-H2: 六页面调度追踪固件实机部署验收报告**](evidence/stage9_1_h2/acceptance.md)
+- [**Stage 9.1-H1: 可解释调度硬件集成报告**](evidence/stage9_1_h1/acceptance.md)
+- [**Stage 9.1: 可解释调度功能软件验证报告**](evidence/stage9_1/acceptance.md)
+- [**Stage 8.5-C4-R1: 五页面硬件验收与基线固化报告**](evidence/stage8_5_c4_r1/acceptance.md)
+- [**Stage 8.5-C3: SPI/DMA 可靠性修复与边界测试报告**](evidence/stage8_5_c3/acceptance.md)
+
+---
+
+## 八、开源许可证
+
+本项目核心调度器与总线驱动遵循开源规范，第三方 HAL/CMSIS 驱动版权归 STMicroelectronics 及其授权方所有。详情参见各源码文件头声明。

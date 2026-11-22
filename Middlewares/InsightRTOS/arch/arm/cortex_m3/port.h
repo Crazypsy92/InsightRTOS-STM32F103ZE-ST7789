@@ -19,6 +19,7 @@ void rtos_port_tick_start(void);
 void SysTick_Handler(void);
 _Noreturn void rtos_port_start(void);
 void rtos_port_yield(void);
+bool rtos_port_in_pendsv(void);
 bool rtos_port_in_handler(void);
 /* Thread only; existing enclosing PRIMASK is supported, BASEPRI/FAULTMASK are not. */
 bool rtos_port_task_create_context(void);

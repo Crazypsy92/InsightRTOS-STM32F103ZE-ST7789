@@ -10,8 +10,8 @@
  *          - DMA 传输错误    SPI_BUS_ERR_DMA（TEIF）
  *          - 外设忙无法配置  SPI_BUS_ERR_BUSY
  *          - 恢复失败        SPI_BUS_ERR_RECOVERY
- *          所有错误路径都会调用 spi_recover() 把 DMA/SPI 拉回可用态，
- *          保证下一次事务仍可正常执行。
+ *          传输错误会尝试恢复 DMA/SPI，保留原传输错误码；
+ *          总线释放后，下次 acquire 会再次恢复，失败则维持 ERROR。
  */
 #include "spi_stm32_ll.h"
 #include <string.h>
@@ -19,8 +19,8 @@
 /* 超时预算（单位：CPU 周期，72 MHz）。基于实际传输时间 + 余量，非随意循环次数。 */
 #define SPI_BYTE_TIMEOUT_CYCLES   500000U   /* 单字节 TXE/RXNE：约 7 ms 余量充足 */
 #define SPI_BSY_TIMEOUT_CYCLES    500000U   /* BSY 清零等待：约 7 ms */
-#define SPI_RECOVER_BSY_CYCLES    1000000U  /* 恢复阶段等待 BSY 的最长时间：约 14 ms */
-#define SPI_DMA_MARGIN_CYCLES     1000000U  /* DMA 超时的固定余量：约 14 ms */
+#define SPI_RECOVER_IDLE_CYCLES   1000000U  /* 恢复阶段等待外设空闲：约 14 ms */
+#define SPI_DMA_MARGIN_MS         20U       /* 启动、抢占与观测余量 */
 
 #define SPI_DMA_MIN_LEN           16U       /* 小于该长度走轮询，DMA 启动开销更大 */
 #define SPI_DMA_MAX_CHUNK         65535U    /* CNDTR 为 16 位，单次 DMA 上限 */
@@ -29,13 +29,13 @@
 volatile uint32_t g_ll_recover_count = 0U;
 volatile int32_t  g_ll_last_error    = 0;
 
-static inline void spi_drain_rx_and_clear_ovr(SPI_TypeDef *spi)
+/* STM32F1 has one receive buffer. With DMA stopped and no more SCK,
+ * the LL DR->SR sequence drains RXNE and clears OVR. A stuck flag is
+ * an error rather than a reason to read DR indefinitely. */
+static inline int spi_clear_rx(SPI_TypeDef *spi)
 {
-    while (LL_SPI_IsActiveFlag_RXNE(spi)) {
-        (void)LL_SPI_ReceiveData8(spi);
-    }
-    (void)LL_SPI_ReceiveData8(spi);
     LL_SPI_ClearFlag_OVR(spi);
+    return (spi->SR & (SPI_SR_RXNE | SPI_SR_OVR)) == 0U;
 }
 
 /* ================================================================================== */
@@ -86,10 +86,22 @@ static inline uint32_t ll_dwt_cycles(void)
     return DWT->CYCCNT;
 }
 
-/** @brief 距 start 是否已经超过 timeout 个周期（无符号差值自动处理回绕） */
-static inline int ll_timeout_expired(uint32_t start, uint32_t timeout)
+/* Sample time before status, so a completion latched while preempted
+ * is observed before deciding that the peripheral is still stalled. */
+static int spi_wait_status(SPI_TypeDef *spi, uint32_t mask, uint32_t expected,
+                           uint32_t timeout)
 {
-    return ((ll_dwt_cycles() - start) > timeout) ? 1 : 0;
+    const uint32_t start = ll_dwt_cycles();
+
+    for (;;) {
+        const uint32_t elapsed = ll_dwt_cycles() - start;
+        if ((spi->SR & mask) == expected) {
+            return 1;
+        }
+        if (elapsed >= timeout) {
+            return 0;
+        }
+    }
 }
 
 /* ================================================================================== */
@@ -189,7 +201,10 @@ static int ll_configure(spi_bus_t *bus, const spi_bus_config_t *cfg)
         }
 
         LL_SPI_Enable(spi);
-        spi_drain_rx_and_clear_ovr(spi);
+        if (!spi_clear_rx(spi)) {
+            ll->configured = 0U;
+            return (int)SPI_BUS_ERR_RECOVERY;
+        }
     }
 
     /* use_dma 变化必须落到 current，无论是否重配外设 */
@@ -202,34 +217,66 @@ static int ll_configure(spi_bus_t *bus, const spi_bus_config_t *cfg)
 /* DMA 辅助                                                           */
 /* ================================================================================== */
 
-/** @brief 清指定通道的全部标志（GIF/TCIF/HTIF/TEIF，按通道号左移 4 位） */
-static void dma_clear_flags(DMA_TypeDef *dma, uint32_t ch)
+/** @brief GIF/TCIF/HTIF/TEIF for one DMA channel (ISR and IFCR share positions). */
+static uint32_t dma_flag_mask(uint32_t ch, uint32_t flags)
 {
-    uint32_t shift = (ch - 1U) * 4U;
+    return flags << ((ch - 1U) * 4U);
+}
 
-    dma->IFCR = (DMA_IFCR_CGIF1 | DMA_IFCR_CTCIF1 | DMA_IFCR_CHTIF1 | DMA_IFCR_CTEIF1) << shift;
+static void spi_stop_dma(spi_stm32_ll_t *ll)
+{
+    SPI_TypeDef *spi = ll->hw->periph;
+    DMA_TypeDef *dma = ll->hw->dma;
+
+    LL_SPI_DisableDMAReq_TX(spi);
+    LL_SPI_DisableDMAReq_RX(spi);
+    if (dma != NULL) {
+        LL_DMA_DisableChannel(dma, ll->hw->dma_tx_ch);
+        LL_DMA_DisableChannel(dma, ll->hw->dma_rx_ch);
+        /* Writing CGIF clears all four flags for that channel. */
+        dma->IFCR = dma_flag_mask(ll->hw->dma_tx_ch, DMA_IFCR_CGIF1) |
+                    dma_flag_mask(ll->hw->dma_rx_ch, DMA_IFCR_CGIF1);
+    }
 }
 
 /**
- * @brief 等待指定通道完成：同时检查 TCIF（完成）与 TEIF（错误）
- * @return SPI_BUS_OK / SPI_BUS_ERR_TIMEOUT / SPI_BUS_ERR_DMA
+ * @brief Compute a common TX/RX deadline for one 8-bit DMA chunk.
+ * @return DWT cycles, or zero for an unsupported clock/budget.
  */
-static spi_bus_status_t dma_wait(DMA_TypeDef *dma, uint32_t ch, uint32_t timeout_cycles)
+static uint32_t dma_timeout_cycles(const spi_stm32_ll_t *ll, uint32_t chunk)
 {
-    uint32_t shift = (ch - 1U) * 4U;
-    uint32_t tc_mask = DMA_ISR_TCIF1 << shift;
-    uint32_t te_mask = DMA_ISR_TEIF1 << shift;
-    uint32_t start = ll_dwt_cycles();
+    const uint32_t pclk = ll->hw->pclk_hz;
+    const uint32_t hclk = SystemCoreClock;
+    const uint32_t br = LL_SPI_GetBaudRatePrescaler(ll->hw->periph) >> SPI_CR1_BR_Pos;
+    const uint32_t divider = 2U << br;
 
-    while (1) {
-        uint32_t isr = dma->ISR;
-        if ((isr & te_mask) != 0U) {
-            return SPI_BUS_ERR_DMA;       /* DMA 传输错误，立即终止 */
+    if (pclk == 0U || hclk == 0U) {
+        return 0U;
+    }
+
+    /* Ceil(chunk * 8 * HCLK / SCK), with SCK = PCLK / divider.
+     * Add 25% for bus service gaps and 20 ms for setup/scheduling. */
+    const uint64_t numerator = (uint64_t)chunk * 8U * divider * hclk;
+    const uint64_t wire = (numerator + pclk - 1U) / pclk;
+    const uint64_t margin = ((uint64_t)hclk * SPI_DMA_MARGIN_MS + 999U) / 1000U;
+    const uint64_t budget = wire + (wire + 3U) / 4U + margin;
+    return budget <= UINT32_MAX / 2U ? (uint32_t)budget : 0U;
+}
+
+static spi_bus_status_t dma_wait(DMA_TypeDef *dma, uint32_t tc_mask, uint32_t te_mask,
+                                 uint32_t start, uint32_t timeout)
+{
+    for (;;) {
+        const uint32_t elapsed = ll_dwt_cycles() - start;
+        const uint32_t flags = dma->ISR;
+
+        if ((flags & te_mask) != 0U) {
+            return SPI_BUS_ERR_DMA;
         }
-        if ((isr & tc_mask) != 0U) {
+        if ((flags & tc_mask) == tc_mask) {
             return SPI_BUS_OK;
         }
-        if (ll_timeout_expired(start, timeout_cycles)) {
+        if (elapsed >= timeout) {
             return SPI_BUS_ERR_TIMEOUT;
         }
     }
@@ -241,7 +288,7 @@ static void dma_setup_channel(DMA_TypeDef *dma, uint32_t ch,
                               uint32_t direction, uint32_t len)
 {
     LL_DMA_DisableChannel(dma, ch);
-    dma_clear_flags(dma, ch);
+    dma->IFCR = dma_flag_mask(ch, DMA_IFCR_CGIF1);
 
     LL_DMA_SetDataTransferDirection(dma, ch, direction);
     LL_DMA_SetMode(dma, ch, LL_DMA_MODE_NORMAL);
@@ -265,42 +312,26 @@ static void dma_setup_channel(DMA_TypeDef *dma, uint32_t ch,
 
 /**
  * @brief 把 SPI/DMA 拉回可用态：关闭 DMA 请求、禁用通道、清标志、
- *        读 DR 清 OVR、等待 BSY 清零；必要时重新初始化 SPI。
+ *        等待 BSY 清零、读 DR/SR 清 OVR；必要时重新初始化 SPI。
  * @note  不触碰任何 CS 引脚——片选由 port 层按 depth 管理。
  */
 static spi_bus_status_t spi_recover(spi_stm32_ll_t *ll)
 {
     SPI_TypeDef *spi = ll->hw->periph;
-    DMA_TypeDef *dma = ll->hw->dma;
-    uint32_t start;
-
     ll->recover_count++;
     g_ll_recover_count++;
+    spi_stop_dma(ll);
 
-    /* 1. 关 SPI 的 DMA 请求 */
-    LL_SPI_DisableDMAReq_TX(spi);
-    LL_SPI_DisableDMAReq_RX(spi);
-
-    /* 2. 禁用 DMA 通道并清标志 */
-    if (dma != NULL) {
-        LL_DMA_DisableChannel(dma, ll->hw->dma_tx_ch);
-        LL_DMA_DisableChannel(dma, ll->hw->dma_rx_ch);
-        dma_clear_flags(dma, ll->hw->dma_tx_ch);
-        dma_clear_flags(dma, ll->hw->dma_rx_ch);
+    /* The master may still be shifting the last frame after DMA stops.
+     * Treat a TX buffer that never empties as a recovery failure too. */
+    const uint32_t idle_mask = SPI_SR_TXE | SPI_SR_BSY;
+    if (!spi_wait_status(spi, idle_mask, SPI_SR_TXE, SPI_RECOVER_IDLE_CYCLES)) {
+        LL_SPI_Disable(spi);
+        LL_SPI_Enable(spi);
     }
-
-    /* 3. 彻底排空 RX 缓冲区并清 OVR */
-    spi_drain_rx_and_clear_ovr(spi);
-
-    /* 4. 等 BSY 清零；超时则重新初始化 SPI 外设 */
-    start = ll_dwt_cycles();
-    while (LL_SPI_IsActiveFlag_BSY(spi)) {
-        if (ll_timeout_expired(start, SPI_RECOVER_BSY_CYCLES)) {
-            LL_SPI_Disable(spi);
-            LL_SPI_Enable(spi);
-            spi_drain_rx_and_clear_ovr(spi);
-            break;
-        }
+    if ((spi->SR & idle_mask) != SPI_SR_TXE || !spi_clear_rx(spi)) {
+        ll->configured = 0U;
+        return SPI_BUS_ERR_RECOVERY;
     }
 
     /* 5. 强制按当前配置重配一次，确保寄存器处于已知状态（若尚未配置则维持初始化默认） */
@@ -332,16 +363,28 @@ static spi_bus_status_t ll_transfer_dma(spi_stm32_ll_t *ll,
     uint32_t rxc = ll->hw->dma_rx_ch;
     uint32_t offset = 0U;
     spi_bus_status_t status = SPI_BUS_OK;
+    uint32_t tc_mask = dma_flag_mask(txc, DMA_ISR_TCIF1);
+    uint32_t te_mask = dma_flag_mask(txc, DMA_ISR_TEIF1);
 
+    if (rx != NULL) {
+        tc_mask |= dma_flag_mask(rxc, DMA_ISR_TCIF1);
+        te_mask |= dma_flag_mask(rxc, DMA_ISR_TEIF1);
+    }
     while (offset < len) {
         uint32_t chunk = len - offset;
-        uint32_t timeout;
         if (chunk > SPI_DMA_MAX_CHUNK) {
             chunk = SPI_DMA_MAX_CHUNK;
         }
 
-        /* 清掉上一轮残留（RXNE / OVR），避免首字节错位 */
-        spi_drain_rx_and_clear_ovr(spi);
+        const uint32_t timeout = dma_timeout_cycles(ll, chunk);
+        if (timeout == 0U) {
+            status = SPI_BUS_ERR_PARAM;
+            break;
+        }
+        if (!spi_clear_rx(spi)) {
+            status = SPI_BUS_ERR_TIMEOUT;
+            break;
+        }
 
         /* 先 RX 后 TX，保证时钟到来前接收端就绪 */
         if (rx != NULL) {
@@ -351,6 +394,7 @@ static spi_bus_status_t ll_transfer_dma(spi_stm32_ll_t *ll,
         dma_setup_channel(dma, txc, tx + offset, LL_SPI_DMA_GetRegAddr(spi),
                           LL_DMA_DIRECTION_MEMORY_TO_PERIPH, chunk);
 
+        const uint32_t start = ll_dwt_cycles();
         if (rx != NULL) {
             LL_SPI_EnableDMAReq_RX(spi);
             LL_DMA_EnableChannel(dma, rxc);
@@ -358,62 +402,30 @@ static spi_bus_status_t ll_transfer_dma(spi_stm32_ll_t *ll,
         LL_SPI_EnableDMAReq_TX(spi);
         LL_DMA_EnableChannel(dma, txc);
 
-        /* 按实际传输字节数计算超时：chunk*8 / spi_clk * cpu_clk + 余量 */
-        timeout = (chunk * 8U * (ll->hw->pclk_hz / ll->current.clock_hz)) + SPI_DMA_MARGIN_CYCLES;
-
-        status = dma_wait(dma, txc, timeout);
-        if (status == SPI_BUS_OK && rx != NULL) {
-            status = dma_wait(dma, rxc, timeout);
-        }
-
+        status = dma_wait(dma, tc_mask, te_mask, start, timeout);
         if (status != SPI_BUS_OK) {
-            goto cleanup;
+            break;
         }
 
-        /* CNDTR/TCIF 仅代表 DMA 已搬完数据，不代表 SPI 最后一位已离开 SCK。
-           必须逐块等 TXE 和 BSY，尤其避免下一块 DMA 覆盖尚在发送的尾字节。 */
-        {
-            uint32_t start = ll_dwt_cycles();
-            while (!LL_SPI_IsActiveFlag_TXE(spi)) {
-                if (ll_timeout_expired(start, SPI_BYTE_TIMEOUT_CYCLES)) {
-                    status = SPI_BUS_ERR_TIMEOUT;
-                    goto cleanup;
-                }
-            }
-            start = ll_dwt_cycles();
-            while (LL_SPI_IsActiveFlag_BSY(spi)) {
-                if (ll_timeout_expired(start, SPI_BSY_TIMEOUT_CYCLES)) {
-                    status = SPI_BUS_ERR_TIMEOUT;
-                    goto cleanup;
-                }
-            }
+        /* TC covers DMA beats. The SPI pipeline must also empty before
+         * releasing CS or arming the next chunk. Bound each tail wait. */
+        if (!spi_wait_status(spi, SPI_SR_TXE, SPI_SR_TXE, SPI_BYTE_TIMEOUT_CYCLES) ||
+            !spi_wait_status(spi, SPI_SR_BSY, 0U, SPI_BSY_TIMEOUT_CYCLES)) {
+            status = SPI_BUS_ERR_TIMEOUT;
+            break;
         }
 
-        /* SPI 已空闲，此时才能关闭当前 DMA 请求和通道、进入下一块。
-           设备 CS 属于 Port 层，整个分块循环期间始终保持低电平。 */
-        LL_SPI_DisableDMAReq_TX(spi);
-        LL_SPI_DisableDMAReq_RX(spi);
-        LL_DMA_DisableChannel(dma, txc);
-        LL_DMA_DisableChannel(dma, rxc);
-        dma_clear_flags(dma, txc);
-        dma_clear_flags(dma, rxc);
-        if (rx == NULL) {
-            spi_drain_rx_and_clear_ovr(spi);
+        spi_stop_dma(ll);
+        if (rx == NULL && !spi_clear_rx(spi)) {
+            status = SPI_BUS_ERR_TIMEOUT;
+            break;
         }
         offset += chunk;
     }
 
-cleanup:
-    LL_SPI_DisableDMAReq_TX(spi);
-    LL_SPI_DisableDMAReq_RX(spi);
-    if (dma != NULL) {
-        LL_DMA_DisableChannel(dma, txc);
-        LL_DMA_DisableChannel(dma, rxc);
-        dma_clear_flags(dma, txc);
-        dma_clear_flags(dma, rxc);
-    }
-
     if (status != SPI_BUS_OK) {
+        /* Recovery first disables DMA requests and both channels, so the
+         * caller can release the bus and reuse the source/destination. */
         (void)spi_recover(ll);
     }
     return status;
@@ -424,50 +436,35 @@ static spi_bus_status_t ll_transfer_poll(spi_stm32_ll_t *ll,
                                         const uint8_t *tx, uint8_t *rx, uint32_t len)
 {
     SPI_TypeDef *spi = ll->hw->periph;
-    uint32_t i;
 
-    /* 清残留 */
-    spi_drain_rx_and_clear_ovr(spi);
-
-    for (i = 0U; i < len; i++) {
-        uint32_t start = ll_dwt_cycles();
-        while (!LL_SPI_IsActiveFlag_TXE(spi)) {
-            if (ll_timeout_expired(start, SPI_BYTE_TIMEOUT_CYCLES)) {
-                (void)spi_recover(ll);
-                return SPI_BUS_ERR_TIMEOUT;
-            }
+    if (!spi_clear_rx(spi)) {
+        goto timeout;
+    }
+    for (uint32_t i = 0U; i < len; i++) {
+        if (!spi_wait_status(spi, SPI_SR_TXE, SPI_SR_TXE, SPI_BYTE_TIMEOUT_CYCLES)) {
+            goto timeout;
         }
         LL_SPI_TransmitData8(spi, tx[i]);
 
-        start = ll_dwt_cycles();
-        while (!LL_SPI_IsActiveFlag_RXNE(spi)) {
-            if (ll_timeout_expired(start, SPI_BYTE_TIMEOUT_CYCLES)) {
-                (void)spi_recover(ll);
-                return SPI_BUS_ERR_TIMEOUT;
-            }
+        if (!spi_wait_status(spi, SPI_SR_RXNE, SPI_SR_RXNE, SPI_BYTE_TIMEOUT_CYCLES)) {
+            goto timeout;
         }
-        uint8_t b = LL_SPI_ReceiveData8(spi);
+        const uint8_t byte = LL_SPI_ReceiveData8(spi);
         if (rx != NULL) {
-            rx[i] = b;
+            rx[i] = byte;
         }
     }
 
-    /* 最后一字节移出移位寄存器后才算结束，否则 CS 拉高会截断末位 */
-    {
-        uint32_t start = ll_dwt_cycles();
-        while (LL_SPI_IsActiveFlag_BSY(spi)) {
-            if (ll_timeout_expired(start, SPI_BSY_TIMEOUT_CYCLES)) {
-                (void)spi_recover(ll);
-                return SPI_BUS_ERR_TIMEOUT;
-            }
-        }
+    if (!spi_wait_status(spi, SPI_SR_BSY, 0U, SPI_BSY_TIMEOUT_CYCLES) ||
+        (rx == NULL && !spi_clear_rx(spi))) {
+        goto timeout;
     }
 
-    /* TX-only 清 OVR（全双工下 RXNE 已在循环中消费，一般无 OVR，这里保险） */
-    if (rx == NULL) {
-        spi_drain_rx_and_clear_ovr(spi);
-    }
     return SPI_BUS_OK;
+
+timeout:
+    (void)spi_recover(ll);
+    return SPI_BUS_ERR_TIMEOUT;
 }
 
 static int ll_transfer(spi_bus_t *bus, const uint8_t *tx, uint8_t *rx, uint32_t len)
@@ -580,8 +577,8 @@ void spi_stm32_ll_init(spi_stm32_ll_t *ll, const spi_stm32_ll_hw_t *hw)
     LL_SPI_SetClockPhase(spi, LL_SPI_PHASE_1EDGE);
     LL_SPI_Enable(spi);
 
-    /* 读一次 DR 避免首字节异常 */
-    (void)LL_SPI_ReceiveData8(spi);
+    /* 首次 acquire 会再次核验 RXNE/OVR。 */
+    (void)spi_clear_rx(spi);
 }
 
 spi_bus_t *spi_stm32_ll_bus(spi_stm32_ll_t *ll)

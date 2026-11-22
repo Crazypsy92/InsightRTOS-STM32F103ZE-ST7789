@@ -2,6 +2,10 @@
 #include "main.h"
 #include "delay.h"
 #include "rtos_assert.h"
+#ifdef INSIGHT_DISPLAY_RTOS
+#include "rtos.h"
+#include "key_port.h"
+#endif
 
 volatile uint32_t g_tim2_ms_count;
 volatile uint32_t g_sys_tick;
@@ -47,6 +51,9 @@ void TIM2_IRQHandler(void)
         TIM2->SR = 0U;
         ++g_tim2_ms_count;
         ++g_sys_tick;
+#ifdef INSIGHT_DISPLAY_RTOS
+        KEY_OnSysTick1ms();
+#endif
     }
 }
 
@@ -59,6 +66,13 @@ void Delay_us(uint32_t us)
 }
 void Delay_ms(uint32_t ms)
 {
+#ifdef INSIGHT_DISPLAY_RTOS
+    if (ms!=0U) {
+        const uint32_t ticks=ms/10U+((ms%10U)!=0U ? 1U : 0U)+1U;
+        RTOS_ASSERT(rtos_delay(ticks)==RTOS_OK);
+    }
+#else
     const uint32_t start = GetTick_ms();
     while ((uint32_t)(GetTick_ms() - start) < ms) { }
+#endif
 }

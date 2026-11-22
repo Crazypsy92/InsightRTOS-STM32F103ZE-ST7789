@@ -1,0 +1,2457 @@
+{
+  "metadata": {
+    "seq_64": 446646,
+    "seq_low": 446646,
+    "seq_hi": 0,
+    "overwritten": 446518,
+    "count": 128,
+    "write_index": 67,
+    "status": 0
+  },
+  "event_counts": {
+    "TASK_READY": 30,
+    "SCHED_SELECT": 29,
+    "CONTEXT_SWITCH": 30,
+    "TASK_BLOCK": 20,
+    "DELAY_EXPIRED": 15,
+    "WAIT_COMPLETE": 4
+  },
+  "class_counts": {
+    "IDLE_TRANSITION": 22,
+    "BLOCK_OR_WAKE_OTHER": 8
+  },
+  "records": [
+    {
+      "seq": 446592,
+      "tick": 39476,
+      "event": "TASK_READY",
+      "task": "Controller",
+      "related": "",
+      "commit_class": "",
+      "desc": "Task=Controller ReasonFlags=0x0",
+      "raw": {
+        "idx": 0,
+        "seq": 446592,
+        "tick": 39476,
+        "gen": 1,
+        "arg0": 0,
+        "arg1": 0,
+        "slot": 1,
+        "type": 2
+      }
+    },
+    {
+      "seq": 446593,
+      "tick": 39476,
+      "event": "TASK_READY",
+      "task": "Idle",
+      "related": "",
+      "commit_class": "",
+      "desc": "Task=Idle ReasonFlags=0x0",
+      "raw": {
+        "idx": 1,
+        "seq": 446593,
+        "tick": 39476,
+        "gen": 0,
+        "arg0": 0,
+        "arg1": 0,
+        "slot": 65535,
+        "type": 2
+      }
+    },
+    {
+      "seq": 446594,
+      "tick": 39476,
+      "event": "SCHED_SELECT",
+      "task": "Controller",
+      "related": "",
+      "commit_class": "",
+      "desc": "Selected=Controller (gen=1)",
+      "raw": {
+        "idx": 2,
+        "seq": 446594,
+        "tick": 39476,
+        "gen": 1,
+        "arg0": 0,
+        "arg1": 11075583,
+        "slot": 1,
+        "type": 4
+      }
+    },
+    {
+      "seq": 446595,
+      "tick": 39476,
+      "event": "CONTEXT_SWITCH",
+      "task": "Controller",
+      "related": "Idle",
+      "commit_class": "IDLE_TRANSITION",
+      "desc": "From=Idle (gen=0) To=Controller (gen=1) Class=IDLE_TRANSITION Prio(0->4)",
+      "raw": {
+        "idx": 3,
+        "seq": 446595,
+        "tick": 39476,
+        "gen": 1,
+        "arg0": 0,
+        "arg1": 411107327,
+        "slot": 1,
+        "type": 12
+      }
+    },
+    {
+      "seq": 446596,
+      "tick": 39476,
+      "event": "TASK_BLOCK",
+      "task": "Controller",
+      "related": "",
+      "commit_class": "",
+      "desc": "Task=Controller WaitReason=0x0",
+      "raw": {
+        "idx": 4,
+        "seq": 446596,
+        "tick": 39476,
+        "gen": 1,
+        "arg0": 0,
+        "arg1": 39477,
+        "slot": 1,
+        "type": 3
+      }
+    },
+    {
+      "seq": 446597,
+      "tick": 39476,
+      "event": "SCHED_SELECT",
+      "task": "Idle",
+      "related": "",
+      "commit_class": "",
+      "desc": "Selected=Idle (gen=0)",
+      "raw": {
+        "idx": 5,
+        "seq": 446597,
+        "tick": 39476,
+        "gen": 0,
+        "arg0": 1,
+        "arg1": 6291457,
+        "slot": 65535,
+        "type": 4
+      }
+    },
+    {
+      "seq": 446598,
+      "tick": 39476,
+      "event": "CONTEXT_SWITCH",
+      "task": "Idle",
+      "related": "Controller",
+      "commit_class": "IDLE_TRANSITION",
+      "desc": "From=Controller (gen=1) To=Idle (gen=0) Class=IDLE_TRANSITION Prio(4->0)",
+      "raw": {
+        "idx": 6,
+        "seq": 446598,
+        "tick": 39476,
+        "gen": 0,
+        "arg0": 1,
+        "arg1": 402915329,
+        "slot": 65535,
+        "type": 12
+      }
+    },
+    {
+      "seq": 446599,
+      "tick": 39477,
+      "event": "DELAY_EXPIRED",
+      "task": "Controller",
+      "related": "",
+      "commit_class": "",
+      "desc": "Task=Controller WakeTick=39477",
+      "raw": {
+        "idx": 7,
+        "seq": 446599,
+        "tick": 39477,
+        "gen": 1,
+        "arg0": 39477,
+        "arg1": 0,
+        "slot": 1,
+        "type": 10
+      }
+    },
+    {
+      "seq": 446600,
+      "tick": 39477,
+      "event": "TASK_READY",
+      "task": "Controller",
+      "related": "",
+      "commit_class": "",
+      "desc": "Task=Controller ReasonFlags=0x0",
+      "raw": {
+        "idx": 8,
+        "seq": 446600,
+        "tick": 39477,
+        "gen": 1,
+        "arg0": 0,
+        "arg1": 0,
+        "slot": 1,
+        "type": 2
+      }
+    },
+    {
+      "seq": 446601,
+      "tick": 39477,
+      "event": "TASK_READY",
+      "task": "Idle",
+      "related": "",
+      "commit_class": "",
+      "desc": "Task=Idle ReasonFlags=0x0",
+      "raw": {
+        "idx": 9,
+        "seq": 446601,
+        "tick": 39477,
+        "gen": 0,
+        "arg0": 0,
+        "arg1": 0,
+        "slot": 65535,
+        "type": 2
+      }
+    },
+    {
+      "seq": 446602,
+      "tick": 39477,
+      "event": "SCHED_SELECT",
+      "task": "Controller",
+      "related": "",
+      "commit_class": "",
+      "desc": "Selected=Controller (gen=1)",
+      "raw": {
+        "idx": 10,
+        "seq": 446602,
+        "tick": 39477,
+        "gen": 1,
+        "arg0": 0,
+        "arg1": 11075583,
+        "slot": 1,
+        "type": 4
+      }
+    },
+    {
+      "seq": 446603,
+      "tick": 39477,
+      "event": "CONTEXT_SWITCH",
+      "task": "Controller",
+      "related": "Idle",
+      "commit_class": "IDLE_TRANSITION",
+      "desc": "From=Idle (gen=0) To=Controller (gen=1) Class=IDLE_TRANSITION Prio(0->4)",
+      "raw": {
+        "idx": 11,
+        "seq": 446603,
+        "tick": 39477,
+        "gen": 1,
+        "arg0": 0,
+        "arg1": 411107327,
+        "slot": 1,
+        "type": 12
+      }
+    },
+    {
+      "seq": 446604,
+      "tick": 39477,
+      "event": "WAIT_COMPLETE",
+      "task": "LCD",
+      "related": "",
+      "commit_class": "",
+      "desc": "Task=LCD WaitFlags=0x2",
+      "raw": {
+        "idx": 12,
+        "seq": 446604,
+        "tick": 39477,
+        "gen": 1,
+        "arg0": 2,
+        "arg1": 4,
+        "slot": 2,
+        "type": 5
+      }
+    },
+    {
+      "seq": 446605,
+      "tick": 39477,
+      "event": "TASK_READY",
+      "task": "LCD",
+      "related": "",
+      "commit_class": "",
+      "desc": "Task=LCD ReasonFlags=0x0",
+      "raw": {
+        "idx": 13,
+        "seq": 446605,
+        "tick": 39477,
+        "gen": 1,
+        "arg0": 0,
+        "arg1": 0,
+        "slot": 2,
+        "type": 2
+      }
+    },
+    {
+      "seq": 446606,
+      "tick": 39477,
+      "event": "TASK_BLOCK",
+      "task": "Controller",
+      "related": "",
+      "commit_class": "",
+      "desc": "Task=Controller WaitReason=0x0",
+      "raw": {
+        "idx": 14,
+        "seq": 446606,
+        "tick": 39477,
+        "gen": 1,
+        "arg0": 0,
+        "arg1": 39478,
+        "slot": 1,
+        "type": 3
+      }
+    },
+    {
+      "seq": 446607,
+      "tick": 39477,
+      "event": "SCHED_SELECT",
+      "task": "LCD",
+      "related": "",
+      "commit_class": "",
+      "desc": "Selected=LCD (gen=1)",
+      "raw": {
+        "idx": 15,
+        "seq": 446607,
+        "tick": 39477,
+        "gen": 1,
+        "arg0": 1,
+        "arg1": 4194305,
+        "slot": 2,
+        "type": 4
+      }
+    },
+    {
+      "seq": 446608,
+      "tick": 39477,
+      "event": "CONTEXT_SWITCH",
+      "task": "LCD",
+      "related": "Controller",
+      "commit_class": "BLOCK_OR_WAKE_OTHER",
+      "desc": "From=Controller (gen=1) To=LCD (gen=1) Class=BLOCK_OR_WAKE_OTHER Prio(4->2)",
+      "raw": {
+        "idx": 16,
+        "seq": 446608,
+        "tick": 39477,
+        "gen": 1,
+        "arg0": 1,
+        "arg1": 272891905,
+        "slot": 2,
+        "type": 12
+      }
+    },
+    {
+      "seq": 446609,
+      "tick": 39477,
+      "event": "TASK_BLOCK",
+      "task": "LCD",
+      "related": "",
+      "commit_class": "",
+      "desc": "Task=LCD WaitReason=0x0",
+      "raw": {
+        "idx": 17,
+        "seq": 446609,
+        "tick": 39477,
+        "gen": 1,
+        "arg0": 0,
+        "arg1": 39478,
+        "slot": 2,
+        "type": 3
+      }
+    },
+    {
+      "seq": 446610,
+      "tick": 39477,
+      "event": "SCHED_SELECT",
+      "task": "Idle",
+      "related": "",
+      "commit_class": "",
+      "desc": "Selected=Idle (gen=0)",
+      "raw": {
+        "idx": 18,
+        "seq": 446610,
+        "tick": 39477,
+        "gen": 0,
+        "arg0": 1,
+        "arg1": 6291458,
+        "slot": 65535,
+        "type": 4
+      }
+    },
+    {
+      "seq": 446611,
+      "tick": 39477,
+      "event": "CONTEXT_SWITCH",
+      "task": "Idle",
+      "related": "LCD",
+      "commit_class": "IDLE_TRANSITION",
+      "desc": "From=LCD (gen=1) To=Idle (gen=0) Class=IDLE_TRANSITION Prio(2->0)",
+      "raw": {
+        "idx": 19,
+        "seq": 446611,
+        "tick": 39477,
+        "gen": 0,
+        "arg0": 1,
+        "arg1": 402784258,
+        "slot": 65535,
+        "type": 12
+      }
+    },
+    {
+      "seq": 446612,
+      "tick": 39478,
+      "event": "DELAY_EXPIRED",
+      "task": "Controller",
+      "related": "",
+      "commit_class": "",
+      "desc": "Task=Controller WakeTick=39478",
+      "raw": {
+        "idx": 20,
+        "seq": 446612,
+        "tick": 39478,
+        "gen": 1,
+        "arg0": 39478,
+        "arg1": 0,
+        "slot": 1,
+        "type": 10
+      }
+    },
+    {
+      "seq": 446613,
+      "tick": 39478,
+      "event": "TASK_READY",
+      "task": "Controller",
+      "related": "",
+      "commit_class": "",
+      "desc": "Task=Controller ReasonFlags=0x0",
+      "raw": {
+        "idx": 21,
+        "seq": 446613,
+        "tick": 39478,
+        "gen": 1,
+        "arg0": 0,
+        "arg1": 0,
+        "slot": 1,
+        "type": 2
+      }
+    },
+    {
+      "seq": 446614,
+      "tick": 39478,
+      "event": "DELAY_EXPIRED",
+      "task": "LCD",
+      "related": "",
+      "commit_class": "",
+      "desc": "Task=LCD WakeTick=39478",
+      "raw": {
+        "idx": 22,
+        "seq": 446614,
+        "tick": 39478,
+        "gen": 1,
+        "arg0": 39478,
+        "arg1": 0,
+        "slot": 2,
+        "type": 10
+      }
+    },
+    {
+      "seq": 446615,
+      "tick": 39478,
+      "event": "TASK_READY",
+      "task": "LCD",
+      "related": "",
+      "commit_class": "",
+      "desc": "Task=LCD ReasonFlags=0x0",
+      "raw": {
+        "idx": 23,
+        "seq": 446615,
+        "tick": 39478,
+        "gen": 1,
+        "arg0": 0,
+        "arg1": 0,
+        "slot": 2,
+        "type": 2
+      }
+    },
+    {
+      "seq": 446616,
+      "tick": 39478,
+      "event": "TASK_READY",
+      "task": "Idle",
+      "related": "",
+      "commit_class": "",
+      "desc": "Task=Idle ReasonFlags=0x0",
+      "raw": {
+        "idx": 24,
+        "seq": 446616,
+        "tick": 39478,
+        "gen": 0,
+        "arg0": 0,
+        "arg1": 0,
+        "slot": 65535,
+        "type": 2
+      }
+    },
+    {
+      "seq": 446617,
+      "tick": 39478,
+      "event": "SCHED_SELECT",
+      "task": "Controller",
+      "related": "",
+      "commit_class": "",
+      "desc": "Selected=Controller (gen=1)",
+      "raw": {
+        "idx": 25,
+        "seq": 446617,
+        "tick": 39478,
+        "gen": 1,
+        "arg0": 0,
+        "arg1": 11075583,
+        "slot": 1,
+        "type": 4
+      }
+    },
+    {
+      "seq": 446618,
+      "tick": 39478,
+      "event": "CONTEXT_SWITCH",
+      "task": "Controller",
+      "related": "Idle",
+      "commit_class": "IDLE_TRANSITION",
+      "desc": "From=Idle (gen=0) To=Controller (gen=1) Class=IDLE_TRANSITION Prio(0->4)",
+      "raw": {
+        "idx": 26,
+        "seq": 446618,
+        "tick": 39478,
+        "gen": 1,
+        "arg0": 0,
+        "arg1": 411107327,
+        "slot": 1,
+        "type": 12
+      }
+    },
+    {
+      "seq": 446619,
+      "tick": 39478,
+      "event": "TASK_BLOCK",
+      "task": "Controller",
+      "related": "",
+      "commit_class": "",
+      "desc": "Task=Controller WaitReason=0x0",
+      "raw": {
+        "idx": 27,
+        "seq": 446619,
+        "tick": 39478,
+        "gen": 1,
+        "arg0": 0,
+        "arg1": 39479,
+        "slot": 1,
+        "type": 3
+      }
+    },
+    {
+      "seq": 446620,
+      "tick": 39478,
+      "event": "SCHED_SELECT",
+      "task": "LCD",
+      "related": "",
+      "commit_class": "",
+      "desc": "Selected=LCD (gen=1)",
+      "raw": {
+        "idx": 28,
+        "seq": 446620,
+        "tick": 39478,
+        "gen": 1,
+        "arg0": 1,
+        "arg1": 4194305,
+        "slot": 2,
+        "type": 4
+      }
+    },
+    {
+      "seq": 446621,
+      "tick": 39478,
+      "event": "CONTEXT_SWITCH",
+      "task": "LCD",
+      "related": "Controller",
+      "commit_class": "BLOCK_OR_WAKE_OTHER",
+      "desc": "From=Controller (gen=1) To=LCD (gen=1) Class=BLOCK_OR_WAKE_OTHER Prio(4->2)",
+      "raw": {
+        "idx": 29,
+        "seq": 446621,
+        "tick": 39478,
+        "gen": 1,
+        "arg0": 1,
+        "arg1": 272891905,
+        "slot": 2,
+        "type": 12
+      }
+    },
+    {
+      "seq": 446622,
+      "tick": 39478,
+      "event": "TASK_BLOCK",
+      "task": "LCD",
+      "related": "",
+      "commit_class": "",
+      "desc": "Task=LCD WaitReason=0x4",
+      "raw": {
+        "idx": 30,
+        "seq": 446622,
+        "tick": 39478,
+        "gen": 1,
+        "arg0": 4,
+        "arg1": 39478,
+        "slot": 2,
+        "type": 3
+      }
+    },
+    {
+      "seq": 446623,
+      "tick": 39478,
+      "event": "SCHED_SELECT",
+      "task": "Idle",
+      "related": "",
+      "commit_class": "",
+      "desc": "Selected=Idle (gen=0)",
+      "raw": {
+        "idx": 31,
+        "seq": 446623,
+        "tick": 39478,
+        "gen": 0,
+        "arg0": 1,
+        "arg1": 6291458,
+        "slot": 65535,
+        "type": 4
+      }
+    },
+    {
+      "seq": 446624,
+      "tick": 39478,
+      "event": "CONTEXT_SWITCH",
+      "task": "Idle",
+      "related": "LCD",
+      "commit_class": "IDLE_TRANSITION",
+      "desc": "From=LCD (gen=1) To=Idle (gen=0) Class=IDLE_TRANSITION Prio(2->0)",
+      "raw": {
+        "idx": 32,
+        "seq": 446624,
+        "tick": 39478,
+        "gen": 0,
+        "arg0": 1,
+        "arg1": 402784258,
+        "slot": 65535,
+        "type": 12
+      }
+    },
+    {
+      "seq": 446625,
+      "tick": 39479,
+      "event": "DELAY_EXPIRED",
+      "task": "Controller",
+      "related": "",
+      "commit_class": "",
+      "desc": "Task=Controller WakeTick=39479",
+      "raw": {
+        "idx": 33,
+        "seq": 446625,
+        "tick": 39479,
+        "gen": 1,
+        "arg0": 39479,
+        "arg1": 0,
+        "slot": 1,
+        "type": 10
+      }
+    },
+    {
+      "seq": 446626,
+      "tick": 39479,
+      "event": "TASK_READY",
+      "task": "Controller",
+      "related": "",
+      "commit_class": "",
+      "desc": "Task=Controller ReasonFlags=0x0",
+      "raw": {
+        "idx": 34,
+        "seq": 446626,
+        "tick": 39479,
+        "gen": 1,
+        "arg0": 0,
+        "arg1": 0,
+        "slot": 1,
+        "type": 2
+      }
+    },
+    {
+      "seq": 446627,
+      "tick": 39479,
+      "event": "TASK_BLOCK",
+      "task": "Controller",
+      "related": "",
+      "commit_class": "",
+      "desc": "Task=Controller WaitReason=0x0",
+      "raw": {
+        "idx": 35,
+        "seq": 446627,
+        "tick": 39479,
+        "gen": 0,
+        "arg0": 0,
+        "arg1": 39491,
+        "slot": 1,
+        "type": 3
+      }
+    },
+    {
+      "seq": 446756,
+      "tick": 39490,
+      "event": "SCHED_SELECT",
+      "task": "LCD",
+      "related": "",
+      "commit_class": "",
+      "desc": "Selected=LCD (gen=1)",
+      "raw": {
+        "idx": 36,
+        "seq": 446756,
+        "tick": 39490,
+        "gen": 1,
+        "arg0": 1,
+        "arg1": 4194305,
+        "slot": 2,
+        "type": 4
+      }
+    },
+    {
+      "seq": 446757,
+      "tick": 39490,
+      "event": "CONTEXT_SWITCH",
+      "task": "LCD",
+      "related": "Controller",
+      "commit_class": "BLOCK_OR_WAKE_OTHER",
+      "desc": "From=Controller (gen=1) To=LCD (gen=1) Class=BLOCK_OR_WAKE_OTHER Prio(4->2)",
+      "raw": {
+        "idx": 37,
+        "seq": 446757,
+        "tick": 39490,
+        "gen": 1,
+        "arg0": 1,
+        "arg1": 272891905,
+        "slot": 2,
+        "type": 12
+      }
+    },
+    {
+      "seq": 446758,
+      "tick": 39490,
+      "event": "TASK_BLOCK",
+      "task": "LCD",
+      "related": "",
+      "commit_class": "",
+      "desc": "Task=LCD WaitReason=0x4",
+      "raw": {
+        "idx": 38,
+        "seq": 446758,
+        "tick": 39490,
+        "gen": 1,
+        "arg0": 4,
+        "arg1": 39490,
+        "slot": 2,
+        "type": 3
+      }
+    },
+    {
+      "seq": 446759,
+      "tick": 39490,
+      "event": "SCHED_SELECT",
+      "task": "Idle",
+      "related": "",
+      "commit_class": "",
+      "desc": "Selected=Idle (gen=0)",
+      "raw": {
+        "idx": 39,
+        "seq": 446759,
+        "tick": 39490,
+        "gen": 0,
+        "arg0": 1,
+        "arg1": 6291458,
+        "slot": 65535,
+        "type": 4
+      }
+    },
+    {
+      "seq": 446760,
+      "tick": 39490,
+      "event": "CONTEXT_SWITCH",
+      "task": "Idle",
+      "related": "LCD",
+      "commit_class": "IDLE_TRANSITION",
+      "desc": "From=LCD (gen=1) To=Idle (gen=0) Class=IDLE_TRANSITION Prio(2->0)",
+      "raw": {
+        "idx": 40,
+        "seq": 446760,
+        "tick": 39490,
+        "gen": 0,
+        "arg0": 1,
+        "arg1": 402784258,
+        "slot": 65535,
+        "type": 12
+      }
+    },
+    {
+      "seq": 446761,
+      "tick": 39491,
+      "event": "DELAY_EXPIRED",
+      "task": "Controller",
+      "related": "",
+      "commit_class": "",
+      "desc": "Task=Controller WakeTick=39491",
+      "raw": {
+        "idx": 41,
+        "seq": 446761,
+        "tick": 39491,
+        "gen": 1,
+        "arg0": 39491,
+        "arg1": 0,
+        "slot": 1,
+        "type": 10
+      }
+    },
+    {
+      "seq": 446762,
+      "tick": 39491,
+      "event": "TASK_READY",
+      "task": "Controller",
+      "related": "",
+      "commit_class": "",
+      "desc": "Task=Controller ReasonFlags=0x0",
+      "raw": {
+        "idx": 42,
+        "seq": 446762,
+        "tick": 39491,
+        "gen": 1,
+        "arg0": 0,
+        "arg1": 0,
+        "slot": 1,
+        "type": 2
+      }
+    },
+    {
+      "seq": 446763,
+      "tick": 39491,
+      "event": "TASK_READY",
+      "task": "Idle",
+      "related": "",
+      "commit_class": "",
+      "desc": "Task=Idle ReasonFlags=0x0",
+      "raw": {
+        "idx": 43,
+        "seq": 446763,
+        "tick": 39491,
+        "gen": 0,
+        "arg0": 0,
+        "arg1": 0,
+        "slot": 65535,
+        "type": 2
+      }
+    },
+    {
+      "seq": 446764,
+      "tick": 39491,
+      "event": "SCHED_SELECT",
+      "task": "Controller",
+      "related": "",
+      "commit_class": "",
+      "desc": "Selected=Controller (gen=1)",
+      "raw": {
+        "idx": 44,
+        "seq": 446764,
+        "tick": 39491,
+        "gen": 1,
+        "arg0": 0,
+        "arg1": 11075583,
+        "slot": 1,
+        "type": 4
+      }
+    },
+    {
+      "seq": 446765,
+      "tick": 39491,
+      "event": "CONTEXT_SWITCH",
+      "task": "Controller",
+      "related": "Idle",
+      "commit_class": "IDLE_TRANSITION",
+      "desc": "From=Idle (gen=0) To=Controller (gen=1) Class=IDLE_TRANSITION Prio(0->4)",
+      "raw": {
+        "idx": 45,
+        "seq": 446765,
+        "tick": 39491,
+        "gen": 1,
+        "arg0": 0,
+        "arg1": 411107327,
+        "slot": 1,
+        "type": 12
+      }
+    },
+    {
+      "seq": 446766,
+      "tick": 39491,
+      "event": "TASK_BLOCK",
+      "task": "Controller",
+      "related": "",
+      "commit_class": "",
+      "desc": "Task=Controller WaitReason=0x0",
+      "raw": {
+        "idx": 46,
+        "seq": 446766,
+        "tick": 39491,
+        "gen": 1,
+        "arg0": 0,
+        "arg1": 39492,
+        "slot": 1,
+        "type": 3
+      }
+    },
+    {
+      "seq": 446767,
+      "tick": 39491,
+      "event": "SCHED_SELECT",
+      "task": "Idle",
+      "related": "",
+      "commit_class": "",
+      "desc": "Selected=Idle (gen=0)",
+      "raw": {
+        "idx": 47,
+        "seq": 446767,
+        "tick": 39491,
+        "gen": 0,
+        "arg0": 1,
+        "arg1": 6291457,
+        "slot": 65535,
+        "type": 4
+      }
+    },
+    {
+      "seq": 446768,
+      "tick": 39491,
+      "event": "CONTEXT_SWITCH",
+      "task": "Idle",
+      "related": "Controller",
+      "commit_class": "IDLE_TRANSITION",
+      "desc": "From=Controller (gen=1) To=Idle (gen=0) Class=IDLE_TRANSITION Prio(4->0)",
+      "raw": {
+        "idx": 48,
+        "seq": 446768,
+        "tick": 39491,
+        "gen": 0,
+        "arg0": 1,
+        "arg1": 402915329,
+        "slot": 65535,
+        "type": 12
+      }
+    },
+    {
+      "seq": 446769,
+      "tick": 39492,
+      "event": "DELAY_EXPIRED",
+      "task": "Controller",
+      "related": "",
+      "commit_class": "",
+      "desc": "Task=Controller WakeTick=39492",
+      "raw": {
+        "idx": 49,
+        "seq": 446769,
+        "tick": 39492,
+        "gen": 1,
+        "arg0": 39492,
+        "arg1": 0,
+        "slot": 1,
+        "type": 10
+      }
+    },
+    {
+      "seq": 446770,
+      "tick": 39492,
+      "event": "TASK_READY",
+      "task": "Controller",
+      "related": "",
+      "commit_class": "",
+      "desc": "Task=Controller ReasonFlags=0x0",
+      "raw": {
+        "idx": 50,
+        "seq": 446770,
+        "tick": 39492,
+        "gen": 1,
+        "arg0": 0,
+        "arg1": 0,
+        "slot": 1,
+        "type": 2
+      }
+    },
+    {
+      "seq": 446771,
+      "tick": 39492,
+      "event": "TASK_READY",
+      "task": "Idle",
+      "related": "",
+      "commit_class": "",
+      "desc": "Task=Idle ReasonFlags=0x0",
+      "raw": {
+        "idx": 51,
+        "seq": 446771,
+        "tick": 39492,
+        "gen": 0,
+        "arg0": 0,
+        "arg1": 0,
+        "slot": 65535,
+        "type": 2
+      }
+    },
+    {
+      "seq": 446772,
+      "tick": 39492,
+      "event": "SCHED_SELECT",
+      "task": "Controller",
+      "related": "",
+      "commit_class": "",
+      "desc": "Selected=Controller (gen=1)",
+      "raw": {
+        "idx": 52,
+        "seq": 446772,
+        "tick": 39492,
+        "gen": 1,
+        "arg0": 0,
+        "arg1": 11075583,
+        "slot": 1,
+        "type": 4
+      }
+    },
+    {
+      "seq": 446773,
+      "tick": 39492,
+      "event": "CONTEXT_SWITCH",
+      "task": "Controller",
+      "related": "Idle",
+      "commit_class": "IDLE_TRANSITION",
+      "desc": "From=Idle (gen=0) To=Controller (gen=1) Class=IDLE_TRANSITION Prio(0->4)",
+      "raw": {
+        "idx": 53,
+        "seq": 446773,
+        "tick": 39492,
+        "gen": 1,
+        "arg0": 0,
+        "arg1": 411107327,
+        "slot": 1,
+        "type": 12
+      }
+    },
+    {
+      "seq": 446774,
+      "tick": 39492,
+      "event": "WAIT_COMPLETE",
+      "task": "LCD",
+      "related": "",
+      "commit_class": "",
+      "desc": "Task=LCD WaitFlags=0x2",
+      "raw": {
+        "idx": 54,
+        "seq": 446774,
+        "tick": 39492,
+        "gen": 1,
+        "arg0": 2,
+        "arg1": 4,
+        "slot": 2,
+        "type": 5
+      }
+    },
+    {
+      "seq": 446775,
+      "tick": 39492,
+      "event": "TASK_READY",
+      "task": "LCD",
+      "related": "",
+      "commit_class": "",
+      "desc": "Task=LCD ReasonFlags=0x0",
+      "raw": {
+        "idx": 55,
+        "seq": 446775,
+        "tick": 39492,
+        "gen": 1,
+        "arg0": 0,
+        "arg1": 0,
+        "slot": 2,
+        "type": 2
+      }
+    },
+    {
+      "seq": 446776,
+      "tick": 39492,
+      "event": "TASK_BLOCK",
+      "task": "Controller",
+      "related": "",
+      "commit_class": "",
+      "desc": "Task=Controller WaitReason=0x0",
+      "raw": {
+        "idx": 56,
+        "seq": 446776,
+        "tick": 39492,
+        "gen": 1,
+        "arg0": 0,
+        "arg1": 39493,
+        "slot": 1,
+        "type": 3
+      }
+    },
+    {
+      "seq": 446777,
+      "tick": 39492,
+      "event": "SCHED_SELECT",
+      "task": "LCD",
+      "related": "",
+      "commit_class": "",
+      "desc": "Selected=LCD (gen=1)",
+      "raw": {
+        "idx": 57,
+        "seq": 446777,
+        "tick": 39492,
+        "gen": 1,
+        "arg0": 1,
+        "arg1": 4194305,
+        "slot": 2,
+        "type": 4
+      }
+    },
+    {
+      "seq": 446778,
+      "tick": 39492,
+      "event": "CONTEXT_SWITCH",
+      "task": "LCD",
+      "related": "Controller",
+      "commit_class": "BLOCK_OR_WAKE_OTHER",
+      "desc": "From=Controller (gen=1) To=LCD (gen=1) Class=BLOCK_OR_WAKE_OTHER Prio(4->2)",
+      "raw": {
+        "idx": 58,
+        "seq": 446778,
+        "tick": 39492,
+        "gen": 1,
+        "arg0": 1,
+        "arg1": 272891905,
+        "slot": 2,
+        "type": 12
+      }
+    },
+    {
+      "seq": 446779,
+      "tick": 39492,
+      "event": "TASK_BLOCK",
+      "task": "LCD",
+      "related": "",
+      "commit_class": "",
+      "desc": "Task=LCD WaitReason=0x0",
+      "raw": {
+        "idx": 59,
+        "seq": 446779,
+        "tick": 39492,
+        "gen": 1,
+        "arg0": 0,
+        "arg1": 39493,
+        "slot": 2,
+        "type": 3
+      }
+    },
+    {
+      "seq": 446780,
+      "tick": 39492,
+      "event": "SCHED_SELECT",
+      "task": "Idle",
+      "related": "",
+      "commit_class": "",
+      "desc": "Selected=Idle (gen=0)",
+      "raw": {
+        "idx": 60,
+        "seq": 446780,
+        "tick": 39492,
+        "gen": 0,
+        "arg0": 1,
+        "arg1": 6291458,
+        "slot": 65535,
+        "type": 4
+      }
+    },
+    {
+      "seq": 446781,
+      "tick": 39492,
+      "event": "CONTEXT_SWITCH",
+      "task": "Idle",
+      "related": "LCD",
+      "commit_class": "IDLE_TRANSITION",
+      "desc": "From=LCD (gen=1) To=Idle (gen=0) Class=IDLE_TRANSITION Prio(2->0)",
+      "raw": {
+        "idx": 61,
+        "seq": 446781,
+        "tick": 39492,
+        "gen": 0,
+        "arg0": 1,
+        "arg1": 402784258,
+        "slot": 65535,
+        "type": 12
+      }
+    },
+    {
+      "seq": 446782,
+      "tick": 39493,
+      "event": "DELAY_EXPIRED",
+      "task": "Controller",
+      "related": "",
+      "commit_class": "",
+      "desc": "Task=Controller WakeTick=39493",
+      "raw": {
+        "idx": 62,
+        "seq": 446782,
+        "tick": 39493,
+        "gen": 1,
+        "arg0": 39493,
+        "arg1": 0,
+        "slot": 1,
+        "type": 10
+      }
+    },
+    {
+      "seq": 446783,
+      "tick": 39493,
+      "event": "TASK_READY",
+      "task": "Controller",
+      "related": "",
+      "commit_class": "",
+      "desc": "Task=Controller ReasonFlags=0x0",
+      "raw": {
+        "idx": 63,
+        "seq": 446783,
+        "tick": 39493,
+        "gen": 1,
+        "arg0": 0,
+        "arg1": 0,
+        "slot": 1,
+        "type": 2
+      }
+    },
+    {
+      "seq": 446784,
+      "tick": 39493,
+      "event": "DELAY_EXPIRED",
+      "task": "LCD",
+      "related": "",
+      "commit_class": "",
+      "desc": "Task=LCD WakeTick=39493",
+      "raw": {
+        "idx": 64,
+        "seq": 446784,
+        "tick": 39493,
+        "gen": 1,
+        "arg0": 39493,
+        "arg1": 0,
+        "slot": 2,
+        "type": 10
+      }
+    },
+    {
+      "seq": 446785,
+      "tick": 39493,
+      "event": "TASK_READY",
+      "task": "LCD",
+      "related": "",
+      "commit_class": "",
+      "desc": "Task=LCD ReasonFlags=0x0",
+      "raw": {
+        "idx": 65,
+        "seq": 446785,
+        "tick": 39493,
+        "gen": 1,
+        "arg0": 0,
+        "arg1": 0,
+        "slot": 2,
+        "type": 2
+      }
+    },
+    {
+      "seq": 446786,
+      "tick": 39493,
+      "event": "TASK_READY",
+      "task": "Idle",
+      "related": "",
+      "commit_class": "",
+      "desc": "Task=Idle ReasonFlags=0x0",
+      "raw": {
+        "idx": 66,
+        "seq": 446786,
+        "tick": 39493,
+        "gen": 0,
+        "arg0": 0,
+        "arg1": 0,
+        "slot": 65535,
+        "type": 2
+      }
+    },
+    {
+      "seq": 446787,
+      "tick": 39493,
+      "event": "SCHED_SELECT",
+      "task": "Controller",
+      "related": "",
+      "commit_class": "",
+      "desc": "Selected=Controller (gen=1)",
+      "raw": {
+        "idx": 67,
+        "seq": 446787,
+        "tick": 39493,
+        "gen": 1,
+        "arg0": 0,
+        "arg1": 11075583,
+        "slot": 1,
+        "type": 4
+      }
+    },
+    {
+      "seq": 446788,
+      "tick": 39493,
+      "event": "CONTEXT_SWITCH",
+      "task": "Controller",
+      "related": "Idle",
+      "commit_class": "IDLE_TRANSITION",
+      "desc": "From=Idle (gen=0) To=Controller (gen=1) Class=IDLE_TRANSITION Prio(0->4)",
+      "raw": {
+        "idx": 68,
+        "seq": 446788,
+        "tick": 39493,
+        "gen": 1,
+        "arg0": 0,
+        "arg1": 411107327,
+        "slot": 1,
+        "type": 12
+      }
+    },
+    {
+      "seq": 446789,
+      "tick": 39493,
+      "event": "TASK_BLOCK",
+      "task": "Controller",
+      "related": "",
+      "commit_class": "",
+      "desc": "Task=Controller WaitReason=0x0",
+      "raw": {
+        "idx": 69,
+        "seq": 446789,
+        "tick": 39493,
+        "gen": 1,
+        "arg0": 0,
+        "arg1": 39494,
+        "slot": 1,
+        "type": 3
+      }
+    },
+    {
+      "seq": 446790,
+      "tick": 39493,
+      "event": "SCHED_SELECT",
+      "task": "LCD",
+      "related": "",
+      "commit_class": "",
+      "desc": "Selected=LCD (gen=1)",
+      "raw": {
+        "idx": 70,
+        "seq": 446790,
+        "tick": 39493,
+        "gen": 1,
+        "arg0": 1,
+        "arg1": 4194305,
+        "slot": 2,
+        "type": 4
+      }
+    },
+    {
+      "seq": 446791,
+      "tick": 39493,
+      "event": "CONTEXT_SWITCH",
+      "task": "LCD",
+      "related": "Controller",
+      "commit_class": "BLOCK_OR_WAKE_OTHER",
+      "desc": "From=Controller (gen=1) To=LCD (gen=1) Class=BLOCK_OR_WAKE_OTHER Prio(4->2)",
+      "raw": {
+        "idx": 71,
+        "seq": 446791,
+        "tick": 39493,
+        "gen": 1,
+        "arg0": 1,
+        "arg1": 272891905,
+        "slot": 2,
+        "type": 12
+      }
+    },
+    {
+      "seq": 446792,
+      "tick": 39493,
+      "event": "TASK_BLOCK",
+      "task": "LCD",
+      "related": "",
+      "commit_class": "",
+      "desc": "Task=LCD WaitReason=0x4",
+      "raw": {
+        "idx": 72,
+        "seq": 446792,
+        "tick": 39493,
+        "gen": 1,
+        "arg0": 4,
+        "arg1": 39493,
+        "slot": 2,
+        "type": 3
+      }
+    },
+    {
+      "seq": 446793,
+      "tick": 39493,
+      "event": "SCHED_SELECT",
+      "task": "Idle",
+      "related": "",
+      "commit_class": "",
+      "desc": "Selected=Idle (gen=0)",
+      "raw": {
+        "idx": 73,
+        "seq": 446793,
+        "tick": 39493,
+        "gen": 0,
+        "arg0": 1,
+        "arg1": 6291458,
+        "slot": 65535,
+        "type": 4
+      }
+    },
+    {
+      "seq": 446794,
+      "tick": 39493,
+      "event": "CONTEXT_SWITCH",
+      "task": "Idle",
+      "related": "LCD",
+      "commit_class": "IDLE_TRANSITION",
+      "desc": "From=LCD (gen=1) To=Idle (gen=0) Class=IDLE_TRANSITION Prio(2->0)",
+      "raw": {
+        "idx": 74,
+        "seq": 446794,
+        "tick": 39493,
+        "gen": 0,
+        "arg0": 1,
+        "arg1": 402784258,
+        "slot": 65535,
+        "type": 12
+      }
+    },
+    {
+      "seq": 446795,
+      "tick": 39494,
+      "event": "DELAY_EXPIRED",
+      "task": "Controller",
+      "related": "",
+      "commit_class": "",
+      "desc": "Task=Controller WakeTick=39494",
+      "raw": {
+        "idx": 75,
+        "seq": 446795,
+        "tick": 39494,
+        "gen": 1,
+        "arg0": 39494,
+        "arg1": 0,
+        "slot": 1,
+        "type": 10
+      }
+    },
+    {
+      "seq": 446796,
+      "tick": 39494,
+      "event": "TASK_READY",
+      "task": "Controller",
+      "related": "",
+      "commit_class": "",
+      "desc": "Task=Controller ReasonFlags=0x0",
+      "raw": {
+        "idx": 76,
+        "seq": 446796,
+        "tick": 39494,
+        "gen": 1,
+        "arg0": 0,
+        "arg1": 0,
+        "slot": 1,
+        "type": 2
+      }
+    },
+    {
+      "seq": 446797,
+      "tick": 39494,
+      "event": "TASK_READY",
+      "task": "Idle",
+      "related": "",
+      "commit_class": "",
+      "desc": "Task=Idle ReasonFlags=0x0",
+      "raw": {
+        "idx": 77,
+        "seq": 446797,
+        "tick": 39494,
+        "gen": 0,
+        "arg0": 0,
+        "arg1": 0,
+        "slot": 65535,
+        "type": 2
+      }
+    },
+    {
+      "seq": 446798,
+      "tick": 39494,
+      "event": "SCHED_SELECT",
+      "task": "Controller",
+      "related": "",
+      "commit_class": "",
+      "desc": "Selected=Controller (gen=1)",
+      "raw": {
+        "idx": 78,
+        "seq": 446798,
+        "tick": 39494,
+        "gen": 1,
+        "arg0": 0,
+        "arg1": 11075583,
+        "slot": 1,
+        "type": 4
+      }
+    },
+    {
+      "seq": 446799,
+      "tick": 39494,
+      "event": "CONTEXT_SWITCH",
+      "task": "Controller",
+      "related": "Idle",
+      "commit_class": "IDLE_TRANSITION",
+      "desc": "From=Idle (gen=0) To=Controller (gen=1) Class=IDLE_TRANSITION Prio(0->4)",
+      "raw": {
+        "idx": 79,
+        "seq": 446799,
+        "tick": 39494,
+        "gen": 1,
+        "arg0": 0,
+        "arg1": 411107327,
+        "slot": 1,
+        "type": 12
+      }
+    },
+    {
+      "seq": 446800,
+      "tick": 39494,
+      "event": "TASK_BLOCK",
+      "task": "Controller",
+      "related": "",
+      "commit_class": "",
+      "desc": "Task=Controller WaitReason=0x0",
+      "raw": {
+        "idx": 80,
+        "seq": 446800,
+        "tick": 39494,
+        "gen": 1,
+        "arg0": 0,
+        "arg1": 39495,
+        "slot": 1,
+        "type": 3
+      }
+    },
+    {
+      "seq": 446801,
+      "tick": 39494,
+      "event": "SCHED_SELECT",
+      "task": "Idle",
+      "related": "",
+      "commit_class": "",
+      "desc": "Selected=Idle (gen=0)",
+      "raw": {
+        "idx": 81,
+        "seq": 446801,
+        "tick": 39494,
+        "gen": 0,
+        "arg0": 1,
+        "arg1": 6291457,
+        "slot": 65535,
+        "type": 4
+      }
+    },
+    {
+      "seq": 446802,
+      "tick": 39494,
+      "event": "CONTEXT_SWITCH",
+      "task": "Idle",
+      "related": "Controller",
+      "commit_class": "IDLE_TRANSITION",
+      "desc": "From=Controller (gen=1) To=Idle (gen=0) Class=IDLE_TRANSITION Prio(4->0)",
+      "raw": {
+        "idx": 82,
+        "seq": 446802,
+        "tick": 39494,
+        "gen": 0,
+        "arg0": 1,
+        "arg1": 402915329,
+        "slot": 65535,
+        "type": 12
+      }
+    },
+    {
+      "seq": 446803,
+      "tick": 39495,
+      "event": "DELAY_EXPIRED",
+      "task": "Controller",
+      "related": "",
+      "commit_class": "",
+      "desc": "Task=Controller WakeTick=39495",
+      "raw": {
+        "idx": 83,
+        "seq": 446803,
+        "tick": 39495,
+        "gen": 1,
+        "arg0": 39495,
+        "arg1": 0,
+        "slot": 1,
+        "type": 10
+      }
+    },
+    {
+      "seq": 446804,
+      "tick": 39495,
+      "event": "TASK_READY",
+      "task": "Controller",
+      "related": "",
+      "commit_class": "",
+      "desc": "Task=Controller ReasonFlags=0x0",
+      "raw": {
+        "idx": 84,
+        "seq": 446804,
+        "tick": 39495,
+        "gen": 1,
+        "arg0": 0,
+        "arg1": 0,
+        "slot": 1,
+        "type": 2
+      }
+    },
+    {
+      "seq": 446805,
+      "tick": 39495,
+      "event": "TASK_READY",
+      "task": "Idle",
+      "related": "",
+      "commit_class": "",
+      "desc": "Task=Idle ReasonFlags=0x0",
+      "raw": {
+        "idx": 85,
+        "seq": 446805,
+        "tick": 39495,
+        "gen": 0,
+        "arg0": 0,
+        "arg1": 0,
+        "slot": 65535,
+        "type": 2
+      }
+    },
+    {
+      "seq": 446806,
+      "tick": 39495,
+      "event": "SCHED_SELECT",
+      "task": "Controller",
+      "related": "",
+      "commit_class": "",
+      "desc": "Selected=Controller (gen=1)",
+      "raw": {
+        "idx": 86,
+        "seq": 446806,
+        "tick": 39495,
+        "gen": 1,
+        "arg0": 0,
+        "arg1": 11075583,
+        "slot": 1,
+        "type": 4
+      }
+    },
+    {
+      "seq": 446807,
+      "tick": 39495,
+      "event": "CONTEXT_SWITCH",
+      "task": "Controller",
+      "related": "Idle",
+      "commit_class": "IDLE_TRANSITION",
+      "desc": "From=Idle (gen=0) To=Controller (gen=1) Class=IDLE_TRANSITION Prio(0->4)",
+      "raw": {
+        "idx": 87,
+        "seq": 446807,
+        "tick": 39495,
+        "gen": 1,
+        "arg0": 0,
+        "arg1": 411107327,
+        "slot": 1,
+        "type": 12
+      }
+    },
+    {
+      "seq": 446808,
+      "tick": 39495,
+      "event": "WAIT_COMPLETE",
+      "task": "LCD",
+      "related": "",
+      "commit_class": "",
+      "desc": "Task=LCD WaitFlags=0x2",
+      "raw": {
+        "idx": 88,
+        "seq": 446808,
+        "tick": 39495,
+        "gen": 1,
+        "arg0": 2,
+        "arg1": 4,
+        "slot": 2,
+        "type": 5
+      }
+    },
+    {
+      "seq": 446809,
+      "tick": 39495,
+      "event": "TASK_READY",
+      "task": "LCD",
+      "related": "",
+      "commit_class": "",
+      "desc": "Task=LCD ReasonFlags=0x0",
+      "raw": {
+        "idx": 89,
+        "seq": 446809,
+        "tick": 39495,
+        "gen": 1,
+        "arg0": 0,
+        "arg1": 0,
+        "slot": 2,
+        "type": 2
+      }
+    },
+    {
+      "seq": 446810,
+      "tick": 39495,
+      "event": "TASK_BLOCK",
+      "task": "Controller",
+      "related": "",
+      "commit_class": "",
+      "desc": "Task=Controller WaitReason=0x0",
+      "raw": {
+        "idx": 90,
+        "seq": 446810,
+        "tick": 39495,
+        "gen": 1,
+        "arg0": 0,
+        "arg1": 39496,
+        "slot": 1,
+        "type": 3
+      }
+    },
+    {
+      "seq": 446811,
+      "tick": 39495,
+      "event": "SCHED_SELECT",
+      "task": "LCD",
+      "related": "",
+      "commit_class": "",
+      "desc": "Selected=LCD (gen=1)",
+      "raw": {
+        "idx": 91,
+        "seq": 446811,
+        "tick": 39495,
+        "gen": 1,
+        "arg0": 1,
+        "arg1": 4194305,
+        "slot": 2,
+        "type": 4
+      }
+    },
+    {
+      "seq": 446812,
+      "tick": 39495,
+      "event": "CONTEXT_SWITCH",
+      "task": "LCD",
+      "related": "Controller",
+      "commit_class": "BLOCK_OR_WAKE_OTHER",
+      "desc": "From=Controller (gen=1) To=LCD (gen=1) Class=BLOCK_OR_WAKE_OTHER Prio(4->2)",
+      "raw": {
+        "idx": 92,
+        "seq": 446812,
+        "tick": 39495,
+        "gen": 1,
+        "arg0": 1,
+        "arg1": 272891905,
+        "slot": 2,
+        "type": 12
+      }
+    },
+    {
+      "seq": 446813,
+      "tick": 39495,
+      "event": "TASK_BLOCK",
+      "task": "LCD",
+      "related": "",
+      "commit_class": "",
+      "desc": "Task=LCD WaitReason=0x0",
+      "raw": {
+        "idx": 93,
+        "seq": 446813,
+        "tick": 39495,
+        "gen": 1,
+        "arg0": 0,
+        "arg1": 39496,
+        "slot": 2,
+        "type": 3
+      }
+    },
+    {
+      "seq": 446814,
+      "tick": 39495,
+      "event": "SCHED_SELECT",
+      "task": "Idle",
+      "related": "",
+      "commit_class": "",
+      "desc": "Selected=Idle (gen=0)",
+      "raw": {
+        "idx": 94,
+        "seq": 446814,
+        "tick": 39495,
+        "gen": 0,
+        "arg0": 1,
+        "arg1": 6291458,
+        "slot": 65535,
+        "type": 4
+      }
+    },
+    {
+      "seq": 446815,
+      "tick": 39495,
+      "event": "CONTEXT_SWITCH",
+      "task": "Idle",
+      "related": "LCD",
+      "commit_class": "IDLE_TRANSITION",
+      "desc": "From=LCD (gen=1) To=Idle (gen=0) Class=IDLE_TRANSITION Prio(2->0)",
+      "raw": {
+        "idx": 95,
+        "seq": 446815,
+        "tick": 39495,
+        "gen": 0,
+        "arg0": 1,
+        "arg1": 402784258,
+        "slot": 65535,
+        "type": 12
+      }
+    },
+    {
+      "seq": 446816,
+      "tick": 39496,
+      "event": "DELAY_EXPIRED",
+      "task": "Controller",
+      "related": "",
+      "commit_class": "",
+      "desc": "Task=Controller WakeTick=39496",
+      "raw": {
+        "idx": 96,
+        "seq": 446816,
+        "tick": 39496,
+        "gen": 1,
+        "arg0": 39496,
+        "arg1": 0,
+        "slot": 1,
+        "type": 10
+      }
+    },
+    {
+      "seq": 446817,
+      "tick": 39496,
+      "event": "TASK_READY",
+      "task": "Controller",
+      "related": "",
+      "commit_class": "",
+      "desc": "Task=Controller ReasonFlags=0x0",
+      "raw": {
+        "idx": 97,
+        "seq": 446817,
+        "tick": 39496,
+        "gen": 1,
+        "arg0": 0,
+        "arg1": 0,
+        "slot": 1,
+        "type": 2
+      }
+    },
+    {
+      "seq": 446818,
+      "tick": 39496,
+      "event": "DELAY_EXPIRED",
+      "task": "LCD",
+      "related": "",
+      "commit_class": "",
+      "desc": "Task=LCD WakeTick=39496",
+      "raw": {
+        "idx": 98,
+        "seq": 446818,
+        "tick": 39496,
+        "gen": 1,
+        "arg0": 39496,
+        "arg1": 0,
+        "slot": 2,
+        "type": 10
+      }
+    },
+    {
+      "seq": 446819,
+      "tick": 39496,
+      "event": "TASK_READY",
+      "task": "LCD",
+      "related": "",
+      "commit_class": "",
+      "desc": "Task=LCD ReasonFlags=0x0",
+      "raw": {
+        "idx": 99,
+        "seq": 446819,
+        "tick": 39496,
+        "gen": 1,
+        "arg0": 0,
+        "arg1": 0,
+        "slot": 2,
+        "type": 2
+      }
+    },
+    {
+      "seq": 446820,
+      "tick": 39496,
+      "event": "CONTEXT_SWITCH",
+      "task": "Controller",
+      "related": "Idle",
+      "commit_class": "IDLE_TRANSITION",
+      "desc": "From=Idle (gen=0) To=Controller (gen=0) Class=IDLE_TRANSITION Prio(0->4)",
+      "raw": {
+        "idx": 100,
+        "seq": 446820,
+        "tick": 39496,
+        "gen": 0,
+        "arg0": 0,
+        "arg1": 411107327,
+        "slot": 1,
+        "type": 12
+      }
+    },
+    {
+      "seq": 446826,
+      "tick": 39496,
+      "event": "TASK_BLOCK",
+      "task": "LCD",
+      "related": "",
+      "commit_class": "",
+      "desc": "Task=LCD WaitReason=0x0",
+      "raw": {
+        "idx": 106,
+        "seq": 446826,
+        "tick": 39496,
+        "gen": 1,
+        "arg0": 0,
+        "arg1": 39508,
+        "slot": 2,
+        "type": 3
+      }
+    },
+    {
+      "seq": 446949,
+      "tick": 39507,
+      "event": "WAIT_COMPLETE",
+      "task": "LCD",
+      "related": "",
+      "commit_class": "",
+      "desc": "Task=LCD WaitFlags=0x2",
+      "raw": {
+        "idx": 101,
+        "seq": 446949,
+        "tick": 39507,
+        "gen": 1,
+        "arg0": 2,
+        "arg1": 4,
+        "slot": 2,
+        "type": 5
+      }
+    },
+    {
+      "seq": 446950,
+      "tick": 39507,
+      "event": "TASK_READY",
+      "task": "LCD",
+      "related": "",
+      "commit_class": "",
+      "desc": "Task=LCD ReasonFlags=0x0",
+      "raw": {
+        "idx": 102,
+        "seq": 446950,
+        "tick": 39507,
+        "gen": 1,
+        "arg0": 0,
+        "arg1": 0,
+        "slot": 2,
+        "type": 2
+      }
+    },
+    {
+      "seq": 446951,
+      "tick": 39507,
+      "event": "TASK_BLOCK",
+      "task": "Controller",
+      "related": "",
+      "commit_class": "",
+      "desc": "Task=Controller WaitReason=0x0",
+      "raw": {
+        "idx": 103,
+        "seq": 446951,
+        "tick": 39507,
+        "gen": 1,
+        "arg0": 0,
+        "arg1": 39508,
+        "slot": 1,
+        "type": 3
+      }
+    },
+    {
+      "seq": 446952,
+      "tick": 39507,
+      "event": "SCHED_SELECT",
+      "task": "LCD",
+      "related": "",
+      "commit_class": "",
+      "desc": "Selected=LCD (gen=1)",
+      "raw": {
+        "idx": 104,
+        "seq": 446952,
+        "tick": 39507,
+        "gen": 1,
+        "arg0": 1,
+        "arg1": 4194305,
+        "slot": 2,
+        "type": 4
+      }
+    },
+    {
+      "seq": 446953,
+      "tick": 39507,
+      "event": "CONTEXT_SWITCH",
+      "task": "LCD",
+      "related": "Controller",
+      "commit_class": "BLOCK_OR_WAKE_OTHER",
+      "desc": "From=Controller (gen=1) To=LCD (gen=1) Class=BLOCK_OR_WAKE_OTHER Prio(4->2)",
+      "raw": {
+        "idx": 105,
+        "seq": 446953,
+        "tick": 39507,
+        "gen": 1,
+        "arg0": 1,
+        "arg1": 272891905,
+        "slot": 2,
+        "type": 12
+      }
+    },
+    {
+      "seq": 446955,
+      "tick": 39507,
+      "event": "SCHED_SELECT",
+      "task": "Idle",
+      "related": "",
+      "commit_class": "",
+      "desc": "Selected=Idle (gen=0)",
+      "raw": {
+        "idx": 107,
+        "seq": 446955,
+        "tick": 39507,
+        "gen": 0,
+        "arg0": 1,
+        "arg1": 6291458,
+        "slot": 65535,
+        "type": 4
+      }
+    },
+    {
+      "seq": 446956,
+      "tick": 39507,
+      "event": "CONTEXT_SWITCH",
+      "task": "Idle",
+      "related": "LCD",
+      "commit_class": "IDLE_TRANSITION",
+      "desc": "From=LCD (gen=1) To=Idle (gen=0) Class=IDLE_TRANSITION Prio(2->0)",
+      "raw": {
+        "idx": 108,
+        "seq": 446956,
+        "tick": 39507,
+        "gen": 0,
+        "arg0": 1,
+        "arg1": 402784258,
+        "slot": 65535,
+        "type": 12
+      }
+    },
+    {
+      "seq": 446957,
+      "tick": 39508,
+      "event": "DELAY_EXPIRED",
+      "task": "Controller",
+      "related": "",
+      "commit_class": "",
+      "desc": "Task=Controller WakeTick=39508",
+      "raw": {
+        "idx": 109,
+        "seq": 446957,
+        "tick": 39508,
+        "gen": 1,
+        "arg0": 39508,
+        "arg1": 0,
+        "slot": 1,
+        "type": 10
+      }
+    },
+    {
+      "seq": 446958,
+      "tick": 39508,
+      "event": "TASK_READY",
+      "task": "Controller",
+      "related": "",
+      "commit_class": "",
+      "desc": "Task=Controller ReasonFlags=0x0",
+      "raw": {
+        "idx": 110,
+        "seq": 446958,
+        "tick": 39508,
+        "gen": 1,
+        "arg0": 0,
+        "arg1": 0,
+        "slot": 1,
+        "type": 2
+      }
+    },
+    {
+      "seq": 446959,
+      "tick": 39508,
+      "event": "DELAY_EXPIRED",
+      "task": "LCD",
+      "related": "",
+      "commit_class": "",
+      "desc": "Task=LCD WakeTick=39508",
+      "raw": {
+        "idx": 111,
+        "seq": 446959,
+        "tick": 39508,
+        "gen": 1,
+        "arg0": 39508,
+        "arg1": 0,
+        "slot": 2,
+        "type": 10
+      }
+    },
+    {
+      "seq": 446960,
+      "tick": 39508,
+      "event": "TASK_READY",
+      "task": "LCD",
+      "related": "",
+      "commit_class": "",
+      "desc": "Task=LCD ReasonFlags=0x0",
+      "raw": {
+        "idx": 112,
+        "seq": 446960,
+        "tick": 39508,
+        "gen": 1,
+        "arg0": 0,
+        "arg1": 0,
+        "slot": 2,
+        "type": 2
+      }
+    },
+    {
+      "seq": 446961,
+      "tick": 39508,
+      "event": "TASK_READY",
+      "task": "Idle",
+      "related": "",
+      "commit_class": "",
+      "desc": "Task=Idle ReasonFlags=0x0",
+      "raw": {
+        "idx": 113,
+        "seq": 446961,
+        "tick": 39508,
+        "gen": 0,
+        "arg0": 0,
+        "arg1": 0,
+        "slot": 65535,
+        "type": 2
+      }
+    },
+    {
+      "seq": 446962,
+      "tick": 39508,
+      "event": "SCHED_SELECT",
+      "task": "Controller",
+      "related": "",
+      "commit_class": "",
+      "desc": "Selected=Controller (gen=1)",
+      "raw": {
+        "idx": 114,
+        "seq": 446962,
+        "tick": 39508,
+        "gen": 1,
+        "arg0": 0,
+        "arg1": 11075583,
+        "slot": 1,
+        "type": 4
+      }
+    },
+    {
+      "seq": 446963,
+      "tick": 39508,
+      "event": "CONTEXT_SWITCH",
+      "task": "Controller",
+      "related": "Idle",
+      "commit_class": "IDLE_TRANSITION",
+      "desc": "From=Idle (gen=0) To=Controller (gen=1) Class=IDLE_TRANSITION Prio(0->4)",
+      "raw": {
+        "idx": 115,
+        "seq": 446963,
+        "tick": 39508,
+        "gen": 1,
+        "arg0": 0,
+        "arg1": 411107327,
+        "slot": 1,
+        "type": 12
+      }
+    },
+    {
+      "seq": 446964,
+      "tick": 39508,
+      "event": "TASK_BLOCK",
+      "task": "Controller",
+      "related": "",
+      "commit_class": "",
+      "desc": "Task=Controller WaitReason=0x0",
+      "raw": {
+        "idx": 116,
+        "seq": 446964,
+        "tick": 39508,
+        "gen": 1,
+        "arg0": 0,
+        "arg1": 39509,
+        "slot": 1,
+        "type": 3
+      }
+    },
+    {
+      "seq": 446965,
+      "tick": 39508,
+      "event": "SCHED_SELECT",
+      "task": "LCD",
+      "related": "",
+      "commit_class": "",
+      "desc": "Selected=LCD (gen=1)",
+      "raw": {
+        "idx": 117,
+        "seq": 446965,
+        "tick": 39508,
+        "gen": 1,
+        "arg0": 1,
+        "arg1": 4194305,
+        "slot": 2,
+        "type": 4
+      }
+    },
+    {
+      "seq": 446966,
+      "tick": 39508,
+      "event": "CONTEXT_SWITCH",
+      "task": "LCD",
+      "related": "Controller",
+      "commit_class": "BLOCK_OR_WAKE_OTHER",
+      "desc": "From=Controller (gen=1) To=LCD (gen=1) Class=BLOCK_OR_WAKE_OTHER Prio(4->2)",
+      "raw": {
+        "idx": 118,
+        "seq": 446966,
+        "tick": 39508,
+        "gen": 1,
+        "arg0": 1,
+        "arg1": 272891905,
+        "slot": 2,
+        "type": 12
+      }
+    },
+    {
+      "seq": 446967,
+      "tick": 39508,
+      "event": "TASK_BLOCK",
+      "task": "LCD",
+      "related": "",
+      "commit_class": "",
+      "desc": "Task=LCD WaitReason=0x4",
+      "raw": {
+        "idx": 119,
+        "seq": 446967,
+        "tick": 39508,
+        "gen": 1,
+        "arg0": 4,
+        "arg1": 39508,
+        "slot": 2,
+        "type": 3
+      }
+    },
+    {
+      "seq": 446968,
+      "tick": 39508,
+      "event": "SCHED_SELECT",
+      "task": "Idle",
+      "related": "",
+      "commit_class": "",
+      "desc": "Selected=Idle (gen=0)",
+      "raw": {
+        "idx": 120,
+        "seq": 446968,
+        "tick": 39508,
+        "gen": 0,
+        "arg0": 1,
+        "arg1": 6291458,
+        "slot": 65535,
+        "type": 4
+      }
+    },
+    {
+      "seq": 446969,
+      "tick": 39508,
+      "event": "CONTEXT_SWITCH",
+      "task": "Idle",
+      "related": "LCD",
+      "commit_class": "IDLE_TRANSITION",
+      "desc": "From=LCD (gen=1) To=Idle (gen=0) Class=IDLE_TRANSITION Prio(2->0)",
+      "raw": {
+        "idx": 121,
+        "seq": 446969,
+        "tick": 39508,
+        "gen": 0,
+        "arg0": 1,
+        "arg1": 402784258,
+        "slot": 65535,
+        "type": 12
+      }
+    },
+    {
+      "seq": 446970,
+      "tick": 39509,
+      "event": "DELAY_EXPIRED",
+      "task": "Controller",
+      "related": "",
+      "commit_class": "",
+      "desc": "Task=Controller WakeTick=39509",
+      "raw": {
+        "idx": 122,
+        "seq": 446970,
+        "tick": 39509,
+        "gen": 1,
+        "arg0": 39509,
+        "arg1": 0,
+        "slot": 1,
+        "type": 10
+      }
+    },
+    {
+      "seq": 446971,
+      "tick": 39509,
+      "event": "TASK_READY",
+      "task": "Controller",
+      "related": "",
+      "commit_class": "",
+      "desc": "Task=Controller ReasonFlags=0x0",
+      "raw": {
+        "idx": 123,
+        "seq": 446971,
+        "tick": 39509,
+        "gen": 1,
+        "arg0": 0,
+        "arg1": 0,
+        "slot": 1,
+        "type": 2
+      }
+    },
+    {
+      "seq": 446972,
+      "tick": 39509,
+      "event": "TASK_READY",
+      "task": "Idle",
+      "related": "",
+      "commit_class": "",
+      "desc": "Task=Idle ReasonFlags=0x0",
+      "raw": {
+        "idx": 124,
+        "seq": 446972,
+        "tick": 39509,
+        "gen": 0,
+        "arg0": 0,
+        "arg1": 0,
+        "slot": 65535,
+        "type": 2
+      }
+    },
+    {
+      "seq": 446973,
+      "tick": 39509,
+      "event": "SCHED_SELECT",
+      "task": "Controller",
+      "related": "",
+      "commit_class": "",
+      "desc": "Selected=Controller (gen=1)",
+      "raw": {
+        "idx": 125,
+        "seq": 446973,
+        "tick": 39509,
+        "gen": 1,
+        "arg0": 0,
+        "arg1": 11075583,
+        "slot": 1,
+        "type": 4
+      }
+    },
+    {
+      "seq": 446974,
+      "tick": 39509,
+      "event": "CONTEXT_SWITCH",
+      "task": "Controller",
+      "related": "Idle",
+      "commit_class": "IDLE_TRANSITION",
+      "desc": "From=Idle (gen=0) To=Controller (gen=1) Class=IDLE_TRANSITION Prio(0->4)",
+      "raw": {
+        "idx": 126,
+        "seq": 446974,
+        "tick": 39509,
+        "gen": 1,
+        "arg0": 0,
+        "arg1": 411107327,
+        "slot": 1,
+        "type": 12
+      }
+    },
+    {
+      "seq": 446975,
+      "tick": 39509,
+      "event": "TASK_BLOCK",
+      "task": "Controller",
+      "related": "",
+      "commit_class": "",
+      "desc": "Task=Controller WaitReason=0x0",
+      "raw": {
+        "idx": 127,
+        "seq": 446975,
+        "tick": 39509,
+        "gen": 1,
+        "arg0": 0,
+        "arg1": 39510,
+        "slot": 1,
+        "type": 3
+      }
+    }
+  ]
+}

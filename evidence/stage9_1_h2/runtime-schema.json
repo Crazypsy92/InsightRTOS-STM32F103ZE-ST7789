@@ -1,0 +1,175 @@
+{
+  "statistics": {
+    "address": 536872312,
+    "bytes": 180,
+    "fields": {
+      "task_runs": {
+        "offset": 0,
+        "bytes": 16
+      },
+      "key_isr_events": {
+        "offset": 16,
+        "bytes": 4
+      },
+      "key_task_events": {
+        "offset": 20,
+        "bytes": 4
+      },
+      "controller_events": {
+        "offset": 24,
+        "bytes": 4
+      },
+      "lcd_events": {
+        "offset": 28,
+        "bytes": 4
+      },
+      "key_overflows": {
+        "offset": 32,
+        "bytes": 4
+      },
+      "command_overflows": {
+        "offset": 36,
+        "bytes": 4
+      },
+      "telemetry_overflows": {
+        "offset": 40,
+        "bytes": 4
+      },
+      "transport_errors": {
+        "offset": 44,
+        "bytes": 4
+      },
+      "initialization_errors": {
+        "offset": 48,
+        "bytes": 4
+      },
+      "lcd_refreshes": {
+        "offset": 52,
+        "bytes": 4
+      },
+      "page_changes": {
+        "offset": 56,
+        "bytes": 4
+      },
+      "page": {
+        "offset": 60,
+        "bytes": 4
+      },
+      "automatic": {
+        "offset": 64,
+        "bytes": 4
+      },
+      "ready": {
+        "offset": 68,
+        "bytes": 4
+      },
+      "tick": {
+        "offset": 72,
+        "bytes": 4
+      },
+      "key_short": {
+        "offset": 76,
+        "bytes": 4
+      },
+      "key_long": {
+        "offset": 80,
+        "bytes": 4
+      },
+      "queue_depths": {
+        "offset": 84,
+        "bytes": 20
+      },
+      "welcome_shows": {
+        "offset": 104,
+        "bytes": 4
+      },
+      "monitor_refreshes": {
+        "offset": 108,
+        "bytes": 4
+      },
+      "monitor_rows": {
+        "offset": 112,
+        "bytes": 4
+      },
+      "display_fault": {
+        "offset": 116,
+        "bytes": 4
+      },
+      "ll_recover_count": {
+        "offset": 120,
+        "bytes": 4
+      },
+      "last_lcd_error": {
+        "offset": 124,
+        "bytes": 4
+      },
+      "ll_last_error": {
+        "offset": 128,
+        "bytes": 4
+      },
+      "snapshots": {
+        "offset": 132,
+        "bytes": 48
+      }
+    }
+  },
+  "symbols": {
+    "kernel_ticks": 536879316,
+    "g_tim2_ms_count": 536872228,
+    "g_rtos_assert_line": 536872220,
+    "g_rtos_assert_expression": 536872216,
+    "g_rtos_assert_file": 536872212,
+    "rtos_current_task": 536879056,
+    "g_ll_recover_count": 536871464,
+    "g_ll_last_error": 536871460,
+    "s_page": 536873938,
+    "trace_status": 536874740,
+    "trace_next_sequence_high": 536874744,
+    "trace_overwritten": 536874748,
+    "trace_next_sequence": 536874752,
+    "trace_count": 536874756,
+    "trace_write_index": 536874760,
+    "trace_records": 536874768
+  },
+  "stacks": {
+    "KEY": {
+      "address": 536879328,
+      "bytes": 4096
+    },
+    "Controller": {
+      "address": 536883424,
+      "bytes": 4096
+    },
+    "LCD": {
+      "address": 536887520,
+      "bytes": 4096
+    },
+    "Monitor": {
+      "address": 536891616,
+      "bytes": 4096
+    },
+    "Idle": {
+      "address": 536878464,
+      "bytes": 512
+    }
+  },
+  "msp": {
+    "address": 536932352,
+    "bytes": 4096
+  },
+  "snapshot_layout": {
+    "state": {
+      "offset": 8,
+      "bytes": 1
+    },
+    "base_priority": {
+      "offset": 9,
+      "bytes": 1
+    },
+    "effective_priority": {
+      "offset": 10,
+      "bytes": 1
+    }
+  },
+  "snapshot_bytes": 12
+}

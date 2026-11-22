@@ -1,0 +1,11 @@
+{
+  "source": "USER CONFIRMATION",
+  "reply": "正常",
+  "prompt_checks": [
+    "free board RESET welcome about1.5s",
+    "color shapes fonts animation normal without obvious corruption",
+    "short press animation to page4",
+    "observe status Tick/refresh changing at least30s"
+  ],
+  "agent_visual_inspection": false
+}

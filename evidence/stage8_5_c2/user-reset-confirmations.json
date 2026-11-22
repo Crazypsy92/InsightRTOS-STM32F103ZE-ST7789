@@ -1,0 +1,6 @@
+{
+  "startup_reset": "USER CONFIRMED: 已按",
+  "final_reset": "USER CONFIRMED: 已按RESET，显示正常",
+  "free_run_reset_before_display": "USER CONFIRMED: 正常 (combined prompt)",
+  "post_30min_visual": "USER CONFIRMED: 正常，一切正常"
+}

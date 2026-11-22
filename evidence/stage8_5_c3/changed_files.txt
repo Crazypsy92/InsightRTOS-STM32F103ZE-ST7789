@@ -1,0 +1,9 @@
+M  app/stm32f103ze_st7789/BSP/Src/spi_stm32_ll.c
+A  tests/stage8_5_c3/CMakeLists.txt
+A  tests/stage8_5_c3/audit_firmware.py
+A  tests/stage8_5_c3/boundary_test.c
+A  tests/stage8_5_c3/fake/main.h
+A  tests/stage8_5_c3/fake/stm32f1xx_ll_spi.h
+A  tests/stage8_5_c3/host_context.c
+A  artifacts/stage8_5_c3/  独立 Debug/O2 固件与清单
+A  evidence/stage8_5_c3/  报告、原始日志、结果与校验清单

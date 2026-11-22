@@ -26,7 +26,11 @@
 #include "key_port.h"
 #include "app_lcd_test.h"
 #ifdef INSIGHT_RTOS_ENABLED
+#ifdef INSIGHT_DISPLAY_RTOS
+#include "display_app.h"
+#else
 #include "rtos_smoke_app.h"
+#endif
 #endif
 /* USER CODE END Includes */
 
@@ -105,7 +109,11 @@ int main(void)
   /* USER CODE BEGIN 2 */
 #ifdef INSIGHT_RTOS_ENABLED
   Timebase_Init(); /* Independent TIM2 1ms; SysTick belongs only to the RTOS. */
+#ifdef INSIGHT_DISPLAY_RTOS
+  display_app_start();
+#else
   rtos_smoke_start();
+#endif
 #else
   Timebase_Init(); /* 打开 SysTick 1ms 中断，供按键扫描与延时使用 */
   KEY_Init();      /* KEY=PA15 上拉输入，LED=PC13 推挽输出 */

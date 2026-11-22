@@ -1,0 +1,8 @@
+{
+  "libaio1t64_0.3.113-8build1_amd64.deb": "b8e32a2b871e65a85b3dd882b096a0a3020006bea74233479b0b08543b6808df",
+  "libcapstone5_5.0.7-2_amd64.deb": "e45848f198ccde0479dc5d12ad95a9d955df62120715c27d2a56eed7a5ae2338",
+  "libfdt1_1.7.2-2ubuntu1_amd64.deb": "7bbd25e194947a08997deef90fadea37dd255a9bc0bdcf7fea6d4c17131904d4",
+  "libslirp0_4.9.1-1ubuntu1.1_amd64.deb": "bfc8e5afed3287ecd28675fd683913e6b3c9d73bd16a63bc8f45cc3b7e6f83fb",
+  "liburing2_2.14-1_amd64.deb": "c0f1ed55d2eaa6e5d1224513b787c71348c6ab983e9c4178a417a7ffac3a8a00",
+  "qemu-system-arm_1%3a10.2.1+ds-1ubuntu3.3_amd64.deb": "3f52aff3d26eef722df8b5f13f8d9075cd8ff9b3abe8d1f856aa6974256d0f22"
+}

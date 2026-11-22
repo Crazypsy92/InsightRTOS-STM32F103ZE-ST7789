@@ -1,0 +1,10 @@
+{
+  "protected_baseline_files": 400,
+  "original_kernel_unchanged": true,
+  "B1_hardware_history_and_package_unchanged": true,
+  "original_four_render_functions_and_animation_unchanged": true,
+  "B1_4_history_and_package_unchanged": true,
+  "bare_debug_o2_binary_parity": true,
+  "negative_link_cases": 12,
+  "status": "PASS"
+}
