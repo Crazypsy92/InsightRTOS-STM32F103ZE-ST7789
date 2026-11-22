@@ -1,0 +1,155 @@
+{
+  "duration_s": 60.06,
+  "delta_tim2_ms": 60061,
+  "delta_kernel_tick": 6006,
+  "delta_refreshes": 231,
+  "tim2_frequency_hz": 1000.02,
+  "kernel_tick_frequency_hz": 100.0,
+  "refresh_rate_hz": 3.85,
+  "zero_errors_verified": true,
+  "samples": [
+    {
+      "sample": 0,
+      "wall_time_s": 0.0,
+      "tim2_ms": 132219,
+      "kernel_tick": 13221,
+      "refreshes": 511,
+      "trans_err": 0,
+      "init_err": 0,
+      "key_ovf": 0,
+      "cmd_ovf": 0
+    },
+    {
+      "sample": 1,
+      "wall_time_s": 5.01,
+      "tim2_ms": 137224,
+      "kernel_tick": 13722,
+      "refreshes": 530,
+      "trans_err": 0,
+      "init_err": 0,
+      "key_ovf": 0,
+      "cmd_ovf": 0
+    },
+    {
+      "sample": 2,
+      "wall_time_s": 10.01,
+      "tim2_ms": 142229,
+      "kernel_tick": 14222,
+      "refreshes": 549,
+      "trans_err": 0,
+      "init_err": 0,
+      "key_ovf": 0,
+      "cmd_ovf": 0
+    },
+    {
+      "sample": 3,
+      "wall_time_s": 15.02,
+      "tim2_ms": 147234,
+      "kernel_tick": 14723,
+      "refreshes": 568,
+      "trans_err": 0,
+      "init_err": 0,
+      "key_ovf": 0,
+      "cmd_ovf": 0
+    },
+    {
+      "sample": 4,
+      "wall_time_s": 20.02,
+      "tim2_ms": 152239,
+      "kernel_tick": 15223,
+      "refreshes": 588,
+      "trans_err": 0,
+      "init_err": 0,
+      "key_ovf": 0,
+      "cmd_ovf": 0
+    },
+    {
+      "sample": 5,
+      "wall_time_s": 25.02,
+      "tim2_ms": 157244,
+      "kernel_tick": 15724,
+      "refreshes": 607,
+      "trans_err": 0,
+      "init_err": 0,
+      "key_ovf": 0,
+      "cmd_ovf": 0
+    },
+    {
+      "sample": 6,
+      "wall_time_s": 30.03,
+      "tim2_ms": 162250,
+      "kernel_tick": 16224,
+      "refreshes": 626,
+      "trans_err": 0,
+      "init_err": 0,
+      "key_ovf": 0,
+      "cmd_ovf": 0
+    },
+    {
+      "sample": 7,
+      "wall_time_s": 35.04,
+      "tim2_ms": 167255,
+      "kernel_tick": 16725,
+      "refreshes": 645,
+      "trans_err": 0,
+      "init_err": 0,
+      "key_ovf": 0,
+      "cmd_ovf": 0
+    },
+    {
+      "sample": 8,
+      "wall_time_s": 40.04,
+      "tim2_ms": 172260,
+      "kernel_tick": 17225,
+      "refreshes": 665,
+      "trans_err": 0,
+      "init_err": 0,
+      "key_ovf": 0,
+      "cmd_ovf": 0
+    },
+    {
+      "sample": 9,
+      "wall_time_s": 45.04,
+      "tim2_ms": 177265,
+      "kernel_tick": 17726,
+      "refreshes": 684,
+      "trans_err": 0,
+      "init_err": 0,
+      "key_ovf": 0,
+      "cmd_ovf": 0
+    },
+    {
+      "sample": 10,
+      "wall_time_s": 50.05,
+      "tim2_ms": 182270,
+      "kernel_tick": 18226,
+      "refreshes": 703,
+      "trans_err": 0,
+      "init_err": 0,
+      "key_ovf": 0,
+      "cmd_ovf": 0
+    },
+    {
+      "sample": 11,
+      "wall_time_s": 55.05,
+      "tim2_ms": 187275,
+      "kernel_tick": 18727,
+      "refreshes": 722,
+      "trans_err": 0,
+      "init_err": 0,
+      "key_ovf": 0,
+      "cmd_ovf": 0
+    },
+    {
+      "sample": 12,
+      "wall_time_s": 60.06,
+      "tim2_ms": 192280,
+      "kernel_tick": 19227,
+      "refreshes": 742,
+      "trans_err": 0,
+      "init_err": 0,
+      "key_ovf": 0,
+      "cmd_ovf": 0
+    }
+  ]
+}
