@@ -6,6 +6,10 @@
 
 ---
 
+> **按需开启远程自动接力：** 外出时可让 ChatGPT 审查 GitHub 验收报告并发布下一轮 Issue，由 Antigravity 后台领取；平时两端均保持暂停。完整开关流程、安全边界与 Antigravity 初始化指令见 [远程任务接力操作规程](docs/remote_task_relay.md)。
+
+---
+
 ## 一、系统特性概览
 
 1. **工业级 SPI/DMA 总线抽象**：
