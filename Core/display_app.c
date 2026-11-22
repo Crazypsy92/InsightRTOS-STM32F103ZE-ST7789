@@ -13,6 +13,7 @@ static display_ack_t ack_storage[DISPLAY_ACK_CAPACITY];
 static display_metric_t metric_storage[DISPLAY_METRIC_CAPACITY];
 volatile display_statistics_t g_display_statistics;
 volatile display_metric_t g_monitor_last_metric;
+volatile display_event_tracker_t g_event_tracker = {0};
 extern volatile uint32_t g_ll_recover_count;
 extern volatile int32_t g_ll_last_error;
 rtos_task_ref_t g_display_task_refs[4];
@@ -29,7 +30,14 @@ void Display_KeyFromISR(key_event_t event)
     const display_key_t key={(uint32_t)event,GetTick_ms()};
     const rtos_status_t status=rtos_queue_send_from_isr(&raw_keys,&key);
     ++g_display_statistics.key_isr_events;
-    if (status != RTOS_OK) ++g_display_statistics.key_overflows;
+    if (status != RTOS_OK) {
+        ++g_display_statistics.key_overflows;
+    } else {
+        g_event_tracker.sequence++;
+        g_event_tracker.last_event = event;
+        g_event_tracker.stage = EVENT_STAGE_IDENTIFIED;
+        g_event_tracker.timestamp_ms = key.at_ms;
+    }
     /* Overflow is latched and checked by KEY; never overwrite or coalesce. */
 }
 static void key_task(void *argument)
@@ -43,6 +51,7 @@ static void key_task(void *argument)
         RTOS_ASSERT(g_display_statistics.key_overflows==0U);
         RTOS_ASSERT(rtos_queue_receive(&raw_keys,&key,RTOS_WAIT_FOREVER)==RTOS_OK);
         RTOS_ASSERT(g_display_statistics.key_overflows==0U);
+        g_event_tracker.stage = EVENT_STAGE_KEY;
         ++g_display_statistics.task_runs[0];
         ++g_display_statistics.key_task_events;
         RTOS_ASSERT(rtos_queue_send(&controller_keys,&key,RTOS_WAIT_FOREVER)==RTOS_OK);
@@ -111,6 +120,7 @@ static void controller_task(void *argument)
                 } else if (pending_key.event==KEY_EVENT_DOUBLE) {
                     ++g_display_statistics.key_double;
                 }
+                g_event_tracker.stage = EVENT_STAGE_CTRL;
                 ++g_display_statistics.controller_events;
                 key_pending=true;
             }
@@ -150,7 +160,12 @@ static void lcd_task(void *argument)
         RTOS_ASSERT(rtos_queue_receive(&lcd_commands,&command,RTOS_WAIT_FOREVER)==RTOS_OK);
         ++g_display_statistics.task_runs[2];
         Display_PagesExecute(&command,&ack);
-        if (command.event!=KEY_EVENT_NONE) ++g_display_statistics.lcd_events;
+        if (command.event!=KEY_EVENT_NONE) {
+            g_event_tracker.stage = EVENT_STAGE_LCD;
+            g_event_tracker.completed_ms = GetTick_ms();
+            g_event_tracker.total_processed++;
+            ++g_display_statistics.lcd_events;
+        }
         if (ack.error!=0) ++g_display_statistics.transport_errors;
         g_display_statistics.last_lcd_error=ack.error;
         g_display_statistics.ll_recover_count=g_ll_recover_count;

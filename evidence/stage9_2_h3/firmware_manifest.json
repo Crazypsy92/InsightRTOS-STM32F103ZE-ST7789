@@ -1,0 +1,47 @@
+{
+  "stage": "9.2-H3",
+  "name": "InsightRTOS Single Screen Diagnostic with Button Pipeline Visualization & LED Status",
+  "target_hardware": {
+    "mcu": "STM32F103ZET6",
+    "core": "ARM Cortex-M3 r1p1 @ 72 MHz",
+    "flash_size_bytes": 524288,
+    "sram_size_bytes": 65536,
+    "display": "ST7789 IPS 240x240 LCD (SPI3 + DMA)",
+    "gpio": {
+      "key1": "PA15 (Active Low, 5ms MultiButton polling via TIM2 1ms timer)",
+      "led": "PC13 (Active Low, Push-Pull, Controlled by Controller Task)"
+    }
+  },
+  "firmware_binary": {
+    "path": "artifacts/stage9_2_h3/insightrtos_display_o2_trace.bin",
+    "size_bytes": 48780,
+    "sha256": "58fe0895091437623752ffc78d36ba88ed5a971a310a321ca561bf49ccce0bfa",
+    "load_address": "0x08000000",
+    "erase_pages": "0-30",
+    "erase_range": "[0x08000000, 0x0800F800)",
+    "erase_size_bytes": 63488
+  },
+  "readback_verification": {
+    "readback_sha256": "58fe0895091437623752ffc78d36ba88ed5a971a310a321ca561bf49ccce0bfa",
+    "match": true,
+    "tail_all_0xff": true,
+    "option_bytes": "0x00ff5aa5 0x00ff00ff 0x00ff00ff 0x00ff00ff",
+    "option_bytes_unchanged": true
+  },
+  "build_config": {
+    "preset": "DISPLAY_RTOS_O2_Trace",
+    "toolchain": "arm-none-eabi-gcc 10.3.1 (or host compatible)",
+    "optimization": "-O2",
+    "defines": [
+      "INSIGHT_DISPLAY_RTOS=1",
+      "INSIGHT_TRACE_ENABLED=1",
+      "INSIGHT_DIAG_EXPLAIN=1",
+      "INSIGHT_DIAG_DL=1"
+    ]
+  },
+  "git_tracking": {
+    "base_branch": "main",
+    "base_commit": "f8169db812c59206ac7c0b36e8ff792db8bb6bf7",
+    "issue": "https://github.com/Crazypsy92/InsightRTOS-STM32F103ZE-ST7789/issues/2"
+  }
+}

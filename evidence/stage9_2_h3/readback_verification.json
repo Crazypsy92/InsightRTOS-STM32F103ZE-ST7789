@@ -1,0 +1,14 @@
+{
+  "firmware_size": 48780,
+  "readback_size": 48780,
+  "original_sha256": "58fe0895091437623752ffc78d36ba88ed5a971a310a321ca561bf49ccce0bfa",
+  "readback_sha256": "58fe0895091437623752ffc78d36ba88ed5a971a310a321ca561bf49ccce0bfa",
+  "sha256_match": true,
+  "byte_by_byte_match": true,
+  "tail_range": "[0x0800BE8C, 0x0800F800)",
+  "tail_size": 14708,
+  "tail_all_0xff": true,
+  "option_bytes": "0x00ff5aa5 0x00ff00ff 0x00ff00ff 0x00ff00ff",
+  "option_bytes_verified": true,
+  "status": "PASS"
+}

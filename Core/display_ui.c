@@ -2,6 +2,8 @@
 #include "st7789_port.h"
 #include "rtos_diag.h"
 #include "lcd_cn16.h"
+#include "delay.h"
+#include "key_port.h"
 #include <string.h>
 
 #define UI_ROWS 10U
@@ -465,6 +467,13 @@ static const char *state_name_cn(rtos_task_state_t state)
 }
 
 static const char *const task_short_names[4] = {"KEY ", "CTRL", "LCD ", "MON "};
+static const char *const task_id_names[4] = {"KEY", "CTRL", "LCD", "MON"};
+static const char *const task_desc_cn[4] = {
+    "接收按键事件",
+    "处理事件/控制LED",
+    "更新中文屏幕",
+    "状态错误监测"
+};
 
 void Display_UIConsolidated(bool entering, key_event_t event)
 {
@@ -484,22 +493,67 @@ void Display_UIConsolidated(bool entering, key_event_t event)
     }
 
     char line[CONS_LINE_MAX_BYTES];
+    const uint32_t total_errors = view.queue_errors + view.spi_errors + view.init_errors;
+    const bool sys_error = (view.valid_mask != 15U) || (total_errors != 0U);
 
     /* Row 0: Title */
     line[0] = '\0';
-    append_u(line, "InsightRTOS     系统运行");
-    cons_row(0U, line, CYAN, entering);
+    append_u(line, "InsightRTOS       ");
+    append_u(line, sys_error ? "异常" : "正常");
+    cons_row(0U, line, sys_error ? RED : CYAN, entering);
 
-    /* Row 1: Blank separator */
+    /* Row 1: Key event & LED status */
     line[0] = '\0';
-    cons_row(1U, line, BLACK, entering);
+    append_u(line, "按键: ");
+    if (KEY_GetRawLevel() == 0U) {
+        append_u(line, "按下");
+    } else if (g_event_tracker.last_event == KEY_EVENT_SHORT) {
+        append_u(line, "单击");
+    } else if (g_event_tracker.last_event == KEY_EVENT_DOUBLE) {
+        append_u(line, "双击");
+    } else if (g_event_tracker.last_event == KEY_EVENT_LONG) {
+        append_u(line, "长按");
+    } else {
+        append_u(line, "无  ");
+    }
+    append_u(line, "        LED: ");
+    append_u(line, (KEY_GetLEDState() != 0U) ? "开" : "关");
+    cons_row(1U, line, WHITE, entering);
 
-    /* Row 2: Section header */
+    /* Row 2: Event Pipeline visualization */
     line[0] = '\0';
-    append_u(line, "任务状态");
-    cons_row(2U, line, YELLOW, entering);
+    append_u(line, "链路: ");
+    const uint32_t now_ms = GetTick_ms();
+    const uint32_t elapsed_since_done = (g_event_tracker.completed_ms > 0U && now_ms >= g_event_tracker.completed_ms) ?
+                                        (now_ms - g_event_tracker.completed_ms) : 999999U;
+    bool pipeline_active = false;
+    if (g_event_tracker.stage == EVENT_STAGE_LCD) {
+        if (elapsed_since_done < 2000U) {
+            append_u(line, "识别>KEY>CTRL>LCD");
+            pipeline_active = true;
+        } else {
+            append_u(line, "待机");
+        }
+    } else if (g_event_tracker.stage == EVENT_STAGE_CTRL) {
+        append_u(line, "识别>KEY>CTRL");
+        pipeline_active = true;
+    } else if (g_event_tracker.stage == EVENT_STAGE_KEY) {
+        append_u(line, "识别>KEY");
+        pipeline_active = true;
+    } else if (g_event_tracker.stage == EVENT_STAGE_IDENTIFIED) {
+        append_u(line, "识别");
+        pipeline_active = true;
+    } else {
+        append_u(line, "待机");
+    }
+    cons_row(2U, line, pipeline_active ? GREEN : GRAY, entering);
 
-    /* Rows 3..6: 4 Tasks Status */
+    /* Row 3: Tasks table header */
+    line[0] = '\0';
+    append_u(line, "任务      状态     优先级");
+    cons_row(3U, line, YELLOW, entering);
+
+    /* Rows 4..7: 4 Tasks Status */
     for (unsigned int i = 0U; i < 4U; ++i) {
         line[0] = '\0';
         const bool selected = (i == s_selected_task);
@@ -509,76 +563,52 @@ void Display_UIConsolidated(bool entering, key_event_t event)
             append_u(line, "  ");
         }
         append_u(line, task_short_names[i]);
-        append_u(line, "       ");
+        append_u(line, "     ");
         if ((view.valid_mask & (UINT32_C(1) << i)) != 0U) {
             append_u(line, state_name_cn(view.tasks[i].state));
-            append_u(line, "   P");
+            append_u(line, "     P");
+            number_u(line, view.tasks[i].base_priority);
+            append_u(line, "/");
             number_u(line, view.tasks[i].effective_priority);
         } else {
-            append_u(line, "未知   --");
+            append_u(line, "未知     P--/--");
         }
-        cons_row(3U + i, line, selected ? YELLOW : WHITE, entering);
+        cons_row(4U + i, line, selected ? YELLOW : WHITE, entering);
     }
 
-    /* Row 7: Blank separator */
+    /* Row 8: Selected task description */
     line[0] = '\0';
-    cons_row(7U, line, BLACK, entering);
-
-    /* Row 8: Current task name */
-    line[0] = '\0';
-    append_u(line, "当前任务: ");
+    append_u(line, "选中: ");
     if (s_selected_task < 4U) {
-        append_u(line, task_names[s_selected_task]);
+        append_u(line, task_id_names[s_selected_task]);
+        append_u(line, " ");
+        append_u(line, task_desc_cn[s_selected_task]);
     } else {
         append_u(line, "未知");
     }
-    cons_row(8U, line, YELLOW, entering);
+    cons_row(8U, line, CYAN, entering);
 
-    /* Row 9: Detail Row A */
+    /* Row 9: Processed count and recent elapsed time */
     line[0] = '\0';
-    if (s_detail_mode == 0U) {
-        append_u(line, "运行次数: ");
-        uint32_t count = 0U;
-        if (s_selected_task == 0U) {
-            count = g_display_statistics.key_task_events;
-        } else if (s_selected_task < 4U) {
-            count = g_display_statistics.task_runs[s_selected_task];
-        }
-        number_u(line, count);
+    append_u(line, "已处理:");
+    number_u(line, g_event_tracker.total_processed);
+    append_u(line, "  最近:");
+    if (g_event_tracker.total_processed == 0U || g_event_tracker.completed_ms == 0U) {
+        append_u(line, "无");
     } else {
-        append_u(line, "任务状态: ");
-        if ((view.valid_mask & (UINT32_C(1) << s_selected_task)) != 0U) {
-            append_u(line, state_name_cn(view.tasks[s_selected_task].state));
-        } else {
-            append_u(line, "未知");
-        }
+        const uint32_t diff_ms = (now_ms >= g_event_tracker.completed_ms) ? (now_ms - g_event_tracker.completed_ms) : 0U;
+        const uint32_t diff_s = diff_ms / 1000U;
+        const uint32_t diff_tenth = (diff_ms % 1000U) / 100U;
+        number_u(line, diff_s);
+        append_u(line, ".");
+        number_u(line, diff_tenth);
+        append_u(line, "s");
     }
     cons_row(9U, line, WHITE, entering);
 
-    /* Row 10: Detail Row B */
+    /* Row 10: Deadlock & Error status */
     line[0] = '\0';
-    if (s_detail_mode == 0U) {
-        append_u(line, "优先级: ");
-        if ((view.valid_mask & (UINT32_C(1) << s_selected_task)) != 0U) {
-            number_u(line, view.tasks[s_selected_task].base_priority);
-            append_u(line, "/");
-            number_u(line, view.tasks[s_selected_task].effective_priority);
-        } else {
-            append_u(line, "--/--");
-        }
-    } else {
-        append_u(line, "Task Gen: ");
-        if ((view.valid_mask & (UINT32_C(1) << s_selected_task)) != 0U) {
-            number_u(line, view.tasks[s_selected_task].identity.generation);
-        } else {
-            append_u(line, "--");
-        }
-    }
-    cons_row(10U, line, WHITE, entering);
-
-    /* Row 11: Deadlock Diagnostics */
-    line[0] = '\0';
-    append_u(line, "死锁诊断: ");
+    append_u(line, "死锁:");
 #if INSIGHT_DIAG_DL
     static rtos_diag_dl_workspace_t dl_work;
     const rtos_status_t cap_stat = rtos_diag_dl_capture(&dl_work);
@@ -588,51 +618,63 @@ void Display_UIConsolidated(bool entering, key_event_t event)
             dl_res = rtos_diag_dl_result(&dl_work);
         }
     }
-    uint16_t diag_color = GREEN;
+    bool dl_ok = true;
     if (cap_stat != RTOS_OK || dl_res == NULL ||
         (dl_work.header.flags & (RTOS_DIAG_DL_FLAG_INCOMPLETE | RTOS_DIAG_DL_FLAG_ANOMALY)) != 0U) {
-        append_u(line, "诊断异常");
-        diag_color = RED;
+        append_u(line, "异常");
+        dl_ok = false;
     } else if (dl_res->deadlock_detected) {
-        append_u(line, "存在死锁");
-        diag_color = RED;
+        append_u(line, "存在");
+        dl_ok = false;
     } else {
-        append_u(line, "无死锁");
-        diag_color = GREEN;
+        append_u(line, "无");
     }
-    cons_row(11U, line, diag_color, entering);
 #else
-    append_u(line, "未启用");
-    cons_row(11U, line, GRAY, entering);
+    append_u(line, "关闭");
+    bool dl_ok = true;
 #endif
+    append_u(line, "  错误:");
+    number_u(line, total_errors);
+    cons_row(10U, line, (dl_ok && total_errors == 0U) ? GREEN : RED, entering);
 
-    /* Row 12: Trace info */
+    /* Row 11: Trace sequence */
     line[0] = '\0';
-    append_u(line, "Trace: ");
+    append_u(line, "Trace:");
 #if INSIGHT_DIAG_EXPLAIN
     rtos_diag_trace_info_t trace_info;
     if (rtos_diag_trace_info(&trace_info) == RTOS_OK) {
         number_u(line, (uint32_t)trace_info.next_sequence);
     } else {
-        append_u(line, "N/A");
+        append_u(line, "0");
     }
 #else
-    append_u(line, "OFF");
+    append_u(line, "关闭");
 #endif
-    cons_row(12U, line, WHITE, entering);
+    cons_row(11U, line, WHITE, entering);
 
-    /* Row 13: Errors & Long press hint */
+    /* Row 12: Details (toggle with double click) */
     line[0] = '\0';
-    append_u(line, "错误: ");
-    const uint32_t total_errors = view.queue_errors + view.spi_errors + view.init_errors;
-    number_u(line, total_errors);
-    append_u(line, "    长按: LED");
-    cons_row(13U, line, (total_errors != 0U) ? RED : WHITE, entering);
+    if (s_detail_mode != 0U) {
+        append_u(line, "详情: 运行:");
+        uint32_t runs = (s_selected_task < 4U) ? g_display_statistics.task_runs[s_selected_task] : 0U;
+        number_u(line, runs);
+        append_u(line, " 代数:");
+        uint32_t gen = ((view.valid_mask & (UINT32_C(1) << s_selected_task)) != 0U) ?
+                       view.tasks[s_selected_task].identity.generation : 0U;
+        number_u(line, gen);
+        cons_row(12U, line, YELLOW, entering);
+    } else {
+        cons_row(12U, line, BLACK, entering);
+    }
 
-    /* Row 14: Interaction hint */
+    /* Row 13: Interaction hints */
     line[0] = '\0';
-    append_u(line, "单击选任务  双击查询");
-    cons_row(14U, line, GRAY, entering);
+    append_u(line, "单击选  双击详情  长按LED");
+    cons_row(13U, line, GRAY, entering);
+
+    /* Row 14: Blank separator / footer */
+    line[0] = '\0';
+    cons_row(14U, line, BLACK, entering);
 
     if (LCD_GetLastError(&g_lcd) != LCD_OK) {
         memset(previous_cons, 0, sizeof(previous_cons));

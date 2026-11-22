@@ -32,8 +32,27 @@ typedef struct {
     volatile int32_t last_lcd_error, ll_last_error;
     rtos_task_snapshot_t snapshots[4];
 } display_statistics_t;
+
+typedef enum {
+    EVENT_STAGE_IDLE = 0,
+    EVENT_STAGE_IDENTIFIED, /* in ISR */
+    EVENT_STAGE_KEY,        /* in KEY task */
+    EVENT_STAGE_CTRL,       /* in Controller task */
+    EVENT_STAGE_LCD         /* in LCD task */
+} display_event_stage_t;
+
+typedef struct {
+    uint32_t sequence;
+    key_event_t last_event;
+    display_event_stage_t stage;
+    uint32_t timestamp_ms;
+    uint32_t completed_ms;
+    uint32_t total_processed;
+} display_event_tracker_t;
+
 extern volatile display_statistics_t g_display_statistics;
 extern volatile display_metric_t g_monitor_last_metric;
+extern volatile display_event_tracker_t g_event_tracker;
 extern rtos_task_ref_t g_display_task_refs[4];
 void Display_KeyFromISR(key_event_t event);
 key_event_t Display_ConsumeKeyEvent(void);

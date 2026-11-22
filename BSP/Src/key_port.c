@@ -197,3 +197,9 @@ void KEY_ToggleLED(void)
 {
     LL_GPIO_TogglePin(led_GPIO_Port, led_Pin);
 }
+
+uint8_t KEY_GetLEDState(void)
+{
+    /* PC13 推挽输出，低电平点亮(开)，高电平熄灭(关) */
+    return (LL_GPIO_IsOutputPinSet(led_GPIO_Port, led_Pin) == 0U) ? 1U : 0U;
+}

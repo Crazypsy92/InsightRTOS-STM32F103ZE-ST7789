@@ -1,0 +1,23 @@
+Open On-Chip Debugger 0.12.0
+Licensed under GNU GPL v2
+For bug reports, read
+	http://openocd.org/doc/doxygen/bugs.html
+Info : auto-selecting first available session transport "hla_swd". To override use 'transport select <transport>'.
+Info : The selected transport took over low-level target control. The results might differ compared to plain JTAG/SWD
+Info : clock speed 1000 kHz
+Info : STLINK V2J45S7 (API v2) VID:PID 0483:3748
+Info : Target voltage: 3.277505
+Info : [stm32f1x.cpu] Cortex-M3 r1p1 processor detected
+Info : [stm32f1x.cpu] target has 6 breakpoints, 4 watchpoints
+Info : starting gdb server for stm32f1x.cpu on 3333
+Info : Listening on port 3333 for gdb connections
+[stm32f1x.cpu] halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x08000c08 msp: 0x20010000
+Erasing pages 0..30 (0x08000000 to 0x0800F800)...
+Info : device id = 0x10036414
+Info : flash size = 512 KiB
+Writing 48780 bytes to 0x08000000...
+Reading back 48780 bytes for SHA256 verification...
+Reading back remaining erased tail (0x0800BE8C to 0x0800F800, 14708 bytes)...
+0x1ffff800: 00ff5aa5 00ff00ff 00ff00ff 00ff00ff 
+

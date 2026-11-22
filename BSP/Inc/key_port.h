@@ -71,4 +71,10 @@ void KEY_SetLED(uint8_t on);
  */
 void KEY_ToggleLED(void);
 
+/**
+ * @brief 获取板载 LED (PC13) 当前输出状态
+ * @retval 1=点亮(开), 0=熄灭(关)
+ */
+uint8_t KEY_GetLEDState(void);
+
 #endif /* __KEY_PORT_H_ */
