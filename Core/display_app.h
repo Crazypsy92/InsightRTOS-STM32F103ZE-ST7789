@@ -24,7 +24,7 @@ typedef struct {
     volatile uint32_t key_isr_events, key_task_events, controller_events, lcd_events;
     volatile uint32_t key_overflows, command_overflows, telemetry_overflows;
     volatile uint32_t transport_errors, initialization_errors, lcd_refreshes, page_changes;
-    volatile uint32_t page, automatic, ready, tick, key_short, key_long;
+    volatile uint32_t page, automatic, ready, tick, key_short, key_long, key_double;
     volatile uint32_t queue_depths[5];
     volatile uint32_t welcome_shows, monitor_refreshes, monitor_rows;
     volatile uint32_t display_fault;

@@ -18,6 +18,7 @@
 typedef enum {
     KEY_EVENT_NONE = 0, /**< 无事件 */
     KEY_EVENT_SHORT,    /**< 短按单击 */
+    KEY_EVENT_DOUBLE,   /**< 双击 */
     KEY_EVENT_LONG,     /**< 长按触发 (~1000ms) */
 } key_event_t;
 

@@ -65,6 +65,7 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/BSP/Src/st7789.c
     ${CMAKE_CURRENT_SOURCE_DIR}/BSP/Src/st7789_port.c
     ${CMAKE_CURRENT_SOURCE_DIR}/BSP/Src/lcd_fonts.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/BSP/Src/lcd_cn16.c
     ${CMAKE_CURRENT_SOURCE_DIR}/BSP/Src/app_lcd_test.c
 )
 

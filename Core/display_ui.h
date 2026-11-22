@@ -11,5 +11,5 @@ void Display_ReadUIView(display_ui_view_t *view);
 bool Display_UIWelcome(void);
 void Display_UIMonitor(bool entering);
 void Display_UISchedTrace(bool entering);
-void Display_UIConsolidated(bool entering);
+void Display_UIConsolidated(bool entering, key_event_t event);
 #endif

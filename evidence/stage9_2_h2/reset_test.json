@@ -1,0 +1,16 @@
+{
+  "action": "hardware_reset_run",
+  "post_reset_kernel_ticks": 205,
+  "post_reset_tim2_ms": 2053,
+  "post_reset_lcd_refreshes": 6,
+  "post_reset_runs": {
+    "KEY": 0,
+    "Controller": 206,
+    "LCD": 6,
+    "Monitor": 4
+  },
+  "post_reset_transport_errors": 0,
+  "post_reset_init_errors": 0,
+  "restarted_successfully": true,
+  "verdict": "PASS"
+}

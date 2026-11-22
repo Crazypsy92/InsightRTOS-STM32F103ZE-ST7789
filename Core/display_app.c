@@ -102,10 +102,15 @@ static void controller_task(void *argument)
                 const rtos_status_t status=rtos_queue_receive(&controller_keys,&pending_key,0U);
                 if (status==RTOS_ERR_UNAVAILABLE) break;
                 RTOS_ASSERT(status==RTOS_OK);
-                RTOS_ASSERT(pending_key.event==KEY_EVENT_SHORT || pending_key.event==KEY_EVENT_LONG);
-                KEY_ToggleLED();
-                if (pending_key.event==KEY_EVENT_SHORT) ++g_display_statistics.key_short;
-                else ++g_display_statistics.key_long;
+                RTOS_ASSERT(pending_key.event==KEY_EVENT_SHORT || pending_key.event==KEY_EVENT_DOUBLE || pending_key.event==KEY_EVENT_LONG);
+                if (pending_key.event==KEY_EVENT_LONG) {
+                    KEY_ToggleLED();
+                    ++g_display_statistics.key_long;
+                } else if (pending_key.event==KEY_EVENT_SHORT) {
+                    ++g_display_statistics.key_short;
+                } else if (pending_key.event==KEY_EVENT_DOUBLE) {
+                    ++g_display_statistics.key_double;
+                }
                 ++g_display_statistics.controller_events;
                 key_pending=true;
             }

@@ -20,6 +20,7 @@ static Button s_key1;
 /* Recorded in the 5ms SysTick callback, consumed by the foreground. */
 #define KEY_BIT_SHORT  (1U << 0)
 #define KEY_BIT_LONG   (1U << 1)
+#define KEY_BIT_DOUBLE (1U << 2)
 static volatile uint8_t s_pending_bits = 0U;
 static volatile uint8_t s_led_toggles = 0U;
 static volatile uint8_t s_ready = 0U;
@@ -67,6 +68,14 @@ static void key1_event_callback(Button *btn)
 #endif
             break;
 
+        case BTN_DOUBLE_CLICK:
+#ifdef INSIGHT_DISPLAY_RTOS
+            Display_KeyFromISR(KEY_EVENT_DOUBLE);
+#else
+            s_pending_bits |= KEY_BIT_DOUBLE;
+#endif
+            break;
+
         case BTN_LONG_PRESS_START:
 #ifdef INSIGHT_DISPLAY_RTOS
             s_long_count++;
@@ -109,6 +118,7 @@ void KEY_Init(void)
     /* 初始化 multi_button：有效电平 0 (按下低电平)，ID 为 1 */
     button_init(&s_key1, key1_read_pin, 0, 1);
     button_attach(&s_key1, BTN_SINGLE_CLICK,     key1_event_callback);
+    button_attach(&s_key1, BTN_DOUBLE_CLICK,     key1_event_callback);
     button_attach(&s_key1, BTN_LONG_PRESS_START, key1_event_callback);
     s_pending_bits = 0U;
     s_led_toggles = 0U;
@@ -147,6 +157,9 @@ key_event_t KEY_GetEvent(void)
     if (s_pending_bits & KEY_BIT_LONG) {
         s_pending_bits &= (uint8_t)~KEY_BIT_LONG;
         ev = KEY_EVENT_LONG;
+    } else if (s_pending_bits & KEY_BIT_DOUBLE) {
+        s_pending_bits &= (uint8_t)~KEY_BIT_DOUBLE;
+        ev = KEY_EVENT_DOUBLE;
     } else if (s_pending_bits & KEY_BIT_SHORT) {
         s_pending_bits &= (uint8_t)~KEY_BIT_SHORT;
         ev = KEY_EVENT_SHORT;

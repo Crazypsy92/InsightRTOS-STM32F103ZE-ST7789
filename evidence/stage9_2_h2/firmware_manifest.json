@@ -1,0 +1,26 @@
+{
+  "stage": "9.2-H2",
+  "firmware_target": "insightrtos_display_o2_trace",
+  "firmware_bin": "artifacts/stage9_2_h2/insightrtos_display_o2_trace.bin",
+  "firmware_elf": "artifacts/stage9_2_h2/insightrtos_display_o2_trace.elf",
+  "firmware_hex": "artifacts/stage9_2_h2/insightrtos_display_o2_trace.hex",
+  "firmware_map": "artifacts/stage9_2_h2/insightrtos_display_o2_trace.map",
+  "size_bytes": 46564,
+  "sha256": "83fd37aa0f026f92682d6399fba308307267990727a9b5e29a481e01d6447e9d",
+  "text_size": 46464,
+  "data_size": 96,
+  "bss_size": 46224,
+  "flash_pages_used": 23,
+  "flash_pages_erased": 31,
+  "features": {
+    "chinese_font_cn16": true,
+    "multibutton_events": [
+      "SINGLE_CLICK",
+      "DOUBLE_CLICK",
+      "LONG_PRESS"
+    ],
+    "explainable_scheduler": true,
+    "mutex_deadlock_diagnostics": true,
+    "single_screen_consolidated": true
+  }
+}

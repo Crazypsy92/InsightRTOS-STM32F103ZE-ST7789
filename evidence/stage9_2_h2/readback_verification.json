@@ -1,0 +1,14 @@
+{
+  "firmware_file": "artifacts/stage9_2_h2/insightrtos_display_o2_trace.bin",
+  "firmware_size": 46564,
+  "sha256": "83fd37aa0f026f92682d6399fba308307267990727a9b5e29a481e01d6447e9d",
+  "erase_pages": "0-30",
+  "erase_range": "[0x08000000, 0x0800F800)",
+  "erase_size_bytes": 63488,
+  "erased_tail_bytes": 16924,
+  "erased_tail_all_0xff": true,
+  "readback_match_bytes": true,
+  "readback_match_sha256": true,
+  "option_bytes_unchanged": true,
+  "verdict": "PASS"
+}

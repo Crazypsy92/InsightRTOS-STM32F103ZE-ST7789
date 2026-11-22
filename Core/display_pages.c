@@ -43,7 +43,7 @@ void Display_PagesInit(display_ack_t *ack)
     s_ready = 0U;
     if (ST7789_PortInit() == LCD_OK) {
         s_ready = 1U;
-        Display_UIConsolidated(true);
+        Display_UIConsolidated(true, KEY_EVENT_NONE);
         ++refresh_count;
     }
     s_page_start_ms = GetTick_ms();
@@ -68,7 +68,7 @@ void Display_PagesExecute(const display_command_t *cmd, display_ack_t *ack)
     RTOS_ASSERT(staged_consumptions == before + 1U);
     RTOS_ASSERT(staged_event == KEY_EVENT_NONE);
 
-    Display_UIConsolidated(false);
+    Display_UIConsolidated(false, (key_event_t)cmd->event);
     s_last_frame_ms = GetTick_ms();
     ++refresh_count;
     snapshot(cmd->sequence, ack);

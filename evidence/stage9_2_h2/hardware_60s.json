@@ -1,0 +1,20 @@
+{
+  "duration_seconds": 60.03,
+  "target_duration_satisfied": true,
+  "delta_rtos_kernel_ticks": 6003,
+  "rtos_kernel_tick_rate_hz": 100.0,
+  "delta_tim2_ms": 60031,
+  "tim2_ms_rate_hz": 1000.02,
+  "delta_lcd_refreshes": 222,
+  "lcd_refresh_rate_hz": 3.7,
+  "delta_task_runs": {
+    "KEY": 0,
+    "Controller": 6003,
+    "LCD": 222,
+    "Monitor": 117
+  },
+  "total_transport_errors": 0,
+  "total_init_errors": 0,
+  "deadlock_detected": false,
+  "verdict": "PASS"
+}
