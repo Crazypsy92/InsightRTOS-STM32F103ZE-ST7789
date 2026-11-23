@@ -1,13 +1,15 @@
 # InsightRTOS — STM32F103ZET6 + ST7789 全功能 RTOS 诊断与驱动平台
 
-> **当前版本：v0.9.3-A (Stage 9.3-A: Real-Time Diagnostics — Clocks, CPU Cycles & Ready Latency)**  
+> **当前版本：v0.9.3-A2 (Stage 9.3-A2: Real-Time & Reliability Baseline Verification)**  
 > 运行平台：真实硬件 STM32F103ZET6 + ST7789 (1.54" 240×240 IPS TFT)  
-> 固件状态：具备**可解释调度**、**Mutex 死锁诊断**与**实时性观测（CPU 运行周期、唤醒延迟与时钟可信度）**三大核心诊断能力；零动态内存分配，严格 72 字节 TCB ABI 与 568 字节实时诊断侧表预算（≤ 1024 B）。
-> 阶段验收：[Stage 9.3-A 综合验收报告](evidence/stage9_3_a/acceptance.md) · [计量契约规范](evidence/stage9_3_a/timing_contract.md) · [测试清单](evidence/stage9_3_a/test_results.md)
+> 固件状态：具备**可解释调度**、**Mutex 死锁诊断**与**实时性观测（CPU 运行周期、唤醒延迟与时钟可信度）**三大核心诊断能力；实现 8 槽历史下的孤儿 ACK 准确结算与零丢失契约；通过 60 秒常态基线及 5 分钟受控高频压力测试（0 传输错误，0 HardFault）。
+> 阶段验收：[Stage 9.3-A2 综合验收报告](evidence/stage9_3_a2/acceptance.md) · [时序可信度与安全性契约](evidence/stage9_3_a2/timing_safety.md) · [测试清单与压力日志](evidence/stage9_3_a2/test_results.md)
 
 ---
 
-> **实时性诊断演进：** 遵循诊断体系架构规范，新增 `Middlewares/InsightRTOS/include/rtos_diag_rt.h` 与 `kernel/diag_rt.c`，引入 `INSIGHT_DIAG_RT` 开关。实现 64 位单调周期时钟扩展、59 秒多回绕不确定性拦截、任务驻留周期累计（含在途补偿）、唤醒响应延迟测量（纳秒与节拍双维度），以及任务终止数据冻结与代数复用失效校验。执行任务闭环于 [Issue #5](https://github.com/Crazypsy92/InsightRTOS-STM32F103ZE-ST7789/issues/5)。
+> **实时性与可靠性基线验收演进：** 依据 [Issue #6](https://github.com/Crazypsy92/InsightRTOS-STM32F103ZE-ST7789/issues/6)，全面加固测试基础设施真实性（移除 QEMU 假 PASS，重构全动态符号采样），在 Monitor Task 导出实时只读诊断快照；扩展 `App/Src/app_events.c` 生命周期计数，保证环形槽覆盖时的孤儿 ACK 仍准确结算；通过 STM32 实机 60 秒基线及 5 分钟（300 秒 / 10 events/s）连续高频压力测试。
+
+> **实时性诊断核心机制：** 遵循诊断体系架构规范，新增 `Middlewares/InsightRTOS/include/rtos_diag_rt.h` 与 `kernel/diag_rt.c`，引入 `INSIGHT_DIAG_RT` 开关。实现 64 位单调周期时钟扩展、59 秒多回绕不确定性拦截、任务驻留周期累计（含在途补偿）、唤醒响应延迟测量（纳秒与节拍双维度），以及任务终止数据冻结与代数复用失效校验。执行任务闭环于 [Issue #5](https://github.com/Crazypsy92/InsightRTOS-STM32F103ZE-ST7789/issues/5)。
 
 > **应用层模块化演进：** 参照 [STM32F103-FreeRTOS-MultiButton](https://github.com/Crazypsy92/STM32F103-FreeRTOS-MultiButton) 的清晰任务模板与配置分离原则，已将应用层完整重构至 `App/` 独立目录，实现应用配置、IPC 通信、事件跟踪与任务入口的高内聚低耦合解耦；统一 `tests/` 与 `scripts/test/` 自动化测试脚本资产体系。详细架构规范见 [模块化架构方案](docs/architecture/rtos_app_modularization.md)，执行任务已闭环于 [Issue #4](https://github.com/Crazypsy92/InsightRTOS-STM32F103ZE-ST7789/issues/4)。
 

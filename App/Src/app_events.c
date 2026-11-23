@@ -10,6 +10,15 @@ uint32_t App_Events_AllocateId(key_event_t event, uint32_t now_ms, bool is_dropp
     if (id == 0U) id = ++s_next_event_id;
 
     unsigned int slot = id % APP_EVENT_HISTORY_CAPACITY;
+    if (g_event_tracker.history[slot].id != 0U) {
+        display_event_stage_t old_stage = g_event_tracker.history[slot].stage;
+        if (old_stage != EVENT_STAGE_ACKED &&
+            old_stage != EVENT_STAGE_FAILED &&
+            old_stage != EVENT_STAGE_IDLE) {
+            g_event_tracker.evicted_unacked_count++;
+        }
+    }
+
     g_event_tracker.history[slot].id = id;
     g_event_tracker.history[slot].event = event;
     g_event_tracker.history[slot].timestamp_ms = now_ms;
@@ -49,6 +58,18 @@ void App_Events_RecordAck(uint32_t id, int32_t error, uint32_t now_ms)
             g_event_tracker.success_count++;
         } else {
             ev->stage = EVENT_STAGE_FAILED;
+            g_event_tracker.failure_count++;
+        }
+    } else {
+        /* Bounded ring slot was overwritten before ACK. Account for ACK without silent loss. */
+        g_event_tracker.orphaned_ack_count++;
+        if (error == 0) {
+            if (id > g_event_tracker.confirmed_id) {
+                g_event_tracker.confirmed_id = id;
+            }
+            g_event_tracker.completed_ms = now_ms;
+            g_event_tracker.success_count++;
+        } else {
             g_event_tracker.failure_count++;
         }
     }

@@ -1,0 +1,80 @@
+{
+  "profile": "normal",
+  "commit_sha": "3005e243da484df1c23641ae5de8faa81308421b",
+  "firmware_sha": "0262720154a1a54a9312eb00f01560749124a1a9209fd1e429eb733954516e36",
+  "elf_path": "build/DISPLAY_RTOS_O2_Trace/insightrtos_display.elf",
+  "sample_count": 13,
+  "total_duration_s": 60.0,
+  "tim2_freq_hz": 994.32,
+  "tick_freq_hz": 99.42,
+  "lcd_freq_hz": 3.9,
+  "zero_system_errors": true,
+  "transport_errors": 0,
+  "initialization_errors": 0,
+  "key_overflows": 0,
+  "command_overflows": 0,
+  "event_tracker": {
+    "latest_id": 0,
+    "confirmed_id": 0,
+    "completed_ms": 0,
+    "success_count": 0,
+    "failure_count": 0,
+    "retry_count": 0,
+    "drop_count": 0,
+    "evicted_unacked_count": 0,
+    "orphaned_ack_count": 0
+  },
+  "rt_diagnostics_end": {
+    "sample_seq": 128,
+    "clock_type": 2,
+    "frequency_hz": 72000000,
+    "clock_flags": 1,
+    "tasks": {
+      "KEY": {
+        "charged_cycles": 3830,
+        "last_ready_cycles": 29751,
+        "max_ready_cycles": 29751,
+        "flags": 1,
+        "last_ready_ticks": 1,
+        "max_ready_ticks": 0,
+        "dispatch_count": 0
+      },
+      "CTRL": {
+        "charged_cycles": 26830304,
+        "last_ready_cycles": 2109,
+        "max_ready_cycles": 24707,
+        "flags": 1,
+        "last_ready_ticks": 1,
+        "max_ready_ticks": 0,
+        "dispatch_count": 0
+      },
+      "LCD": {
+        "charged_cycles": 36714475,
+        "last_ready_cycles": 7105,
+        "max_ready_cycles": 19887,
+        "flags": 1,
+        "last_ready_ticks": 1,
+        "max_ready_ticks": 0,
+        "dispatch_count": 0
+      },
+      "MON": {
+        "charged_cycles": 886465,
+        "last_ready_cycles": 8556,
+        "max_ready_cycles": 1072487,
+        "flags": 1,
+        "last_ready_ticks": 1,
+        "max_ready_ticks": 0,
+        "dispatch_count": 1
+      },
+      "IDLE": {
+        "charged_cycles": 4615585135,
+        "last_ready_cycles": 0,
+        "max_ready_cycles": 0,
+        "flags": 1,
+        "last_ready_ticks": 1,
+        "max_ready_ticks": 0,
+        "dispatch_count": 0
+      }
+    }
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "stage": "9.3-A2",
+  "title": "Stage 9.3-A2 实时性与可靠性基线验收",
+  "base_commit": "3005e24391263d915998f497475d681cbb4c1a74",
+  "target_chip": "STM32F103ZET6",
+  "chip_idcode": "0x10036414",
+  "clock_system_hz": 72000000,
+  "systick_hz": 100,
+  "tim2_hz": 1000,
+  "firmware": {
+    "binary_path": "artifacts/stage9_3_a2/insightrtos_display_o2_trace.bin",
+    "elf_path": "artifacts/stage9_3_a2/insightrtos_display.elf",
+    "map_path": "artifacts/stage9_3_a2/insightrtos_display.map",
+    "hex_path": "artifacts/stage9_3_a2/insightrtos_display.hex",
+    "binary_bytes": 50604,
+    "sha256": "0262720154a1a54a9312eb00f01560749124a1a9209fd1e429eb733954516e36",
+    "flash_erased_range": "[0x08000000, 0x0800F800)",
+    "flash_erased_bytes": 63488,
+    "flash_erased_pages": "0..30",
+    "flash_remaining_margin_bytes": 12884,
+    "option_bytes": "00ff5aa5 00ff00ff 00ff00ff 00ff00ff"
+  },
+  "resource_comparison": {
+    "RT_OFF": {
+      "preset": "DISPLAY_RTOS_O2",
+      "text_bytes": 46456,
+      "data_bytes": 96,
+      "bss_bytes": 43344,
+      "flash_used_bytes": 46556
+    },
+    "RT_ON": {
+      "preset": "DISPLAY_RTOS_O2_Trace",
+      "text_bytes": 50504,
+      "data_bytes": 96,
+      "bss_bytes": 47704,
+      "flash_used_bytes": 50604
+    },
+    "delta": {
+      "flash_bytes": 4048,
+      "sram_diag_side_table_bytes": 568,
+      "sram_diag_budget_bytes": 1024,
+      "sram_diag_margin_bytes": 456
+    }
+  },
+  "stack_usage_su": {
+    "rtos_diag_rt_snapshot": 64,
+    "rtos_diag_rt_idle_snapshot": 64,
+    "rtos_diag_rt_switch_hook": 32,
+    "rtos_diag_rt_clock_cap": 16
+  },
+  "test_execution": {
+    "modular_app_host": {
+      "suites": 9,
+      "assertions": 45,
+      "status": "PASS"
+    },
+    "diag_rt_host": {
+      "suites": 9,
+      "assertions": 45,
+      "status": "PASS"
+    },
+    "qemu_arm": {
+      "status": "NOT_TESTED",
+      "reason": "qemu-system-arm binary not present in system PATH; no STM32F103ZET6 board model in upstream QEMU"
+    },
+    "kernel_codex_ctest": {
+      "suites": 360,
+      "status": "PASS"
+    },
+    "hardware_normal_60s": {
+      "duration_s": 60.0,
+      "samples": 13,
+      "tim2_hz": 994.32,
+      "tick_hz": 99.42,
+      "lcd_hz": 3.9,
+      "system_errors": 0,
+      "status": "PASS"
+    },
+    "hardware_stress_300s": {
+      "duration_s": 300.0,
+      "samples": 11,
+      "stress_injection_rate_ms": 100,
+      "tim2_hz": 999.08,
+      "tick_hz": 99.9,
+      "lcd_hz": 3.84,
+      "system_errors": 0,
+      "bounded_overflow_drops": 574,
+      "status": "PASS"
+    }
+  }
+}

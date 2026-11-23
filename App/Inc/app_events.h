@@ -37,6 +37,8 @@ typedef struct {
     uint32_t failure_count;
     uint32_t retry_count;
     uint32_t drop_count;
+    uint32_t evicted_unacked_count; /* Evicted from bounded history before ACK */
+    uint32_t orphaned_ack_count;    /* ACK processed after event slot eviction */
 } display_event_tracker_t;
 
 extern volatile display_event_tracker_t g_event_tracker;

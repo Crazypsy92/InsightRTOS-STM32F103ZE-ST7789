@@ -477,6 +477,64 @@ static void test_led_and_deadlock_states(void)
 }
 
 /* -------------------------------------------------------------------------- */
+/* Test 9: Consecutive Events, Ring Overwrite, Orphaned ACK & Queue Full      */
+/* -------------------------------------------------------------------------- */
+static void test_consecutive_events_overflow_and_ack_resilience(void)
+{
+    printf("[TEST 9] Consecutive events, ring overwrite, orphaned ACK & queue full... ");
+
+    mock_kernel_reset();
+    assert(App_IPC_Init() == RTOS_OK);
+    memset((void *)&g_event_tracker, 0, sizeof(g_event_tracker));
+
+    /* 1. Allocate 16 consecutive in-flight events (exceeds 8-slot history) */
+    uint32_t ids[16];
+    for (int i = 0; i < 16; ++i) {
+        ids[i] = App_Events_AllocateId(KEY_EVENT_SHORT, 20000U + (uint32_t)i * 10U, false);
+        assert(ids[i] > 0U);
+    }
+
+    display_event_tracker_t snap;
+    App_Events_GetSnapshot(&snap);
+    assert(snap.latest_id == ids[15]);
+    /* The first 8 events were evicted before ACK arrived */
+    assert(snap.evicted_unacked_count == 8U);
+
+    /* 2. Record ACK for all 16 events, including the 8 evicted ones */
+    for (int i = 0; i < 16; ++i) {
+        App_Events_RecordAck(ids[i], 0, 21000U + (uint32_t)i * 10U);
+    }
+
+    App_Events_GetSnapshot(&snap);
+    /* 8 orphaned ACKs were processed */
+    assert(snap.orphaned_ack_count == 8U);
+    /* Zero silent loss: ALL 16 events successfully counted! */
+    assert(snap.success_count == 16U);
+    assert(snap.confirmed_id == ids[15]);
+
+    /* 3. Invalid and error ACK handling */
+    App_Events_RecordAck(0U, 0, 22000U);
+    App_Events_GetSnapshot(&snap);
+    assert(snap.success_count == 16U); /* unchanged */
+
+    App_Events_RecordAck(9999U, -1, 22000U);
+    App_Events_GetSnapshot(&snap);
+    assert(snap.failure_count == 1U);
+    assert(snap.orphaned_ack_count == 9U);
+
+    /* 4. Queue Full backpressure verification */
+    for (uint32_t i = 0; i < APP_KEY_QUEUE_CAPACITY; ++i) {
+        display_key_t k = {1000U + i, (uint32_t)KEY_EVENT_SHORT, 23000U + i};
+        assert(App_IPC_SendKeyFromISR(&k) == RTOS_OK);
+    }
+    /* 33rd key must return RTOS_ERR_FULL */
+    display_key_t overflow_key = {9999U, (uint32_t)KEY_EVENT_SHORT, 24000U};
+    assert(App_IPC_SendKeyFromISR(&overflow_key) == RTOS_ERR_FULL);
+
+    printf("PASS\n");
+}
+
+/* -------------------------------------------------------------------------- */
 /* Main Test Runner                                                           */
 /* -------------------------------------------------------------------------- */
 int main(void)
@@ -493,9 +551,10 @@ int main(void)
     test_multibutton_events();
     test_glyph_pack_and_bounds();
     test_led_and_deadlock_states();
+    test_consecutive_events_overflow_and_ack_resilience();
 
     printf("====================================================\n");
-    printf("ALL STAGE 9.2-H5 HOST TESTS PASSED (8/8 Suites, 35 Assertions)\n");
+    printf("ALL STAGE 9.2-H5 HOST TESTS PASSED (9/9 Suites, 45 Assertions)\n");
     printf("====================================================\n");
     return 0;
 }
