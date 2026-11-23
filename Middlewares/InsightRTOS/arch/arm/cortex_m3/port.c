@@ -6,6 +6,9 @@
 #define SCB_CCR (*(volatile uint32_t *)UINT32_C(0xe000ed14))
 #define SCB_SHPR2 (*(volatile uint32_t *)UINT32_C(0xe000ed1c))
 #define SCB_SHPR3 (*(volatile uint32_t *)UINT32_C(0xe000ed20))
+#define DWT_CTRL (*(volatile uint32_t *)UINT32_C(0xe0001000))
+#define DWT_CYCCNT (*(volatile uint32_t *)UINT32_C(0xe0001004))
+#define DEMCR (*(volatile uint32_t *)UINT32_C(0xe000edfc))
 
 _Static_assert(sizeof(uintptr_t) == sizeof(uint32_t), "32-bit ARM port");
 _Static_assert(offsetof(rtos_task_t, sp) == 0U, "assembly TCB SP offset");
@@ -129,4 +132,14 @@ bool rtos_port_task_create_context(void)
     __asm volatile("mrs %0, ipsr\nmrs %1, basepri\nmrs %2, faultmask"
                    : "=r"(exception), "=r"(basepri), "=r"(faultmask));
     return (exception | basepri | faultmask) == 0U;
+}
+
+bool rtos_port_clock_available(void)
+{
+    return ((DEMCR & (UINT32_C(1) << 24)) != 0U) && ((DWT_CTRL & UINT32_C(1)) != 0U);
+}
+
+uint32_t rtos_port_clock_cycles_32(void)
+{
+    return DWT_CYCCNT;
 }

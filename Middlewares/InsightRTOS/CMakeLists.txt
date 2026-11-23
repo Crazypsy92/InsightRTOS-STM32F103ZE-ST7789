@@ -1,6 +1,6 @@
 include(${CMAKE_CURRENT_LIST_DIR}/config/insight_project_config.cmake)
 add_library(insightrtos_kernel STATIC
-    kernel/deadlock.c kernel/trace.c kernel/queue.c lib/memcpy.c kernel/task.c kernel/scheduler.c
+    kernel/diag_rt.c kernel/deadlock.c kernel/trace.c kernel/queue.c lib/memcpy.c kernel/task.c kernel/scheduler.c
     kernel/ready_queue.c kernel/critical.c kernel/tick.c kernel/delay.c
     kernel/delay_queue.c kernel/semaphore.c kernel/mutex.c kernel/priority.c
     kernel/priority_graph.c kernel/wait.c arch/arm/cortex_m3/port.c

@@ -7,6 +7,7 @@
 #include "rtos_config.h"
 #include "rtos_task.h"
 #include "rtos_trace.h"
+#include "rtos_diag_rt.h"
 
 #ifndef INSIGHT_DIAG_EXPLAIN
 #define INSIGHT_DIAG_EXPLAIN 0

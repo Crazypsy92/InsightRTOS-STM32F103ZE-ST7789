@@ -79,6 +79,7 @@
                 "INSIGHT_TRACE_ENABLED": "ON",
                 "INSIGHT_DIAG_EXPLAIN": "ON",
                 "INSIGHT_DIAG_DL": "ON",
+                "INSIGHT_DIAG_RT": "ON",
                 "CMAKE_C_FLAGS_RELWITHDEBINFO": "-O2 -g -DNDEBUG"
             }
         },
@@ -92,6 +93,7 @@
                 "INSIGHT_TRACE_ENABLED": "ON",
                 "INSIGHT_DIAG_EXPLAIN": "ON",
                 "INSIGHT_DIAG_DL": "ON",
+                "INSIGHT_DIAG_RT": "ON",
                 "CMAKE_C_FLAGS_RELWITHDEBINFO": "-O2 -g -DNDEBUG"
             }
         }

@@ -2,6 +2,7 @@
 #include <stddef.h>
 #include <stdint.h>
 
+#include "diag_rt_internal.h"
 #include "kernel_internal.h"
 #include "port.h"
 #include "ready_queue.h"
@@ -190,7 +191,8 @@ static rtos_status_t task_create_common(rtos_task_t **out, rtos_task_ref_t *ref,
     /* Commit identity before READY, while both words are protected by PRIMASK. */
     if (out != NULL) *out = task;
     if (ref != NULL) { ref->slot = (uint32_t)slot; ref->generation = task_generation[slot]; }
-    RTOS_TRACE(RTOS_TRACE_TASK_CREATE, task, task->base_priority, 0U); task->state = RTOS_TASK_READY; RTOS_TRACE(RTOS_TRACE_TASK_READY, task, 0U, 0U);
+    rtos_diag_rt_task_init_hook((uint32_t)slot, task_generation[slot]);
+    RTOS_TRACE(RTOS_TRACE_TASK_CREATE, task, task->base_priority, 0U); task->state = RTOS_TASK_READY; RTOS_TRACE(RTOS_TRACE_TASK_READY, task, 0U, 0U); rtos_diag_rt_task_ready_hook(task);
     rtos_ready_queue_push(task);
     rtos_sched_task_ready(task);
     rtos_critical_exit(publish_state);

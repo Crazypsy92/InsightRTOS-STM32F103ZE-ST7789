@@ -19,11 +19,11 @@ import subprocess
 import struct
 
 STAT_ADDR = 0x20000728
-TIM2_TICK_ADDR = 0x200006f0
-KERNEL_TICK_ADDR = 0x20002734
+TIM2_TICK_ADDR = 0x200006f4
+KERNEL_TICK_ADDR = 0x2000296c
 PREV_CONS_ADDR = 0x20001198
-OUTPUT_JSON = "evidence/stage9_2_h5/logs/stability_60s.json"
-SAMPLES_JSONL = "evidence/stage9_2_h5/logs/stability_60s_samples.jsonl"
+OUTPUT_JSON = "evidence/stage9_3_a/logs/stability_60s.json"
+SAMPLES_JSONL = "evidence/stage9_3_a/logs/stability_60s_samples.jsonl"
 
 def sample_target():
     # Read core registers, TIM2 tick, kernel tick, stats, and console buffer
@@ -107,7 +107,7 @@ def parse_openocd_output(out):
 
 def main():
     os.makedirs("build/tests", exist_ok=True)
-    os.makedirs("evidence/stage9_2_h5/logs", exist_ok=True)
+    os.makedirs(os.path.dirname(OUTPUT_JSON), exist_ok=True)
 
     print("=== Starting 60-second hardware stability measurement ===")
     samples = []

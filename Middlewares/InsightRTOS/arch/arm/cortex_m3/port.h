@@ -30,5 +30,7 @@ bool rtos_port_interrupts_masked(void);
 uint32_t rtos_port_irq_save(void);
 void rtos_port_irq_restore(uint32_t saved);
 _Noreturn void rtos_port_idle(void);
+bool rtos_port_clock_available(void);
+uint32_t rtos_port_clock_cycles_32(void);
 
 #endif

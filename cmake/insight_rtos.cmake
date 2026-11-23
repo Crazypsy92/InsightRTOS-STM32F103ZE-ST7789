@@ -17,6 +17,9 @@ endif()
 if(INSIGHT_DIAG_DL)
     target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE INSIGHT_DIAG_DL=1)
 endif()
+if(INSIGHT_DIAG_RT)
+    target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE INSIGHT_DIAG_RT=1)
+endif()
 # Startup weak aliases alone do not extract portasm.S from a static archive.
 # Load production objects, then let --gc-sections discard unused functions.
 target_link_libraries(${CMAKE_PROJECT_NAME}

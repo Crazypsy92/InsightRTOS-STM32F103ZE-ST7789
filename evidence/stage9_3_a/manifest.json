@@ -1,0 +1,64 @@
+{
+  "stage": "Stage 9.3-A",
+  "title": "实时性诊断：时钟能力、CPU 运行周期与唤醒延迟",
+  "issue": "Crazypsy92/InsightRTOS-STM32F103ZE-ST7789#5",
+  "base_commit": "ddac72ea991b7975acc33410f53446cc864a2825",
+  "target_hardware": {
+    "mcu": "STM32F103ZET6",
+    "architecture": "ARM Cortex-M3 r1p1",
+    "idcode": "0x10036414",
+    "uid": "0x05d8ff31 36533130 43117928",
+    "option_bytes": "0x00ff5aa5 0x00ff00ff 0x00ff00ff 0x00ff00ff",
+    "flash_capacity_bytes": 524288,
+    "sram_capacity_bytes": 65536,
+    "clock_system_hz": 72000000,
+    "tick_frequency_hz": 100,
+    "tim2_frequency_hz": 1000
+  },
+  "firmware": {
+    "target_preset": "DISPLAY_RTOS_O2_Trace",
+    "binary_path": "artifacts/stage9_3_a/insightrtos_display_o2_trace.bin",
+    "elf_path": "artifacts/stage9_3_a/insightrtos_display.elf",
+    "flash_used_bytes": 49588,
+    "flash_allocated_max_bytes": 63488,
+    "erase_pages": "0..30 (0x08000000 to 0x0800F800)",
+    "tail_erased_bytes": 13900,
+    "tail_all_0xff": true,
+    "binary_sha256": "a3cdc8d487a49f5467f23680e2a8f811179ac115f5fcae3543484a428291df57",
+    "readback_sha256": "a3cdc8d487a49f5467f23680e2a8f811179ac115f5fcae3543484a428291df57",
+    "readback_match": true
+  },
+  "resource_budget": {
+    "target_side_table_sram_bytes": 1024,
+    "actual_s_rt_tasks_bytes": 512,
+    "actual_s_rt_global_bytes": 32,
+    "actual_s_idle_record_bytes": 24,
+    "actual_total_rt_sram_bytes": 568,
+    "tcb_bytes": 72,
+    "tcb_abi_modified": false,
+    "context_switch_assembly_modified": false,
+    "heap_bytes": 0
+  },
+  "build_definitions": {
+    "INSIGHT_RTOS_ENABLED": 1,
+    "INSIGHT_DISPLAY_RTOS": 1,
+    "INSIGHT_TRACE_ENABLED": 1,
+    "INSIGHT_DIAG_EXPLAIN": 1,
+    "INSIGHT_DIAG_DL": 1,
+    "INSIGHT_DIAG_RT": 1,
+    "RTOS_PREEMPTIVE": 1,
+    "RTOS_MUTEX_PI": 1,
+    "RTOS_TICK_HZ": 100,
+    "RTOS_TIME_SLICE_TICKS": 1
+  },
+  "test_metrics": {
+    "host_app_modular_tests": "8/8 passed (35 assertions)",
+    "host_rt_diagnostics_tests": "9/9 passed (45 assertions)",
+    "kernel_regression_tests": "360/360 passed (100%)",
+    "qemu_status": "NOT_TESTED (binary missing)",
+    "hardware_sampling_duration_seconds": 60,
+    "hardware_samples_count": 13,
+    "hardware_transport_errors": 0,
+    "hardware_initialization_errors": 0
+  }
+}

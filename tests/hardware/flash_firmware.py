@@ -19,11 +19,11 @@ FLASH_BASE = 0x08000000
 ERASE_BYTES = 63488 # 31 pages * 2048 bytes
 EXPECTED_IDCODE = 0x10036414
 EXPECTED_OB = "00ff5aa5 00ff00ff 00ff00ff 00ff00ff"
-FIRMWARE_BIN = "artifacts/stage9_2_h5/insightrtos_display_o2_trace.bin"
-READBACK_BIN = "build/tests/readback_h5.bin"
-READBACK_TAIL_BIN = "build/tests/readback_tail_h5.bin"
-LOG_PATH = "evidence/stage9_2_h5/logs/programming.log"
-VERIF_JSON = "evidence/stage9_2_h5/logs/readback_verification.json"
+FIRMWARE_BIN = sys.argv[1] if len(sys.argv) > 1 else "artifacts/stage9_3_a/insightrtos_display_o2_trace.bin"
+READBACK_BIN = "build/tests/readback_9_3_a.bin"
+READBACK_TAIL_BIN = "build/tests/readback_tail_9_3_a.bin"
+LOG_PATH = "evidence/stage9_3_a/logs/programming.log"
+VERIF_JSON = "evidence/stage9_3_a/logs/readback_verification.json"
 
 def run_openocd_commands(cmds, capture=True):
     full_cmd = ["openocd", "-f", "interface/stlink.cfg", "-f", "target/stm32f1x.cfg"]
@@ -42,7 +42,7 @@ def sha256_file(path):
 
 def main():
     os.makedirs("build/tests", exist_ok=True)
-    os.makedirs("evidence/stage9_2_h5/logs", exist_ok=True)
+    os.makedirs(os.path.dirname(LOG_PATH), exist_ok=True)
 
     if not os.path.exists(FIRMWARE_BIN):
         print(f"ERROR: Firmware {FIRMWARE_BIN} not found!")

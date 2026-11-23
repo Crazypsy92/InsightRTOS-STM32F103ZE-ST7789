@@ -1,11 +1,13 @@
 # InsightRTOS — STM32F103ZET6 + ST7789 全功能 RTOS 诊断与驱动平台
 
-> **当前版本：v0.9.2 (Stage 9.2-H5: Modular App Tasks & Standardized Test Hierarchy)**  
+> **当前版本：v0.9.3-A (Stage 9.3-A: Real-Time Diagnostics — Clocks, CPU Cycles & Ready Latency)**  
 > 运行平台：真实硬件 STM32F103ZET6 + ST7789 (1.54" 240×240 IPS TFT)  
-> 固件状态：四任务生产应用已完成 FreeRTOS 风格应用层模块化重构；具备**可解释调度**与 **Mutex 死锁诊断**双核心能力；零动态内存分配，严格 72 字节 TCB ABI 与 384 字节诊断工作区预算。
-> 阶段验收：[Stage 9.2-H5 综合验收报告](evidence/stage9_2_h5/acceptance.md)
+> 固件状态：具备**可解释调度**、**Mutex 死锁诊断**与**实时性观测（CPU 运行周期、唤醒延迟与时钟可信度）**三大核心诊断能力；零动态内存分配，严格 72 字节 TCB ABI 与 568 字节实时诊断侧表预算（≤ 1024 B）。
+> 阶段验收：[Stage 9.3-A 综合验收报告](evidence/stage9_3_a/acceptance.md) · [计量契约规范](evidence/stage9_3_a/timing_contract.md) · [测试清单](evidence/stage9_3_a/test_results.md)
 
 ---
+
+> **实时性诊断演进：** 遵循诊断体系架构规范，新增 `Middlewares/InsightRTOS/include/rtos_diag_rt.h` 与 `kernel/diag_rt.c`，引入 `INSIGHT_DIAG_RT` 开关。实现 64 位单调周期时钟扩展、59 秒多回绕不确定性拦截、任务驻留周期累计（含在途补偿）、唤醒响应延迟测量（纳秒与节拍双维度），以及任务终止数据冻结与代数复用失效校验。执行任务闭环于 [Issue #5](https://github.com/Crazypsy92/InsightRTOS-STM32F103ZE-ST7789/issues/5)。
 
 > **应用层模块化演进：** 参照 [STM32F103-FreeRTOS-MultiButton](https://github.com/Crazypsy92/STM32F103-FreeRTOS-MultiButton) 的清晰任务模板与配置分离原则，已将应用层完整重构至 `App/` 独立目录，实现应用配置、IPC 通信、事件跟踪与任务入口的高内聚低耦合解耦；统一 `tests/` 与 `scripts/test/` 自动化测试脚本资产体系。详细架构规范见 [模块化架构方案](docs/architecture/rtos_app_modularization.md)，执行任务已闭环于 [Issue #4](https://github.com/Crazypsy92/InsightRTOS-STM32F103ZE-ST7789/issues/4)。
 

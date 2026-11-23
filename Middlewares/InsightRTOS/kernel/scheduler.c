@@ -4,6 +4,7 @@
 #include <stdint.h>
 
 #include "delay_queue.h"
+#include "diag_rt_internal.h"
 #include "kernel_internal.h"
 #include "port.h"
 #include "ready_queue.h"
@@ -129,7 +130,7 @@ void rtos_sched_switch(void)
         }
 #endif
         if (previous->state == RTOS_TASK_RUNNING) {
-            previous->state = RTOS_TASK_READY; RTOS_TRACE(RTOS_TRACE_TASK_READY, previous, 0U, 0U);
+            previous->state = RTOS_TASK_READY; RTOS_TRACE(RTOS_TRACE_TASK_READY, previous, 0U, 0U); rtos_diag_rt_task_ready_hook(previous);
             if (previous != &idle_task) {
                 if ((reasons & (RTOS_SCHED_REASON_YIELD |
                                 RTOS_SCHED_REASON_SLICE)) != 0U) {
@@ -162,6 +163,7 @@ void rtos_sched_switch(void)
     next->state = RTOS_TASK_RUNNING;
     rtos_current_task = next; RTOS_TRACE_SELECT(previous, next, reasons);
     RTOS_TRACE_CONTEXT_SWITCH(previous, next, reasons, prev_was_running);
+    rtos_diag_rt_switch_hook(previous, next);
 #if RTOS_TESTING
     if (previous != next) {
         rtos_test_switch_hook(previous, next, reasons, rtos_tick_get());
@@ -233,7 +235,7 @@ void rtos_sched_wake(rtos_task_t *task)
     RTOS_ASSERT(task->wait_buffer.receive == NULL);
     RTOS_ASSERT(!task->delay_queued && !task->ready_queued);
     RTOS_ASSERT((task->next == NULL) && (task->delay_next == NULL));
-    task->state = RTOS_TASK_READY; RTOS_TRACE(RTOS_TRACE_TASK_READY, task, 0U, 0U);
+    task->state = RTOS_TASK_READY; RTOS_TRACE(RTOS_TRACE_TASK_READY, task, 0U, 0U); rtos_diag_rt_task_ready_hook(task);
     rtos_ready_queue_push(task);
 
     RTOS_ASSERT(rtos_current_task != NULL);
@@ -253,6 +255,7 @@ void rtos_sched_wake(rtos_task_t *task)
 void rtos_sched_on_tick(void)
 {
     RTOS_ASSERT(rtos_port_interrupts_masked());
+    rtos_diag_rt_on_tick(rtos_tick_get());
 #if RTOS_PREEMPTIVE
     rtos_task_t *const current = rtos_current_task;
     if ((current == NULL) || (current == &idle_task) ||
@@ -282,6 +285,7 @@ _Noreturn void rtos_start(void)
 
     const rtos_irq_state_t irq_state = rtos_critical_enter();
     idle_prepare();
+    rtos_diag_rt_init();
     rtos_port_init();
     scheduler_started = true;
     rtos_sched_switch();
