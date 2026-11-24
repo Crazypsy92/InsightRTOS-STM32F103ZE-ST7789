@@ -105,3 +105,13 @@ add_custom_command(TARGET ${CMAKE_PROJECT_NAME} POST_BUILD
 if(INSIGHT_DISPLAY_RTOS)
     include(cmake/insight_app.cmake)
 endif()
+
+option(INSIGHT_TEST_JOB "Enable one-shot target Job diagnostic fixture" OFF)
+if(INSIGHT_TEST_JOB)
+    if(NOT INSIGHT_DISPLAY_RTOS OR NOT INSIGHT_RTOS_ENABLED OR NOT INSIGHT_DIAG_RT OR INSIGHT_TEST_STRESS)
+        message(FATAL_ERROR "Job fixture requires display RT and excludes stress injection")
+    endif()
+    target_sources(${CMAKE_PROJECT_NAME} PRIVATE tests/hardware/job_fixture.c)
+    target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE tests/hardware)
+    target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE INSIGHT_TEST_JOB=1)
+endif()

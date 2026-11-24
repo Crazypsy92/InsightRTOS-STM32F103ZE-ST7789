@@ -41,3 +41,7 @@ const rtos_diag_dl_result_t *rtos_diag_dl_result(const rtos_diag_dl_workspace_t 
 - **死锁**：capture 写一份一致的节点和边；新一轮 capture 会使旧分析结果失效。analyze 完全在锁外，workspace 被 capture 后才可分析；result 仅在分析成功后有效。graph anomaly 是成功抓取的数据质量标志，保留异常节点并禁止推断。捕获的边、周期分类、参与身份和 tick 为对外结果；不提供可用的资源指针。result 返回 NULL 表示结果未就绪、上下文不支持或参数非法。关闭模块时不链接相应接口。
 
 接口用定宽字段、明确版本/容量和编译检查，避免枚举、指针宽度或编译器填充变成跨端口序列化约定。读输出的共享发布仍由应用现有 Queue 或受保护的拷贝完成。
+
+## Stage 9.3-B1 Job API
+
+Job 配置、release、complete 和 abort 使用当前 Thread 且中断未屏蔽。configure 可在调度启动前配置已发布用户代，release/complete/abort 要求运行中的用户线程。仅当前任务可 complete/abort 自己的 ID；不同任务可直接 release 指定代。旧 RT 快照 ABI 保持 56 B，新增独立 job_snapshot。错误保持原错误枚举。细节见 [Job 生命周期](job_lifecycle.md)。

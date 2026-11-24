@@ -47,12 +47,44 @@ typedef struct {
 } rtos_diag_rt_snapshot_t;
 _Static_assert(sizeof(rtos_diag_rt_snapshot_t) == 56U, "RT snapshot 56B");
 
+#define RTOS_DIAG_JOB_ENABLED            (1U << 0)
+#define RTOS_DIAG_JOB_ACTIVE             (1U << 1)
+#define RTOS_DIAG_JOB_FIRST_VALID        (1U << 2)
+#define RTOS_DIAG_JOB_FINISH_VALID       (1U << 3)
+#define RTOS_DIAG_JOB_BUDGET_VALID       (1U << 4)
+#define RTOS_DIAG_JOB_MISSED              (1U << 5)
+#define RTOS_DIAG_JOB_OVERRUN            (1U << 6)
+#define RTOS_DIAG_JOB_CYCLES_INVALID     (1U << 7)
+#define RTOS_DIAG_JOB_TICK_INVALID       (1U << 8)
+#define RTOS_DIAG_JOB_BUDGET_SATURATED   (1U << 9)
+#define RTOS_DIAG_JOB_COUNTER_SATURATED  (1U << 10)
+
+typedef struct {
+    uint32_t flags, period_ticks, budget_cycles, deadline_ticks;
+} rtos_diag_rt_config_t;
+
+typedef struct {
+    uint32_t flags, active_job_id, release_tick;
+    uint32_t last_first_dispatch_ticks, max_first_dispatch_ticks;
+    uint32_t last_finish_ticks, max_finish_ticks;
+    uint32_t last_budget_cycles, max_budget_cycles;
+    uint16_t completed_jobs, deadline_misses, budget_overruns;
+    uint16_t aborted_jobs, rejected_releases, invalid_jobs;
+    uint32_t stale_requests, exhausted_ids; /* Aggregate across users. */
+} rtos_diag_rt_job_snapshot_t;
+
 #if INSIGHT_DIAG_RT
 rtos_status_t rtos_diag_rt_clock_cap(rtos_diag_clock_cap_t *out_cap);
 rtos_status_t rtos_diag_rt_snapshot(rtos_task_ref_t ref, rtos_diag_rt_snapshot_t *out_snapshot);
 rtos_status_t rtos_diag_rt_idle_snapshot(rtos_diag_rt_snapshot_t *out_snapshot);
+rtos_status_t rtos_diag_rt_configure(rtos_task_ref_t ref, const rtos_diag_rt_config_t *cfg);
+rtos_status_t rtos_diag_rt_job_release(rtos_task_ref_t target, uint32_t *out_job_id);
+rtos_status_t rtos_diag_rt_job_complete(uint32_t job_id);
+rtos_status_t rtos_diag_rt_job_abort(uint32_t job_id);
+rtos_status_t rtos_diag_rt_job_snapshot(rtos_task_ref_t ref, rtos_diag_rt_job_snapshot_t *out);
 #if RTOS_TESTING
 void rtos_diag_rt_test_reset(void);
+void rtos_diag_rt_test_set_job_id(uint32_t slot, uint32_t id);
 #endif
 #endif
 

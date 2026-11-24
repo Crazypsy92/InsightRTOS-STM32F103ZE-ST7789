@@ -1,4 +1,7 @@
 #include "app_tasks.h"
+#if defined(INSIGHT_TEST_JOB)
+#include "job_fixture.h"
+#endif
 #include "delay.h"
 #if INSIGHT_DIAG_RT
 #include "main.h"
@@ -305,5 +308,10 @@ _Noreturn void app_tasks_start(void)
                                               APP_TASK_STACK_WORDS, priorities[i]) == RTOS_OK);
     }
 
+#if defined(INSIGHT_TEST_JOB)
+    rtos_task_ref_t job_fixture_ref;
+    RTOS_ASSERT(rtos_task_create_with_ref(&job_fixture_ref, "JobTest", insight_job_fixture, NULL,
+                                         display_stacks[4], APP_TASK_STACK_WORDS, 3U) == RTOS_OK);
+#endif
     rtos_start();
 }

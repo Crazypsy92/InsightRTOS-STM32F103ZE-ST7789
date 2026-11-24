@@ -18,13 +18,13 @@ def layout(t):
 
 names = """g_display_statistics g_event_tracker g_diag_rt_export g_display_task_refs
             g_sys_tick kernel_ticks g_rtos_assert_line display_stacks idle_stack
-            g_stress_request g_stress_remaining g_stress_generated""".split()
+            g_stress_request g_stress_remaining g_stress_generated g_job_fixture""".split()
 out = {}
 for name in names:
     try:
         val = gdb.parse_and_eval(name)
     except gdb.error:
-        if name.startswith("g_stress_"):
+        if name.startswith("g_stress_") or name == "g_job_fixture":
             continue
         raise
     if name in {"display_stacks", "idle_stack"}:
