@@ -1,0 +1,584 @@
+{
+  "status": "PASS",
+  "mode": "normal",
+  "sha256": "b4d13c78cfcaee50fb4ae30ad3c233f3860796f30308bc9e22de478ee886d13e",
+  "elapsed_s": 62.28830337399995,
+  "valid": 13,
+  "incomplete": 0,
+  "tick_hz": 100.00272382760188,
+  "tim2_hz": 1000.0111838974946,
+  "flow": {
+    "key_attempts": 0,
+    "key_sent_ok": 0,
+    "key_queue_full": 0,
+    "key_wrong_context": 0,
+    "key_invalid_arg": 0,
+    "key_other_errors": 0,
+    "success_count": 0,
+    "failure_count": 0,
+    "pending_count": 0,
+    "drop_count": 0
+  },
+  "start": {
+    "quality": "VALID",
+    "monotonic": 1658.498600207,
+    "kernel_ticks": 19222,
+    "tim2_ms": 192344,
+    "rt": {
+      "seq_begin": 704,
+      "clock_cap": {
+        "clock_type": 2,
+        "frequency_hz": 72000000,
+        "tick_hz": 100,
+        "wrap_period_ticks": 5965,
+        "flags": 1
+      },
+      "task_snapshots": [
+        {
+          "charged_cycles": 3832,
+          "last_ready_latency_cycles": 29754,
+          "max_ready_latency_cycles": 29754,
+          "ref": {
+            "slot": 0,
+            "generation": 1
+          },
+          "flags": 1,
+          "last_ready_latency_ticks": 0,
+          "max_ready_latency_ticks": 0,
+          "dispatch_count": 1,
+          "last_dispatch_tick": 0,
+          "state": 4,
+          "base_priority": 5,
+          "effective_priority": 5
+        },
+        {
+          "charged_cycles": 79287544,
+          "last_ready_latency_cycles": 2112,
+          "max_ready_latency_cycles": 24711,
+          "ref": {
+            "slot": 1,
+            "generation": 1
+          },
+          "flags": 1,
+          "last_ready_latency_ticks": 0,
+          "max_ready_latency_ticks": 0,
+          "dispatch_count": 19201,
+          "last_dispatch_tick": 19200,
+          "state": 4,
+          "base_priority": 4,
+          "effective_priority": 4
+        },
+        {
+          "charged_cycles": 117890040,
+          "last_ready_latency_cycles": 7115,
+          "max_ready_latency_cycles": 19905,
+          "ref": {
+            "slot": 2,
+            "generation": 1
+          },
+          "flags": 1,
+          "last_ready_latency_ticks": 0,
+          "max_ready_latency_ticks": 0,
+          "dispatch_count": 1564,
+          "last_dispatch_tick": 19185,
+          "state": 4,
+          "base_priority": 2,
+          "effective_priority": 2
+        },
+        {
+          "charged_cycles": 2736418,
+          "last_ready_latency_cycles": 8568,
+          "max_ready_latency_cycles": 1072961,
+          "ref": {
+            "slot": 3,
+            "generation": 1
+          },
+          "flags": 1,
+          "last_ready_latency_ticks": 0,
+          "max_ready_latency_ticks": 1,
+          "dispatch_count": 193,
+          "last_dispatch_tick": 19200,
+          "state": 2,
+          "base_priority": 1,
+          "effective_priority": 1
+        }
+      ],
+      "idle_snapshot": {
+        "charged_cycles": 13624103477,
+        "last_ready_latency_cycles": 0,
+        "max_ready_latency_cycles": 0,
+        "ref": {
+          "slot": 8,
+          "generation": 1
+        },
+        "flags": 1,
+        "last_ready_latency_ticks": 0,
+        "max_ready_latency_ticks": 0,
+        "dispatch_count": 19106,
+        "last_dispatch_tick": 19199,
+        "state": 1,
+        "base_priority": 0,
+        "effective_priority": 0
+      },
+      "seq_end": 704,
+      "published_tick": 19200
+    },
+    "stats": {
+      "task_runs": [
+        0,
+        19223,
+        735,
+        352
+      ],
+      "key_isr_events": 0,
+      "key_task_events": 0,
+      "controller_events": 0,
+      "lcd_events": 0,
+      "key_overflows": 0,
+      "command_overflows": 0,
+      "telemetry_overflows": 0,
+      "transport_errors": 0,
+      "initialization_errors": 0,
+      "lcd_refreshes": 735,
+      "page_changes": 0,
+      "page": 0,
+      "automatic": 0,
+      "ready": 1,
+      "tick": 19200,
+      "key_short": 0,
+      "key_long": 0,
+      "key_double": 0,
+      "queue_depths": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "welcome_shows": 0,
+      "monitor_refreshes": 0,
+      "monitor_rows": 0,
+      "display_fault": 0,
+      "ll_recover_count": 0,
+      "last_lcd_error": 0,
+      "ll_last_error": 0,
+      "snapshots": [
+        {
+          "identity": {
+            "slot": 0,
+            "generation": 1
+          },
+          "state": 4,
+          "base_priority": 5,
+          "effective_priority": 5
+        },
+        {
+          "identity": {
+            "slot": 1,
+            "generation": 1
+          },
+          "state": 4,
+          "base_priority": 4,
+          "effective_priority": 4
+        },
+        {
+          "identity": {
+            "slot": 2,
+            "generation": 1
+          },
+          "state": 4,
+          "base_priority": 2,
+          "effective_priority": 2
+        },
+        {
+          "identity": {
+            "slot": 3,
+            "generation": 1
+          },
+          "state": 2,
+          "base_priority": 1,
+          "effective_priority": 1
+        }
+      ],
+      "key_attempts": 0,
+      "key_sent_ok": 0,
+      "key_queue_full": 0,
+      "key_wrong_context": 0,
+      "key_invalid_arg": 0,
+      "key_other_errors": 0
+    },
+    "tracker": {
+      "history": [
+        {
+          "id": 0,
+          "event": 0,
+          "stage": 0,
+          "timestamp_ms": 0,
+          "ack_ms": 0,
+          "error": 0
+        },
+        {
+          "id": 0,
+          "event": 0,
+          "stage": 0,
+          "timestamp_ms": 0,
+          "ack_ms": 0,
+          "error": 0
+        },
+        {
+          "id": 0,
+          "event": 0,
+          "stage": 0,
+          "timestamp_ms": 0,
+          "ack_ms": 0,
+          "error": 0
+        },
+        {
+          "id": 0,
+          "event": 0,
+          "stage": 0,
+          "timestamp_ms": 0,
+          "ack_ms": 0,
+          "error": 0
+        },
+        {
+          "id": 0,
+          "event": 0,
+          "stage": 0,
+          "timestamp_ms": 0,
+          "ack_ms": 0,
+          "error": 0
+        },
+        {
+          "id": 0,
+          "event": 0,
+          "stage": 0,
+          "timestamp_ms": 0,
+          "ack_ms": 0,
+          "error": 0
+        },
+        {
+          "id": 0,
+          "event": 0,
+          "stage": 0,
+          "timestamp_ms": 0,
+          "ack_ms": 0,
+          "error": 0
+        },
+        {
+          "id": 0,
+          "event": 0,
+          "stage": 0,
+          "timestamp_ms": 0,
+          "ack_ms": 0,
+          "error": 0
+        }
+      ],
+      "latest_id": 0,
+      "confirmed_id": 0,
+      "latest_event": 0,
+      "completed_ms": 0,
+      "success_count": 0,
+      "failure_count": 0,
+      "retry_count": 0,
+      "drop_count": 0,
+      "evicted_unacked_count": 0,
+      "orphaned_ack_count": 0,
+      "duplicate_ack_count": 0,
+      "rejected_ack_count": 0,
+      "pending_count": 0
+    },
+    "guards": [
+      3735929054,
+      3735929054,
+      3735929054,
+      3735929054,
+      3735929054
+    ],
+    "faults": [
+      0,
+      0
+    ]
+  },
+  "end": {
+    "quality": "VALID",
+    "monotonic": 1720.786903581,
+    "kernel_ticks": 25451,
+    "tim2_ms": 254633,
+    "rt": {
+      "seq_begin": 932,
+      "clock_cap": {
+        "clock_type": 2,
+        "frequency_hz": 72000000,
+        "tick_hz": 100,
+        "wrap_period_ticks": 5965,
+        "flags": 1
+      },
+      "task_snapshots": [
+        {
+          "charged_cycles": 3832,
+          "last_ready_latency_cycles": 29754,
+          "max_ready_latency_cycles": 29754,
+          "ref": {
+            "slot": 0,
+            "generation": 1
+          },
+          "flags": 1,
+          "last_ready_latency_ticks": 0,
+          "max_ready_latency_ticks": 0,
+          "dispatch_count": 1,
+          "last_dispatch_tick": 0,
+          "state": 4,
+          "base_priority": 5,
+          "effective_priority": 5
+        },
+        {
+          "charged_cycles": 104892540,
+          "last_ready_latency_cycles": 2109,
+          "max_ready_latency_cycles": 24711,
+          "ref": {
+            "slot": 1,
+            "generation": 1
+          },
+          "flags": 1,
+          "last_ready_latency_ticks": 0,
+          "max_ready_latency_ticks": 0,
+          "dispatch_count": 25401,
+          "last_dispatch_tick": 25400,
+          "state": 4,
+          "base_priority": 4,
+          "effective_priority": 4
+        },
+        {
+          "charged_cycles": 148154539,
+          "last_ready_latency_cycles": 7115,
+          "max_ready_latency_cycles": 19905,
+          "ref": {
+            "slot": 2,
+            "generation": 1
+          },
+          "flags": 1,
+          "last_ready_latency_ticks": 0,
+          "max_ready_latency_ticks": 0,
+          "dispatch_count": 2060,
+          "last_dispatch_tick": 25393,
+          "state": 4,
+          "base_priority": 2,
+          "effective_priority": 2
+        },
+        {
+          "charged_cycles": 3622538,
+          "last_ready_latency_cycles": 8565,
+          "max_ready_latency_cycles": 1072961,
+          "ref": {
+            "slot": 3,
+            "generation": 1
+          },
+          "flags": 1,
+          "last_ready_latency_ticks": 0,
+          "max_ready_latency_ticks": 1,
+          "dispatch_count": 255,
+          "last_dispatch_tick": 25400,
+          "state": 2,
+          "base_priority": 1,
+          "effective_priority": 1
+        }
+      ],
+      "idle_snapshot": {
+        "charged_cycles": 18031347846,
+        "last_ready_latency_cycles": 0,
+        "max_ready_latency_cycles": 0,
+        "ref": {
+          "slot": 8,
+          "generation": 1
+        },
+        "flags": 1,
+        "last_ready_latency_ticks": 0,
+        "max_ready_latency_ticks": 0,
+        "dispatch_count": 25286,
+        "last_dispatch_tick": 25399,
+        "state": 1,
+        "base_priority": 0,
+        "effective_priority": 0
+      },
+      "seq_end": 932,
+      "published_tick": 25400
+    },
+    "stats": {
+      "task_runs": [
+        0,
+        25452,
+        974,
+        466
+      ],
+      "key_isr_events": 0,
+      "key_task_events": 0,
+      "controller_events": 0,
+      "lcd_events": 0,
+      "key_overflows": 0,
+      "command_overflows": 0,
+      "telemetry_overflows": 0,
+      "transport_errors": 0,
+      "initialization_errors": 0,
+      "lcd_refreshes": 974,
+      "page_changes": 0,
+      "page": 0,
+      "automatic": 0,
+      "ready": 1,
+      "tick": 25400,
+      "key_short": 0,
+      "key_long": 0,
+      "key_double": 0,
+      "queue_depths": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "welcome_shows": 0,
+      "monitor_refreshes": 0,
+      "monitor_rows": 0,
+      "display_fault": 0,
+      "ll_recover_count": 0,
+      "last_lcd_error": 0,
+      "ll_last_error": 0,
+      "snapshots": [
+        {
+          "identity": {
+            "slot": 0,
+            "generation": 1
+          },
+          "state": 4,
+          "base_priority": 5,
+          "effective_priority": 5
+        },
+        {
+          "identity": {
+            "slot": 1,
+            "generation": 1
+          },
+          "state": 4,
+          "base_priority": 4,
+          "effective_priority": 4
+        },
+        {
+          "identity": {
+            "slot": 2,
+            "generation": 1
+          },
+          "state": 4,
+          "base_priority": 2,
+          "effective_priority": 2
+        },
+        {
+          "identity": {
+            "slot": 3,
+            "generation": 1
+          },
+          "state": 2,
+          "base_priority": 1,
+          "effective_priority": 1
+        }
+      ],
+      "key_attempts": 0,
+      "key_sent_ok": 0,
+      "key_queue_full": 0,
+      "key_wrong_context": 0,
+      "key_invalid_arg": 0,
+      "key_other_errors": 0
+    },
+    "tracker": {
+      "history": [
+        {
+          "id": 0,
+          "event": 0,
+          "stage": 0,
+          "timestamp_ms": 0,
+          "ack_ms": 0,
+          "error": 0
+        },
+        {
+          "id": 0,
+          "event": 0,
+          "stage": 0,
+          "timestamp_ms": 0,
+          "ack_ms": 0,
+          "error": 0
+        },
+        {
+          "id": 0,
+          "event": 0,
+          "stage": 0,
+          "timestamp_ms": 0,
+          "ack_ms": 0,
+          "error": 0
+        },
+        {
+          "id": 0,
+          "event": 0,
+          "stage": 0,
+          "timestamp_ms": 0,
+          "ack_ms": 0,
+          "error": 0
+        },
+        {
+          "id": 0,
+          "event": 0,
+          "stage": 0,
+          "timestamp_ms": 0,
+          "ack_ms": 0,
+          "error": 0
+        },
+        {
+          "id": 0,
+          "event": 0,
+          "stage": 0,
+          "timestamp_ms": 0,
+          "ack_ms": 0,
+          "error": 0
+        },
+        {
+          "id": 0,
+          "event": 0,
+          "stage": 0,
+          "timestamp_ms": 0,
+          "ack_ms": 0,
+          "error": 0
+        },
+        {
+          "id": 0,
+          "event": 0,
+          "stage": 0,
+          "timestamp_ms": 0,
+          "ack_ms": 0,
+          "error": 0
+        }
+      ],
+      "latest_id": 0,
+      "confirmed_id": 0,
+      "latest_event": 0,
+      "completed_ms": 0,
+      "success_count": 0,
+      "failure_count": 0,
+      "retry_count": 0,
+      "drop_count": 0,
+      "evicted_unacked_count": 0,
+      "orphaned_ack_count": 0,
+      "duplicate_ack_count": 0,
+      "rejected_ack_count": 0,
+      "pending_count": 0
+    },
+    "guards": [
+      3735929054,
+      3735929054,
+      3735929054,
+      3735929054,
+      3735929054
+    ],
+    "faults": [
+      0,
+      0
+    ]
+  }
+}

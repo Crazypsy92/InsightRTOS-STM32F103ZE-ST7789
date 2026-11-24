@@ -1,0 +1,5 @@
+====================================================
+InsightRTOS Stage 9.3-A QEMU Target Runner
+====================================================
+Notice: qemu-system-arm binary not present in system PATH.
+Status: NOT_TESTED (Real ARM QEMU execution omitted due to missing tool; no QEMU result is inferred from other tests)

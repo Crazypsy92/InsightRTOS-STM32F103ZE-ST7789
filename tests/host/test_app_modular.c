@@ -8,6 +8,7 @@
 
 /* Include production App headers */
 #include "app_config.h"
+#include "display_app.h"
 #include "app_ipc.h"
 #include "app_events.h"
 #include "app_tasks.h"
@@ -35,6 +36,8 @@ void KEY_Init(void)
 {
 }
 
+volatile display_statistics_t g_display_statistics;
+
 /* -------------------------------------------------------------------------- */
 /* Test 1: Configuration & ABI Verification                                    */
 /* -------------------------------------------------------------------------- */
@@ -58,6 +61,11 @@ static void test_configuration_and_abi(void)
     assert(sizeof(display_command_t) <= RTOS_QUEUE_MAX_ITEM_SIZE);
     assert(sizeof(display_ack_t) <= RTOS_QUEUE_MAX_ITEM_SIZE);
     assert(sizeof(display_metric_t) <= RTOS_QUEUE_MAX_ITEM_SIZE);
+
+    assert(sizeof(display_tracked_event_t) == 24U);
+    assert(sizeof(display_event_tracker_t) == 244U);
+    assert(sizeof(rtos_diag_rt_snapshot_t) == 56U);
+    assert(sizeof(app_diag_rt_export_t) == 312U);
 
 #if UINTPTR_MAX == UINT32_MAX
     assert(sizeof(rtos_task_t) == 72U);
@@ -486,6 +494,7 @@ static void test_consecutive_events_overflow_and_ack_resilience(void)
     mock_kernel_reset();
     assert(App_IPC_Init() == RTOS_OK);
     memset((void *)&g_event_tracker, 0, sizeof(g_event_tracker));
+    memset((void *)&g_display_statistics, 0, sizeof(g_display_statistics));
 
     /* 1. Allocate 16 consecutive in-flight events (exceeds 8-slot history) */
     uint32_t ids[16];
@@ -502,7 +511,7 @@ static void test_consecutive_events_overflow_and_ack_resilience(void)
 
     /* 2. Record ACK for all 16 events, including the 8 evicted ones */
     for (int i = 0; i < 16; ++i) {
-        App_Events_RecordAck(ids[i], 0, 21000U + (uint32_t)i * 10U);
+        App_Events_RecordAck(ids[15-i], 0, 21000U + (uint32_t)i * 10U);
     }
 
     App_Events_GetSnapshot(&snap);
@@ -510,26 +519,59 @@ static void test_consecutive_events_overflow_and_ack_resilience(void)
     assert(snap.orphaned_ack_count == 8U);
     /* Zero silent loss: ALL 16 events successfully counted! */
     assert(snap.success_count == 16U);
+    assert(snap.pending_count == 0U);
     assert(snap.confirmed_id == ids[15]);
 
-    /* 3. Invalid and error ACK handling */
-    App_Events_RecordAck(0U, 0, 22000U);
+    /* 3. Duplicate ACK handling */
+    App_Events_RecordAck(ids[15], 0, 21500U);
     App_Events_GetSnapshot(&snap);
+    assert(snap.duplicate_ack_count == 1U);
+    assert(snap.success_count == 16U); /* uncredited */
+
+    /* 4. Invalid and spurious future ACK handling */
+    App_Events_RecordAck(0U, 0, 22000U);
+    App_Events_RecordAck(9999U, 0, 22000U);
+    App_Events_GetSnapshot(&snap);
+    assert(snap.rejected_ack_count == 2U);
     assert(snap.success_count == 16U); /* unchanged */
 
-    App_Events_RecordAck(9999U, -1, 22000U);
+    /* 5. In-flight failure ACK handling */
+    uint32_t err_id = App_Events_AllocateId(KEY_EVENT_LONG, 22500U, false);
+    App_Events_RecordAck(err_id, -1, 22600U);
     App_Events_GetSnapshot(&snap);
     assert(snap.failure_count == 1U);
-    assert(snap.orphaned_ack_count == 9U);
+    assert(snap.confirmed_id == err_id);
 
-    /* 4. Queue Full backpressure verification */
+    const uint32_t settled_before = snap.success_count + snap.failure_count;
+    for (uint32_t i = 0; i < APP_KEY_QUEUE_CAPACITY + 2U; ++i)
+        Display_KeyFromISR(KEY_EVENT_SHORT);
+    mock_kernel_set_isr_result(RTOS_ERR_CONTEXT);
+    Display_KeyFromISR(KEY_EVENT_SHORT);
+    mock_kernel_set_isr_result(RTOS_ERR_ARGUMENT);
+    Display_KeyFromISR(KEY_EVENT_SHORT);
+    mock_kernel_set_isr_result(RTOS_ERR_STATE);
+    Display_KeyFromISR(KEY_EVENT_SHORT);
+    assert(g_display_statistics.key_sent_ok == 32U);
+    assert(g_display_statistics.key_queue_full == 2U);
+    assert(g_display_statistics.key_overflows == 2U);
+    assert(g_display_statistics.key_wrong_context == 1U);
+    assert(g_display_statistics.key_invalid_arg == 1U);
+    assert(g_display_statistics.key_other_errors == 1U);
+    assert(g_display_statistics.key_attempts == 37U);
+    uint32_t drained[APP_KEY_QUEUE_CAPACITY];
     for (uint32_t i = 0; i < APP_KEY_QUEUE_CAPACITY; ++i) {
-        display_key_t k = {1000U + i, (uint32_t)KEY_EVENT_SHORT, 23000U + i};
-        assert(App_IPC_SendKeyFromISR(&k) == RTOS_OK);
+        display_key_t key;
+        assert(App_IPC_ReceiveRawKey(&key, 0U) == RTOS_OK);
+        drained[i] = key.id;
     }
-    /* 33rd key must return RTOS_ERR_FULL */
-    display_key_t overflow_key = {9999U, (uint32_t)KEY_EVENT_SHORT, 24000U};
-    assert(App_IPC_SendKeyFromISR(&overflow_key) == RTOS_ERR_FULL);
+    for (uint32_t i = APP_KEY_QUEUE_CAPACITY; i > 0; --i)
+        App_Events_RecordAck(drained[i - 1U], 0, 23000U);
+    App_Events_GetSnapshot(&snap);
+    assert(snap.pending_count == 0U);
+    assert(snap.success_count + snap.failure_count - settled_before == 32U);
+    App_Events_RecordAck(snap.latest_id, 0, 23001U);
+    assert(g_event_tracker.rejected_ack_count == snap.rejected_ack_count + 1U);
+    assert(g_event_tracker.success_count == snap.success_count);
 
     printf("PASS\n");
 }

@@ -22,7 +22,10 @@ gcc -Wall -Wextra -Werror -Wpedantic -Wshadow -Wconversion \
     -I "${REPO_DIR}/Middlewares/InsightRTOS/include" \
     -I "${REPO_DIR}/Middlewares/InsightRTOS/kernel" \
     -I "${REPO_DIR}/Middlewares/InsightRTOS/arch/arm/cortex_m3" \
+    -I "${REPO_DIR}/App/Inc" \
+    -I "${REPO_DIR}/BSP/Inc" \
     -I "${REPO_DIR}/tests/host" \
+    "${REPO_DIR}/App/Src/app_ipc.c" \
     "${REPO_DIR}/tests/host/test_diag_rt.c" \
     "${REPO_DIR}/tests/host/mock_port.c" \
     "${REPO_DIR}/Middlewares/InsightRTOS/kernel/diag_rt.c" \

@@ -1,0 +1,601 @@
+{
+  "g_display_statistics": {
+    "address": 536873072,
+    "size": 208,
+    "fields": {
+      "task_runs": {
+        "offset": 0,
+        "size": 16,
+        "element": {
+          "size": 4,
+          "signed": false
+        },
+        "count": 4
+      },
+      "key_isr_events": {
+        "offset": 16,
+        "size": 4,
+        "signed": false
+      },
+      "key_task_events": {
+        "offset": 20,
+        "size": 4,
+        "signed": false
+      },
+      "controller_events": {
+        "offset": 24,
+        "size": 4,
+        "signed": false
+      },
+      "lcd_events": {
+        "offset": 28,
+        "size": 4,
+        "signed": false
+      },
+      "key_overflows": {
+        "offset": 32,
+        "size": 4,
+        "signed": false
+      },
+      "command_overflows": {
+        "offset": 36,
+        "size": 4,
+        "signed": false
+      },
+      "telemetry_overflows": {
+        "offset": 40,
+        "size": 4,
+        "signed": false
+      },
+      "transport_errors": {
+        "offset": 44,
+        "size": 4,
+        "signed": false
+      },
+      "initialization_errors": {
+        "offset": 48,
+        "size": 4,
+        "signed": false
+      },
+      "lcd_refreshes": {
+        "offset": 52,
+        "size": 4,
+        "signed": false
+      },
+      "page_changes": {
+        "offset": 56,
+        "size": 4,
+        "signed": false
+      },
+      "page": {
+        "offset": 60,
+        "size": 4,
+        "signed": false
+      },
+      "automatic": {
+        "offset": 64,
+        "size": 4,
+        "signed": false
+      },
+      "ready": {
+        "offset": 68,
+        "size": 4,
+        "signed": false
+      },
+      "tick": {
+        "offset": 72,
+        "size": 4,
+        "signed": false
+      },
+      "key_short": {
+        "offset": 76,
+        "size": 4,
+        "signed": false
+      },
+      "key_long": {
+        "offset": 80,
+        "size": 4,
+        "signed": false
+      },
+      "key_double": {
+        "offset": 84,
+        "size": 4,
+        "signed": false
+      },
+      "queue_depths": {
+        "offset": 88,
+        "size": 20,
+        "element": {
+          "size": 4,
+          "signed": false
+        },
+        "count": 5
+      },
+      "welcome_shows": {
+        "offset": 108,
+        "size": 4,
+        "signed": false
+      },
+      "monitor_refreshes": {
+        "offset": 112,
+        "size": 4,
+        "signed": false
+      },
+      "monitor_rows": {
+        "offset": 116,
+        "size": 4,
+        "signed": false
+      },
+      "display_fault": {
+        "offset": 120,
+        "size": 4,
+        "signed": false
+      },
+      "ll_recover_count": {
+        "offset": 124,
+        "size": 4,
+        "signed": false
+      },
+      "last_lcd_error": {
+        "offset": 128,
+        "size": 4,
+        "signed": true
+      },
+      "ll_last_error": {
+        "offset": 132,
+        "size": 4,
+        "signed": true
+      },
+      "snapshots": {
+        "offset": 136,
+        "size": 48,
+        "element": {
+          "size": 12,
+          "fields": {
+            "identity": {
+              "offset": 0,
+              "size": 8,
+              "fields": {
+                "slot": {
+                  "offset": 0,
+                  "size": 4,
+                  "signed": false
+                },
+                "generation": {
+                  "offset": 4,
+                  "size": 4,
+                  "signed": false
+                }
+              }
+            },
+            "state": {
+              "offset": 8,
+              "size": 1,
+              "signed": false
+            },
+            "base_priority": {
+              "offset": 9,
+              "size": 1,
+              "signed": false
+            },
+            "effective_priority": {
+              "offset": 10,
+              "size": 1,
+              "signed": false
+            }
+          }
+        },
+        "count": 4
+      },
+      "key_attempts": {
+        "offset": 184,
+        "size": 4,
+        "signed": false
+      },
+      "key_sent_ok": {
+        "offset": 188,
+        "size": 4,
+        "signed": false
+      },
+      "key_queue_full": {
+        "offset": 192,
+        "size": 4,
+        "signed": false
+      },
+      "key_wrong_context": {
+        "offset": 196,
+        "size": 4,
+        "signed": false
+      },
+      "key_invalid_arg": {
+        "offset": 200,
+        "size": 4,
+        "signed": false
+      },
+      "key_other_errors": {
+        "offset": 204,
+        "size": 4,
+        "signed": false
+      }
+    }
+  },
+  "g_event_tracker": {
+    "address": 536875132,
+    "size": 244,
+    "fields": {
+      "history": {
+        "offset": 0,
+        "size": 192,
+        "element": {
+          "size": 24,
+          "fields": {
+            "id": {
+              "offset": 0,
+              "size": 4,
+              "signed": false
+            },
+            "event": {
+              "offset": 4,
+              "size": 4,
+              "signed": false
+            },
+            "stage": {
+              "offset": 8,
+              "size": 4,
+              "signed": false
+            },
+            "timestamp_ms": {
+              "offset": 12,
+              "size": 4,
+              "signed": false
+            },
+            "ack_ms": {
+              "offset": 16,
+              "size": 4,
+              "signed": false
+            },
+            "error": {
+              "offset": 20,
+              "size": 4,
+              "signed": true
+            }
+          }
+        },
+        "count": 8
+      },
+      "latest_id": {
+        "offset": 192,
+        "size": 4,
+        "signed": false
+      },
+      "confirmed_id": {
+        "offset": 196,
+        "size": 4,
+        "signed": false
+      },
+      "latest_event": {
+        "offset": 200,
+        "size": 4,
+        "signed": false
+      },
+      "completed_ms": {
+        "offset": 204,
+        "size": 4,
+        "signed": false
+      },
+      "success_count": {
+        "offset": 208,
+        "size": 4,
+        "signed": false
+      },
+      "failure_count": {
+        "offset": 212,
+        "size": 4,
+        "signed": false
+      },
+      "retry_count": {
+        "offset": 216,
+        "size": 4,
+        "signed": false
+      },
+      "drop_count": {
+        "offset": 220,
+        "size": 4,
+        "signed": false
+      },
+      "evicted_unacked_count": {
+        "offset": 224,
+        "size": 4,
+        "signed": false
+      },
+      "orphaned_ack_count": {
+        "offset": 228,
+        "size": 4,
+        "signed": false
+      },
+      "duplicate_ack_count": {
+        "offset": 232,
+        "size": 4,
+        "signed": false
+      },
+      "rejected_ack_count": {
+        "offset": 236,
+        "size": 4,
+        "signed": false
+      },
+      "pending_count": {
+        "offset": 240,
+        "size": 4,
+        "signed": false
+      }
+    }
+  },
+  "g_diag_rt_export": {
+    "address": 536872712,
+    "size": 312,
+    "fields": {
+      "seq_begin": {
+        "offset": 0,
+        "size": 4,
+        "signed": false
+      },
+      "clock_cap": {
+        "offset": 4,
+        "size": 20,
+        "fields": {
+          "clock_type": {
+            "offset": 0,
+            "size": 1,
+            "signed": false
+          },
+          "frequency_hz": {
+            "offset": 4,
+            "size": 4,
+            "signed": false
+          },
+          "tick_hz": {
+            "offset": 8,
+            "size": 4,
+            "signed": false
+          },
+          "wrap_period_ticks": {
+            "offset": 12,
+            "size": 4,
+            "signed": false
+          },
+          "flags": {
+            "offset": 16,
+            "size": 4,
+            "signed": false
+          }
+        }
+      },
+      "task_snapshots": {
+        "offset": 24,
+        "size": 224,
+        "element": {
+          "size": 56,
+          "fields": {
+            "charged_cycles": {
+              "offset": 0,
+              "size": 8,
+              "signed": false
+            },
+            "last_ready_latency_cycles": {
+              "offset": 8,
+              "size": 8,
+              "signed": false
+            },
+            "max_ready_latency_cycles": {
+              "offset": 16,
+              "size": 8,
+              "signed": false
+            },
+            "ref": {
+              "offset": 24,
+              "size": 8,
+              "fields": {
+                "slot": {
+                  "offset": 0,
+                  "size": 4,
+                  "signed": false
+                },
+                "generation": {
+                  "offset": 4,
+                  "size": 4,
+                  "signed": false
+                }
+              }
+            },
+            "flags": {
+              "offset": 32,
+              "size": 4,
+              "signed": false
+            },
+            "last_ready_latency_ticks": {
+              "offset": 36,
+              "size": 4,
+              "signed": false
+            },
+            "max_ready_latency_ticks": {
+              "offset": 40,
+              "size": 4,
+              "signed": false
+            },
+            "dispatch_count": {
+              "offset": 44,
+              "size": 4,
+              "signed": false
+            },
+            "last_dispatch_tick": {
+              "offset": 48,
+              "size": 4,
+              "signed": false
+            },
+            "state": {
+              "offset": 52,
+              "size": 2,
+              "signed": false
+            },
+            "base_priority": {
+              "offset": 54,
+              "size": 1,
+              "signed": false
+            },
+            "effective_priority": {
+              "offset": 55,
+              "size": 1,
+              "signed": false
+            }
+          }
+        },
+        "count": 4
+      },
+      "idle_snapshot": {
+        "offset": 248,
+        "size": 56,
+        "fields": {
+          "charged_cycles": {
+            "offset": 0,
+            "size": 8,
+            "signed": false
+          },
+          "last_ready_latency_cycles": {
+            "offset": 8,
+            "size": 8,
+            "signed": false
+          },
+          "max_ready_latency_cycles": {
+            "offset": 16,
+            "size": 8,
+            "signed": false
+          },
+          "ref": {
+            "offset": 24,
+            "size": 8,
+            "fields": {
+              "slot": {
+                "offset": 0,
+                "size": 4,
+                "signed": false
+              },
+              "generation": {
+                "offset": 4,
+                "size": 4,
+                "signed": false
+              }
+            }
+          },
+          "flags": {
+            "offset": 32,
+            "size": 4,
+            "signed": false
+          },
+          "last_ready_latency_ticks": {
+            "offset": 36,
+            "size": 4,
+            "signed": false
+          },
+          "max_ready_latency_ticks": {
+            "offset": 40,
+            "size": 4,
+            "signed": false
+          },
+          "dispatch_count": {
+            "offset": 44,
+            "size": 4,
+            "signed": false
+          },
+          "last_dispatch_tick": {
+            "offset": 48,
+            "size": 4,
+            "signed": false
+          },
+          "state": {
+            "offset": 52,
+            "size": 2,
+            "signed": false
+          },
+          "base_priority": {
+            "offset": 54,
+            "size": 1,
+            "signed": false
+          },
+          "effective_priority": {
+            "offset": 55,
+            "size": 1,
+            "signed": false
+          }
+        }
+      },
+      "seq_end": {
+        "offset": 304,
+        "size": 4,
+        "signed": false
+      },
+      "published_tick": {
+        "offset": 308,
+        "size": 4,
+        "signed": false
+      }
+    }
+  },
+  "g_display_task_refs": {
+    "address": 536873280,
+    "size": 32,
+    "element": {
+      "size": 8,
+      "fields": {
+        "slot": {
+          "offset": 0,
+          "size": 4,
+          "signed": false
+        },
+        "generation": {
+          "offset": 4,
+          "size": 4,
+          "signed": false
+        }
+      }
+    },
+    "count": 4
+  },
+  "g_sys_tick": {
+    "address": 536872704,
+    "size": 4,
+    "signed": false
+  },
+  "kernel_ticks": {
+    "address": 536882948,
+    "size": 4,
+    "signed": false
+  },
+  "g_rtos_assert_line": {
+    "address": 536872700,
+    "size": 4,
+    "signed": false
+  },
+  "display_stacks": {
+    "address": 536882960,
+    "size": 32768
+  },
+  "idle_stack": {
+    "address": 536882096,
+    "size": 512
+  },
+  "g_stress_request": {
+    "address": 536871364,
+    "size": 4,
+    "signed": false
+  },
+  "g_stress_remaining": {
+    "address": 536871360,
+    "size": 4,
+    "signed": false
+  },
+  "g_stress_generated": {
+    "address": 536871356,
+    "size": 4,
+    "signed": false
+  }
+}

@@ -16,5 +16,5 @@ if command -v qemu-system-arm >/dev/null 2>&1; then
     echo "Status: NOT_TESTED (Real ARM QEMU execution omitted due to board incompatibility; relying on host tests and physical STM32F103ZET6 hardware)"
 else
     echo "Notice: qemu-system-arm binary not present in system PATH."
-    echo "Status: NOT_TESTED (Real ARM QEMU execution omitted due to missing tool; host regression and STM32 hardware verified)"
+    echo "Status: NOT_TESTED (Real ARM QEMU execution omitted due to missing tool; no QEMU result is inferred from other tests)"
 fi

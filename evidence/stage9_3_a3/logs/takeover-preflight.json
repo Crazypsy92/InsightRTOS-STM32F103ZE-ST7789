@@ -1,0 +1,13 @@
+{
+  "captured_bytes": 63488,
+  "range": [
+    "0x08000000",
+    "0x0800F800"
+  ],
+  "full_range_sha256": "4ccb516c29523db84ccc3d47f2b66a50df48ddb60b92e2917abefa979332101d",
+  "matched_prior_handoff_normal_bin": true,
+  "matched_bin_sha256": "d033a4b71e8597d4f2519badf8ca14305a70f85d4907f41e3ec526b38f35a9db",
+  "blank_tail_bytes": 12780,
+  "first_vector": "00000120090c0008",
+  "no_active_old_programming_process_observed": true
+}

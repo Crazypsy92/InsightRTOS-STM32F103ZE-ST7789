@@ -25,6 +25,7 @@ option(INSIGHT_TRACE_ENABLED "Enable kernel trace" OFF)
 option(INSIGHT_DIAG_EXPLAIN "Enable explainable scheduling" OFF)
 option(INSIGHT_DIAG_DL "Enable mutex deadlock diagnostics" OFF)
 option(INSIGHT_DIAG_RT "Enable real-time timing diagnostics" OFF)
+option(INSIGHT_TEST_STRESS "Enable controlled stress test injection in TIM2 ISR" OFF)
 if(INSIGHT_RTOS_ENABLED)
     if(INSIGHT_DISPLAY_RTOS)
         set(CMAKE_PROJECT_NAME insightrtos_display)
@@ -78,6 +79,7 @@ target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
 # Add project symbols (macros)
 target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user defined symbols
+    $<$<BOOL:${INSIGHT_TEST_STRESS}>:INSIGHT_TEST_STRESS=1>
 )
 
 # Remove wrong libob.a library dependency when using cpp files

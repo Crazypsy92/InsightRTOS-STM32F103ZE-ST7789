@@ -1,0 +1,47 @@
+build/DISPLAY_RTOS_O2_Stress/insightrtos_display.elf  :
+section               size        addr
+.isr_vector            484   134217728
+.text                33472   134218212
+.rodata              16660   134251688
+.ARM.extab               0   134268348
+.ARM                     8   134268348
+.preinit_array           0   134268356
+.init_array              4   134268356
+.fini_array              4   134268360
+.data                   96   536870912
+.tdata                   0   536871008
+.tbss                    0   536871008
+.bss                 11952   536871008
+.user_stacks         32768   536882960
+._user_heap_stack        0   536915728
+.msp_stack            4096   536932352
+.ARM.attributes         41           0
+.comment                38           0
+.debug_info         157378           0
+.debug_abbrev        31210           0
+.debug_loclists      68569           0
+.debug_aranges        3584           0
+.debug_rnglists       9187           0
+.debug_line          95184           0
+.debug_str           26136           0
+.debug_frame          9960           0
+.debug_line_str        496           0
+Total               501327
+
+
+00000000 A _Min_Heap_Size
+2000f000 B __msp_stack_bottom__
+20010000 B __msp_stack_top__
+2000af10 B __static_ram_end__
+20002f10 00008000 b display_stacks
+20000708 00000138 B g_diag_rt_export
+20002bb0 00000200 b idle_stack
+/tmp/insight-a3.hC00Ym/work/Middlewares/InsightRTOS/kernel/scheduler.c:68:6:rtos_sched_switch	32	static
+/tmp/insight-a3.hC00Ym/work/Middlewares/InsightRTOS/kernel/tick.c:19:6:rtos_tick_handler	16	static
+/tmp/insight-a3.hC00Ym/work/App/Src/app_tasks.c:237:13:monitor_task	392	static
+/tmp/insight-a3.hC00Ym/work/App/Src/app_tasks.c:196:13:lcd_task	72	static
+/tmp/insight-a3.hC00Ym/work/App/Src/app_tasks.c:39:13:key_task	24	static
+/tmp/insight-a3.hC00Ym/work/App/Src/app_tasks.c:104:13:controller_task	184	static
+/tmp/insight-a3.hC00Ym/work/Middlewares/InsightRTOS/port/insight_timebase.c:48:6:TIM2_IRQHandler	0	static
+/tmp/insight-a3.hC00Ym/work/BSP/Src/key_port.c:165:6:KEY_OnSysTick1ms	16	static
+/tmp/insight-a3.hC00Ym/work/Core/display_app.c:14:6:Display_KeyFromISR	40	static

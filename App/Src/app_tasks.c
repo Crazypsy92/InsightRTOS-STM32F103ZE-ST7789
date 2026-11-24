@@ -1,5 +1,8 @@
 #include "app_tasks.h"
 #include "delay.h"
+#if INSIGHT_DIAG_RT
+#include "main.h"
+#endif
 #include <stdalign.h>
 
 /* Task stacks static allocation: RTOS_MAX_TASKS = 8 slots reserved */
@@ -10,8 +13,6 @@ rtos_task_ref_t g_display_task_refs[4];
 volatile display_statistics_t g_display_statistics = {0};
 volatile display_metric_t g_monitor_last_metric = {0};
 volatile app_diag_rt_export_t g_diag_rt_export = {0};
-volatile uint32_t g_stress_inject_rate = 0U;
-static uint32_t s_stress_tick_accum = 0U;
 
 extern volatile uint32_t g_ll_recover_count;
 extern volatile int32_t g_ll_last_error;
@@ -45,7 +46,12 @@ static void key_task(void *argument)
     for (;;) {
         display_key_t key;
         RTOS_ASSERT(App_IPC_ReceiveRawKey(&key, RTOS_WAIT_FOREVER) == RTOS_OK);
+#if !defined(INSIGHT_TEST_STRESS) || INSIGHT_TEST_STRESS == 0
         RTOS_ASSERT(g_display_statistics.key_overflows == 0U);
+#endif
+        RTOS_ASSERT(g_display_statistics.key_wrong_context == 0U);
+        RTOS_ASSERT(g_display_statistics.key_invalid_arg == 0U);
+        RTOS_ASSERT(g_display_statistics.key_other_errors == 0U);
 
         App_Events_UpdateStage(key.id, EVENT_STAGE_IDENTIFIED, EVENT_STAGE_KEY);
 
@@ -209,10 +215,7 @@ static void lcd_task(void *argument)
         Display_PagesExecute(&command, &ack);
 
         if (command.event != KEY_EVENT_NONE) {
-            display_tracked_event_t *ev = App_Events_FindTracked(command.id);
-            if (ev != NULL && ev->stage == EVENT_STAGE_CTRL) {
-                ev->stage = (ack.error == 0) ? EVENT_STAGE_LCD : EVENT_STAGE_FAILED;
-            }
+            App_Events_UpdateStage(command.id, EVENT_STAGE_CTRL, EVENT_STAGE_LCD);
             ++g_display_statistics.lcd_events;
         }
 
@@ -249,33 +252,30 @@ static void monitor_task(void *argument)
         }
 
 #if defined(INSIGHT_DIAG_RT) && (INSIGHT_DIAG_RT != 0)
-        (void)rtos_diag_rt_clock_cap((rtos_diag_clock_cap_t *)&g_diag_rt_export.clock_cap);
-        for (unsigned int i = 0U; i < 4U; ++i) {
-            (void)rtos_diag_rt_snapshot(g_display_task_refs[i], (rtos_diag_rt_snapshot_t *)&g_diag_rt_export.task_snapshots[i]);
-        }
-        (void)rtos_diag_rt_idle_snapshot((rtos_diag_rt_snapshot_t *)&g_diag_rt_export.idle_snapshot);
-        g_diag_rt_export.sample_seq++;
-#endif
-
-        if (g_stress_inject_rate > 0U) {
-            s_stress_tick_accum += 100U;
-            if (s_stress_tick_accum >= g_stress_inject_rate) {
-                s_stress_tick_accum = 0U;
-                uint32_t now = GetTick_ms();
-                uint32_t id = App_Events_AllocateId(KEY_EVENT_SHORT, now, false);
-                display_key_t key = {id, (uint32_t)KEY_EVENT_SHORT, now};
-                rtos_status_t status = App_IPC_SendKeyFromISR(&key);
-                ++g_display_statistics.key_isr_events;
-                if (status != RTOS_OK) {
-                    ++g_display_statistics.key_overflows;
-                    display_tracked_event_t *ev = App_Events_FindTracked(id);
-                    if (ev != NULL) {
-                        ev->stage = EVENT_STAGE_FAILED;
-                    }
-                    g_event_tracker.drop_count++;
-                }
+        app_diag_rt_export_t frame = {0};
+        if (rtos_diag_rt_clock_cap(&frame.clock_cap) == RTOS_OK) {
+            bool complete = true;
+            for (unsigned int i = 0U; i < 4U; ++i) {
+                if (rtos_diag_rt_snapshot(g_display_task_refs[i], &frame.task_snapshots[i]) != RTOS_OK)
+                    complete = false;
+            }
+            if (rtos_diag_rt_idle_snapshot(&frame.idle_snapshot) != RTOS_OK) complete = false;
+            if (complete) {
+                frame.seq_begin = (g_diag_rt_export.seq_begin + 2U) & ~1U;
+                frame.seq_end = frame.seq_begin;
+                g_diag_rt_export.seq_begin = frame.seq_begin - 1U;
+                __DMB();
+                g_diag_rt_export.clock_cap = frame.clock_cap;
+                for (unsigned int i = 0U; i < 4U; ++i)
+                    g_diag_rt_export.task_snapshots[i] = frame.task_snapshots[i];
+                g_diag_rt_export.idle_snapshot = frame.idle_snapshot;
+                g_diag_rt_export.published_tick = rtos_tick_get();
+                g_diag_rt_export.seq_end = frame.seq_end;
+                __DMB();
+                g_diag_rt_export.seq_begin = frame.seq_begin;
             }
         }
+#endif
 
         App_IPC_GetQueueDepths((uint32_t *)g_display_statistics.queue_depths);
         g_display_statistics.tick = rtos_tick_get();
