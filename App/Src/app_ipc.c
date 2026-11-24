@@ -36,6 +36,11 @@ rtos_status_t App_IPC_SendKeyFromISR(const display_key_t *key)
     return rtos_queue_send_from_isr(&raw_keys, key);
 }
 
+rtos_status_t App_IPC_SendRawKeyFromThread(const display_key_t *key, uint32_t timeout)
+{
+    return rtos_queue_send(&raw_keys, key, timeout);
+}
+
 rtos_status_t App_IPC_ReceiveRawKey(display_key_t *key, uint32_t timeout)
 {
     return rtos_queue_receive(&raw_keys, key, timeout);

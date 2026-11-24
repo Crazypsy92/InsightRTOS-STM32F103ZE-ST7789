@@ -7,14 +7,17 @@ REPO_DIR="$(cd "${SCRIPT_DIR}/../.." && pwd)"
 echo "=== [1/2] Building Stage 9.2-H5 Modular Host Test ==="
 mkdir -p "${REPO_DIR}/build/tests"
 
-gcc -Wall -Wextra -O2 \
+gcc -Wall -Wextra -Werror -O2 -ffunction-sections -Wl,--gc-sections \
+    -I "${REPO_DIR}/Core" \
     -I "${REPO_DIR}/App/Inc" \
     -I "${REPO_DIR}/BSP/Inc" \
     -I "${REPO_DIR}/Middlewares/InsightRTOS/include" \
     -I "${REPO_DIR}/Middlewares/InsightRTOS/config" \
     -I "${REPO_DIR}/tests/host" \
+    -I "${REPO_DIR}/tests/host/fake" \
     "${REPO_DIR}/tests/host/test_app_modular.c" \
     "${REPO_DIR}/tests/host/mock_kernel.c" \
+    "${REPO_DIR}/Core/display_app.c" \
     "${REPO_DIR}/App/Src/app_events.c" \
     "${REPO_DIR}/App/Src/app_ipc.c" \
     "${REPO_DIR}/BSP/Src/lcd_cn16.c" \

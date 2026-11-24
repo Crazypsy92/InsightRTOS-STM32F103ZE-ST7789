@@ -96,6 +96,21 @@
                 "INSIGHT_DIAG_RT": "ON",
                 "CMAKE_C_FLAGS_RELWITHDEBINFO": "-O2 -g -DNDEBUG"
             }
+        },
+        {
+            "name": "DISPLAY_RTOS_O2_Stress",
+            "inherits": "default",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "RelWithDebInfo",
+                "INSIGHT_RTOS_ENABLED": "ON",
+                "INSIGHT_DISPLAY_RTOS": "ON",
+                "INSIGHT_TRACE_ENABLED": "ON",
+                "INSIGHT_DIAG_EXPLAIN": "ON",
+                "INSIGHT_DIAG_DL": "ON",
+                "INSIGHT_DIAG_RT": "ON",
+                "INSIGHT_TEST_STRESS": "ON",
+                "CMAKE_C_FLAGS_RELWITHDEBINFO": "-O2 -g -DNDEBUG"
+            }
         }
     ],
     "buildPresets": [
@@ -134,6 +149,10 @@
         {
             "name": "DISPLAY_RTOS_O2_Trace",
             "configurePreset": "DISPLAY_RTOS_O2_Trace"
+        },
+        {
+            "name": "DISPLAY_RTOS_O2_Stress",
+            "configurePreset": "DISPLAY_RTOS_O2_Stress"
         }
     ]
 }

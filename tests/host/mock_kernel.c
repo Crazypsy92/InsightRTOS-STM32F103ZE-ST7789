@@ -4,8 +4,13 @@
 static uint32_t s_mock_tick = 0U;
 static uint32_t s_mock_ms = 0U;
 
+static rtos_status_t forced_isr_result;
+
+void mock_kernel_set_isr_result(rtos_status_t result) { forced_isr_result = result; }
+
 void mock_kernel_reset(void)
 {
+    forced_isr_result = RTOS_OK;
     s_mock_tick = 0U;
     s_mock_ms = 0U;
 }
@@ -81,7 +86,7 @@ rtos_status_t rtos_queue_send(rtos_queue_t *queue, const void *item, uint32_t ti
 
 rtos_status_t rtos_queue_send_from_isr(rtos_queue_t *queue, const void *item)
 {
-    return rtos_queue_send(queue, item, 0U);
+    return forced_isr_result == RTOS_OK ? rtos_queue_send(queue, item, 0U) : forced_isr_result;
 }
 
 rtos_status_t rtos_queue_receive(rtos_queue_t *queue, void *item, uint32_t timeout_ticks)

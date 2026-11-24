@@ -126,11 +126,48 @@ void KEY_Init(void)
     if (button_start(&s_key1) == 0) s_ready = 1U;
 }
 
+#if defined(INSIGHT_TEST_STRESS) && INSIGHT_TEST_STRESS
+/* Test-image mailbox: 1 = 3000 scheduled attempts, 2 = one bounded burst.
+ * Completion sets the request to zero without host interaction. */
+volatile uint32_t g_stress_request;
+volatile uint32_t g_stress_remaining;
+volatile uint32_t g_stress_generated;
+static uint32_t stress_ms;
+
+static void stress_sample_tick(void)
+{
+    if (g_stress_request == 2U && g_stress_remaining == 0U) {
+        for (unsigned int i = 0; i < APP_KEY_QUEUE_CAPACITY + 2U; ++i) {
+            Display_KeyFromISR(KEY_EVENT_SHORT);
+            ++g_stress_generated;
+        }
+        g_stress_request = 0U;
+    } else if (g_stress_request == 1U) {
+        if (g_stress_remaining == 0U) {
+            g_stress_remaining = 3000U;
+            stress_ms = 0U;
+        }
+        if (++stress_ms == 100U) {
+            stress_ms = 0U;
+            Display_KeyFromISR(KEY_EVENT_SHORT);
+            ++g_stress_generated;
+            if (--g_stress_remaining == 0U) g_stress_request = 0U;
+        }
+    } else if (g_stress_request == 0U) {
+        g_stress_remaining = 0U;
+        stress_ms = 0U;
+    }
+}
+#endif
+
 /* Key scanner runs from the 1ms SysTick, not from blocking TFT main loop.
  * Only GPIO input and event flags are handled here, never SPI or LCD. */
 void KEY_OnSysTick1ms(void)
 {
     if (!s_ready) return;
+#if defined(INSIGHT_TEST_STRESS) && (INSIGHT_TEST_STRESS != 0)
+    stress_sample_tick();
+#endif
     if (++s_tick_divider >= TICKS_INTERVAL) {
         s_tick_divider = 0U;
         button_ticks();

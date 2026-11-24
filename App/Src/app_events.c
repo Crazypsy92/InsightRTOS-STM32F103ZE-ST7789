@@ -1,13 +1,28 @@
 #include "app_events.h"
-#include <string.h>
+/* An event can be in either key queue, the command or ACK queue, or
+ * held locally by a task. Collisions fail closed, even after long delays. */
+#define PENDING_SLOTS 128U
+static uint32_t pending_ids[PENDING_SLOTS];
+static uint32_t settled_ids[PENDING_SLOTS];
+
 
 volatile display_event_tracker_t g_event_tracker = {0};
 static volatile uint32_t s_next_event_id = 0U;
 
 uint32_t App_Events_AllocateId(key_event_t event, uint32_t now_ms, bool is_dropped)
 {
-    uint32_t id = ++s_next_event_id;
-    if (id == 0U) id = ++s_next_event_id;
+    const rtos_irq_state_t saved = rtos_critical_enter();
+    if (s_next_event_id == UINT32_MAX) {
+        ++g_event_tracker.drop_count;
+        rtos_critical_exit(saved);
+        return 0U;
+    }
+    const uint32_t id = ++s_next_event_id;
+    if (!is_dropped && pending_ids[id % PENDING_SLOTS] != 0U) {
+        ++g_event_tracker.drop_count;
+        rtos_critical_exit(saved);
+        return 0U;
+    }
 
     unsigned int slot = id % APP_EVENT_HISTORY_CAPACITY;
     if (g_event_tracker.history[slot].id != 0U) {
@@ -32,47 +47,60 @@ uint32_t App_Events_AllocateId(key_event_t event, uint32_t now_ms, bool is_dropp
         g_event_tracker.drop_count++;
     } else {
         g_event_tracker.history[slot].stage = EVENT_STAGE_IDENTIFIED;
+        pending_ids[id % PENDING_SLOTS] = id;
+        ++g_event_tracker.pending_count;
     }
+    rtos_critical_exit(saved);
     return id;
+}
+
+void App_Events_Reject(uint32_t id)
+{
+    const rtos_irq_state_t saved = rtos_critical_enter();
+    if (id != 0U && pending_ids[id % PENDING_SLOTS] == id) {
+        pending_ids[id % PENDING_SLOTS] = 0U;
+        --g_event_tracker.pending_count;
+        ++g_event_tracker.drop_count;
+        display_tracked_event_t *ev = App_Events_FindTracked(id);
+        if (ev != NULL) ev->stage = EVENT_STAGE_FAILED;
+    }
+    rtos_critical_exit(saved);
 }
 
 void App_Events_UpdateStage(uint32_t id, display_event_stage_t expected_stage, display_event_stage_t new_stage)
 {
+    const rtos_irq_state_t saved = rtos_critical_enter();
     display_tracked_event_t *ev = App_Events_FindTracked(id);
-    if (ev != NULL && ev->stage == expected_stage) {
-        ev->stage = new_stage;
-    }
+    if (ev != NULL && ev->stage == expected_stage) ev->stage = new_stage;
+    rtos_critical_exit(saved);
 }
 
 void App_Events_RecordAck(uint32_t id, int32_t error, uint32_t now_ms)
 {
-    if (id == 0U) return;
+    const rtos_irq_state_t saved = rtos_critical_enter();
+    const uint32_t slot = id % PENDING_SLOTS;
+    if (id == 0U || pending_ids[slot] != id) {
+        if (id != 0U && settled_ids[slot] == id) ++g_event_tracker.duplicate_ack_count;
+        else ++g_event_tracker.rejected_ack_count;
+        rtos_critical_exit(saved);
+        return;
+    }
+    pending_ids[slot] = 0U;
+    settled_ids[slot] = id;
+    --g_event_tracker.pending_count;
     display_tracked_event_t *ev = App_Events_FindTracked(id);
-    if (ev != NULL) {
+    if (ev == NULL) {
+        ++g_event_tracker.orphaned_ack_count;
+    } else {
         ev->ack_ms = now_ms;
         ev->error = error;
-        if (error == 0) {
-            ev->stage = EVENT_STAGE_ACKED;
-            g_event_tracker.confirmed_id = id;
-            g_event_tracker.completed_ms = now_ms;
-            g_event_tracker.success_count++;
-        } else {
-            ev->stage = EVENT_STAGE_FAILED;
-            g_event_tracker.failure_count++;
-        }
-    } else {
-        /* Bounded ring slot was overwritten before ACK. Account for ACK without silent loss. */
-        g_event_tracker.orphaned_ack_count++;
-        if (error == 0) {
-            if (id > g_event_tracker.confirmed_id) {
-                g_event_tracker.confirmed_id = id;
-            }
-            g_event_tracker.completed_ms = now_ms;
-            g_event_tracker.success_count++;
-        } else {
-            g_event_tracker.failure_count++;
-        }
+        ev->stage = error == 0 ? EVENT_STAGE_ACKED : EVENT_STAGE_FAILED;
     }
+    if (id > g_event_tracker.confirmed_id) g_event_tracker.confirmed_id = id;
+    g_event_tracker.completed_ms = now_ms;
+    if (error == 0) ++g_event_tracker.success_count;
+    else ++g_event_tracker.failure_count;
+    rtos_critical_exit(saved);
 }
 
 void App_Events_RecordRetry(void)

@@ -56,6 +56,13 @@ typedef struct {
     volatile uint32_t ll_recover_count;
     volatile int32_t last_lcd_error, ll_last_error;
     rtos_task_snapshot_t snapshots[4];
+    /* Stage 9.3-A3 explicit return code accounting */
+    volatile uint32_t key_attempts;
+    volatile uint32_t key_sent_ok;
+    volatile uint32_t key_queue_full;
+    volatile uint32_t key_wrong_context;
+    volatile uint32_t key_invalid_arg;
+    volatile uint32_t key_other_errors;
 } display_statistics_t;
 
 _Static_assert(sizeof(display_key_t) <= RTOS_QUEUE_MAX_ITEM_SIZE, "Queue item ABI: key");
@@ -67,6 +74,7 @@ _Static_assert(sizeof(display_metric_t) <= RTOS_QUEUE_MAX_ITEM_SIZE, "Queue item
 rtos_status_t App_IPC_Init(void);
 
 rtos_status_t App_IPC_SendKeyFromISR(const display_key_t *key);
+rtos_status_t App_IPC_SendRawKeyFromThread(const display_key_t *key, uint32_t timeout);
 rtos_status_t App_IPC_ReceiveRawKey(display_key_t *key, uint32_t timeout);
 
 rtos_status_t App_IPC_SendControllerKey(const display_key_t *key, uint32_t timeout);

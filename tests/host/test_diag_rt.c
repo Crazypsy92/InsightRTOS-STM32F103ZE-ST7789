@@ -11,6 +11,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 
+#include "app_ipc.h"
 #include "kernel_internal.h"
 #include "mock_port.h"
 #include "port.h"
@@ -392,6 +393,12 @@ static void test_rt_arguments_and_context(void)
     rtos_diag_clock_cap_t cap;
     assert(rtos_diag_rt_clock_cap(&cap) == RTOS_ERR_CONTEXT);
     mock_in_handler = false;
+
+    const display_key_t key = {1U, 1U, 0U};
+    assert(App_IPC_Init() == RTOS_OK);
+    /* The old A2 Monitor called this real wrapper in Thread mode. */
+    assert(App_IPC_SendKeyFromISR(&key) == RTOS_ERR_CONTEXT);
+    puts("  [PASS] A2 real App_IPC/queue Thread call returns RTOS_ERR_CONTEXT");
 
     puts("  [PASS] test_rt_arguments_and_context");
 }
