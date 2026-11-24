@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "bytes": 54700,
+  "sha256": "a176c2361bfad9745366db8564c72d3b39f8f8304e7018e5aebe1caa3fbb6bcf",
+  "readback_sha256": "a176c2361bfad9745366db8564c72d3b39f8f8304e7018e5aebe1caa3fbb6bcf",
+  "authorized_tail_ff_bytes": 8788,
+  "option_bytes_equal": true
+}

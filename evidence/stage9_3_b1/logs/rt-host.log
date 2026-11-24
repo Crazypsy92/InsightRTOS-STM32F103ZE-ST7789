@@ -1,0 +1,49 @@
+=== [1/2] Building Stage 9.3-A Real-Time Diagnostics Host Test ===
+=== [2/2] Running Stage 9.3-A Real-Time Diagnostics Host Test ===
+====================================================
+InsightRTOS Stage 9.3-A Real-Time Diagnostics Test Suite
+====================================================
+  [PASS] test_rt_budget_and_structures
+====================================================
+InsightRTOS Stage 9.3-A Real-Time Diagnostics Test Suite
+====================================================
+  [PASS] test_rt_clock_capabilities
+====================================================
+InsightRTOS Stage 9.3-A Real-Time Diagnostics Test Suite
+====================================================
+  [PASS] test_rt_cpu_cycles_accumulation
+====================================================
+InsightRTOS Stage 9.3-A Real-Time Diagnostics Test Suite
+====================================================
+  [PASS] test_rt_blocked_and_idle
+====================================================
+InsightRTOS Stage 9.3-A Real-Time Diagnostics Test Suite
+====================================================
+  [PASS] test_rt_in_flight_query
+====================================================
+InsightRTOS Stage 9.3-A Real-Time Diagnostics Test Suite
+====================================================
+  [PASS] test_rt_ready_latency
+====================================================
+InsightRTOS Stage 9.3-A Real-Time Diagnostics Test Suite
+====================================================
+  [PASS] test_rt_rollover_and_uncertainty
+====================================================
+InsightRTOS Stage 9.3-A Real-Time Diagnostics Test Suite
+====================================================
+  [PASS] test_rt_generation_stale
+====================================================
+InsightRTOS Stage 9.3-A Real-Time Diagnostics Test Suite
+====================================================
+  [PASS] A2 real App_IPC/queue Thread call returns RTOS_ERR_CONTEXT
+  [PASS] test_rt_arguments_and_context
+====================================================
+InsightRTOS Stage 9.3-A Real-Time Diagnostics Test Suite
+====================================================
+====================================================
+ALL STAGE 9.3-A REAL-TIME TESTS PASSED (9/9 Suites, 45 Assertions)
+====================================================
+JOB PASS boundaries: 25 checks (plus scheduler boundary assertions)
+JOB PASS segments: 15 checks (plus scheduler boundary assertions)
+JOB PASS wrap/clock: 17 checks (plus scheduler boundary assertions)
+JOB PASS abort/reuse: 20 checks (plus scheduler boundary assertions)

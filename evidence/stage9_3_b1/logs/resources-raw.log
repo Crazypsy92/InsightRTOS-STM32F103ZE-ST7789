@@ -1,0 +1,303 @@
+/tmp/insight-b1.fZNEg6/work/build/DISPLAY_RTOS_Debug_Trace
+.text                51992   134218212
+.rodata              19976   134270204
+.data                   96   536870912
+.bss                 12372   536871008
+.user_stacks         32768   536883384
+.msp_stack            4096   536932352
+2000b0b8 B __static_ram_end__
+20002da8 00000200 b idle_stack
+20001e98 00000018 b s_idle_record
+20001eb0 00000020 b s_rt_global
+20001ad8 000003c0 b s_rt_tasks
+20002ae8 00000240 b task_pool
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/arch/arm/cortex_m3/port.c:100:6:rtos_port_interrupts_masked	24	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/arch/arm/cortex_m3/port.c:129:6:rtos_port_task_create_context	24	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/arch/arm/cortex_m3/port.c:137:6:rtos_port_clock_available	4	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/arch/arm/cortex_m3/port.c:142:10:rtos_port_clock_cycles_32	4	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/critical.c:5:18:rtos_critical_enter	8	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/critical.c:12:6:rtos_critical_exit	16	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/scheduler.c:26:6:rtos_sched_started	4	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/scheduler.c:255:6:rtos_sched_on_tick	16	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/task.c:45:14:rtos_task_ref_resolve_locked	16	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/tick.c:11:10:rtos_tick_get	16	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:65:17:get_cycles_64_locked	48	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:98:6:rtos_diag_rt_init	8	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:121:6:rtos_diag_rt_task_init_hook	88	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:139:6:rtos_diag_rt_task_ready_hook	32	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:149:13:job_count	16	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:155:17:task_charge	48	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:163:13:clock_valid	8	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:168:13:job_check_deadline	16	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:179:13:job_check_budget	56	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:200:13:job_first_dispatch	24	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:214:13:job_abort	16	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:222:6:rtos_diag_rt_task_exit_hook	16	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:227:6:rtos_diag_rt_switch_hook	112	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:284:6:rtos_diag_rt_on_tick	48	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:325:15:rtos_diag_rt_configure	40	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:352:15:rtos_diag_rt_job_release	48	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:383:22:job_end	56	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:414:15:rtos_diag_rt_job_complete	16	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:415:15:rtos_diag_rt_job_abort	16	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:417:15:rtos_diag_rt_job_snapshot	144	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:443:15:rtos_diag_rt_clock_cap	32	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:478:15:rtos_diag_rt_snapshot	80	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:541:15:rtos_diag_rt_idle_snapshot	56	static
+  Tag_CPU_name: "7-M"
+  Tag_CPU_arch: v7
+  Tag_CPU_arch_profile: Microcontroller
+  Tag_THUMB_ISA_use: Thumb-2
+  Tag_CPU_unaligned_access: v6
+/tmp/insight-b1.fZNEg6/work/build/DISPLAY_RTOS_O2_Trace
+.text                33860   134218212
+.rodata              16704   134252072
+.data                   96   536870912
+.bss                 12384   536871008
+.user_stacks         32768   536883392
+.msp_stack            4096   536932352
+2000b0c0 B __static_ram_end__
+20002d60 00000200 b idle_stack
+20001b00 00000018 b s_idle_record
+20001ae0 00000020 b s_rt_global
+20001b18 000003c0 b s_rt_tasks
+20002b1c 00000240 b task_pool
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/arch/arm/cortex_m3/port.c:100:6:rtos_port_interrupts_masked	0	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/arch/arm/cortex_m3/port.c:129:6:rtos_port_task_create_context	0	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/arch/arm/cortex_m3/port.c:137:6:rtos_port_clock_available	0	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/arch/arm/cortex_m3/port.c:142:10:rtos_port_clock_cycles_32	0	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/tick.c:11:10:rtos_tick_get	8	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/scheduler.c:26:6:rtos_sched_started	0	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/scheduler.c:255:6:rtos_sched_on_tick	8	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/task.c:45:14:rtos_task_ref_resolve_locked	24	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/critical.c:5:18:rtos_critical_enter	8	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/critical.c:12:6:rtos_critical_exit	8	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:65:17:get_cycles_64_locked	16	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:168:13:job_check_deadline	4	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:179:13:job_check_budget	24	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:383:22:job_end.part.0	56	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:98:6:rtos_diag_rt_init	16	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:121:6:rtos_diag_rt_task_init_hook	16	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:139:6:rtos_diag_rt_task_ready_hook	8	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:222:6:rtos_diag_rt_task_exit_hook	0	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:227:6:rtos_diag_rt_switch_hook	40	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:284:6:rtos_diag_rt_on_tick	40	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:325:15:rtos_diag_rt_configure	32	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:352:15:rtos_diag_rt_job_release	56	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:414:15:rtos_diag_rt_job_complete	16	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:415:15:rtos_diag_rt_job_abort	8	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:417:15:rtos_diag_rt_job_snapshot	64	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:443:15:rtos_diag_rt_clock_cap	16	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:478:15:rtos_diag_rt_snapshot	72	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:541:15:rtos_diag_rt_idle_snapshot	32	static
+  Tag_CPU_name: "7-M"
+  Tag_CPU_arch: v7
+  Tag_CPU_arch_profile: Microcontroller
+  Tag_THUMB_ISA_use: Thumb-2
+  Tag_CPU_unaligned_access: v6
+/tmp/insight-b1.fZNEg6/work/build/DISPLAY_RTOS_O2_Job
+.text                36344   134218212
+.rodata              17756   134254560
+.data                   96   536870912
+.bss                 12640   536871008
+.user_stacks         32768   536883648
+.msp_stack            4096   536932352
+2000b1c0 B __static_ram_end__
+20002e60 00000200 b idle_stack
+080056d4 000000fc T rtos_diag_rt_configure
+080059d8 00000040 T rtos_diag_rt_job_abort
+08005994 00000044 T rtos_diag_rt_job_complete
+080057d0 000001c4 T rtos_diag_rt_job_release
+08005a18 000000ec T rtos_diag_rt_job_snapshot
+20001bd4 00000004 b s_exhausted_ids
+20001c00 00000018 b s_idle_record
+20001be0 00000020 b s_rt_global
+20001c18 000003c0 b s_rt_tasks
+20001bd8 00000004 b s_stale_requests
+20002c1c 00000240 b task_pool
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/arch/arm/cortex_m3/port.c:100:6:rtos_port_interrupts_masked	0	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/arch/arm/cortex_m3/port.c:129:6:rtos_port_task_create_context	0	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/arch/arm/cortex_m3/port.c:137:6:rtos_port_clock_available	0	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/arch/arm/cortex_m3/port.c:142:10:rtos_port_clock_cycles_32	0	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/tick.c:11:10:rtos_tick_get	8	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/task.c:45:14:rtos_task_ref_resolve_locked	24	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/critical.c:5:18:rtos_critical_enter	8	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/critical.c:12:6:rtos_critical_exit	8	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/scheduler.c:26:6:rtos_sched_started	0	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/scheduler.c:255:6:rtos_sched_on_tick	8	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:65:17:get_cycles_64_locked	16	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:168:13:job_check_deadline	4	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:179:13:job_check_budget	24	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:383:22:job_end.part.0	56	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:98:6:rtos_diag_rt_init	16	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:121:6:rtos_diag_rt_task_init_hook	16	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:139:6:rtos_diag_rt_task_ready_hook	8	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:222:6:rtos_diag_rt_task_exit_hook	0	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:227:6:rtos_diag_rt_switch_hook	40	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:284:6:rtos_diag_rt_on_tick	40	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:325:15:rtos_diag_rt_configure	32	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:352:15:rtos_diag_rt_job_release	56	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:414:15:rtos_diag_rt_job_complete	16	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:415:15:rtos_diag_rt_job_abort	8	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:417:15:rtos_diag_rt_job_snapshot	64	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:443:15:rtos_diag_rt_clock_cap	16	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:478:15:rtos_diag_rt_snapshot	72	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:541:15:rtos_diag_rt_idle_snapshot	32	static
+/tmp/insight-b1.fZNEg6/work/tests/hardware/job_fixture.c:15:6:insight_job_fixture	128	static
+  Tag_CPU_name: "7-M"
+  Tag_CPU_arch: v7
+  Tag_CPU_arch_profile: Microcontroller
+  Tag_THUMB_ISA_use: Thumb-2
+  Tag_CPU_unaligned_access: v6
+/tmp/insight-b1.fZNEg6/work/build/B1-O2-NoRT
+.text                31596   134218212
+.rodata              16704   134249808
+.data                   96   536870912
+.bss                 11056   536871008
+.user_stacks         32768   536882064
+.msp_stack            4096   536932352
+2000ab90 B __static_ram_end__
+20002830 00000200 b idle_stack
+200025ec 00000240 b task_pool
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/arch/arm/cortex_m3/port.c:100:6:rtos_port_interrupts_masked	0	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/arch/arm/cortex_m3/port.c:129:6:rtos_port_task_create_context	0	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/arch/arm/cortex_m3/port.c:137:6:rtos_port_clock_available	0	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/arch/arm/cortex_m3/port.c:142:10:rtos_port_clock_cycles_32	0	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/tick.c:11:10:rtos_tick_get	8	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/critical.c:5:18:rtos_critical_enter	8	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/critical.c:12:6:rtos_critical_exit	8	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/scheduler.c:26:6:rtos_sched_started	0	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/scheduler.c:255:6:rtos_sched_on_tick	8	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/task.c:45:14:rtos_task_ref_resolve_locked	24	static
+  Tag_CPU_name: "7-M"
+  Tag_CPU_arch: v7
+  Tag_CPU_arch_profile: Microcontroller
+  Tag_THUMB_ISA_use: Thumb-2
+  Tag_CPU_unaligned_access: v6
+/tmp/insight-b1.fZNEg6/work/build/B1-O2-FullAPI
+.text                35408   134218212
+.rodata              16704   134253624
+.data                   96   536870912
+.bss                 12392   536871008
+.user_stacks         32768   536883400
+.msp_stack            4096   536932352
+2000b0c8 B __static_ram_end__
+20002d68 00000200 b idle_stack
+0800532c 000000fc T rtos_diag_rt_configure
+08005630 00000040 T rtos_diag_rt_job_abort
+080055ec 00000044 T rtos_diag_rt_job_complete
+08005428 000001c4 T rtos_diag_rt_job_release
+08005670 000000ec T rtos_diag_rt_job_snapshot
+20001adc 00000004 b s_exhausted_ids
+20001b08 00000018 b s_idle_record
+20001ae8 00000020 b s_rt_global
+20001b20 000003c0 b s_rt_tasks
+20001ae0 00000004 b s_stale_requests
+20002b24 00000240 b task_pool
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/arch/arm/cortex_m3/port.c:100:6:rtos_port_interrupts_masked	0	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/arch/arm/cortex_m3/port.c:129:6:rtos_port_task_create_context	0	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/arch/arm/cortex_m3/port.c:137:6:rtos_port_clock_available	0	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/arch/arm/cortex_m3/port.c:142:10:rtos_port_clock_cycles_32	0	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/tick.c:11:10:rtos_tick_get	8	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/critical.c:5:18:rtos_critical_enter	8	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/critical.c:12:6:rtos_critical_exit	8	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/scheduler.c:26:6:rtos_sched_started	0	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/scheduler.c:255:6:rtos_sched_on_tick	8	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/task.c:45:14:rtos_task_ref_resolve_locked	24	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:65:17:get_cycles_64_locked	16	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:168:13:job_check_deadline	4	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:179:13:job_check_budget	24	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:383:22:job_end.part.0	56	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:98:6:rtos_diag_rt_init	16	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:121:6:rtos_diag_rt_task_init_hook	16	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:139:6:rtos_diag_rt_task_ready_hook	8	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:222:6:rtos_diag_rt_task_exit_hook	0	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:227:6:rtos_diag_rt_switch_hook	40	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:284:6:rtos_diag_rt_on_tick	40	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:325:15:rtos_diag_rt_configure	32	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:352:15:rtos_diag_rt_job_release	56	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:414:15:rtos_diag_rt_job_complete	16	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:415:15:rtos_diag_rt_job_abort	8	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:417:15:rtos_diag_rt_job_snapshot	64	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:443:15:rtos_diag_rt_clock_cap	16	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:478:15:rtos_diag_rt_snapshot	72	static
+/tmp/insight-b1.fZNEg6/work/Middlewares/InsightRTOS/kernel/diag_rt.c:541:15:rtos_diag_rt_idle_snapshot	32	static
+  Tag_CPU_name: "7-M"
+  Tag_CPU_arch: v7
+  Tag_CPU_arch_profile: Microcontroller
+  Tag_THUMB_ISA_use: Thumb-2
+  Tag_CPU_unaligned_access: v6
+/tmp/insight-b1-clean-base.aOBikB/build/DISPLAY_RTOS_Debug_Trace
+.text                51000   134218212
+.rodata              20076   134269212
+.data                   96   536870912
+.bss                 11924   536871008
+.user_stacks         32768   536882936
+.msp_stack            4096   536932352
+2000aef8 B __static_ram_end__
+20002be8 00000200 b idle_stack
+20001cd8 00000018 b s_idle_record
+20001cf0 00000020 b s_rt_global
+20001ad8 00000200 b s_rt_tasks
+20002928 00000240 b task_pool
+/tmp/insight-b1-clean-base.aOBikB/Middlewares/InsightRTOS/arch/arm/cortex_m3/port.c:100:6:rtos_port_interrupts_masked	24	static
+/tmp/insight-b1-clean-base.aOBikB/Middlewares/InsightRTOS/arch/arm/cortex_m3/port.c:129:6:rtos_port_task_create_context	24	static
+/tmp/insight-b1-clean-base.aOBikB/Middlewares/InsightRTOS/arch/arm/cortex_m3/port.c:137:6:rtos_port_clock_available	4	static
+/tmp/insight-b1-clean-base.aOBikB/Middlewares/InsightRTOS/arch/arm/cortex_m3/port.c:142:10:rtos_port_clock_cycles_32	4	static
+/tmp/insight-b1-clean-base.aOBikB/Middlewares/InsightRTOS/kernel/tick.c:11:10:rtos_tick_get	16	static
+/tmp/insight-b1-clean-base.aOBikB/Middlewares/InsightRTOS/kernel/critical.c:5:18:rtos_critical_enter	8	static
+/tmp/insight-b1-clean-base.aOBikB/Middlewares/InsightRTOS/kernel/critical.c:12:6:rtos_critical_exit	16	static
+/tmp/insight-b1-clean-base.aOBikB/Middlewares/InsightRTOS/kernel/scheduler.c:26:6:rtos_sched_started	4	static
+/tmp/insight-b1-clean-base.aOBikB/Middlewares/InsightRTOS/kernel/scheduler.c:255:6:rtos_sched_on_tick	16	static
+/tmp/insight-b1-clean-base.aOBikB/Middlewares/InsightRTOS/kernel/task.c:45:14:rtos_task_ref_resolve_locked	16	static
+/tmp/insight-b1-clean-base.aOBikB/Middlewares/InsightRTOS/kernel/diag_rt.c:55:17:get_cycles_64_locked	48	static
+/tmp/insight-b1-clean-base.aOBikB/Middlewares/InsightRTOS/kernel/diag_rt.c:87:6:rtos_diag_rt_init	8	static
+/tmp/insight-b1-clean-base.aOBikB/Middlewares/InsightRTOS/kernel/diag_rt.c:110:6:rtos_diag_rt_task_init_hook	24	static
+/tmp/insight-b1-clean-base.aOBikB/Middlewares/InsightRTOS/kernel/diag_rt.c:129:6:rtos_diag_rt_task_ready_hook	24	static
+/tmp/insight-b1-clean-base.aOBikB/Middlewares/InsightRTOS/kernel/diag_rt.c:139:6:rtos_diag_rt_switch_hook	104	static
+/tmp/insight-b1-clean-base.aOBikB/Middlewares/InsightRTOS/kernel/diag_rt.c:192:6:rtos_diag_rt_on_tick	16	static
+/tmp/insight-b1-clean-base.aOBikB/Middlewares/InsightRTOS/kernel/diag_rt.c:197:15:rtos_diag_rt_clock_cap	32	static
+/tmp/insight-b1-clean-base.aOBikB/Middlewares/InsightRTOS/kernel/diag_rt.c:232:15:rtos_diag_rt_snapshot	80	static
+/tmp/insight-b1-clean-base.aOBikB/Middlewares/InsightRTOS/kernel/diag_rt.c:295:15:rtos_diag_rt_idle_snapshot	56	static
+  Tag_CPU_name: "7-M"
+  Tag_CPU_arch: v7
+  Tag_CPU_arch_profile: Microcontroller
+  Tag_THUMB_ISA_use: Thumb-2
+  Tag_CPU_unaligned_access: v6
+/tmp/insight-b1-clean-base.aOBikB/build/DISPLAY_RTOS_O2_Trace
+.text                33344   134218212
+.rodata              16800   134251560
+.data                   96   536870912
+.bss                 11936   536871008
+.user_stacks         32768   536882944
+.msp_stack            4096   536932352
+2000af00 B __static_ram_end__
+20002ba0 00000200 b idle_stack
+20001b00 00000018 b s_idle_record
+20001ae0 00000020 b s_rt_global
+20001b18 00000200 b s_rt_tasks
+2000295c 00000240 b task_pool
+/tmp/insight-b1-clean-base.aOBikB/Middlewares/InsightRTOS/arch/arm/cortex_m3/port.c:100:6:rtos_port_interrupts_masked	0	static
+/tmp/insight-b1-clean-base.aOBikB/Middlewares/InsightRTOS/arch/arm/cortex_m3/port.c:129:6:rtos_port_task_create_context	0	static
+/tmp/insight-b1-clean-base.aOBikB/Middlewares/InsightRTOS/arch/arm/cortex_m3/port.c:137:6:rtos_port_clock_available	0	static
+/tmp/insight-b1-clean-base.aOBikB/Middlewares/InsightRTOS/arch/arm/cortex_m3/port.c:142:10:rtos_port_clock_cycles_32	0	static
+/tmp/insight-b1-clean-base.aOBikB/Middlewares/InsightRTOS/kernel/tick.c:11:10:rtos_tick_get	8	static
+/tmp/insight-b1-clean-base.aOBikB/Middlewares/InsightRTOS/kernel/critical.c:5:18:rtos_critical_enter	8	static
+/tmp/insight-b1-clean-base.aOBikB/Middlewares/InsightRTOS/kernel/critical.c:12:6:rtos_critical_exit	8	static
+/tmp/insight-b1-clean-base.aOBikB/Middlewares/InsightRTOS/kernel/scheduler.c:26:6:rtos_sched_started	0	static
+/tmp/insight-b1-clean-base.aOBikB/Middlewares/InsightRTOS/kernel/scheduler.c:255:6:rtos_sched_on_tick	8	static
+/tmp/insight-b1-clean-base.aOBikB/Middlewares/InsightRTOS/kernel/task.c:45:14:rtos_task_ref_resolve_locked	24	static
+/tmp/insight-b1-clean-base.aOBikB/Middlewares/InsightRTOS/kernel/diag_rt.c:55:17:get_cycles_64_locked.part.0	16	static
+/tmp/insight-b1-clean-base.aOBikB/Middlewares/InsightRTOS/kernel/diag_rt.c:87:6:rtos_diag_rt_init	16	static
+/tmp/insight-b1-clean-base.aOBikB/Middlewares/InsightRTOS/kernel/diag_rt.c:110:6:rtos_diag_rt_task_init_hook	12	static
+/tmp/insight-b1-clean-base.aOBikB/Middlewares/InsightRTOS/kernel/diag_rt.c:129:6:rtos_diag_rt_task_ready_hook	16	static
+/tmp/insight-b1-clean-base.aOBikB/Middlewares/InsightRTOS/kernel/diag_rt.c:139:6:rtos_diag_rt_switch_hook	32	static
+/tmp/insight-b1-clean-base.aOBikB/Middlewares/InsightRTOS/kernel/diag_rt.c:192:6:rtos_diag_rt_on_tick	8	static
+/tmp/insight-b1-clean-base.aOBikB/Middlewares/InsightRTOS/kernel/diag_rt.c:197:15:rtos_diag_rt_clock_cap	16	static
+/tmp/insight-b1-clean-base.aOBikB/Middlewares/InsightRTOS/kernel/diag_rt.c:232:15:rtos_diag_rt_snapshot	64	static
+/tmp/insight-b1-clean-base.aOBikB/Middlewares/InsightRTOS/kernel/diag_rt.c:295:15:rtos_diag_rt_idle_snapshot	32	static
+  Tag_CPU_name: "7-M"
+  Tag_CPU_arch: v7
+  Tag_CPU_arch_profile: Microcontroller
+  Tag_THUMB_ISA_use: Thumb-2
+  Tag_CPU_unaligned_access: v6
