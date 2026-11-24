@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/tmp/insight-a3.hC00Ym/work/tests/hardware/sample_stability.py", line 223, in <module>
+    main()
+    ~~~~^^
+  File "/tmp/insight-a3.hC00Ym/work/tests/hardware/sample_stability.py", line 150, in main
+    t.cmd(f"dump_image {before.resolve()} 0x08000000 {args.bin.stat().st_size}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/insight-a3.hC00Ym/work/tests/hardware/sample_stability.py", line 70, in cmd
+    piece = self.socket.recv(65536)
+TimeoutError: timed out

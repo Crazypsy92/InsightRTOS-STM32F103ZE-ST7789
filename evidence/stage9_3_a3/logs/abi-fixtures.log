@@ -1,0 +1,2 @@
+build/DISPLAY_RTOS_O2_Trace/insightrtos_display.elf: ELF DWARF ABI and unsupported layout/short read fixtures PASS
+build/DISPLAY_RTOS_O2_Stress/insightrtos_display.elf: ELF DWARF ABI and unsupported layout/short read fixtures PASS

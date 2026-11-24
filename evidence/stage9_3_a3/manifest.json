@@ -1,0 +1,89 @@
+{
+  "source_base": "04ddcf93a2f0e595fa13389e176ffdbd5685f82f",
+  "source_commit": "bb6c0f6ba1ad14bcc5920edd7646892ae2a88cf8",
+  "hardware": "STM32F103ZET6 UID 31ffd8053031533628791143",
+  "flash_pages": [
+    0,
+    30
+  ],
+  "configurations": {
+    "DISPLAY_RTOS_O2": {
+      "diagnostics": "OFF",
+      "files": {
+        "elf": {
+          "path": "build/stage9_3_a3_verified/DISPLAY_RTOS_O2/insightrtos_display.elf",
+          "bytes": 485684,
+          "sha256": "4b6fd02cf7d1a59112328cc5fd216339723552aab36ab1be0d5ea3c17e15306d"
+        },
+        "bin": {
+          "path": "build/stage9_3_a3_verified/DISPLAY_RTOS_O2/insightrtos_display.bin",
+          "bytes": 46408,
+          "sha256": "1581b4516af8eecc90ce6b1b24a4020dd6118eb16efa66645929cb440eaaf7d0"
+        },
+        "map": {
+          "path": "build/stage9_3_a3_verified/DISPLAY_RTOS_O2/insightrtos_display.map",
+          "bytes": 230293,
+          "sha256": "fe1926bf81fa73bfc69821d0e9ee7c66b02c24a14b4eade338a8918c3e746884"
+        }
+      },
+      "flash_bytes": 46408,
+      "sram_with_msp": 44528,
+      "sram_remaining": 21008,
+      "msp_bytes": 4096,
+      "user_stacks_bytes": 32768,
+      "heap_bytes": 0
+    },
+    "DISPLAY_RTOS_O2_Trace": {
+      "diagnostics": "ON",
+      "files": {
+        "elf": {
+          "path": "build/stage9_3_a3_verified/DISPLAY_RTOS_O2_Trace/insightrtos_display.elf",
+          "bytes": 557920,
+          "sha256": "519ba457124f650d20a05730ce07039673cf374dc66e696b43b190e5748da828"
+        },
+        "bin": {
+          "path": "build/stage9_3_a3_verified/DISPLAY_RTOS_O2_Trace/insightrtos_display.bin",
+          "bytes": 50648,
+          "sha256": "b4d13c78cfcaee50fb4ae30ad3c233f3860796f30308bc9e22de478ee886d13e"
+        },
+        "map": {
+          "path": "build/stage9_3_a3_verified/DISPLAY_RTOS_O2_Trace/insightrtos_display.map",
+          "bytes": 239164,
+          "sha256": "ed1a9684d5b93f1e816a0aa19d0aa2c6cdf6e13e51ff300eb5a110088126d4ad"
+        }
+      },
+      "flash_bytes": 50648,
+      "sram_with_msp": 48896,
+      "sram_remaining": 16640,
+      "msp_bytes": 4096,
+      "user_stacks_bytes": 32768,
+      "heap_bytes": 0
+    },
+    "DISPLAY_RTOS_O2_Stress": {
+      "diagnostics": "ON + stress",
+      "files": {
+        "elf": {
+          "path": "build/stage9_3_a3_verified/DISPLAY_RTOS_O2_Stress/insightrtos_display.elf",
+          "bytes": 558624,
+          "sha256": "2ab1e4b3d6b60f2d4ab6515f1b802d57419624e8c5f6129102da292b9501f1aa"
+        },
+        "bin": {
+          "path": "build/stage9_3_a3_verified/DISPLAY_RTOS_O2_Stress/insightrtos_display.bin",
+          "bytes": 50732,
+          "sha256": "269efd31db3c24c8c1bebee86442a883910df971f6184bdba8b52d483c618c10"
+        },
+        "map": {
+          "path": "build/stage9_3_a3_verified/DISPLAY_RTOS_O2_Stress/insightrtos_display.map",
+          "bytes": 239818,
+          "sha256": "8ff084e33a59b683f03aca1e95ff031b6d1144ca1429a8d7f6db189b1ef9d6b3"
+        }
+      },
+      "flash_bytes": 50732,
+      "sram_with_msp": 48912,
+      "sram_remaining": 16624,
+      "msp_bytes": 4096,
+      "user_stacks_bytes": 32768,
+      "heap_bytes": 0
+    }
+  }
+}

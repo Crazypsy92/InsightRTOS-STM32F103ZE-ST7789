@@ -1,0 +1,33 @@
+{
+  "KEY": {
+    "origin": "0x20002f10",
+    "bytes": 4096,
+    "guard": "0xdeadc0de",
+    "watermark_bytes": 192
+  },
+  "CTRL": {
+    "origin": "0x20003f10",
+    "bytes": 4096,
+    "guard": "0xdeadc0de",
+    "watermark_bytes": 388
+  },
+  "LCD": {
+    "origin": "0x20004f10",
+    "bytes": 4096,
+    "guard": "0xdeadc0de",
+    "watermark_bytes": 816
+  },
+  "MON": {
+    "origin": "0x20005f10",
+    "bytes": 4096,
+    "guard": "0xdeadc0de",
+    "watermark_bytes": 552
+  },
+  "IDLE": {
+    "origin": "0x20002bb0",
+    "bytes": 512,
+    "guard": "0xdeadc0de",
+    "watermark_bytes": 72
+  },
+  "MSP": "NOT MEASURED: no prefill established"
+}
