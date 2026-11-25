@@ -423,9 +423,16 @@ rtos_status_t rtos_diag_rt_job_snapshot(rtos_task_ref_t ref, rtos_diag_rt_job_sn
     if (status == RTOS_OK) {
         const rtos_diag_rt_task_record_t *rec = &s_rt_tasks[ref.slot];
         const rt_job_t *job = &rec->job;
+        const bool active = (job->flags & RTOS_DIAG_JOB_ACTIVE) != 0U;
+        uint32_t flags = job->flags;
+        if (active && !clock_valid()) {
+            /* A clock loss observed here must survive re-enablement. */
+            if (s_rt_global.initialized) s_rt_global.clock_uncertain = true;
+            flags |= RTOS_DIAG_JOB_CYCLES_INVALID;
+        }
         *out = (rtos_diag_rt_job_snapshot_t){
-            .flags = rec->job.flags,
-            .active_job_id = (rec->job.flags & RTOS_DIAG_JOB_ACTIVE) != 0U ? job->id : 0U,
+            .flags = flags,
+            .active_job_id = active ? job->id : 0U,
             .release_tick = job->release_tick,
             .last_first_dispatch_ticks = job->last_first, .max_first_dispatch_ticks = job->max_first,
             .last_finish_ticks = job->last_finish, .max_finish_ticks = job->max_finish,
