@@ -155,3 +155,18 @@ if(INSIGHT_APP_INTEGRATED_DIAGNOSTICS)
     target_sources(${CMAKE_PROJECT_NAME} PRIVATE App/Src/app_diagnostics.c)
     target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE INSIGHT_APP_INTEGRATED_DIAGNOSTICS=1)
 endif()
+
+option(INSIGHT_TEST_MUTEX "Build isolated Cortex-M3 Mutex validation fixture" OFF)
+if(INSIGHT_TEST_MUTEX)
+    if(NOT INSIGHT_DISPLAY_RTOS OR NOT INSIGHT_RTOS_ENABLED OR NOT INSIGHT_DIAG_DL OR
+       NOT INSIGHT_DIAG_EXPLAIN OR INSIGHT_APP_INTEGRATED_DIAGNOSTICS OR
+       INSIGHT_TEST_MSP OR INSIGHT_TEST_TIMING OR INSIGHT_TEST_JOB OR INSIGHT_TEST_STRESS)
+        message(FATAL_ERROR "Mutex bench requires standalone display-target startup, Trace/Explain and DL")
+    endif()
+    get_target_property(mutex_sources ${CMAKE_PROJECT_NAME} SOURCES)
+    list(FILTER mutex_sources EXCLUDE REGEX "/app_tasks[.]c$")
+    set_property(TARGET ${CMAKE_PROJECT_NAME} PROPERTY SOURCES "${mutex_sources}")
+    target_sources(${CMAKE_PROJECT_NAME} PRIVATE tests/hardware/mutex_fixture.c)
+    target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE tests/hardware)
+    target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE INSIGHT_TEST_MUTEX=1)
+endif()
