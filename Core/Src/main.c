@@ -25,6 +25,9 @@
 #include "delay.h"
 #include "key_port.h"
 #include "app_lcd_test.h"
+#if defined(INSIGHT_TEST_MUTEX)
+#include "mutex_fixture.h"
+#endif
 #ifdef INSIGHT_RTOS_ENABLED
 #ifdef INSIGHT_DISPLAY_RTOS
 #include "display_app.h"
@@ -109,7 +112,9 @@ int main(void)
   /* USER CODE BEGIN 2 */
 #ifdef INSIGHT_RTOS_ENABLED
   Timebase_Init(); /* Independent TIM2 1ms; SysTick belongs only to the RTOS. */
-#ifdef INSIGHT_DISPLAY_RTOS
+#if defined(INSIGHT_TEST_MUTEX)
+  mutex_fixture_start();
+#elif defined(INSIGHT_DISPLAY_RTOS)
   display_app_start();
 #else
   rtos_smoke_start();

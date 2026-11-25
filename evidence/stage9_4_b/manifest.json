@@ -1,0 +1,247 @@
+{
+  "stage": "9.4-B",
+  "status": "PASS",
+  "base_sha": "e4d1679286a355c3445e4b39ace967e68508f60f",
+  "tools": [
+    "arm-none-eabi-gcc (15:14.2.rel1-1) 14.2.1 20241119",
+    "GNU ld (2.45.50.20251209-1ubuntu1+23build1) 2.45.50.20251209",
+    "cmake version 4.2.3",
+    "GNU gdb (Ubuntu 17.1-2ubuntu1) 17.1",
+    "Open On-Chip Debugger 0.12.0"
+  ],
+  "images": {
+    "DISPLAY_RTOS_O2_Mutex": {
+      "flash_bytes": 35132,
+      "flash_end_exclusive": "0x800893c",
+      "erasure_pages_from_zero": 18,
+      "sram_including_msp": 50336,
+      "sram_remaining": 15200,
+      "reset": "0x80006c9",
+      "msp": "0x20010000",
+      "sha256": {
+        "elf": "7cf073a12fac6a6f0ca009e3736ca345e981e0ed075f5af821113521d51eb8c5",
+        "bin": "b7125fa66570493bc07257fac73c9d0d2f11f523d5a694be0779708a45640adf",
+        "hex": "c6eb63a015c5ae7c77bdfe2a08dd89984873ec009edf61d6970e6d13f30af2bb",
+        "map": "639d55306077e9426b4adc0ecde00752bfb5f001b82dd90925e66ad0bb31fe72"
+      },
+      "tcb_bytes": 72,
+      "hex_omitted_zero_padding_bytes": 0,
+      "sections": {
+        ".isr_vector": 484,
+        ".text": 21360,
+        ".rodata": 13196,
+        ".preinit_array": 0,
+        ".init_array": 4,
+        ".fini_array": 4,
+        ".data": 84,
+        ".tdata": 0,
+        ".tbss": 0,
+        ".bss": 13384,
+        ".user_stacks": 32768,
+        ".msp_stack": 4096
+      }
+    },
+    "DISPLAY_RTOS_Debug_Mutex": {
+      "flash_bytes": 49680,
+      "flash_end_exclusive": "0x800c210",
+      "erasure_pages_from_zero": 25,
+      "sram_including_msp": 50336,
+      "sram_remaining": 15200,
+      "reset": "0x8000cd1",
+      "msp": "0x20010000",
+      "sha256": {
+        "elf": "d2b85d84be5e976cb2ae70bc72ed7c057dcbe96d0104a025a6c528cdb8141c48",
+        "bin": "75a898a2efecfcd430745442a21f621ddb144a9cbdbd5c95415c18f90e66bbb2",
+        "hex": "ae795220dc0981774cfb8ab8460b63098944085812e3451ca1902e44fcfbe2ea",
+        "map": "8b06209b2bad39265fedf3293c8d8ea478b05e23e35a2c4b88c65c659a7d4d13"
+      },
+      "tcb_bytes": 72,
+      "hex_omitted_zero_padding_bytes": 0,
+      "sections": {
+        ".isr_vector": 484,
+        ".text": 32408,
+        ".rodata": 16696,
+        ".preinit_array": 0,
+        ".init_array": 4,
+        ".fini_array": 4,
+        ".data": 84,
+        ".tdata": 0,
+        ".tbss": 0,
+        ".bss": 13380,
+        ".user_stacks": 32768,
+        ".msp_stack": 4096
+      }
+    },
+    "Stage94A_Frozen_Production": {
+      "flash_bytes": 53676,
+      "flash_end_exclusive": "0x800d1ac",
+      "erasure_pages_from_zero": 27,
+      "sram_including_msp": 50376,
+      "sram_remaining": 15160,
+      "reset": "0x8000c09",
+      "msp": "0x20010000",
+      "sha256": {
+        "elf": "ffd1dc85b097e7cc5498343776bd813a7b018174afd619e92f1ec0c3b22fffeb",
+        "bin": "361d1a18fed3eccbb2d28eef4e2b6b16218ef99cc84fe4049ac82b7a40e73418",
+        "hex": "b4595fd2c59a2197416a0f77d0059ff2af8f9a457424d7e35e67aa725d28e432",
+        "map": "b15eff02f3e3b7575f0845a68ba67c993d964b642ec5bcd1c072daaf362e9498"
+      },
+      "tcb_bytes": 72,
+      "hex_omitted_zero_padding_bytes": 4,
+      "sections": {
+        ".isr_vector": 484,
+        ".text": 36344,
+        ".rodata": 16732,
+        ".ARM": 8,
+        ".preinit_array": 0,
+        ".init_array": 4,
+        ".fini_array": 4,
+        ".data": 96,
+        ".tdata": 0,
+        ".tbss": 0,
+        ".bss": 13416,
+        ".user_stacks": 32768,
+        ".msp_stack": 4096
+      }
+    }
+  },
+  "hardware": {
+    "mcu": "STM32F103ZET6",
+    "flash_pages": [
+      0,
+      30
+    ],
+    "option_bytes_equal": true,
+    "readbacks": {
+      "Mutex": {
+        "status": "PASS",
+        "sha256": "b7125fa66570493bc07257fac73c9d0d2f11f523d5a694be0779708a45640adf",
+        "bytes": 35132,
+        "tail_ff": 28356,
+        "option_bytes_equal": true
+      },
+      "IntegratedProd": {
+        "status": "PASS",
+        "sha256": "361d1a18fed3eccbb2d28eef4e2b6b16218ef99cc84fe4049ac82b7a40e73418",
+        "bytes": 53676,
+        "tail_ff": 9812,
+        "option_bytes_equal": true
+      }
+    },
+    "elapsed_ticks": 838,
+    "refs": [
+      {
+        "slot": 0,
+        "generation": 1
+      },
+      {
+        "slot": 1,
+        "generation": 1
+      },
+      {
+        "slot": 2,
+        "generation": 1
+      },
+      {
+        "slot": 3,
+        "generation": 1
+      },
+      {
+        "slot": 4,
+        "generation": 1
+      }
+    ],
+    "priorities": [
+      2,
+      4,
+      5,
+      5,
+      6
+    ],
+    "health": {
+      "state": 2,
+      "scenario": 3,
+      "round": 1,
+      "tick": 915,
+      "tim2_ms": 9166,
+      "assert_line": 0,
+      "faults": [
+        0,
+        0
+      ],
+      "guards": [
+        3735929054,
+        3735929054,
+        3735929054,
+        3735929054,
+        3735929054,
+        3735929054
+      ]
+    },
+    "fixture_raw_sha256": "db46110d440c095248dce890e39c11906ab7627761bf3ecace63aa44f8a1fbdd",
+    "cases": {
+      "handoff": {
+        "pass_rounds": 100,
+        "order_count": 3,
+        "switches_count": 5,
+        "timeout_a": 0,
+        "timeout_b": 0,
+        "owner_a": 0,
+        "owner_b": 0,
+        "waiter_a": 0,
+        "waiter_b": 0
+      },
+      "classic_pi": {
+        "pass_rounds": 100,
+        "order_count": 3,
+        "switches_count": 6,
+        "timeout_a": 0,
+        "timeout_b": 0,
+        "owner_a": 0,
+        "owner_b": 0,
+        "waiter_a": 0,
+        "waiter_b": 0
+      },
+      "transitive_pi": {
+        "pass_rounds": 1,
+        "order_count": 3,
+        "switches_count": 7,
+        "timeout_a": 0,
+        "timeout_b": 0,
+        "owner_a": 0,
+        "owner_b": 0,
+        "waiter_a": 0,
+        "waiter_b": 0
+      },
+      "finite_abba": {
+        "pass_rounds": 1,
+        "order_count": 2,
+        "switches_count": 7,
+        "timeout_a": 837,
+        "timeout_b": 868,
+        "owner_a": 0,
+        "owner_b": 0,
+        "waiter_a": 0,
+        "waiter_b": 0
+      }
+    },
+    "production_seq": [
+      4,
+      8
+    ]
+  },
+  "host": {
+    "kernel": 360,
+    "app": 9,
+    "rt": 9,
+    "job": 77,
+    "clock_validity": 53
+  },
+  "not_tested": [
+    "QEMU",
+    "Debug HIL",
+    "permanent deadlock",
+    "ISR Mutex API",
+    "WCET"
+  ]
+}

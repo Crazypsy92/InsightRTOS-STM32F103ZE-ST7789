@@ -10,8 +10,11 @@ evidence=evidence/stage9_3_b2b
 case "$mode" in
     Msp) evidence=evidence/stage9_3_b2c ;;
     Integrated) evidence=evidence/stage9_4_a ;;
+    Mutex) evidence=evidence/stage9_4_b ;;
 esac
-log=$(realpath "$evidence/logs")
+log="$evidence/logs"
+if [[ $mode == Mutex ]]; then log="$log/hardware"; fi
+log=$(realpath "$log")
 cfg=tests/hardware/timing_openocd
 if ps -eo stat=,comm= | awk '$1 !~ /^Z/ {print $2}' | rg -x 'openocd|st-util|pyocd|gdb-multiarch|stlink-server'; then
     exit 1
@@ -24,6 +27,7 @@ case "$mode" in
     On) profiles=(On) ;;
     Msp) profiles=(Msp) ;;
     Integrated) profiles=(Integrated IntegratedProd) ;;
+    Mutex) profiles=(Mutex IntegratedProd) ;;
     *) exit 2 ;;
 esac
 
@@ -33,7 +37,9 @@ for name in "${profiles[@]}"; do
         Msp) profile=DISPLAY_RTOS_O2_Msp ;;
         Integrated) profile=DISPLAY_RTOS_O2_Integrated_Stress ;;
         IntegratedProd) profile=DISPLAY_RTOS_O2_Integrated ;;
+        Mutex) profile=DISPLAY_RTOS_O2_Mutex ;;
     esac
+    if [[ $mode == Mutex && $name == IntegratedProd ]]; then profile=Stage94A_Frozen_Production; fi
     f=$(realpath "build/$profile/insightrtos_display.bin")
     bin="${f%.bin}"
     proof="$log/firmware-audit.json"
@@ -100,6 +106,9 @@ PY
     if [[ $name == Msp ]]; then
         PYTHONDONTWRITEBYTECODE=1 python3 tests/hardware/read_msp.py --elf "$bin.elf" \
           --out "$prefix-watermark.json" | tee "$prefix-sampler.log"
+    elif [[ $name == Mutex ]]; then
+        PYTHONDONTWRITEBYTECODE=1 python3 tests/hardware/read_mutex.py --elf "$bin.elf" \
+          --out "$prefix-fixture.json" | tee "$prefix-sampler.log"
     elif [[ $name == Integrated || $name == IntegratedProd ]]; then
         PYTHONDONTWRITEBYTECODE=1 python3 tests/hardware/read_integrated.py --elf "$bin.elf" \
           --profile "$name" --out "$prefix-diag.json" | tee "$prefix-sampler.log"
