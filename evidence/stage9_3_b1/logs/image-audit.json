@@ -1,0 +1,194 @@
+{
+  "DISPLAY_RTOS_Debug_Trace": {
+    "flash_bytes": 72564,
+    "flash_end_exclusive": "0x8011b74",
+    "erasure_pages_from_zero": 36,
+    "sram_including_msp": 49336,
+    "sram_remaining": 16200,
+    "reset": "0x8001211",
+    "msp": "0x20010000",
+    "sha256": {
+      "elf": "5dc67abf3be3d2968022bc85222d6b2dd6caace00023736d3329a4b9948b927b",
+      "bin": "3aab3eb3f62d22c6f2d6f52b4fea3d2e8c341c6d0f06f99d8a58d585ea33c412",
+      "hex": "4e87cb316b760682a77fab29f1fa58653ceae31e95be1b38a43b8c69a90ee22c",
+      "map": "2123e2721a730206fb646fa8a9a61ac3a3e361e966c635c31cba2fe916a3b12c"
+    },
+    "tcb_bytes": 72,
+    "hex_omitted_zero_padding_bytes": 0,
+    "sections": {
+      ".isr_vector": 484,
+      ".text": 51992,
+      ".rodata": 19976,
+      ".ARM": 8,
+      ".preinit_array": 0,
+      ".init_array": 4,
+      ".fini_array": 4,
+      ".data": 96,
+      ".tdata": 0,
+      ".tbss": 0,
+      ".bss": 12372,
+      ".user_stacks": 32768,
+      ".msp_stack": 4096
+    }
+  },
+  "DISPLAY_RTOS_O2_Trace": {
+    "flash_bytes": 51160,
+    "flash_end_exclusive": "0x800c7d8",
+    "erasure_pages_from_zero": 25,
+    "sram_including_msp": 49344,
+    "sram_remaining": 16192,
+    "reset": "0x8000c09",
+    "msp": "0x20010000",
+    "sha256": {
+      "elf": "b20a934a5a29aebf6ac073047418a2afc6c25ac7e45540ae8fe8fb76ca2a2dbd",
+      "bin": "7f04a9b0e0834f5ffce740f822268bddd2ad99cf6441b44341fb22fb92e403f2",
+      "hex": "ef440735fe34ae90030f7c67ac20d8032b85e8ac3c0b9561974d6885283d1849",
+      "map": "4fe7ce8a202b0d7ab87319eb2212c10e2b152ab9ba13b8ae1c37382259c2b131"
+    },
+    "tcb_bytes": 72,
+    "hex_omitted_zero_padding_bytes": 0,
+    "sections": {
+      ".isr_vector": 484,
+      ".text": 33860,
+      ".rodata": 16704,
+      ".ARM": 8,
+      ".preinit_array": 0,
+      ".init_array": 4,
+      ".fini_array": 4,
+      ".data": 96,
+      ".tdata": 0,
+      ".tbss": 0,
+      ".bss": 12384,
+      ".user_stacks": 32768,
+      ".msp_stack": 4096
+    }
+  },
+  "DISPLAY_RTOS_O2": {
+    "flash_bytes": 46408,
+    "flash_end_exclusive": "0x800b548",
+    "erasure_pages_from_zero": 23,
+    "sram_including_msp": 44528,
+    "sram_remaining": 21008,
+    "reset": "0x8000c09",
+    "msp": "0x20010000",
+    "sha256": {
+      "elf": "910b2f8b74b3ff694ce966ac3252ad3214fa195148f99f4c4372a78a0e5333cf",
+      "bin": "44a0a68e3e80962aae5d2460f20a57e923c22dbd79d9a7c0c9a11a0fd9bcbf34",
+      "hex": "60484e3fc4e3652385ce70acf0be1333c9f5e16d8d5775fcaaaa3c735a795378",
+      "map": "a84ab0e720e60377e1a29bbdff2a0f4ec23670c087db1293b3c139f21072fd3a"
+    },
+    "tcb_bytes": 72,
+    "hex_omitted_zero_padding_bytes": 4,
+    "sections": {
+      ".isr_vector": 484,
+      ".text": 29184,
+      ".rodata": 16624,
+      ".ARM": 8,
+      ".preinit_array": 0,
+      ".init_array": 4,
+      ".fini_array": 4,
+      ".data": 96,
+      ".tdata": 0,
+      ".tbss": 0,
+      ".bss": 7568,
+      ".user_stacks": 32768,
+      ".msp_stack": 4096
+    }
+  },
+  "DISPLAY_RTOS_O2_Job": {
+    "flash_bytes": 54700,
+    "flash_end_exclusive": "0x800d5ac",
+    "erasure_pages_from_zero": 27,
+    "sram_including_msp": 49600,
+    "sram_remaining": 15936,
+    "reset": "0x8000c09",
+    "msp": "0x20010000",
+    "sha256": {
+      "elf": "5566e2581dbae99d2e9403dee22c0d08e4e13196bc9aa405dbe80a8f7a7e7c26",
+      "bin": "a176c2361bfad9745366db8564c72d3b39f8f8304e7018e5aebe1caa3fbb6bcf",
+      "hex": "bd93c78a0a4c908c3cbbceaeae319c23f2e240abe33ce96be238d7ae221d8575",
+      "map": "239b9b4a85410c327d44fb6515663cdfae7226f3a1ff811065f85e6eeb9d7ae3"
+    },
+    "tcb_bytes": 72,
+    "hex_omitted_zero_padding_bytes": 4,
+    "sections": {
+      ".isr_vector": 484,
+      ".text": 36344,
+      ".rodata": 17756,
+      ".ARM": 8,
+      ".preinit_array": 0,
+      ".init_array": 4,
+      ".fini_array": 4,
+      ".data": 96,
+      ".tdata": 0,
+      ".tbss": 0,
+      ".bss": 12640,
+      ".user_stacks": 32768,
+      ".msp_stack": 4096
+    }
+  },
+  "B1-O2-NoRT": {
+    "flash_bytes": 48896,
+    "flash_end_exclusive": "0x800bf00",
+    "erasure_pages_from_zero": 24,
+    "sram_including_msp": 48016,
+    "sram_remaining": 17520,
+    "reset": "0x8000c09",
+    "msp": "0x20010000",
+    "sha256": {
+      "elf": "1c1dd5e56d82e748a994153457fd7f61f15dcee0ad7373d4fb078449360cbc9e",
+      "bin": "8d68e198abc554108e721e6b8b33a3d57f8e0aab39611de97041c77fb36409a7",
+      "hex": "9974352aa567fd5e9e9f61f1d722d9545369231e761bb7870899c2cce5ae7ee0",
+      "map": "bac2c924df2422cd6d4e6165447a32907a31acad1d1fe185460842594770953d"
+    },
+    "tcb_bytes": 72,
+    "hex_omitted_zero_padding_bytes": 0,
+    "sections": {
+      ".isr_vector": 484,
+      ".text": 31596,
+      ".rodata": 16704,
+      ".ARM": 8,
+      ".preinit_array": 0,
+      ".init_array": 4,
+      ".fini_array": 4,
+      ".data": 96,
+      ".tdata": 0,
+      ".tbss": 0,
+      ".bss": 11056,
+      ".user_stacks": 32768,
+      ".msp_stack": 4096
+    }
+  },
+  "B1-O2-FullAPI": {
+    "flash_bytes": 52712,
+    "flash_end_exclusive": "0x800cde8",
+    "erasure_pages_from_zero": 26,
+    "sram_including_msp": 49352,
+    "sram_remaining": 16184,
+    "reset": "0x8000c09",
+    "msp": "0x20010000",
+    "sha256": {
+      "elf": "6c095096b1739c7b63f2d196d42445d23d9632c0d6676fb2db588fb7cbf78f9b",
+      "bin": "56c361dd0f100234e569e28cd19590bb39463d5acbe76273861011fa2a29ed3f",
+      "hex": "4ad27de719dc1450b2c37a1ec498e707660b788c57432be8f55b7d7d033cf95a",
+      "map": "a9e444e69f6dcdc5bf1cfb585f5c6fc2fb6636d3bdbb24bc6d6b0f5dc9d37c94"
+    },
+    "tcb_bytes": 72,
+    "hex_omitted_zero_padding_bytes": 4,
+    "sections": {
+      ".isr_vector": 484,
+      ".text": 35408,
+      ".rodata": 16704,
+      ".ARM": 8,
+      ".preinit_array": 0,
+      ".init_array": 4,
+      ".fini_array": 4,
+      ".data": 96,
+      ".tdata": 0,
+      ".tbss": 0,
+      ".bss": 12392,
+      ".user_stacks": 32768,
+      ".msp_stack": 4096
+    }
+  }
+}

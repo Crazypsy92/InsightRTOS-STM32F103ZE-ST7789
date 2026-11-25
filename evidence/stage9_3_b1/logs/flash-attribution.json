@@ -1,0 +1,34 @@
+{
+  "profile_order": [
+    "B1-O2-NoRT",
+    "DISPLAY_RTOS_O2_Trace",
+    "B1-O2-FullAPI"
+  ],
+  "linked_flash_input_sections": {
+    "app_tasks.c.obj": [
+      1584,
+      1848,
+      1848
+    ],
+    "diag_rt.c.obj": [
+      0,
+      1784,
+      3332
+    ],
+    "port.c.obj": [
+      388,
+      428,
+      428
+    ],
+    "scheduler.c.obj": [
+      2336,
+      2384,
+      2384
+    ],
+    "task.c.obj": [
+      2036,
+      2164,
+      2164
+    ]
+  }
+}

@@ -1,0 +1,221 @@
+-- The C compiler identification is GNU 15.2.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Configuring done (0.3s)
+-- Generating done (0.1s)
+-- Build files have been written to: /tmp/insight-b1-legacy.jNdYkg/build
+[  0%] Building C object tests/host/CMakeFiles/insight_host_delay_2.dir/test_delay.c.o
+[  0%] Building C object tests/host/CMakeFiles/insight_host_semaphore.dir/test_semaphore.c.o
+[  0%] Building C object tests/host/CMakeFiles/insight_host_tests.dir/test_kernel.c.o
+[  0%] Building C object tests/host/CMakeFiles/insight_host_timeout.dir/test_semaphore_timeout.c.o
+[  1%] Building C object tests/host/CMakeFiles/insight_host_counting.dir/test_counting_semaphore.c.o
+[  1%] Building C object tests/host/CMakeFiles/insight_host_delay_1.dir/test_delay.c.o
+[  1%] Building C object tests/host/CMakeFiles/insight_host_tests.dir/mock_port.c.o
+[  1%] Building C object tests/host/CMakeFiles/insight_host_timeout.dir/mock_port.c.o
+[  2%] Building C object tests/host/CMakeFiles/insight_host_semaphore.dir/mock_port.c.o
+[  2%] Building C object tests/host/CMakeFiles/insight_host_delay_2.dir/mock_port.c.o
+[  2%] Building C object tests/host/CMakeFiles/insight_host_counting.dir/mock_port.c.o
+[  2%] Building C object tests/host/CMakeFiles/insight_host_delay_1.dir/mock_port.c.o
+[  3%] Building C object tests/host/CMakeFiles/insight_host_tests.dir/__/__/kernel/trace.c.o
+[  4%] Building C object tests/host/CMakeFiles/insight_host_timeout.dir/__/__/kernel/trace.c.o
+[  4%] Building C object tests/host/CMakeFiles/insight_host_counting.dir/__/__/kernel/trace.c.o
+[  4%] Building C object tests/host/CMakeFiles/insight_host_delay_2.dir/__/__/kernel/trace.c.o
+[  5%] Building C object tests/host/CMakeFiles/insight_host_semaphore.dir/__/__/kernel/trace.c.o
+[  5%] Building C object tests/host/CMakeFiles/insight_host_delay_1.dir/__/__/kernel/trace.c.o
+[  5%] Building C object tests/host/CMakeFiles/insight_host_tests.dir/__/__/kernel/queue.c.o
+[  5%] Building C object tests/host/CMakeFiles/insight_host_timeout.dir/__/__/kernel/queue.c.o
+[  5%] Building C object tests/host/CMakeFiles/insight_host_semaphore.dir/__/__/kernel/queue.c.o
+[  5%] Building C object tests/host/CMakeFiles/insight_host_delay_2.dir/__/__/kernel/queue.c.o
+[  5%] Building C object tests/host/CMakeFiles/insight_host_counting.dir/__/__/kernel/queue.c.o
+[  5%] Building C object tests/host/CMakeFiles/insight_host_delay_1.dir/__/__/kernel/queue.c.o
+[  5%] Building C object tests/host/CMakeFiles/insight_host_tests.dir/__/__/kernel/task.c.o
+[  5%] Building C object tests/host/CMakeFiles/insight_host_timeout.dir/__/__/kernel/task.c.o
+[  5%] Building C object tests/host/CMakeFiles/insight_host_delay_2.dir/__/__/kernel/task.c.o
+[  6%] Building C object tests/host/CMakeFiles/insight_host_counting.dir/__/__/kernel/task.c.o
+[  6%] Building C object tests/host/CMakeFiles/insight_host_semaphore.dir/__/__/kernel/task.c.o
+[  6%] Building C object tests/host/CMakeFiles/insight_host_delay_1.dir/__/__/kernel/task.c.o
+[  6%] Building C object tests/host/CMakeFiles/insight_host_tests.dir/__/__/kernel/scheduler.c.o
+[  6%] Building C object tests/host/CMakeFiles/insight_host_timeout.dir/__/__/kernel/scheduler.c.o
+[  6%] Building C object tests/host/CMakeFiles/insight_host_delay_2.dir/__/__/kernel/scheduler.c.o
+[  6%] Building C object tests/host/CMakeFiles/insight_host_counting.dir/__/__/kernel/scheduler.c.o
+[  6%] Building C object tests/host/CMakeFiles/insight_host_semaphore.dir/__/__/kernel/scheduler.c.o
+[  7%] Building C object tests/host/CMakeFiles/insight_host_delay_1.dir/__/__/kernel/scheduler.c.o
+[  7%] Building C object tests/host/CMakeFiles/insight_host_timeout.dir/__/__/kernel/ready_queue.c.o
+[  8%] Building C object tests/host/CMakeFiles/insight_host_tests.dir/__/__/kernel/ready_queue.c.o
+[  9%] Building C object tests/host/CMakeFiles/insight_host_delay_2.dir/__/__/kernel/ready_queue.c.o
+[  9%] Building C object tests/host/CMakeFiles/insight_host_semaphore.dir/__/__/kernel/ready_queue.c.o
+[  9%] Building C object tests/host/CMakeFiles/insight_host_counting.dir/__/__/kernel/ready_queue.c.o
+[  9%] Building C object tests/host/CMakeFiles/insight_host_delay_1.dir/__/__/kernel/ready_queue.c.o
+[ 10%] Building C object tests/host/CMakeFiles/insight_host_tests.dir/__/__/kernel/tick.c.o
+[ 10%] Building C object tests/host/CMakeFiles/insight_host_timeout.dir/__/__/kernel/tick.c.o
+[ 10%] Building C object tests/host/CMakeFiles/insight_host_delay_2.dir/__/__/kernel/tick.c.o
+[ 11%] Building C object tests/host/CMakeFiles/insight_host_semaphore.dir/__/__/kernel/tick.c.o
+[ 11%] Building C object tests/host/CMakeFiles/insight_host_counting.dir/__/__/kernel/tick.c.o
+[ 11%] Building C object tests/host/CMakeFiles/insight_host_tests.dir/__/__/kernel/critical.c.o
+[ 11%] Building C object tests/host/CMakeFiles/insight_host_timeout.dir/__/__/kernel/critical.c.o
+[ 11%] Building C object tests/host/CMakeFiles/insight_host_delay_1.dir/__/__/kernel/tick.c.o
+[ 11%] Building C object tests/host/CMakeFiles/insight_host_delay_2.dir/__/__/kernel/critical.c.o
+[ 11%] Building C object tests/host/CMakeFiles/insight_host_counting.dir/__/__/kernel/critical.c.o
+[ 11%] Building C object tests/host/CMakeFiles/insight_host_semaphore.dir/__/__/kernel/critical.c.o
+[ 11%] Building C object tests/host/CMakeFiles/insight_host_timeout.dir/__/__/kernel/delay.c.o
+[ 11%] Building C object tests/host/CMakeFiles/insight_host_tests.dir/__/__/kernel/delay.c.o
+[ 11%] Building C object tests/host/CMakeFiles/insight_host_delay_1.dir/__/__/kernel/critical.c.o
+[ 12%] Building C object tests/host/CMakeFiles/insight_host_semaphore.dir/__/__/kernel/delay.c.o
+[ 12%] Building C object tests/host/CMakeFiles/insight_host_delay_2.dir/__/__/kernel/delay.c.o
+[ 12%] Building C object tests/host/CMakeFiles/insight_host_counting.dir/__/__/kernel/delay.c.o
+[ 12%] Building C object tests/host/CMakeFiles/insight_host_tests.dir/__/__/kernel/delay_queue.c.o
+[ 12%] Building C object tests/host/CMakeFiles/insight_host_timeout.dir/__/__/kernel/delay_queue.c.o
+[ 12%] Building C object tests/host/CMakeFiles/insight_host_delay_1.dir/__/__/kernel/delay.c.o
+[ 13%] Building C object tests/host/CMakeFiles/insight_host_semaphore.dir/__/__/kernel/delay_queue.c.o
+[ 13%] Building C object tests/host/CMakeFiles/insight_host_delay_2.dir/__/__/kernel/delay_queue.c.o
+[ 13%] Building C object tests/host/CMakeFiles/insight_host_counting.dir/__/__/kernel/delay_queue.c.o
+[ 14%] Building C object tests/host/CMakeFiles/insight_host_tests.dir/__/__/kernel/semaphore.c.o
+[ 14%] Building C object tests/host/CMakeFiles/insight_host_timeout.dir/__/__/kernel/semaphore.c.o
+[ 15%] Building C object tests/host/CMakeFiles/insight_host_delay_1.dir/__/__/kernel/delay_queue.c.o
+[ 16%] Building C object tests/host/CMakeFiles/insight_host_delay_2.dir/__/__/kernel/semaphore.c.o
+[ 16%] Building C object tests/host/CMakeFiles/insight_host_semaphore.dir/__/__/kernel/semaphore.c.o
+[ 16%] Building C object tests/host/CMakeFiles/insight_host_counting.dir/__/__/kernel/semaphore.c.o
+[ 17%] Building C object tests/host/CMakeFiles/insight_host_timeout.dir/__/__/kernel/mutex.c.o
+[ 17%] Building C object tests/host/CMakeFiles/insight_host_tests.dir/__/__/kernel/mutex.c.o
+[ 17%] Building C object tests/host/CMakeFiles/insight_host_delay_1.dir/__/__/kernel/semaphore.c.o
+[ 17%] Building C object tests/host/CMakeFiles/insight_host_counting.dir/__/__/kernel/mutex.c.o
+[ 17%] Building C object tests/host/CMakeFiles/insight_host_delay_2.dir/__/__/kernel/mutex.c.o
+[ 17%] Building C object tests/host/CMakeFiles/insight_host_semaphore.dir/__/__/kernel/mutex.c.o
+[ 17%] Building C object tests/host/CMakeFiles/insight_host_timeout.dir/__/__/kernel/priority.c.o
+[ 17%] Building C object tests/host/CMakeFiles/insight_host_tests.dir/__/__/kernel/priority.c.o
+[ 17%] Building C object tests/host/CMakeFiles/insight_host_delay_1.dir/__/__/kernel/mutex.c.o
+[ 17%] Building C object tests/host/CMakeFiles/insight_host_counting.dir/__/__/kernel/priority.c.o
+[ 17%] Building C object tests/host/CMakeFiles/insight_host_delay_2.dir/__/__/kernel/priority.c.o
+[ 17%] Building C object tests/host/CMakeFiles/insight_host_semaphore.dir/__/__/kernel/priority.c.o
+[ 17%] Building C object tests/host/CMakeFiles/insight_host_timeout.dir/__/__/kernel/priority_graph.c.o
+[ 17%] Building C object tests/host/CMakeFiles/insight_host_tests.dir/__/__/kernel/priority_graph.c.o
+[ 17%] Building C object tests/host/CMakeFiles/insight_host_delay_1.dir/__/__/kernel/priority.c.o
+[ 18%] Building C object tests/host/CMakeFiles/insight_host_delay_2.dir/__/__/kernel/priority_graph.c.o
+[ 18%] Building C object tests/host/CMakeFiles/insight_host_semaphore.dir/__/__/kernel/priority_graph.c.o
+[ 18%] Building C object tests/host/CMakeFiles/insight_host_counting.dir/__/__/kernel/priority_graph.c.o
+[ 18%] Building C object tests/host/CMakeFiles/insight_host_tests.dir/__/__/kernel/wait.c.o
+[ 18%] Building C object tests/host/CMakeFiles/insight_host_timeout.dir/__/__/kernel/wait.c.o
+[ 19%] Building C object tests/host/CMakeFiles/insight_host_delay_1.dir/__/__/kernel/priority_graph.c.o
+[ 20%] Building C object tests/host/CMakeFiles/insight_host_semaphore.dir/__/__/kernel/wait.c.o
+[ 20%] Building C object tests/host/CMakeFiles/insight_host_counting.dir/__/__/kernel/wait.c.o
+[ 20%] Building C object tests/host/CMakeFiles/insight_host_delay_2.dir/__/__/kernel/wait.c.o
+[ 22%] Building C object tests/host/CMakeFiles/insight_host_tests.dir/__/__/arch/arm/cortex_m3/systick_config.c.o
+[ 22%] Building C object tests/host/CMakeFiles/insight_host_timeout.dir/__/__/arch/arm/cortex_m3/systick_config.c.o
+[ 22%] Building C object tests/host/CMakeFiles/insight_host_delay_1.dir/__/__/kernel/wait.c.o
+[ 22%] Building C object tests/host/CMakeFiles/insight_host_delay_2.dir/__/__/arch/arm/cortex_m3/systick_config.c.o
+[ 22%] Building C object tests/host/CMakeFiles/insight_host_counting.dir/__/__/arch/arm/cortex_m3/systick_config.c.o
+[ 23%] Building C object tests/host/CMakeFiles/insight_host_semaphore.dir/__/__/arch/arm/cortex_m3/systick_config.c.o
+[ 23%] Linking C executable insight_host_tests
+[ 23%] Linking C executable insight_host_timeout
+[ 23%] Linking C executable insight_host_delay_2
+[ 23%] Linking C executable insight_host_counting
+[ 23%] Linking C executable insight_host_semaphore
+[ 23%] Building C object tests/host/CMakeFiles/insight_host_delay_1.dir/__/__/arch/arm/cortex_m3/systick_config.c.o
+/usr/bin/x86_64-linux-gnu-ld.bfd: CMakeFiles/insight_host_tests.dir/__/__/kernel/task.c.o: in function `task_create_common':
+task.c:(.text/usr/bin/x86_64-linux-gnu-ld.bfd+0x: 951): undefined reference to `rtos_diag_rt_task_init_hook'
+/usr/bin/x86_64-linux-gnu-ld.bfd: task.c:(.text+0xCMakeFiles/insight_host_timeout.dir/__/__/kernel/task.c.o9a4: in function `): undefined reference to `rtos_diag_rt_task_ready_hook'
+task_create_common':
+task.c:(.text+0x/usr/bin/x86_64-linux-gnu-ld.bfda3e: )CMakeFiles/insight_host_tests.dir/__/__/kernel/task.c.o: undefined reference to `: in function `rtos_diag_rt_task_init_hookrtos_task_exit'
+':
+/usr/bin/x86_64-linux-gnu-ld.bfdtask.c:: (task.c:.text(+0x.text145b+0x)a91: undefined reference to `)rtos_diag_rt_task_exit_hook: undefined reference to `'
+rtos_diag_rt_task_ready_hook'
+/usr/bin/x86_64-linux-gnu-ld.bfd: CMakeFiles/insight_host_timeout.dir/__/__/kernel/task.c.o: in function `rtos_task_exit':
+task.c:(.text+0x1548): undefined reference to `rtos_diag_rt_task_exit_hook'
+/usr/bin/x86_64-linux-gnu-ld.bfd: CMakeFiles/insight_host_tests.dir/__/__/kernel/scheduler.c.o: in function `rtos_sched_switch':
+scheduler.c:(.text+0x726): undefined reference to `rtos_diag_rt_task_ready_hook'
+/usr/bin/x86_64-linux-gnu-ld.bfd: scheduler.c:(/usr/bin/x86_64-linux-gnu-ld.bfd.text: +0x994): undefined reference to `rtos_diag_rt_switch_hook'
+CMakeFiles/insight_host_timeout.dir/__/__/kernel/scheduler.c.o: in function `rtos_sched_switch':
+/usr/bin/x86_64-linux-gnu-ld.bfdscheduler.c:: (CMakeFiles/insight_host_tests.dir/__/__/kernel/scheduler.c.o.text: in function `+0xrtos_sched_wake723':
+)scheduler.c:: undefined reference to `(rtos_diag_rt_task_ready_hook.text'
++0xfec)/usr/bin/x86_64-linux-gnu-ld.bfd: undefined reference to `: rtos_diag_rt_task_ready_hookscheduler.c:'
+(.text/usr/bin/x86_64-linux-gnu-ld.bfd+0x: 991CMakeFiles/insight_host_tests.dir/__/__/kernel/scheduler.c.o): in function `: undefined reference to `rtos_sched_on_tickrtos_diag_rt_switch_hook':
+'
+scheduler.c:(.text+0x10a8): undefined reference to `/usr/bin/x86_64-linux-gnu-ld.bfdrtos_diag_rt_on_tick: '
+CMakeFiles/insight_host_timeout.dir/__/__/kernel/scheduler.c.o: in function `/usr/bin/x86_64-linux-gnu-ld.bfdrtos_sched_wake: ':
+CMakeFiles/insight_host_tests.dir/__/__/kernel/scheduler.c.oscheduler.c:: in function `(rtos_start.text':
++0xscheduler.c:1069().text: undefined reference to `+0xrtos_diag_rt_task_ready_hook116a'
+): undefined reference to `/usr/bin/x86_64-linux-gnu-ld.bfdrtos_diag_rt_init: '
+CMakeFiles/insight_host_timeout.dir/__/__/kernel/scheduler.c.o: in function `rtos_sched_on_tick':
+scheduler.c:(.text+0x1140): undefined reference to `rtos_diag_rt_on_tick'
+/usr/bin/x86_64-linux-gnu-ld.bfd: CMakeFiles/insight_host_timeout.dir/__/__/kernel/scheduler.c.o: in function `rtos_start':
+scheduler.c:(.text+0x1286): undefined reference to `rtos_diag_rt_init'
+collect2: error: ld returned 1 exit status
+collect2: error: ld returned 1 exit status
+gmake[2]: *** [tests/host/CMakeFiles/insight_host_tests.dir/build.make:357: tests/host/insight_host_tests] Error 1
+gmake[2]: *** [tests/host/CMakeFiles/insight_host_timeout.dir/build.make:357: tests/host/insight_host_timeout] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:314: tests/host/CMakeFiles/insight_host_tests.dir/all] Error 2
+gmake[1]: *** Waiting for unfinished jobs....
+gmake[1]: *** [CMakeFiles/Makefile2:218: tests/host/CMakeFiles/insight_host_timeout.dir/all] Error 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: CMakeFiles/insight_host_delay_2.dir/__/__/kernel/task.c.o: in function `task_create_common':
+task.c:(.text+0xa3e): undefined reference to `rtos_diag_rt_task_init_hook'
+/usr/bin/x86_64-linux-gnu-ld.bfd: task.c:(.text+0xa91): undefined reference to `rtos_diag_rt_task_ready_hook'
+/usr/bin/x86_64-linux-gnu-ld.bfd: CMakeFiles/insight_host_delay_2.dir/__/__/kernel/task.c.o: in function `rtos_task_exit':
+task.c:(.text+0x1548): undefined reference to `rtos_diag_rt_task_exit_hook'
+/usr/bin/x86_64-linux-gnu-ld.bfd: CMakeFiles/insight_host_delay_2.dir/__/__/kernel/scheduler.c.o: in function `rtos_sched_switch':
+scheduler.c:(.text+0x723): undefined reference to `rtos_diag_rt_task_ready_hook'
+/usr/bin/x86_64-linux-gnu-ld.bfd: scheduler.c:(.text+0x991): undefined reference to `rtos_diag_rt_switch_hook'
+/usr/bin/x86_64-linux-gnu-ld.bfd: CMakeFiles/insight_host_delay_2.dir/__/__/kernel/scheduler.c.o: in function `rtos_sched_wake':
+scheduler.c:(.text+0x1069): undefined reference to `rtos_diag_rt_task_ready_hook'
+/usr/bin/x86_64-linux-gnu-ld.bfd: CMakeFiles/insight_host_delay_2.dir/__/__/kernel/scheduler.c.o: in function `rtos_sched_on_tick':
+scheduler.c:(.text+0x1140): undefined reference to `rtos_diag_rt_on_tick'
+/usr/bin/x86_64-linux-gnu-ld.bfd: CMakeFiles/insight_host_delay_2.dir/__/__/kernel/scheduler.c.o: in function `rtos_start':
+scheduler.c:(.text+0x1286): undefined reference to `rtos_diag_rt_init'
+/usr/bin/x86_64-linux-gnu-ld.bfd: CMakeFiles/insight_host_counting.dir/__/__/kernel/task.c.o: in function `task_create_common':
+task.c:(.text+0xa3e): undefined reference to `rtos_diag_rt_task_init_hook'
+/usr/bin/x86_64-linux-gnu-ld.bfd: task.c:(.text+0xa91): undefined reference to `rtos_diag_rt_task_ready_hook'
+/usr/bin/x86_64-linux-gnu-ld.bfd: CMakeFiles/insight_host_counting.dir/__/__/kernel/task.c.o: in function `rtos_task_exit':
+task.c:(.text+0x1548): undefined reference to `rtos_diag_rt_task_exit_hook'
+/usr/bin/x86_64-linux-gnu-ld.bfd: CMakeFiles/insight_host_counting.dir/__/__/kernel/scheduler.c.o: in function `rtos_sched_switch':
+scheduler.c:(.text+0x723): undefined reference to `rtos_diag_rt_task_ready_hook'
+/usr/bin/x86_64-linux-gnu-ld.bfd: scheduler.c:(.text+0x991): undefined reference to `rtos_diag_rt_switch_hook'
+/usr/bin/x86_64-linux-gnu-ld.bfd: CMakeFiles/insight_host_counting.dir/__/__/kernel/scheduler.c.o: in function `rtos_sched_wake':
+scheduler.c:(.text+0x1069): undefined reference to `rtos_diag_rt_task_ready_hook'
+/usr/bin/x86_64-linux-gnu-ld.bfd: CMakeFiles/insight_host_counting.dir/__/__/kernel/scheduler.c.o: in function `rtos_sched_on_tick':
+scheduler.c:(.text+0x1140): undefined reference to `rtos_diag_rt_on_tick'
+/usr/bin/x86_64-linux-gnu-ld.bfd: CMakeFiles/insight_host_counting.dir/__/__/kernel/scheduler.c.o: in function `rtos_start':
+scheduler.c:(.text+0x1286): undefined reference to `rtos_diag_rt_init'
+collect2: error: ld returned 1 exit status
+/usr/bin/x86_64-linux-gnu-ld.bfd: CMakeFiles/insight_host_semaphore.dir/__/__/kernel/task.c.o: in function `task_create_common':
+task.c:(.text+0xa3e): undefined reference to `rtos_diag_rt_task_init_hook'
+/usr/bin/x86_64-linux-gnu-ld.bfd: task.c:(.text+0xa91): undefined reference to `rtos_diag_rt_task_ready_hook'
+/usr/bin/x86_64-linux-gnu-ld.bfd: CMakeFiles/insight_host_semaphore.dir/__/__/kernel/task.c.o: in function `rtos_task_exit':
+task.c:(.text+0x1548): undefined reference to `rtos_diag_rt_task_exit_hook'
+/usr/bin/x86_64-linux-gnu-ld.bfd: CMakeFiles/insight_host_semaphore.dir/__/__/kernel/scheduler.c.o: in function `rtos_sched_switch':
+scheduler.c:(.text+0x723): undefined reference to `rtos_diag_rt_task_ready_hook'
+/usr/bin/x86_64-linux-gnu-ld.bfd: scheduler.c:(.text+0x991): undefined reference to `rtos_diag_rt_switch_hook'
+/usr/bin/x86_64-linux-gnu-ld.bfd: CMakeFiles/insight_host_semaphore.dir/__/__/kernel/scheduler.c.o: in function `rtos_sched_wake':
+scheduler.c:(.text+0x1069): undefined reference to `rtos_diag_rt_task_ready_hook'
+/usr/bin/x86_64-linux-gnu-ld.bfd: CMakeFiles/insight_host_semaphore.dir/__/__/kernel/scheduler.c.o: in function `rtos_sched_on_tick':
+scheduler.c:(.text+0x1140): undefined reference to `rtos_diag_rt_on_tick'
+/usr/bin/x86_64-linux-gnu-ld.bfd: CMakeFiles/insight_host_semaphore.dir/__/__/kernel/scheduler.c.o: in function `rtos_start':
+scheduler.c:(.text+0x1286): undefined reference to `rtos_diag_rt_init'
+[ 23%] Linking C executable insight_host_delay_1
+collect2: error: ld returned 1 exit status
+gmake[2]: *** [tests/host/CMakeFiles/insight_host_delay_2.dir/build.make:357: tests/host/insight_host_delay_2] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:378: tests/host/CMakeFiles/insight_host_delay_2.dir/all] Error 2
+collect2: error: ld returned 1 exit status
+gmake[2]: *** [tests/host/CMakeFiles/insight_host_counting.dir/build.make:357: tests/host/insight_host_counting] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:250: tests/host/CMakeFiles/insight_host_counting.dir/all] Error 2
+gmake[2]: *** [tests/host/CMakeFiles/insight_host_semaphore.dir/build.make:357: tests/host/insight_host_semaphore] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:282: tests/host/CMakeFiles/insight_host_semaphore.dir/all] Error 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: CMakeFiles/insight_host_delay_1.dir/__/__/kernel/task.c.o: in function `task_create_common':
+task.c:(.text+0xa3e): undefined reference to `rtos_diag_rt_task_init_hook'
+/usr/bin/x86_64-linux-gnu-ld.bfd: task.c:(.text+0xa91): undefined reference to `rtos_diag_rt_task_ready_hook'
+/usr/bin/x86_64-linux-gnu-ld.bfd: CMakeFiles/insight_host_delay_1.dir/__/__/kernel/task.c.o: in function `rtos_task_exit':
+task.c:(.text+0x1548): undefined reference to `rtos_diag_rt_task_exit_hook'
+/usr/bin/x86_64-linux-gnu-ld.bfd: CMakeFiles/insight_host_delay_1.dir/__/__/kernel/scheduler.c.o: in function `rtos_sched_switch':
+scheduler.c:(.text+0x723): undefined reference to `rtos_diag_rt_task_ready_hook'
+/usr/bin/x86_64-linux-gnu-ld.bfd: scheduler.c:(.text+0x991): undefined reference to `rtos_diag_rt_switch_hook'
+/usr/bin/x86_64-linux-gnu-ld.bfd: CMakeFiles/insight_host_delay_1.dir/__/__/kernel/scheduler.c.o: in function `rtos_sched_wake':
+scheduler.c:(.text+0x1069): undefined reference to `rtos_diag_rt_task_ready_hook'
+/usr/bin/x86_64-linux-gnu-ld.bfd: CMakeFiles/insight_host_delay_1.dir/__/__/kernel/scheduler.c.o: in function `rtos_sched_on_tick':
+scheduler.c:(.text+0x1140): undefined reference to `rtos_diag_rt_on_tick'
+/usr/bin/x86_64-linux-gnu-ld.bfd: CMakeFiles/insight_host_delay_1.dir/__/__/kernel/scheduler.c.o: in function `rtos_start':
+scheduler.c:(.text+0x1286): undefined reference to `rtos_diag_rt_init'
+collect2: error: ld returned 1 exit status
+gmake[2]: *** [tests/host/CMakeFiles/insight_host_delay_1.dir/build.make:357: tests/host/insight_host_delay_1] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:346: tests/host/CMakeFiles/insight_host_delay_1.dir/all] Error 2
+gmake: *** [Makefile:101: all] Error 2

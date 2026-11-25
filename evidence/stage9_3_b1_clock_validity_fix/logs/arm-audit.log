@@ -1,0 +1,26 @@
+DISPLAY_RTOS_O2_Trace insightrtos_display RT True flash 51172 SRAM including MSP 49344 RT records 1016 TCB 72 heap 0 bin sha256 69f18455f5c75c858375fa9fbf98245fcf5d6f2db87166e71a2fbe5e6a52c662
+  Tag_CPU_arch: v7
+  Tag_CPU_arch_profile: Microcontroller
+  Tag_THUMB_ISA_use: Thumb-2
+DISPLAY_RTOS_O2_Trace_NoRT insightrtos_display RT False flash 48908 SRAM including MSP 48016 RT records 0 TCB 72 heap 0 bin sha256 607abb4dd34294ec09f0cde742604b3b5b6ed1000fdfd9c99b0b22d353e2c364
+  Tag_CPU_arch: v7
+  Tag_CPU_arch_profile: Microcontroller
+  Tag_THUMB_ISA_use: Thumb-2
+DISPLAY_RTOS_Debug_Trace insightrtos_display RT True flash 72576 SRAM including MSP 49336 RT records 1016 TCB 72 heap 0 bin sha256 000e79d9b16b0c54d55a17823714cc31da130e0a18f31dc246194f103051f1fd
+  Tag_CPU_arch: v7
+  Tag_CPU_arch_profile: Microcontroller
+  Tag_THUMB_ISA_use: Thumb-2
+DISPLAY_RTOS_Debug_Trace_NoRT insightrtos_display RT False flash 68764 SRAM including MSP 48008 RT records 0 TCB 72 heap 0 bin sha256 47648dacf48966985cdae783baff8f5c393b5383d9a595054bd333ee505b722a
+  Tag_CPU_arch: v7
+  Tag_CPU_arch_profile: Microcontroller
+  Tag_THUMB_ISA_use: Thumb-2
+rtos_diag_rt_configure 252
+rtos_diag_rt_job_release 452
+rtos_diag_rt_job_complete 68
+rtos_diag_rt_job_abort 64
+rtos_diag_rt_job_snapshot 296
+rtos_diag_rt_clock_cap 116
+DISPLAY_RTOS_O2_Trace full-api RT True flash 52780 SRAM including MSP 49352 RT records 1024 TCB 72 heap 0 bin sha256 7c31b8cfdac16f0ae9af78cbd64b2c0f78e1aa5d179963df71eee0eb40b25b00
+  Tag_CPU_arch: v7
+  Tag_CPU_arch_profile: Microcontroller
+  Tag_THUMB_ISA_use: Thumb-2

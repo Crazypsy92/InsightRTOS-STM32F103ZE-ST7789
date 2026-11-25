@@ -350,6 +350,7 @@ _Noreturn void rtos_task_exit(void)
     RTOS_ASSERT(rtos_current_task->next == NULL);
     RTOS_ASSERT(rtos_current_task->delay_next == NULL);
     RTOS_ASSERT(rtos_current_task->effective_priority == rtos_current_task->base_priority);
+    rtos_diag_rt_task_exit_hook(rtos_current_task);
     rtos_current_task->state = RTOS_TASK_TERMINATED; RTOS_TRACE(RTOS_TRACE_TASK_TERMINATED, rtos_current_task, 0U, 0U);
     rtos_sched_request(RTOS_SCHED_REASON_EXIT);
     rtos_critical_exit(irq_state);
