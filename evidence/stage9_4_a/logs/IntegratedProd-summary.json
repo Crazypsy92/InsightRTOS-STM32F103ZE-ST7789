@@ -1,0 +1,92 @@
+{
+  "production": {
+    "publication_ticks": [
+      401,
+      401
+    ],
+    "queue_depths": [
+      0,
+      0,
+      0,
+      1,
+      1
+    ],
+    "latest_event_id": 0,
+    "confirmed_id": 0,
+    "ack": null,
+    "trace": {
+      "half_open_window": [
+        3258,
+        3386
+      ],
+      "count": 128,
+      "copied": 8,
+      "overwritten_total": 3258,
+      "producer_dropped": 0,
+      "status": 0,
+      "switch_reason": "block_or_wake",
+      "switch_reference_stale": false
+    },
+    "clock": {
+      "clock_type": 2,
+      "frequency_hz": 72000000,
+      "tick_hz": 100,
+      "wrap_period_ticks": 5965,
+      "flags": 1
+    },
+    "rt_tasks": [
+      {
+        "slot": 0,
+        "generation": 1,
+        "dispatch_count": 1,
+        "charged_cycles": 3828,
+        "max_ready_latency_cycles": 30206,
+        "flags": 1
+      },
+      {
+        "slot": 1,
+        "generation": 1,
+        "dispatch_count": 402,
+        "charged_cycles": 1669126,
+        "max_ready_latency_cycles": 25000,
+        "flags": 1
+      },
+      {
+        "slot": 2,
+        "generation": 1,
+        "dispatch_count": 60,
+        "charged_cycles": 23805810,
+        "max_ready_latency_cycles": 20584,
+        "flags": 1
+      },
+      {
+        "slot": 3,
+        "generation": 1,
+        "dispatch_count": 5,
+        "charged_cycles": 63558,
+        "max_ready_latency_cycles": 1074106,
+        "flags": 1
+      },
+      {
+        "slot": 8,
+        "generation": 1,
+        "dispatch_count": 370,
+        "charged_cycles": 263541750,
+        "max_ready_latency_cycles": 0,
+        "flags": 1
+      }
+    ],
+    "job": {
+      "completed": 0,
+      "misses": 0,
+      "overruns": 0,
+      "last_attempt": null
+    },
+    "dl": {
+      "observation": "NO_DEADLOCK_OBSERVED",
+      "capture_tick": 401,
+      "nodes": 4,
+      "edges": 0
+    }
+  }
+}

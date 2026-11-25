@@ -1,4 +1,7 @@
 #include "app_tasks.h"
+#if defined(INSIGHT_APP_INTEGRATED_DIAGNOSTICS)
+#include "app_diagnostics.h"
+#endif
 #if defined(INSIGHT_TEST_JOB)
 #include "job_fixture.h"
 #endif
@@ -117,6 +120,9 @@ static void controller_task(void *argument)
     display_ack_t view = {0};
     display_key_t pending_key = {0};
     bool key_pending = false;
+#if defined(INSIGHT_APP_INTEGRATED_DIAGNOSTICS)
+    App_Diag_ConfigureController(g_display_task_refs[1]);
+#endif
 
     for (;;) {
         ++g_display_statistics.task_runs[1];
@@ -167,9 +173,14 @@ static void controller_task(void *argument)
                 ++g_display_statistics.controller_events;
                 key_pending = true;
             }
-            if (!send_command(&sequence, pending_key.id, pending_key.event, pending_key.at_ms)) {
-                break;
-            }
+#if defined(INSIGHT_APP_INTEGRATED_DIAGNOSTICS)
+            const uint32_t job_id = App_Diag_BeginCommand(pending_key.id);
+#endif
+            const bool sent = send_command(&sequence, pending_key.id, pending_key.event, pending_key.at_ms);
+#if defined(INSIGHT_APP_INTEGRATED_DIAGNOSTICS)
+            App_Diag_EndCommand(job_id, sent);
+#endif
+            if (!sent) break;
             key_pending = false;
         }
 
@@ -266,7 +277,9 @@ static void monitor_task(void *argument)
             g_display_statistics.snapshots[i] = snapshot;
         }
 
-#if defined(INSIGHT_DIAG_RT) && (INSIGHT_DIAG_RT != 0)
+#if defined(INSIGHT_APP_INTEGRATED_DIAGNOSTICS)
+        App_Diag_Publish();
+#elif defined(INSIGHT_DIAG_RT) && (INSIGHT_DIAG_RT != 0)
         app_diag_rt_export_t frame = {0};
         if (rtos_diag_rt_clock_cap(&frame.clock_cap) == RTOS_OK) {
             bool complete = true;

@@ -126,3 +126,27 @@ void App_Events_GetSnapshot(display_event_tracker_t *out_snapshot)
     *out_snapshot = *(display_event_tracker_t *)&g_event_tracker;
     rtos_critical_exit(saved);
 }
+
+
+app_event_ack_timing_t App_Events_AckTiming(const display_event_tracker_t *snapshot)
+{
+    app_event_ack_timing_t timing = {0};
+    if (snapshot == NULL || snapshot->confirmed_id == 0U) return timing;
+
+    const display_tracked_event_t *event =
+        &snapshot->history[snapshot->confirmed_id % APP_EVENT_HISTORY_CAPACITY];
+    if (event->id != snapshot->confirmed_id || event->ack_ms != snapshot->completed_ms ||
+        (event->stage != EVENT_STAGE_ACKED && event->stage != EVENT_STAGE_FAILED)) {
+        return timing;
+    }
+    const uint32_t latency = event->ack_ms - event->timestamp_ms;
+    if (latency > UINT32_MAX / 2U) return timing;
+
+    timing.valid = 1U;
+    timing.id = event->id;
+    timing.timestamp_ms = event->timestamp_ms;
+    timing.ack_ms = event->ack_ms;
+    timing.latency_ms = latency;
+    timing.error = event->error;
+    return timing;
+}

@@ -143,3 +143,15 @@ if(INSIGHT_TEST_MSP)
         target_include_directories(${target} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/tests/hardware)
     endforeach()
 endif()
+
+
+option(INSIGHT_APP_INTEGRATED_DIAGNOSTICS "Export combined display diagnostics in Monitor" OFF)
+if(INSIGHT_APP_INTEGRATED_DIAGNOSTICS)
+    if(NOT INSIGHT_DISPLAY_RTOS OR NOT INSIGHT_RTOS_ENABLED OR NOT INSIGHT_TRACE_ENABLED OR
+       NOT INSIGHT_DIAG_EXPLAIN OR NOT INSIGHT_DIAG_RT OR NOT INSIGHT_DIAG_DL OR
+       INSIGHT_TEST_MSP OR INSIGHT_TEST_TIMING OR INSIGHT_TEST_JOB)
+        message(FATAL_ERROR "Integrated diagnostics require display, Trace/Explain, RT and DL without other fixtures")
+    endif()
+    target_sources(${CMAKE_PROJECT_NAME} PRIVATE App/Src/app_diagnostics.c)
+    target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE INSIGHT_APP_INTEGRATED_DIAGNOSTICS=1)
+endif()

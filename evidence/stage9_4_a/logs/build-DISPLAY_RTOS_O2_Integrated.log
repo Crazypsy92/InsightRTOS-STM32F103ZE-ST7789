@@ -1,0 +1,72 @@
+-- The C compiler identification is GNU 14.2.1
+-- The CXX compiler identification is GNU 14.2.1
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/arm-none-eabi-gcc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/arm-none-eabi-g++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+Build type: RelWithDebInfo
+-- The ASM compiler identification is GNU
+-- Found assembler: /usr/bin/arm-none-eabi-gcc
+-- Configuring done (0.6s)
+-- Generating done (0.0s)
+-- Build files have been written to: /tmp/insight-94a.BaWnO7/work/build/DISPLAY_RTOS_O2_Integrated
+[1/51] Building C object Middlewares/InsightRTOS/CMakeFiles/insightrtos_kernel.dir/lib/memcpy.c.obj
+[2/51] Building C object Middlewares/InsightRTOS/CMakeFiles/insightrtos_kernel.dir/kernel/critical.c.obj
+[3/51] Building C object Middlewares/InsightRTOS/CMakeFiles/insightrtos_kernel.dir/kernel/ready_queue.c.obj
+[4/51] Building C object Middlewares/InsightRTOS/CMakeFiles/insightrtos_kernel.dir/kernel/tick.c.obj
+[5/51] Building C object Middlewares/InsightRTOS/CMakeFiles/insightrtos_kernel.dir/kernel/scheduler.c.obj
+[6/51] Building C object Middlewares/InsightRTOS/CMakeFiles/insightrtos_kernel.dir/kernel/deadlock.c.obj
+[7/51] Building C object Middlewares/InsightRTOS/CMakeFiles/insightrtos_kernel.dir/kernel/delay.c.obj
+[8/51] Building C object Middlewares/InsightRTOS/CMakeFiles/insightrtos_kernel.dir/kernel/delay_queue.c.obj
+[9/51] Building C object Middlewares/InsightRTOS/CMakeFiles/insightrtos_kernel.dir/kernel/queue.c.obj
+[10/51] Building C object Middlewares/InsightRTOS/CMakeFiles/insightrtos_kernel.dir/kernel/task.c.obj
+[11/51] Building C object Middlewares/InsightRTOS/CMakeFiles/insightrtos_kernel.dir/kernel/priority.c.obj
+[12/51] Building ASM object Middlewares/InsightRTOS/CMakeFiles/insightrtos_kernel.dir/arch/arm/cortex_m3/portasm.S.obj
+[13/51] Building C object Middlewares/InsightRTOS/CMakeFiles/insightrtos_kernel.dir/kernel/diag_rt.c.obj
+[14/51] Building C object Middlewares/InsightRTOS/CMakeFiles/insightrtos_kernel.dir/kernel/priority_graph.c.obj
+[15/51] Building C object Middlewares/InsightRTOS/CMakeFiles/insightrtos_kernel.dir/kernel/wait.c.obj
+[16/51] Building C object Middlewares/InsightRTOS/CMakeFiles/insightrtos_kernel.dir/kernel/semaphore.c.obj
+[17/51] Building C object Middlewares/InsightRTOS/CMakeFiles/insightrtos_kernel.dir/kernel/mutex.c.obj
+[18/51] Building C object Middlewares/InsightRTOS/CMakeFiles/insightrtos_kernel.dir/arch/arm/cortex_m3/systick.c.obj
+[19/51] Building C object Middlewares/InsightRTOS/CMakeFiles/insightrtos_kernel.dir/arch/arm/cortex_m3/port.c.obj
+[20/51] Building ASM object CMakeFiles/insightrtos_display.dir/startup_stm32f103xe.s.obj
+[21/51] Building C object Middlewares/InsightRTOS/CMakeFiles/insightrtos_kernel.dir/arch/arm/cortex_m3/systick_config.c.obj
+[22/51] Building C object CMakeFiles/insightrtos_display.dir/Core/Src/gpio.c.obj
+[23/51] Building C object CMakeFiles/insightrtos_display.dir/Core/Src/stm32f1xx_it.c.obj
+[24/51] Building C object CMakeFiles/insightrtos_display.dir/Core/Src/main.c.obj
+[25/51] Building C object CMakeFiles/insightrtos_display.dir/BSP/Src/multi_button.c.obj
+[26/51] Building C object CMakeFiles/insightrtos_display.dir/BSP/Src/bsp_spi.c.obj
+[27/51] Building C object CMakeFiles/insightrtos_display.dir/BSP/Src/key_port.c.obj
+[28/51] Building C object CMakeFiles/insightrtos_display.dir/BSP/Src/lcd_fonts.c.obj
+[29/51] Building C object CMakeFiles/insightrtos_display.dir/BSP/Src/lcd_cn16.c.obj
+[30/51] Building C object CMakeFiles/insightrtos_display.dir/Middlewares/InsightRTOS/port/insight_board_port.c.obj
+[31/51] Building C object CMakeFiles/insightrtos_display.dir/Middlewares/InsightRTOS/port/insight_timebase.c.obj
+[32/51] Building C object CMakeFiles/insightrtos_display.dir/BSP/Src/st7789_port.c.obj
+[33/51] Building C object Middlewares/InsightRTOS/CMakeFiles/insightrtos_kernel.dir/kernel/trace.c.obj
+[34/51] Building C object CMakeFiles/insightrtos_display.dir/Core/display_app.c.obj
+[35/51] Building C object CMakeFiles/insightrtos_display.dir/App/Src/app_ipc.c.obj
+[36/51] Building C object CMakeFiles/insightrtos_display.dir/BSP/Src/spi_stm32_ll.c.obj
+[37/51] Building C object CMakeFiles/insightrtos_display.dir/App/Src/app_tasks.c.obj
+[38/51] Building C object CMakeFiles/insightrtos_display.dir/Core/display_policy.c.obj
+[39/51] Building C object CMakeFiles/insightrtos_display.dir/App/Src/app_events.c.obj
+[40/51] Building C object cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Core/Src/system_stm32f1xx.c.obj
+[41/51] Building C object cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_gpio.c.obj
+[42/51] Building C object cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_pwr.c.obj
+[43/51] Building C object CMakeFiles/insightrtos_display.dir/Core/display_pages.c.obj
+[44/51] Building C object cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_exti.c.obj
+[45/51] Building C object CMakeFiles/insightrtos_display.dir/App/Src/app_diagnostics.c.obj
+[46/51] Linking C static library Middlewares/InsightRTOS/libinsightrtos_kernel.a
+[47/51] Building C object cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_rcc.c.obj
+[48/51] Building C object cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_spi.c.obj
+[49/51] Building C object CMakeFiles/insightrtos_display.dir/BSP/Src/st7789.c.obj
+[50/51] Building C object CMakeFiles/insightrtos_display.dir/Core/display_ui.c.obj
+[51/51] Linking C executable insightrtos_display.elf
+Memory region         Used Size  Region Size  %age Used
+             RAM:         64 KB        64 KB    100.00%
+           FLASH:       53676 B       512 KB     10.24%
