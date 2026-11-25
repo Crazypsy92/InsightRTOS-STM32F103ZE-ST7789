@@ -1,0 +1,3321 @@
+{
+  "status": "PASS",
+  "report": {
+    "state": 2,
+    "scenario": 3,
+    "round": 1,
+    "start_tick": 0,
+    "end_tick": 838,
+    "priorities": [
+      2,
+      4,
+      5,
+      5,
+      6
+    ],
+    "refs": [
+      {
+        "slot": 0,
+        "generation": 1
+      },
+      {
+        "slot": 1,
+        "generation": 1
+      },
+      {
+        "slot": 2,
+        "generation": 1
+      },
+      {
+        "slot": 3,
+        "generation": 1
+      },
+      {
+        "slot": 4,
+        "generation": 1
+      }
+    ],
+    "cases": [
+      {
+        "graph": {
+          "header": {
+            "capture_tick": 796,
+            "node_count": 5,
+            "edge_count": 3,
+            "mutex_count": 1,
+            "flags": 0,
+            "captured": 1,
+            "analyzed": 1,
+            "reserved0": 0,
+            "reserved1": [
+              0,
+              0
+            ]
+          },
+          "nodes": [
+            {
+              "slot": 0,
+              "state": 4,
+              "generation": 1,
+              "base_priority": 2,
+              "effective_priority": 2,
+              "owner_slot": 65535,
+              "owner_generation": 0,
+              "resource_id": 0,
+              "edge_flags": 0,
+              "wake_tick": 0
+            },
+            {
+              "slot": 1,
+              "state": 4,
+              "generation": 1,
+              "base_priority": 4,
+              "effective_priority": 4,
+              "owner_slot": 4,
+              "owner_generation": 1,
+              "resource_id": 1,
+              "edge_flags": 1,
+              "wake_tick": 893
+            },
+            {
+              "slot": 2,
+              "state": 4,
+              "generation": 1,
+              "base_priority": 5,
+              "effective_priority": 5,
+              "owner_slot": 4,
+              "owner_generation": 1,
+              "resource_id": 1,
+              "edge_flags": 1,
+              "wake_tick": 894
+            },
+            {
+              "slot": 3,
+              "state": 4,
+              "generation": 1,
+              "base_priority": 5,
+              "effective_priority": 5,
+              "owner_slot": 4,
+              "owner_generation": 1,
+              "resource_id": 1,
+              "edge_flags": 1,
+              "wake_tick": 895
+            },
+            {
+              "slot": 4,
+              "state": 2,
+              "generation": 1,
+              "base_priority": 6,
+              "effective_priority": 6,
+              "owner_slot": 65535,
+              "owner_generation": 0,
+              "resource_id": 0,
+              "edge_flags": 0,
+              "wake_tick": 0
+            },
+            {
+              "slot": 0,
+              "state": 0,
+              "generation": 0,
+              "base_priority": 0,
+              "effective_priority": 0,
+              "owner_slot": 0,
+              "owner_generation": 0,
+              "resource_id": 0,
+              "edge_flags": 0,
+              "wake_tick": 0
+            },
+            {
+              "slot": 0,
+              "state": 0,
+              "generation": 0,
+              "base_priority": 0,
+              "effective_priority": 0,
+              "owner_slot": 0,
+              "owner_generation": 0,
+              "resource_id": 0,
+              "edge_flags": 0,
+              "wake_tick": 0
+            },
+            {
+              "slot": 0,
+              "state": 0,
+              "generation": 0,
+              "base_priority": 0,
+              "effective_priority": 0,
+              "owner_slot": 0,
+              "owner_generation": 0,
+              "resource_id": 0,
+              "edge_flags": 0,
+              "wake_tick": 0
+            }
+          ],
+          "resource_keys": [
+            536871880,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "task_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            0,
+            0,
+            0
+          ],
+          "scratch": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            0,
+            0,
+            0,
+            3,
+            4,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "result": {
+            "deadlock_detected": 0,
+            "cycle_length": 0,
+            "flags": 0,
+            "capture_tick": 796,
+            "cycle_tasks": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "cycle_mutexes": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "earliest_due_tick": 0,
+            "finite_edge_count": 0,
+            "reserved": 0
+          },
+          "reserved": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "ready": [
+          {
+            "identity": {
+              "slot": 0,
+              "generation": 0
+            },
+            "state": 0,
+            "base_priority": 0,
+            "effective_priority": 0
+          },
+          {
+            "identity": {
+              "slot": 0,
+              "generation": 0
+            },
+            "state": 0,
+            "base_priority": 0,
+            "effective_priority": 0
+          },
+          {
+            "identity": {
+              "slot": 0,
+              "generation": 0
+            },
+            "state": 0,
+            "base_priority": 0,
+            "effective_priority": 0
+          },
+          {
+            "identity": {
+              "slot": 0,
+              "generation": 0
+            },
+            "state": 0,
+            "base_priority": 0,
+            "effective_priority": 0
+          }
+        ],
+        "final": [
+          {
+            "identity": {
+              "slot": 0,
+              "generation": 1
+            },
+            "state": 4,
+            "base_priority": 2,
+            "effective_priority": 2
+          },
+          {
+            "identity": {
+              "slot": 1,
+              "generation": 1
+            },
+            "state": 4,
+            "base_priority": 4,
+            "effective_priority": 4
+          },
+          {
+            "identity": {
+              "slot": 2,
+              "generation": 1
+            },
+            "state": 4,
+            "base_priority": 5,
+            "effective_priority": 5
+          },
+          {
+            "identity": {
+              "slot": 3,
+              "generation": 1
+            },
+            "state": 4,
+            "base_priority": 5,
+            "effective_priority": 5
+          }
+        ],
+        "switches": [
+          {
+            "sequence": 12845,
+            "tick": 796,
+            "generation": 1,
+            "arg0": 1,
+            "arg1": 279314436,
+            "slot": 2,
+            "event_type": 12
+          },
+          {
+            "sequence": 12850,
+            "tick": 796,
+            "generation": 1,
+            "arg0": 1,
+            "arg1": 279248898,
+            "slot": 3,
+            "event_type": 12
+          },
+          {
+            "sequence": 12855,
+            "tick": 796,
+            "generation": 1,
+            "arg0": 1,
+            "arg1": 277151747,
+            "slot": 1,
+            "event_type": 12
+          },
+          {
+            "sequence": 12858,
+            "tick": 796,
+            "generation": 0,
+            "arg0": 1,
+            "arg1": 402915329,
+            "slot": 65535,
+            "event_type": 12
+          },
+          {
+            "sequence": 12863,
+            "tick": 797,
+            "generation": 1,
+            "arg0": 0,
+            "arg1": 415301631,
+            "slot": 4,
+            "event_type": 12
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          }
+        ],
+        "explanations": [
+          {
+            "kind": 12,
+            "primary_slot": 2,
+            "primary_generation": 1,
+            "primary_stale": 0,
+            "related_slot": 4,
+            "related_generation": 1,
+            "related_stale": 0,
+            "previous_priority": 6,
+            "next_priority": 5,
+            "commit_class": 4,
+            "reason_flags": 0,
+            "aux_value": 0
+          },
+          {
+            "kind": 12,
+            "primary_slot": 3,
+            "primary_generation": 1,
+            "primary_stale": 0,
+            "related_slot": 2,
+            "related_generation": 1,
+            "related_stale": 0,
+            "previous_priority": 5,
+            "next_priority": 5,
+            "commit_class": 4,
+            "reason_flags": 0,
+            "aux_value": 0
+          },
+          {
+            "kind": 12,
+            "primary_slot": 1,
+            "primary_generation": 1,
+            "primary_stale": 0,
+            "related_slot": 3,
+            "related_generation": 1,
+            "related_stale": 0,
+            "previous_priority": 5,
+            "next_priority": 4,
+            "commit_class": 4,
+            "reason_flags": 0,
+            "aux_value": 0
+          },
+          {
+            "kind": 12,
+            "primary_slot": 65535,
+            "primary_generation": 0,
+            "primary_stale": 0,
+            "related_slot": 1,
+            "related_generation": 1,
+            "related_stale": 0,
+            "previous_priority": 4,
+            "next_priority": 0,
+            "commit_class": 6,
+            "reason_flags": 0,
+            "aux_value": 0
+          },
+          {
+            "kind": 12,
+            "primary_slot": 4,
+            "primary_generation": 1,
+            "primary_stale": 0,
+            "related_slot": 65535,
+            "related_generation": 0,
+            "related_stale": 0,
+            "previous_priority": 0,
+            "next_priority": 6,
+            "commit_class": 6,
+            "reason_flags": 0,
+            "aux_value": 0
+          },
+          {
+            "kind": 0,
+            "primary_slot": 0,
+            "primary_generation": 0,
+            "primary_stale": 0,
+            "related_slot": 0,
+            "related_generation": 0,
+            "related_stale": 0,
+            "previous_priority": 0,
+            "next_priority": 0,
+            "commit_class": 0,
+            "reason_flags": 0,
+            "aux_value": 0
+          },
+          {
+            "kind": 0,
+            "primary_slot": 0,
+            "primary_generation": 0,
+            "primary_stale": 0,
+            "related_slot": 0,
+            "related_generation": 0,
+            "related_stale": 0,
+            "previous_priority": 0,
+            "next_priority": 0,
+            "commit_class": 0,
+            "reason_flags": 0,
+            "aux_value": 0
+          },
+          {
+            "kind": 0,
+            "primary_slot": 0,
+            "primary_generation": 0,
+            "primary_stale": 0,
+            "related_slot": 0,
+            "related_generation": 0,
+            "related_stale": 0,
+            "previous_priority": 0,
+            "next_priority": 0,
+            "commit_class": 0,
+            "reason_flags": 0,
+            "aux_value": 0
+          },
+          {
+            "kind": 0,
+            "primary_slot": 0,
+            "primary_generation": 0,
+            "primary_stale": 0,
+            "related_slot": 0,
+            "related_generation": 0,
+            "related_stale": 0,
+            "previous_priority": 0,
+            "next_priority": 0,
+            "commit_class": 0,
+            "reason_flags": 0,
+            "aux_value": 0
+          },
+          {
+            "kind": 0,
+            "primary_slot": 0,
+            "primary_generation": 0,
+            "primary_stale": 0,
+            "related_slot": 0,
+            "related_generation": 0,
+            "related_stale": 0,
+            "previous_priority": 0,
+            "next_priority": 0,
+            "commit_class": 0,
+            "reason_flags": 0,
+            "aux_value": 0
+          },
+          {
+            "kind": 0,
+            "primary_slot": 0,
+            "primary_generation": 0,
+            "primary_stale": 0,
+            "related_slot": 0,
+            "related_generation": 0,
+            "related_stale": 0,
+            "previous_priority": 0,
+            "next_priority": 0,
+            "commit_class": 0,
+            "reason_flags": 0,
+            "aux_value": 0
+          },
+          {
+            "kind": 0,
+            "primary_slot": 0,
+            "primary_generation": 0,
+            "primary_stale": 0,
+            "related_slot": 0,
+            "related_generation": 0,
+            "related_stale": 0,
+            "previous_priority": 0,
+            "next_priority": 0,
+            "commit_class": 0,
+            "reason_flags": 0,
+            "aux_value": 0
+          },
+          {
+            "kind": 0,
+            "primary_slot": 0,
+            "primary_generation": 0,
+            "primary_stale": 0,
+            "related_slot": 0,
+            "related_generation": 0,
+            "related_stale": 0,
+            "previous_priority": 0,
+            "next_priority": 0,
+            "commit_class": 0,
+            "reason_flags": 0,
+            "aux_value": 0
+          },
+          {
+            "kind": 0,
+            "primary_slot": 0,
+            "primary_generation": 0,
+            "primary_stale": 0,
+            "related_slot": 0,
+            "related_generation": 0,
+            "related_stale": 0,
+            "previous_priority": 0,
+            "next_priority": 0,
+            "commit_class": 0,
+            "reason_flags": 0,
+            "aux_value": 0
+          },
+          {
+            "kind": 0,
+            "primary_slot": 0,
+            "primary_generation": 0,
+            "primary_stale": 0,
+            "related_slot": 0,
+            "related_generation": 0,
+            "related_stale": 0,
+            "previous_priority": 0,
+            "next_priority": 0,
+            "commit_class": 0,
+            "reason_flags": 0,
+            "aux_value": 0
+          },
+          {
+            "kind": 0,
+            "primary_slot": 0,
+            "primary_generation": 0,
+            "primary_stale": 0,
+            "related_slot": 0,
+            "related_generation": 0,
+            "related_stale": 0,
+            "previous_priority": 0,
+            "next_priority": 0,
+            "commit_class": 0,
+            "reason_flags": 0,
+            "aux_value": 0
+          }
+        ],
+        "order": [
+          {
+            "operation": 6,
+            "worker": 2,
+            "tick": 796
+          },
+          {
+            "operation": 6,
+            "worker": 3,
+            "tick": 796
+          },
+          {
+            "operation": 6,
+            "worker": 1,
+            "tick": 796
+          },
+          {
+            "operation": 0,
+            "worker": 0,
+            "tick": 0
+          },
+          {
+            "operation": 0,
+            "worker": 0,
+            "tick": 0
+          },
+          {
+            "operation": 0,
+            "worker": 0,
+            "tick": 0
+          },
+          {
+            "operation": 0,
+            "worker": 0,
+            "tick": 0
+          },
+          {
+            "operation": 0,
+            "worker": 0,
+            "tick": 0
+          },
+          {
+            "operation": 0,
+            "worker": 0,
+            "tick": 0
+          },
+          {
+            "operation": 0,
+            "worker": 0,
+            "tick": 0
+          },
+          {
+            "operation": 0,
+            "worker": 0,
+            "tick": 0
+          },
+          {
+            "operation": 0,
+            "worker": 0,
+            "tick": 0
+          },
+          {
+            "operation": 0,
+            "worker": 0,
+            "tick": 0
+          },
+          {
+            "operation": 0,
+            "worker": 0,
+            "tick": 0
+          },
+          {
+            "operation": 0,
+            "worker": 0,
+            "tick": 0
+          },
+          {
+            "operation": 0,
+            "worker": 0,
+            "tick": 0
+          }
+        ],
+        "workers": [
+          {
+            "tick_resume": 0,
+            "owner_when_granted": 0,
+            "release_count": 0,
+            "initial": 0,
+            "repeated": 0,
+            "not_owner": 0,
+            "no_wait": 0,
+            "wait": 0,
+            "release": 0
+          },
+          {
+            "tick_resume": 796,
+            "owner_when_granted": 2,
+            "release_count": 1,
+            "initial": 0,
+            "repeated": 0,
+            "not_owner": 0,
+            "no_wait": 0,
+            "wait": 0,
+            "release": 0
+          },
+          {
+            "tick_resume": 796,
+            "owner_when_granted": 3,
+            "release_count": 1,
+            "initial": 0,
+            "repeated": 0,
+            "not_owner": 8,
+            "no_wait": 5,
+            "wait": 0,
+            "release": 0
+          },
+          {
+            "tick_resume": 796,
+            "owner_when_granted": 4,
+            "release_count": 1,
+            "initial": 0,
+            "repeated": 0,
+            "not_owner": 0,
+            "no_wait": 0,
+            "wait": 0,
+            "release": 0
+          }
+        ],
+        "switches_count": 5,
+        "order_count": 3,
+        "pass_rounds": 100,
+        "owner_a": 0,
+        "owner_b": 0,
+        "waiter_a": 0,
+        "waiter_b": 0,
+        "timeout_a": 0,
+        "timeout_b": 0,
+        "direct_owner": 3,
+        "direct_state": 1,
+        "owner_lock": 0,
+        "owner_repeat": 2,
+        "owner_unlock": 0
+      },
+      {
+        "graph": {
+          "header": {
+            "capture_tick": 799,
+            "node_count": 5,
+            "edge_count": 1,
+            "mutex_count": 1,
+            "flags": 0,
+            "captured": 1,
+            "analyzed": 1,
+            "reserved0": 0,
+            "reserved1": [
+              0,
+              0
+            ]
+          },
+          "nodes": [
+            {
+              "slot": 0,
+              "state": 4,
+              "generation": 1,
+              "base_priority": 2,
+              "effective_priority": 5,
+              "owner_slot": 65535,
+              "owner_generation": 0,
+              "resource_id": 0,
+              "edge_flags": 2,
+              "wake_tick": 0
+            },
+            {
+              "slot": 1,
+              "state": 4,
+              "generation": 1,
+              "base_priority": 4,
+              "effective_priority": 4,
+              "owner_slot": 65535,
+              "owner_generation": 0,
+              "resource_id": 0,
+              "edge_flags": 0,
+              "wake_tick": 0
+            },
+            {
+              "slot": 2,
+              "state": 4,
+              "generation": 1,
+              "base_priority": 5,
+              "effective_priority": 5,
+              "owner_slot": 0,
+              "owner_generation": 1,
+              "resource_id": 1,
+              "edge_flags": 1,
+              "wake_tick": 898
+            },
+            {
+              "slot": 3,
+              "state": 4,
+              "generation": 1,
+              "base_priority": 5,
+              "effective_priority": 5,
+              "owner_slot": 65535,
+              "owner_generation": 0,
+              "resource_id": 0,
+              "edge_flags": 0,
+              "wake_tick": 0
+            },
+            {
+              "slot": 4,
+              "state": 2,
+              "generation": 1,
+              "base_priority": 6,
+              "effective_priority": 6,
+              "owner_slot": 65535,
+              "owner_generation": 0,
+              "resource_id": 0,
+              "edge_flags": 0,
+              "wake_tick": 0
+            },
+            {
+              "slot": 0,
+              "state": 0,
+              "generation": 0,
+              "base_priority": 0,
+              "effective_priority": 0,
+              "owner_slot": 0,
+              "owner_generation": 0,
+              "resource_id": 0,
+              "edge_flags": 0,
+              "wake_tick": 0
+            },
+            {
+              "slot": 0,
+              "state": 0,
+              "generation": 0,
+              "base_priority": 0,
+              "effective_priority": 0,
+              "owner_slot": 0,
+              "owner_generation": 0,
+              "resource_id": 0,
+              "edge_flags": 0,
+              "wake_tick": 0
+            },
+            {
+              "slot": 0,
+              "state": 0,
+              "generation": 0,
+              "base_priority": 0,
+              "effective_priority": 0,
+              "owner_slot": 0,
+              "owner_generation": 0,
+              "resource_id": 0,
+              "edge_flags": 0,
+              "wake_tick": 0
+            }
+          ],
+          "resource_keys": [
+            536871880,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "task_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            0,
+            0,
+            0
+          ],
+          "scratch": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            0,
+            0,
+            0,
+            4,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "result": {
+            "deadlock_detected": 0,
+            "cycle_length": 0,
+            "flags": 0,
+            "capture_tick": 799,
+            "cycle_tasks": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "cycle_mutexes": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "earliest_due_tick": 0,
+            "finite_edge_count": 0,
+            "reserved": 0
+          },
+          "reserved": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "ready": [
+          {
+            "identity": {
+              "slot": 0,
+              "generation": 1
+            },
+            "state": 1,
+            "base_priority": 2,
+            "effective_priority": 5
+          },
+          {
+            "identity": {
+              "slot": 1,
+              "generation": 1
+            },
+            "state": 1,
+            "base_priority": 4,
+            "effective_priority": 4
+          },
+          {
+            "identity": {
+              "slot": 0,
+              "generation": 0
+            },
+            "state": 0,
+            "base_priority": 0,
+            "effective_priority": 0
+          },
+          {
+            "identity": {
+              "slot": 0,
+              "generation": 0
+            },
+            "state": 0,
+            "base_priority": 0,
+            "effective_priority": 0
+          }
+        ],
+        "final": [
+          {
+            "identity": {
+              "slot": 0,
+              "generation": 1
+            },
+            "state": 4,
+            "base_priority": 2,
+            "effective_priority": 2
+          },
+          {
+            "identity": {
+              "slot": 1,
+              "generation": 1
+            },
+            "state": 4,
+            "base_priority": 4,
+            "effective_priority": 4
+          },
+          {
+            "identity": {
+              "slot": 2,
+              "generation": 1
+            },
+            "state": 4,
+            "base_priority": 5,
+            "effective_priority": 5
+          },
+          {
+            "identity": {
+              "slot": 3,
+              "generation": 1
+            },
+            "state": 4,
+            "base_priority": 5,
+            "effective_priority": 5
+          }
+        ],
+        "switches": [
+          {
+            "sequence": 12897,
+            "tick": 799,
+            "generation": 1,
+            "arg0": 1,
+            "arg1": 279314436,
+            "slot": 0,
+            "event_type": 12
+          },
+          {
+            "sequence": 12903,
+            "tick": 799,
+            "generation": 1,
+            "arg0": 1,
+            "arg1": 77725696,
+            "slot": 2,
+            "event_type": 12
+          },
+          {
+            "sequence": 12906,
+            "tick": 799,
+            "generation": 1,
+            "arg0": 1,
+            "arg1": 277151746,
+            "slot": 1,
+            "event_type": 12
+          },
+          {
+            "sequence": 12909,
+            "tick": 799,
+            "generation": 1,
+            "arg0": 1,
+            "arg1": 272891905,
+            "slot": 0,
+            "event_type": 12
+          },
+          {
+            "sequence": 12912,
+            "tick": 799,
+            "generation": 0,
+            "arg0": 1,
+            "arg1": 402784256,
+            "slot": 65535,
+            "event_type": 12
+          },
+          {
+            "sequence": 12917,
+            "tick": 800,
+            "generation": 1,
+            "arg0": 0,
+            "arg1": 415301631,
+            "slot": 4,
+            "event_type": 12
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          }
+        ],
+        "explanations": [
+          {
+            "kind": 12,
+            "primary_slot": 0,
+            "primary_generation": 1,
+            "primary_stale": 0,
+            "related_slot": 4,
+            "related_generation": 1,
+            "related_stale": 0,
+            "previous_priority": 6,
+            "next_priority": 5,
+            "commit_class": 4,
+            "reason_flags": 0,
+            "aux_value": 0
+          },
+          {
+            "kind": 12,
+            "primary_slot": 2,
+            "primary_generation": 1,
+            "primary_stale": 0,
+            "related_slot": 0,
+            "related_generation": 1,
+            "related_stale": 0,
+            "previous_priority": 2,
+            "next_priority": 5,
+            "commit_class": 1,
+            "reason_flags": 0,
+            "aux_value": 0
+          },
+          {
+            "kind": 12,
+            "primary_slot": 1,
+            "primary_generation": 1,
+            "primary_stale": 0,
+            "related_slot": 2,
+            "related_generation": 1,
+            "related_stale": 0,
+            "previous_priority": 5,
+            "next_priority": 4,
+            "commit_class": 4,
+            "reason_flags": 0,
+            "aux_value": 0
+          },
+          {
+            "kind": 12,
+            "primary_slot": 0,
+            "primary_generation": 1,
+            "primary_stale": 0,
+            "related_slot": 1,
+            "related_generation": 1,
+            "related_stale": 0,
+            "previous_priority": 4,
+            "next_priority": 2,
+            "commit_class": 4,
+            "reason_flags": 0,
+            "aux_value": 0
+          },
+          {
+            "kind": 12,
+            "primary_slot": 65535,
+            "primary_generation": 0,
+            "primary_stale": 0,
+            "related_slot": 0,
+            "related_generation": 1,
+            "related_stale": 0,
+            "previous_priority": 2,
+            "next_priority": 0,
+            "commit_class": 6,
+            "reason_flags": 0,
+            "aux_value": 0
+          },
+          {
+            "kind": 12,
+            "primary_slot": 4,
+            "primary_generation": 1,
+            "primary_stale": 0,
+            "related_slot": 65535,
+            "related_generation": 0,
+            "related_stale": 0,
+            "previous_priority": 0,
+            "next_priority": 6,
+            "commit_class": 6,
+            "reason_flags": 0,
+            "aux_value": 0
+          },
+          {
+            "kind": 0,
+            "primary_slot": 0,
+            "primary_generation": 0,
+            "primary_stale": 0,
+            "related_slot": 0,
+            "related_generation": 0,
+            "related_stale": 0,
+            "previous_priority": 0,
+            "next_priority": 0,
+            "commit_class": 0,
+            "reason_flags": 0,
+            "aux_value": 0
+          },
+          {
+            "kind": 0,
+            "primary_slot": 0,
+            "primary_generation": 0,
+            "primary_stale": 0,
+            "related_slot": 0,
+            "related_generation": 0,
+            "related_stale": 0,
+            "previous_priority": 0,
+            "next_priority": 0,
+            "commit_class": 0,
+            "reason_flags": 0,
+            "aux_value": 0
+          },
+          {
+            "kind": 0,
+            "primary_slot": 0,
+            "primary_generation": 0,
+            "primary_stale": 0,
+            "related_slot": 0,
+            "related_generation": 0,
+            "related_stale": 0,
+            "previous_priority": 0,
+            "next_priority": 0,
+            "commit_class": 0,
+            "reason_flags": 0,
+            "aux_value": 0
+          },
+          {
+            "kind": 0,
+            "primary_slot": 0,
+            "primary_generation": 0,
+            "primary_stale": 0,
+            "related_slot": 0,
+            "related_generation": 0,
+            "related_stale": 0,
+            "previous_priority": 0,
+            "next_priority": 0,
+            "commit_class": 0,
+            "reason_flags": 0,
+            "aux_value": 0
+          },
+          {
+            "kind": 0,
+            "primary_slot": 0,
+            "primary_generation": 0,
+            "primary_stale": 0,
+            "related_slot": 0,
+            "related_generation": 0,
+            "related_stale": 0,
+            "previous_priority": 0,
+            "next_priority": 0,
+            "commit_class": 0,
+            "reason_flags": 0,
+            "aux_value": 0
+          },
+          {
+            "kind": 0,
+            "primary_slot": 0,
+            "primary_generation": 0,
+            "primary_stale": 0,
+            "related_slot": 0,
+            "related_generation": 0,
+            "related_stale": 0,
+            "previous_priority": 0,
+            "next_priority": 0,
+            "commit_class": 0,
+            "reason_flags": 0,
+            "aux_value": 0
+          },
+          {
+            "kind": 0,
+            "primary_slot": 0,
+            "primary_generation": 0,
+            "primary_stale": 0,
+            "related_slot": 0,
+            "related_generation": 0,
+            "related_stale": 0,
+            "previous_priority": 0,
+            "next_priority": 0,
+            "commit_class": 0,
+            "reason_flags": 0,
+            "aux_value": 0
+          },
+          {
+            "kind": 0,
+            "primary_slot": 0,
+            "primary_generation": 0,
+            "primary_stale": 0,
+            "related_slot": 0,
+            "related_generation": 0,
+            "related_stale": 0,
+            "previous_priority": 0,
+            "next_priority": 0,
+            "commit_class": 0,
+            "reason_flags": 0,
+            "aux_value": 0
+          },
+          {
+            "kind": 0,
+            "primary_slot": 0,
+            "primary_generation": 0,
+            "primary_stale": 0,
+            "related_slot": 0,
+            "related_generation": 0,
+            "related_stale": 0,
+            "previous_priority": 0,
+            "next_priority": 0,
+            "commit_class": 0,
+            "reason_flags": 0,
+            "aux_value": 0
+          },
+          {
+            "kind": 0,
+            "primary_slot": 0,
+            "primary_generation": 0,
+            "primary_stale": 0,
+            "related_slot": 0,
+            "related_generation": 0,
+            "related_stale": 0,
+            "previous_priority": 0,
+            "next_priority": 0,
+            "commit_class": 0,
+            "reason_flags": 0,
+            "aux_value": 0
+          }
+        ],
+        "order": [
+          {
+            "operation": 4,
+            "worker": 0,
+            "tick": 799
+          },
+          {
+            "operation": 6,
+            "worker": 2,
+            "tick": 799
+          },
+          {
+            "operation": 5,
+            "worker": 1,
+            "tick": 799
+          },
+          {
+            "operation": 0,
+            "worker": 0,
+            "tick": 0
+          },
+          {
+            "operation": 0,
+            "worker": 0,
+            "tick": 0
+          },
+          {
+            "operation": 0,
+            "worker": 0,
+            "tick": 0
+          },
+          {
+            "operation": 0,
+            "worker": 0,
+            "tick": 0
+          },
+          {
+            "operation": 0,
+            "worker": 0,
+            "tick": 0
+          },
+          {
+            "operation": 0,
+            "worker": 0,
+            "tick": 0
+          },
+          {
+            "operation": 0,
+            "worker": 0,
+            "tick": 0
+          },
+          {
+            "operation": 0,
+            "worker": 0,
+            "tick": 0
+          },
+          {
+            "operation": 0,
+            "worker": 0,
+            "tick": 0
+          },
+          {
+            "operation": 0,
+            "worker": 0,
+            "tick": 0
+          },
+          {
+            "operation": 0,
+            "worker": 0,
+            "tick": 0
+          },
+          {
+            "operation": 0,
+            "worker": 0,
+            "tick": 0
+          },
+          {
+            "operation": 0,
+            "worker": 0,
+            "tick": 0
+          }
+        ],
+        "workers": [
+          {
+            "tick_resume": 0,
+            "owner_when_granted": 0,
+            "release_count": 1,
+            "initial": 0,
+            "repeated": 2,
+            "not_owner": 0,
+            "no_wait": 0,
+            "wait": 0,
+            "release": 0
+          },
+          {
+            "tick_resume": 0,
+            "owner_when_granted": 0,
+            "release_count": 0,
+            "initial": 0,
+            "repeated": 0,
+            "not_owner": 0,
+            "no_wait": 0,
+            "wait": 0,
+            "release": 0
+          },
+          {
+            "tick_resume": 799,
+            "owner_when_granted": 3,
+            "release_count": 1,
+            "initial": 0,
+            "repeated": 0,
+            "not_owner": 0,
+            "no_wait": 0,
+            "wait": 0,
+            "release": 0
+          },
+          {
+            "tick_resume": 0,
+            "owner_when_granted": 0,
+            "release_count": 0,
+            "initial": 0,
+            "repeated": 0,
+            "not_owner": 0,
+            "no_wait": 0,
+            "wait": 0,
+            "release": 0
+          }
+        ],
+        "switches_count": 6,
+        "order_count": 3,
+        "pass_rounds": 100,
+        "owner_a": 0,
+        "owner_b": 0,
+        "waiter_a": 0,
+        "waiter_b": 0,
+        "timeout_a": 0,
+        "timeout_b": 0,
+        "direct_owner": 0,
+        "direct_state": 0,
+        "owner_lock": 0,
+        "owner_repeat": 0,
+        "owner_unlock": 0
+      },
+      {
+        "graph": {
+          "header": {
+            "capture_tick": 804,
+            "node_count": 5,
+            "edge_count": 2,
+            "mutex_count": 2,
+            "flags": 0,
+            "captured": 1,
+            "analyzed": 1,
+            "reserved0": 0,
+            "reserved1": [
+              0,
+              0
+            ]
+          },
+          "nodes": [
+            {
+              "slot": 0,
+              "state": 4,
+              "generation": 1,
+              "base_priority": 2,
+              "effective_priority": 5,
+              "owner_slot": 65535,
+              "owner_generation": 0,
+              "resource_id": 0,
+              "edge_flags": 2,
+              "wake_tick": 0
+            },
+            {
+              "slot": 1,
+              "state": 4,
+              "generation": 1,
+              "base_priority": 4,
+              "effective_priority": 5,
+              "owner_slot": 0,
+              "owner_generation": 1,
+              "resource_id": 1,
+              "edge_flags": 3,
+              "wake_tick": 902
+            },
+            {
+              "slot": 2,
+              "state": 4,
+              "generation": 1,
+              "base_priority": 5,
+              "effective_priority": 5,
+              "owner_slot": 1,
+              "owner_generation": 1,
+              "resource_id": 2,
+              "edge_flags": 1,
+              "wake_tick": 903
+            },
+            {
+              "slot": 3,
+              "state": 4,
+              "generation": 1,
+              "base_priority": 5,
+              "effective_priority": 5,
+              "owner_slot": 65535,
+              "owner_generation": 0,
+              "resource_id": 0,
+              "edge_flags": 0,
+              "wake_tick": 0
+            },
+            {
+              "slot": 4,
+              "state": 2,
+              "generation": 1,
+              "base_priority": 6,
+              "effective_priority": 6,
+              "owner_slot": 65535,
+              "owner_generation": 0,
+              "resource_id": 0,
+              "edge_flags": 0,
+              "wake_tick": 0
+            },
+            {
+              "slot": 0,
+              "state": 0,
+              "generation": 0,
+              "base_priority": 0,
+              "effective_priority": 0,
+              "owner_slot": 0,
+              "owner_generation": 0,
+              "resource_id": 0,
+              "edge_flags": 0,
+              "wake_tick": 0
+            },
+            {
+              "slot": 0,
+              "state": 0,
+              "generation": 0,
+              "base_priority": 0,
+              "effective_priority": 0,
+              "owner_slot": 0,
+              "owner_generation": 0,
+              "resource_id": 0,
+              "edge_flags": 0,
+              "wake_tick": 0
+            },
+            {
+              "slot": 0,
+              "state": 0,
+              "generation": 0,
+              "base_priority": 0,
+              "effective_priority": 0,
+              "owner_slot": 0,
+              "owner_generation": 0,
+              "resource_id": 0,
+              "edge_flags": 0,
+              "wake_tick": 0
+            }
+          ],
+          "resource_keys": [
+            536871880,
+            536871864,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "task_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            0,
+            0,
+            0
+          ],
+          "scratch": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            0,
+            0,
+            0,
+            4,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "result": {
+            "deadlock_detected": 0,
+            "cycle_length": 0,
+            "flags": 0,
+            "capture_tick": 804,
+            "cycle_tasks": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "cycle_mutexes": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "earliest_due_tick": 0,
+            "finite_edge_count": 0,
+            "reserved": 0
+          },
+          "reserved": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "ready": [
+          {
+            "identity": {
+              "slot": 0,
+              "generation": 1
+            },
+            "state": 4,
+            "base_priority": 2,
+            "effective_priority": 4
+          },
+          {
+            "identity": {
+              "slot": 0,
+              "generation": 0
+            },
+            "state": 0,
+            "base_priority": 0,
+            "effective_priority": 0
+          },
+          {
+            "identity": {
+              "slot": 0,
+              "generation": 0
+            },
+            "state": 0,
+            "base_priority": 0,
+            "effective_priority": 0
+          },
+          {
+            "identity": {
+              "slot": 0,
+              "generation": 0
+            },
+            "state": 0,
+            "base_priority": 0,
+            "effective_priority": 0
+          }
+        ],
+        "final": [
+          {
+            "identity": {
+              "slot": 0,
+              "generation": 1
+            },
+            "state": 4,
+            "base_priority": 2,
+            "effective_priority": 2
+          },
+          {
+            "identity": {
+              "slot": 1,
+              "generation": 1
+            },
+            "state": 4,
+            "base_priority": 4,
+            "effective_priority": 4
+          },
+          {
+            "identity": {
+              "slot": 2,
+              "generation": 1
+            },
+            "state": 4,
+            "base_priority": 5,
+            "effective_priority": 5
+          },
+          {
+            "identity": {
+              "slot": 3,
+              "generation": 1
+            },
+            "state": 4,
+            "base_priority": 5,
+            "effective_priority": 5
+          }
+        ],
+        "switches": [
+          {
+            "sequence": 12977,
+            "tick": 804,
+            "generation": 1,
+            "arg0": 1,
+            "arg1": 279314436,
+            "slot": 0,
+            "event_type": 12
+          },
+          {
+            "sequence": 12983,
+            "tick": 804,
+            "generation": 1,
+            "arg0": 1,
+            "arg1": 77725696,
+            "slot": 1,
+            "event_type": 12
+          },
+          {
+            "sequence": 12989,
+            "tick": 804,
+            "generation": 1,
+            "arg0": 1,
+            "arg1": 77856769,
+            "slot": 2,
+            "event_type": 12
+          },
+          {
+            "sequence": 12992,
+            "tick": 804,
+            "generation": 1,
+            "arg0": 1,
+            "arg1": 277151746,
+            "slot": 1,
+            "event_type": 12
+          },
+          {
+            "sequence": 12995,
+            "tick": 804,
+            "generation": 1,
+            "arg0": 1,
+            "arg1": 272891905,
+            "slot": 0,
+            "event_type": 12
+          },
+          {
+            "sequence": 12998,
+            "tick": 804,
+            "generation": 0,
+            "arg0": 1,
+            "arg1": 402784256,
+            "slot": 65535,
+            "event_type": 12
+          },
+          {
+            "sequence": 13003,
+            "tick": 805,
+            "generation": 1,
+            "arg0": 0,
+            "arg1": 415301631,
+            "slot": 4,
+            "event_type": 12
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          }
+        ],
+        "explanations": [
+          {
+            "kind": 12,
+            "primary_slot": 0,
+            "primary_generation": 1,
+            "primary_stale": 0,
+            "related_slot": 4,
+            "related_generation": 1,
+            "related_stale": 0,
+            "previous_priority": 6,
+            "next_priority": 5,
+            "commit_class": 4,
+            "reason_flags": 0,
+            "aux_value": 0
+          },
+          {
+            "kind": 12,
+            "primary_slot": 1,
+            "primary_generation": 1,
+            "primary_stale": 0,
+            "related_slot": 0,
+            "related_generation": 1,
+            "related_stale": 0,
+            "previous_priority": 2,
+            "next_priority": 5,
+            "commit_class": 1,
+            "reason_flags": 0,
+            "aux_value": 0
+          },
+          {
+            "kind": 12,
+            "primary_slot": 2,
+            "primary_generation": 1,
+            "primary_stale": 0,
+            "related_slot": 1,
+            "related_generation": 1,
+            "related_stale": 0,
+            "previous_priority": 4,
+            "next_priority": 5,
+            "commit_class": 1,
+            "reason_flags": 0,
+            "aux_value": 0
+          },
+          {
+            "kind": 12,
+            "primary_slot": 1,
+            "primary_generation": 1,
+            "primary_stale": 0,
+            "related_slot": 2,
+            "related_generation": 1,
+            "related_stale": 0,
+            "previous_priority": 5,
+            "next_priority": 4,
+            "commit_class": 4,
+            "reason_flags": 0,
+            "aux_value": 0
+          },
+          {
+            "kind": 12,
+            "primary_slot": 0,
+            "primary_generation": 1,
+            "primary_stale": 0,
+            "related_slot": 1,
+            "related_generation": 1,
+            "related_stale": 0,
+            "previous_priority": 4,
+            "next_priority": 2,
+            "commit_class": 4,
+            "reason_flags": 0,
+            "aux_value": 0
+          },
+          {
+            "kind": 12,
+            "primary_slot": 65535,
+            "primary_generation": 0,
+            "primary_stale": 0,
+            "related_slot": 0,
+            "related_generation": 1,
+            "related_stale": 0,
+            "previous_priority": 2,
+            "next_priority": 0,
+            "commit_class": 6,
+            "reason_flags": 0,
+            "aux_value": 0
+          },
+          {
+            "kind": 12,
+            "primary_slot": 4,
+            "primary_generation": 1,
+            "primary_stale": 0,
+            "related_slot": 65535,
+            "related_generation": 0,
+            "related_stale": 0,
+            "previous_priority": 0,
+            "next_priority": 6,
+            "commit_class": 6,
+            "reason_flags": 0,
+            "aux_value": 0
+          },
+          {
+            "kind": 0,
+            "primary_slot": 0,
+            "primary_generation": 0,
+            "primary_stale": 0,
+            "related_slot": 0,
+            "related_generation": 0,
+            "related_stale": 0,
+            "previous_priority": 0,
+            "next_priority": 0,
+            "commit_class": 0,
+            "reason_flags": 0,
+            "aux_value": 0
+          },
+          {
+            "kind": 0,
+            "primary_slot": 0,
+            "primary_generation": 0,
+            "primary_stale": 0,
+            "related_slot": 0,
+            "related_generation": 0,
+            "related_stale": 0,
+            "previous_priority": 0,
+            "next_priority": 0,
+            "commit_class": 0,
+            "reason_flags": 0,
+            "aux_value": 0
+          },
+          {
+            "kind": 0,
+            "primary_slot": 0,
+            "primary_generation": 0,
+            "primary_stale": 0,
+            "related_slot": 0,
+            "related_generation": 0,
+            "related_stale": 0,
+            "previous_priority": 0,
+            "next_priority": 0,
+            "commit_class": 0,
+            "reason_flags": 0,
+            "aux_value": 0
+          },
+          {
+            "kind": 0,
+            "primary_slot": 0,
+            "primary_generation": 0,
+            "primary_stale": 0,
+            "related_slot": 0,
+            "related_generation": 0,
+            "related_stale": 0,
+            "previous_priority": 0,
+            "next_priority": 0,
+            "commit_class": 0,
+            "reason_flags": 0,
+            "aux_value": 0
+          },
+          {
+            "kind": 0,
+            "primary_slot": 0,
+            "primary_generation": 0,
+            "primary_stale": 0,
+            "related_slot": 0,
+            "related_generation": 0,
+            "related_stale": 0,
+            "previous_priority": 0,
+            "next_priority": 0,
+            "commit_class": 0,
+            "reason_flags": 0,
+            "aux_value": 0
+          },
+          {
+            "kind": 0,
+            "primary_slot": 0,
+            "primary_generation": 0,
+            "primary_stale": 0,
+            "related_slot": 0,
+            "related_generation": 0,
+            "related_stale": 0,
+            "previous_priority": 0,
+            "next_priority": 0,
+            "commit_class": 0,
+            "reason_flags": 0,
+            "aux_value": 0
+          },
+          {
+            "kind": 0,
+            "primary_slot": 0,
+            "primary_generation": 0,
+            "primary_stale": 0,
+            "related_slot": 0,
+            "related_generation": 0,
+            "related_stale": 0,
+            "previous_priority": 0,
+            "next_priority": 0,
+            "commit_class": 0,
+            "reason_flags": 0,
+            "aux_value": 0
+          },
+          {
+            "kind": 0,
+            "primary_slot": 0,
+            "primary_generation": 0,
+            "primary_stale": 0,
+            "related_slot": 0,
+            "related_generation": 0,
+            "related_stale": 0,
+            "previous_priority": 0,
+            "next_priority": 0,
+            "commit_class": 0,
+            "reason_flags": 0,
+            "aux_value": 0
+          },
+          {
+            "kind": 0,
+            "primary_slot": 0,
+            "primary_generation": 0,
+            "primary_stale": 0,
+            "related_slot": 0,
+            "related_generation": 0,
+            "related_stale": 0,
+            "previous_priority": 0,
+            "next_priority": 0,
+            "commit_class": 0,
+            "reason_flags": 0,
+            "aux_value": 0
+          }
+        ],
+        "order": [
+          {
+            "operation": 4,
+            "worker": 0,
+            "tick": 804
+          },
+          {
+            "operation": 8,
+            "worker": 1,
+            "tick": 804
+          },
+          {
+            "operation": 7,
+            "worker": 2,
+            "tick": 804
+          },
+          {
+            "operation": 0,
+            "worker": 0,
+            "tick": 0
+          },
+          {
+            "operation": 0,
+            "worker": 0,
+            "tick": 0
+          },
+          {
+            "operation": 0,
+            "worker": 0,
+            "tick": 0
+          },
+          {
+            "operation": 0,
+            "worker": 0,
+            "tick": 0
+          },
+          {
+            "operation": 0,
+            "worker": 0,
+            "tick": 0
+          },
+          {
+            "operation": 0,
+            "worker": 0,
+            "tick": 0
+          },
+          {
+            "operation": 0,
+            "worker": 0,
+            "tick": 0
+          },
+          {
+            "operation": 0,
+            "worker": 0,
+            "tick": 0
+          },
+          {
+            "operation": 0,
+            "worker": 0,
+            "tick": 0
+          },
+          {
+            "operation": 0,
+            "worker": 0,
+            "tick": 0
+          },
+          {
+            "operation": 0,
+            "worker": 0,
+            "tick": 0
+          },
+          {
+            "operation": 0,
+            "worker": 0,
+            "tick": 0
+          },
+          {
+            "operation": 0,
+            "worker": 0,
+            "tick": 0
+          }
+        ],
+        "workers": [
+          {
+            "tick_resume": 0,
+            "owner_when_granted": 0,
+            "release_count": 1,
+            "initial": 0,
+            "repeated": 2,
+            "not_owner": 0,
+            "no_wait": 0,
+            "wait": 0,
+            "release": 0
+          },
+          {
+            "tick_resume": 804,
+            "owner_when_granted": 2,
+            "release_count": 2,
+            "initial": 0,
+            "repeated": 0,
+            "not_owner": 0,
+            "no_wait": 0,
+            "wait": 0,
+            "release": 0
+          },
+          {
+            "tick_resume": 804,
+            "owner_when_granted": 3,
+            "release_count": 1,
+            "initial": 0,
+            "repeated": 0,
+            "not_owner": 0,
+            "no_wait": 0,
+            "wait": 0,
+            "release": 0
+          },
+          {
+            "tick_resume": 0,
+            "owner_when_granted": 0,
+            "release_count": 0,
+            "initial": 0,
+            "repeated": 0,
+            "not_owner": 0,
+            "no_wait": 0,
+            "wait": 0,
+            "release": 0
+          }
+        ],
+        "switches_count": 7,
+        "order_count": 3,
+        "pass_rounds": 1,
+        "owner_a": 0,
+        "owner_b": 0,
+        "waiter_a": 0,
+        "waiter_b": 0,
+        "timeout_a": 0,
+        "timeout_b": 0,
+        "direct_owner": 0,
+        "direct_state": 0,
+        "owner_lock": 0,
+        "owner_repeat": 0,
+        "owner_unlock": 0
+      },
+      {
+        "graph": {
+          "header": {
+            "capture_tick": 809,
+            "node_count": 5,
+            "edge_count": 2,
+            "mutex_count": 2,
+            "flags": 0,
+            "captured": 1,
+            "analyzed": 1,
+            "reserved0": 0,
+            "reserved1": [
+              0,
+              0
+            ]
+          },
+          "nodes": [
+            {
+              "slot": 0,
+              "state": 4,
+              "generation": 1,
+              "base_priority": 2,
+              "effective_priority": 4,
+              "owner_slot": 1,
+              "owner_generation": 1,
+              "resource_id": 1,
+              "edge_flags": 3,
+              "wake_tick": 837
+            },
+            {
+              "slot": 1,
+              "state": 4,
+              "generation": 1,
+              "base_priority": 4,
+              "effective_priority": 4,
+              "owner_slot": 0,
+              "owner_generation": 1,
+              "resource_id": 2,
+              "edge_flags": 1,
+              "wake_tick": 868
+            },
+            {
+              "slot": 2,
+              "state": 4,
+              "generation": 1,
+              "base_priority": 5,
+              "effective_priority": 5,
+              "owner_slot": 65535,
+              "owner_generation": 0,
+              "resource_id": 0,
+              "edge_flags": 0,
+              "wake_tick": 0
+            },
+            {
+              "slot": 3,
+              "state": 4,
+              "generation": 1,
+              "base_priority": 5,
+              "effective_priority": 5,
+              "owner_slot": 65535,
+              "owner_generation": 0,
+              "resource_id": 0,
+              "edge_flags": 0,
+              "wake_tick": 0
+            },
+            {
+              "slot": 4,
+              "state": 2,
+              "generation": 1,
+              "base_priority": 6,
+              "effective_priority": 6,
+              "owner_slot": 65535,
+              "owner_generation": 0,
+              "resource_id": 0,
+              "edge_flags": 0,
+              "wake_tick": 0
+            },
+            {
+              "slot": 0,
+              "state": 0,
+              "generation": 0,
+              "base_priority": 0,
+              "effective_priority": 0,
+              "owner_slot": 0,
+              "owner_generation": 0,
+              "resource_id": 0,
+              "edge_flags": 0,
+              "wake_tick": 0
+            },
+            {
+              "slot": 0,
+              "state": 0,
+              "generation": 0,
+              "base_priority": 0,
+              "effective_priority": 0,
+              "owner_slot": 0,
+              "owner_generation": 0,
+              "resource_id": 0,
+              "edge_flags": 0,
+              "wake_tick": 0
+            },
+            {
+              "slot": 0,
+              "state": 0,
+              "generation": 0,
+              "base_priority": 0,
+              "effective_priority": 0,
+              "owner_slot": 0,
+              "owner_generation": 0,
+              "resource_id": 0,
+              "edge_flags": 0,
+              "wake_tick": 0
+            }
+          ],
+          "resource_keys": [
+            536871864,
+            536871880,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "task_slots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            0,
+            0,
+            0
+          ],
+          "scratch": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            0,
+            0,
+            0,
+            4,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "result": {
+            "deadlock_detected": 1,
+            "cycle_length": 2,
+            "flags": 3,
+            "capture_tick": 809,
+            "cycle_tasks": [
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "cycle_mutexes": [
+              1,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "earliest_due_tick": 837,
+            "finite_edge_count": 2,
+            "reserved": 0
+          },
+          "reserved": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "ready": [
+          {
+            "identity": {
+              "slot": 0,
+              "generation": 0
+            },
+            "state": 0,
+            "base_priority": 0,
+            "effective_priority": 0
+          },
+          {
+            "identity": {
+              "slot": 0,
+              "generation": 0
+            },
+            "state": 0,
+            "base_priority": 0,
+            "effective_priority": 0
+          },
+          {
+            "identity": {
+              "slot": 0,
+              "generation": 0
+            },
+            "state": 0,
+            "base_priority": 0,
+            "effective_priority": 0
+          },
+          {
+            "identity": {
+              "slot": 0,
+              "generation": 0
+            },
+            "state": 0,
+            "base_priority": 0,
+            "effective_priority": 0
+          }
+        ],
+        "final": [
+          {
+            "identity": {
+              "slot": 0,
+              "generation": 1
+            },
+            "state": 4,
+            "base_priority": 2,
+            "effective_priority": 2
+          },
+          {
+            "identity": {
+              "slot": 1,
+              "generation": 1
+            },
+            "state": 4,
+            "base_priority": 4,
+            "effective_priority": 4
+          },
+          {
+            "identity": {
+              "slot": 2,
+              "generation": 1
+            },
+            "state": 4,
+            "base_priority": 5,
+            "effective_priority": 5
+          },
+          {
+            "identity": {
+              "slot": 3,
+              "generation": 1
+            },
+            "state": 4,
+            "base_priority": 5,
+            "effective_priority": 5
+          }
+        ],
+        "switches": [
+          {
+            "sequence": 13059,
+            "tick": 809,
+            "generation": 0,
+            "arg0": 1,
+            "arg1": 403046404,
+            "slot": 65535,
+            "event_type": 12
+          },
+          {
+            "sequence": 13066,
+            "tick": 837,
+            "generation": 1,
+            "arg0": 0,
+            "arg1": 415301631,
+            "slot": 4,
+            "event_type": 12
+          },
+          {
+            "sequence": 13069,
+            "tick": 837,
+            "generation": 1,
+            "arg0": 1,
+            "arg1": 277217284,
+            "slot": 0,
+            "event_type": 12
+          },
+          {
+            "sequence": 13075,
+            "tick": 837,
+            "generation": 1,
+            "arg0": 1,
+            "arg1": 75628544,
+            "slot": 1,
+            "event_type": 12
+          },
+          {
+            "sequence": 13078,
+            "tick": 837,
+            "generation": 1,
+            "arg0": 1,
+            "arg1": 272891905,
+            "slot": 0,
+            "event_type": 12
+          },
+          {
+            "sequence": 13081,
+            "tick": 837,
+            "generation": 0,
+            "arg0": 1,
+            "arg1": 402784256,
+            "slot": 65535,
+            "event_type": 12
+          },
+          {
+            "sequence": 13086,
+            "tick": 838,
+            "generation": 1,
+            "arg0": 0,
+            "arg1": 415301631,
+            "slot": 4,
+            "event_type": 12
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          }
+        ],
+        "explanations": [
+          {
+            "kind": 12,
+            "primary_slot": 65535,
+            "primary_generation": 0,
+            "primary_stale": 0,
+            "related_slot": 4,
+            "related_generation": 1,
+            "related_stale": 0,
+            "previous_priority": 6,
+            "next_priority": 0,
+            "commit_class": 6,
+            "reason_flags": 0,
+            "aux_value": 0
+          },
+          {
+            "kind": 12,
+            "primary_slot": 4,
+            "primary_generation": 1,
+            "primary_stale": 0,
+            "related_slot": 65535,
+            "related_generation": 0,
+            "related_stale": 0,
+            "previous_priority": 0,
+            "next_priority": 6,
+            "commit_class": 6,
+            "reason_flags": 0,
+            "aux_value": 0
+          },
+          {
+            "kind": 12,
+            "primary_slot": 0,
+            "primary_generation": 1,
+            "primary_stale": 0,
+            "related_slot": 4,
+            "related_generation": 1,
+            "related_stale": 0,
+            "previous_priority": 6,
+            "next_priority": 4,
+            "commit_class": 4,
+            "reason_flags": 0,
+            "aux_value": 0
+          },
+          {
+            "kind": 12,
+            "primary_slot": 1,
+            "primary_generation": 1,
+            "primary_stale": 0,
+            "related_slot": 0,
+            "related_generation": 1,
+            "related_stale": 0,
+            "previous_priority": 2,
+            "next_priority": 4,
+            "commit_class": 1,
+            "reason_flags": 0,
+            "aux_value": 0
+          },
+          {
+            "kind": 12,
+            "primary_slot": 0,
+            "primary_generation": 1,
+            "primary_stale": 0,
+            "related_slot": 1,
+            "related_generation": 1,
+            "related_stale": 0,
+            "previous_priority": 4,
+            "next_priority": 2,
+            "commit_class": 4,
+            "reason_flags": 0,
+            "aux_value": 0
+          },
+          {
+            "kind": 12,
+            "primary_slot": 65535,
+            "primary_generation": 0,
+            "primary_stale": 0,
+            "related_slot": 0,
+            "related_generation": 1,
+            "related_stale": 0,
+            "previous_priority": 2,
+            "next_priority": 0,
+            "commit_class": 6,
+            "reason_flags": 0,
+            "aux_value": 0
+          },
+          {
+            "kind": 12,
+            "primary_slot": 4,
+            "primary_generation": 1,
+            "primary_stale": 0,
+            "related_slot": 65535,
+            "related_generation": 0,
+            "related_stale": 0,
+            "previous_priority": 0,
+            "next_priority": 6,
+            "commit_class": 6,
+            "reason_flags": 0,
+            "aux_value": 0
+          },
+          {
+            "kind": 0,
+            "primary_slot": 0,
+            "primary_generation": 0,
+            "primary_stale": 0,
+            "related_slot": 0,
+            "related_generation": 0,
+            "related_stale": 0,
+            "previous_priority": 0,
+            "next_priority": 0,
+            "commit_class": 0,
+            "reason_flags": 0,
+            "aux_value": 0
+          },
+          {
+            "kind": 0,
+            "primary_slot": 0,
+            "primary_generation": 0,
+            "primary_stale": 0,
+            "related_slot": 0,
+            "related_generation": 0,
+            "related_stale": 0,
+            "previous_priority": 0,
+            "next_priority": 0,
+            "commit_class": 0,
+            "reason_flags": 0,
+            "aux_value": 0
+          },
+          {
+            "kind": 0,
+            "primary_slot": 0,
+            "primary_generation": 0,
+            "primary_stale": 0,
+            "related_slot": 0,
+            "related_generation": 0,
+            "related_stale": 0,
+            "previous_priority": 0,
+            "next_priority": 0,
+            "commit_class": 0,
+            "reason_flags": 0,
+            "aux_value": 0
+          },
+          {
+            "kind": 0,
+            "primary_slot": 0,
+            "primary_generation": 0,
+            "primary_stale": 0,
+            "related_slot": 0,
+            "related_generation": 0,
+            "related_stale": 0,
+            "previous_priority": 0,
+            "next_priority": 0,
+            "commit_class": 0,
+            "reason_flags": 0,
+            "aux_value": 0
+          },
+          {
+            "kind": 0,
+            "primary_slot": 0,
+            "primary_generation": 0,
+            "primary_stale": 0,
+            "related_slot": 0,
+            "related_generation": 0,
+            "related_stale": 0,
+            "previous_priority": 0,
+            "next_priority": 0,
+            "commit_class": 0,
+            "reason_flags": 0,
+            "aux_value": 0
+          },
+          {
+            "kind": 0,
+            "primary_slot": 0,
+            "primary_generation": 0,
+            "primary_stale": 0,
+            "related_slot": 0,
+            "related_generation": 0,
+            "related_stale": 0,
+            "previous_priority": 0,
+            "next_priority": 0,
+            "commit_class": 0,
+            "reason_flags": 0,
+            "aux_value": 0
+          },
+          {
+            "kind": 0,
+            "primary_slot": 0,
+            "primary_generation": 0,
+            "primary_stale": 0,
+            "related_slot": 0,
+            "related_generation": 0,
+            "related_stale": 0,
+            "previous_priority": 0,
+            "next_priority": 0,
+            "commit_class": 0,
+            "reason_flags": 0,
+            "aux_value": 0
+          },
+          {
+            "kind": 0,
+            "primary_slot": 0,
+            "primary_generation": 0,
+            "primary_stale": 0,
+            "related_slot": 0,
+            "related_generation": 0,
+            "related_stale": 0,
+            "previous_priority": 0,
+            "next_priority": 0,
+            "commit_class": 0,
+            "reason_flags": 0,
+            "aux_value": 0
+          },
+          {
+            "kind": 0,
+            "primary_slot": 0,
+            "primary_generation": 0,
+            "primary_stale": 0,
+            "related_slot": 0,
+            "related_generation": 0,
+            "related_stale": 0,
+            "previous_priority": 0,
+            "next_priority": 0,
+            "commit_class": 0,
+            "reason_flags": 0,
+            "aux_value": 0
+          }
+        ],
+        "order": [
+          {
+            "operation": 9,
+            "worker": 0,
+            "tick": 837
+          },
+          {
+            "operation": 10,
+            "worker": 1,
+            "tick": 837
+          },
+          {
+            "operation": 0,
+            "worker": 0,
+            "tick": 0
+          },
+          {
+            "operation": 0,
+            "worker": 0,
+            "tick": 0
+          },
+          {
+            "operation": 0,
+            "worker": 0,
+            "tick": 0
+          },
+          {
+            "operation": 0,
+            "worker": 0,
+            "tick": 0
+          },
+          {
+            "operation": 0,
+            "worker": 0,
+            "tick": 0
+          },
+          {
+            "operation": 0,
+            "worker": 0,
+            "tick": 0
+          },
+          {
+            "operation": 0,
+            "worker": 0,
+            "tick": 0
+          },
+          {
+            "operation": 0,
+            "worker": 0,
+            "tick": 0
+          },
+          {
+            "operation": 0,
+            "worker": 0,
+            "tick": 0
+          },
+          {
+            "operation": 0,
+            "worker": 0,
+            "tick": 0
+          },
+          {
+            "operation": 0,
+            "worker": 0,
+            "tick": 0
+          },
+          {
+            "operation": 0,
+            "worker": 0,
+            "tick": 0
+          },
+          {
+            "operation": 0,
+            "worker": 0,
+            "tick": 0
+          },
+          {
+            "operation": 0,
+            "worker": 0,
+            "tick": 0
+          }
+        ],
+        "workers": [
+          {
+            "tick_resume": 837,
+            "owner_when_granted": 0,
+            "release_count": 1,
+            "initial": 0,
+            "repeated": 2,
+            "not_owner": 0,
+            "no_wait": 0,
+            "wait": 7,
+            "release": 0
+          },
+          {
+            "tick_resume": 837,
+            "owner_when_granted": 2,
+            "release_count": 2,
+            "initial": 0,
+            "repeated": 0,
+            "not_owner": 0,
+            "no_wait": 0,
+            "wait": 0,
+            "release": 0
+          },
+          {
+            "tick_resume": 0,
+            "owner_when_granted": 0,
+            "release_count": 0,
+            "initial": 0,
+            "repeated": 0,
+            "not_owner": 0,
+            "no_wait": 0,
+            "wait": 0,
+            "release": 0
+          },
+          {
+            "tick_resume": 0,
+            "owner_when_granted": 0,
+            "release_count": 0,
+            "initial": 0,
+            "repeated": 0,
+            "not_owner": 0,
+            "no_wait": 0,
+            "wait": 0,
+            "release": 0
+          }
+        ],
+        "switches_count": 7,
+        "order_count": 2,
+        "pass_rounds": 1,
+        "owner_a": 0,
+        "owner_b": 0,
+        "waiter_a": 0,
+        "waiter_b": 0,
+        "timeout_a": 837,
+        "timeout_b": 868,
+        "direct_owner": 0,
+        "direct_state": 0,
+        "owner_lock": 0,
+        "owner_repeat": 0,
+        "owner_unlock": 0
+      }
+    ]
+  },
+  "health": {
+    "state": 2,
+    "scenario": 3,
+    "round": 1,
+    "tick": 915,
+    "tim2_ms": 9166,
+    "assert_line": 0,
+    "faults": [
+      0,
+      0
+    ],
+    "guards": [
+      3735929054,
+      3735929054,
+      3735929054,
+      3735929054,
+      3735929054,
+      3735929054
+    ]
+  }
+}

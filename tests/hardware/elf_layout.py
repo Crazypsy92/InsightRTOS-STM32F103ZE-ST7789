@@ -19,6 +19,12 @@ def layout(t):
 names = """g_display_statistics g_event_tracker g_diag_rt_export g_display_task_refs
             g_sys_tick kernel_ticks g_rtos_assert_line display_stacks idle_stack
             g_stress_request g_stress_remaining g_stress_generated g_job_fixture g_timing_bench g_msp_bench g_app_diag""".split()
+try:
+    gdb.parse_and_eval("g_mutex_fixture")
+except gdb.error:
+    pass
+else:
+    names = "g_mutex_fixture kernel_ticks g_sys_tick g_rtos_assert_line display_stacks idle_stack".split()
 out = {}
 for name in names:
     try:

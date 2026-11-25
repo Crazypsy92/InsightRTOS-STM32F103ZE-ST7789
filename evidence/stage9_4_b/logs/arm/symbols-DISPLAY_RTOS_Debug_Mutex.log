@@ -1,0 +1,8 @@
+00000000 A _Min_Heap_Size
+2000f000 B __msp_stack_bottom__
+20010000 B __msp_stack_top__
+200034a0 00008000 b display_stacks
+200001cc 00001af0 B g_mutex_fixture
+20003190 00000200 b idle_stack
+08002770 00000154 T mutex_fixture_start
+20002ed0 00000240 b task_pool
