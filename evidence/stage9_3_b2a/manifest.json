@@ -1,0 +1,143 @@
+{
+  "stage": "9.3-B2a",
+  "status": "PASS_WITH_BUDGET_EXCEPTION",
+  "base_commit": "c98cf82af6451c8fe441696e79e80f7dc2751e59",
+  "toolchain": [
+    "gcc (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
+    "arm-none-eabi-gcc (15:14.2.rel1-1) 14.2.1 20241119",
+    "GNU ld (2.45.50.20251209-1ubuntu1+23build1) 2.45.50.20251209",
+    "cmake version 4.2.3",
+    "1.13.2.git.kitware.jobserver-pipe-1"
+  ],
+  "build": {
+    "presets": [
+      "DISPLAY_RTOS_Debug_Trace",
+      "DISPLAY_RTOS_O2_Trace"
+    ],
+    "paired_setting": "INSIGHT_DIAG_RT",
+    "unchanged_diagnostics": [
+      "Trace",
+      "Explain",
+      "DL"
+    ],
+    "full_api": [
+      "configure",
+      "job_release",
+      "job_complete",
+      "job_abort",
+      "job_snapshot",
+      "clock_cap"
+    ]
+  },
+  "flash": {
+    "base_delta": 3872,
+    "final_delta": 3248,
+    "saved": 624,
+    "budget": 3072,
+    "excess": 176,
+    "rt_off_byte_identical": true
+  },
+  "images": {
+    "Debug-off": {
+      "flash_bytes": 68764,
+      "sha256": "064dcde37cebcbc2fbfb913a15f441edd9116e42dd8ee4f59a777fd883c7fcda",
+      "sram_with_msp": 48008,
+      "side_table": 0,
+      "state_symbols": {},
+      "tcb_bytes": 72,
+      "heap_bytes": 0,
+      "user_stacks": 32768,
+      "idle_stack": 512,
+      "msp_stack": 4096
+    },
+    "Debug-on": {
+      "flash_bytes": 72224,
+      "sha256": "fd5e1ba263867eb8e4f018985897bfc828a326eb6f28d701418185626fc4adf0",
+      "sram_with_msp": 49328,
+      "side_table": 1008,
+      "state_symbols": {
+        "s_rt_tasks": 960,
+        "s_idle_record": 24,
+        "s_rt_global": 24
+      },
+      "tcb_bytes": 72,
+      "heap_bytes": 0,
+      "user_stacks": 32768,
+      "idle_stack": 512,
+      "msp_stack": 4096
+    },
+    "O2-off": {
+      "flash_bytes": 48908,
+      "sha256": "c8612ba7bf7884e23db60fb7bdcc93990dba75dd2894429595b65a9d275e1fe1",
+      "sram_with_msp": 48016,
+      "side_table": 0,
+      "state_symbols": {},
+      "tcb_bytes": 72,
+      "heap_bytes": 0,
+      "user_stacks": 32768,
+      "idle_stack": 512,
+      "msp_stack": 4096
+    },
+    "O2-on": {
+      "flash_bytes": 51004,
+      "sha256": "08e4767e702cff0b969e44eb78f4f3505e4a80ffa7ed9ff6fc054e40377c6ba3",
+      "sram_with_msp": 49336,
+      "side_table": 1008,
+      "state_symbols": {
+        "s_rt_tasks": 960,
+        "s_idle_record": 24,
+        "s_rt_global": 24
+      },
+      "tcb_bytes": 72,
+      "heap_bytes": 0,
+      "user_stacks": 32768,
+      "idle_stack": 512,
+      "msp_stack": 4096
+    },
+    "baseline_full": {
+      "flash_bytes": 52780,
+      "sha256": "5b4dd9fd09a06b2fe40f4dabf036f6f72a5164196a5d6477c224250bdc1a2cc3",
+      "sram_with_msp": 49352,
+      "side_table": 1024,
+      "state_symbols": {
+        "s_rt_tasks": 960,
+        "s_idle_record": 24,
+        "s_rt_global": 32,
+        "s_stale_requests": 4,
+        "s_exhausted_ids": 4
+      },
+      "tcb_bytes": 72,
+      "heap_bytes": 0,
+      "user_stacks": 32768,
+      "idle_stack": 512,
+      "msp_stack": 4096
+    },
+    "optimized_full": {
+      "flash_bytes": 52156,
+      "sha256": "1f21f914853b697e24cfb773f84aa7525961988a7964cb30907e5bd7ecb68d9c",
+      "sram_with_msp": 49344,
+      "side_table": 1016,
+      "state_symbols": {
+        "s_rt_tasks": 960,
+        "s_idle_record": 24,
+        "s_rt_global": 24,
+        "s_stale_requests": 4,
+        "s_exhausted_ids": 4
+      },
+      "tcb_bytes": 72,
+      "heap_bytes": 0,
+      "user_stacks": 32768,
+      "idle_stack": 512,
+      "msp_stack": 4096
+    }
+  },
+  "tests": {
+    "application": 9,
+    "historical_rt": 9,
+    "kernel_ctest": 360,
+    "job_b1": 77,
+    "job_clock_validity": 53,
+    "all_exit_codes": 0
+  },
+  "hardware": "NOT_TESTED"
+}

@@ -1,0 +1,6 @@
+[1/3] Building C object Middlewares/InsightRTOS/CMakeFiles/insightrtos_kernel.dir/kernel/diag_rt.c.obj
+[2/3] Linking C static library Middlewares/InsightRTOS/libinsightrtos_kernel.a
+[3/3] Linking C executable insightrtos_display.elf
+Memory region         Used Size  Region Size  %age Used
+             RAM:         64 KB        64 KB    100.00%
+           FLASH:       48908 B       512 KB      9.33%

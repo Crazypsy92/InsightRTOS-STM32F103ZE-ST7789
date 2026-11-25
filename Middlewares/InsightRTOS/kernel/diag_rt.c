@@ -43,13 +43,12 @@ typedef struct {
 } rtos_diag_rt_idle_record_t;
 
 typedef struct {
-    uint64_t cycle_epoch;
     uint64_t running_dispatch_cycles;
+    uint32_t cycle_wraps;
     uint32_t last_cycle32;
     uint32_t last_sample_tick;
     uint16_t running_slot;
     bool clock_uncertain;
-    bool last_sample_tick_valid;
     bool initialized;
 } rtos_diag_rt_global_t;
 
@@ -69,70 +68,31 @@ static uint64_t get_cycles_64_locked(uint32_t current_tick)
         return 0ULL;
     }
     const uint32_t current32 = rtos_port_clock_cycles_32();
-    if (!s_rt_global.initialized) {
-        s_rt_global.last_cycle32 = current32;
-        s_rt_global.last_sample_tick = current_tick;
-        s_rt_global.last_sample_tick_valid = true;
-        s_rt_global.initialized = true;
-        return (uint64_t)current32;
-    }
-
-    if (current32 < s_rt_global.last_cycle32) {
-        s_rt_global.cycle_epoch += (UINT64_C(1) << 32);
-    }
-    s_rt_global.last_cycle32 = current32;
-
-    if (s_rt_global.last_sample_tick_valid) {
-        const uint32_t elapsed_ticks = current_tick - s_rt_global.last_sample_tick;
+    if (s_rt_global.initialized) {
+        if (current32 < s_rt_global.last_cycle32) ++s_rt_global.cycle_wraps;
         /* ~59.0s boundary at 100 Hz = 5900 ticks */
-        if (elapsed_ticks >= 5900U) {
+        if (current_tick - s_rt_global.last_sample_tick >= 5900U) {
             s_rt_global.clock_uncertain = true;
         }
     }
+    s_rt_global.initialized = true;
+    s_rt_global.last_cycle32 = current32;
     s_rt_global.last_sample_tick = current_tick;
-    s_rt_global.last_sample_tick_valid = true;
-
-    return s_rt_global.cycle_epoch | (uint64_t)current32;
+    return ((uint64_t)s_rt_global.cycle_wraps << 32) | current32;
 }
 
 void rtos_diag_rt_init(void)
 {
-    s_rt_global.running_slot = RTOS_DIAG_RT_SLOT_NONE;
-    s_rt_global.cycle_epoch = 0ULL;
-    s_rt_global.running_dispatch_cycles = 0ULL;
-    s_rt_global.last_cycle32 = 0U;
-    s_rt_global.last_sample_tick = 0U;
-    s_rt_global.clock_uncertain = false;
-    s_rt_global.last_sample_tick_valid = false;
-    s_rt_global.initialized = false;
-    s_idle_record.charged_cycles = 0ULL;
-    s_idle_record.dispatch_count = 0U;
-    s_idle_record.last_dispatch_tick = 0U;
-    s_idle_record.reserved = 0U;
-
-    if (rtos_port_clock_available()) {
-        s_rt_global.last_cycle32 = rtos_port_clock_cycles_32();
-        s_rt_global.last_sample_tick = rtos_tick_get();
-        s_rt_global.last_sample_tick_valid = true;
-        s_rt_global.initialized = true;
-    }
+    s_rt_global = (rtos_diag_rt_global_t){.running_slot = RTOS_DIAG_RT_SLOT_NONE};
+    s_idle_record = (rtos_diag_rt_idle_record_t){0};
+    (void)get_cycles_64_locked(rtos_tick_get());
 }
 
 void rtos_diag_rt_task_init_hook(uint32_t slot, uint32_t generation)
 {
     if (slot < RTOS_DIAG_RT_MAX_TASKS) {
         rtos_diag_rt_task_record_t *rec = &s_rt_tasks[slot];
-        rec->charged_cycles = 0ULL;
-        rec->last_ready_cycles = 0ULL;
-        rec->last_ready_latency_cycles = 0ULL;
-        rec->max_ready_latency_cycles = 0ULL;
-        rec->generation = generation;
-            rec->last_ready_tick = 0U;
-        rec->last_ready_latency_ticks = 0U;
-        rec->max_ready_latency_ticks = 0U;
-        rec->dispatch_count = 0U;
-        rec->last_dispatch_tick = 0U;
-        rec->job = (rt_job_t){0};
+        *rec = (rtos_diag_rt_task_record_t){.generation = generation};
     }
 }
 
@@ -146,21 +106,27 @@ void rtos_diag_rt_task_ready_hook(rtos_task_t *task)
     }
 }
 
-static void job_count(rtos_diag_rt_task_record_t *rec, uint16_t *counter)
+/* Keep shared accounting helpers out of line to avoid duplicating them
+ * across the IRQ hooks and public API at O2. */
+static void __attribute__((noinline)) job_count(rtos_diag_rt_task_record_t *rec, uint16_t *counter)
 {
     if (*counter != UINT16_MAX) ++*counter;
     else rec->job.flags |= RTOS_DIAG_JOB_COUNTER_SATURATED;
 }
 
-static uint64_t task_charge(uint32_t slot, uint64_t cycles)
+static uint64_t __attribute__((noinline)) running_delta(uint64_t cycles)
 {
-    uint64_t charged = s_rt_tasks[slot].charged_cycles;
-    if (s_rt_global.running_slot == slot && cycles >= s_rt_global.running_dispatch_cycles)
-        charged += cycles - s_rt_global.running_dispatch_cycles;
-    return charged;
+    const uint64_t anchor = s_rt_global.running_dispatch_cycles;
+    return cycles >= anchor ? cycles - anchor : 0ULL;
 }
 
-static bool clock_valid(void)
+static uint64_t __attribute__((noinline)) task_charge(uint32_t slot, uint64_t cycles)
+{
+    const uint64_t charged = s_rt_tasks[slot].charged_cycles;
+    return s_rt_global.running_slot == slot ? charged + running_delta(cycles) : charged;
+}
+
+static bool __attribute__((noinline)) clock_valid(void)
 {
     return rtos_port_clock_available() && !s_rt_global.clock_uncertain;
 }
@@ -197,7 +163,7 @@ static void job_check_budget(rtos_diag_rt_task_record_t *rec, uint64_t charge, b
     }
 }
 
-static void job_first_dispatch(rtos_diag_rt_task_record_t *rec, uint32_t tick)
+static void __attribute__((noinline)) job_first_dispatch(rtos_diag_rt_task_record_t *rec, uint32_t tick)
 {
     if ((rec->job.flags & (RTOS_DIAG_JOB_ACTIVE | RTOS_DIAG_JOB_FIRST_VALID)) != RTOS_DIAG_JOB_ACTIVE)
         return;
@@ -211,7 +177,7 @@ static void job_first_dispatch(rtos_diag_rt_task_record_t *rec, uint32_t tick)
     rec->job.flags |= RTOS_DIAG_JOB_FIRST_VALID;
 }
 
-static void job_abort(rtos_diag_rt_task_record_t *rec)
+static void __attribute__((noinline)) job_abort(rtos_diag_rt_task_record_t *rec)
 {
     if ((rec->job.flags & RTOS_DIAG_JOB_ACTIVE) != 0U) {
         rec->job.flags &= ~RTOS_DIAG_JOB_ACTIVE;
@@ -232,10 +198,7 @@ void rtos_diag_rt_switch_hook(rtos_task_t *previous, rtos_task_t *next)
 
     /* 1. Account CPU time for previous running task */
     if (s_rt_global.running_slot != RTOS_DIAG_RT_SLOT_NONE) {
-        uint64_t delta = 0ULL;
-        if (now_cycles >= s_rt_global.running_dispatch_cycles) {
-            delta = now_cycles - s_rt_global.running_dispatch_cycles;
-        }
+        const uint64_t delta = running_delta(now_cycles);
         if (s_rt_global.running_slot == RTOS_DIAG_RT_SLOT_IDLE) {
             s_idle_record.charged_cycles += delta;
         } else if (s_rt_global.running_slot < RTOS_DIAG_RT_MAX_TASKS) {
@@ -293,16 +256,20 @@ void rtos_diag_rt_on_tick(uint32_t tick)
     }
 }
 
-static bool job_api_thread(void)
+static bool __attribute__((noinline)) job_api_thread(void)
 {
     return rtos_port_task_create_context() && !rtos_port_interrupts_masked();
 }
 
-static bool job_api_running(void)
+static rtos_status_t __attribute__((noinline)) job_caller_status(void)
 {
-    return rtos_sched_started() && rtos_current_task != NULL &&
-           rtos_current_task->id != RTOS_IDLE_TASK_ID &&
-           rtos_current_task->state == RTOS_TASK_RUNNING;
+    if (!job_api_thread()) return RTOS_ERR_CONTEXT;
+    if (!rtos_sched_started() || rtos_current_task == NULL ||
+        rtos_current_task->id == RTOS_IDLE_TASK_ID ||
+        rtos_current_task->state != RTOS_TASK_RUNNING) {
+        return RTOS_ERR_STATE;
+    }
+    return RTOS_OK;
 }
 
 static void increment_u32(uint32_t *counter)
@@ -352,8 +319,8 @@ rtos_status_t rtos_diag_rt_configure(rtos_task_ref_t ref, const rtos_diag_rt_con
 rtos_status_t rtos_diag_rt_job_release(rtos_task_ref_t ref, uint32_t *out_job_id)
 {
     if (out_job_id == NULL) return RTOS_ERR_ARGUMENT;
-    if (!job_api_thread()) return RTOS_ERR_CONTEXT;
-    if (!job_api_running()) return RTOS_ERR_STATE;
+    const rtos_status_t caller = job_caller_status();
+    if (caller != RTOS_OK) return caller;
     const rtos_irq_state_t irq = rtos_critical_enter();
     rtos_status_t status = job_ref_locked(ref, false);
     if (status == RTOS_OK) {
@@ -380,10 +347,10 @@ rtos_status_t rtos_diag_rt_job_release(rtos_task_ref_t ref, uint32_t *out_job_id
     return status;
 }
 
-static rtos_status_t job_end(uint32_t id, bool abort)
+static rtos_status_t __attribute__((noinline)) job_end(uint32_t id, bool abort)
 {
-    if (!job_api_thread()) return RTOS_ERR_CONTEXT;
-    if (!job_api_running()) return RTOS_ERR_STATE;
+    const rtos_status_t caller = job_caller_status();
+    if (caller != RTOS_OK) return caller;
     const rtos_irq_state_t irq = rtos_critical_enter();
     const uint32_t slot = rtos_current_task->id - 1U;
     rtos_diag_rt_task_record_t *rec = &s_rt_tasks[slot];
@@ -430,18 +397,23 @@ rtos_status_t rtos_diag_rt_job_snapshot(rtos_task_ref_t ref, rtos_diag_rt_job_sn
             if (s_rt_global.initialized) s_rt_global.clock_uncertain = true;
             flags |= RTOS_DIAG_JOB_CYCLES_INVALID;
         }
-        *out = (rtos_diag_rt_job_snapshot_t){
-            .flags = flags,
-            .active_job_id = active ? job->id : 0U,
-            .release_tick = job->release_tick,
-            .last_first_dispatch_ticks = job->last_first, .max_first_dispatch_ticks = job->max_first,
-            .last_finish_ticks = job->last_finish, .max_finish_ticks = job->max_finish,
-            .last_budget_cycles = job->last_budget, .max_budget_cycles = job->max_budget,
-            .completed_jobs = job->completed, .deadline_misses = job->misses,
-            .budget_overruns = job->overruns, .aborted_jobs = job->aborted,
-            .rejected_releases = job->rejected, .invalid_jobs = job->invalid,
-            .stale_requests = s_stale_requests, .exhausted_ids = s_exhausted_ids
-        };
+        out->flags = flags;
+        out->active_job_id = active ? job->id : 0U;
+        out->release_tick = job->release_tick;
+        out->last_first_dispatch_ticks = job->last_first;
+        out->max_first_dispatch_ticks = job->max_first;
+        out->last_finish_ticks = job->last_finish;
+        out->max_finish_ticks = job->max_finish;
+        out->last_budget_cycles = job->last_budget;
+        out->max_budget_cycles = job->max_budget;
+        out->completed_jobs = job->completed;
+        out->deadline_misses = job->misses;
+        out->budget_overruns = job->overruns;
+        out->aborted_jobs = job->aborted;
+        out->rejected_releases = job->rejected;
+        out->invalid_jobs = job->invalid;
+        out->stale_requests = s_stale_requests;
+        out->exhausted_ids = s_exhausted_ids;
     }
     rtos_critical_exit(irq);
     return status;
@@ -458,28 +430,25 @@ rtos_status_t rtos_diag_rt_clock_cap(rtos_diag_clock_cap_t *out_cap)
 
     const rtos_irq_state_t state = rtos_critical_enter();
     const bool clock_avail = rtos_port_clock_available();
-    if (!clock_avail) {
-        out_cap->clock_type = RTOS_DIAG_CLOCK_UNAVAILABLE;
-        out_cap->frequency_hz = 0U;
-        out_cap->tick_hz = RTOS_TICK_HZ;
-        out_cap->wrap_period_ticks = 0U;
-        out_cap->flags = RTOS_DIAG_RT_CLOCK_UNAVAILABLE;
-    } else {
-        out_cap->clock_type = RTOS_DIAG_CLOCK_CYCLE_ACCURATE;
-        out_cap->frequency_hz = rtos_port_cpu_hz();
-        out_cap->tick_hz = RTOS_TICK_HZ;
-        if (out_cap->frequency_hz > 0U) {
-            out_cap->wrap_period_ticks = (uint32_t)((UINT64_C(1) << 32) * RTOS_TICK_HZ / out_cap->frequency_hz);
-        } else {
-            out_cap->wrap_period_ticks = 0U;
-        }
-        out_cap->flags = RTOS_DIAG_RT_VALID;
-        if (s_rt_global.clock_uncertain) {
-            out_cap->flags |= RTOS_DIAG_RT_CLOCK_UNCERTAIN;
-        }
-    }
+    out_cap->clock_type = clock_avail ? RTOS_DIAG_CLOCK_CYCLE_ACCURATE :
+                                        RTOS_DIAG_CLOCK_UNAVAILABLE;
+    const uint32_t frequency = clock_avail ? rtos_port_cpu_hz() : 0U;
+    out_cap->frequency_hz = frequency;
+    out_cap->tick_hz = RTOS_TICK_HZ;
+    out_cap->wrap_period_ticks = frequency == 0U ? 0U :
+        (uint32_t)((UINT64_C(1) << 32) * RTOS_TICK_HZ / frequency);
+    out_cap->flags = !clock_avail ? RTOS_DIAG_RT_CLOCK_UNAVAILABLE :
+        RTOS_DIAG_RT_VALID | (s_rt_global.clock_uncertain ? RTOS_DIAG_RT_CLOCK_UNCERTAIN : 0U);
     rtos_critical_exit(state);
     return RTOS_OK;
+}
+
+static uint32_t __attribute__((noinline)) snapshot_clock_flags(void)
+{
+    uint32_t flags = RTOS_DIAG_RT_VALID;
+    if (!rtos_port_clock_available()) flags |= RTOS_DIAG_RT_CLOCK_UNAVAILABLE;
+    if (s_rt_global.clock_uncertain) flags |= RTOS_DIAG_RT_CLOCK_UNCERTAIN;
+    return flags;
 }
 
 rtos_status_t rtos_diag_rt_snapshot(rtos_task_ref_t ref, rtos_diag_rt_snapshot_t *out_snapshot)
@@ -513,12 +482,7 @@ rtos_status_t rtos_diag_rt_snapshot(rtos_task_ref_t ref, rtos_diag_rt_snapshot_t
     out_snapshot->dispatch_count = rec->dispatch_count;
     out_snapshot->last_dispatch_tick = rec->last_dispatch_tick;
 
-    /* Compute charged cycles including in-flight execution if currently running */
-    uint64_t in_flight = 0ULL;
-    if (s_rt_global.running_slot == (uint16_t)ref.slot && now_cycles >= s_rt_global.running_dispatch_cycles) {
-        in_flight = now_cycles - s_rt_global.running_dispatch_cycles;
-    }
-    out_snapshot->charged_cycles = rec->charged_cycles + in_flight;
+    out_snapshot->charged_cycles = task_charge(ref.slot, now_cycles);
 
     /* Query task state from kernel */
     rtos_task_t *task = rtos_task_ref_resolve_locked(ref);
@@ -533,13 +497,7 @@ rtos_status_t rtos_diag_rt_snapshot(rtos_task_ref_t ref, rtos_diag_rt_snapshot_t
     }
 
     /* Set status flags */
-    out_snapshot->flags = RTOS_DIAG_RT_VALID;
-    if (!rtos_port_clock_available()) {
-        out_snapshot->flags |= RTOS_DIAG_RT_CLOCK_UNAVAILABLE;
-    }
-    if (s_rt_global.clock_uncertain) {
-        out_snapshot->flags |= RTOS_DIAG_RT_CLOCK_UNCERTAIN;
-    }
+    out_snapshot->flags = snapshot_clock_flags();
 
     rtos_critical_exit(state);
     return RTOS_OK;
@@ -572,21 +530,13 @@ rtos_status_t rtos_diag_rt_idle_snapshot(rtos_diag_rt_snapshot_t *out_snapshot)
     uint64_t in_flight = 0ULL;
     if (s_rt_global.running_slot == RTOS_DIAG_RT_SLOT_IDLE) {
         out_snapshot->state = (uint16_t)RTOS_TASK_RUNNING;
-        if (now_cycles >= s_rt_global.running_dispatch_cycles) {
-            in_flight = now_cycles - s_rt_global.running_dispatch_cycles;
-        }
+        in_flight = running_delta(now_cycles);
     } else {
         out_snapshot->state = (uint16_t)RTOS_TASK_READY;
     }
     out_snapshot->charged_cycles = s_idle_record.charged_cycles + in_flight;
 
-    out_snapshot->flags = RTOS_DIAG_RT_VALID;
-    if (!rtos_port_clock_available()) {
-        out_snapshot->flags |= RTOS_DIAG_RT_CLOCK_UNAVAILABLE;
-    }
-    if (s_rt_global.clock_uncertain) {
-        out_snapshot->flags |= RTOS_DIAG_RT_CLOCK_UNCERTAIN;
-    }
+    out_snapshot->flags = snapshot_clock_flags();
 
     rtos_critical_exit(state);
     return RTOS_OK;

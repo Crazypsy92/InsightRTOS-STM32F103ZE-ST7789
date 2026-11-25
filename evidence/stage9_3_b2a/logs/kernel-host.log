@@ -1,0 +1,1276 @@
+-- The C compiler identification is GNU 15.2.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Configuring done (0.2s)
+-- Generating done (0.1s)
+-- Build files have been written to: /tmp/insight-b2a.48lV9G/kernel-host
+[  1%] Building C object tests/host/CMakeFiles/insight_host_semaphore.dir/test_semaphore.c.o
+[  1%] Building C object tests/host/CMakeFiles/insight_host_timeout.dir/test_semaphore_timeout.c.o
+[  1%] Building C object tests/host/CMakeFiles/insight_host_counting.dir/test_counting_semaphore.c.o
+[  1%] Building C object tests/host/CMakeFiles/insight_host_delay_1.dir/test_delay.c.o
+[  1%] Building C object tests/host/CMakeFiles/insight_host_delay_2.dir/test_delay.c.o
+[  1%] Building C object tests/host/CMakeFiles/insight_host_tests.dir/test_kernel.c.o
+[  1%] Building C object tests/host/CMakeFiles/insight_host_tests.dir/mock_port.c.o
+[  1%] Building C object tests/host/CMakeFiles/insight_host_counting.dir/mock_port.c.o
+[  1%] Building C object tests/host/CMakeFiles/insight_host_timeout.dir/mock_port.c.o
+[  1%] Building C object tests/host/CMakeFiles/insight_host_semaphore.dir/mock_port.c.o
+[  2%] Building C object tests/host/CMakeFiles/insight_host_delay_2.dir/mock_port.c.o
+[  2%] Building C object tests/host/CMakeFiles/insight_host_delay_1.dir/mock_port.c.o
+[  2%] Building C object tests/host/CMakeFiles/insight_host_counting.dir/__/__/kernel/trace.c.o
+[  3%] Building C object tests/host/CMakeFiles/insight_host_tests.dir/__/__/kernel/trace.c.o
+[  4%] Building C object tests/host/CMakeFiles/insight_host_semaphore.dir/__/__/kernel/trace.c.o
+[  4%] Building C object tests/host/CMakeFiles/insight_host_timeout.dir/__/__/kernel/trace.c.o
+[  4%] Building C object tests/host/CMakeFiles/insight_host_delay_2.dir/__/__/kernel/trace.c.o
+[  4%] Building C object tests/host/CMakeFiles/insight_host_delay_1.dir/__/__/kernel/trace.c.o
+[  4%] Building C object tests/host/CMakeFiles/insight_host_tests.dir/__/__/kernel/queue.c.o
+[  4%] Building C object tests/host/CMakeFiles/insight_host_semaphore.dir/__/__/kernel/queue.c.o
+[  4%] Building C object tests/host/CMakeFiles/insight_host_counting.dir/__/__/kernel/queue.c.o
+[  5%] Building C object tests/host/CMakeFiles/insight_host_timeout.dir/__/__/kernel/queue.c.o
+[  5%] Building C object tests/host/CMakeFiles/insight_host_delay_2.dir/__/__/kernel/queue.c.o
+[  5%] Building C object tests/host/CMakeFiles/insight_host_delay_1.dir/__/__/kernel/queue.c.o
+[  6%] Building C object tests/host/CMakeFiles/insight_host_tests.dir/__/__/kernel/scheduler.c.o
+[  6%] Building C object tests/host/CMakeFiles/insight_host_counting.dir/__/__/kernel/scheduler.c.o
+[  6%] Building C object tests/host/CMakeFiles/insight_host_semaphore.dir/__/__/kernel/scheduler.c.o
+[  6%] Building C object tests/host/CMakeFiles/insight_host_timeout.dir/__/__/kernel/scheduler.c.o
+[  6%] Building C object tests/host/CMakeFiles/insight_host_delay_2.dir/__/__/kernel/scheduler.c.o
+[  6%] Building C object tests/host/CMakeFiles/insight_host_delay_1.dir/__/__/kernel/scheduler.c.o
+[  6%] Building C object tests/host/CMakeFiles/insight_host_tests.dir/__/__/kernel/ready_queue.c.o
+[  6%] Building C object tests/host/CMakeFiles/insight_host_counting.dir/__/__/kernel/ready_queue.c.o
+[  6%] Building C object tests/host/CMakeFiles/insight_host_semaphore.dir/__/__/kernel/ready_queue.c.o
+[  6%] Building C object tests/host/CMakeFiles/insight_host_timeout.dir/__/__/kernel/ready_queue.c.o
+[  6%] Building C object tests/host/CMakeFiles/insight_host_delay_2.dir/__/__/kernel/ready_queue.c.o
+[  6%] Building C object tests/host/CMakeFiles/insight_host_tests.dir/__/__/kernel/tick.c.o
+[  6%] Building C object tests/host/CMakeFiles/insight_host_counting.dir/__/__/kernel/tick.c.o
+[  7%] Building C object tests/host/CMakeFiles/insight_host_delay_1.dir/__/__/kernel/ready_queue.c.o
+[  7%] Building C object tests/host/CMakeFiles/insight_host_semaphore.dir/__/__/kernel/tick.c.o
+[  7%] Building C object tests/host/CMakeFiles/insight_host_timeout.dir/__/__/kernel/tick.c.o
+[  8%] Building C object tests/host/CMakeFiles/insight_host_delay_2.dir/__/__/kernel/tick.c.o
+[  9%] Building C object tests/host/CMakeFiles/insight_host_tests.dir/__/__/kernel/critical.c.o
+[  9%] Building C object tests/host/CMakeFiles/insight_host_counting.dir/__/__/kernel/critical.c.o
+[  9%] Building C object tests/host/CMakeFiles/insight_host_delay_1.dir/__/__/kernel/tick.c.o
+[ 10%] Building C object tests/host/CMakeFiles/insight_host_semaphore.dir/__/__/kernel/critical.c.o
+[ 10%] Building C object tests/host/CMakeFiles/insight_host_timeout.dir/__/__/kernel/critical.c.o
+[ 10%] Building C object tests/host/CMakeFiles/insight_host_delay_2.dir/__/__/kernel/critical.c.o
+[ 10%] Building C object tests/host/CMakeFiles/insight_host_tests.dir/__/__/kernel/delay.c.o
+[ 10%] Building C object tests/host/CMakeFiles/insight_host_counting.dir/__/__/kernel/delay.c.o
+[ 10%] Building C object tests/host/CMakeFiles/insight_host_semaphore.dir/__/__/kernel/delay.c.o
+[ 10%] Building C object tests/host/CMakeFiles/insight_host_delay_1.dir/__/__/kernel/critical.c.o
+[ 11%] Building C object tests/host/CMakeFiles/insight_host_timeout.dir/__/__/kernel/delay.c.o
+[ 11%] Building C object tests/host/CMakeFiles/insight_host_delay_2.dir/__/__/kernel/delay.c.o
+[ 11%] Building C object tests/host/CMakeFiles/insight_host_tests.dir/__/__/kernel/delay_queue.c.o
+[ 12%] Building C object tests/host/CMakeFiles/insight_host_counting.dir/__/__/kernel/delay_queue.c.o
+[ 12%] Building C object tests/host/CMakeFiles/insight_host_delay_1.dir/__/__/kernel/delay.c.o
+[ 12%] Building C object tests/host/CMakeFiles/insight_host_semaphore.dir/__/__/kernel/delay_queue.c.o
+[ 12%] Building C object tests/host/CMakeFiles/insight_host_timeout.dir/__/__/kernel/delay_queue.c.o
+[ 12%] Building C object tests/host/CMakeFiles/insight_host_delay_2.dir/__/__/kernel/delay_queue.c.o
+[ 12%] Building C object tests/host/CMakeFiles/insight_host_tests.dir/__/__/kernel/semaphore.c.o
+[ 12%] Building C object tests/host/CMakeFiles/insight_host_counting.dir/__/__/kernel/semaphore.c.o
+[ 12%] Building C object tests/host/CMakeFiles/insight_host_delay_1.dir/__/__/kernel/delay_queue.c.o
+[ 12%] Building C object tests/host/CMakeFiles/insight_host_semaphore.dir/__/__/kernel/semaphore.c.o
+[ 12%] Building C object tests/host/CMakeFiles/insight_host_delay_2.dir/__/__/kernel/semaphore.c.o
+[ 12%] Building C object tests/host/CMakeFiles/insight_host_timeout.dir/__/__/kernel/semaphore.c.o
+[ 12%] Building C object tests/host/CMakeFiles/insight_host_tests.dir/__/__/kernel/mutex.c.o
+[ 12%] Building C object tests/host/CMakeFiles/insight_host_counting.dir/__/__/kernel/mutex.c.o
+[ 13%] Building C object tests/host/CMakeFiles/insight_host_delay_1.dir/__/__/kernel/semaphore.c.o
+[ 13%] Building C object tests/host/CMakeFiles/insight_host_semaphore.dir/__/__/kernel/mutex.c.o
+[ 13%] Building C object tests/host/CMakeFiles/insight_host_timeout.dir/__/__/kernel/mutex.c.o
+[ 14%] Building C object tests/host/CMakeFiles/insight_host_delay_2.dir/__/__/kernel/mutex.c.o
+[ 15%] Building C object tests/host/CMakeFiles/insight_host_tests.dir/__/__/kernel/priority.c.o
+[ 15%] Building C object tests/host/CMakeFiles/insight_host_counting.dir/__/__/kernel/priority.c.o
+[ 15%] Building C object tests/host/CMakeFiles/insight_host_delay_1.dir/__/__/kernel/mutex.c.o
+[ 16%] Building C object tests/host/CMakeFiles/insight_host_semaphore.dir/__/__/kernel/priority.c.o
+[ 16%] Building C object tests/host/CMakeFiles/insight_host_timeout.dir/__/__/kernel/priority.c.o
+[ 16%] Building C object tests/host/CMakeFiles/insight_host_tests.dir/__/__/kernel/priority_graph.c.o
+[ 16%] Building C object tests/host/CMakeFiles/insight_host_delay_2.dir/__/__/kernel/priority.c.o
+[ 16%] Building C object tests/host/CMakeFiles/insight_host_counting.dir/__/__/kernel/priority_graph.c.o
+[ 16%] Building C object tests/host/CMakeFiles/insight_host_delay_1.dir/__/__/kernel/priority.c.o
+[ 16%] Building C object tests/host/CMakeFiles/insight_host_semaphore.dir/__/__/kernel/priority_graph.c.o
+[ 16%] Building C object tests/host/CMakeFiles/insight_host_tests.dir/__/__/kernel/wait.c.o
+[ 17%] Building C object tests/host/CMakeFiles/insight_host_timeout.dir/__/__/kernel/priority_graph.c.o
+[ 17%] Building C object tests/host/CMakeFiles/insight_host_delay_2.dir/__/__/kernel/priority_graph.c.o
+[ 18%] Building C object tests/host/CMakeFiles/insight_host_counting.dir/__/__/kernel/wait.c.o
+[ 18%] Building C object tests/host/CMakeFiles/insight_host_delay_1.dir/__/__/kernel/priority_graph.c.o
+[ 18%] Building C object tests/host/CMakeFiles/insight_host_semaphore.dir/__/__/kernel/wait.c.o
+[ 18%] Building C object tests/host/CMakeFiles/insight_host_counting.dir/__/__/arch/arm/cortex_m3/systick_config.c.o
+[ 18%] Building C object tests/host/CMakeFiles/insight_host_tests.dir/__/__/arch/arm/cortex_m3/systick_config.c.o
+[ 18%] Building C object tests/host/CMakeFiles/insight_host_timeout.dir/__/__/kernel/wait.c.o
+[ 18%] Building C object tests/host/CMakeFiles/insight_host_delay_2.dir/__/__/kernel/wait.c.o
+[ 18%] Building C object tests/host/CMakeFiles/insight_host_delay_1.dir/__/__/kernel/wait.c.o
+[ 18%] Building C object tests/host/CMakeFiles/insight_host_semaphore.dir/__/__/arch/arm/cortex_m3/systick_config.c.o
+[ 18%] Building C object tests/host/CMakeFiles/insight_host_tests.dir/tmp/insight-b2a.48lV9G/work/Middlewares/InsightRTOS/kernel/task.c.o
+[ 18%] Building C object tests/host/CMakeFiles/insight_host_counting.dir/tmp/insight-b2a.48lV9G/work/Middlewares/InsightRTOS/kernel/task.c.o
+[ 18%] Building C object tests/host/CMakeFiles/insight_host_delay_2.dir/__/__/arch/arm/cortex_m3/systick_config.c.o
+[ 18%] Building C object tests/host/CMakeFiles/insight_host_timeout.dir/__/__/arch/arm/cortex_m3/systick_config.c.o
+[ 19%] Building C object tests/host/CMakeFiles/insight_host_delay_1.dir/__/__/arch/arm/cortex_m3/systick_config.c.o
+[ 19%] Building C object tests/host/CMakeFiles/insight_host_semaphore.dir/tmp/insight-b2a.48lV9G/work/Middlewares/InsightRTOS/kernel/task.c.o
+[ 20%] Building C object tests/host/CMakeFiles/insight_host_tests.dir/tmp/insight-b2a.48lV9G/work/Middlewares/InsightRTOS/kernel/diag_rt.c.o
+[ 21%] Building C object tests/host/CMakeFiles/insight_host_delay_2.dir/tmp/insight-b2a.48lV9G/work/Middlewares/InsightRTOS/kernel/task.c.o
+[ 21%] Building C object tests/host/CMakeFiles/insight_host_delay_1.dir/tmp/insight-b2a.48lV9G/work/Middlewares/InsightRTOS/kernel/task.c.o
+[ 21%] Building C object tests/host/CMakeFiles/insight_host_timeout.dir/tmp/insight-b2a.48lV9G/work/Middlewares/InsightRTOS/kernel/task.c.o
+[ 21%] Building C object tests/host/CMakeFiles/insight_host_counting.dir/tmp/insight-b2a.48lV9G/work/Middlewares/InsightRTOS/kernel/diag_rt.c.o
+[ 22%] Building C object tests/host/CMakeFiles/insight_host_semaphore.dir/tmp/insight-b2a.48lV9G/work/Middlewares/InsightRTOS/kernel/diag_rt.c.o
+[ 22%] Building C object tests/host/CMakeFiles/insight_host_delay_2.dir/tmp/insight-b2a.48lV9G/work/Middlewares/InsightRTOS/kernel/diag_rt.c.o
+[ 22%] Building C object tests/host/CMakeFiles/insight_host_delay_1.dir/tmp/insight-b2a.48lV9G/work/Middlewares/InsightRTOS/kernel/diag_rt.c.o
+[ 23%] Building C object tests/host/CMakeFiles/insight_host_timeout.dir/tmp/insight-b2a.48lV9G/work/Middlewares/InsightRTOS/kernel/diag_rt.c.o
+[ 23%] Linking C executable insight_host_tests
+[ 23%] Linking C executable insight_host_counting
+[ 23%] Linking C executable insight_host_delay_1
+[ 23%] Linking C executable insight_host_delay_2
+[ 23%] Linking C executable insight_host_timeout
+[ 23%] Linking C executable insight_host_semaphore
+[ 23%] Built target insight_host_counting
+[ 23%] Built target insight_host_tests
+[ 23%] Building C object tests/host/CMakeFiles/insight_host_delay_5.dir/test_delay.c.o
+[ 23%] Building C object tests/host/CMakeFiles/insight_host_preemptive_1.dir/test_preemptive.c.o
+[ 23%] Built target insight_host_delay_1
+[ 23%] Built target insight_host_delay_2
+[ 23%] Built target insight_host_semaphore
+[ 23%] Building C object tests/host/CMakeFiles/insight_host_delay_5.dir/mock_port.c.o
+[ 23%] Built target insight_host_timeout
+[ 24%] Building C object tests/host/CMakeFiles/insight_host_delay_5.dir/__/__/kernel/trace.c.o
+[ 24%] Building C object tests/host/CMakeFiles/insight_host_preemptive_2.dir/test_preemptive.c.o
+[ 24%] Building C object tests/host/CMakeFiles/insight_host_preemptive_5.dir/test_preemptive.c.o
+[ 25%] Building C object tests/host/CMakeFiles/insight_host_preemptive_1.dir/mock_port.c.o
+[ 25%] Building C object tests/host/CMakeFiles/insight_host_preemptive_2.dir/mock_port.c.o
+[ 25%] Building C object tests/host/CMakeFiles/insight_host_delay_5.dir/__/__/kernel/queue.c.o
+[ 26%] Building C object tests/host/CMakeFiles/insight_host_preemptive_2.dir/__/__/kernel/trace.c.o
+[ 26%] Building C object tests/host/CMakeFiles/insight_host_preemptive_1.dir/__/__/kernel/trace.c.o
+[ 26%] Building C object tests/host/CMakeFiles/insight_host_preemptive_5.dir/mock_port.c.o
+[ 26%] Building C object tests/host/CMakeFiles/insight_host_preemptive_5.dir/__/__/kernel/trace.c.o
+[ 26%] Building C object tests/host/CMakeFiles/insight_host_delay_5.dir/__/__/kernel/scheduler.c.o
+[ 26%] Building C object tests/host/CMakeFiles/insight_host_delay_5.dir/__/__/kernel/ready_queue.c.o
+[ 26%] Building C object tests/host/CMakeFiles/insight_host_preemptive_1.dir/__/__/kernel/queue.c.o
+[ 26%] Building C object tests/host/CMakeFiles/insight_host_preemptive_1.dir/__/__/kernel/scheduler.c.o
+[ 27%] Building C object tests/host/CMakeFiles/insight_host_preemptive_5.dir/__/__/kernel/queue.c.o
+[ 27%] Building C object tests/host/CMakeFiles/insight_host_preemptive_2.dir/__/__/kernel/queue.c.o
+[ 27%] Building C object tests/host/CMakeFiles/insight_host_preemptive_5.dir/__/__/kernel/scheduler.c.o
+[ 27%] Building C object tests/host/CMakeFiles/insight_host_delay_5.dir/__/__/kernel/tick.c.o
+[ 27%] Building C object tests/host/CMakeFiles/insight_host_preemptive_5.dir/__/__/kernel/ready_queue.c.o
+[ 27%] Building C object tests/host/CMakeFiles/insight_host_preemptive_1.dir/__/__/kernel/ready_queue.c.o
+[ 27%] Building C object tests/host/CMakeFiles/insight_host_preemptive_2.dir/__/__/kernel/scheduler.c.o
+[ 28%] Building C object tests/host/CMakeFiles/insight_host_preemptive_1.dir/__/__/kernel/tick.c.o
+[ 29%] Building C object tests/host/CMakeFiles/insight_host_delay_5.dir/__/__/kernel/critical.c.o
+[ 29%] Building C object tests/host/CMakeFiles/insight_host_preemptive_1.dir/__/__/kernel/critical.c.o
+[ 29%] Building C object tests/host/CMakeFiles/insight_host_preemptive_5.dir/__/__/kernel/tick.c.o
+[ 29%] Building C object tests/host/CMakeFiles/insight_host_preemptive_5.dir/__/__/kernel/critical.c.o
+[ 29%] Building C object tests/host/CMakeFiles/insight_host_delay_5.dir/__/__/kernel/delay.c.o
+[ 29%] Building C object tests/host/CMakeFiles/insight_host_delay_5.dir/__/__/kernel/delay_queue.c.o
+[ 29%] Building C object tests/host/CMakeFiles/insight_host_preemptive_1.dir/__/__/kernel/delay.c.o
+[ 29%] Building C object tests/host/CMakeFiles/insight_host_preemptive_2.dir/__/__/kernel/ready_queue.c.o
+[ 29%] Building C object tests/host/CMakeFiles/insight_host_preemptive_1.dir/__/__/kernel/delay_queue.c.o
+[ 30%] Building C object tests/host/CMakeFiles/insight_host_preemptive_5.dir/__/__/kernel/delay.c.o
+[ 30%] Building C object tests/host/CMakeFiles/insight_host_preemptive_1.dir/__/__/kernel/semaphore.c.o
+[ 30%] Building C object tests/host/CMakeFiles/insight_host_delay_5.dir/__/__/kernel/semaphore.c.o
+[ 31%] Building C object tests/host/CMakeFiles/insight_host_preemptive_1.dir/__/__/kernel/mutex.c.o
+[ 31%] Building C object tests/host/CMakeFiles/insight_host_preemptive_2.dir/__/__/kernel/tick.c.o
+[ 31%] Building C object tests/host/CMakeFiles/insight_host_preemptive_5.dir/__/__/kernel/delay_queue.c.o
+[ 31%] Building C object tests/host/CMakeFiles/insight_host_preemptive_1.dir/__/__/kernel/priority.c.o
+[ 31%] Building C object tests/host/CMakeFiles/insight_host_preemptive_5.dir/__/__/kernel/semaphore.c.o
+[ 31%] Building C object tests/host/CMakeFiles/insight_host_delay_5.dir/__/__/kernel/mutex.c.o
+[ 32%] Building C object tests/host/CMakeFiles/insight_host_preemptive_2.dir/__/__/kernel/critical.c.o
+[ 32%] Building C object tests/host/CMakeFiles/insight_host_preemptive_1.dir/__/__/kernel/priority_graph.c.o
+[ 32%] Building C object tests/host/CMakeFiles/insight_host_isr.dir/test_semaphore_isr.c.o
+[ 32%] Building C object tests/host/CMakeFiles/insight_host_ipc.dir/test_ipc_invariants.c.o
+[ 32%] Building C object tests/host/CMakeFiles/insight_host_preemptive_2.dir/__/__/kernel/delay.c.o
+[ 32%] Building C object tests/host/CMakeFiles/insight_host_preemptive_5.dir/__/__/kernel/mutex.c.o
+[ 33%] Building C object tests/host/CMakeFiles/insight_host_delay_5.dir/__/__/kernel/priority.c.o
+[ 33%] Building C object tests/host/CMakeFiles/insight_host_preemptive_1.dir/__/__/kernel/wait.c.o
+[ 33%] Building C object tests/host/CMakeFiles/insight_host_preemptive_2.dir/__/__/kernel/delay_queue.c.o
+[ 33%] Building C object tests/host/CMakeFiles/insight_host_preemptive_5.dir/__/__/kernel/priority.c.o
+[ 33%] Building C object tests/host/CMakeFiles/insight_host_delay_5.dir/__/__/kernel/priority_graph.c.o
+[ 33%] Building C object tests/host/CMakeFiles/insight_host_ipc.dir/mock_port.c.o
+[ 33%] Building C object tests/host/CMakeFiles/insight_host_isr.dir/mock_port.c.o
+[ 33%] Building C object tests/host/CMakeFiles/insight_host_preemptive_1.dir/__/__/arch/arm/cortex_m3/systick_config.c.o
+[ 34%] Building C object tests/host/CMakeFiles/insight_host_preemptive_5.dir/__/__/kernel/priority_graph.c.o
+[ 34%] Building C object tests/host/CMakeFiles/insight_host_preemptive_2.dir/__/__/kernel/semaphore.c.o
+[ 34%] Building C object tests/host/CMakeFiles/insight_host_delay_5.dir/__/__/kernel/wait.c.o
+[ 34%] Building C object tests/host/CMakeFiles/insight_host_ipc.dir/__/__/kernel/trace.c.o
+[ 35%] Building C object tests/host/CMakeFiles/insight_host_isr.dir/__/__/kernel/trace.c.o
+[ 36%] Building C object tests/host/CMakeFiles/insight_host_preemptive_1.dir/tmp/insight-b2a.48lV9G/work/Middlewares/InsightRTOS/kernel/task.c.o
+[ 36%] Building C object tests/host/CMakeFiles/insight_host_preemptive_5.dir/__/__/kernel/wait.c.o
+[ 36%] Building C object tests/host/CMakeFiles/insight_host_delay_5.dir/__/__/arch/arm/cortex_m3/systick_config.c.o
+[ 36%] Building C object tests/host/CMakeFiles/insight_host_preemptive_2.dir/__/__/kernel/mutex.c.o
+[ 37%] Building C object tests/host/CMakeFiles/insight_host_isr.dir/__/__/kernel/queue.c.o
+[ 37%] Building C object tests/host/CMakeFiles/insight_host_ipc.dir/__/__/kernel/queue.c.o
+[ 37%] Building C object tests/host/CMakeFiles/insight_host_delay_5.dir/tmp/insight-b2a.48lV9G/work/Middlewares/InsightRTOS/kernel/task.c.o
+[ 37%] Building C object tests/host/CMakeFiles/insight_host_preemptive_1.dir/tmp/insight-b2a.48lV9G/work/Middlewares/InsightRTOS/kernel/diag_rt.c.o
+[ 37%] Building C object tests/host/CMakeFiles/insight_host_preemptive_5.dir/__/__/arch/arm/cortex_m3/systick_config.c.o
+[ 38%] Building C object tests/host/CMakeFiles/insight_host_preemptive_2.dir/__/__/kernel/priority.c.o
+[ 38%] Building C object tests/host/CMakeFiles/insight_host_isr.dir/__/__/kernel/scheduler.c.o
+[ 38%] Building C object tests/host/CMakeFiles/insight_host_preemptive_5.dir/tmp/insight-b2a.48lV9G/work/Middlewares/InsightRTOS/kernel/task.c.o
+[ 38%] Building C object tests/host/CMakeFiles/insight_host_ipc.dir/__/__/kernel/scheduler.c.o
+[ 38%] Building C object tests/host/CMakeFiles/insight_host_preemptive_2.dir/__/__/kernel/priority_graph.c.o
+[ 39%] Building C object tests/host/CMakeFiles/insight_host_delay_5.dir/tmp/insight-b2a.48lV9G/work/Middlewares/InsightRTOS/kernel/diag_rt.c.o
+[ 39%] Linking C executable insight_host_preemptive_1
+[ 39%] Building C object tests/host/CMakeFiles/insight_host_preemptive_2.dir/__/__/kernel/wait.c.o
+[ 39%] Building C object tests/host/CMakeFiles/insight_host_ipc.dir/__/__/kernel/ready_queue.c.o
+[ 39%] Building C object tests/host/CMakeFiles/insight_host_isr.dir/__/__/kernel/ready_queue.c.o
+[ 39%] Building C object tests/host/CMakeFiles/insight_host_preemptive_5.dir/tmp/insight-b2a.48lV9G/work/Middlewares/InsightRTOS/kernel/diag_rt.c.o
+[ 39%] Linking C executable insight_host_delay_5
+[ 39%] Building C object tests/host/CMakeFiles/insight_host_isr.dir/__/__/kernel/tick.c.o
+[ 39%] Built target insight_host_preemptive_1
+[ 39%] Building C object tests/host/CMakeFiles/insight_host_preemptive_2.dir/__/__/arch/arm/cortex_m3/systick_config.c.o
+[ 39%] Building C object tests/host/CMakeFiles/insight_host_ipc.dir/__/__/kernel/tick.c.o
+[ 40%] Building C object tests/host/CMakeFiles/insight_host_ipc.dir/__/__/kernel/critical.c.o
+[ 41%] Linking C executable insight_host_preemptive_5
+[ 42%] Building C object tests/host/CMakeFiles/insight_host_isr.dir/__/__/kernel/critical.c.o
+[ 42%] Built target insight_host_delay_5
+[ 42%] Building C object tests/host/CMakeFiles/insight_host_preemptive_2.dir/tmp/insight-b2a.48lV9G/work/Middlewares/InsightRTOS/kernel/task.c.o
+[ 43%] Building C object tests/host/CMakeFiles/insight_host_preemptive_2.dir/tmp/insight-b2a.48lV9G/work/Middlewares/InsightRTOS/kernel/diag_rt.c.o
+[ 43%] Building C object tests/host/CMakeFiles/insight_host_mutex.dir/test_mutex.c.o
+[ 43%] Building C object tests/host/CMakeFiles/insight_host_isr.dir/__/__/kernel/delay.c.o
+[ 43%] Building C object tests/host/CMakeFiles/insight_host_ipc.dir/__/__/kernel/delay.c.o
+[ 43%] Building C object tests/host/CMakeFiles/insight_host_isr.dir/__/__/kernel/delay_queue.c.o
+[ 43%] Built target insight_host_preemptive_5
+[ 43%] Building C object tests/host/CMakeFiles/insight_host_ipc.dir/__/__/kernel/delay_queue.c.o
+[ 43%] Building C object tests/host/CMakeFiles/insight_host_ipc.dir/__/__/kernel/semaphore.c.o
+[ 43%] Building C object tests/host/CMakeFiles/insight_host_pi.dir/test_priority_inheritance.c.o
+[ 43%] Linking C executable insight_host_preemptive_2
+[ 43%] Building C object tests/host/CMakeFiles/insight_host_isr.dir/__/__/kernel/semaphore.c.o
+[ 43%] Building C object tests/host/CMakeFiles/insight_host_mutex.dir/mock_port.c.o
+[ 43%] Building C object tests/host/CMakeFiles/insight_host_mutex.dir/__/__/kernel/trace.c.o
+[ 43%] Building C object tests/host/CMakeFiles/insight_host_ipc.dir/__/__/kernel/mutex.c.o
+[ 43%] Building C object tests/host/CMakeFiles/insight_host_isr.dir/__/__/kernel/mutex.c.o
+[ 43%] Building C object tests/host/CMakeFiles/insight_host_pi.dir/mock_port.c.o
+[ 43%] Built target insight_host_preemptive_2
+[ 44%] Building C object tests/host/CMakeFiles/insight_host_ipc.dir/__/__/kernel/priority.c.o
+[ 44%] Building C object tests/host/CMakeFiles/insight_host_transitive.dir/test_transitive_pi.c.o
+[ 45%] Building C object tests/host/CMakeFiles/insight_host_isr.dir/__/__/kernel/priority.c.o
+[ 46%] Building C object tests/host/CMakeFiles/insight_host_pi.dir/__/__/kernel/trace.c.o
+[ 47%] Building C object tests/host/CMakeFiles/insight_host_mutex.dir/__/__/kernel/queue.c.o
+[ 47%] Building C object tests/host/CMakeFiles/insight_host_ipc.dir/__/__/kernel/priority_graph.c.o
+[ 47%] Building C object tests/host/CMakeFiles/insight_host_pi.dir/__/__/kernel/queue.c.o
+[ 47%] Building C object tests/host/CMakeFiles/insight_host_isr.dir/__/__/kernel/priority_graph.c.o
+[ 47%] Building C object tests/host/CMakeFiles/insight_host_mutex.dir/__/__/kernel/scheduler.c.o
+[ 47%] Building C object tests/host/CMakeFiles/insight_host_ipc.dir/__/__/kernel/wait.c.o
+[ 47%] Building C object tests/host/CMakeFiles/insight_host_isr.dir/__/__/kernel/wait.c.o
+[ 47%] Building C object tests/host/CMakeFiles/insight_host_transitive.dir/mock_port.c.o
+[ 47%] Building C object tests/host/CMakeFiles/insight_host_pi.dir/__/__/kernel/scheduler.c.o
+[ 47%] Building C object tests/host/CMakeFiles/insight_host_mutex_timeout.dir/test_mutex_timeout.c.o
+[ 47%] Building C object tests/host/CMakeFiles/insight_host_ipc.dir/__/__/arch/arm/cortex_m3/systick_config.c.o
+[ 47%] Building C object tests/host/CMakeFiles/insight_host_isr.dir/__/__/arch/arm/cortex_m3/systick_config.c.o
+[ 47%] Building C object tests/host/CMakeFiles/insight_host_mutex.dir/__/__/kernel/ready_queue.c.o
+[ 47%] Building C object tests/host/CMakeFiles/insight_host_transitive.dir/__/__/kernel/trace.c.o
+[ 47%] Building C object tests/host/CMakeFiles/insight_host_pi.dir/__/__/kernel/ready_queue.c.o
+[ 47%] Building C object tests/host/CMakeFiles/insight_host_ipc.dir/__/support/ipc_check.c.o
+[ 47%] Building C object tests/host/CMakeFiles/insight_host_isr.dir/tmp/insight-b2a.48lV9G/work/Middlewares/InsightRTOS/kernel/task.c.o
+[ 47%] Building C object tests/host/CMakeFiles/insight_host_mutex.dir/__/__/kernel/tick.c.o
+[ 47%] Building C object tests/host/CMakeFiles/insight_host_pi.dir/__/__/kernel/tick.c.o
+[ 48%] Building C object tests/host/CMakeFiles/insight_host_ipc.dir/tmp/insight-b2a.48lV9G/work/Middlewares/InsightRTOS/kernel/task.c.o
+[ 49%] Building C object tests/host/CMakeFiles/insight_host_transitive.dir/__/__/kernel/queue.c.o
+[ 50%] Building C object tests/host/CMakeFiles/insight_host_isr.dir/tmp/insight-b2a.48lV9G/work/Middlewares/InsightRTOS/kernel/diag_rt.c.o
+[ 50%] Building C object tests/host/CMakeFiles/insight_host_mutex.dir/__/__/kernel/critical.c.o
+[ 51%] Building C object tests/host/CMakeFiles/insight_host_pi.dir/__/__/kernel/critical.c.o
+[ 52%] Building C object tests/host/CMakeFiles/insight_host_mutex.dir/__/__/kernel/delay.c.o
+[ 52%] Building C object tests/host/CMakeFiles/insight_host_pi.dir/__/__/kernel/delay.c.o
+[ 52%] Building C object tests/host/CMakeFiles/insight_host_mutex_timeout.dir/mock_port.c.o
+[ 52%] Building C object tests/host/CMakeFiles/insight_host_transitive.dir/__/__/kernel/scheduler.c.o
+[ 52%] Building C object tests/host/CMakeFiles/insight_host_ipc.dir/tmp/insight-b2a.48lV9G/work/Middlewares/InsightRTOS/kernel/diag_rt.c.o
+[ 52%] Linking C executable insight_host_isr
+[ 52%] Building C object tests/host/CMakeFiles/insight_host_mutex.dir/__/__/kernel/delay_queue.c.o
+[ 52%] Building C object tests/host/CMakeFiles/insight_host_pi.dir/__/__/kernel/delay_queue.c.o
+[ 52%] Building C object tests/host/CMakeFiles/insight_host_mutex_timeout.dir/__/__/kernel/trace.c.o
+[ 52%] Building C object tests/host/CMakeFiles/insight_host_transitive.dir/__/__/kernel/ready_queue.c.o
+[ 52%] Building C object tests/host/CMakeFiles/insight_host_mutex.dir/__/__/kernel/semaphore.c.o
+[ 52%] Linking C executable insight_host_ipc
+[ 52%] Building C object tests/host/CMakeFiles/insight_host_pi.dir/__/__/kernel/semaphore.c.o
+[ 52%] Built target insight_host_isr
+[ 52%] Building C object tests/host/CMakeFiles/insight_host_transitive.dir/__/__/kernel/tick.c.o
+[ 52%] Building C object tests/host/CMakeFiles/insight_host_priority_checker.dir/test_priority_checker.c.o
+[ 52%] Building C object tests/host/CMakeFiles/insight_host_mutex.dir/__/__/kernel/mutex.c.o
+[ 53%] Building C object tests/host/CMakeFiles/insight_host_mutex_timeout.dir/__/__/kernel/queue.c.o
+[ 53%] Built target insight_host_ipc
+[ 54%] Building C object tests/host/CMakeFiles/insight_host_pi.dir/__/__/kernel/mutex.c.o
+[ 54%] Building C object tests/host/CMakeFiles/insight_host_transitive.dir/__/__/kernel/critical.c.o
+[ 54%] Building C object tests/host/CMakeFiles/insight_host_pi.dir/__/__/kernel/priority.c.o
+[ 54%] Building C object tests/host/CMakeFiles/insight_host_priority_checker.dir/mock_port.c.o
+[ 54%] Building C object tests/host/CMakeFiles/insight_host_mutex.dir/__/__/kernel/priority.c.o
+[ 55%] Building C object tests/host/CMakeFiles/insight_host_transitive.dir/__/__/kernel/delay.c.o
+[ 55%] Building C object tests/host/CMakeFiles/insight_host_transitive.dir/__/__/kernel/delay_queue.c.o
+[ 55%] Building C object tests/host/CMakeFiles/insight_host_pi.dir/__/__/kernel/priority_graph.c.o
+[ 55%] Building C object tests/host/CMakeFiles/insight_host_mutex_timeout.dir/__/__/kernel/scheduler.c.o
+[ 56%] Building C object tests/host/CMakeFiles/insight_host_mutex.dir/__/__/kernel/priority_graph.c.o
+[ 56%] Building C object tests/host/CMakeFiles/insight_host_priority_checker.dir/__/__/kernel/trace.c.o
+[ 56%] Building C object tests/host/CMakeFiles/insight_host_mutex.dir/__/__/kernel/wait.c.o
+[ 56%] Building C object tests/host/CMakeFiles/insight_host_pi.dir/__/__/kernel/wait.c.o
+[ 56%] Building C object tests/host/CMakeFiles/insight_host_transitive.dir/__/__/kernel/semaphore.c.o
+[ 56%] Building C object tests/host/CMakeFiles/insight_host_mutex_timeout.dir/__/__/kernel/ready_queue.c.o
+[ 56%] Building C object tests/host/CMakeFiles/insight_host_mutex.dir/__/__/arch/arm/cortex_m3/systick_config.c.o
+[ 56%] Building C object tests/host/CMakeFiles/insight_host_transitive.dir/__/__/kernel/mutex.c.o
+[ 56%] Building C object tests/host/CMakeFiles/insight_host_pi.dir/__/__/arch/arm/cortex_m3/systick_config.c.o
+[ 56%] Building C object tests/host/CMakeFiles/insight_host_mutex.dir/__/support/mutex_check.c.o
+[ 56%] Building C object tests/host/CMakeFiles/insight_host_priority_checker.dir/__/__/kernel/queue.c.o
+[ 56%] Building C object tests/host/CMakeFiles/insight_host_mutex_timeout.dir/__/__/kernel/tick.c.o
+[ 56%] Building C object tests/host/CMakeFiles/insight_host_queue.dir/test_queue.c.o
+[ 57%] Building C object tests/host/CMakeFiles/insight_host_pi.dir/__/support/mutex_check.c.o
+[ 57%] Building C object tests/host/CMakeFiles/insight_host_transitive.dir/__/__/kernel/priority.c.o
+[ 57%] Building C object tests/host/CMakeFiles/insight_host_mutex_timeout.dir/__/__/kernel/critical.c.o
+[ 57%] Building C object tests/host/CMakeFiles/insight_host_mutex.dir/tmp/insight-b2a.48lV9G/work/Middlewares/InsightRTOS/kernel/task.c.o
+[ 58%] Building C object tests/host/CMakeFiles/insight_host_priority_checker.dir/__/__/kernel/scheduler.c.o
+[ 59%] Building C object tests/host/CMakeFiles/insight_host_transitive.dir/__/__/kernel/priority_graph.c.o
+[ 59%] Building C object tests/host/CMakeFiles/insight_host_pi.dir/tmp/insight-b2a.48lV9G/work/Middlewares/InsightRTOS/kernel/task.c.o
+[ 60%] Building C object tests/host/CMakeFiles/insight_host_mutex_timeout.dir/__/__/kernel/delay.c.o
+[ 60%] Building C object tests/host/CMakeFiles/insight_host_queue.dir/mock_port.c.o
+[ 60%] Building C object tests/host/CMakeFiles/insight_host_transitive.dir/__/__/kernel/wait.c.o
+[ 61%] Building C object tests/host/CMakeFiles/insight_host_mutex.dir/tmp/insight-b2a.48lV9G/work/Middlewares/InsightRTOS/kernel/diag_rt.c.o
+[ 61%] Building C object tests/host/CMakeFiles/insight_host_priority_checker.dir/__/__/kernel/ready_queue.c.o
+[ 61%] Building C object tests/host/CMakeFiles/insight_host_mutex_timeout.dir/__/__/kernel/delay_queue.c.o
+[ 61%] Building C object tests/host/CMakeFiles/insight_host_pi.dir/tmp/insight-b2a.48lV9G/work/Middlewares/InsightRTOS/kernel/diag_rt.c.o
+[ 61%] Building C object tests/host/CMakeFiles/insight_host_transitive.dir/__/__/arch/arm/cortex_m3/systick_config.c.o
+[ 62%] Building C object tests/host/CMakeFiles/insight_host_queue.dir/__/__/kernel/trace.c.o
+[ 62%] Building C object tests/host/CMakeFiles/insight_host_mutex_timeout.dir/__/__/kernel/semaphore.c.o
+[ 62%] Building C object tests/host/CMakeFiles/insight_host_priority_checker.dir/__/__/kernel/tick.c.o
+[ 62%] Building C object tests/host/CMakeFiles/insight_host_transitive.dir/__/support/mutex_check.c.o
+[ 62%] Linking C executable insight_host_mutex
+[ 62%] Building C object tests/host/CMakeFiles/insight_host_priority_checker.dir/__/__/kernel/critical.c.o
+[ 62%] Building C object tests/host/CMakeFiles/insight_host_mutex_timeout.dir/__/__/kernel/mutex.c.o
+[ 62%] Linking C executable insight_host_pi
+[ 62%] Building C object tests/host/CMakeFiles/insight_host_queue.dir/__/__/kernel/queue.c.o
+[ 62%] Building C object tests/host/CMakeFiles/insight_host_priority_checker.dir/__/__/kernel/delay.c.o
+[ 62%] Building C object tests/host/CMakeFiles/insight_host_transitive.dir/tmp/insight-b2a.48lV9G/work/Middlewares/InsightRTOS/kernel/task.c.o
+[ 62%] Built target insight_host_mutex
+[ 62%] Building C object tests/host/CMakeFiles/insight_host_mutex_timeout.dir/__/__/kernel/priority.c.o
+[ 63%] Building C object tests/host/CMakeFiles/insight_host_priority_checker.dir/__/__/kernel/delay_queue.c.o
+[ 63%] Built target insight_host_pi
+[ 63%] Building C object tests/host/CMakeFiles/insight_host_queue_blocking.dir/test_queue_blocking.c.o
+[ 63%] Building C object tests/host/CMakeFiles/insight_host_queue_blocking.dir/mock_port.c.o
+[ 63%] Building C object tests/host/CMakeFiles/insight_host_queue.dir/__/__/kernel/scheduler.c.o
+[ 64%] Building C object tests/host/CMakeFiles/insight_host_mutex_timeout.dir/__/__/kernel/priority_graph.c.o
+[ 65%] Building C object tests/host/CMakeFiles/insight_host_transitive.dir/tmp/insight-b2a.48lV9G/work/Middlewares/InsightRTOS/kernel/diag_rt.c.o
+[ 65%] Building C object tests/host/CMakeFiles/insight_host_priority_checker.dir/__/__/kernel/semaphore.c.o
+[ 65%] Building C object tests/host/CMakeFiles/insight_host_mutex_timeout.dir/__/__/kernel/wait.c.o
+[ 65%] Building C object tests/host/CMakeFiles/insight_host_queue.dir/__/__/kernel/ready_queue.c.o
+[ 65%] Building C object tests/host/CMakeFiles/insight_host_priority_checker.dir/__/__/kernel/mutex.c.o
+[ 65%] Building C object tests/host/CMakeFiles/insight_host_queue.dir/__/__/kernel/tick.c.o
+[ 66%] Building C object tests/host/CMakeFiles/insight_host_queue_blocking.dir/__/__/kernel/trace.c.o
+[ 66%] Building C object tests/host/CMakeFiles/insight_host_mutex_timeout.dir/__/__/arch/arm/cortex_m3/systick_config.c.o
+[ 66%] Linking C executable insight_host_transitive
+[ 66%] Building C object tests/host/CMakeFiles/insight_host_queue_blocking.dir/__/__/kernel/queue.c.o
+[ 66%] Building C object tests/host/CMakeFiles/insight_host_priority_checker.dir/__/__/kernel/priority.c.o
+[ 67%] Building C object tests/host/CMakeFiles/insight_host_queue.dir/__/__/kernel/critical.c.o
+[ 67%] Building C object tests/host/CMakeFiles/insight_host_mutex_timeout.dir/__/support/mutex_check.c.o
+[ 68%] Building C object tests/host/CMakeFiles/insight_host_priority_checker.dir/__/__/kernel/priority_graph.c.o
+[ 68%] Building C object tests/host/CMakeFiles/insight_host_queue.dir/__/__/kernel/delay.c.o
+[ 68%] Built target insight_host_transitive
+[ 68%] Building C object tests/host/CMakeFiles/insight_host_queue_blocking.dir/__/__/kernel/scheduler.c.o
+[ 68%] Building C object tests/host/CMakeFiles/insight_host_queue_blocking.dir/__/__/kernel/ready_queue.c.o
+[ 68%] Building C object tests/host/CMakeFiles/insight_host_queue_timeout.dir/test_queue_timeout.c.o
+[ 68%] Building C object tests/host/CMakeFiles/insight_host_mutex_timeout.dir/__/support/mutex_timeout_stats.c.o
+[ 68%] Building C object tests/host/CMakeFiles/insight_host_priority_checker.dir/__/__/kernel/wait.c.o
+[ 68%] Building C object tests/host/CMakeFiles/insight_host_queue.dir/__/__/kernel/delay_queue.c.o
+[ 68%] Building C object tests/host/CMakeFiles/insight_host_priority_checker.dir/__/__/arch/arm/cortex_m3/systick_config.c.o
+[ 68%] Building C object tests/host/CMakeFiles/insight_host_queue_blocking.dir/__/__/kernel/tick.c.o
+[ 69%] Building C object tests/host/CMakeFiles/insight_host_mutex_timeout.dir/tmp/insight-b2a.48lV9G/work/Middlewares/InsightRTOS/kernel/task.c.o
+[ 69%] Building C object tests/host/CMakeFiles/insight_host_queue.dir/__/__/kernel/semaphore.c.o
+[ 69%] Building C object tests/host/CMakeFiles/insight_host_queue.dir/__/__/kernel/mutex.c.o
+[ 69%] Building C object tests/host/CMakeFiles/insight_host_priority_checker.dir/__/support/mutex_check.c.o
+[ 69%] Building C object tests/host/CMakeFiles/insight_host_queue_timeout.dir/mock_port.c.o
+[ 70%] Building C object tests/host/CMakeFiles/insight_host_queue_blocking.dir/__/__/kernel/critical.c.o
+[ 70%] Building C object tests/host/CMakeFiles/insight_host_queue_timeout.dir/__/__/kernel/trace.c.o
+[ 71%] Building C object tests/host/CMakeFiles/insight_host_queue.dir/__/__/kernel/priority.c.o
+[ 71%] Building C object tests/host/CMakeFiles/insight_host_mutex_timeout.dir/tmp/insight-b2a.48lV9G/work/Middlewares/InsightRTOS/kernel/diag_rt.c.o
+[ 71%] Building C object tests/host/CMakeFiles/insight_host_priority_checker.dir/__/support/priority_check.c.o
+[ 71%] Building C object tests/host/CMakeFiles/insight_host_queue_blocking.dir/__/__/kernel/delay.c.o
+[ 71%] Building C object tests/host/CMakeFiles/insight_host_queue.dir/__/__/kernel/priority_graph.c.o
+[ 71%] Building C object tests/host/CMakeFiles/insight_host_queue_timeout.dir/__/__/kernel/queue.c.o
+[ 72%] Building C object tests/host/CMakeFiles/insight_host_priority_checker.dir/tmp/insight-b2a.48lV9G/work/Middlewares/InsightRTOS/kernel/task.c.o
+[ 72%] Building C object tests/host/CMakeFiles/insight_host_queue_blocking.dir/__/__/kernel/delay_queue.c.o
+[ 72%] Building C object tests/host/CMakeFiles/insight_host_priority_checker.dir/tmp/insight-b2a.48lV9G/work/Middlewares/InsightRTOS/kernel/diag_rt.c.o
+[ 72%] Building C object tests/host/CMakeFiles/insight_host_queue.dir/__/__/kernel/wait.c.o
+[ 72%] Linking C executable insight_host_mutex_timeout
+[ 73%] Building C object tests/host/CMakeFiles/insight_host_queue_timeout.dir/__/__/kernel/scheduler.c.o
+[ 73%] Building C object tests/host/CMakeFiles/insight_host_queue_blocking.dir/__/__/kernel/semaphore.c.o
+[ 73%] Building C object tests/host/CMakeFiles/insight_host_queue.dir/__/__/arch/arm/cortex_m3/systick_config.c.o
+[ 73%] Building C object tests/host/CMakeFiles/insight_host_queue.dir/__/support/queue_check.c.o
+[ 73%] Linking C executable insight_host_priority_checker
+[ 73%] Built target insight_host_mutex_timeout
+[ 73%] Building C object tests/host/CMakeFiles/insight_host_queue_timeout.dir/__/__/kernel/ready_queue.c.o
+[ 73%] Building C object tests/host/CMakeFiles/insight_host_queue_blocking.dir/__/__/kernel/mutex.c.o
+[ 73%] Building C object tests/host/CMakeFiles/insight_host_queue_isr.dir/test_queue_isr.c.o
+[ 74%] Building C object tests/host/CMakeFiles/insight_host_queue.dir/tmp/insight-b2a.48lV9G/work/Middlewares/InsightRTOS/kernel/task.c.o
+[ 74%] Building C object tests/host/CMakeFiles/insight_host_stage6_final.dir/test_stage6_final.c.o
+[ 74%] Built target insight_host_priority_checker
+[ 74%] Building C object tests/host/CMakeFiles/insight_host_queue_timeout.dir/__/__/kernel/tick.c.o
+[ 75%] Building C object tests/host/CMakeFiles/insight_host_queue_blocking.dir/__/__/kernel/priority.c.o
+[ 75%] Building C object tests/host/CMakeFiles/insight_host_queue_timeout.dir/__/__/kernel/critical.c.o
+[ 75%] Building C object tests/host/CMakeFiles/insight_host_queue.dir/tmp/insight-b2a.48lV9G/work/Middlewares/InsightRTOS/kernel/diag_rt.c.o
+[ 75%] Building C object tests/host/CMakeFiles/insight_host_queue_blocking.dir/__/__/kernel/priority_graph.c.o
+[ 75%] Building C object tests/host/CMakeFiles/insight_host_stage6_final.dir/mock_port.c.o
+[ 75%] Building C object tests/host/CMakeFiles/insight_host_stage6_final.dir/__/__/kernel/trace.c.o
+[ 75%] Building C object tests/host/CMakeFiles/insight_host_queue_timeout.dir/__/__/kernel/delay.c.o
+[ 76%] Building C object tests/host/CMakeFiles/insight_host_queue_isr.dir/mock_port.c.o
+[ 76%] Building C object tests/host/CMakeFiles/insight_host_queue_blocking.dir/__/__/kernel/wait.c.o
+[ 77%] Building C object tests/host/CMakeFiles/insight_host_stage6_final.dir/__/__/kernel/queue.c.o
+[ 78%] Building C object tests/host/CMakeFiles/insight_host_queue_timeout.dir/__/__/kernel/delay_queue.c.o
+[ 78%] Building C object tests/host/CMakeFiles/insight_host_queue_isr.dir/__/__/kernel/trace.c.o
+[ 78%] Linking C executable insight_host_queue
+[ 78%] Building C object tests/host/CMakeFiles/insight_host_stage6_final.dir/__/__/kernel/scheduler.c.o
+[ 78%] Building C object tests/host/CMakeFiles/insight_host_queue_blocking.dir/__/__/arch/arm/cortex_m3/systick_config.c.o
+[ 78%] Building C object tests/host/CMakeFiles/insight_host_queue_timeout.dir/__/__/kernel/semaphore.c.o
+[ 78%] Building C object tests/host/CMakeFiles/insight_host_queue_blocking.dir/__/support/mutex_check.c.o
+[ 78%] Building C object tests/host/CMakeFiles/insight_host_queue_timeout.dir/__/__/kernel/mutex.c.o
+[ 78%] Built target insight_host_queue
+[ 78%] Building C object tests/host/CMakeFiles/insight_host_stage6_final.dir/__/__/kernel/ready_queue.c.o
+[ 78%] Building C object tests/host/CMakeFiles/insight_host_queue_isr.dir/__/__/kernel/queue.c.o
+[ 78%] Building C object tests/host/CMakeFiles/insight_host_stage6_final.dir/__/__/kernel/tick.c.o
+[ 79%] Building C object tests/stage9_1/CMakeFiles/stage9_1_host_explain.dir/test_explain_host.c.o
+[ 79%] Building C object tests/host/CMakeFiles/insight_host_queue_blocking.dir/__/support/priority_check.c.o
+[ 79%] Building C object tests/host/CMakeFiles/insight_host_queue_timeout.dir/__/__/kernel/priority.c.o
+[ 79%] Building C object tests/host/CMakeFiles/insight_host_queue_blocking.dir/tmp/insight-b2a.48lV9G/work/Middlewares/InsightRTOS/kernel/task.c.o
+[ 79%] Building C object tests/host/CMakeFiles/insight_host_stage6_final.dir/__/__/kernel/critical.c.o
+[ 79%] Building C object tests/host/CMakeFiles/insight_host_queue_isr.dir/__/__/kernel/scheduler.c.o
+[ 80%] Building C object tests/host/CMakeFiles/insight_host_stage6_final.dir/__/__/kernel/delay.c.o
+[ 81%] Building C object tests/host/CMakeFiles/insight_host_queue_timeout.dir/__/__/kernel/priority_graph.c.o
+[ 81%] Building C object tests/host/CMakeFiles/insight_host_queue_timeout.dir/__/__/kernel/wait.c.o
+[ 81%] Building C object tests/host/CMakeFiles/insight_host_stage6_final.dir/__/__/kernel/delay_queue.c.o
+[ 81%] Building C object tests/stage9_1/CMakeFiles/stage9_1_host_explain.dir/__/host/mock_port.c.o
+[ 81%] Building C object tests/host/CMakeFiles/insight_host_queue_blocking.dir/tmp/insight-b2a.48lV9G/work/Middlewares/InsightRTOS/kernel/diag_rt.c.o
+[ 81%] Building C object tests/host/CMakeFiles/insight_host_queue_isr.dir/__/__/kernel/ready_queue.c.o
+[ 81%] Building C object tests/host/CMakeFiles/insight_host_queue_timeout.dir/__/__/arch/arm/cortex_m3/systick_config.c.o
+[ 81%] Building C object tests/stage9_1/CMakeFiles/stage9_1_host_cursor.dir/test_cursor_wrap.c.o
+[ 81%] Building C object tests/host/CMakeFiles/insight_host_stage6_final.dir/__/__/kernel/semaphore.c.o
+[ 82%] Building C object tests/stage9_1/CMakeFiles/stage9_1_host_explain.dir/__/__/kernel/trace.c.o
+[ 82%] Building C object tests/host/CMakeFiles/insight_host_queue_isr.dir/__/__/kernel/tick.c.o
+[ 82%] Building C object tests/host/CMakeFiles/insight_host_queue_timeout.dir/__/support/mutex_check.c.o
+[ 82%] Building C object tests/stage9_1/CMakeFiles/stage9_1_host_cursor.dir/__/host/mock_port.c.o
+[ 82%] Linking C executable insight_host_queue_blocking
+[ 82%] Building C object tests/host/CMakeFiles/insight_host_queue_isr.dir/__/__/kernel/critical.c.o
+[ 82%] Building C object tests/host/CMakeFiles/insight_host_stage6_final.dir/__/__/kernel/mutex.c.o
+[ 82%] Building C object tests/host/CMakeFiles/insight_host_queue_timeout.dir/__/support/priority_check.c.o
+[ 82%] Building C object tests/stage9_1/CMakeFiles/stage9_1_host_cursor.dir/__/__/kernel/trace.c.o
+[ 82%] Building C object tests/host/CMakeFiles/insight_host_queue_isr.dir/__/__/kernel/delay.c.o
+[ 82%] Building C object tests/stage9_1/CMakeFiles/stage9_1_host_explain.dir/__/__/kernel/queue.c.o
+[ 82%] Built target insight_host_queue_blocking
+[ 82%] Building C object tests/host/CMakeFiles/insight_host_stage6_final.dir/__/__/kernel/priority.c.o
+[ 83%] Building C object tests/host/CMakeFiles/insight_host_stage6_final.dir/__/__/kernel/priority_graph.c.o
+[ 84%] Building C object tests/host/CMakeFiles/insight_host_queue_timeout.dir/tmp/insight-b2a.48lV9G/work/Middlewares/InsightRTOS/kernel/task.c.o
+[ 84%] Building C object tests/host/CMakeFiles/insight_host_queue_isr.dir/__/__/kernel/delay_queue.c.o
+[ 85%] Building C object tests/stage9_1/CMakeFiles/stage9_1_host_explain.dir/__/__/kernel/scheduler.c.o
+[ 85%] Building C object tests/stage9_1/CMakeFiles/stage9_1_host_explain.dir/__/__/kernel/ready_queue.c.o
+[ 85%] Building C object tests/host/CMakeFiles/insight_host_stage6_final.dir/__/__/kernel/wait.c.o
+[ 86%] Building C object tests/stage9_1/CMakeFiles/stage9_1_host_cursor.dir/__/__/kernel/queue.c.o
+[ 86%] Building C object tests/host/CMakeFiles/insight_host_queue_isr.dir/__/__/kernel/semaphore.c.o
+[ 86%] Building C object tests/host/CMakeFiles/insight_host_queue_timeout.dir/tmp/insight-b2a.48lV9G/work/Middlewares/InsightRTOS/kernel/diag_rt.c.o
+[ 86%] Building C object tests/stage9_1/CMakeFiles/stage9_1_host_explain.dir/__/__/kernel/tick.c.o
+[ 86%] Building C object tests/host/CMakeFiles/insight_host_stage6_final.dir/__/__/arch/arm/cortex_m3/systick_config.c.o
+[ 86%] Building C object tests/host/CMakeFiles/insight_host_stage6_final.dir/__/support/mutex_check.c.o
+[ 86%] Building C object tests/stage9_1/CMakeFiles/stage9_1_host_cursor.dir/__/__/kernel/scheduler.c.o
+[ 87%] Building C object tests/host/CMakeFiles/insight_host_queue_isr.dir/__/__/kernel/mutex.c.o
+[ 87%] Building C object tests/stage9_1/CMakeFiles/stage9_1_host_cursor.dir/__/__/kernel/ready_queue.c.o
+[ 87%] Building C object tests/stage9_1/CMakeFiles/stage9_1_host_explain.dir/__/__/kernel/critical.c.o
+[ 87%] Linking C executable insight_host_queue_timeout
+[ 87%] Building C object tests/host/CMakeFiles/insight_host_stage6_final.dir/__/support/priority_check.c.o
+[ 87%] Building C object tests/stage9_1/CMakeFiles/stage9_1_host_explain.dir/__/__/kernel/delay.c.o
+[ 87%] Building C object tests/host/CMakeFiles/insight_host_queue_isr.dir/__/__/kernel/priority.c.o
+[ 87%] Building C object tests/host/CMakeFiles/insight_host_queue_isr.dir/__/__/kernel/priority_graph.c.o
+[ 87%] Building C object tests/stage9_1/CMakeFiles/stage9_1_host_cursor.dir/__/__/kernel/tick.c.o
+[ 88%] Building C object tests/host/CMakeFiles/insight_host_stage6_final.dir/tmp/insight-b2a.48lV9G/work/Middlewares/InsightRTOS/kernel/task.c.o
+[ 89%] Building C object tests/host/CMakeFiles/insight_host_queue_isr.dir/__/__/kernel/wait.c.o
+[ 89%] Building C object tests/stage9_1/CMakeFiles/stage9_1_host_cursor.dir/__/__/kernel/critical.c.o
+[ 89%] Building C object tests/stage9_1/CMakeFiles/stage9_1_host_explain.dir/__/__/kernel/delay_queue.c.o
+[ 89%] Built target insight_host_queue_timeout
+[ 89%] Building C object tests/host/CMakeFiles/insight_host_queue_isr.dir/__/__/arch/arm/cortex_m3/systick_config.c.o
+[ 90%] Building C object tests/stage9_2/CMakeFiles/stage9_2_host_deadlock.dir/test_deadlock_host.c.o
+[ 91%] Building C object tests/stage9_1/CMakeFiles/stage9_1_host_cursor.dir/__/__/kernel/delay.c.o
+[ 92%] Building C object tests/host/CMakeFiles/insight_host_queue_isr.dir/__/support/mutex_check.c.o
+[ 92%] Building C object tests/stage9_1/CMakeFiles/stage9_1_host_explain.dir/__/__/kernel/semaphore.c.o
+[ 92%] Building C object tests/stage9_1/CMakeFiles/stage9_1_host_explain.dir/__/__/kernel/mutex.c.o
+[ 92%] Building C object tests/host/CMakeFiles/insight_host_stage6_final.dir/tmp/insight-b2a.48lV9G/work/Middlewares/InsightRTOS/kernel/diag_rt.c.o
+[ 92%] Building C object tests/stage9_1/CMakeFiles/stage9_1_host_cursor.dir/__/__/kernel/delay_queue.c.o
+[ 92%] Building C object tests/host/CMakeFiles/insight_host_queue_isr.dir/__/support/priority_check.c.o
+[ 92%] Building C object tests/stage9_1/CMakeFiles/stage9_1_host_cursor.dir/__/__/kernel/semaphore.c.o
+[ 92%] Building C object tests/stage9_1/CMakeFiles/stage9_1_host_explain.dir/__/__/kernel/priority.c.o
+[ 92%] Building C object tests/stage9_2/CMakeFiles/stage9_2_host_deadlock.dir/__/host/mock_port.c.o
+[ 92%] Building C object tests/stage9_2/CMakeFiles/stage9_2_host_deadlock.dir/__/__/kernel/deadlock.c.o
+[ 92%] Linking C executable insight_host_stage6_final
+[ 92%] Building C object tests/host/CMakeFiles/insight_host_queue_isr.dir/__/support/queue_check.c.o
+[ 92%] Building C object tests/stage9_1/CMakeFiles/stage9_1_host_explain.dir/__/__/kernel/priority_graph.c.o
+[ 92%] Building C object tests/stage9_1/CMakeFiles/stage9_1_host_cursor.dir/__/__/kernel/mutex.c.o
+[ 92%] Building C object tests/host/CMakeFiles/insight_host_queue_isr.dir/tmp/insight-b2a.48lV9G/work/Middlewares/InsightRTOS/kernel/task.c.o
+[ 92%] Building C object tests/stage9_2/CMakeFiles/stage9_2_host_deadlock.dir/__/__/kernel/trace.c.o
+[ 92%] Building C object tests/stage9_2/CMakeFiles/stage9_2_host_deadlock.dir/__/__/kernel/queue.c.o
+[ 93%] Building C object tests/stage9_1/CMakeFiles/stage9_1_host_explain.dir/__/__/kernel/wait.c.o
+[ 93%] Built target insight_host_stage6_final
+[ 93%] Building C object tests/stage9_1/CMakeFiles/stage9_1_host_explain.dir/__/__/arch/arm/cortex_m3/systick_config.c.o
+[ 93%] Building C object tests/stage9_1/CMakeFiles/stage9_1_host_cursor.dir/__/__/kernel/priority.c.o
+[ 93%] Building C object tests/stage9_1/CMakeFiles/stage9_1_host_explain.dir/tmp/insight-b2a.48lV9G/work/Middlewares/InsightRTOS/kernel/task.c.o
+[ 94%] Building C object tests/stage9_2/CMakeFiles/stage9_2_host_deadlock.dir/__/__/kernel/scheduler.c.o
+[ 94%] Building C object tests/host/CMakeFiles/insight_host_queue_isr.dir/tmp/insight-b2a.48lV9G/work/Middlewares/InsightRTOS/kernel/diag_rt.c.o
+[ 95%] Building C object tests/stage9_1/CMakeFiles/stage9_1_host_cursor.dir/__/__/kernel/priority_graph.c.o
+[ 95%] Building C object tests/stage9_1/CMakeFiles/stage9_1_host_cursor.dir/__/__/kernel/wait.c.o
+[ 95%] Building C object tests/stage9_2/CMakeFiles/stage9_2_host_deadlock.dir/__/__/kernel/ready_queue.c.o
+[ 95%] Building C object tests/stage9_1/CMakeFiles/stage9_1_host_cursor.dir/__/__/arch/arm/cortex_m3/systick_config.c.o
+[ 95%] Building C object tests/stage9_1/CMakeFiles/stage9_1_host_explain.dir/tmp/insight-b2a.48lV9G/work/Middlewares/InsightRTOS/kernel/diag_rt.c.o
+[ 95%] Building C object tests/stage9_2/CMakeFiles/stage9_2_host_deadlock.dir/__/__/kernel/tick.c.o
+[ 95%] Building C object tests/stage9_2/CMakeFiles/stage9_2_host_deadlock.dir/__/__/kernel/critical.c.o
+[ 95%] Building C object tests/stage9_2/CMakeFiles/stage9_2_host_deadlock.dir/__/__/kernel/delay.c.o
+[ 96%] Linking C executable insight_host_queue_isr
+[ 96%] Building C object tests/stage9_1/CMakeFiles/stage9_1_host_cursor.dir/tmp/insight-b2a.48lV9G/work/Middlewares/InsightRTOS/kernel/task.c.o
+[ 97%] Building C object tests/stage9_2/CMakeFiles/stage9_2_host_deadlock.dir/__/__/kernel/delay_queue.c.o
+[ 97%] Building C object tests/stage9_1/CMakeFiles/stage9_1_host_cursor.dir/tmp/insight-b2a.48lV9G/work/Middlewares/InsightRTOS/kernel/diag_rt.c.o
+[ 97%] Building C object tests/stage9_2/CMakeFiles/stage9_2_host_deadlock.dir/__/__/kernel/semaphore.c.o
+[ 97%] Linking C executable stage9_1_host_explain
+[ 97%] Built target insight_host_queue_isr
+[ 97%] Building C object tests/stage9_2/CMakeFiles/stage9_2_host_deadlock.dir/__/__/kernel/mutex.c.o
+[ 97%] Building C object tests/stage9_2/CMakeFiles/stage9_2_host_deadlock.dir/__/__/kernel/priority.c.o
+[ 97%] Building C object tests/stage9_2/CMakeFiles/stage9_2_host_deadlock.dir/__/__/kernel/priority_graph.c.o
+[ 98%] Building C object tests/stage9_2/CMakeFiles/stage9_2_host_deadlock.dir/__/__/kernel/wait.c.o
+[ 99%] Linking C executable stage9_1_host_cursor
+[ 99%] Building C object tests/stage9_2/CMakeFiles/stage9_2_host_deadlock.dir/__/__/arch/arm/cortex_m3/systick_config.c.o
+[ 99%] Built target stage9_1_host_explain
+[ 99%] Building C object tests/stage9_2/CMakeFiles/stage9_2_host_deadlock.dir/tmp/insight-b2a.48lV9G/work/Middlewares/InsightRTOS/kernel/task.c.o
+[ 99%] Building C object tests/stage9_2/CMakeFiles/stage9_2_host_deadlock.dir/tmp/insight-b2a.48lV9G/work/Middlewares/InsightRTOS/kernel/diag_rt.c.o
+[ 99%] Built target stage9_1_host_cursor
+[100%] Linking C executable stage9_2_host_deadlock
+[100%] Built target stage9_2_host_deadlock
+Test project /tmp/insight-b2a.48lV9G/kernel-host
+        Start   1: host_stage4_3_poll
+        Start   2: host_stage4_3_available
+        Start   3: host_stage4_3_invalid
+        Start   4: host_stage4_3_one
+        Start   5: host_stage4_3_maximum
+        Start   6: host_stage4_3_forever
+  1/360 Test   #1: host_stage4_3_poll .......................   Passed    0.01 sec
+  2/360 Test   #2: host_stage4_3_available ..................   Passed    0.01 sec
+  3/360 Test   #3: host_stage4_3_invalid ....................   Passed    0.01 sec
+  4/360 Test   #4: host_stage4_3_one ........................   Passed    0.01 sec
+  5/360 Test   #5: host_stage4_3_maximum ....................   Passed    0.00 sec
+        Start   7: host_stage4_3_grant_first
+        Start   8: host_stage4_3_timeout_first
+        Start   9: host_stage4_3_pending_grant
+        Start  10: host_stage4_3_pending_timeout
+        Start  11: host_stage4_3_early_grant
+  6/360 Test   #6: host_stage4_3_forever ....................   Passed    0.01 sec
+  7/360 Test   #7: host_stage4_3_grant_first ................   Passed    0.01 sec
+  8/360 Test   #8: host_stage4_3_timeout_first ..............   Passed    0.01 sec
+  9/360 Test   #9: host_stage4_3_pending_grant ..............   Passed    0.01 sec
+ 10/360 Test  #10: host_stage4_3_pending_timeout ............   Passed    0.00 sec
+        Start  12: host_stage4_3_early_timeout
+        Start  13: host_stage4_3_different_deadlines
+        Start  14: host_stage4_3_simultaneous_timeouts
+        Start  15: host_stage4_3_priority_fifo
+        Start  16: host_stage4_3_mixed_delay
+ 11/360 Test  #11: host_stage4_3_early_grant ................   Passed    0.01 sec
+ 12/360 Test  #12: host_stage4_3_early_timeout ..............   Passed    0.01 sec
+ 13/360 Test  #13: host_stage4_3_different_deadlines ........   Passed    0.01 sec
+ 14/360 Test  #14: host_stage4_3_simultaneous_timeouts ......   Passed    0.01 sec
+ 15/360 Test  #15: host_stage4_3_priority_fifo ..............   Passed    0.00 sec
+        Start  17: host_stage4_3_cancel_middle
+        Start  18: host_stage4_3_cancel_tail
+        Start  19: host_stage4_3_timeout_middle
+        Start  20: host_stage4_3_retry
+        Start  21: host_stage4_3_wrap_before
+ 16/360 Test  #16: host_stage4_3_mixed_delay ................   Passed    0.01 sec
+ 17/360 Test  #17: host_stage4_3_cancel_middle ..............   Passed    0.01 sec
+ 18/360 Test  #18: host_stage4_3_cancel_tail ................   Passed    0.01 sec
+ 19/360 Test  #19: host_stage4_3_timeout_middle .............   Passed    0.01 sec
+ 20/360 Test  #20: host_stage4_3_retry ......................   Passed    0.01 sec
+        Start  22: host_stage4_3_wrap_after
+        Start  23: host_stage4_3_wrap_timeout
+        Start  24: host_stage4_3_stale_completion
+        Start  25: host_stage4_3_context
+        Start  26: host_stage4_2_invalid_init
+ 21/360 Test  #21: host_stage4_3_wrap_before ................   Passed    0.01 sec
+ 22/360 Test  #22: host_stage4_3_wrap_after .................   Passed    0.01 sec
+ 23/360 Test  #23: host_stage4_3_wrap_timeout ...............   Passed    0.01 sec
+ 24/360 Test  #24: host_stage4_3_stale_completion ...........   Passed    0.01 sec
+ 25/360 Test  #25: host_stage4_3_context ....................   Passed    0.00 sec
+        Start  27: host_stage4_2_full_initial
+        Start  28: host_stage4_2_max_uint32
+        Start  29: host_stage4_2_cycle5
+        Start  30: host_stage4_2_uninitialized
+        Start  31: host_stage4_2_reinitialize
+ 26/360 Test  #26: host_stage4_2_invalid_init ...............   Passed    0.01 sec
+ 27/360 Test  #27: host_stage4_2_full_initial ...............   Passed    0.01 sec
+ 28/360 Test  #28: host_stage4_2_max_uint32 .................   Passed    0.01 sec
+ 29/360 Test  #29: host_stage4_2_cycle5 .....................   Passed    0.01 sec
+ 30/360 Test  #30: host_stage4_2_uninitialized ..............   Passed    0.00 sec
+        Start  32: host_stage4_2_priority
+        Start  33: host_stage4_2_fifo
+        Start  34: host_stage4_2_direct_grant
+        Start  35: host_stage4_2_pending_permit
+        Start  36: host_stage4_2_tick_preemption
+ 31/360 Test  #31: host_stage4_2_reinitialize ...............   Passed    0.01 sec
+ 32/360 Test  #32: host_stage4_2_priority ...................   Passed    0.01 sec
+ 33/360 Test  #33: host_stage4_2_fifo .......................   Passed    0.01 sec
+ 34/360 Test  #34: host_stage4_2_direct_grant ...............   Passed    0.01 sec
+ 35/360 Test  #35: host_stage4_2_pending_permit .............   Passed    0.00 sec
+        Start  37: host_stage4_2_context
+        Start  38: host_stage4_2_delay_isolation
+        Start  39: host_stage4_2_binary_compat
+        Start  40: host_stage4_1_initialization
+        Start  41: host_stage4_1_polling
+ 36/360 Test  #36: host_stage4_2_tick_preemption ............   Passed    0.01 sec
+ 37/360 Test  #37: host_stage4_2_context ....................   Passed    0.01 sec
+ 38/360 Test  #38: host_stage4_2_delay_isolation ............   Passed    0.01 sec
+ 39/360 Test  #39: host_stage4_2_binary_compat ..............   Passed    0.01 sec
+ 40/360 Test  #40: host_stage4_1_initialization .............   Passed    0.00 sec
+        Start  42: host_stage4_1_unsupported
+        Start  43: host_stage4_1_context
+        Start  44: host_stage4_1_block_single
+        Start  45: host_stage4_1_priority
+        Start  46: host_stage4_1_fifo
+ 41/360 Test  #41: host_stage4_1_polling ....................   Passed    0.01 sec
+ 42/360 Test  #42: host_stage4_1_unsupported ................   Passed    0.01 sec
+ 43/360 Test  #43: host_stage4_1_context ....................   Passed    0.01 sec
+ 44/360 Test  #44: host_stage4_1_block_single ...............   Passed    0.00 sec
+ 45/360 Test  #45: host_stage4_1_priority ...................   Passed    0.00 sec
+        Start  47: host_stage4_1_direct_grant
+        Start  48: host_stage4_1_duplicate_give
+        Start  49: host_stage4_1_queue_guards
+        Start  50: host_stage4_1_delay_isolation
+        Start  51: host_stage4_1_early_grant
+ 46/360 Test  #46: host_stage4_1_fifo .......................   Passed    0.01 sec
+ 47/360 Test  #47: host_stage4_1_direct_grant ...............   Passed    0.01 sec
+ 48/360 Test  #48: host_stage4_1_duplicate_give .............   Passed    0.01 sec
+ 49/360 Test  #49: host_stage4_1_queue_guards ...............   Passed    0.01 sec
+ 50/360 Test  #50: host_stage4_1_delay_isolation ............   Passed    0.01 sec
+        Start  52: host_stage4_1_early_tick
+        Start  53: host_stage4_1_multiple_objects
+        Start  54: host_stage4_1_reinit_waiting
+        Start  55: host_stage4_1_init_running
+        Start  56: host_ready_queue
+ 51/360 Test  #51: host_stage4_1_early_grant ................   Passed    0.01 sec
+ 52/360 Test  #52: host_stage4_1_early_tick .................   Passed    0.01 sec
+ 53/360 Test  #53: host_stage4_1_multiple_objects ...........   Passed    0.01 sec
+ 54/360 Test  #54: host_stage4_1_reinit_waiting .............   Passed    0.00 sec
+ 55/360 Test  #55: host_stage4_1_init_running ...............   Passed    0.00 sec
+        Start  57: host_create_validation
+        Start  58: host_scheduler_round_robin
+        Start  59: host_exit_and_idle
+        Start  60: host_empty_start
+        Start  61: host_context_assertions
+ 56/360 Test  #56: host_ready_queue .........................   Passed    0.01 sec
+ 57/360 Test  #57: host_create_validation ...................   Passed    0.01 sec
+ 58/360 Test  #58: host_scheduler_round_robin ...............   Passed    0.01 sec
+ 59/360 Test  #59: host_exit_and_idle .......................   Passed    0.01 sec
+ 60/360 Test  #60: host_empty_start .........................   Passed    0.00 sec
+        Start  62: host_stack_checks
+        Start  63: host_stage3_same_priority_wake_1
+        Start  64: host_stage3_wake_budget_1
+        Start  65: host_stage3_pending_slice_wake_1
+        Start  66: host_stage3_same_priority_wake_2
+ 61/360 Test  #61: host_context_assertions ..................   Passed    0.01 sec
+ 62/360 Test  #62: host_stack_checks ........................   Passed    0.01 sec
+ 63/360 Test  #63: host_stage3_same_priority_wake_1 .........   Passed    0.01 sec
+ 64/360 Test  #64: host_stage3_wake_budget_1 ................   Passed    0.01 sec
+ 65/360 Test  #65: host_stage3_pending_slice_wake_1 .........   Passed    0.00 sec
+        Start  67: host_stage3_wake_budget_2
+        Start  68: host_stage3_pending_slice_wake_2
+        Start  69: host_stage3_same_priority_wake_5
+        Start  70: host_stage3_wake_budget_5
+        Start  71: host_stage3_pending_slice_wake_5
+ 66/360 Test  #66: host_stage3_same_priority_wake_2 .........   Passed    0.01 sec
+ 67/360 Test  #67: host_stage3_wake_budget_2 ................   Passed    0.01 sec
+ 68/360 Test  #68: host_stage3_pending_slice_wake_2 .........   Passed    0.01 sec
+ 69/360 Test  #69: host_stage3_same_priority_wake_5 .........   Passed    0.01 sec
+ 70/360 Test  #70: host_stage3_wake_budget_5 ................   Passed    0.00 sec
+        Start  72: host_stage3_queue_order
+        Start  73: host_stage3_queue_guards
+        Start  74: host_stage3_queue_wrap
+        Start  75: host_stage3_delay_zero
+        Start  76: host_stage3_delay_basic
+ 71/360 Test  #71: host_stage3_pending_slice_wake_5 .........   Passed    0.01 sec
+ 72/360 Test  #72: host_stage3_queue_order ..................   Passed    0.01 sec
+ 73/360 Test  #73: host_stage3_queue_guards .................   Passed    0.01 sec
+ 74/360 Test  #74: host_stage3_queue_wrap ...................   Passed    0.01 sec
+ 75/360 Test  #75: host_stage3_delay_zero ...................   Passed    0.00 sec
+        Start  77: host_stage3_delay_small
+        Start  78: host_stage3_delay_max
+        Start  79: host_stage3_context_boundaries
+        Start  80: host_stage3_until_validation
+        Start  81: host_stage3_until_future
+ 76/360 Test  #76: host_stage3_delay_basic ..................   Passed    0.01 sec
+ 77/360 Test  #77: host_stage3_delay_small ..................   Passed    0.01 sec
+ 78/360 Test  #78: host_stage3_delay_max ....................   Passed    0.01 sec
+ 79/360 Test  #79: host_stage3_context_boundaries ...........   Passed    0.01 sec
+ 80/360 Test  #80: host_stage3_until_validation .............   Passed    0.00 sec
+        Start  82: host_stage3_until_catchup
+        Start  83: host_stage3_until_wrap
+        Start  84: host_stage3_all_blocked
+        Start  85: host_stage3_wake_fifo
+        Start  86: host_stage3_wake_priorities
+ 81/360 Test  #81: host_stage3_until_future .................   Passed    0.01 sec
+ 82/360 Test  #82: host_stage3_until_catchup ................   Passed    0.01 sec
+ 83/360 Test  #83: host_stage3_until_wrap ...................   Passed    0.01 sec
+ 84/360 Test  #84: host_stage3_all_blocked ..................   Passed    0.01 sec
+ 85/360 Test  #85: host_stage3_wake_fifo ....................   Passed    0.00 sec
+        Start  87: host_stage3_lower_wake
+        Start  88: host_stage3_pending_block_wake
+        Start  89: host_stage3_pending_block_slice_wake
+        Start  90: host_stage3_pending_multiwake
+        Start  91: host_stage3_terminated_rejected
+ 86/360 Test  #86: host_stage3_wake_priorities ..............   Passed    0.01 sec
+ 87/360 Test  #87: host_stage3_lower_wake ...................   Passed    0.01 sec
+ 88/360 Test  #88: host_stage3_pending_block_wake ...........   Passed    0.01 sec
+ 89/360 Test  #89: host_stage3_pending_block_slice_wake .....   Passed    0.01 sec
+ 90/360 Test  #90: host_stage3_pending_multiwake ............   Passed    0.00 sec
+        Start  92: host_stage3_controlled_time
+        Start  93: host_stage2_time_slice_1
+        Start  94: host_stage2_pending_coalescing_1
+        Start  95: host_stage2_pending_higher_and_slice_1
+        Start  96: host_stage2_budget_preservation_1
+ 91/360 Test  #91: host_stage3_terminated_rejected ..........   Passed    0.01 sec
+ 92/360 Test  #92: host_stage3_controlled_time ..............   Passed    0.01 sec
+ 93/360 Test  #93: host_stage2_time_slice_1 .................   Passed    0.01 sec
+ 94/360 Test  #94: host_stage2_pending_coalescing_1 .........   Passed    0.01 sec
+ 95/360 Test  #95: host_stage2_pending_higher_and_slice_1 ...   Passed    0.00 sec
+        Start  97: host_stage2_time_slice_2
+        Start  98: host_stage2_pending_coalescing_2
+        Start  99: host_stage2_pending_higher_and_slice_2
+        Start 100: host_stage2_budget_preservation_2
+        Start 101: host_stage2_time_slice_5
+ 96/360 Test  #96: host_stage2_budget_preservation_1 ........   Passed    0.01 sec
+ 97/360 Test  #97: host_stage2_time_slice_2 .................   Passed    0.01 sec
+ 98/360 Test  #98: host_stage2_pending_coalescing_2 .........   Passed    0.01 sec
+ 99/360 Test  #99: host_stage2_pending_higher_and_slice_2 ...   Passed    0.00 sec
+100/360 Test #100: host_stage2_budget_preservation_2 ........   Passed    0.00 sec
+        Start 102: host_stage2_pending_coalescing_5
+        Start 103: host_stage2_pending_higher_and_slice_5
+        Start 104: host_stage2_budget_preservation_5
+        Start 105: host_stage2_tick_initialization
+        Start 106: host_stage2_reload_boundaries
+101/360 Test #101: host_stage2_time_slice_5 .................   Passed    0.01 sec
+102/360 Test #102: host_stage2_pending_coalescing_5 .........   Passed    0.01 sec
+103/360 Test #103: host_stage2_pending_higher_and_slice_5 ...   Passed    0.01 sec
+104/360 Test #104: host_stage2_budget_preservation_5 ........   Passed    0.01 sec
+105/360 Test #105: host_stage2_tick_initialization ..........   Passed    0.00 sec
+        Start 107: host_stage2_priority
+        Start 108: host_stage2_create_preemption
+        Start 109: host_stage2_critical_preemption
+        Start 110: host_stage2_tick_wrap
+        Start 111: host_stage2_idle_tick
+106/360 Test #106: host_stage2_reload_boundaries ............   Passed    0.01 sec
+107/360 Test #107: host_stage2_priority .....................   Passed    0.01 sec
+108/360 Test #108: host_stage2_create_preemption ............   Passed    0.01 sec
+109/360 Test #109: host_stage2_critical_preemption ..........   Passed    0.01 sec
+110/360 Test #110: host_stage2_tick_wrap ....................   Passed    0.00 sec
+        Start 112: host_stage2_context_boundaries
+        Start 113: host_stage2_creation_reservation
+        Start 114: host_stage2_stale_pendsv
+        Start 115: host_stage4_4_prestart
+        Start 116: host_stage4_4_contexts
+111/360 Test #111: host_stage2_idle_tick ....................   Passed    0.01 sec
+112/360 Test #112: host_stage2_context_boundaries ...........   Passed    0.01 sec
+113/360 Test #113: host_stage2_creation_reservation .........   Passed    0.01 sec
+114/360 Test #114: host_stage2_stale_pendsv .................   Passed    0.01 sec
+115/360 Test #115: host_stage4_4_prestart ...................   Passed    0.00 sec
+        Start 117: host_stage4_4_ordinary_isr
+        Start 118: host_stage4_4_null
+        Start 119: host_stage4_4_uninitialized
+        Start 120: host_stage4_4_masks
+        Start 121: host_stage4_4_counting
+116/360 Test #116: host_stage4_4_contexts ...................   Passed    0.01 sec
+117/360 Test #117: host_stage4_4_ordinary_isr ...............   Passed    0.01 sec
+118/360 Test #118: host_stage4_4_null .......................   Passed    0.01 sec
+119/360 Test #119: host_stage4_4_uninitialized ..............   Passed    0.01 sec
+120/360 Test #120: host_stage4_4_masks ......................   Passed    0.01 sec
+        Start 122: host_stage4_4_binary
+        Start 123: host_stage4_4_max_uint32
+        Start 124: host_stage4_4_systick
+        Start 125: host_stage4_4_early
+        Start 126: host_stage4_4_fifo
+121/360 Test #121: host_stage4_4_counting ...................   Passed    0.01 sec
+122/360 Test #122: host_stage4_4_binary .....................   Passed    0.01 sec
+123/360 Test #123: host_stage4_4_max_uint32 .................   Passed    0.01 sec
+124/360 Test #124: host_stage4_4_systick ....................   Passed    0.01 sec
+125/360 Test #125: host_stage4_4_early ......................   Passed    0.00 sec
+        Start 127: host_stage4_4_priority
+        Start 128: host_stage4_4_lower
+        Start 129: host_stage4_4_pending
+        Start 130: host_stage4_4_pending_permit
+        Start 131: host_stage4_4_duplicate
+126/360 Test #126: host_stage4_4_fifo .......................   Passed    0.01 sec
+127/360 Test #127: host_stage4_4_priority ...................   Passed    0.01 sec
+128/360 Test #128: host_stage4_4_lower ......................   Passed    0.01 sec
+129/360 Test #129: host_stage4_4_pending ....................   Passed    0.00 sec
+130/360 Test #130: host_stage4_4_pending_permit .............   Passed    0.00 sec
+        Start 132: host_stage4_4_grant_first
+        Start 133: host_stage4_4_timeout_first
+        Start 134: host_stage4_4_tick_first
+        Start 135: host_stage4_4_tick_during
+        Start 136: host_stage4_4_delay_isolation
+131/360 Test #131: host_stage4_4_duplicate ..................   Passed    0.01 sec
+132/360 Test #132: host_stage4_4_grant_first ................   Passed    0.01 sec
+133/360 Test #133: host_stage4_4_timeout_first ..............   Passed    0.01 sec
+134/360 Test #134: host_stage4_4_tick_first .................   Passed    0.01 sec
+135/360 Test #135: host_stage4_4_tick_during ................   Passed    0.01 sec
+        Start 137: host_stage4_5_mixed
+        Start 138: host_stage4_5_cycle
+        Start 139: host_stage4_5_wrong_object
+        Start 140: host_stage4_5_count_overflow
+        Start 141: host_stage4_5_stored_with_waiter
+136/360 Test #136: host_stage4_4_delay_isolation ............   Passed    0.01 sec
+137/360 Test #137: host_stage4_5_mixed ......................   Passed    0.01 sec
+138/360 Test #138: host_stage4_5_cycle ......................   Passed    0.01 sec
+139/360 Test #139: host_stage4_5_wrong_object ...............   Passed    0.01 sec
+140/360 Test #140: host_stage4_5_count_overflow .............   Passed    0.00 sec
+        Start 142: host_stage4_5_lost_delay
+        Start 143: host_stage4_5_stack_guard
+        Start 144: host_stage4_5_duplicate_ready
+        Start 145: host_stage5_1_initialization
+        Start 146: host_stage5_1_prestart
+141/360 Test #141: host_stage4_5_stored_with_waiter .........   Passed    0.01 sec
+142/360 Test #142: host_stage4_5_lost_delay .................   Passed    0.01 sec
+143/360 Test #143: host_stage4_5_stack_guard ................   Passed    0.01 sec
+144/360 Test #144: host_stage4_5_duplicate_ready ............   Passed    0.01 sec
+145/360 Test #145: host_stage5_1_initialization .............   Passed    0.00 sec
+        Start 147: host_stage5_1_contexts
+        Start 148: host_stage5_1_masks
+        Start 149: host_stage5_1_parameters
+        Start 150: host_stage5_1_uninitialized
+        Start 151: host_stage5_1_self
+146/360 Test #146: host_stage5_1_prestart ...................   Passed    0.01 sec
+147/360 Test #147: host_stage5_1_contexts ...................   Passed    0.01 sec
+148/360 Test #148: host_stage5_1_masks ......................   Passed    0.01 sec
+149/360 Test #149: host_stage5_1_parameters .................   Passed    0.01 sec
+150/360 Test #150: host_stage5_1_uninitialized ..............   Passed    0.00 sec
+        Start 152: host_stage5_1_unlocked
+        Start 153: host_stage5_1_immediate
+        Start 154: host_stage5_1_init_running
+        Start 155: host_stage5_1_multiple
+        Start 156: host_stage5_1_exit_owned
+151/360 Test #151: host_stage5_1_self .......................   Passed    0.01 sec
+152/360 Test #152: host_stage5_1_unlocked ...................   Passed    0.01 sec
+153/360 Test #153: host_stage5_1_immediate ..................   Passed    0.01 sec
+154/360 Test #154: host_stage5_1_init_running ...............   Passed    0.00 sec
+155/360 Test #155: host_stage5_1_multiple ...................   Passed    0.00 sec
+        Start 157: host_stage5_1_exit_clean
+        Start 158: host_stage5_1_priority
+        Start 159: host_stage5_1_fifo
+        Start 160: host_stage5_1_sem_isolation
+        Start 161: host_stage5_1_delay_isolation
+156/360 Test #156: host_stage5_1_exit_owned .................   Passed    0.01 sec
+157/360 Test #157: host_stage5_1_exit_clean .................   Passed    0.01 sec
+158/360 Test #158: host_stage5_1_priority ...................   Passed    0.01 sec
+159/360 Test #159: host_stage5_1_fifo .......................   Passed    0.01 sec
+160/360 Test #160: host_stage5_1_sem_isolation ..............   Passed    0.01 sec
+        Start 162: host_stage5_1_handoff_pending
+        Start 163: host_stage5_1_no_steal
+        Start 164: host_stage5_1_poll
+        Start 165: host_stage5_1_nonowner
+        Start 166: host_stage5_1_block
+161/360 Test #161: host_stage5_1_delay_isolation ............   Passed    0.01 sec
+162/360 Test #162: host_stage5_1_handoff_pending ............   Passed    0.01 sec
+163/360 Test #163: host_stage5_1_no_steal ...................   Passed    0.01 sec
+164/360 Test #164: host_stage5_1_poll .......................   Passed    0.01 sec
+165/360 Test #165: host_stage5_1_nonowner ...................   Passed    0.00 sec
+        Start 167: host_stage5_1_stale
+        Start 168: host_stage5_1_reinit_waiting
+        Start 169: host_stage5_1_transfer_multiple
+        Start 170: host_stage5_2_ready_requeue
+        Start 171: host_stage5_2_running_update
+166/360 Test #166: host_stage5_1_block ......................   Passed    0.01 sec
+167/360 Test #167: host_stage5_1_stale ......................   Passed    0.01 sec
+168/360 Test #168: host_stage5_1_reinit_waiting .............   Passed    0.01 sec
+169/360 Test #169: host_stage5_1_transfer_multiple ..........   Passed    0.01 sec
+170/360 Test #170: host_stage5_2_ready_requeue ..............   Passed    0.00 sec
+        Start 172: host_stage5_2_errors
+        Start 173: host_stage5_2_contexts
+        Start 174: host_stage5_2_delay_owner
+        Start 175: host_stage5_2_sem_owner
+        Start 176: host_stage5_2_sem_reorder
+171/360 Test #171: host_stage5_2_running_update .............   Passed    0.01 sec
+172/360 Test #172: host_stage5_2_errors .....................   Passed    0.01 sec
+173/360 Test #173: host_stage5_2_contexts ...................   Passed    0.01 sec
+174/360 Test #174: host_stage5_2_delay_owner ................   Passed    0.01 sec
+175/360 Test #175: host_stage5_2_sem_owner ..................   Passed    0.00 sec
+        Start 177: host_stage5_2_multiple_ab
+        Start 178: host_stage5_2_multiple_ba
+        Start 179: host_stage5_2_new_owner
+        Start 180: host_stage5_2_chain_boundary
+        Start 181: host_stage5_2_fifo
+176/360 Test #176: host_stage5_2_sem_reorder ................   Passed    0.01 sec
+177/360 Test #177: host_stage5_2_multiple_ab ................   Passed    0.01 sec
+178/360 Test #178: host_stage5_2_multiple_ba ................   Passed    0.01 sec
+179/360 Test #179: host_stage5_2_new_owner ..................   Passed    0.01 sec
+180/360 Test #180: host_stage5_2_chain_boundary .............   Passed    0.00 sec
+        Start 182: host_stage5_2_ready_owner
+        Start 183: host_stage5_2_budget
+        Start 184: host_stage5_2_restore
+        Start 185: host_stage5_2_pending
+        Start 186: host_stage5_3_long_chain
+181/360 Test #181: host_stage5_2_fifo .......................   Passed    0.01 sec
+182/360 Test #182: host_stage5_2_ready_owner ................   Passed    0.01 sec
+183/360 Test #183: host_stage5_2_budget .....................   Passed    0.01 sec
+184/360 Test #184: host_stage5_2_restore ....................   Passed    0.00 sec
+185/360 Test #185: host_stage5_2_pending ....................   Passed    0.00 sec
+        Start 187: host_stage5_3_chain3
+        Start 188: host_stage5_3_minimum_maximum
+        Start 189: host_stage5_3_reverse_ids
+        Start 190: host_stage5_3_cycle
+        Start 191: host_stage5_3_cycle_revoke
+186/360 Test #186: host_stage5_3_long_chain .................   Passed    0.01 sec
+187/360 Test #187: host_stage5_3_chain3 .....................   Passed    0.01 sec
+188/360 Test #188: host_stage5_3_minimum_maximum ............   Passed    0.01 sec
+189/360 Test #189: host_stage5_3_reverse_ids ................   Passed    0.01 sec
+190/360 Test #190: host_stage5_3_cycle ......................   Passed    0.00 sec
+        Start 192: host_stage5_3_branches_revoke
+        Start 193: host_stage5_3_ready_lower
+        Start 194: host_stage5_3_legal_ab
+        Start 195: host_stage5_3_legal_ba
+        Start 196: host_stage5_3_semaphore
+191/360 Test #191: host_stage5_3_cycle_revoke ...............   Passed    0.01 sec
+192/360 Test #192: host_stage5_3_branches_revoke ............   Passed    0.01 sec
+193/360 Test #193: host_stage5_3_ready_lower ................   Passed    0.01 sec
+194/360 Test #194: host_stage5_3_legal_ab ...................   Passed    0.01 sec
+195/360 Test #195: host_stage5_3_legal_ba ...................   Passed    0.00 sec
+        Start 197: host_stage5_3_independent
+        Start 198: host_stage5_3_errors
+        Start 199: host_stage5_3_no_edges
+        Start 200: host_stage5_4_parameters
+        Start 201: host_stage5_4_immediate
+196/360 Test #196: host_stage5_3_semaphore ..................   Passed    0.01 sec
+197/360 Test #197: host_stage5_3_independent ................   Passed    0.01 sec
+198/360 Test #198: host_stage5_3_errors .....................   Passed    0.01 sec
+199/360 Test #199: host_stage5_3_no_edges ...................   Passed    0.00 sec
+200/360 Test #200: host_stage5_4_parameters .................   Passed    0.00 sec
+        Start 202: host_stage5_4_contexts
+        Start 203: host_stage5_4_timeout
+        Start 204: host_stage5_4_one
+        Start 205: host_stage5_4_maximum
+        Start 206: host_stage5_4_grant
+201/360 Test #201: host_stage5_4_immediate ..................   Passed    0.01 sec
+202/360 Test #202: host_stage5_4_contexts ...................   Passed    0.01 sec
+203/360 Test #203: host_stage5_4_timeout ....................   Passed    0.01 sec
+204/360 Test #204: host_stage5_4_one ........................   Passed    0.01 sec
+205/360 Test #205: host_stage5_4_maximum ....................   Passed    0.00 sec
+        Start 207: host_stage5_4_race_grant
+        Start 208: host_stage5_4_race_timeout
+        Start 209: host_stage5_4_wrap_before
+        Start 210: host_stage5_4_wrap_after
+        Start 211: host_stage5_4_wrap_timeout
+206/360 Test #206: host_stage5_4_grant ......................   Passed    0.01 sec
+207/360 Test #207: host_stage5_4_race_grant .................   Passed    0.01 sec
+208/360 Test #208: host_stage5_4_race_timeout ...............   Passed    0.01 sec
+209/360 Test #209: host_stage5_4_wrap_before ................   Passed    0.01 sec
+210/360 Test #210: host_stage5_4_wrap_after .................   Passed    0.00 sec
+        Start 212: host_stage5_4_early
+        Start 213: host_stage5_4_pending_grant
+        Start 214: host_stage5_4_retry
+        Start 215: host_stage5_4_chain
+        Start 216: host_stage5_4_long_chain
+211/360 Test #211: host_stage5_4_wrap_timeout ...............   Passed    0.01 sec
+212/360 Test #212: host_stage5_4_early ......................   Passed    0.01 sec
+213/360 Test #213: host_stage5_4_pending_grant ..............   Passed    0.01 sec
+214/360 Test #214: host_stage5_4_retry ......................   Passed    0.01 sec
+215/360 Test #215: host_stage5_4_chain ......................   Passed    0.00 sec
+        Start 217: host_stage5_4_cut_middle
+        Start 218: host_stage5_4_branches
+        Start 219: host_stage5_4_reverse
+        Start 220: host_stage5_4_same_tick
+        Start 221: host_stage5_4_same_mutex
+216/360 Test #216: host_stage5_4_long_chain .................   Passed    0.01 sec
+217/360 Test #217: host_stage5_4_cut_middle .................   Passed    0.01 sec
+218/360 Test #218: host_stage5_4_branches ...................   Passed    0.01 sec
+219/360 Test #219: host_stage5_4_reverse ....................   Passed    0.01 sec
+220/360 Test #220: host_stage5_4_same_tick ..................   Passed    0.01 sec
+        Start 222: host_stage5_4_upstream
+        Start 223: host_stage5_4_cycle
+        Start 224: host_stage5_4_sem_owner
+        Start 225: host_stage5_4_mixed
+        Start 226: host_stage5_4_isr_mix
+221/360 Test #221: host_stage5_4_same_mutex .................   Passed    0.01 sec
+222/360 Test #222: host_stage5_4_upstream ...................   Passed    0.01 sec
+223/360 Test #223: host_stage5_4_cycle ......................   Passed    0.01 sec
+224/360 Test #224: host_stage5_4_sem_owner ..................   Passed    0.00 sec
+225/360 Test #225: host_stage5_4_mixed ......................   Passed    0.00 sec
+        Start 227: host_stage5_4_fifo
+        Start 228: host_stage5_4_burst7
+        Start 229: host_stage5_4_cycle8
+        Start 230: host_stage5_4_running_drop
+        Start 231: host_stage5_4_held_timeout
+226/360 Test #226: host_stage5_4_isr_mix ....................   Passed    0.01 sec
+227/360 Test #227: host_stage5_4_fifo .......................   Passed    0.01 sec
+228/360 Test #228: host_stage5_4_burst7 .....................   Passed    0.01 sec
+229/360 Test #229: host_stage5_4_cycle8 .....................   Passed    0.01 sec
+230/360 Test #230: host_stage5_4_running_drop ...............   Passed    0.00 sec
+        Start 232: host_stage5_5_valid
+        Start 233: host_stage5_5_duplicate
+        Start 234: host_stage5_5_ownership
+        Start 235: host_stage5_5_stale
+        Start 236: host_stage5_5_priority
+231/360 Test #231: host_stage5_4_held_timeout ...............   Passed    0.01 sec
+232/360 Test #232: host_stage5_5_valid ......................   Passed    0.01 sec
+233/360 Test #233: host_stage5_5_duplicate ..................   Passed    0.01 sec
+234/360 Test #234: host_stage5_5_ownership ..................   Passed    0.01 sec
+235/360 Test #235: host_stage5_5_stale ......................   Passed    0.00 sec
+        Start 237: host_stage6_1_fifo1
+        Start 238: host_stage6_1_fifo2
+        Start 239: host_stage6_1_fifo3
+        Start 240: host_stage6_1_fifo5
+        Start 241: host_stage6_1_fifo8
+236/360 Test #236: host_stage5_5_priority ...................   Passed    0.01 sec
+237/360 Test #237: host_stage6_1_fifo1 ......................   Passed    0.01 sec
+238/360 Test #238: host_stage6_1_fifo2 ......................   Passed    0.01 sec
+239/360 Test #239: host_stage6_1_fifo3 ......................   Passed    0.01 sec
+240/360 Test #240: host_stage6_1_fifo5 ......................   Passed    0.00 sec
+        Start 242: host_stage6_1_initialization
+        Start 243: host_stage6_1_arithmetic
+        Start 244: host_stage6_1_reinitialize
+        Start 245: host_stage6_1_uninitialized
+        Start 246: host_stage6_1_copy
+241/360 Test #241: host_stage6_1_fifo8 ......................   Passed    0.01 sec
+242/360 Test #242: host_stage6_1_initialization .............   Passed    0.01 sec
+243/360 Test #243: host_stage6_1_arithmetic .................   Passed    0.01 sec
+244/360 Test #244: host_stage6_1_reinitialize ...............   Passed    0.01 sec
+245/360 Test #245: host_stage6_1_uninitialized ..............   Passed    0.00 sec
+        Start 247: host_stage6_1_bounds
+        Start 248: host_stage6_1_limit
+        Start 249: host_stage6_1_timeout
+        Start 250: host_stage6_1_null
+        Start 251: host_stage6_1_overlap
+246/360 Test #246: host_stage6_1_copy .......................   Passed    0.01 sec
+247/360 Test #247: host_stage6_1_bounds .....................   Passed    0.01 sec
+248/360 Test #248: host_stage6_1_limit ......................   Passed    0.01 sec
+249/360 Test #249: host_stage6_1_timeout ....................   Passed    0.00 sec
+250/360 Test #250: host_stage6_1_null .......................   Passed    0.00 sec
+        Start 252: host_stage6_1_failures
+        Start 253: host_stage6_1_contexts
+        Start 254: host_stage6_1_masks
+        Start 255: host_stage6_1_checker
+        Start 256: host_stage6_1_preemption
+251/360 Test #251: host_stage6_1_overlap ....................   Passed    0.01 sec
+252/360 Test #252: host_stage6_1_failures ...................   Passed    0.01 sec
+253/360 Test #253: host_stage6_1_contexts ...................   Passed    0.01 sec
+254/360 Test #254: host_stage6_1_masks ......................   Passed    0.01 sec
+255/360 Test #255: host_stage6_1_checker ....................   Passed    0.00 sec
+        Start 257: host_stage6_2_immediate
+        Start 258: host_stage6_2_receive
+        Start 259: host_stage6_2_send
+        Start 260: host_stage6_2_receive_priority
+        Start 261: host_stage6_2_send_priority
+256/360 Test #256: host_stage6_1_preemption .................   Passed    0.01 sec
+257/360 Test #257: host_stage6_2_immediate ..................   Passed    0.01 sec
+258/360 Test #258: host_stage6_2_receive ....................   Passed    0.01 sec
+259/360 Test #259: host_stage6_2_send .......................   Passed    0.01 sec
+260/360 Test #260: host_stage6_2_receive_priority ...........   Passed    0.00 sec
+        Start 262: host_stage6_2_receive_fifo
+        Start 263: host_stage6_2_send_fifo
+        Start 264: host_stage6_2_send_pi
+        Start 265: host_stage6_2_receive_pi
+        Start 266: host_stage6_2_send_revoke
+261/360 Test #261: host_stage6_2_send_priority ..............   Passed    0.01 sec
+262/360 Test #262: host_stage6_2_receive_fifo ...............   Passed    0.01 sec
+263/360 Test #263: host_stage6_2_send_fifo ..................   Passed    0.01 sec
+264/360 Test #264: host_stage6_2_send_pi ....................   Passed    0.01 sec
+265/360 Test #265: host_stage6_2_receive_pi .................   Passed    0.00 sec
+        Start 267: host_stage6_2_receive_revoke
+        Start 268: host_stage6_2_max64
+        Start 269: host_stage6_2_capacity3_send
+        Start 270: host_stage6_2_max64_send
+        Start 271: host_stage6_2_early_receive
+266/360 Test #266: host_stage6_2_send_revoke ................   Passed    0.01 sec
+267/360 Test #267: host_stage6_2_receive_revoke .............   Passed    0.01 sec
+268/360 Test #268: host_stage6_2_max64 ......................   Passed    0.01 sec
+269/360 Test #269: host_stage6_2_capacity3_send .............   Passed    0.00 sec
+270/360 Test #270: host_stage6_2_max64_send .................   Passed    0.00 sec
+        Start 272: host_stage6_2_early_send
+        Start 273: host_stage6_2_pending_receive
+        Start 274: host_stage6_2_pending_send
+        Start 275: host_stage6_2_overlap_receive
+        Start 276: host_stage6_2_overlap_send
+271/360 Test #271: host_stage6_2_early_receive ..............   Passed    0.01 sec
+272/360 Test #272: host_stage6_2_early_send .................   Passed    0.01 sec
+273/360 Test #273: host_stage6_2_pending_receive ............   Passed    0.01 sec
+274/360 Test #274: host_stage6_2_pending_send ...............   Passed    0.01 sec
+275/360 Test #275: host_stage6_2_overlap_receive ............   Passed    0.00 sec
+        Start 277: host_stage6_2_invalid
+        Start 278: host_stage6_2_contexts
+        Start 279: host_stage6_2_checker
+        Start 280: host_stage6_3_forever_pi
+        Start 281: host_stage6_3_immediate
+276/360 Test #276: host_stage6_2_overlap_send ...............   Passed    0.01 sec
+277/360 Test #277: host_stage6_2_invalid ....................   Passed    0.01 sec
+278/360 Test #278: host_stage6_2_contexts ...................   Passed    0.01 sec
+279/360 Test #279: host_stage6_2_checker ....................   Passed    0.01 sec
+280/360 Test #280: host_stage6_3_forever_pi .................   Passed    0.01 sec
+        Start 282: host_stage6_3_parameters
+        Start 283: host_stage6_3_contexts
+        Start 284: host_stage6_3_receive_timeout
+        Start 285: host_stage6_3_send_timeout
+        Start 286: host_stage6_3_receive_grant
+281/360 Test #281: host_stage6_3_immediate ..................   Passed    0.01 sec
+282/360 Test #282: host_stage6_3_parameters .................   Passed    0.01 sec
+283/360 Test #283: host_stage6_3_contexts ...................   Passed    0.01 sec
+284/360 Test #284: host_stage6_3_receive_timeout ............   Passed    0.01 sec
+285/360 Test #285: host_stage6_3_send_timeout ...............   Passed    0.00 sec
+        Start 287: host_stage6_3_send_grant
+        Start 288: host_stage6_3_receive_grant_first
+        Start 289: host_stage6_3_send_grant_first
+        Start 290: host_stage6_3_receive_timeout_first
+        Start 291: host_stage6_3_send_timeout_first
+286/360 Test #286: host_stage6_3_receive_grant ..............   Passed    0.01 sec
+287/360 Test #287: host_stage6_3_send_grant .................   Passed    0.01 sec
+288/360 Test #288: host_stage6_3_receive_grant_first ........   Passed    0.01 sec
+289/360 Test #289: host_stage6_3_send_grant_first ...........   Passed    0.01 sec
+290/360 Test #290: host_stage6_3_receive_timeout_first ......   Passed    0.01 sec
+        Start 292: host_stage6_3_receive_early_grant
+        Start 293: host_stage6_3_send_early_grant
+        Start 294: host_stage6_3_receive_early_timeout
+        Start 295: host_stage6_3_send_early_timeout
+        Start 296: host_stage6_3_receive_max
+291/360 Test #291: host_stage6_3_send_timeout_first .........   Passed    0.01 sec
+292/360 Test #292: host_stage6_3_receive_early_grant ........   Passed    0.01 sec
+293/360 Test #293: host_stage6_3_send_early_grant ...........   Passed    0.01 sec
+294/360 Test #294: host_stage6_3_receive_early_timeout ......   Passed    0.01 sec
+295/360 Test #295: host_stage6_3_send_early_timeout .........   Passed    0.00 sec
+        Start 297: host_stage6_3_send_max
+        Start 298: host_stage6_3_receive_wrap
+        Start 299: host_stage6_3_send_wrap
+        Start 300: host_stage6_3_receive_multi
+        Start 301: host_stage6_3_send_multi
+296/360 Test #296: host_stage6_3_receive_max ................   Passed    0.01 sec
+297/360 Test #297: host_stage6_3_send_max ...................   Passed    0.01 sec
+298/360 Test #298: host_stage6_3_receive_wrap ...............   Passed    0.01 sec
+299/360 Test #299: host_stage6_3_send_wrap ..................   Passed    0.01 sec
+300/360 Test #300: host_stage6_3_receive_multi ..............   Passed    0.00 sec
+        Start 302: host_stage6_3_receive_same
+        Start 303: host_stage6_3_send_same
+        Start 304: host_stage6_3_receive_pi
+        Start 305: host_stage6_3_send_pi
+        Start 306: host_stage6_3_receive_reuse
+301/360 Test #301: host_stage6_3_send_multi .................   Passed    0.01 sec
+302/360 Test #302: host_stage6_3_receive_same ...............   Passed    0.01 sec
+303/360 Test #303: host_stage6_3_send_same ..................   Passed    0.01 sec
+304/360 Test #304: host_stage6_3_receive_pi .................   Passed    0.01 sec
+305/360 Test #305: host_stage6_3_send_pi ....................   Passed    0.00 sec
+        Start 307: host_stage6_3_send_reuse
+        Start 308: host_stage6_3_receive_64
+        Start 309: host_stage6_3_send_64
+        Start 310: host_stage6_4_contexts
+        Start 311: host_stage6_4_prestart
+306/360 Test #306: host_stage6_3_receive_reuse ..............   Passed    0.01 sec
+307/360 Test #307: host_stage6_3_send_reuse .................   Passed    0.01 sec
+308/360 Test #308: host_stage6_3_receive_64 .................   Passed    0.01 sec
+309/360 Test #309: host_stage6_3_send_64 ....................   Passed    0.01 sec
+310/360 Test #310: host_stage6_4_contexts ...................   Passed    0.00 sec
+        Start 312: host_stage6_4_parameters
+        Start 313: host_stage6_4_masks
+        Start 314: host_stage6_4_fifo1
+        Start 315: host_stage6_4_fifo3
+        Start 316: host_stage6_4_fifo8
+311/360 Test #311: host_stage6_4_prestart ...................   Passed    0.01 sec
+312/360 Test #312: host_stage6_4_parameters .................   Passed    0.01 sec
+313/360 Test #313: host_stage6_4_masks ......................   Passed    0.01 sec
+314/360 Test #314: host_stage6_4_fifo1 ......................   Passed    0.01 sec
+315/360 Test #315: host_stage6_4_fifo3 ......................   Passed    0.00 sec
+        Start 317: host_stage6_4_copy64
+        Start 318: host_stage6_4_full_sender
+        Start 319: host_stage6_4_direct_forever
+        Start 320: host_stage6_4_direct_finite
+        Start 321: host_stage6_4_priority
+316/360 Test #316: host_stage6_4_fifo8 ......................   Passed    0.01 sec
+317/360 Test #317: host_stage6_4_copy64 .....................   Passed    0.01 sec
+318/360 Test #318: host_stage6_4_full_sender ................   Passed    0.01 sec
+319/360 Test #319: host_stage6_4_direct_forever .............   Passed    0.01 sec
+320/360 Test #320: host_stage6_4_direct_finite ..............   Passed    0.01 sec
+        Start 322: host_stage6_4_fifo_receivers
+        Start 323: host_stage6_4_irq_first
+        Start 324: host_stage6_4_timeout_first
+        Start 325: host_stage6_4_early
+        Start 326: host_stage6_4_pending_grant
+321/360 Test #321: host_stage6_4_priority ...................   Passed    0.01 sec
+322/360 Test #322: host_stage6_4_fifo_receivers .............   Passed    0.01 sec
+323/360 Test #323: host_stage6_4_irq_first ..................   Passed    0.01 sec
+324/360 Test #324: host_stage6_4_timeout_first ..............   Passed    0.01 sec
+325/360 Test #325: host_stage6_4_early ......................   Passed    0.00 sec
+        Start 327: host_stage6_4_pending_timeout
+        Start 328: host_stage6_4_mixed
+        Start 329: host_stage6_4_systick
+        Start 330: host_stage6_5_grant_first
+        Start 331: host_stage6_5_timeout_first
+326/360 Test #326: host_stage6_4_pending_grant ..............   Passed    0.01 sec
+327/360 Test #327: host_stage6_4_pending_timeout ............   Passed    0.01 sec
+328/360 Test #328: host_stage6_4_mixed ......................   Passed    0.01 sec
+329/360 Test #329: host_stage6_4_systick ....................   Passed    0.01 sec
+330/360 Test #330: host_stage6_5_grant_first ................   Passed    0.00 sec
+        Start 332: host_stage6_5_wrap
+        Start 333: host_stage6_5_maximum
+        Start 334: host_stage6_5_fault_queue
+        Start 335: host_stage6_5_fault_deadline
+        Start 336: host_stage6_5_fault_buffer
+331/360 Test #331: host_stage6_5_timeout_first ..............   Passed    0.01 sec
+332/360 Test #332: host_stage6_5_wrap .......................   Passed    0.01 sec
+333/360 Test #333: host_stage6_5_maximum ....................   Passed    0.01 sec
+334/360 Test #334: host_stage6_5_fault_queue ................   Passed    0.00 sec
+335/360 Test #335: host_stage6_5_fault_deadline .............   Passed    0.00 sec
+        Start 337: host_stage6_5_fault_priority
+        Start 338: host_stage6_5_fault_owner
+        Start 339: stage9_1_host_higher_preempt
+        Start 340: stage9_1_host_same_fifo
+        Start 341: stage9_1_host_explicit_yield
+336/360 Test #336: host_stage6_5_fault_buffer ...............   Passed    0.01 sec
+337/360 Test #337: host_stage6_5_fault_priority .............   Passed    0.01 sec
+338/360 Test #338: host_stage6_5_fault_owner ................   Passed    0.01 sec
+339/360 Test #339: stage9_1_host_higher_preempt .............   Passed    0.01 sec
+340/360 Test #340: stage9_1_host_same_fifo ..................   Passed    0.01 sec
+        Start 342: stage9_1_host_delay_expired
+        Start 343: stage9_1_host_ipc
+        Start 344: stage9_1_host_mutex_pi
+        Start 345: stage9_1_host_exit
+        Start 346: stage9_1_host_slot_reuse
+341/360 Test #341: stage9_1_host_explicit_yield .............   Passed    0.01 sec
+342/360 Test #342: stage9_1_host_delay_expired ..............   Passed    0.01 sec
+343/360 Test #343: stage9_1_host_ipc ........................   Passed    0.01 sec
+344/360 Test #344: stage9_1_host_mutex_pi ...................   Passed    0.01 sec
+345/360 Test #345: stage9_1_host_exit .......................   Passed    0.00 sec
+        Start 347: stage9_1_cursor_ring_wrap
+        Start 348: stage9_1_cursor_64bit_wrap
+        Start 349: stage9_1_cursor_arguments
+        Start 350: stage9_2_host_budget
+        Start 351: stage9_2_host_arguments
+346/360 Test #346: stage9_1_host_slot_reuse .................   Passed    0.01 sec
+347/360 Test #347: stage9_1_cursor_ring_wrap ................   Passed    0.01 sec
+348/360 Test #348: stage9_1_cursor_64bit_wrap ...............   Passed    0.01 sec
+349/360 Test #349: stage9_1_cursor_arguments ................   Passed    0.00 sec
+350/360 Test #350: stage9_2_host_budget .....................   Passed    0.00 sec
+        Start 352: stage9_2_host_no_contention
+        Start 353: stage9_2_host_single_contention
+        Start 354: stage9_2_host_serial_chain
+        Start 355: stage9_2_host_multiple_waiters
+        Start 356: stage9_2_host_abba_deadlock
+351/360 Test #351: stage9_2_host_arguments ..................   Passed    0.01 sec
+352/360 Test #352: stage9_2_host_no_contention ..............   Passed    0.01 sec
+353/360 Test #353: stage9_2_host_single_contention ..........   Passed    0.01 sec
+354/360 Test #354: stage9_2_host_serial_chain ...............   Passed    0.00 sec
+355/360 Test #355: stage9_2_host_multiple_waiters ...........   Passed    0.00 sec
+        Start 357: stage9_2_host_circular_deadlock
+        Start 358: stage9_2_host_transitive_pi
+        Start 359: stage9_2_host_task_exit_stale
+        Start 360: stage9_2_host_anomaly
+356/360 Test #356: stage9_2_host_abba_deadlock ..............   Passed    0.01 sec
+357/360 Test #357: stage9_2_host_circular_deadlock ..........   Passed    0.01 sec
+358/360 Test #358: stage9_2_host_transitive_pi ..............   Passed    0.01 sec
+359/360 Test #359: stage9_2_host_task_exit_stale ............   Passed    0.00 sec
+360/360 Test #360: stage9_2_host_anomaly ....................   Passed    0.00 sec
+
+100% tests passed, 0 tests failed out of 360
+
+Label Time Summary:
+host        =   2.67 sec*proc (338 tests)
+stage1      =   0.06 sec*proc (7 tests)
+stage2      =   0.17 sec*proc (22 tests)
+stage3      =   0.22 sec*proc (30 tests)
+stage4_1    =   0.12 sec*proc (16 tests)
+stage4_2    =   0.12 sec*proc (14 tests)
+stage4_3    =   0.22 sec*proc (25 tests)
+stage4_4    =   0.18 sec*proc (22 tests)
+stage4_5    =   0.06 sec*proc (8 tests)
+stage5_1    =   0.20 sec*proc (25 tests)
+stage5_2    =   0.11 sec*proc (16 tests)
+stage5_3    =   0.11 sec*proc (14 tests)
+stage5_4    =   0.25 sec*proc (32 tests)
+stage5_5    =   0.04 sec*proc (5 tests)
+stage6_1    =   0.14 sec*proc (20 tests)
+stage6_2    =   0.18 sec*proc (23 tests)
+stage6_3    =   0.24 sec*proc (30 tests)
+stage6_4    =   0.16 sec*proc (20 tests)
+stage6_5    =   0.07 sec*proc (9 tests)
+stage9_1    =   0.08 sec*proc (11 tests)
+stage9_2    =   0.06 sec*proc (11 tests)
+
+Total Test time (real) =   0.72 sec
