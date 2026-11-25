@@ -61,6 +61,31 @@ defined in linker script */
   .weak Reset_Handler
   .type Reset_Handler, %function
 Reset_Handler:
+#if defined(INSIGHT_TEST_MSP) && INSIGHT_TEST_MSP
+#include "msp_bench.h"
+    /* The vector supplied MSP. No instruction below uses the stack. */
+    ldr r1, =__msp_stack_top__
+    mov r3, sp
+    cmp r3, r1
+    bne .Lmsp_paint_done
+    mrs r12, primask
+    cpsid i
+    ldr r0, =__msp_stack_bottom__
+    ldr r2, =MSP_BENCH_GUARD
+    movs r3, #MSP_BENCH_GUARD_WORDS
+.Lmsp_guard:
+    str r2, [r0], #4
+    subs r3, r3, #1
+    bne .Lmsp_guard
+    ldr r2, =MSP_BENCH_FILL
+.Lmsp_paint:
+    str r2, [r0], #4
+    cmp r0, r1
+    blo .Lmsp_paint
+    dsb
+    msr primask, r12
+.Lmsp_paint_done:
+#endif
 
 /* Call the clock system initialization function.*/
     bl  SystemInit

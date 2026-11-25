@@ -2,6 +2,9 @@
 #include "main.h"
 #include "delay.h"
 #include "rtos_assert.h"
+#if defined(INSIGHT_TEST_MSP) && INSIGHT_TEST_MSP
+#include "msp_bench.h"
+#endif
 #ifdef INSIGHT_DISPLAY_RTOS
 #include "rtos.h"
 #include "key_port.h"
@@ -47,6 +50,9 @@ void Timebase_Init(void)
 
 void TIM2_IRQHandler(void)
 {
+#if defined(INSIGHT_TEST_MSP) && INSIGHT_TEST_MSP
+    msp_bench_irq_entry();
+#endif
     if ((TIM2->SR & TIM_SR_UIF) != 0U) {
         TIM2->SR = 0U;
         ++g_tim2_ms_count;

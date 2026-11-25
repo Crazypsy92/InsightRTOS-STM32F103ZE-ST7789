@@ -1,0 +1,218 @@
+{
+  "status": "HARDWARE_MEASURED",
+  "clock_hz": 72000000,
+  "bottom": "0x2000f000",
+  "top_exclusive": "0x20010000",
+  "phases": {
+    "boot": {
+      "lowest_touched": "0x2000ff14",
+      "observed_bytes": 236,
+      "margin_including_guard": 3860,
+      "margin_outside_guard": 3844,
+      "handler_calls": {
+        "svc": 1,
+        "pendsv": 626,
+        "systick": 300,
+        "tim2": 3000
+      },
+      "recorded_entry_min": {
+        "svc": "0x2000ff78",
+        "pendsv": "0x2000ffd8",
+        "systick": "0x2000fff8",
+        "tim2": "0x2000fff8"
+      },
+      "nested": {
+        "systick_over_tim2": 0,
+        "systick_over_pendsv": 0,
+        "tim2_over_pendsv": 0
+      },
+      "ticks": 300,
+      "ms": 3000,
+      "guard": [
+        3797572314,
+        3797572314,
+        3797572314,
+        3797572314
+      ],
+      "touch_bitmap": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        4294704864,
+        4294967295
+      ]
+    },
+    "normal": {
+      "lowest_touched": "0x2000ff7c",
+      "observed_bytes": 132,
+      "margin_including_guard": 3964,
+      "margin_outside_guard": 3948,
+      "handler_calls": {
+        "svc": 0,
+        "pendsv": 12936,
+        "systick": 6200,
+        "tim2": 62000
+      },
+      "recorded_entry_min": {
+        "svc": "0x0",
+        "pendsv": "0x2000ffd8",
+        "systick": "0x2000fff8",
+        "tim2": "0x2000fff8"
+      },
+      "nested": {
+        "systick_over_tim2": 0,
+        "systick_over_pendsv": 0,
+        "tim2_over_pendsv": 0
+      },
+      "ticks": 6200,
+      "ms": 62000,
+      "guard": [
+        3797572314,
+        3797572314,
+        3797572314,
+        3797572314
+      ],
+      "touch_bitmap": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2147483648,
+        4294967291
+      ]
+    },
+    "load": {
+      "lowest_touched": "0x2000ff04",
+      "observed_bytes": 252,
+      "margin_including_guard": 3844,
+      "margin_outside_guard": 3828,
+      "handler_calls": {
+        "svc": 0,
+        "pendsv": 14877,
+        "systick": 6200,
+        "tim2": 62000
+      },
+      "recorded_entry_min": {
+        "svc": "0x0",
+        "pendsv": "0x2000ffd8",
+        "systick": "0x2000fff8",
+        "tim2": "0x2000fff8"
+      },
+      "nested": {
+        "systick_over_tim2": 0,
+        "systick_over_pendsv": 0,
+        "tim2_over_pendsv": 0
+      },
+      "ticks": 6200,
+      "ms": 62000,
+      "guard": [
+        3797572314,
+        3797572314,
+        3797572314,
+        3797572314
+      ],
+      "touch_bitmap": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        4294967278,
+        4294967291
+      ]
+    }
+  },
+  "health_samples": 32,
+  "normal_health_samples": 15,
+  "load_health_samples": 15,
+  "flow": {
+    "key_attempts": 600,
+    "key_sent_ok": 600,
+    "key_queue_full": 0,
+    "key_wrong_context": 0,
+    "key_invalid_arg": 0,
+    "key_other_errors": 0,
+    "success_count": 600,
+    "failure_count": 0,
+    "pending_count": 0,
+    "drop_count": 0
+  }
+}

@@ -1,0 +1,370 @@
+{
+  "stage": "9.3-B2c",
+  "status": "HARDWARE_MEASURED",
+  "base_sha": "147fb17a24112d4f104e36fe3948451e12d07326",
+  "tools": [
+    "arm-none-eabi-gcc (15:14.2.rel1-1) 14.2.1 20241119",
+    "GNU ld (2.45.50.20251209-1ubuntu1+23build1) 2.45.50.20251209",
+    "GNU gdb (Ubuntu 17.1-2ubuntu1) 17.1",
+    "Open On-Chip Debugger 0.12.0",
+    "cmake version 4.2.3",
+    "Python 3.13.5"
+  ],
+  "profiles": {
+    "DISPLAY_RTOS_O2_Msp": {
+      "flash_bytes": 52104,
+      "flash_end_exclusive": "0x800cb88",
+      "erasure_pages_from_zero": 26,
+      "sram_including_msp": 50000,
+      "sram_remaining": 15536,
+      "reset": "0x8000c09",
+      "msp": "0x20010000",
+      "sha256": {
+        "elf": "ae1a259ab1e7878894b4580888695bb5df3083fa5810b8bef1484d67a25b358c",
+        "bin": "2705b849ec183e5038d41f282ede35581a4685e93d582223da9337e823d6e419",
+        "hex": "804fda4168ee41483fb9c2afc70377983687e907f167819dc816af17a70a29ca",
+        "map": "2d67aa88ee8f68cc16106a58cdafb4932d20674f6dd124fefe062871b3b24fa0"
+      },
+      "tcb_bytes": 72,
+      "hex_omitted_zero_padding_bytes": 0,
+      "sections": {
+        ".isr_vector": 484,
+        ".text": 34836,
+        ".rodata": 16672,
+        ".ARM": 8,
+        ".preinit_array": 0,
+        ".init_array": 4,
+        ".fini_array": 4,
+        ".data": 96,
+        ".tdata": 0,
+        ".tbss": 0,
+        ".bss": 13040,
+        ".user_stacks": 32768,
+        ".msp_stack": 4096
+      }
+    },
+    "DISPLAY_RTOS_Debug_Msp": {
+      "flash_bytes": 73832,
+      "flash_end_exclusive": "0x8012068",
+      "erasure_pages_from_zero": 37,
+      "sram_including_msp": 49992,
+      "sram_remaining": 15544,
+      "reset": "0x8001211",
+      "msp": "0x20010000",
+      "sha256": {
+        "elf": "4eecdceecd542a74be01fe1aafba4b83f8955cc7dddc11874db1672b09b9ca2f",
+        "bin": "e7ec2d315ccbf80b46fa6d9f0ebe7f7f4dea165343a33df1d05d585384613cc4",
+        "hex": "239bcfe003422eee973bcd0bd838d70298207efd1311c1edf23570e5afd240ad",
+        "map": "224089ab772e034fde9e81f4c6fd2199568b44e068ac0fd2cd7fb6ce55219152"
+      },
+      "tcb_bytes": 72,
+      "hex_omitted_zero_padding_bytes": 0,
+      "sections": {
+        ".isr_vector": 484,
+        ".text": 53292,
+        ".rodata": 19944,
+        ".ARM": 8,
+        ".preinit_array": 0,
+        ".init_array": 4,
+        ".fini_array": 4,
+        ".data": 96,
+        ".tdata": 0,
+        ".tbss": 0,
+        ".bss": 13028,
+        ".user_stacks": 32768,
+        ".msp_stack": 4096
+      }
+    },
+    "DISPLAY_RTOS_O2_Trace": {
+      "flash_bytes": 51028,
+      "flash_end_exclusive": "0x800c754",
+      "erasure_pages_from_zero": 25,
+      "sram_including_msp": 49336,
+      "sram_remaining": 16200,
+      "reset": "0x8000c09",
+      "msp": "0x20010000",
+      "sha256": {
+        "elf": "8765c01c24db22b5a664afdfeed8243f6b594bc07a59f316a77aa9be6e45906a",
+        "bin": "701d2351d6e2d2efd8a4c2d964a5bb4119cd54ad664d9a47a3b4d6b5668318cf",
+        "hex": "27507cae1e30022d0787ec18ba33af2b9754577456c52257e9da84d8be59690a",
+        "map": "f1b1f695343ad50a6c6d720ce9448d0aaf549b4c4fdd94515cbf6dadbe345594"
+      },
+      "tcb_bytes": 72,
+      "hex_omitted_zero_padding_bytes": 4,
+      "sections": {
+        ".isr_vector": 484,
+        ".text": 33712,
+        ".rodata": 16716,
+        ".ARM": 8,
+        ".preinit_array": 0,
+        ".init_array": 4,
+        ".fini_array": 4,
+        ".data": 96,
+        ".tdata": 0,
+        ".tbss": 0,
+        ".bss": 12376,
+        ".user_stacks": 32768,
+        ".msp_stack": 4096
+      }
+    }
+  },
+  "readback": {
+    "status": "PASS",
+    "sha256": "2705b849ec183e5038d41f282ede35581a4685e93d582223da9337e823d6e419",
+    "bytes": 52104,
+    "tail_ff": 11384,
+    "option_bytes_equal": true
+  },
+  "measurement": {
+    "status": "HARDWARE_MEASURED",
+    "clock_hz": 72000000,
+    "bottom": "0x2000f000",
+    "top_exclusive": "0x20010000",
+    "phases": {
+      "boot": {
+        "lowest_touched": "0x2000ff14",
+        "observed_bytes": 236,
+        "margin_including_guard": 3860,
+        "margin_outside_guard": 3844,
+        "handler_calls": {
+          "svc": 1,
+          "pendsv": 626,
+          "systick": 300,
+          "tim2": 3000
+        },
+        "recorded_entry_min": {
+          "svc": "0x2000ff78",
+          "pendsv": "0x2000ffd8",
+          "systick": "0x2000fff8",
+          "tim2": "0x2000fff8"
+        },
+        "nested": {
+          "systick_over_tim2": 0,
+          "systick_over_pendsv": 0,
+          "tim2_over_pendsv": 0
+        },
+        "ticks": 300,
+        "ms": 3000,
+        "guard": [
+          3797572314,
+          3797572314,
+          3797572314,
+          3797572314
+        ],
+        "touch_bitmap": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4294704864,
+          4294967295
+        ]
+      },
+      "normal": {
+        "lowest_touched": "0x2000ff7c",
+        "observed_bytes": 132,
+        "margin_including_guard": 3964,
+        "margin_outside_guard": 3948,
+        "handler_calls": {
+          "svc": 0,
+          "pendsv": 12936,
+          "systick": 6200,
+          "tim2": 62000
+        },
+        "recorded_entry_min": {
+          "svc": "0x0",
+          "pendsv": "0x2000ffd8",
+          "systick": "0x2000fff8",
+          "tim2": "0x2000fff8"
+        },
+        "nested": {
+          "systick_over_tim2": 0,
+          "systick_over_pendsv": 0,
+          "tim2_over_pendsv": 0
+        },
+        "ticks": 6200,
+        "ms": 62000,
+        "guard": [
+          3797572314,
+          3797572314,
+          3797572314,
+          3797572314
+        ],
+        "touch_bitmap": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2147483648,
+          4294967291
+        ]
+      },
+      "load": {
+        "lowest_touched": "0x2000ff04",
+        "observed_bytes": 252,
+        "margin_including_guard": 3844,
+        "margin_outside_guard": 3828,
+        "handler_calls": {
+          "svc": 0,
+          "pendsv": 14877,
+          "systick": 6200,
+          "tim2": 62000
+        },
+        "recorded_entry_min": {
+          "svc": "0x0",
+          "pendsv": "0x2000ffd8",
+          "systick": "0x2000fff8",
+          "tim2": "0x2000fff8"
+        },
+        "nested": {
+          "systick_over_tim2": 0,
+          "systick_over_pendsv": 0,
+          "tim2_over_pendsv": 0
+        },
+        "ticks": 6200,
+        "ms": 62000,
+        "guard": [
+          3797572314,
+          3797572314,
+          3797572314,
+          3797572314
+        ],
+        "touch_bitmap": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4294967278,
+          4294967291
+        ]
+      }
+    },
+    "health_samples": 32,
+    "normal_health_samples": 15,
+    "load_health_samples": 15,
+    "flow": {
+      "key_attempts": 600,
+      "key_sent_ok": 600,
+      "key_queue_full": 0,
+      "key_wrong_context": 0,
+      "key_invalid_arg": 0,
+      "key_other_errors": 0,
+      "success_count": 600,
+      "failure_count": 0,
+      "pending_count": 0,
+      "drop_count": 0
+    }
+  },
+  "hardware": {
+    "target": "STM32F103ZET6",
+    "pages": [
+      0,
+      30
+    ],
+    "flash_start": "0x08000000",
+    "flash_end_exclusive": "0x0800f800",
+    "final_task_runs": [
+      600,
+      13001,
+      866,
+      189
+    ],
+    "stack_guards": [
+      3735929054,
+      3735929054,
+      3735929054,
+      3735929054,
+      3735929054
+    ]
+  },
+  "host": {
+    "application": 9,
+    "rt": 9,
+    "job": 77,
+    "job_clock_validity": 53
+  },
+  "not_tested": [
+    "pre-fill startup",
+    "unobserved IRQ nesting",
+    "NMI and fault deep paths",
+    "Debug hardware watermark"
+  ]
+}
