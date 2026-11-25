@@ -448,8 +448,9 @@ static void test_job_boundaries(void)
     rtos_diag_rt_job_snapshot_t s = job_view(a);
     JOB_CHECK(s.completed_jobs == 1 && !s.deadline_misses && !s.budget_overruns);
     JOB_CHECK(s.last_finish_ticks == 1 && s.last_first_dispatch_ticks == 0 && s.last_budget_cycles == 100);
-    JOB_CHECK((s.flags & (RTOS_DIAG_JOB_FIRST_VALID | RTOS_DIAG_JOB_FINISH_VALID |
-                         RTOS_DIAG_JOB_BUDGET_VALID)) != 0 && !s.active_job_id);
+    const uint32_t valid_flags = RTOS_DIAG_JOB_FIRST_VALID | RTOS_DIAG_JOB_FINISH_VALID |
+                                 RTOS_DIAG_JOB_BUDGET_VALID;
+    JOB_CHECK((s.flags & valid_flags) == valid_flags && !s.active_job_id);
     JOB_CHECK(rtos_diag_rt_job_complete(id) == RTOS_ERR_STATE);
     JOB_CHECK(rtos_diag_rt_job_release(a, &id) == RTOS_OK && id == 2);
     mock_advance_cycles_32(101);
@@ -534,7 +535,8 @@ static void test_job_wrap_and_unavailable(void)
     mock_tick();
     JOB_CHECK(rtos_diag_rt_job_complete(id) == RTOS_OK);
     s = job_view(a);
-    JOB_CHECK((s.flags & RTOS_DIAG_JOB_FINISH_VALID) && !(s.flags & RTOS_DIAG_JOB_BUDGET_VALID));
+    const uint32_t required = RTOS_DIAG_JOB_FINISH_VALID | RTOS_DIAG_JOB_CYCLES_INVALID;
+    JOB_CHECK((s.flags & (required | RTOS_DIAG_JOB_BUDGET_VALID)) == required);
 }
 
 static void test_job_abort_reuse(void)
@@ -568,6 +570,97 @@ static void test_job_abort_reuse(void)
     JOB_CHECK(rtos_diag_rt_configure(b, &c) == RTOS_OK);
     JOB_CHECK(rtos_diag_rt_job_release(b, &id) == RTOS_OK && id == 1);
 }
+static void test_job_clock_loss_while_blocked(void)
+{
+    alignas(RTOS_STACK_ALIGNMENT) static uint32_t stack_c[RTOS_MIN_STACK_WORDS];
+    job_clock(1000U);
+    const rtos_task_ref_t high = make_job_task("High", stack_a, 3);
+    const rtos_task_ref_t observer = make_job_task("Observer", stack_b, 2);
+    const rtos_task_ref_t ready = make_job_task("Ready", stack_c, 1);
+    const rtos_diag_rt_config_t cfg = {RTOS_DIAG_JOB_ENABLED, 0U, 50U, 1U};
+    JOB_CHECK(rtos_diag_rt_configure(high, &cfg) == RTOS_OK);
+    JOB_CHECK(rtos_diag_rt_configure(observer, &cfg) == RTOS_OK);
+    JOB_CHECK(rtos_diag_rt_configure(ready, &cfg) == RTOS_OK);
+    EXPECT_EVENT(MOCK_EVENT_START, rtos_start());
+
+    uint32_t high_id, observer_id, ready_id;
+    JOB_CHECK(rtos_diag_rt_job_release(high, &high_id) == RTOS_OK);
+    JOB_CHECK(rtos_delay(10U) == RTOS_OK);
+    JOB_CHECK(rtos_diag_rt_job_release(observer, &observer_id) == RTOS_OK);
+    mock_advance_cycles_32(20U);
+    JOB_CHECK(rtos_diag_rt_job_complete(observer_id) == RTOS_OK);
+    const rtos_diag_rt_job_snapshot_t archived = job_view(observer);
+    JOB_CHECK(archived.completed_jobs == 1U && archived.last_budget_cycles == 20U);
+    JOB_CHECK((archived.flags & RTOS_DIAG_JOB_BUDGET_VALID) != 0U);
+    JOB_CHECK(rtos_diag_rt_job_release(ready, &ready_id) == RTOS_OK);
+
+    rtos_task_snapshot_t task;
+    JOB_CHECK(rtos_task_get_snapshot(high, &task) == RTOS_OK && task.state == RTOS_TASK_BLOCKED);
+    JOB_CHECK(rtos_task_get_snapshot(ready, &task) == RTOS_OK && task.state == RTOS_TASK_READY);
+    JOB_CHECK((job_view(high).flags & RTOS_DIAG_JOB_CYCLES_INVALID) == 0U);
+
+    mock_set_clock_available(false);
+    mock_tick();
+    rtos_diag_clock_cap_t cap;
+    JOB_CHECK(rtos_diag_rt_clock_cap(&cap) == RTOS_OK);
+    JOB_CHECK((cap.flags & RTOS_DIAG_RT_CLOCK_UNAVAILABLE) != 0U);
+    const uint32_t cycle_flags = RTOS_DIAG_JOB_CYCLES_INVALID | RTOS_DIAG_JOB_BUDGET_VALID;
+    rtos_diag_rt_job_snapshot_t s = job_view(high);
+    JOB_CHECK(s.active_job_id == high_id && s.deadline_misses == 0U);
+    JOB_CHECK((s.flags & cycle_flags) == RTOS_DIAG_JOB_CYCLES_INVALID);
+
+    mock_set_clock_available(true);
+    JOB_CHECK(rtos_diag_rt_clock_cap(&cap) == RTOS_OK);
+    JOB_CHECK((cap.flags & RTOS_DIAG_RT_CLOCK_UNCERTAIN) != 0U);
+    s = job_view(high);
+    JOB_CHECK(s.active_job_id == high_id && (s.flags & cycle_flags) == RTOS_DIAG_JOB_CYCLES_INVALID);
+    s = job_view(ready);
+    JOB_CHECK(s.active_job_id == ready_id && (s.flags & cycle_flags) == RTOS_DIAG_JOB_CYCLES_INVALID);
+    s = job_view(observer);
+    JOB_CHECK(s.flags == archived.flags && s.active_job_id == 0U && s.completed_jobs == 1U);
+    JOB_CHECK(s.last_budget_cycles == archived.last_budget_cycles &&
+              s.max_budget_cycles == archived.max_budget_cycles);
+
+    mock_tick();
+    JOB_CHECK(rtos_task_get_snapshot(high, &task) == RTOS_OK && task.state == RTOS_TASK_BLOCKED);
+    s = job_view(high);
+    JOB_CHECK(s.deadline_misses == 1U && (s.flags & RTOS_DIAG_JOB_MISSED) != 0U);
+    for (uint32_t i = 2U; i < 10U; ++i) mock_tick();
+
+    JOB_CHECK(rtos_task_get_snapshot(high, &task) == RTOS_OK && task.state == RTOS_TASK_RUNNING);
+    JOB_CHECK((job_view(high).flags & cycle_flags) == RTOS_DIAG_JOB_CYCLES_INVALID);
+    JOB_CHECK(rtos_diag_rt_job_complete(high_id) == RTOS_OK);
+    s = job_view(high);
+    JOB_CHECK(s.active_job_id == 0U && s.completed_jobs == 1U && s.deadline_misses == 1U);
+    JOB_CHECK(s.budget_overruns == 0U && (s.flags & cycle_flags) == RTOS_DIAG_JOB_CYCLES_INVALID);
+    JOB_CHECK(s.last_finish_ticks == 10U && (s.flags & RTOS_DIAG_JOB_FINISH_VALID) != 0U);
+}
+
+static void test_job_snapshot_detects_clock_loss(void)
+{
+    job_clock(1000U);
+    const rtos_task_ref_t self = make_job_task("Reader", stack_a, 2);
+    const rtos_diag_rt_config_t cfg = {RTOS_DIAG_JOB_ENABLED, 0U, 50U, 0U};
+    JOB_CHECK(rtos_diag_rt_configure(self, &cfg) == RTOS_OK);
+    EXPECT_EVENT(MOCK_EVENT_START, rtos_start());
+
+    uint32_t id;
+    JOB_CHECK(rtos_diag_rt_job_release(self, &id) == RTOS_OK);
+    mock_set_clock_available(false);
+    const uint32_t cycle_flags = RTOS_DIAG_JOB_CYCLES_INVALID | RTOS_DIAG_JOB_BUDGET_VALID;
+    rtos_diag_rt_job_snapshot_t s = job_view(self);
+    JOB_CHECK(s.active_job_id == id && (s.flags & cycle_flags) == RTOS_DIAG_JOB_CYCLES_INVALID);
+
+    /* The snapshot was the only observer while the clock was disabled. */
+    mock_set_clock_available(true);
+    rtos_diag_clock_cap_t cap;
+    JOB_CHECK(rtos_diag_rt_clock_cap(&cap) == RTOS_OK);
+    JOB_CHECK((cap.flags & RTOS_DIAG_RT_CLOCK_UNCERTAIN) != 0U);
+    JOB_CHECK(rtos_diag_rt_job_complete(id) == RTOS_OK);
+    s = job_view(self);
+    JOB_CHECK(s.completed_jobs == 1U && (s.flags & cycle_flags) == RTOS_DIAG_JOB_CYCLES_INVALID);
+}
+
 static void run_isolated(void (*fn)(void))
 {
     pid_t pid = fork();
@@ -584,9 +677,11 @@ static void run_isolated(void (*fn)(void))
 static void run_job_cases(void)
 {
     fflush(stdout);
-    const char *names[] = {"boundaries", "segments", "wrap/clock", "abort/reuse"};
+    const char *names[] = {"boundaries", "segments", "wrap/clock", "abort/reuse",
+                           "blocked clock loss", "clock loss observed by snapshot"};
     void (*tests[])(void) = {test_job_boundaries, test_job_segments,
-                           test_job_wrap_and_unavailable, test_job_abort_reuse};
+                           test_job_wrap_and_unavailable, test_job_abort_reuse,
+                           test_job_clock_loss_while_blocked, test_job_snapshot_detects_clock_loss};
     for (size_t i = 0; i < sizeof(tests) / sizeof(tests[0]); ++i) {
         const pid_t child = fork();
         assert(child >= 0);
