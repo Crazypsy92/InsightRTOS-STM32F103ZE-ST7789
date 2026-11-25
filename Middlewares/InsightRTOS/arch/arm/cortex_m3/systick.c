@@ -33,7 +33,19 @@ void rtos_port_tick_start(void)
 #endif
 }
 
+#if defined(INSIGHT_TEST_TIMING)
+#include "timing_bench.h"
+#endif
+
 void SysTick_Handler(void)
 {
+#if defined(INSIGHT_TEST_TIMING)
+    if (timing_bench_running()) {
+        const uint32_t start = timing_bench_stamp();
+        rtos_tick_handler();
+        timing_bench_record(BENCH_SYSTICK, timing_bench_stamp() - start);
+        return;
+    }
+#endif
     rtos_tick_handler();
 }

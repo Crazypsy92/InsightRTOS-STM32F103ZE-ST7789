@@ -113,6 +113,21 @@
             }
         },
         {
+            "name": "DISPLAY_RTOS_O2_Timing_Off",
+            "inherits": "DISPLAY_RTOS_O2_Stress",
+            "cacheVariables": {
+                "INSIGHT_TEST_TIMING": "ON",
+                "INSIGHT_DIAG_RT": "OFF"
+            }
+        },
+        {
+            "name": "DISPLAY_RTOS_O2_Timing_On",
+            "inherits": "DISPLAY_RTOS_O2_Stress",
+            "cacheVariables": {
+                "INSIGHT_TEST_TIMING": "ON"
+            }
+        },
+        {
             "name": "DISPLAY_RTOS_O2_Job",
             "inherits": "default",
             "cacheVariables": {
@@ -168,6 +183,14 @@
         {
             "name": "DISPLAY_RTOS_O2_Stress",
             "configurePreset": "DISPLAY_RTOS_O2_Stress"
+        },
+        {
+            "name": "DISPLAY_RTOS_O2_Timing_Off",
+            "configurePreset": "DISPLAY_RTOS_O2_Timing_Off"
+        },
+        {
+            "name": "DISPLAY_RTOS_O2_Timing_On",
+            "configurePreset": "DISPLAY_RTOS_O2_Timing_On"
         },
         {
             "name": "DISPLAY_RTOS_O2_Job",

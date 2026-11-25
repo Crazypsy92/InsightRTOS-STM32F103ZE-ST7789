@@ -1,0 +1,110 @@
+{
+  "state": 2,
+  "start_tick": 300,
+  "finish_tick": 6500,
+  "start_ms": 3000,
+  "finish_ms": 65000,
+  "task_switch_mask": 30,
+  "idle_dispatches": 3129,
+  "events": 600,
+  "completed_jobs": 6199,
+  "bad_job_flags": 0,
+  "clock_hz": 72000000,
+  "rt_enabled": 1,
+  "paths": {
+    "empty_read": {
+      "sum": 64,
+      "count": 64,
+      "min": 1,
+      "max": 1,
+      "reserved": 0,
+      "mean_cycles": 1.0
+    },
+    "empty_call": {
+      "sum": 576,
+      "count": 64,
+      "min": 9,
+      "max": 9,
+      "reserved": 0,
+      "mean_cycles": 9.0
+    },
+    "pendsv": {
+      "sum": 29579449,
+      "count": 14875,
+      "min": 1668,
+      "max": 2405,
+      "reserved": 0,
+      "mean_cycles": 1988.534386554622,
+      "normalized_cycles": {
+        "min": 1659,
+        "mean": 1979.534386554622,
+        "max": 2396
+      }
+    },
+    "systick": {
+      "sum": 12016484,
+      "count": 6200,
+      "min": 1755,
+      "max": 4369,
+      "reserved": 0,
+      "mean_cycles": 1938.1425806451614,
+      "normalized_cycles": {
+        "min": 1746,
+        "mean": 1929.1425806451614,
+        "max": 4360
+      }
+    },
+    "release": {
+      "sum": 5269471,
+      "count": 6199,
+      "min": 850,
+      "max": 871,
+      "reserved": 0,
+      "mean_cycles": 850.0517825455719,
+      "normalized_cycles": {
+        "min": 841,
+        "mean": 841.0517825455719,
+        "max": 862
+      }
+    },
+    "complete": {
+      "sum": 4761185,
+      "count": 6199,
+      "min": 768,
+      "max": 782,
+      "reserved": 0,
+      "mean_cycles": 768.0569446684949,
+      "normalized_cycles": {
+        "min": 759,
+        "mean": 759.0569446684949,
+        "max": 773
+      }
+    },
+    "snapshot": {
+      "sum": 2777168,
+      "count": 6199,
+      "min": 448,
+      "max": 464,
+      "reserved": 0,
+      "mean_cycles": 448.0025810614615,
+      "normalized_cycles": {
+        "min": 439,
+        "mean": 439.0025810614615,
+        "max": 455
+      }
+    }
+  },
+  "flow": {
+    "key_attempts": 600,
+    "key_sent_ok": 600,
+    "key_queue_full": 0,
+    "key_wrong_context": 0,
+    "key_invalid_arg": 0,
+    "key_other_errors": 0,
+    "success_count": 600,
+    "failure_count": 0,
+    "pending_count": 0,
+    "drop_count": 0
+  },
+  "health_samples": 14
+}

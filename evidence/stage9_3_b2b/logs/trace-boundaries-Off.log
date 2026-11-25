@@ -1,0 +1,134 @@
+08004c78 <empty_call>:
+ 8004c78:	4770      	bx	lr
+ 8004c7a:	bf00      	nop
+
+08004d2c <timing_bench_controller_step>:
+ 8004d2c:	e92d 41f0 	stmdb	sp!, {r4, r5, r6, r7, r8, lr}
+ 8004d30:	f8df 80d4 	ldr.w	r8, [pc, #212]	@ 8004e08 <timing_bench_controller_step+0xdc>
+ 8004d34:	b082      	sub	sp, #8
+ 8004d36:	ab02      	add	r3, sp, #8
+ 8004d38:	e903 0003 	stmdb	r3, {r0, r1}
+ 8004d3c:	f8d8 30a8 	ldr.w	r3, [r8, #168]	@ 0xa8
+ 8004d40:	2b02      	cmp	r3, #2
+ 8004d42:	d009      	beq.n	8004d58 <timing_bench_controller_step+0x2c>
+ 8004d44:	4614      	mov	r4, r2
+ 8004d46:	f002 fa45 	bl	80071d4 <rtos_tick_get>
+ 8004d4a:	f8d8 30a8 	ldr.w	r3, [r8, #168]	@ 0xa8
+ 8004d4e:	b933      	cbnz	r3, 8004d5e <timing_bench_controller_step+0x32>
+ 8004d50:	f5b0 7f96 	cmp.w	r0, #300	@ 0x12c
+ 8004d54:	d300      	bcc.n	8004d58 <timing_bench_controller_step+0x2c>
+ 8004d56:	b9dc      	cbnz	r4, 8004d90 <timing_bench_controller_step+0x64>
+ 8004d58:	b002      	add	sp, #8
+ 8004d5a:	e8bd 81f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, pc}
+ 8004d5e:	f641 0337 	movw	r3, #6199	@ 0x1837
+ 8004d62:	f8d8 20ac 	ldr.w	r2, [r8, #172]	@ 0xac
+ 8004d66:	1a80      	subs	r0, r0, r2
+ 8004d68:	4298      	cmp	r0, r3
+ 8004d6a:	d9f5      	bls.n	8004d58 <timing_bench_controller_step+0x2c>
+ 8004d6c:	4b27      	ldr	r3, [pc, #156]	@ (8004e0c <timing_bench_controller_step+0xe0>)
+ 8004d6e:	681b      	ldr	r3, [r3, #0]
+ 8004d70:	f8c8 30c4 	str.w	r3, [r8, #196]	@ 0xc4
+ 8004d74:	f7fe f8f4 	bl	8002f60 <GetTick_ms>
+ 8004d78:	f8c8 00b8 	str.w	r0, [r8, #184]	@ 0xb8
+ 8004d7c:	f002 fa2a 	bl	80071d4 <rtos_tick_get>
+ 8004d80:	f8c8 00b0 	str.w	r0, [r8, #176]	@ 0xb0
+ 8004d84:	f3bf 8f5f 	dmb	sy
+ 8004d88:	2302      	movs	r3, #2
+ 8004d8a:	f8c8 30a8 	str.w	r3, [r8, #168]	@ 0xa8
+ 8004d8e:	e7e3      	b.n	8004d58 <timing_bench_controller_step+0x2c>
+ 8004d90:	f003 f88c 	bl	8007eac <rtos_port_clock_available>
+ 8004d94:	b390      	cbz	r0, 8004dfc <timing_bench_controller_step+0xd0>
+ 8004d96:	f7fe f80b 	bl	8002db0 <rtos_port_cpu_hz>
+ 8004d9a:	4b1d      	ldr	r3, [pc, #116]	@ (8004e10 <timing_bench_controller_step+0xe4>)
+ 8004d9c:	4298      	cmp	r0, r3
+ 8004d9e:	d12d      	bne.n	8004dfc <timing_bench_controller_step+0xd0>
+ 8004da0:	2740      	movs	r7, #64	@ 0x40
+ 8004da2:	4c1c      	ldr	r4, [pc, #112]	@ (8004e14 <timing_bench_controller_step+0xe8>)
+ 8004da4:	f002 f9e8 	bl	8007178 <rtos_critical_enter>
+ 8004da8:	6863      	ldr	r3, [r4, #4]
+ 8004daa:	6866      	ldr	r6, [r4, #4]
+ 8004dac:	1af6      	subs	r6, r6, r3
+ 8004dae:	6863      	ldr	r3, [r4, #4]
+ 8004db0:	f7ff ff62 	bl	8004c78 <empty_call>
+ 8004db4:	6865      	ldr	r5, [r4, #4]
+ 8004db6:	1aed      	subs	r5, r5, r3
+ 8004db8:	f002 f9f0 	bl	800719c <rtos_critical_exit>
+ 8004dbc:	4631      	mov	r1, r6
+ 8004dbe:	2000      	movs	r0, #0
+ 8004dc0:	f7ff ff5c 	bl	8004c7c <timing_bench_record>
+ 8004dc4:	4629      	mov	r1, r5
+ 8004dc6:	2001      	movs	r0, #1
+ 8004dc8:	f7ff ff58 	bl	8004c7c <timing_bench_record>
+ 8004dcc:	3f01      	subs	r7, #1
+ 8004dce:	d1e9      	bne.n	8004da4 <timing_bench_controller_step+0x78>
+ 8004dd0:	f7fd ffee 	bl	8002db0 <rtos_port_cpu_hz>
+ 8004dd4:	f8c8 00d0 	str.w	r0, [r8, #208]	@ 0xd0
+ 8004dd8:	f8c8 70d4 	str.w	r7, [r8, #212]	@ 0xd4
+ 8004ddc:	f7fe f8c0 	bl	8002f60 <GetTick_ms>
+ 8004de0:	f8c8 00b4 	str.w	r0, [r8, #180]	@ 0xb4
+ 8004de4:	f002 f9f6 	bl	80071d4 <rtos_tick_get>
+ 8004de8:	2301      	movs	r3, #1
+ 8004dea:	4a0b      	ldr	r2, [pc, #44]	@ (8004e18 <timing_bench_controller_step+0xec>)
+ 8004dec:	f8c8 00ac 	str.w	r0, [r8, #172]	@ 0xac
+ 8004df0:	6013      	str	r3, [r2, #0]
+ 8004df2:	f8c8 30a8 	str.w	r3, [r8, #168]	@ 0xa8
+ 8004df6:	b002      	add	sp, #8
+ 8004df8:	e8bd 81f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, pc}
+ 8004dfc:	223e      	movs	r2, #62	@ 0x3e
+ 8004dfe:	4907      	ldr	r1, [pc, #28]	@ (8004e1c <timing_bench_controller_step+0xf0>)
+ 8004e00:	4807      	ldr	r0, [pc, #28]	@ (8004e20 <timing_bench_controller_step+0xf4>)
+ 8004e02:	f7fd ffc3 	bl	8002d8c <rtos_assert_fail>
+ 8004e06:	bf00      	nop
+ 8004e08:	200019b8 	.word	0x200019b8
+ 8004e0c:	200001bc 	.word	0x200001bc
+ 8004e10:	044aa200 	.word	0x044aa200
+ 8004e14:	e0001000 	.word	0xe0001000
+ 8004e18:	200001c4 	.word	0x200001c4
+ 8004e1c:	0800a370 	.word	0x0800a370
+ 8004e20:	0800a3ac 	.word	0x0800a3ac
+
+080067e4 <rtos_sched_switch>:
+ 80067e4:	b538      	push	{r3, r4, r5, lr}
+ 80067e6:	4b0d      	ldr	r3, [pc, #52]	@ (800681c <rtos_sched_switch+0x38>)
+ 80067e8:	f8d3 30a8 	ldr.w	r3, [r3, #168]	@ 0xa8
+ 80067ec:	2b01      	cmp	r3, #1
+ 80067ee:	d003      	beq.n	80067f8 <rtos_sched_switch+0x14>
+ 80067f0:	e8bd 4038 	ldmia.w	sp!, {r3, r4, r5, lr}
+ 80067f4:	f7ff bdf6 	b.w	80063e4 <sched_switch_body>
+ 80067f8:	f001 fb16 	bl	8007e28 <rtos_port_in_pendsv>
+ 80067fc:	2800      	cmp	r0, #0
+ 80067fe:	d0f7      	beq.n	80067f0 <rtos_sched_switch+0xc>
+ 8006800:	4c07      	ldr	r4, [pc, #28]	@ (8006820 <rtos_sched_switch+0x3c>)
+ 8006802:	6865      	ldr	r5, [r4, #4]
+ 8006804:	f7ff fdee 	bl	80063e4 <sched_switch_body>
+ 8006808:	6860      	ldr	r0, [r4, #4]
+ 800680a:	4b06      	ldr	r3, [pc, #24]	@ (8006824 <rtos_sched_switch+0x40>)
+ 800680c:	1b40      	subs	r0, r0, r5
+ 800680e:	681b      	ldr	r3, [r3, #0]
+ 8006810:	6859      	ldr	r1, [r3, #4]
+ 8006812:	e8bd 4038 	ldmia.w	sp!, {r3, r4, r5, lr}
+ 8006816:	f7fe ba5f 	b.w	8004cd8 <timing_bench_record_switch>
+ 800681a:	bf00      	nop
+ 800681c:	200019b8 	.word	0x200019b8
+ 8006820:	e0001000 	.word	0xe0001000
+ 8006824:	20002b68 	.word	0x20002b68
+
+08007fb8 <SysTick_Handler>:
+ 8007fb8:	b538      	push	{r3, r4, r5, lr}
+ 8007fba:	4b0a      	ldr	r3, [pc, #40]	@ (8007fe4 <SysTick_Handler+0x2c>)
+ 8007fbc:	f8d3 30a8 	ldr.w	r3, [r3, #168]	@ 0xa8
+ 8007fc0:	2b01      	cmp	r3, #1
+ 8007fc2:	d003      	beq.n	8007fcc <SysTick_Handler+0x14>
+ 8007fc4:	e8bd 4038 	ldmia.w	sp!, {r3, r4, r5, lr}
+ 8007fc8:	f7ff b910 	b.w	80071ec <rtos_tick_handler>
+ 8007fcc:	4c06      	ldr	r4, [pc, #24]	@ (8007fe8 <SysTick_Handler+0x30>)
+ 8007fce:	6865      	ldr	r5, [r4, #4]
+ 8007fd0:	f7ff f90c 	bl	80071ec <rtos_tick_handler>
+ 8007fd4:	6861      	ldr	r1, [r4, #4]
+ 8007fd6:	2003      	movs	r0, #3
+ 8007fd8:	1b49      	subs	r1, r1, r5
+ 8007fda:	e8bd 4038 	ldmia.w	sp!, {r3, r4, r5, lr}
+ 8007fde:	f7fc be4d 	b.w	8004c7c <timing_bench_record>
+ 8007fe2:	bf00      	nop
+ 8007fe4:	200019b8 	.word	0x200019b8
+ 8007fe8:	e0001000 	.word	0xe0001000

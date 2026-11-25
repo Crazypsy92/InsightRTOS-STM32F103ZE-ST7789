@@ -1,0 +1,14 @@
+Open On-Chip Debugger 0.12.0
+Licensed under GNU GPL v2
+For bug reports, read
+	http://openocd.org/doc/doxygen/bugs.html
+Info : STLINK V2J45S7 (API v2) VID:PID 0483:3748
+Info : Target voltage: 3.274320
+Info : Unable to match requested speed 1000 kHz, using 950 kHz
+Info : Unable to match requested speed 1000 kHz, using 950 kHz
+Info : clock speed 950 kHz
+Info : stlink_dap_op_connect(connect)
+Info : SWD DPIDR 0x1ba01477
+Info : gdb port disabled
+IDENTITY_PASS IDCODE=0x10036414 CPUID=0x411FC231 FLASH_KIB=512 UID=31ffd8053031533628791143 OBR=0x03FFFFFC WRPR=0xFFFFFFFF
+Error: Failed to read memory at 0x08003000
