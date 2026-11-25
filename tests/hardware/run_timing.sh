@@ -7,7 +7,10 @@ previous=$(realpath "$1")
 scratch=$(realpath "$2")
 mode=${3:-both}
 evidence=evidence/stage9_3_b2b
-if [[ $mode == Msp ]]; then evidence=evidence/stage9_3_b2c; fi
+case "$mode" in
+    Msp) evidence=evidence/stage9_3_b2c ;;
+    Integrated) evidence=evidence/stage9_4_a ;;
+esac
 log=$(realpath "$evidence/logs")
 cfg=tests/hardware/timing_openocd
 if ps -eo stat=,comm= | awk '$1 !~ /^Z/ {print $2}' | rg -x 'openocd|st-util|pyocd|gdb-multiarch|stlink-server'; then
@@ -20,12 +23,17 @@ case "$mode" in
     both) profiles=(Off On) ;;
     On) profiles=(On) ;;
     Msp) profiles=(Msp) ;;
+    Integrated) profiles=(Integrated IntegratedProd) ;;
     *) exit 2 ;;
 esac
 
 for name in "${profiles[@]}"; do
     profile=DISPLAY_RTOS_O2_Timing_$name
-    if [[ $name == Msp ]]; then profile=DISPLAY_RTOS_O2_Msp; fi
+    case "$name" in
+        Msp) profile=DISPLAY_RTOS_O2_Msp ;;
+        Integrated) profile=DISPLAY_RTOS_O2_Integrated_Stress ;;
+        IntegratedProd) profile=DISPLAY_RTOS_O2_Integrated ;;
+    esac
     f=$(realpath "build/$profile/insightrtos_display.bin")
     bin="${f%.bin}"
     proof="$log/firmware-audit.json"
@@ -92,6 +100,9 @@ PY
     if [[ $name == Msp ]]; then
         PYTHONDONTWRITEBYTECODE=1 python3 tests/hardware/read_msp.py --elf "$bin.elf" \
           --out "$prefix-watermark.json" | tee "$prefix-sampler.log"
+    elif [[ $name == Integrated || $name == IntegratedProd ]]; then
+        PYTHONDONTWRITEBYTECODE=1 python3 tests/hardware/read_integrated.py --elf "$bin.elf" \
+          --profile "$name" --out "$prefix-diag.json" | tee "$prefix-sampler.log"
     else
         PYTHONDONTWRITEBYTECODE=1 python3 tests/hardware/read_timing.py --rt "$rt" --elf "$bin.elf" \
           --out "$prefix-timing.json" | tee "$prefix-sampler.log"

@@ -1,0 +1,342 @@
+{
+  "normal": {
+    "samples": 14,
+    "flow": {
+      "key_attempts": 0,
+      "key_sent_ok": 0,
+      "key_queue_full": 0,
+      "key_wrong_context": 0,
+      "key_invalid_arg": 0,
+      "key_other_errors": 0,
+      "success_count": 0,
+      "failure_count": 0,
+      "pending_count": 0,
+      "drop_count": 0
+    },
+    "elapsed_s": 60.818138405000354,
+    "publication_ticks": [
+      6300,
+      6300
+    ],
+    "queue_depths": [
+      0,
+      0,
+      0,
+      0,
+      1
+    ],
+    "latest_event_id": 0,
+    "confirmed_id": 0,
+    "ack": null,
+    "trace": {
+      "half_open_window": [
+        53010,
+        53138
+      ],
+      "count": 128,
+      "copied": 8,
+      "overwritten_total": 53010,
+      "producer_dropped": 0,
+      "status": 0,
+      "switch_reason": "block_or_wake",
+      "switch_reference_stale": false
+    },
+    "clock": {
+      "clock_type": 2,
+      "frequency_hz": 72000000,
+      "tick_hz": 100,
+      "wrap_period_ticks": 5965,
+      "flags": 1
+    },
+    "rt_tasks": [
+      {
+        "slot": 0,
+        "generation": 1,
+        "dispatch_count": 1,
+        "charged_cycles": 3827,
+        "max_ready_latency_cycles": 30204,
+        "flags": 1
+      },
+      {
+        "slot": 1,
+        "generation": 1,
+        "dispatch_count": 6301,
+        "charged_cycles": 26280711,
+        "max_ready_latency_cycles": 24997,
+        "flags": 1
+      },
+      {
+        "slot": 2,
+        "generation": 1,
+        "dispatch_count": 532,
+        "charged_cycles": 52953950,
+        "max_ready_latency_cycles": 20581,
+        "flags": 1
+      },
+      {
+        "slot": 3,
+        "generation": 1,
+        "dispatch_count": 64,
+        "charged_cycles": 967945,
+        "max_ready_latency_cycles": 1073741,
+        "flags": 1
+      },
+      {
+        "slot": 8,
+        "generation": 1,
+        "dispatch_count": 6250,
+        "charged_cycles": 4455812092,
+        "max_ready_latency_cycles": 0,
+        "flags": 1
+      }
+    ],
+    "job": {
+      "completed": 0,
+      "misses": 0,
+      "overruns": 0,
+      "last_attempt": null
+    },
+    "dl": {
+      "observation": "NO_DEADLOCK_OBSERVED",
+      "capture_tick": 6300,
+      "nodes": 4,
+      "edges": 0
+    }
+  },
+  "stream": {
+    "samples": 16,
+    "flow": {
+      "key_attempts": 600,
+      "key_sent_ok": 600,
+      "key_queue_full": 0,
+      "key_wrong_context": 0,
+      "key_invalid_arg": 0,
+      "key_other_errors": 0,
+      "success_count": 600,
+      "failure_count": 0,
+      "pending_count": 0,
+      "drop_count": 0
+    },
+    "elapsed_s": 66.04678687999967,
+    "publication_ticks": [
+      12900,
+      12900
+    ],
+    "queue_depths": [
+      0,
+      0,
+      0,
+      1,
+      1
+    ],
+    "latest_event_id": 600,
+    "confirmed_id": 600,
+    "ack": {
+      "valid": 1,
+      "id": 600,
+      "timestamp_ms": 123237,
+      "ack_ms": 123310,
+      "latency_ms": 73,
+      "error": 0
+    },
+    "trace": {
+      "half_open_window": [
+        117155,
+        117283
+      ],
+      "count": 128,
+      "copied": 8,
+      "overwritten_total": 117155,
+      "producer_dropped": 0,
+      "status": 0,
+      "switch_reason": "block_or_wake",
+      "switch_reference_stale": false
+    },
+    "clock": {
+      "clock_type": 2,
+      "frequency_hz": 72000000,
+      "tick_hz": 100,
+      "wrap_period_ticks": 5965,
+      "flags": 1
+    },
+    "rt_tasks": [
+      {
+        "slot": 0,
+        "generation": 1,
+        "dispatch_count": 601,
+        "charged_cycles": 2442509,
+        "max_ready_latency_cycles": 30204,
+        "flags": 1
+      },
+      {
+        "slot": 1,
+        "generation": 1,
+        "dispatch_count": 12901,
+        "charged_cycles": 56589135,
+        "max_ready_latency_cycles": 24997,
+        "flags": 1
+      },
+      {
+        "slot": 2,
+        "generation": 1,
+        "dispatch_count": 5399,
+        "charged_cycles": 2874151581,
+        "max_ready_latency_cycles": 20581,
+        "flags": 1
+      },
+      {
+        "slot": 3,
+        "generation": 1,
+        "dispatch_count": 130,
+        "charged_cycles": 2127532,
+        "max_ready_latency_cycles": 1073741,
+        "flags": 1
+      },
+      {
+        "slot": 8,
+        "generation": 1,
+        "dispatch_count": 9826,
+        "charged_cycles": 6352950173,
+        "max_ready_latency_cycles": 0,
+        "flags": 1
+      }
+    ],
+    "job": {
+      "completed": 600,
+      "misses": 0,
+      "overruns": 0,
+      "last_attempt": {
+        "event_id": 600,
+        "job_id": 600,
+        "command_sent": 1,
+        "configured": 0,
+        "release": 0,
+        "complete": 0
+      }
+    },
+    "dl": {
+      "observation": "NO_DEADLOCK_OBSERVED",
+      "capture_tick": 12900,
+      "nodes": 4,
+      "edges": 0
+    }
+  },
+  "burst": {
+    "samples": 6,
+    "flow": {
+      "key_attempts": 34,
+      "key_sent_ok": 33,
+      "key_queue_full": 1,
+      "key_wrong_context": 0,
+      "key_invalid_arg": 0,
+      "key_other_errors": 0,
+      "success_count": 33,
+      "failure_count": 0,
+      "pending_count": 0,
+      "drop_count": 1
+    },
+    "elapsed_s": 13.580675879999944,
+    "publication_ticks": [
+      14200,
+      14200
+    ],
+    "queue_depths": [
+      0,
+      0,
+      0,
+      0,
+      1
+    ],
+    "latest_event_id": 634,
+    "confirmed_id": 633,
+    "ack": {
+      "valid": 1,
+      "id": 633,
+      "timestamp_ms": 129286,
+      "ack_ms": 131620,
+      "latency_ms": 2334,
+      "error": 0
+    },
+    "trace": {
+      "half_open_window": [
+        128201,
+        128329
+      ],
+      "count": 128,
+      "copied": 8,
+      "overwritten_total": 128201,
+      "producer_dropped": 0,
+      "status": 0,
+      "switch_reason": "block_or_wake",
+      "switch_reference_stale": false
+    },
+    "clock": {
+      "clock_type": 2,
+      "frequency_hz": 72000000,
+      "tick_hz": 100,
+      "wrap_period_ticks": 5965,
+      "flags": 1
+    },
+    "rt_tasks": [
+      {
+        "slot": 0,
+        "generation": 1,
+        "dispatch_count": 603,
+        "charged_cycles": 2500198,
+        "max_ready_latency_cycles": 35257,
+        "flags": 1
+      },
+      {
+        "slot": 1,
+        "generation": 1,
+        "dispatch_count": 14202,
+        "charged_cycles": 62135666,
+        "max_ready_latency_cycles": 24997,
+        "flags": 1
+      },
+      {
+        "slot": 2,
+        "generation": 1,
+        "dispatch_count": 5752,
+        "charged_cycles": 3067318059,
+        "max_ready_latency_cycles": 20581,
+        "flags": 1
+      },
+      {
+        "slot": 3,
+        "generation": 1,
+        "dispatch_count": 143,
+        "charged_cycles": 2342568,
+        "max_ready_latency_cycles": 3975892,
+        "flags": 1
+      },
+      {
+        "slot": 8,
+        "generation": 1,
+        "dispatch_count": 10887,
+        "charged_cycles": 7089722053,
+        "max_ready_latency_cycles": 0,
+        "flags": 1
+      }
+    ],
+    "job": {
+      "completed": 633,
+      "misses": 0,
+      "overruns": 0,
+      "last_attempt": {
+        "event_id": 633,
+        "job_id": 633,
+        "command_sent": 1,
+        "configured": 0,
+        "release": 0,
+        "complete": 0
+      }
+    },
+    "dl": {
+      "observation": "NO_DEADLOCK_OBSERVED",
+      "capture_tick": 14200,
+      "nodes": 4,
+      "edges": 0
+    }
+  }
+}

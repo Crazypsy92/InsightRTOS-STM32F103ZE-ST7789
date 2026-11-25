@@ -1,0 +1,556 @@
+{
+  "stage": "9.4-A",
+  "status": "PASS",
+  "base_sha": "21477bb20eb9bb74ddfeb74af8337ec58ec78b95",
+  "tools": [
+    "arm-none-eabi-gcc (15:14.2.rel1-1) 14.2.1 20241119",
+    "GNU gdb (Ubuntu 17.1-2ubuntu1) 17.1",
+    "Open On-Chip Debugger 0.12.0",
+    "cmake version 4.2.3",
+    "Python 3.13.5"
+  ],
+  "images": {
+    "DISPLAY_RTOS_O2_Integrated": {
+      "flash_bytes": 53676,
+      "flash_end_exclusive": "0x800d1ac",
+      "erasure_pages_from_zero": 27,
+      "sram_including_msp": 50376,
+      "sram_remaining": 15160,
+      "reset": "0x8000c09",
+      "msp": "0x20010000",
+      "sha256": {
+        "elf": "ffd1dc85b097e7cc5498343776bd813a7b018174afd619e92f1ec0c3b22fffeb",
+        "bin": "361d1a18fed3eccbb2d28eef4e2b6b16218ef99cc84fe4049ac82b7a40e73418",
+        "hex": "b4595fd2c59a2197416a0f77d0059ff2af8f9a457424d7e35e67aa725d28e432",
+        "map": "b15eff02f3e3b7575f0845a68ba67c993d964b642ec5bcd1c072daaf362e9498"
+      },
+      "tcb_bytes": 72,
+      "hex_omitted_zero_padding_bytes": 4,
+      "sections": {
+        ".isr_vector": 484,
+        ".text": 36344,
+        ".rodata": 16732,
+        ".ARM": 8,
+        ".preinit_array": 0,
+        ".init_array": 4,
+        ".fini_array": 4,
+        ".data": 96,
+        ".tdata": 0,
+        ".tbss": 0,
+        ".bss": 13416,
+        ".user_stacks": 32768,
+        ".msp_stack": 4096
+      }
+    },
+    "DISPLAY_RTOS_O2_Integrated_Stress": {
+      "flash_bytes": 53760,
+      "flash_end_exclusive": "0x800d200",
+      "erasure_pages_from_zero": 27,
+      "sram_including_msp": 50392,
+      "sram_remaining": 15144,
+      "reset": "0x8000c09",
+      "msp": "0x20010000",
+      "sha256": {
+        "elf": "7a98e94fbd7cc8c177081b7e2651d3a812ade3869f42a2587bf2a6493134df83",
+        "bin": "84729773622102d6d2e0cb5b55b218afe4aa8d36b5a233de3dd5b97b9c226697",
+        "hex": "396d213243e1aa5e9d3cbd36607759930f3bf4fbf8c359eb1f6de016d8edca85",
+        "map": "c8be571d259de1bfd4994586c3d0793c6934807fe12bc972a2f49f8a9f34f231"
+      },
+      "tcb_bytes": 72,
+      "hex_omitted_zero_padding_bytes": 4,
+      "sections": {
+        ".isr_vector": 484,
+        ".text": 36472,
+        ".rodata": 16688,
+        ".ARM": 8,
+        ".preinit_array": 0,
+        ".init_array": 4,
+        ".fini_array": 4,
+        ".data": 96,
+        ".tdata": 0,
+        ".tbss": 0,
+        ".bss": 13432,
+        ".user_stacks": 32768,
+        ".msp_stack": 4096
+      }
+    }
+  },
+  "readbacks": {
+    "Integrated": {
+      "status": "PASS",
+      "sha256": "84729773622102d6d2e0cb5b55b218afe4aa8d36b5a233de3dd5b97b9c226697",
+      "bytes": 53760,
+      "tail_ff": 9728,
+      "option_bytes_equal": true
+    },
+    "IntegratedProd": {
+      "status": "PASS",
+      "sha256": "361d1a18fed3eccbb2d28eef4e2b6b16218ef99cc84fe4049ac82b7a40e73418",
+      "bytes": 53676,
+      "tail_ff": 9812,
+      "option_bytes_equal": true
+    }
+  },
+  "hardware": {
+    "target": "STM32F103ZET6",
+    "flash_pages": [
+      0,
+      30
+    ],
+    "flash_range": [
+      "0x08000000",
+      "0x0800f800"
+    ],
+    "final_profile": "DISPLAY_RTOS_O2_Integrated",
+    "observations_valid": 37,
+    "observations_incomplete": 0
+  },
+  "scenes": {
+    "normal": {
+      "samples": 14,
+      "flow": {
+        "key_attempts": 0,
+        "key_sent_ok": 0,
+        "key_queue_full": 0,
+        "key_wrong_context": 0,
+        "key_invalid_arg": 0,
+        "key_other_errors": 0,
+        "success_count": 0,
+        "failure_count": 0,
+        "pending_count": 0,
+        "drop_count": 0
+      },
+      "elapsed_s": 60.818138405000354,
+      "publication_ticks": [
+        6300,
+        6300
+      ],
+      "queue_depths": [
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "latest_event_id": 0,
+      "confirmed_id": 0,
+      "ack": null,
+      "trace": {
+        "half_open_window": [
+          53010,
+          53138
+        ],
+        "count": 128,
+        "copied": 8,
+        "overwritten_total": 53010,
+        "producer_dropped": 0,
+        "status": 0,
+        "switch_reason": "block_or_wake",
+        "switch_reference_stale": false
+      },
+      "clock": {
+        "clock_type": 2,
+        "frequency_hz": 72000000,
+        "tick_hz": 100,
+        "wrap_period_ticks": 5965,
+        "flags": 1
+      },
+      "rt_tasks": [
+        {
+          "slot": 0,
+          "generation": 1,
+          "dispatch_count": 1,
+          "charged_cycles": 3827,
+          "max_ready_latency_cycles": 30204,
+          "flags": 1
+        },
+        {
+          "slot": 1,
+          "generation": 1,
+          "dispatch_count": 6301,
+          "charged_cycles": 26280711,
+          "max_ready_latency_cycles": 24997,
+          "flags": 1
+        },
+        {
+          "slot": 2,
+          "generation": 1,
+          "dispatch_count": 532,
+          "charged_cycles": 52953950,
+          "max_ready_latency_cycles": 20581,
+          "flags": 1
+        },
+        {
+          "slot": 3,
+          "generation": 1,
+          "dispatch_count": 64,
+          "charged_cycles": 967945,
+          "max_ready_latency_cycles": 1073741,
+          "flags": 1
+        },
+        {
+          "slot": 8,
+          "generation": 1,
+          "dispatch_count": 6250,
+          "charged_cycles": 4455812092,
+          "max_ready_latency_cycles": 0,
+          "flags": 1
+        }
+      ],
+      "job": {
+        "completed": 0,
+        "misses": 0,
+        "overruns": 0,
+        "last_attempt": null
+      },
+      "dl": {
+        "observation": "NO_DEADLOCK_OBSERVED",
+        "capture_tick": 6300,
+        "nodes": 4,
+        "edges": 0
+      }
+    },
+    "stream": {
+      "samples": 16,
+      "flow": {
+        "key_attempts": 600,
+        "key_sent_ok": 600,
+        "key_queue_full": 0,
+        "key_wrong_context": 0,
+        "key_invalid_arg": 0,
+        "key_other_errors": 0,
+        "success_count": 600,
+        "failure_count": 0,
+        "pending_count": 0,
+        "drop_count": 0
+      },
+      "elapsed_s": 66.04678687999967,
+      "publication_ticks": [
+        12900,
+        12900
+      ],
+      "queue_depths": [
+        0,
+        0,
+        0,
+        1,
+        1
+      ],
+      "latest_event_id": 600,
+      "confirmed_id": 600,
+      "ack": {
+        "valid": 1,
+        "id": 600,
+        "timestamp_ms": 123237,
+        "ack_ms": 123310,
+        "latency_ms": 73,
+        "error": 0
+      },
+      "trace": {
+        "half_open_window": [
+          117155,
+          117283
+        ],
+        "count": 128,
+        "copied": 8,
+        "overwritten_total": 117155,
+        "producer_dropped": 0,
+        "status": 0,
+        "switch_reason": "block_or_wake",
+        "switch_reference_stale": false
+      },
+      "clock": {
+        "clock_type": 2,
+        "frequency_hz": 72000000,
+        "tick_hz": 100,
+        "wrap_period_ticks": 5965,
+        "flags": 1
+      },
+      "rt_tasks": [
+        {
+          "slot": 0,
+          "generation": 1,
+          "dispatch_count": 601,
+          "charged_cycles": 2442509,
+          "max_ready_latency_cycles": 30204,
+          "flags": 1
+        },
+        {
+          "slot": 1,
+          "generation": 1,
+          "dispatch_count": 12901,
+          "charged_cycles": 56589135,
+          "max_ready_latency_cycles": 24997,
+          "flags": 1
+        },
+        {
+          "slot": 2,
+          "generation": 1,
+          "dispatch_count": 5399,
+          "charged_cycles": 2874151581,
+          "max_ready_latency_cycles": 20581,
+          "flags": 1
+        },
+        {
+          "slot": 3,
+          "generation": 1,
+          "dispatch_count": 130,
+          "charged_cycles": 2127532,
+          "max_ready_latency_cycles": 1073741,
+          "flags": 1
+        },
+        {
+          "slot": 8,
+          "generation": 1,
+          "dispatch_count": 9826,
+          "charged_cycles": 6352950173,
+          "max_ready_latency_cycles": 0,
+          "flags": 1
+        }
+      ],
+      "job": {
+        "completed": 600,
+        "misses": 0,
+        "overruns": 0,
+        "last_attempt": {
+          "event_id": 600,
+          "job_id": 600,
+          "command_sent": 1,
+          "configured": 0,
+          "release": 0,
+          "complete": 0
+        }
+      },
+      "dl": {
+        "observation": "NO_DEADLOCK_OBSERVED",
+        "capture_tick": 12900,
+        "nodes": 4,
+        "edges": 0
+      }
+    },
+    "burst": {
+      "samples": 6,
+      "flow": {
+        "key_attempts": 34,
+        "key_sent_ok": 33,
+        "key_queue_full": 1,
+        "key_wrong_context": 0,
+        "key_invalid_arg": 0,
+        "key_other_errors": 0,
+        "success_count": 33,
+        "failure_count": 0,
+        "pending_count": 0,
+        "drop_count": 1
+      },
+      "elapsed_s": 13.580675879999944,
+      "publication_ticks": [
+        14200,
+        14200
+      ],
+      "queue_depths": [
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "latest_event_id": 634,
+      "confirmed_id": 633,
+      "ack": {
+        "valid": 1,
+        "id": 633,
+        "timestamp_ms": 129286,
+        "ack_ms": 131620,
+        "latency_ms": 2334,
+        "error": 0
+      },
+      "trace": {
+        "half_open_window": [
+          128201,
+          128329
+        ],
+        "count": 128,
+        "copied": 8,
+        "overwritten_total": 128201,
+        "producer_dropped": 0,
+        "status": 0,
+        "switch_reason": "block_or_wake",
+        "switch_reference_stale": false
+      },
+      "clock": {
+        "clock_type": 2,
+        "frequency_hz": 72000000,
+        "tick_hz": 100,
+        "wrap_period_ticks": 5965,
+        "flags": 1
+      },
+      "rt_tasks": [
+        {
+          "slot": 0,
+          "generation": 1,
+          "dispatch_count": 603,
+          "charged_cycles": 2500198,
+          "max_ready_latency_cycles": 35257,
+          "flags": 1
+        },
+        {
+          "slot": 1,
+          "generation": 1,
+          "dispatch_count": 14202,
+          "charged_cycles": 62135666,
+          "max_ready_latency_cycles": 24997,
+          "flags": 1
+        },
+        {
+          "slot": 2,
+          "generation": 1,
+          "dispatch_count": 5752,
+          "charged_cycles": 3067318059,
+          "max_ready_latency_cycles": 20581,
+          "flags": 1
+        },
+        {
+          "slot": 3,
+          "generation": 1,
+          "dispatch_count": 143,
+          "charged_cycles": 2342568,
+          "max_ready_latency_cycles": 3975892,
+          "flags": 1
+        },
+        {
+          "slot": 8,
+          "generation": 1,
+          "dispatch_count": 10887,
+          "charged_cycles": 7089722053,
+          "max_ready_latency_cycles": 0,
+          "flags": 1
+        }
+      ],
+      "job": {
+        "completed": 633,
+        "misses": 0,
+        "overruns": 0,
+        "last_attempt": {
+          "event_id": 633,
+          "job_id": 633,
+          "command_sent": 1,
+          "configured": 0,
+          "release": 0,
+          "complete": 0
+        }
+      },
+      "dl": {
+        "observation": "NO_DEADLOCK_OBSERVED",
+        "capture_tick": 14200,
+        "nodes": 4,
+        "edges": 0
+      }
+    }
+  },
+  "production": {
+    "production": {
+      "publication_ticks": [
+        401,
+        401
+      ],
+      "queue_depths": [
+        0,
+        0,
+        0,
+        1,
+        1
+      ],
+      "latest_event_id": 0,
+      "confirmed_id": 0,
+      "ack": null,
+      "trace": {
+        "half_open_window": [
+          3258,
+          3386
+        ],
+        "count": 128,
+        "copied": 8,
+        "overwritten_total": 3258,
+        "producer_dropped": 0,
+        "status": 0,
+        "switch_reason": "block_or_wake",
+        "switch_reference_stale": false
+      },
+      "clock": {
+        "clock_type": 2,
+        "frequency_hz": 72000000,
+        "tick_hz": 100,
+        "wrap_period_ticks": 5965,
+        "flags": 1
+      },
+      "rt_tasks": [
+        {
+          "slot": 0,
+          "generation": 1,
+          "dispatch_count": 1,
+          "charged_cycles": 3828,
+          "max_ready_latency_cycles": 30206,
+          "flags": 1
+        },
+        {
+          "slot": 1,
+          "generation": 1,
+          "dispatch_count": 402,
+          "charged_cycles": 1669126,
+          "max_ready_latency_cycles": 25000,
+          "flags": 1
+        },
+        {
+          "slot": 2,
+          "generation": 1,
+          "dispatch_count": 60,
+          "charged_cycles": 23805810,
+          "max_ready_latency_cycles": 20584,
+          "flags": 1
+        },
+        {
+          "slot": 3,
+          "generation": 1,
+          "dispatch_count": 5,
+          "charged_cycles": 63558,
+          "max_ready_latency_cycles": 1074106,
+          "flags": 1
+        },
+        {
+          "slot": 8,
+          "generation": 1,
+          "dispatch_count": 370,
+          "charged_cycles": 263541750,
+          "max_ready_latency_cycles": 0,
+          "flags": 1
+        }
+      ],
+      "job": {
+        "completed": 0,
+        "misses": 0,
+        "overruns": 0,
+        "last_attempt": null
+      },
+      "dl": {
+        "observation": "NO_DEADLOCK_OBSERVED",
+        "capture_tick": 401,
+        "nodes": 4,
+        "edges": 0
+      }
+    }
+  },
+  "host": {
+    "app": 9,
+    "rt": 9,
+    "job": 77,
+    "job_clock_validity": 53,
+    "ack_timing": "PASS"
+  },
+  "not_tested": [
+    "visual LCD review",
+    "actual Mutex deadlock",
+    "physical IRQ latency",
+    "exhaustive stack analysis",
+    "WCET"
+  ]
+}

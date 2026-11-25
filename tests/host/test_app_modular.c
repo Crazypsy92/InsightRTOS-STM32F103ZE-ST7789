@@ -579,6 +579,36 @@ static void test_consecutive_events_overflow_and_ack_resilience(void)
 /* -------------------------------------------------------------------------- */
 /* Main Test Runner                                                           */
 /* -------------------------------------------------------------------------- */
+static void test_ack_timing(void)
+{
+    display_event_tracker_t snapshot = {0};
+    assert(App_Events_AckTiming(NULL).valid == 0U);
+    assert(App_Events_AckTiming(&snapshot).valid == 0U);
+    const uint32_t id = App_Events_AllocateId(KEY_EVENT_SHORT, UINT32_MAX - 4U, false);
+    assert(id != 0U);
+    App_Events_RecordAck(id, 0, 0U);
+    App_Events_GetSnapshot(&snapshot);
+    app_event_ack_timing_t timing = App_Events_AckTiming(&snapshot);
+    assert(timing.valid == 1U && timing.id == id && timing.latency_ms == 5U);
+    assert(timing.ack_ms == 0U && timing.error == 0);
+    App_Events_RecordAck(id, -1, 9U);
+    App_Events_GetSnapshot(&snapshot);
+    assert(App_Events_AckTiming(&snapshot).latency_ms == 5U);
+    for (uint32_t i = 0; i < APP_EVENT_HISTORY_CAPACITY; ++i)
+        assert(App_Events_AllocateId(KEY_EVENT_SHORT, i, true) != 0U);
+    App_Events_GetSnapshot(&snapshot);
+    assert(snapshot.confirmed_id == id && App_Events_AckTiming(&snapshot).valid == 0U);
+
+    const uint32_t error_id = App_Events_AllocateId(KEY_EVENT_LONG, 200U, false);
+    App_Events_RecordAck(error_id, -1, 225U);
+    App_Events_GetSnapshot(&snapshot);
+    timing = App_Events_AckTiming(&snapshot);
+    assert(timing.valid == 1U && timing.id == error_id && timing.latency_ms == 25U && timing.error == -1);
+    snapshot.completed_ms = 226U;
+    assert(App_Events_AckTiming(&snapshot).valid == 0U);
+    puts("Stage 9.4-A ACK timing: wrap, duplicate, eviction, failed ACK and mismatch PASS");
+}
+
 int main(void)
 {
     printf("====================================================\n");
@@ -598,5 +628,6 @@ int main(void)
     printf("====================================================\n");
     printf("ALL STAGE 9.2-H5 HOST TESTS PASSED (9/9 Suites, 45 Assertions)\n");
     printf("====================================================\n");
+    test_ack_timing();
     return 0;
 }

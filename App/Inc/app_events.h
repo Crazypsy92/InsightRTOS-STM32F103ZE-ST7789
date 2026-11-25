@@ -46,6 +46,13 @@ typedef struct {
 } display_event_tracker_t;
 _Static_assert(sizeof(display_event_tracker_t) == 244U, "display_event_tracker_t 244B");
 
+typedef struct {
+    uint32_t valid, id, timestamp_ms, ack_ms, latency_ms;
+    int32_t error;
+} app_event_ack_timing_t;
+
+app_event_ack_timing_t App_Events_AckTiming(const display_event_tracker_t *snapshot);
+
 extern volatile display_event_tracker_t g_event_tracker;
 
 uint32_t App_Events_AllocateId(key_event_t event, uint32_t now_ms, bool is_dropped);

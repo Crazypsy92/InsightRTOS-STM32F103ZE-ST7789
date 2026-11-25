@@ -1,0 +1,66 @@
+{
+  "DISPLAY_RTOS_O2_Integrated": {
+    "flash_bytes": 53676,
+    "flash_end_exclusive": "0x800d1ac",
+    "erasure_pages_from_zero": 27,
+    "sram_including_msp": 50376,
+    "sram_remaining": 15160,
+    "reset": "0x8000c09",
+    "msp": "0x20010000",
+    "sha256": {
+      "elf": "ffd1dc85b097e7cc5498343776bd813a7b018174afd619e92f1ec0c3b22fffeb",
+      "bin": "361d1a18fed3eccbb2d28eef4e2b6b16218ef99cc84fe4049ac82b7a40e73418",
+      "hex": "b4595fd2c59a2197416a0f77d0059ff2af8f9a457424d7e35e67aa725d28e432",
+      "map": "b15eff02f3e3b7575f0845a68ba67c993d964b642ec5bcd1c072daaf362e9498"
+    },
+    "tcb_bytes": 72,
+    "hex_omitted_zero_padding_bytes": 4,
+    "sections": {
+      ".isr_vector": 484,
+      ".text": 36344,
+      ".rodata": 16732,
+      ".ARM": 8,
+      ".preinit_array": 0,
+      ".init_array": 4,
+      ".fini_array": 4,
+      ".data": 96,
+      ".tdata": 0,
+      ".tbss": 0,
+      ".bss": 13416,
+      ".user_stacks": 32768,
+      ".msp_stack": 4096
+    }
+  },
+  "DISPLAY_RTOS_O2_Integrated_Stress": {
+    "flash_bytes": 53760,
+    "flash_end_exclusive": "0x800d200",
+    "erasure_pages_from_zero": 27,
+    "sram_including_msp": 50392,
+    "sram_remaining": 15144,
+    "reset": "0x8000c09",
+    "msp": "0x20010000",
+    "sha256": {
+      "elf": "7a98e94fbd7cc8c177081b7e2651d3a812ade3869f42a2587bf2a6493134df83",
+      "bin": "84729773622102d6d2e0cb5b55b218afe4aa8d36b5a233de3dd5b97b9c226697",
+      "hex": "396d213243e1aa5e9d3cbd36607759930f3bf4fbf8c359eb1f6de016d8edca85",
+      "map": "c8be571d259de1bfd4994586c3d0793c6934807fe12bc972a2f49f8a9f34f231"
+    },
+    "tcb_bytes": 72,
+    "hex_omitted_zero_padding_bytes": 4,
+    "sections": {
+      ".isr_vector": 484,
+      ".text": 36472,
+      ".rodata": 16688,
+      ".ARM": 8,
+      ".preinit_array": 0,
+      ".init_array": 4,
+      ".fini_array": 4,
+      ".data": 96,
+      ".tdata": 0,
+      ".tbss": 0,
+      ".bss": 13432,
+      ".user_stacks": 32768,
+      ".msp_stack": 4096
+    }
+  }
+}

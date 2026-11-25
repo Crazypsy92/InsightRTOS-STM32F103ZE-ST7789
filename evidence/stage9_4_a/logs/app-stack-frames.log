@@ -1,0 +1,10 @@
+/tmp/insight-94a.BaWnO7/work/App/Src/app_tasks.c:263:13:monitor_task	88	static
+/tmp/insight-94a.BaWnO7/work/App/Src/app_tasks.c:222:13:lcd_task	72	static
+/tmp/insight-94a.BaWnO7/work/App/Src/app_tasks.c:51:13:key_task	24	static
+/tmp/insight-94a.BaWnO7/work/App/Src/app_tasks.c:116:13:controller_task	184	static
+/tmp/insight-94a.BaWnO7/work/App/Src/app_tasks.c:38:6:App_Tasks_RequireLCDTask	16	static
+/tmp/insight-94a.BaWnO7/work/App/Src/app_tasks.c:316:16:app_tasks_start	64	static
+/tmp/insight-94a.BaWnO7/work/App/Src/app_diagnostics.c:10:6:App_Diag_ConfigureController	32	static
+/tmp/insight-94a.BaWnO7/work/App/Src/app_diagnostics.c:16:10:App_Diag_BeginCommand	16	static
+/tmp/insight-94a.BaWnO7/work/App/Src/app_diagnostics.c:28:6:App_Diag_EndCommand	8	static
+/tmp/insight-94a.BaWnO7/work/App/Src/app_diagnostics.c:100:6:App_Diag_Publish	248	static
