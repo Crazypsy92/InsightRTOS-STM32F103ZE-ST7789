@@ -1,0 +1,23 @@
+/tmp/insight-b2a.48lV9G/baseline/full-api.elf
+08001484 <ll_transfer>:  8001630:	f7fe fe1c 	bl	800026c <__aeabi_uldivmod>
+08001484 <ll_transfer>:  800164c:	f7fe fe0e 	bl	800026c <__aeabi_uldivmod>
+08005798 <rtos_diag_rt_clock_cap>:  80057f0:	f7fa fd3c 	bl	800026c <__aeabi_uldivmod>
+build/O2-on/full-api.elf
+08001484 <ll_transfer>:  8001630:	f7fe fe1c 	bl	800026c <__aeabi_uldivmod>
+08001484 <ll_transfer>:  800164c:	f7fe fe0e 	bl	800026c <__aeabi_uldivmod>
+08004d24 <task_charge>:  8004d46:	f7ff ffdd 	bl	8004d04 <running_delta>
+08004dc0 <job_check_budget>:  8004e06:	f7ff ff6f 	bl	8004ce8 <job_count>
+08004ea0 <job_check_deadline>:  8004ed6:	f7ff ff07 	bl	8004ce8 <job_count>
+08004f38 <job_end>:  8004f88:	f7ff feae 	bl	8004ce8 <job_count>
+08004f38 <job_end>:  8004fa4:	f7ff fea0 	bl	8004ce8 <job_count>
+08004f38 <job_end>:  8004fd2:	f7ff fea7 	bl	8004d24 <task_charge>
+08004f38 <job_end>:  8005012:	f7ff fe69 	bl	8004ce8 <job_count>
+08005134 <rtos_diag_rt_switch_hook>:  8005156:	f7ff fdd5 	bl	8004d04 <running_delta>
+0800525c <rtos_diag_rt_on_tick>:  800529c:	f7ff fd42 	bl	8004d24 <task_charge>
+08005390 <rtos_diag_rt_job_release>:  80053ea:	f7ff fc7d 	bl	8004ce8 <job_count>
+08005390 <rtos_diag_rt_job_release>:  8005462:	f7ff fc5f 	bl	8004d24 <task_charge>
+080055ac <rtos_diag_rt_clock_cap>:  8005604:	f7fa fe32 	bl	800026c <__aeabi_uldivmod>
+0800561c <rtos_diag_rt_snapshot>:  80056b0:	f7ff fb38 	bl	8004d24 <task_charge>
+0800561c <rtos_diag_rt_snapshot>:  80056d2:	f7ff fbb3 	bl	8004e3c <snapshot_clock_flags>
+0800570c <rtos_diag_rt_idle_snapshot>:  8005780:	f7ff fb5c 	bl	8004e3c <snapshot_clock_flags>
+0800570c <rtos_diag_rt_idle_snapshot>:  80057a2:	f7ff faaf 	bl	8004d04 <running_delta>
