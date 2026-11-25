@@ -9,6 +9,9 @@
 #include "port.h"
 #include "ready_queue.h"
 #include "rtos.h"
+#if defined(INSIGHT_TEST_MSP) && INSIGHT_TEST_MSP
+#include "msp_bench.h"
+#endif
 
 rtos_task_t *rtos_current_task;
 
@@ -88,6 +91,9 @@ static void sched_switch_body(void)
 void rtos_sched_switch(void)
 #endif
 {
+#if defined(INSIGHT_TEST_MSP) && INSIGHT_TEST_MSP
+    msp_bench_irq_entry();
+#endif
     RTOS_ASSERT(scheduler_started);
     RTOS_ASSERT(rtos_port_interrupts_masked());
 

@@ -1,0 +1,17 @@
+/tmp/insight-b2c.5ONYag/work/Middlewares/InsightRTOS/arch/arm/cortex_m3/systick.c:28:6:rtos_port_tick_start	8	static
+/tmp/insight-b2c.5ONYag/work/Middlewares/InsightRTOS/arch/arm/cortex_m3/systick.c:46:6:SysTick_Handler	8	static
+/tmp/insight-b2c.5ONYag/work/Middlewares/InsightRTOS/kernel/delay.c:76:6:rtos_delay_process_expired	24	static
+/tmp/insight-b2c.5ONYag/work/Middlewares/InsightRTOS/kernel/tick.c:19:6:rtos_tick_handler	16	static
+/tmp/insight-b2c.5ONYag/work/Middlewares/InsightRTOS/kernel/task.c:112:6:rtos_task_stack_valid	32	static
+/tmp/insight-b2c.5ONYag/work/Middlewares/InsightRTOS/kernel/scheduler.c:91:6:rtos_sched_switch	24	static
+/tmp/insight-b2c.5ONYag/work/Middlewares/InsightRTOS/kernel/scheduler.c:251:6:rtos_sched_wake	24	static
+/tmp/insight-b2c.5ONYag/work/Middlewares/InsightRTOS/kernel/scheduler.c:282:6:rtos_sched_on_tick	16	static
+/tmp/insight-b2c.5ONYag/work/tests/hardware/msp_bench.c:33:6:msp_bench_observe	32	static
+/tmp/insight-b2c.5ONYag/work/Middlewares/InsightRTOS/port/insight_timebase.c:51:6:TIM2_IRQHandler	8	static
+/tmp/insight-b2c.5ONYag/work/Middlewares/InsightRTOS/port/insight_timebase.c:67:6:Delay_us	24	static
+/tmp/insight-b2c.5ONYag/work/Middlewares/InsightRTOS/port/insight_timebase.c:73:6:Delay_ms	24	static
+/tmp/insight-b2c.5ONYag/work/BSP/Src/st7789_port.c:155:13:Port_DelayMs	16	static
+/tmp/insight-b2c.5ONYag/work/BSP/Src/multi_button.c:127:13:button_handler	24	static
+/tmp/insight-b2c.5ONYag/work/BSP/Src/multi_button.c:286:6:button_ticks	16	static
+/tmp/insight-b2c.5ONYag/work/BSP/Src/key_port.c:169:6:KEY_OnSysTick1ms	8	static
+/tmp/insight-b2c.5ONYag/work/Core/display_app.c:14:6:Display_KeyFromISR	48	static

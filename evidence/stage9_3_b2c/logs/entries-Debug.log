@@ -1,0 +1,475 @@
+08001210 <Reset_Handler>:
+ 8001210:	4918      	ldr	r1, [pc, #96]	@ (8001274 <LoopFillZerobss+0x10>)
+ 8001212:	466b      	mov	r3, sp
+ 8001214:	428b      	cmp	r3, r1
+ 8001216:	d112      	bne.n	800123e <Reset_Handler+0x2e>
+ 8001218:	f3ef 8c10 	mrs	ip, PRIMASK
+ 800121c:	b672      	cpsid	i
+ 800121e:	4816      	ldr	r0, [pc, #88]	@ (8001278 <LoopFillZerobss+0x14>)
+ 8001220:	4a16      	ldr	r2, [pc, #88]	@ (800127c <LoopFillZerobss+0x18>)
+ 8001222:	2304      	movs	r3, #4
+ 8001224:	f840 2b04 	str.w	r2, [r0], #4
+ 8001228:	3b01      	subs	r3, #1
+ 800122a:	d1fb      	bne.n	8001224 <Reset_Handler+0x14>
+ 800122c:	4a14      	ldr	r2, [pc, #80]	@ (8001280 <LoopFillZerobss+0x1c>)
+ 800122e:	f840 2b04 	str.w	r2, [r0], #4
+ 8001232:	4288      	cmp	r0, r1
+ 8001234:	d3fb      	bcc.n	800122e <Reset_Handler+0x1e>
+ 8001236:	f3bf 8f4f 	dsb	sy
+ 800123a:	f38c 8810 	msr	PRIMASK, ip
+ 800123e:	f7ff fb31 	bl	80008a4 <SystemInit>
+ 8001242:	4810      	ldr	r0, [pc, #64]	@ (8001284 <LoopFillZerobss+0x20>)
+ 8001244:	4910      	ldr	r1, [pc, #64]	@ (8001288 <LoopFillZerobss+0x24>)
+ 8001246:	4a11      	ldr	r2, [pc, #68]	@ (800128c <LoopFillZerobss+0x28>)
+ 8001248:	2300      	movs	r3, #0
+ 800124a:	e002      	b.n	8001252 <LoopCopyDataInit>
+
+080054cc <TIM2_IRQHandler>:
+ 80054cc:	b580      	push	{r7, lr}
+ 80054ce:	af00      	add	r7, sp, #0
+ 80054d0:	f7ff ff2a 	bl	8005328 <msp_bench_irq_entry>
+ 80054d4:	f04f 4380 	mov.w	r3, #1073741824	@ 0x40000000
+ 80054d8:	691b      	ldr	r3, [r3, #16]
+ 80054da:	f003 0301 	and.w	r3, r3, #1
+ 80054de:	2b00      	cmp	r3, #0
+ 80054e0:	d00f      	beq.n	8005502 <TIM2_IRQHandler+0x36>
+ 80054e2:	f04f 4380 	mov.w	r3, #1073741824	@ 0x40000000
+ 80054e6:	2200      	movs	r2, #0
+ 80054e8:	611a      	str	r2, [r3, #16]
+ 80054ea:	4b07      	ldr	r3, [pc, #28]	@ (8005508 <TIM2_IRQHandler+0x3c>)
+ 80054ec:	681b      	ldr	r3, [r3, #0]
+ 80054ee:	3301      	adds	r3, #1
+ 80054f0:	4a05      	ldr	r2, [pc, #20]	@ (8005508 <TIM2_IRQHandler+0x3c>)
+ 80054f2:	6013      	str	r3, [r2, #0]
+ 80054f4:	4b05      	ldr	r3, [pc, #20]	@ (800550c <TIM2_IRQHandler+0x40>)
+ 80054f6:	681b      	ldr	r3, [r3, #0]
+ 80054f8:	3301      	adds	r3, #1
+ 80054fa:	4a04      	ldr	r2, [pc, #16]	@ (800550c <TIM2_IRQHandler+0x40>)
+ 80054fc:	6013      	str	r3, [r2, #0]
+ 80054fe:	f7fc f861 	bl	80015c4 <KEY_OnSysTick1ms>
+ 8005502:	bf00      	nop
+ 8005504:	bd80      	pop	{r7, pc}
+ 8005506:	bf00      	nop
+ 8005508:	20000700 	.word	0x20000700
+ 800550c:	20000704 	.word	0x20000704
+
+08007660 <msp_bench_observe>:
+ 8007660:	b480      	push	{r7}
+ 8007662:	b087      	sub	sp, #28
+ 8007664:	af00      	add	r7, sp, #0
+ 8007666:	6078      	str	r0, [r7, #4]
+ 8007668:	6039      	str	r1, [r7, #0]
+ 800766a:	4b4d      	ldr	r3, [pc, #308]	@ (80077a0 <msp_bench_observe+0x140>)
+ 800766c:	681b      	ldr	r3, [r3, #0]
+ 800766e:	613b      	str	r3, [r7, #16]
+ 8007670:	693b      	ldr	r3, [r7, #16]
+ 8007672:	2b02      	cmp	r3, #2
+ 8007674:	f200 808d 	bhi.w	8007792 <msp_bench_observe+0x132>
+ 8007678:	687b      	ldr	r3, [r7, #4]
+ 800767a:	2b2c      	cmp	r3, #44	@ 0x2c
+ 800767c:	d01a      	beq.n	80076b4 <msp_bench_observe+0x54>
+ 800767e:	687b      	ldr	r3, [r7, #4]
+ 8007680:	2b2c      	cmp	r3, #44	@ 0x2c
+ 8007682:	f200 8088 	bhi.w	8007796 <msp_bench_observe+0x136>
+ 8007686:	687b      	ldr	r3, [r7, #4]
+ 8007688:	2b0f      	cmp	r3, #15
+ 800768a:	d010      	beq.n	80076ae <msp_bench_observe+0x4e>
+ 800768c:	687b      	ldr	r3, [r7, #4]
+ 800768e:	2b0f      	cmp	r3, #15
+ 8007690:	f200 8081 	bhi.w	8007796 <msp_bench_observe+0x136>
+ 8007694:	687b      	ldr	r3, [r7, #4]
+ 8007696:	2b0b      	cmp	r3, #11
+ 8007698:	d003      	beq.n	80076a2 <msp_bench_observe+0x42>
+ 800769a:	687b      	ldr	r3, [r7, #4]
+ 800769c:	2b0e      	cmp	r3, #14
+ 800769e:	d003      	beq.n	80076a8 <msp_bench_observe+0x48>
+ 80076a0:	e079      	b.n	8007796 <msp_bench_observe+0x136>
+ 80076a2:	2300      	movs	r3, #0
+ 80076a4:	75fb      	strb	r3, [r7, #23]
+ 80076a6:	e008      	b.n	80076ba <msp_bench_observe+0x5a>
+ 80076a8:	2301      	movs	r3, #1
+ 80076aa:	75fb      	strb	r3, [r7, #23]
+ 80076ac:	e005      	b.n	80076ba <msp_bench_observe+0x5a>
+ 80076ae:	2302      	movs	r3, #2
+ 80076b0:	75fb      	strb	r3, [r7, #23]
+ 80076b2:	e002      	b.n	80076ba <msp_bench_observe+0x5a>
+ 80076b4:	2303      	movs	r3, #3
+ 80076b6:	75fb      	strb	r3, [r7, #23]
+ 80076b8:	bf00      	nop
+ 80076ba:	693b      	ldr	r3, [r7, #16]
+ 80076bc:	22d0      	movs	r2, #208	@ 0xd0
+ 80076be:	fb02 f303 	mul.w	r3, r2, r3
+ 80076c2:	3318      	adds	r3, #24
+ 80076c4:	4a36      	ldr	r2, [pc, #216]	@ (80077a0 <msp_bench_observe+0x140>)
+ 80076c6:	4413      	add	r3, r2
+ 80076c8:	60fb      	str	r3, [r7, #12]
+ 80076ca:	7dfb      	ldrb	r3, [r7, #23]
+ 80076cc:	68fa      	ldr	r2, [r7, #12]
+ 80076ce:	f103 0124 	add.w	r1, r3, #36	@ 0x24
+ 80076d2:	f852 2021 	ldr.w	r2, [r2, r1, lsl #2]
+ 80076d6:	1c51      	adds	r1, r2, #1
+ 80076d8:	68fa      	ldr	r2, [r7, #12]
+ 80076da:	3324      	adds	r3, #36	@ 0x24
+ 80076dc:	f842 1023 	str.w	r1, [r2, r3, lsl #2]
+ 80076e0:	7dfa      	ldrb	r2, [r7, #23]
+ 80076e2:	68fb      	ldr	r3, [r7, #12]
+ 80076e4:	3228      	adds	r2, #40	@ 0x28
+ 80076e6:	f853 3022 	ldr.w	r3, [r3, r2, lsl #2]
+ 80076ea:	2b00      	cmp	r3, #0
+ 80076ec:	d007      	beq.n	80076fe <msp_bench_observe+0x9e>
+ 80076ee:	7dfa      	ldrb	r2, [r7, #23]
+ 80076f0:	68fb      	ldr	r3, [r7, #12]
+ 80076f2:	3228      	adds	r2, #40	@ 0x28
+ 80076f4:	f853 3022 	ldr.w	r3, [r3, r2, lsl #2]
+ 80076f8:	683a      	ldr	r2, [r7, #0]
+ 80076fa:	429a      	cmp	r2, r3
+ 80076fc:	d205      	bcs.n	800770a <msp_bench_observe+0xaa>
+ 80076fe:	7dfa      	ldrb	r2, [r7, #23]
+ 8007700:	68fb      	ldr	r3, [r7, #12]
+ 8007702:	3228      	adds	r2, #40	@ 0x28
+ 8007704:	6839      	ldr	r1, [r7, #0]
+ 8007706:	f843 1022 	str.w	r1, [r3, r2, lsl #2]
+ 800770a:	4b26      	ldr	r3, [pc, #152]	@ (80077a4 <msp_bench_observe+0x144>)
+ 800770c:	f503 7300 	add.w	r3, r3, #512	@ 0x200
+ 8007710:	683a      	ldr	r2, [r7, #0]
+ 8007712:	429a      	cmp	r2, r3
+ 8007714:	d908      	bls.n	8007728 <msp_bench_observe+0xc8>
+ 8007716:	4a24      	ldr	r2, [pc, #144]	@ (80077a8 <msp_bench_observe+0x148>)
+ 8007718:	683b      	ldr	r3, [r7, #0]
+ 800771a:	4293      	cmp	r3, r2
+ 800771c:	d804      	bhi.n	8007728 <msp_bench_observe+0xc8>
+ 800771e:	683b      	ldr	r3, [r7, #0]
+ 8007720:	f003 0303 	and.w	r3, r3, #3
+ 8007724:	2b00      	cmp	r3, #0
+ 8007726:	d002      	beq.n	800772e <msp_bench_observe+0xce>
+ 8007728:	4b1d      	ldr	r3, [pc, #116]	@ (80077a0 <msp_bench_observe+0x140>)
+ 800772a:	2201      	movs	r2, #1
+ 800772c:	605a      	str	r2, [r3, #4]
+ 800772e:	4b1f      	ldr	r3, [pc, #124]	@ (80077ac <msp_bench_observe+0x14c>)
+ 8007730:	6a5b      	ldr	r3, [r3, #36]	@ 0x24
+ 8007732:	f403 6380 	and.w	r3, r3, #1024	@ 0x400
+ 8007736:	2b00      	cmp	r3, #0
+ 8007738:	bf14      	ite	ne
+ 800773a:	2301      	movne	r3, #1
+ 800773c:	2300      	moveq	r3, #0
+ 800773e:	72fb      	strb	r3, [r7, #11]
+ 8007740:	7dfb      	ldrb	r3, [r7, #23]
+ 8007742:	2b02      	cmp	r3, #2
+ 8007744:	d117      	bne.n	8007776 <msp_bench_observe+0x116>
+ 8007746:	4b1a      	ldr	r3, [pc, #104]	@ (80077b0 <msp_bench_observe+0x150>)
+ 8007748:	f8d3 3200 	ldr.w	r3, [r3, #512]	@ 0x200
+ 800774c:	f003 5380 	and.w	r3, r3, #268435456	@ 0x10000000
+ 8007750:	2b00      	cmp	r3, #0
+ 8007752:	d006      	beq.n	8007762 <msp_bench_observe+0x102>
+ 8007754:	68fb      	ldr	r3, [r7, #12]
+ 8007756:	f8d3 30b0 	ldr.w	r3, [r3, #176]	@ 0xb0
+ 800775a:	1c5a      	adds	r2, r3, #1
+ 800775c:	68fb      	ldr	r3, [r7, #12]
+ 800775e:	f8c3 20b0 	str.w	r2, [r3, #176]	@ 0xb0
+ 8007762:	7afb      	ldrb	r3, [r7, #11]
+ 8007764:	2b00      	cmp	r3, #0
+ 8007766:	d006      	beq.n	8007776 <msp_bench_observe+0x116>
+ 8007768:	68fb      	ldr	r3, [r7, #12]
+ 800776a:	f8d3 30b4 	ldr.w	r3, [r3, #180]	@ 0xb4
+ 800776e:	1c5a      	adds	r2, r3, #1
+ 8007770:	68fb      	ldr	r3, [r7, #12]
+ 8007772:	f8c3 20b4 	str.w	r2, [r3, #180]	@ 0xb4
+ 8007776:	7dfb      	ldrb	r3, [r7, #23]
+ 8007778:	2b03      	cmp	r3, #3
+ 800777a:	d10d      	bne.n	8007798 <msp_bench_observe+0x138>
+ 800777c:	7afb      	ldrb	r3, [r7, #11]
+ 800777e:	2b00      	cmp	r3, #0
+ 8007780:	d00a      	beq.n	8007798 <msp_bench_observe+0x138>
+ 8007782:	68fb      	ldr	r3, [r7, #12]
+ 8007784:	f8d3 30b8 	ldr.w	r3, [r3, #184]	@ 0xb8
+ 8007788:	1c5a      	adds	r2, r3, #1
+ 800778a:	68fb      	ldr	r3, [r7, #12]
+ 800778c:	f8c3 20b8 	str.w	r2, [r3, #184]	@ 0xb8
+ 8007790:	e002      	b.n	8007798 <msp_bench_observe+0x138>
+ 8007792:	bf00      	nop
+ 8007794:	e000      	b.n	8007798 <msp_bench_observe+0x138>
+ 8007796:	bf00      	nop
+ 8007798:	371c      	adds	r7, #28
+ 800779a:	46bd      	mov	sp, r7
+ 800779c:	bc80      	pop	{r7}
+ 800779e:	4770      	bx	lr
+ 80077a0:	20001ae8 	.word	0x20001ae8
+ 80077a4:	2000f000 	.word	0x2000f000
+ 80077a8:	20010000 	.word	0x20010000
+ 80077ac:	e000ed00 	.word	0xe000ed00
+ 80077b0:	e000e100 	.word	0xe000e100
+
+08007908 <msp_bench_controller_step>:
+ 8007908:	b580      	push	{r7, lr}
+ 800790a:	b08e      	sub	sp, #56	@ 0x38
+ 800790c:	af00      	add	r7, sp, #0
+ 800790e:	4603      	mov	r3, r0
+ 8007910:	71fb      	strb	r3, [r7, #7]
+ 8007912:	4b84      	ldr	r3, [pc, #528]	@ (8007b24 <msp_bench_controller_step+0x21c>)
+ 8007914:	681b      	ldr	r3, [r3, #0]
+ 8007916:	637b      	str	r3, [r7, #52]	@ 0x34
+ 8007918:	6b7b      	ldr	r3, [r7, #52]	@ 0x34
+ 800791a:	2b02      	cmp	r3, #2
+ 800791c:	f200 80f9 	bhi.w	8007b12 <msp_bench_controller_step+0x20a>
+ 8007920:	4b81      	ldr	r3, [pc, #516]	@ (8007b28 <msp_bench_controller_step+0x220>)
+ 8007922:	633b      	str	r3, [r7, #48]	@ 0x30
+ 8007924:	4b81      	ldr	r3, [pc, #516]	@ (8007b2c <msp_bench_controller_step+0x224>)
+ 8007926:	62fb      	str	r3, [r7, #44]	@ 0x2c
+ 8007928:	6b3b      	ldr	r3, [r7, #48]	@ 0x30
+ 800792a:	62bb      	str	r3, [r7, #40]	@ 0x28
+ 800792c:	6afa      	ldr	r2, [r7, #44]	@ 0x2c
+ 800792e:	6b3b      	ldr	r3, [r7, #48]	@ 0x30
+ 8007930:	429a      	cmp	r2, r3
+ 8007932:	d90c      	bls.n	800794e <msp_bench_controller_step+0x46>
+ 8007934:	6afa      	ldr	r2, [r7, #44]	@ 0x2c
+ 8007936:	6b3b      	ldr	r3, [r7, #48]	@ 0x30
+ 8007938:	1ad3      	subs	r3, r2, r3
+ 800793a:	f5b3 5f80 	cmp.w	r3, #4096	@ 0x1000
+ 800793e:	d106      	bne.n	800794e <msp_bench_controller_step+0x46>
+ 8007940:	6b3b      	ldr	r3, [r7, #48]	@ 0x30
+ 8007942:	f003 0307 	and.w	r3, r3, #7
+ 8007946:	2b00      	cmp	r3, #0
+ 8007948:	d101      	bne.n	800794e <msp_bench_controller_step+0x46>
+ 800794a:	2301      	movs	r3, #1
+ 800794c:	e000      	b.n	8007950 <msp_bench_controller_step+0x48>
+ 800794e:	2300      	movs	r3, #0
+ 8007950:	f887 3027 	strb.w	r3, [r7, #39]	@ 0x27
+ 8007954:	f897 3027 	ldrb.w	r3, [r7, #39]	@ 0x27
+ 8007958:	f003 0301 	and.w	r3, r3, #1
+ 800795c:	f887 3027 	strb.w	r3, [r7, #39]	@ 0x27
+ 8007960:	4b70      	ldr	r3, [pc, #448]	@ (8007b24 <msp_bench_controller_step+0x21c>)
+ 8007962:	685b      	ldr	r3, [r3, #4]
+ 8007964:	2b00      	cmp	r3, #0
+ 8007966:	d10b      	bne.n	8007980 <msp_bench_controller_step+0x78>
+ 8007968:	f897 3027 	ldrb.w	r3, [r7, #39]	@ 0x27
+ 800796c:	2b00      	cmp	r3, #0
+ 800796e:	d007      	beq.n	8007980 <msp_bench_controller_step+0x78>
+ 8007970:	6ab8      	ldr	r0, [r7, #40]	@ 0x28
+ 8007972:	f7ff ff1f 	bl	80077b4 <guard_intact>
+ 8007976:	4603      	mov	r3, r0
+ 8007978:	2b00      	cmp	r3, #0
+ 800797a:	d001      	beq.n	8007980 <msp_bench_controller_step+0x78>
+ 800797c:	2301      	movs	r3, #1
+ 800797e:	e000      	b.n	8007982 <msp_bench_controller_step+0x7a>
+ 8007980:	2300      	movs	r3, #0
+ 8007982:	f887 3026 	strb.w	r3, [r7, #38]	@ 0x26
+ 8007986:	f897 3026 	ldrb.w	r3, [r7, #38]	@ 0x26
+ 800798a:	f003 0301 	and.w	r3, r3, #1
+ 800798e:	f887 3026 	strb.w	r3, [r7, #38]	@ 0x26
+ 8007992:	6b7b      	ldr	r3, [r7, #52]	@ 0x34
+ 8007994:	22d0      	movs	r2, #208	@ 0xd0
+ 8007996:	fb02 f303 	mul.w	r3, r2, r3
+ 800799a:	3318      	adds	r3, #24
+ 800799c:	4a61      	ldr	r2, [pc, #388]	@ (8007b24 <msp_bench_controller_step+0x21c>)
+ 800799e:	4413      	add	r3, r2
+ 80079a0:	623b      	str	r3, [r7, #32]
+ 80079a2:	f897 3026 	ldrb.w	r3, [r7, #38]	@ 0x26
+ 80079a6:	2b00      	cmp	r3, #0
+ 80079a8:	d01c      	beq.n	80079e4 <msp_bench_controller_step+0xdc>
+ 80079aa:	6b7b      	ldr	r3, [r7, #52]	@ 0x34
+ 80079ac:	2b00      	cmp	r3, #0
+ 80079ae:	d10d      	bne.n	80079cc <msp_bench_controller_step+0xc4>
+ 80079b0:	79fb      	ldrb	r3, [r7, #7]
+ 80079b2:	f083 0301 	eor.w	r3, r3, #1
+ 80079b6:	b2db      	uxtb	r3, r3
+ 80079b8:	2b00      	cmp	r3, #0
+ 80079ba:	f040 80ac 	bne.w	8007b16 <msp_bench_controller_step+0x20e>
+ 80079be:	f004 f941 	bl	800bc44 <rtos_tick_get>
+ 80079c2:	4603      	mov	r3, r0
+ 80079c4:	f5b3 7f96 	cmp.w	r3, #300	@ 0x12c
+ 80079c8:	d20c      	bcs.n	80079e4 <msp_bench_controller_step+0xdc>
+ 80079ca:	e0a4      	b.n	8007b16 <msp_bench_controller_step+0x20e>
+ 80079cc:	f004 f93a 	bl	800bc44 <rtos_tick_get>
+ 80079d0:	4602      	mov	r2, r0
+ 80079d2:	6a3b      	ldr	r3, [r7, #32]
+ 80079d4:	f8d3 30bc 	ldr.w	r3, [r3, #188]	@ 0xbc
+ 80079d8:	1ad3      	subs	r3, r2, r3
+ 80079da:	f641 0237 	movw	r2, #6199	@ 0x1837
+ 80079de:	4293      	cmp	r3, r2
+ 80079e0:	f240 809b 	bls.w	8007b1a <msp_bench_controller_step+0x212>
+ 80079e4:	f004 f8f4 	bl	800bbd0 <rtos_critical_enter>
+ 80079e8:	61f8      	str	r0, [r7, #28]
+ 80079ea:	f3ef 8108 	mrs	r1, MSP
+ 80079ee:	f3ef 8205 	mrs	r2, IPSR
+ 80079f2:	f3ef 8314 	mrs	r3, CONTROL
+ 80079f6:	61b9      	str	r1, [r7, #24]
+ 80079f8:	617a      	str	r2, [r7, #20]
+ 80079fa:	613b      	str	r3, [r7, #16]
+ 80079fc:	f897 3027 	ldrb.w	r3, [r7, #39]	@ 0x27
+ 8007a00:	2b00      	cmp	r3, #0
+ 8007a02:	d00d      	beq.n	8007a20 <msp_bench_controller_step+0x118>
+ 8007a04:	697b      	ldr	r3, [r7, #20]
+ 8007a06:	2b00      	cmp	r3, #0
+ 8007a08:	d10a      	bne.n	8007a20 <msp_bench_controller_step+0x118>
+ 8007a0a:	693b      	ldr	r3, [r7, #16]
+ 8007a0c:	f003 0302 	and.w	r3, r3, #2
+ 8007a10:	2b00      	cmp	r3, #0
+ 8007a12:	d005      	beq.n	8007a20 <msp_bench_controller_step+0x118>
+ 8007a14:	69ba      	ldr	r2, [r7, #24]
+ 8007a16:	6afb      	ldr	r3, [r7, #44]	@ 0x2c
+ 8007a18:	429a      	cmp	r2, r3
+ 8007a1a:	d101      	bne.n	8007a20 <msp_bench_controller_step+0x118>
+ 8007a1c:	2301      	movs	r3, #1
+ 8007a1e:	e000      	b.n	8007a22 <msp_bench_controller_step+0x11a>
+ 8007a20:	2300      	movs	r3, #0
+ 8007a22:	73fb      	strb	r3, [r7, #15]
+ 8007a24:	7bfb      	ldrb	r3, [r7, #15]
+ 8007a26:	f003 0301 	and.w	r3, r3, #1
+ 8007a2a:	73fb      	strb	r3, [r7, #15]
+ 8007a2c:	7bfb      	ldrb	r3, [r7, #15]
+ 8007a2e:	2b00      	cmp	r3, #0
+ 8007a30:	d003      	beq.n	8007a3a <msp_bench_controller_step+0x132>
+ 8007a32:	6ab9      	ldr	r1, [r7, #40]	@ 0x28
+ 8007a34:	6a38      	ldr	r0, [r7, #32]
+ 8007a36:	f7ff fedd 	bl	80077f4 <close_phase>
+ 8007a3a:	4a3a      	ldr	r2, [pc, #232]	@ (8007b24 <msp_bench_controller_step+0x21c>)
+ 8007a3c:	6b3b      	ldr	r3, [r7, #48]	@ 0x30
+ 8007a3e:	6093      	str	r3, [r2, #8]
+ 8007a40:	4a38      	ldr	r2, [pc, #224]	@ (8007b24 <msp_bench_controller_step+0x21c>)
+ 8007a42:	6afb      	ldr	r3, [r7, #44]	@ 0x2c
+ 8007a44:	60d3      	str	r3, [r2, #12]
+ 8007a46:	f7fd fb4f 	bl	80050e8 <rtos_port_cpu_hz>
+ 8007a4a:	4603      	mov	r3, r0
+ 8007a4c:	4a35      	ldr	r2, [pc, #212]	@ (8007b24 <msp_bench_controller_step+0x21c>)
+ 8007a4e:	6113      	str	r3, [r2, #16]
+ 8007a50:	f897 3026 	ldrb.w	r3, [r7, #38]	@ 0x26
+ 8007a54:	f083 0301 	eor.w	r3, r3, #1
+ 8007a58:	b2db      	uxtb	r3, r3
+ 8007a5a:	2b00      	cmp	r3, #0
+ 8007a5c:	d127      	bne.n	8007aae <msp_bench_controller_step+0x1a6>
+ 8007a5e:	7bfb      	ldrb	r3, [r7, #15]
+ 8007a60:	f083 0301 	eor.w	r3, r3, #1
+ 8007a64:	b2db      	uxtb	r3, r3
+ 8007a66:	2b00      	cmp	r3, #0
+ 8007a68:	d121      	bne.n	8007aae <msp_bench_controller_step+0x1a6>
+ 8007a6a:	6ab8      	ldr	r0, [r7, #40]	@ 0x28
+ 8007a6c:	f7ff fea2 	bl	80077b4 <guard_intact>
+ 8007a70:	4603      	mov	r3, r0
+ 8007a72:	f083 0301 	eor.w	r3, r3, #1
+ 8007a76:	b2db      	uxtb	r3, r3
+ 8007a78:	2b00      	cmp	r3, #0
+ 8007a7a:	d118      	bne.n	8007aae <msp_bench_controller_step+0x1a6>
+ 8007a7c:	4b29      	ldr	r3, [pc, #164]	@ (8007b24 <msp_bench_controller_step+0x21c>)
+ 8007a7e:	685b      	ldr	r3, [r3, #4]
+ 8007a80:	2b00      	cmp	r3, #0
+ 8007a82:	d114      	bne.n	8007aae <msp_bench_controller_step+0x1a6>
+ 8007a84:	6a3b      	ldr	r3, [r7, #32]
+ 8007a86:	f8d3 20cc 	ldr.w	r2, [r3, #204]	@ 0xcc
+ 8007a8a:	6b3b      	ldr	r3, [r7, #48]	@ 0x30
+ 8007a8c:	f503 7300 	add.w	r3, r3, #512	@ 0x200
+ 8007a90:	429a      	cmp	r2, r3
+ 8007a92:	d90c      	bls.n	8007aae <msp_bench_controller_step+0x1a6>
+ 8007a94:	f005 faa4 	bl	800cfe0 <rtos_port_clock_available>
+ 8007a98:	4603      	mov	r3, r0
+ 8007a9a:	f083 0301 	eor.w	r3, r3, #1
+ 8007a9e:	b2db      	uxtb	r3, r3
+ 8007aa0:	2b00      	cmp	r3, #0
+ 8007aa2:	d104      	bne.n	8007aae <msp_bench_controller_step+0x1a6>
+ 8007aa4:	4b1f      	ldr	r3, [pc, #124]	@ (8007b24 <msp_bench_controller_step+0x21c>)
+ 8007aa6:	691b      	ldr	r3, [r3, #16]
+ 8007aa8:	4a21      	ldr	r2, [pc, #132]	@ (8007b30 <msp_bench_controller_step+0x228>)
+ 8007aaa:	4293      	cmp	r3, r2
+ 8007aac:	d00c      	beq.n	8007ac8 <msp_bench_controller_step+0x1c0>
+ 8007aae:	4b21      	ldr	r3, [pc, #132]	@ (8007b34 <msp_bench_controller_step+0x22c>)
+ 8007ab0:	2200      	movs	r2, #0
+ 8007ab2:	601a      	str	r2, [r3, #0]
+ 8007ab4:	4b1b      	ldr	r3, [pc, #108]	@ (8007b24 <msp_bench_controller_step+0x21c>)
+ 8007ab6:	2201      	movs	r2, #1
+ 8007ab8:	605a      	str	r2, [r3, #4]
+ 8007aba:	4b1a      	ldr	r3, [pc, #104]	@ (8007b24 <msp_bench_controller_step+0x21c>)
+ 8007abc:	2204      	movs	r2, #4
+ 8007abe:	601a      	str	r2, [r3, #0]
+ 8007ac0:	69f8      	ldr	r0, [r7, #28]
+ 8007ac2:	f004 f89b 	bl	800bbfc <rtos_critical_exit>
+ 8007ac6:	e029      	b.n	8007b1c <msp_bench_controller_step+0x214>
+ 8007ac8:	6b7b      	ldr	r3, [r7, #52]	@ 0x34
+ 8007aca:	2b02      	cmp	r3, #2
+ 8007acc:	d104      	bne.n	8007ad8 <msp_bench_controller_step+0x1d0>
+ 8007ace:	4b1a      	ldr	r3, [pc, #104]	@ (8007b38 <msp_bench_controller_step+0x230>)
+ 8007ad0:	681b      	ldr	r3, [r3, #0]
+ 8007ad2:	4a14      	ldr	r2, [pc, #80]	@ (8007b24 <msp_bench_controller_step+0x21c>)
+ 8007ad4:	6153      	str	r3, [r2, #20]
+ 8007ad6:	e011      	b.n	8007afc <msp_bench_controller_step+0x1f4>
+ 8007ad8:	6b7b      	ldr	r3, [r7, #52]	@ 0x34
+ 8007ada:	3301      	adds	r3, #1
+ 8007adc:	22d0      	movs	r2, #208	@ 0xd0
+ 8007ade:	fb02 f303 	mul.w	r3, r2, r3
+ 8007ae2:	3318      	adds	r3, #24
+ 8007ae4:	4a0f      	ldr	r2, [pc, #60]	@ (8007b24 <msp_bench_controller_step+0x21c>)
+ 8007ae6:	4413      	add	r3, r2
+ 8007ae8:	6ab9      	ldr	r1, [r7, #40]	@ 0x28
+ 8007aea:	4618      	mov	r0, r3
+ 8007aec:	f7ff fee2 	bl	80078b4 <arm_phase>
+ 8007af0:	6b7b      	ldr	r3, [r7, #52]	@ 0x34
+ 8007af2:	2b01      	cmp	r3, #1
+ 8007af4:	d102      	bne.n	8007afc <msp_bench_controller_step+0x1f4>
+ 8007af6:	4b0f      	ldr	r3, [pc, #60]	@ (8007b34 <msp_bench_controller_step+0x22c>)
+ 8007af8:	2201      	movs	r2, #1
+ 8007afa:	601a      	str	r2, [r3, #0]
+ 8007afc:	f3bf 8f5f 	dmb	sy
+ 8007b00:	bf00      	nop
+ 8007b02:	6b7b      	ldr	r3, [r7, #52]	@ 0x34
+ 8007b04:	3301      	adds	r3, #1
+ 8007b06:	4a07      	ldr	r2, [pc, #28]	@ (8007b24 <msp_bench_controller_step+0x21c>)
+ 8007b08:	6013      	str	r3, [r2, #0]
+ 8007b0a:	69f8      	ldr	r0, [r7, #28]
+ 8007b0c:	f004 f876 	bl	800bbfc <rtos_critical_exit>
+ 8007b10:	e004      	b.n	8007b1c <msp_bench_controller_step+0x214>
+ 8007b12:	bf00      	nop
+ 8007b14:	e002      	b.n	8007b1c <msp_bench_controller_step+0x214>
+ 8007b16:	bf00      	nop
+ 8007b18:	e000      	b.n	8007b1c <msp_bench_controller_step+0x214>
+ 8007b1a:	bf00      	nop
+ 8007b1c:	3738      	adds	r7, #56	@ 0x38
+ 8007b1e:	46bd      	mov	sp, r7
+ 8007b20:	bd80      	pop	{r7, pc}
+ 8007b22:	bf00      	nop
+ 8007b24:	20001ae8 	.word	0x20001ae8
+ 8007b28:	2000f000 	.word	0x2000f000
+ 8007b2c:	20010000 	.word	0x20010000
+ 8007b30:	044aa200 	.word	0x044aa200
+ 8007b34:	200001f0 	.word	0x200001f0
+ 8007b38:	200001f8 	.word	0x200001f8
+
+0800d02c <SVC_Handler>:
+ 800d02c:	b672      	cpsid	i
+ 800d02e:	f000 f881 	bl	800d134 <rtos_port_tick_start>
+ 800d032:	4b09      	ldr	r3, [pc, #36]	@ (800d058 <SVC_Handler+0x2c>)
+ 800d034:	681a      	ldr	r2, [r3, #0]
+ 800d036:	6810      	ldr	r0, [r2, #0]
+ 800d038:	e8b0 0ff0 	ldmia.w	r0!, {r4, r5, r6, r7, r8, r9, sl, fp}
+ 800d03c:	f380 8809 	msr	PSP, r0
+ 800d040:	2002      	movs	r0, #2
+ 800d042:	f380 8814 	msr	CONTROL, r0
+ 800d046:	f3bf 8f6f 	isb	sy
+ 800d04a:	4804      	ldr	r0, [pc, #16]	@ (800d05c <SVC_Handler+0x30>)
+ 800d04c:	f380 8808 	msr	MSP, r0
+ 800d050:	f06f 0e02 	mvn.w	lr, #2
+ 800d054:	b662      	cpsie	i
+ 800d056:	4770      	bx	lr
+ 800d058:	20002fe4 	.word	0x20002fe4
+ 800d05c:	20010000 	.word	0x20010000
+
+0800d060 <PendSV_Handler>:
+ 800d060:	b672      	cpsid	i
+ 800d062:	f3ef 8009 	mrs	r0, PSP
+ 800d066:	e920 0ff0 	stmdb	r0!, {r4, r5, r6, r7, r8, r9, sl, fp}
+ 800d06a:	4b09      	ldr	r3, [pc, #36]	@ (800d090 <rtos_port_pendsv_unmask+0x6>)
+ 800d06c:	681a      	ldr	r2, [r3, #0]
+ 800d06e:	6010      	str	r0, [r2, #0]
+ 800d070:	b508      	push	{r3, lr}
+ 800d072:	f7fd fd2b 	bl	800aacc <rtos_sched_switch>
+ 800d076:	e8bd 4008 	ldmia.w	sp!, {r3, lr}
+ 800d07a:	681a      	ldr	r2, [r3, #0]
+ 800d07c:	6810      	ldr	r0, [r2, #0]
+ 800d07e:	e8b0 0ff0 	ldmia.w	r0!, {r4, r5, r6, r7, r8, r9, sl, fp}
+ 800d082:	f380 8809 	msr	PSP, r0
+ 800d086:	f3bf 8f6f 	isb	sy
+
+0800d180 <SysTick_Handler>:
+ 800d180:	b580      	push	{r7, lr}
+ 800d182:	af00      	add	r7, sp, #0
+ 800d184:	f7ff ff86 	bl	800d094 <msp_bench_irq_entry>
+ 800d188:	f7fe fd70 	bl	800bc6c <rtos_tick_handler>
+ 800d18c:	bf00      	nop
+ 800d18e:	bd80      	pop	{r7, pc}

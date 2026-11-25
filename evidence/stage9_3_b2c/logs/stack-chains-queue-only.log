@@ -1,0 +1,32 @@
+O2
+rtos_port_tick_start C=20 hardware/assembly=36 estimate=56
+rtos_port_tick_start (8) -> msp_bench_observe (12)
+outside .su / dynamic:  cycles:
+rtos_sched_switch C=104 hardware/assembly=8 estimate=112
+rtos_sched_switch (32) -> rtos_trace_select_locked (16) -> rtos_trace_emit_locked.part.0 (56) -> rtos_trace_tick_locked (0)
+outside .su / dynamic:  cycles:
+SysTick_Handler C=152 hardware/assembly=0 estimate=152
+SysTick_Handler (8) -> rtos_tick_handler (16) -> rtos_delay_process_expired (16) -> rtos_wait_complete_locked (32) -> rtos_sched_wake (16) -> rtos_sched_request (8) -> rtos_trace_emit_locked (0) -> rtos_trace_emit_locked.part.0 (56) -> rtos_trace_tick_locked (0)
+outside .su / dynamic:  cycles:
+TIM2_IRQHandler C=288 hardware/assembly=0 estimate=288
+TIM2_IRQHandler (8) -> KEY_OnSysTick1ms (16) -> button_ticks (8) -> key1_event_callback (8) -> Display_KeyFromISR (40) -> App_IPC_SendKeyFromISR (0) -> rtos_queue_send_from_isr (24) -> queue_transfer (72) -> rtos_wait_complete_locked (32) -> rtos_sched_wake (16) -> rtos_sched_request (8) -> rtos_trace_emit_locked (0) -> rtos_trace_emit_locked.part.0 (56) -> rtos_trace_tick_locked (0)
+outside .su / dynamic:  cycles:
+nested SysTick_Handler over TIM2_IRQHandler: conservative max of both chains + 36 B nested hardware frame = 476 B
+nested SysTick_Handler over rtos_sched_switch: conservative max of both chains + 36 B nested hardware frame = 300 B
+nested TIM2_IRQHandler over rtos_sched_switch: conservative max of both chains + 36 B nested hardware frame = 436 B
+Debug
+rtos_port_tick_start C=56 hardware/assembly=36 estimate=92
+rtos_port_tick_start (8) -> msp_bench_irq_entry (16) -> msp_bench_observe (32)
+outside .su / dynamic:  cycles:
+rtos_sched_switch C=200 hardware/assembly=8 estimate=208
+rtos_sched_switch (24) -> rtos_diag_rt_switch_hook (104) -> job_check_budget (56) -> job_count (16)
+outside .su / dynamic:  cycles:
+SysTick_Handler C=196 hardware/assembly=0 estimate=196
+SysTick_Handler (8) -> rtos_tick_handler (16) -> rtos_delay_process_expired (24) -> rtos_wait_complete_locked (40) -> rtos_sched_wake (24) -> rtos_diag_rt_task_ready_hook (32) -> get_cycles_64_locked (48) -> rtos_port_clock_cycles_32 (4)
+outside .su / dynamic:  cycles:
+TIM2_IRQHandler C=380 hardware/assembly=0 estimate=380
+TIM2_IRQHandler (8) -> KEY_OnSysTick1ms (8) -> button_ticks (16) -> button_handler (24) -> key1_event_callback (24) -> Display_KeyFromISR (48) -> App_IPC_SendKeyFromISR (16) -> rtos_queue_send_from_isr (24) -> queue_transfer (64) -> rtos_wait_complete_locked (40) -> rtos_sched_wake (24) -> rtos_diag_rt_task_ready_hook (32) -> get_cycles_64_locked (48) -> rtos_port_clock_cycles_32 (4)
+outside .su / dynamic:  cycles:
+nested SysTick_Handler over TIM2_IRQHandler: conservative max of both chains + 36 B nested hardware frame = 612 B
+nested SysTick_Handler over rtos_sched_switch: conservative max of both chains + 36 B nested hardware frame = 440 B
+nested TIM2_IRQHandler over rtos_sched_switch: conservative max of both chains + 36 B nested hardware frame = 624 B

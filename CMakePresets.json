@@ -128,6 +128,21 @@
             }
         },
         {
+            "name": "DISPLAY_RTOS_O2_Msp",
+            "inherits": "DISPLAY_RTOS_O2_Stress",
+            "cacheVariables": {
+                "INSIGHT_TEST_MSP": "ON"
+            }
+        },
+        {
+            "name": "DISPLAY_RTOS_Debug_Msp",
+            "inherits": "DISPLAY_RTOS_Debug_Trace",
+            "cacheVariables": {
+                "INSIGHT_TEST_MSP": "ON",
+                "INSIGHT_TEST_STRESS": "ON"
+            }
+        },
+        {
             "name": "DISPLAY_RTOS_O2_Job",
             "inherits": "default",
             "cacheVariables": {
@@ -191,6 +206,14 @@
         {
             "name": "DISPLAY_RTOS_O2_Timing_On",
             "configurePreset": "DISPLAY_RTOS_O2_Timing_On"
+        },
+        {
+            "name": "DISPLAY_RTOS_O2_Msp",
+            "configurePreset": "DISPLAY_RTOS_O2_Msp"
+        },
+        {
+            "name": "DISPLAY_RTOS_Debug_Msp",
+            "configurePreset": "DISPLAY_RTOS_Debug_Msp"
         },
         {
             "name": "DISPLAY_RTOS_O2_Job",

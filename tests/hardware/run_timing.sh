@@ -5,7 +5,10 @@ set -euo pipefail
 # validated snapshot of the authorized pages, never a just-read substitute.
 previous=$(realpath "$1")
 scratch=$(realpath "$2")
-log=$(realpath evidence/stage9_3_b2b/logs)
+mode=${3:-both}
+evidence=evidence/stage9_3_b2b
+if [[ $mode == Msp ]]; then evidence=evidence/stage9_3_b2c; fi
+log=$(realpath "$evidence/logs")
 cfg=tests/hardware/timing_openocd
 if ps -eo stat=,comm= | awk '$1 !~ /^Z/ {print $2}' | rg -x 'openocd|st-util|pyocd|gdb-multiarch|stlink-server'; then
     exit 1
@@ -13,17 +16,20 @@ fi
 exec 9>/tmp/insightrtos-zet6-stlink.lock
 flock -n 9
 
-case "${3:-both}" in
+case "$mode" in
     both) profiles=(Off On) ;;
     On) profiles=(On) ;;
+    Msp) profiles=(Msp) ;;
     *) exit 2 ;;
 esac
 
 for name in "${profiles[@]}"; do
-    f=$(realpath "build/DISPLAY_RTOS_O2_Timing_$name/insightrtos_display.bin")
+    profile=DISPLAY_RTOS_O2_Timing_$name
+    if [[ $name == Msp ]]; then profile=DISPLAY_RTOS_O2_Msp; fi
+    f=$(realpath "build/$profile/insightrtos_display.bin")
     bin="${f%.bin}"
     proof="$log/firmware-audit.json"
-    python3 - "$proof" "$f" "DISPLAY_RTOS_O2_Timing_$name" <<'PY'
+    python3 - "$proof" "$f" "$profile" <<'PY'
 import hashlib,json,sys
 from pathlib import Path
 proof,name,profile=sys.argv[1:]
@@ -83,8 +89,13 @@ PY
     rt=0
     if [[ $name == On ]]; then rt=1; fi
     sleep 1
-    PYTHONDONTWRITEBYTECODE=1 python3 tests/hardware/read_timing.py --rt "$rt" --elf "$bin.elf" \
-      --out "$prefix-timing.json" | tee "$prefix-sampler.log"
+    if [[ $name == Msp ]]; then
+        PYTHONDONTWRITEBYTECODE=1 python3 tests/hardware/read_msp.py --elf "$bin.elf" \
+          --out "$prefix-watermark.json" | tee "$prefix-sampler.log"
+    else
+        PYTHONDONTWRITEBYTECODE=1 python3 tests/hardware/read_timing.py --rt "$rt" --elf "$bin.elf" \
+          --out "$prefix-timing.json" | tee "$prefix-sampler.log"
+    fi
     kill "$pid"
     wait "$pid" || true
     trap - EXIT

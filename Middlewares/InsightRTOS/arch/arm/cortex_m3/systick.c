@@ -2,6 +2,9 @@
 #include "rtos_assert.h"
 #include "rtos_config.h"
 #include "kernel_internal.h"
+#if defined(INSIGHT_TEST_MSP) && INSIGHT_TEST_MSP
+#include "msp_bench.h"
+#endif
 
 #define SYST_CSR (*(volatile uint32_t *)UINT32_C(0xe000e010))
 #define SYST_RVR (*(volatile uint32_t *)UINT32_C(0xe000e014))
@@ -24,6 +27,9 @@ void rtos_port_tick_init(void)
 
 void rtos_port_tick_start(void)
 {
+#if defined(INSIGHT_TEST_MSP) && INSIGHT_TEST_MSP
+    msp_bench_irq_entry();
+#endif
     RTOS_ASSERT(systick_configured);
 #if RTOS_PREEMPTIVE
     SYST_CVR = 0U;
@@ -39,6 +45,9 @@ void rtos_port_tick_start(void)
 
 void SysTick_Handler(void)
 {
+#if defined(INSIGHT_TEST_MSP) && INSIGHT_TEST_MSP
+    msp_bench_irq_entry();
+#endif
 #if defined(INSIGHT_TEST_TIMING)
     if (timing_bench_running()) {
         const uint32_t start = timing_bench_stamp();

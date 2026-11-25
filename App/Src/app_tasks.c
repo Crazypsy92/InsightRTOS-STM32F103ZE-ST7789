@@ -3,6 +3,9 @@
 #include "job_fixture.h"
 #endif
 #include "delay.h"
+#if defined(INSIGHT_TEST_MSP) && INSIGHT_TEST_MSP
+#include "msp_bench.h"
+#endif
 #if defined(INSIGHT_TEST_TIMING)
 #include "timing_bench.h"
 #endif
@@ -192,6 +195,9 @@ static void controller_task(void *argument)
 
 #if defined(INSIGHT_TEST_TIMING)
         timing_bench_controller_step(g_display_task_refs[1], view.ready != 0U);
+#endif
+#if defined(INSIGHT_TEST_MSP) && INSIGHT_TEST_MSP
+        msp_bench_controller_step(view.ready != 0U);
 #endif
         RTOS_ASSERT(rtos_delay(1U) == RTOS_OK);
     }

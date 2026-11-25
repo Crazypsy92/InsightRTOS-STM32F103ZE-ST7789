@@ -144,7 +144,7 @@ static void stress_sample_tick(void)
         g_stress_request = 0U;
     } else if (g_stress_request == 1U) {
         if (g_stress_remaining == 0U) {
-#if defined(INSIGHT_TEST_TIMING)
+#if defined(INSIGHT_TEST_TIMING) || (defined(INSIGHT_TEST_MSP) && INSIGHT_TEST_MSP)
             g_stress_remaining = 600U;
 #else
             g_stress_remaining = 3000U;
