@@ -3,6 +3,9 @@
 #include "job_fixture.h"
 #endif
 #include "delay.h"
+#if defined(INSIGHT_TEST_TIMING)
+#include "timing_bench.h"
+#endif
 #if INSIGHT_DIAG_RT
 #include "main.h"
 #endif
@@ -187,6 +190,9 @@ static void controller_task(void *argument)
             last_metric = now;
         }
 
+#if defined(INSIGHT_TEST_TIMING)
+        timing_bench_controller_step(g_display_task_refs[1], view.ready != 0U);
+#endif
         RTOS_ASSERT(rtos_delay(1U) == RTOS_OK);
     }
 }

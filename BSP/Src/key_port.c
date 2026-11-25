@@ -127,7 +127,7 @@ void KEY_Init(void)
 }
 
 #if defined(INSIGHT_TEST_STRESS) && INSIGHT_TEST_STRESS
-/* Test-image mailbox: 1 = 3000 scheduled attempts, 2 = one bounded burst.
+/* Test-image mailbox: 1 = bounded 10 Hz stream, 2 = one bounded burst.
  * Completion sets the request to zero without host interaction. */
 volatile uint32_t g_stress_request;
 volatile uint32_t g_stress_remaining;
@@ -144,7 +144,11 @@ static void stress_sample_tick(void)
         g_stress_request = 0U;
     } else if (g_stress_request == 1U) {
         if (g_stress_remaining == 0U) {
+#if defined(INSIGHT_TEST_TIMING)
+            g_stress_remaining = 600U;
+#else
             g_stress_remaining = 3000U;
+#endif
             stress_ms = 0U;
         }
         if (++stress_ms == 100U) {

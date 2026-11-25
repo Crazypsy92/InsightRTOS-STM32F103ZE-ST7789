@@ -1,0 +1,376 @@
+{
+  "stage": "9.3-B2b",
+  "status": "HARDWARE_MEASURED",
+  "base_sha": "9ea65183e081aca0da80eac1253a5626a0b730b3",
+  "tool_versions": [
+    "arm-none-eabi-gcc (15:14.2.rel1-1) 14.2.1 20241119",
+    "GNU gdb (Ubuntu 17.1-2ubuntu1) 17.1",
+    "Open On-Chip Debugger 0.12.0",
+    "cmake version 4.2.3",
+    "Python 3.13.5"
+  ],
+  "profiles": {
+    "Off": {
+      "capture": {
+        "state": 2,
+        "start_tick": 300,
+        "finish_tick": 6500,
+        "start_ms": 3000,
+        "finish_ms": 65000,
+        "task_switch_mask": 30,
+        "idle_dispatches": 3130,
+        "events": 600,
+        "completed_jobs": 0,
+        "bad_job_flags": 0,
+        "clock_hz": 72000000,
+        "rt_enabled": 0,
+        "paths": {
+          "empty_read": {
+            "sum": 64,
+            "count": 64,
+            "min": 1,
+            "max": 1,
+            "reserved": 0,
+            "mean_cycles": 1.0
+          },
+          "empty_call": {
+            "sum": 576,
+            "count": 64,
+            "min": 9,
+            "max": 9,
+            "reserved": 0,
+            "mean_cycles": 9.0
+          },
+          "pendsv": {
+            "sum": 21634219,
+            "count": 14875,
+            "min": 1308,
+            "max": 1704,
+            "reserved": 0,
+            "mean_cycles": 1454.4012773109243,
+            "normalized_cycles": {
+              "min": 1299,
+              "mean": 1445.4012773109243,
+              "max": 1695
+            }
+          },
+          "systick": {
+            "sum": 8069771,
+            "count": 6200,
+            "min": 1181,
+            "max": 3316,
+            "reserved": 0,
+            "mean_cycles": 1301.5759677419355,
+            "normalized_cycles": {
+              "min": 1172,
+              "mean": 1292.5759677419355,
+              "max": 3307
+            }
+          },
+          "release": {
+            "sum": 0,
+            "count": 0,
+            "min": 0,
+            "max": 0,
+            "reserved": 0
+          },
+          "complete": {
+            "sum": 0,
+            "count": 0,
+            "min": 0,
+            "max": 0,
+            "reserved": 0
+          },
+          "snapshot": {
+            "sum": 0,
+            "count": 0,
+            "min": 0,
+            "max": 0,
+            "reserved": 0
+          }
+        },
+        "flow": {
+          "key_attempts": 600,
+          "key_sent_ok": 600,
+          "key_queue_full": 0,
+          "key_wrong_context": 0,
+          "key_invalid_arg": 0,
+          "key_other_errors": 0,
+          "success_count": 600,
+          "failure_count": 0,
+          "pending_count": 0,
+          "drop_count": 0
+        },
+        "health_samples": 14
+      },
+      "readback": {
+        "status": "PASS",
+        "sha256": "d1e1bc6acde0da7986bfe557ad0b632eb09cfd72cbf38785c9a7d99c1e34c898",
+        "bytes": 49724,
+        "tail_ff": 13764,
+        "option_bytes_equal": true
+      },
+      "image": {
+        "flash_bytes": 49724,
+        "flash_end_exclusive": "0x800c23c",
+        "erasure_pages_from_zero": 25,
+        "sram_including_msp": 48248,
+        "sram_remaining": 17288,
+        "reset": "0x8000c09",
+        "msp": "0x20010000",
+        "sha256": {
+          "elf": "6f591a7cd0da2b663785271dc6633ae8295eaa50476ff8c3e0d3414c12d1ec48",
+          "bin": "d1e1bc6acde0da7986bfe557ad0b632eb09cfd72cbf38785c9a7d99c1e34c898",
+          "hex": "267285b908e03b8b36ca9dbbe69c1fb0108ae446868ae913cf3dfc21198c4e45",
+          "map": "21eec491a2f541e79bd429cdf932098cedc9722aa5525293f1f1b7b302e4c6c9"
+        },
+        "tcb_bytes": 72,
+        "hex_omitted_zero_padding_bytes": 4,
+        "sections": {
+          ".isr_vector": 484,
+          ".text": 32328,
+          ".rodata": 16796,
+          ".ARM": 8,
+          ".preinit_array": 0,
+          ".init_array": 4,
+          ".fini_array": 4,
+          ".data": 96,
+          ".tdata": 0,
+          ".tbss": 0,
+          ".bss": 11288,
+          ".user_stacks": 32768,
+          ".msp_stack": 4096
+        }
+      },
+      "final_task_runs": [
+        600,
+        6767,
+        626,
+        74
+      ],
+      "faults": [
+        0,
+        0
+      ],
+      "guards": [
+        3735929054,
+        3735929054,
+        3735929054,
+        3735929054,
+        3735929054
+      ],
+      "assert_line": 0,
+      "clock": null
+    },
+    "On": {
+      "capture": {
+        "state": 2,
+        "start_tick": 300,
+        "finish_tick": 6500,
+        "start_ms": 3000,
+        "finish_ms": 65000,
+        "task_switch_mask": 30,
+        "idle_dispatches": 3129,
+        "events": 600,
+        "completed_jobs": 6199,
+        "bad_job_flags": 0,
+        "clock_hz": 72000000,
+        "rt_enabled": 1,
+        "paths": {
+          "empty_read": {
+            "sum": 64,
+            "count": 64,
+            "min": 1,
+            "max": 1,
+            "reserved": 0,
+            "mean_cycles": 1.0
+          },
+          "empty_call": {
+            "sum": 576,
+            "count": 64,
+            "min": 9,
+            "max": 9,
+            "reserved": 0,
+            "mean_cycles": 9.0
+          },
+          "pendsv": {
+            "sum": 29579449,
+            "count": 14875,
+            "min": 1668,
+            "max": 2405,
+            "reserved": 0,
+            "mean_cycles": 1988.534386554622,
+            "normalized_cycles": {
+              "min": 1659,
+              "mean": 1979.534386554622,
+              "max": 2396
+            }
+          },
+          "systick": {
+            "sum": 12016484,
+            "count": 6200,
+            "min": 1755,
+            "max": 4369,
+            "reserved": 0,
+            "mean_cycles": 1938.1425806451614,
+            "normalized_cycles": {
+              "min": 1746,
+              "mean": 1929.1425806451614,
+              "max": 4360
+            }
+          },
+          "release": {
+            "sum": 5269471,
+            "count": 6199,
+            "min": 850,
+            "max": 871,
+            "reserved": 0,
+            "mean_cycles": 850.0517825455719,
+            "normalized_cycles": {
+              "min": 841,
+              "mean": 841.0517825455719,
+              "max": 862
+            }
+          },
+          "complete": {
+            "sum": 4761185,
+            "count": 6199,
+            "min": 768,
+            "max": 782,
+            "reserved": 0,
+            "mean_cycles": 768.0569446684949,
+            "normalized_cycles": {
+              "min": 759,
+              "mean": 759.0569446684949,
+              "max": 773
+            }
+          },
+          "snapshot": {
+            "sum": 2777168,
+            "count": 6199,
+            "min": 448,
+            "max": 464,
+            "reserved": 0,
+            "mean_cycles": 448.0025810614615,
+            "normalized_cycles": {
+              "min": 439,
+              "mean": 439.0025810614615,
+              "max": 455
+            }
+          }
+        },
+        "flow": {
+          "key_attempts": 600,
+          "key_sent_ok": 600,
+          "key_queue_full": 0,
+          "key_wrong_context": 0,
+          "key_invalid_arg": 0,
+          "key_other_errors": 0,
+          "success_count": 600,
+          "failure_count": 0,
+          "pending_count": 0,
+          "drop_count": 0
+        },
+        "health_samples": 14
+      },
+      "readback": {
+        "status": "PASS",
+        "sha256": "ed84944874263cd6be2f2f97e6cade5048129be305699e5d5a7431d6689266e7",
+        "bytes": 53552,
+        "tail_ff": 9936,
+        "option_bytes_equal": true
+      },
+      "image": {
+        "flash_bytes": 53552,
+        "flash_end_exclusive": "0x800d130",
+        "erasure_pages_from_zero": 27,
+        "sram_including_msp": 49576,
+        "sram_remaining": 15960,
+        "reset": "0x8000c09",
+        "msp": "0x20010000",
+        "sha256": {
+          "elf": "0d20068eb6c8844e9fe861db8f8b8918ed88f420683889a7c43336c764d3a453",
+          "bin": "ed84944874263cd6be2f2f97e6cade5048129be305699e5d5a7431d6689266e7",
+          "hex": "04a104fe825e85c2b310b31e2ce1bb699d1919148f8b24a6f4746a634c5d3d27",
+          "map": "a70a683ccc7195df1d3499a08acaea7249fddf91fd21364b7df81239e668e332"
+        },
+        "tcb_bytes": 72,
+        "hex_omitted_zero_padding_bytes": 4,
+        "sections": {
+          ".isr_vector": 484,
+          ".text": 35832,
+          ".rodata": 17120,
+          ".ARM": 8,
+          ".preinit_array": 0,
+          ".init_array": 4,
+          ".fini_array": 4,
+          ".data": 96,
+          ".tdata": 0,
+          ".tbss": 0,
+          ".bss": 12616,
+          ".user_stacks": 32768,
+          ".msp_stack": 4096
+        }
+      },
+      "final_task_runs": [
+        600,
+        6785,
+        627,
+        74
+      ],
+      "faults": [
+        0,
+        0
+      ],
+      "guards": [
+        3735929054,
+        3735929054,
+        3735929054,
+        3735929054,
+        3735929054
+      ],
+      "assert_line": 0,
+      "clock": {
+        "clock_type": 2,
+        "frequency_hz": 72000000,
+        "tick_hz": 100,
+        "wrap_period_ticks": 5965,
+        "flags": 1
+      }
+    }
+  },
+  "delta_net_cycles": {
+    "pendsv": {
+      "min": 360,
+      "mean": 534.1331092436976,
+      "max": 701
+    },
+    "systick": {
+      "min": 574,
+      "mean": 636.5666129032259,
+      "max": 1053
+    }
+  },
+  "reference_budget_cycles": {
+    "pendsv": 800,
+    "systick": 2000
+  },
+  "hardware_boundary": {
+    "flash_start": "0x08000000",
+    "flash_end_exclusive": "0x0800f800",
+    "pages": [
+      0,
+      30
+    ],
+    "target": "STM32F103ZET6",
+    "clock_hz": 72000000,
+    "coverage": "both 62s"
+  },
+  "not_tested": [
+    "physical IRQ response",
+    "whole PRIMASK window",
+    "MSP watermark",
+    "P99",
+    "WCET"
+  ]
+}

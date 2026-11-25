@@ -1,0 +1,92 @@
+{
+  "state": 2,
+  "start_tick": 300,
+  "finish_tick": 6500,
+  "start_ms": 3000,
+  "finish_ms": 65000,
+  "task_switch_mask": 30,
+  "idle_dispatches": 3130,
+  "events": 600,
+  "completed_jobs": 0,
+  "bad_job_flags": 0,
+  "clock_hz": 72000000,
+  "rt_enabled": 0,
+  "paths": {
+    "empty_read": {
+      "sum": 64,
+      "count": 64,
+      "min": 1,
+      "max": 1,
+      "reserved": 0,
+      "mean_cycles": 1.0
+    },
+    "empty_call": {
+      "sum": 576,
+      "count": 64,
+      "min": 9,
+      "max": 9,
+      "reserved": 0,
+      "mean_cycles": 9.0
+    },
+    "pendsv": {
+      "sum": 21634219,
+      "count": 14875,
+      "min": 1308,
+      "max": 1704,
+      "reserved": 0,
+      "mean_cycles": 1454.4012773109243,
+      "normalized_cycles": {
+        "min": 1299,
+        "mean": 1445.4012773109243,
+        "max": 1695
+      }
+    },
+    "systick": {
+      "sum": 8069771,
+      "count": 6200,
+      "min": 1181,
+      "max": 3316,
+      "reserved": 0,
+      "mean_cycles": 1301.5759677419355,
+      "normalized_cycles": {
+        "min": 1172,
+        "mean": 1292.5759677419355,
+        "max": 3307
+      }
+    },
+    "release": {
+      "sum": 0,
+      "count": 0,
+      "min": 0,
+      "max": 0,
+      "reserved": 0
+    },
+    "complete": {
+      "sum": 0,
+      "count": 0,
+      "min": 0,
+      "max": 0,
+      "reserved": 0
+    },
+    "snapshot": {
+      "sum": 0,
+      "count": 0,
+      "min": 0,
+      "max": 0,
+      "reserved": 0
+    }
+  },
+  "flow": {
+    "key_attempts": 600,
+    "key_sent_ok": 600,
+    "key_queue_full": 0,
+    "key_wrong_context": 0,
+    "key_invalid_arg": 0,
+    "key_other_errors": 0,
+    "success_count": 600,
+    "failure_count": 0,
+    "pending_count": 0,
+    "drop_count": 0
+  },
+  "health_samples": 14
+}

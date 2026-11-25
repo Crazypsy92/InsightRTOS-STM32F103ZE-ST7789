@@ -65,7 +65,28 @@ static void idle_prepare(void)
     RTOS_ASSERT(rtos_task_stack_valid(&idle_task));
 }
 
+#if defined(INSIGHT_TEST_TIMING)
+#include "timing_bench.h"
+
+static __attribute__((noinline)) void sched_switch_body(void);
+
 void rtos_sched_switch(void)
+{
+    if (timing_bench_running() && rtos_port_in_pendsv()) {
+        const uint32_t start = timing_bench_stamp();
+        sched_switch_body();
+        const uint32_t elapsed = timing_bench_stamp() - start;
+        const uint32_t id = rtos_current_task->id;
+        timing_bench_record_switch(elapsed, id == RTOS_IDLE_TASK_ID ? 0U : id);
+        return;
+    }
+    sched_switch_body();
+}
+
+static void sched_switch_body(void)
+#else
+void rtos_sched_switch(void)
+#endif
 {
     RTOS_ASSERT(scheduler_started);
     RTOS_ASSERT(rtos_port_interrupts_masked());
