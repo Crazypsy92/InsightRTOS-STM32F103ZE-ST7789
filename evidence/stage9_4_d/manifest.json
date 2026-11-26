@@ -1,0 +1,766 @@
+{
+  "stage": "9.4-D",
+  "status": "PASS",
+  "base_sha": "c0bba0bb660eeea1f95aeafa75b012e30a99cab1",
+  "tools": [
+    "arm-none-eabi-gcc (15:14.2.rel1-1) 14.2.1 20241119",
+    "GNU ld (2.45.50.20251209-1ubuntu1+23build1) 2.45.50.20251209",
+    "cmake version 4.2.3",
+    "GNU gdb (Ubuntu 17.1-2ubuntu1) 17.1",
+    "Open On-Chip Debugger 0.12.0"
+  ],
+  "profiles": {
+    "DISPLAY_RTOS_O2_Semaphore": {
+      "flash_bytes": 27960,
+      "flash_end_exclusive": "0x8006d38",
+      "erasure_pages_from_zero": 14,
+      "sram_including_msp": 44576,
+      "sram_remaining": 20960,
+      "reset": "0x80006c9",
+      "msp": "0x20010000",
+      "sha256": {
+        "elf": "76fa5c601a0c26a80a1c1cdd8ce7662298c87b93246001e4752e348e7c198552",
+        "bin": "33cec385ac3a7ec454af1cd9572718219c9d66d8116e7f384ba9c2f357809936",
+        "hex": "43f2b7ff823fc09400a07b291a7b95c51df87cd05a1ac094910032c30aef56d5",
+        "map": "c464f535bce31d1f12a8200bf46c8867a631a1728139e89622864516b65aa302"
+      },
+      "tcb_bytes": 72,
+      "hex_omitted_zero_padding_bytes": 0,
+      "sections": {
+        ".isr_vector": 484,
+        ".text": 17524,
+        ".rodata": 9860,
+        ".preinit_array": 0,
+        ".init_array": 4,
+        ".fini_array": 4,
+        ".data": 84,
+        ".tdata": 0,
+        ".tbss": 0,
+        ".bss": 7624,
+        ".user_stacks": 32768,
+        ".msp_stack": 4096
+      }
+    },
+    "DISPLAY_RTOS_Debug_Semaphore": {
+      "flash_bytes": 41316,
+      "flash_end_exclusive": "0x800a164",
+      "erasure_pages_from_zero": 21,
+      "sram_including_msp": 44576,
+      "sram_remaining": 20960,
+      "reset": "0x8000cd1",
+      "msp": "0x20010000",
+      "sha256": {
+        "elf": "4ee672007ac175b6354b8758de449c8545ec18a97fa170ca574f61bf94f2341b",
+        "bin": "81023f10b17a0011ffabc6c8bbd34eeb4dfad76a2e00fef6fad290d4176219dc",
+        "hex": "8bcfcc2ef7745cb8a94ae1a10446ff889e00edbe95a81e1a890bd65d36a35300",
+        "map": "1c8b79320c79c7943353c9da0a4d8bbf002a25b8b941e8d93e64b9b028c3b0fc"
+      },
+      "tcb_bytes": 72,
+      "hex_omitted_zero_padding_bytes": 0,
+      "sections": {
+        ".isr_vector": 484,
+        ".text": 26548,
+        ".rodata": 14192,
+        ".preinit_array": 0,
+        ".init_array": 4,
+        ".fini_array": 4,
+        ".data": 84,
+        ".tdata": 0,
+        ".tbss": 0,
+        ".bss": 7620,
+        ".user_stacks": 32768,
+        ".msp_stack": 4096
+      }
+    },
+    "Stage94A_Frozen_Production": {
+      "flash_bytes": 53676,
+      "flash_end_exclusive": "0x800d1ac",
+      "erasure_pages_from_zero": 27,
+      "sram_including_msp": 50376,
+      "sram_remaining": 15160,
+      "reset": "0x8000c09",
+      "msp": "0x20010000",
+      "sha256": {
+        "elf": "ffd1dc85b097e7cc5498343776bd813a7b018174afd619e92f1ec0c3b22fffeb",
+        "bin": "361d1a18fed3eccbb2d28eef4e2b6b16218ef99cc84fe4049ac82b7a40e73418",
+        "hex": "b4595fd2c59a2197416a0f77d0059ff2af8f9a457424d7e35e67aa725d28e432",
+        "map": "b15eff02f3e3b7575f0845a68ba67c993d964b642ec5bcd1c072daaf362e9498"
+      },
+      "tcb_bytes": 72,
+      "hex_omitted_zero_padding_bytes": 4,
+      "sections": {
+        ".isr_vector": 484,
+        ".text": 36344,
+        ".rodata": 16732,
+        ".ARM": 8,
+        ".preinit_array": 0,
+        ".init_array": 4,
+        ".fini_array": 4,
+        ".data": 96,
+        ".tdata": 0,
+        ".tbss": 0,
+        ".bss": 13416,
+        ".user_stacks": 32768,
+        ".msp_stack": 4096
+      }
+    }
+  },
+  "host": {
+    "semaphore_ipc": 85,
+    "app": 9,
+    "rt": 9,
+    "job": 77,
+    "clock_validity": 53
+  },
+  "hardware": {
+    "target": "STM32F103ZET6",
+    "idcode": "0x10036414",
+    "uid": "31ffd8053031533628791143",
+    "stlink": "190057000D0000393333574E",
+    "flash_pages": [
+      0,
+      30
+    ],
+    "readbacks": {
+      "Semaphore": {
+        "status": "PASS",
+        "sha256": "33cec385ac3a7ec454af1cd9572718219c9d66d8116e7f384ba9c2f357809936",
+        "bytes": 27960,
+        "tail_ff": 35528,
+        "option_bytes_equal": true
+      },
+      "IntegratedProd": {
+        "status": "PASS",
+        "sha256": "361d1a18fed3eccbb2d28eef4e2b6b16218ef99cc84fe4049ac82b7a40e73418",
+        "bytes": 53676,
+        "tail_ff": 9812,
+        "option_bytes_equal": true
+      }
+    },
+    "health": {
+      "state": 2,
+      "tick": 202,
+      "tim2_ms": 2026,
+      "assert_line": 0,
+      "faults": [
+        0,
+        0
+      ],
+      "guards": [
+        3735929054,
+        3735929054,
+        3735929054,
+        3735929054,
+        3735929054
+      ]
+    },
+    "fixture": {
+      "state": 2,
+      "tick_start": 0,
+      "tick_end": 34,
+      "irq_samples": 6,
+      "waiting_count": 0,
+      "priorities": [
+        2,
+        5,
+        5,
+        6
+      ],
+      "irq_take_index": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "fifo_first": 6,
+      "fifo_head_before": [
+        2,
+        3,
+        1
+      ],
+      "refs": [
+        {
+          "slot": 0,
+          "generation": 1
+        },
+        {
+          "slot": 1,
+          "generation": 1
+        },
+        {
+          "slot": 2,
+          "generation": 1
+        },
+        {
+          "slot": 3,
+          "generation": 1
+        }
+      ],
+      "irq": [
+        {
+          "ipsr": 44,
+          "tim2_ms": 21,
+          "tick": 2,
+          "due_tick": 15,
+          "count_before": 0,
+          "count_after": 0,
+          "waiter_before": 2,
+          "state_before": 4,
+          "state_after": 1,
+          "waiter_after": 0,
+          "pendsv_pending": 1,
+          "take_before": 0,
+          "take_after": 0,
+          "step_snapshot": 0,
+          "give": 0
+        },
+        {
+          "ipsr": 44,
+          "tim2_ms": 51,
+          "tick": 5,
+          "due_tick": 18,
+          "count_before": 0,
+          "count_after": 0,
+          "waiter_before": 2,
+          "state_before": 4,
+          "state_after": 1,
+          "waiter_after": 0,
+          "pendsv_pending": 1,
+          "take_before": 1,
+          "take_after": 1,
+          "step_snapshot": 1,
+          "give": 0
+        },
+        {
+          "ipsr": 44,
+          "tim2_ms": 81,
+          "tick": 8,
+          "due_tick": 21,
+          "count_before": 0,
+          "count_after": 0,
+          "waiter_before": 2,
+          "state_before": 4,
+          "state_after": 1,
+          "waiter_after": 0,
+          "pendsv_pending": 1,
+          "take_before": 2,
+          "take_after": 2,
+          "step_snapshot": 2,
+          "give": 0
+        },
+        {
+          "ipsr": 44,
+          "tim2_ms": 111,
+          "tick": 11,
+          "due_tick": 24,
+          "count_before": 0,
+          "count_after": 0,
+          "waiter_before": 2,
+          "state_before": 4,
+          "state_after": 1,
+          "waiter_after": 0,
+          "pendsv_pending": 1,
+          "take_before": 3,
+          "take_after": 3,
+          "step_snapshot": 3,
+          "give": 0
+        },
+        {
+          "ipsr": 44,
+          "tim2_ms": 141,
+          "tick": 14,
+          "due_tick": 27,
+          "count_before": 0,
+          "count_after": 0,
+          "waiter_before": 2,
+          "state_before": 4,
+          "state_after": 1,
+          "waiter_after": 0,
+          "pendsv_pending": 1,
+          "take_before": 4,
+          "take_after": 4,
+          "step_snapshot": 4,
+          "give": 0
+        },
+        {
+          "ipsr": 44,
+          "tim2_ms": 191,
+          "tick": 19,
+          "due_tick": 20,
+          "count_before": 0,
+          "count_after": 0,
+          "waiter_before": 2,
+          "state_before": 4,
+          "state_after": 1,
+          "waiter_after": 0,
+          "pendsv_pending": 1,
+          "take_before": 5,
+          "take_after": 5,
+          "step_snapshot": 5,
+          "give": 0
+        }
+      ],
+      "irq_dispatch": [
+        {
+          "sequence": 33,
+          "tick": 2,
+          "generation": 1,
+          "arg0": 0,
+          "arg1": 413204479,
+          "slot": 1,
+          "event_type": 12
+        },
+        {
+          "sequence": 62,
+          "tick": 5,
+          "generation": 1,
+          "arg0": 0,
+          "arg1": 413204479,
+          "slot": 1,
+          "event_type": 12
+        },
+        {
+          "sequence": 91,
+          "tick": 8,
+          "generation": 1,
+          "arg0": 0,
+          "arg1": 413204479,
+          "slot": 1,
+          "event_type": 12
+        },
+        {
+          "sequence": 120,
+          "tick": 11,
+          "generation": 1,
+          "arg0": 0,
+          "arg1": 413204479,
+          "slot": 1,
+          "event_type": 12
+        },
+        {
+          "sequence": 149,
+          "tick": 14,
+          "generation": 1,
+          "arg0": 0,
+          "arg1": 413204479,
+          "slot": 1,
+          "event_type": 12
+        },
+        {
+          "sequence": 178,
+          "tick": 19,
+          "generation": 1,
+          "arg0": 0,
+          "arg1": 413204479,
+          "slot": 1,
+          "event_type": 12
+        }
+      ],
+      "fifo_dispatch": [
+        {
+          "sequence": 230,
+          "tick": 23,
+          "generation": 1,
+          "arg0": 1,
+          "arg1": 279314435,
+          "slot": 1,
+          "event_type": 12
+        },
+        {
+          "sequence": 243,
+          "tick": 24,
+          "generation": 1,
+          "arg0": 1,
+          "arg1": 279314435,
+          "slot": 2,
+          "event_type": 12
+        },
+        {
+          "sequence": 256,
+          "tick": 25,
+          "generation": 1,
+          "arg0": 1,
+          "arg1": 273022979,
+          "slot": 0,
+          "event_type": 12
+        }
+      ],
+      "irq_explain": [
+        {
+          "kind": 12,
+          "primary_slot": 1,
+          "primary_generation": 1,
+          "primary_stale": 0,
+          "related_slot": 65535,
+          "related_generation": 0,
+          "related_stale": 0,
+          "previous_priority": 0,
+          "next_priority": 5,
+          "commit_class": 6,
+          "reason_flags": 0,
+          "aux_value": 0
+        },
+        {
+          "kind": 12,
+          "primary_slot": 1,
+          "primary_generation": 1,
+          "primary_stale": 0,
+          "related_slot": 65535,
+          "related_generation": 0,
+          "related_stale": 0,
+          "previous_priority": 0,
+          "next_priority": 5,
+          "commit_class": 6,
+          "reason_flags": 0,
+          "aux_value": 0
+        },
+        {
+          "kind": 12,
+          "primary_slot": 1,
+          "primary_generation": 1,
+          "primary_stale": 0,
+          "related_slot": 65535,
+          "related_generation": 0,
+          "related_stale": 0,
+          "previous_priority": 0,
+          "next_priority": 5,
+          "commit_class": 6,
+          "reason_flags": 0,
+          "aux_value": 0
+        },
+        {
+          "kind": 12,
+          "primary_slot": 1,
+          "primary_generation": 1,
+          "primary_stale": 0,
+          "related_slot": 65535,
+          "related_generation": 0,
+          "related_stale": 0,
+          "previous_priority": 0,
+          "next_priority": 5,
+          "commit_class": 6,
+          "reason_flags": 0,
+          "aux_value": 0
+        },
+        {
+          "kind": 12,
+          "primary_slot": 1,
+          "primary_generation": 1,
+          "primary_stale": 0,
+          "related_slot": 65535,
+          "related_generation": 0,
+          "related_stale": 0,
+          "previous_priority": 0,
+          "next_priority": 5,
+          "commit_class": 6,
+          "reason_flags": 0,
+          "aux_value": 0
+        },
+        {
+          "kind": 12,
+          "primary_slot": 1,
+          "primary_generation": 1,
+          "primary_stale": 0,
+          "related_slot": 65535,
+          "related_generation": 0,
+          "related_stale": 0,
+          "previous_priority": 0,
+          "next_priority": 5,
+          "commit_class": 6,
+          "reason_flags": 0,
+          "aux_value": 0
+        }
+      ],
+      "fifo_explain": [
+        {
+          "kind": 12,
+          "primary_slot": 1,
+          "primary_generation": 1,
+          "primary_stale": 0,
+          "related_slot": 3,
+          "related_generation": 1,
+          "related_stale": 0,
+          "previous_priority": 6,
+          "next_priority": 5,
+          "commit_class": 4,
+          "reason_flags": 0,
+          "aux_value": 0
+        },
+        {
+          "kind": 12,
+          "primary_slot": 2,
+          "primary_generation": 1,
+          "primary_stale": 0,
+          "related_slot": 3,
+          "related_generation": 1,
+          "related_stale": 0,
+          "previous_priority": 6,
+          "next_priority": 5,
+          "commit_class": 4,
+          "reason_flags": 0,
+          "aux_value": 0
+        },
+        {
+          "kind": 12,
+          "primary_slot": 0,
+          "primary_generation": 1,
+          "primary_stale": 0,
+          "related_slot": 3,
+          "related_generation": 1,
+          "related_stale": 0,
+          "previous_priority": 6,
+          "next_priority": 2,
+          "commit_class": 4,
+          "reason_flags": 0,
+          "aux_value": 0
+        }
+      ],
+      "takes": [
+        {
+          "worker": 1,
+          "tick": 2,
+          "ipsr": 0,
+          "irq_samples": 1,
+          "count": 0,
+          "take": 0
+        },
+        {
+          "worker": 1,
+          "tick": 5,
+          "ipsr": 0,
+          "irq_samples": 2,
+          "count": 0,
+          "take": 0
+        },
+        {
+          "worker": 1,
+          "tick": 8,
+          "ipsr": 0,
+          "irq_samples": 3,
+          "count": 0,
+          "take": 0
+        },
+        {
+          "worker": 1,
+          "tick": 11,
+          "ipsr": 0,
+          "irq_samples": 4,
+          "count": 0,
+          "take": 0
+        },
+        {
+          "worker": 1,
+          "tick": 14,
+          "ipsr": 0,
+          "irq_samples": 5,
+          "count": 0,
+          "take": 0
+        },
+        {
+          "worker": 1,
+          "tick": 19,
+          "ipsr": 0,
+          "irq_samples": 6,
+          "count": 0,
+          "take": 0
+        },
+        {
+          "worker": 1,
+          "tick": 23,
+          "ipsr": 0,
+          "irq_samples": 6,
+          "count": 0,
+          "take": 0
+        },
+        {
+          "worker": 2,
+          "tick": 24,
+          "ipsr": 0,
+          "irq_samples": 6,
+          "count": 0,
+          "take": 0
+        },
+        {
+          "worker": 0,
+          "tick": 25,
+          "ipsr": 0,
+          "irq_samples": 6,
+          "count": 0,
+          "take": 0
+        },
+        {
+          "worker": 1,
+          "tick": 30,
+          "ipsr": 0,
+          "irq_samples": 6,
+          "count": 0,
+          "take": 7
+        },
+        {
+          "worker": 2,
+          "tick": 32,
+          "ipsr": 0,
+          "irq_samples": 6,
+          "count": 0,
+          "take": 10
+        },
+        {
+          "worker": 0,
+          "tick": 0,
+          "ipsr": 0,
+          "irq_samples": 0,
+          "count": 0,
+          "take": 0
+        },
+        {
+          "worker": 0,
+          "tick": 0,
+          "ipsr": 0,
+          "irq_samples": 0,
+          "count": 0,
+          "take": 0
+        },
+        {
+          "worker": 0,
+          "tick": 0,
+          "ipsr": 0,
+          "irq_samples": 0,
+          "count": 0,
+          "take": 0
+        },
+        {
+          "worker": 0,
+          "tick": 0,
+          "ipsr": 0,
+          "irq_samples": 0,
+          "count": 0,
+          "take": 0
+        },
+        {
+          "worker": 0,
+          "tick": 0,
+          "ipsr": 0,
+          "irq_samples": 0,
+          "count": 0,
+          "take": 0
+        }
+      ],
+      "take_count": 11,
+      "count_checks": 22,
+      "timeout_index": 9,
+      "timeout_due": 30,
+      "cancelled_index": 10,
+      "counts": [
+        {
+          "code": 0,
+          "count": 0
+        },
+        {
+          "code": 0,
+          "count": 1
+        },
+        {
+          "code": 0,
+          "count": 2
+        },
+        {
+          "code": 0,
+          "count": 3
+        },
+        {
+          "code": 6,
+          "count": 3
+        },
+        {
+          "code": 0,
+          "count": 2
+        },
+        {
+          "code": 0,
+          "count": 1
+        },
+        {
+          "code": 0,
+          "count": 0
+        },
+        {
+          "code": 5,
+          "count": 0
+        },
+        {
+          "code": 4,
+          "count": 0
+        },
+        {
+          "code": 0,
+          "count": 1
+        },
+        {
+          "code": 6,
+          "count": 1
+        },
+        {
+          "code": 0,
+          "count": 0
+        },
+        {
+          "code": 5,
+          "count": 0
+        },
+        {
+          "code": 5,
+          "count": 0
+        },
+        {
+          "code": 5,
+          "count": 0
+        },
+        {
+          "code": 5,
+          "count": 0
+        },
+        {
+          "code": 5,
+          "count": 0
+        },
+        {
+          "code": 5,
+          "count": 0
+        },
+        {
+          "code": 0,
+          "count": 1
+        },
+        {
+          "code": 0,
+          "count": 0
+        },
+        {
+          "code": 5,
+          "count": 0
+        },
+        {
+          "code": 0,
+          "count": 0
+        },
+        {
+          "code": 0,
+          "count": 0
+        }
+      ]
+    },
+    "raw_sha256": "b96410e17be820e0334b5b9c1905ab60cb54718720b5559e7ab6155b525d04b3",
+    "production_seq": [
+      4,
+      8
+    ]
+  },
+  "not_tested": [
+    "Debug HIL",
+    "all near-deadline instruction orderings",
+    "physical IRQ latency",
+    "extended stability"
+  ]
+}

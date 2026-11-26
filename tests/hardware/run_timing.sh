@@ -12,6 +12,7 @@ case "$mode" in
     Integrated) evidence=evidence/stage9_4_a ;;
     Mutex) evidence=evidence/stage9_4_b ;;
     Backpressure) evidence=evidence/stage9_4_c ;;
+    Semaphore) evidence=evidence/stage9_4_d ;;
 esac
 log="$evidence/logs"
 if [[ $mode == Mutex ]]; then log="$log/hardware"; fi
@@ -30,6 +31,7 @@ case "$mode" in
     Integrated) profiles=(Integrated IntegratedProd) ;;
     Mutex) profiles=(Mutex IntegratedProd) ;;
     Backpressure) profiles=(Backpressure IntegratedProd) ;;
+    Semaphore) profiles=(Semaphore IntegratedProd) ;;
     *) exit 2 ;;
 esac
 
@@ -41,8 +43,9 @@ for name in "${profiles[@]}"; do
         IntegratedProd) profile=DISPLAY_RTOS_O2_Integrated ;;
         Mutex) profile=DISPLAY_RTOS_O2_Mutex ;;
         Backpressure) profile=DISPLAY_RTOS_O2_Backpressure ;;
+        Semaphore) profile=DISPLAY_RTOS_O2_Semaphore ;;
     esac
-    if [[ ( $mode == Mutex || $mode == Backpressure ) && $name == IntegratedProd ]]; then profile=Stage94A_Frozen_Production; fi
+    if [[ ( $mode == Mutex || $mode == Backpressure || $mode == Semaphore ) && $name == IntegratedProd ]]; then profile=Stage94A_Frozen_Production; fi
     f=$(realpath "build/$profile/insightrtos_display.bin")
     bin="${f%.bin}"
     proof="$log/firmware-audit.json"
@@ -114,6 +117,9 @@ PY
           --out "$prefix-fixture.json" | tee "$prefix-sampler.log"
     elif [[ $name == Backpressure ]]; then
         PYTHONDONTWRITEBYTECODE=1 python3 tests/hardware/read_backpressure.py --elf "$bin.elf" \
+          --out "$prefix-fixture.json" | tee "$prefix-sampler.log"
+    elif [[ $name == Semaphore ]]; then
+        PYTHONDONTWRITEBYTECODE=1 python3 tests/hardware/read_semaphore.py --elf "$bin.elf" \
           --out "$prefix-fixture.json" | tee "$prefix-sampler.log"
     elif [[ $name == Integrated || $name == IntegratedProd ]]; then
         PYTHONDONTWRITEBYTECODE=1 python3 tests/hardware/read_integrated.py --elf "$bin.elf" \

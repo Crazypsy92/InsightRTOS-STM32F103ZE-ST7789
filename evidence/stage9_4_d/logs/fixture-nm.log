@@ -1,0 +1,7 @@
+00000000 A _Min_Heap_Size
+2000f000 B __msp_stack_bottom__
+20010000 B __msp_stack_top__
+20001e20 00008000 b display_stacks
+2000024c 000005fc B g_semaphore_fixture
+20001ac0 00000200 b idle_stack
+2000187c 00000240 b task_pool
