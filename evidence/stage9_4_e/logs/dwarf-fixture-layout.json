@@ -1,0 +1,448 @@
+{
+  "g_lifecycle_fixture": {
+    "address": 536871392,
+    "size": 4048,
+    "fields": {
+      "state": {
+        "offset": 0,
+        "size": 4,
+        "signed": false
+      },
+      "start": {
+        "offset": 4,
+        "size": 4,
+        "signed": false
+      },
+      "end": {
+        "offset": 8,
+        "size": 4,
+        "signed": false
+      },
+      "completed": {
+        "offset": 12,
+        "size": 4,
+        "signed": false
+      },
+      "cases": {
+        "offset": 16,
+        "size": 4032,
+        "element": {
+          "size": 672,
+          "fields": {
+            "ref": {
+              "offset": 0,
+              "size": 8,
+              "fields": {
+                "slot": {
+                  "offset": 0,
+                  "size": 4,
+                  "signed": false
+                },
+                "generation": {
+                  "offset": 4,
+                  "size": 4,
+                  "signed": false
+                }
+              }
+            },
+            "self": {
+              "offset": 8,
+              "size": 8,
+              "fields": {
+                "slot": {
+                  "offset": 0,
+                  "size": 4,
+                  "signed": false
+                },
+                "generation": {
+                  "offset": 4,
+                  "size": 4,
+                  "signed": false
+                }
+              }
+            },
+            "stack": {
+              "offset": 16,
+              "size": 4,
+              "signed": false
+            },
+            "psp": {
+              "offset": 20,
+              "size": 4,
+              "signed": false
+            },
+            "control": {
+              "offset": 24,
+              "size": 4,
+              "signed": false
+            },
+            "ipsr": {
+              "offset": 28,
+              "size": 4,
+              "signed": false
+            },
+            "running": {
+              "offset": 32,
+              "size": 4,
+              "signed": false
+            },
+            "started": {
+              "offset": 36,
+              "size": 4,
+              "signed": false
+            },
+            "resumes": {
+              "offset": 40,
+              "size": 4,
+              "signed": false
+            },
+            "resumed": {
+              "offset": 44,
+              "size": 4,
+              "signed": false
+            },
+            "stop_initial": {
+              "offset": 48,
+              "size": 4,
+              "signed": false
+            },
+            "stop_seen": {
+              "offset": 52,
+              "size": 4,
+              "signed": false
+            },
+            "ready": {
+              "offset": 56,
+              "size": 4,
+              "signed": false
+            },
+            "terminated": {
+              "offset": 60,
+              "size": 4,
+              "signed": false
+            },
+            "guard": {
+              "offset": 64,
+              "size": 4,
+              "signed": false
+            },
+            "trace_count": {
+              "offset": 68,
+              "size": 4,
+              "signed": false
+            },
+            "take": {
+              "offset": 72,
+              "size": 4,
+              "signed": true
+            },
+            "give": {
+              "offset": 76,
+              "size": 4,
+              "signed": true
+            },
+            "stop": {
+              "offset": 80,
+              "size": 4,
+              "signed": true
+            },
+            "stop_after_exit": {
+              "offset": 84,
+              "size": 4,
+              "signed": true
+            },
+            "old_snapshot": {
+              "offset": 88,
+              "size": 4,
+              "signed": true
+            },
+            "old_stop": {
+              "offset": 92,
+              "size": 4,
+              "signed": true
+            },
+            "no_permit": {
+              "offset": 96,
+              "size": 4,
+              "signed": true
+            },
+            "before": {
+              "offset": 100,
+              "size": 28,
+              "fields": {
+                "state": {
+                  "offset": 0,
+                  "size": 4,
+                  "signed": false
+                },
+                "reason": {
+                  "offset": 4,
+                  "size": 4,
+                  "signed": false
+                },
+                "result": {
+                  "offset": 8,
+                  "size": 4,
+                  "signed": false
+                },
+                "links": {
+                  "offset": 12,
+                  "size": 4,
+                  "signed": false
+                },
+                "wake": {
+                  "offset": 16,
+                  "size": 4,
+                  "signed": false
+                },
+                "count": {
+                  "offset": 20,
+                  "size": 4,
+                  "signed": false
+                },
+                "waiter": {
+                  "offset": 24,
+                  "size": 4,
+                  "signed": false
+                }
+              }
+            },
+            "granted": {
+              "offset": 128,
+              "size": 28,
+              "fields": {
+                "state": {
+                  "offset": 0,
+                  "size": 4,
+                  "signed": false
+                },
+                "reason": {
+                  "offset": 4,
+                  "size": 4,
+                  "signed": false
+                },
+                "result": {
+                  "offset": 8,
+                  "size": 4,
+                  "signed": false
+                },
+                "links": {
+                  "offset": 12,
+                  "size": 4,
+                  "signed": false
+                },
+                "wake": {
+                  "offset": 16,
+                  "size": 4,
+                  "signed": false
+                },
+                "count": {
+                  "offset": 20,
+                  "size": 4,
+                  "signed": false
+                },
+                "waiter": {
+                  "offset": 24,
+                  "size": 4,
+                  "signed": false
+                }
+              }
+            },
+            "after": {
+              "offset": 156,
+              "size": 28,
+              "fields": {
+                "state": {
+                  "offset": 0,
+                  "size": 4,
+                  "signed": false
+                },
+                "reason": {
+                  "offset": 4,
+                  "size": 4,
+                  "signed": false
+                },
+                "result": {
+                  "offset": 8,
+                  "size": 4,
+                  "signed": false
+                },
+                "links": {
+                  "offset": 12,
+                  "size": 4,
+                  "signed": false
+                },
+                "wake": {
+                  "offset": 16,
+                  "size": 4,
+                  "signed": false
+                },
+                "count": {
+                  "offset": 20,
+                  "size": 4,
+                  "signed": false
+                },
+                "waiter": {
+                  "offset": 24,
+                  "size": 4,
+                  "signed": false
+                }
+              }
+            },
+            "before_due": {
+              "offset": 184,
+              "size": 28,
+              "fields": {
+                "state": {
+                  "offset": 0,
+                  "size": 4,
+                  "signed": false
+                },
+                "reason": {
+                  "offset": 4,
+                  "size": 4,
+                  "signed": false
+                },
+                "result": {
+                  "offset": 8,
+                  "size": 4,
+                  "signed": false
+                },
+                "links": {
+                  "offset": 12,
+                  "size": 4,
+                  "signed": false
+                },
+                "wake": {
+                  "offset": 16,
+                  "size": 4,
+                  "signed": false
+                },
+                "count": {
+                  "offset": 20,
+                  "size": 4,
+                  "signed": false
+                },
+                "waiter": {
+                  "offset": 24,
+                  "size": 4,
+                  "signed": false
+                }
+              }
+            },
+            "clean": {
+              "offset": 212,
+              "size": 28,
+              "fields": {
+                "state": {
+                  "offset": 0,
+                  "size": 4,
+                  "signed": false
+                },
+                "reason": {
+                  "offset": 4,
+                  "size": 4,
+                  "signed": false
+                },
+                "result": {
+                  "offset": 8,
+                  "size": 4,
+                  "signed": false
+                },
+                "links": {
+                  "offset": 12,
+                  "size": 4,
+                  "signed": false
+                },
+                "wake": {
+                  "offset": 16,
+                  "size": 4,
+                  "signed": false
+                },
+                "count": {
+                  "offset": 20,
+                  "size": 4,
+                  "signed": false
+                },
+                "waiter": {
+                  "offset": 24,
+                  "size": 4,
+                  "signed": false
+                }
+              }
+            },
+            "trace": {
+              "offset": 240,
+              "size": 432,
+              "element": {
+                "size": 24,
+                "fields": {
+                  "sequence": {
+                    "offset": 0,
+                    "size": 4,
+                    "signed": false
+                  },
+                  "tick": {
+                    "offset": 4,
+                    "size": 4,
+                    "signed": false
+                  },
+                  "generation": {
+                    "offset": 8,
+                    "size": 4,
+                    "signed": false
+                  },
+                  "arg0": {
+                    "offset": 12,
+                    "size": 4,
+                    "signed": false
+                  },
+                  "arg1": {
+                    "offset": 16,
+                    "size": 4,
+                    "signed": false
+                  },
+                  "slot": {
+                    "offset": 20,
+                    "size": 2,
+                    "signed": false
+                  },
+                  "event_type": {
+                    "offset": 22,
+                    "size": 2,
+                    "signed": false
+                  }
+                }
+              },
+              "count": 18
+            }
+          }
+        },
+        "count": 6
+      }
+    }
+  },
+  "kernel_ticks": {
+    "address": 536881020,
+    "size": 4,
+    "signed": false
+  },
+  "g_sys_tick": {
+    "address": 536871364,
+    "size": 4,
+    "signed": false
+  },
+  "g_rtos_assert_line": {
+    "address": 536871360,
+    "size": 4,
+    "signed": false
+  },
+  "display_stacks": {
+    "address": 536881032,
+    "size": 32768
+  },
+  "idle_stack": {
+    "address": 536880168,
+    "size": 512
+  }
+}

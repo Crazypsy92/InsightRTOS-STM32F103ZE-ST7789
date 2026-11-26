@@ -1,0 +1,67 @@
+DISPLAY_RTOS_O2_Lifecycle
+00000000 A _Min_Heap_Size
+08000974 00000012 T _sbrk
+20002788 00008000 b display_stacks
+200001e0 00000fd0 B g_lifecycle_fixture
+08001444 00000060 T lifecycle_fixture_start
+
+build/DISPLAY_RTOS_O2_Lifecycle/insightrtos_display.elf:     file format elf32-littlearm
+
+
+Disassembly of section .text:
+
+08000974 <_sbrk>:
+ 8000974:	b508      	push	{r3, lr}
+ 8000976:	f7ff fcc7 	bl	8000308 <__errno>
+ 800097a:	220c      	movs	r2, #12
+ 800097c:	4603      	mov	r3, r0
+ 800097e:	f04f 30ff 	mov.w	r0, #4294967295	@ 0xffffffff
+ 8000982:	601a      	str	r2, [r3, #0]
+ 8000984:	bd08      	pop	{r3, pc}
+DISPLAY_RTOS_Debug_Lifecycle
+00000000 A _Min_Heap_Size
+08001184 0000001e T _sbrk
+20002788 00008000 b display_stacks
+200001cc 00000fd0 B g_lifecycle_fixture
+0800202c 00000068 T lifecycle_fixture_start
+
+build/DISPLAY_RTOS_Debug_Lifecycle/insightrtos_display.elf:     file format elf32-littlearm
+
+
+Disassembly of section .text:
+
+08001184 <_sbrk>:
+ 8001184:	b580      	push	{r7, lr}
+ 8001186:	b082      	sub	sp, #8
+ 8001188:	af00      	add	r7, sp, #0
+ 800118a:	6078      	str	r0, [r7, #4]
+ 800118c:	f7ff f8bc 	bl	8000308 <__errno>
+ 8001190:	4603      	mov	r3, r0
+ 8001192:	220c      	movs	r2, #12
+ 8001194:	601a      	str	r2, [r3, #0]
+ 8001196:	f04f 33ff 	mov.w	r3, #4294967295	@ 0xffffffff
+ 800119a:	4618      	mov	r0, r3
+ 800119c:	3708      	adds	r7, #8
+ 800119e:	46bd      	mov	sp, r7
+ 80011a0:	bd80      	pop	{r7, pc}
+DISPLAY_RTOS_O2_Integrated
+00000000 A _Min_Heap_Size
+08002d44 00000012 T _sbrk
+200034c8 00008000 b display_stacks
+
+build/DISPLAY_RTOS_O2_Integrated/insightrtos_display.elf:     file format elf32-littlearm
+
+
+Disassembly of section .text:
+
+08002d44 <_sbrk>:
+ 8002d44:	b508      	push	{r3, lr}
+ 8002d46:	f7fd fd7f 	bl	8000848 <__errno>
+ 8002d4a:	220c      	movs	r2, #12
+ 8002d4c:	4603      	mov	r3, r0
+ 8002d4e:	f04f 30ff 	mov.w	r0, #4294967295	@ 0xffffffff
+ 8002d52:	601a      	str	r2, [r3, #0]
+ 8002d54:	bd08      	pop	{r3, pc}
+361d1a18fed3eccbb2d28eef4e2b6b16218ef99cc84fe4049ac82b7a40e73418  build/Stage94A_Frozen_Production/insightrtos_display.bin
+2d9c7cfff30bed60ab038dd26d5655586cb6386ecb12efae2f5311609cdc5520  build/DISPLAY_RTOS_O2_Integrated/insightrtos_display.bin
+PASS: zero heap, no allocator symbols, no fixture symbols in formal O2

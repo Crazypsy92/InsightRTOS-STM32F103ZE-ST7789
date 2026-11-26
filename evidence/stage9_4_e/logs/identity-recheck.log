@@ -1,0 +1,18 @@
+2026-11-27T00:01:29+08:00
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 001 Device 002: ID 214b:7250 Huasheng Electronics USB2.0 HUB
+Bus 001 Device 003: ID 0408:1042 Quanta Computer, Inc. HD Camera
+Bus 001 Device 005: ID 260d:1010 E-Signal USB Gaming Mouse
+Bus 001 Device 006: ID 258a:0060 SINO WEALTH Gaming KB
+Bus 001 Device 015: ID 05ac:12a8 Apple, Inc. iPhone 5/5C/5S/6/SE/7/8/X/XR
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 002 Device 002: ID 0bda:9210 Realtek Semiconductor Corp. RTL9210 M.2 NVME Adapter
+Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 003 Device 002: ID 8087:0029 Intel Corp. AX200 Bluetooth
+Bus 003 Device 003: ID 27c6:5125 Shenzhen Goodix Technology Co.,Ltd. Goodix Fingerprint Device
+Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Open On-Chip Debugger 0.12.0
+Licensed under GNU GPL v2
+For bug reports, read
+	http://openocd.org/doc/doxygen/bugs.html
+Error: open failed
