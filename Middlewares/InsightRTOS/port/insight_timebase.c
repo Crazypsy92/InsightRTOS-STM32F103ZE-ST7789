@@ -2,6 +2,9 @@
 #include "main.h"
 #include "delay.h"
 #include "rtos_assert.h"
+#ifdef INSIGHT_TEST_SEMAPHORE
+#include "semaphore_fixture.h"
+#endif
 #if defined(INSIGHT_TEST_MSP) && INSIGHT_TEST_MSP
 #include "msp_bench.h"
 #endif
@@ -57,7 +60,9 @@ void TIM2_IRQHandler(void)
         TIM2->SR = 0U;
         ++g_tim2_ms_count;
         ++g_sys_tick;
-#ifdef INSIGHT_DISPLAY_RTOS
+#if defined(INSIGHT_TEST_SEMAPHORE)
+        semaphore_fixture_tim2();
+#elif defined(INSIGHT_DISPLAY_RTOS)
         KEY_OnSysTick1ms();
 #endif
     }

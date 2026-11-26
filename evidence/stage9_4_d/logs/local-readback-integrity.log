@@ -1,0 +1,14 @@
+./DISPLAY_RTOS_Debug_Semaphore/insightrtos_display.bin: OK
+./DISPLAY_RTOS_Debug_Semaphore/insightrtos_display.elf: OK
+./DISPLAY_RTOS_Debug_Semaphore/insightrtos_display.hex: OK
+./DISPLAY_RTOS_Debug_Semaphore/insightrtos_display.map: OK
+./DISPLAY_RTOS_O2_Semaphore/insightrtos_display.bin: OK
+./DISPLAY_RTOS_O2_Semaphore/insightrtos_display.elf: OK
+./DISPLAY_RTOS_O2_Semaphore/insightrtos_display.hex: OK
+./DISPLAY_RTOS_O2_Semaphore/insightrtos_display.map: OK
+./readback/IntegratedProd-after.bin: OK
+./readback/IntegratedProd-ob-after.bin: OK
+./readback/IntegratedProd-ob-before.bin: OK
+./readback/Semaphore-after.bin: OK
+./readback/Semaphore-ob-after.bin: OK
+./readback/Semaphore-ob-before.bin: OK

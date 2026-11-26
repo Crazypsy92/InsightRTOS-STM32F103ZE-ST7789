@@ -1,0 +1,4 @@
+ipsr rejected: IRQ 0: source/return/PendSV
+count_after rejected: IRQ 0: direct grant
+take_after rejected: IRQ 0: ISR/Thread order or phantom permit
+On-target capture and three invalid variants: PASS

@@ -1,0 +1,617 @@
+{
+  "report": {
+    "state": 2,
+    "tick_start": 0,
+    "tick_end": 34,
+    "irq_samples": 6,
+    "waiting_count": 0,
+    "priorities": [
+      2,
+      5,
+      5,
+      6
+    ],
+    "irq_take_index": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "fifo_first": 6,
+    "fifo_head_before": [
+      2,
+      3,
+      1
+    ],
+    "refs": [
+      {
+        "slot": 0,
+        "generation": 1
+      },
+      {
+        "slot": 1,
+        "generation": 1
+      },
+      {
+        "slot": 2,
+        "generation": 1
+      },
+      {
+        "slot": 3,
+        "generation": 1
+      }
+    ],
+    "irq": [
+      {
+        "ipsr": 44,
+        "tim2_ms": 21,
+        "tick": 2,
+        "due_tick": 15,
+        "count_before": 0,
+        "count_after": 0,
+        "waiter_before": 2,
+        "state_before": 4,
+        "state_after": 1,
+        "waiter_after": 0,
+        "pendsv_pending": 1,
+        "take_before": 0,
+        "take_after": 0,
+        "step_snapshot": 0,
+        "give": 0
+      },
+      {
+        "ipsr": 44,
+        "tim2_ms": 51,
+        "tick": 5,
+        "due_tick": 18,
+        "count_before": 0,
+        "count_after": 0,
+        "waiter_before": 2,
+        "state_before": 4,
+        "state_after": 1,
+        "waiter_after": 0,
+        "pendsv_pending": 1,
+        "take_before": 1,
+        "take_after": 1,
+        "step_snapshot": 1,
+        "give": 0
+      },
+      {
+        "ipsr": 44,
+        "tim2_ms": 81,
+        "tick": 8,
+        "due_tick": 21,
+        "count_before": 0,
+        "count_after": 0,
+        "waiter_before": 2,
+        "state_before": 4,
+        "state_after": 1,
+        "waiter_after": 0,
+        "pendsv_pending": 1,
+        "take_before": 2,
+        "take_after": 2,
+        "step_snapshot": 2,
+        "give": 0
+      },
+      {
+        "ipsr": 44,
+        "tim2_ms": 111,
+        "tick": 11,
+        "due_tick": 24,
+        "count_before": 0,
+        "count_after": 0,
+        "waiter_before": 2,
+        "state_before": 4,
+        "state_after": 1,
+        "waiter_after": 0,
+        "pendsv_pending": 1,
+        "take_before": 3,
+        "take_after": 3,
+        "step_snapshot": 3,
+        "give": 0
+      },
+      {
+        "ipsr": 44,
+        "tim2_ms": 141,
+        "tick": 14,
+        "due_tick": 27,
+        "count_before": 0,
+        "count_after": 0,
+        "waiter_before": 2,
+        "state_before": 4,
+        "state_after": 1,
+        "waiter_after": 0,
+        "pendsv_pending": 1,
+        "take_before": 4,
+        "take_after": 4,
+        "step_snapshot": 4,
+        "give": 0
+      },
+      {
+        "ipsr": 44,
+        "tim2_ms": 191,
+        "tick": 19,
+        "due_tick": 20,
+        "count_before": 0,
+        "count_after": 0,
+        "waiter_before": 2,
+        "state_before": 4,
+        "state_after": 1,
+        "waiter_after": 0,
+        "pendsv_pending": 1,
+        "take_before": 5,
+        "take_after": 5,
+        "step_snapshot": 5,
+        "give": 0
+      }
+    ],
+    "irq_dispatch": [
+      {
+        "sequence": 33,
+        "tick": 2,
+        "generation": 1,
+        "arg0": 0,
+        "arg1": 413204479,
+        "slot": 1,
+        "event_type": 12
+      },
+      {
+        "sequence": 62,
+        "tick": 5,
+        "generation": 1,
+        "arg0": 0,
+        "arg1": 413204479,
+        "slot": 1,
+        "event_type": 12
+      },
+      {
+        "sequence": 91,
+        "tick": 8,
+        "generation": 1,
+        "arg0": 0,
+        "arg1": 413204479,
+        "slot": 1,
+        "event_type": 12
+      },
+      {
+        "sequence": 120,
+        "tick": 11,
+        "generation": 1,
+        "arg0": 0,
+        "arg1": 413204479,
+        "slot": 1,
+        "event_type": 12
+      },
+      {
+        "sequence": 149,
+        "tick": 14,
+        "generation": 1,
+        "arg0": 0,
+        "arg1": 413204479,
+        "slot": 1,
+        "event_type": 12
+      },
+      {
+        "sequence": 178,
+        "tick": 19,
+        "generation": 1,
+        "arg0": 0,
+        "arg1": 413204479,
+        "slot": 1,
+        "event_type": 12
+      }
+    ],
+    "fifo_dispatch": [
+      {
+        "sequence": 230,
+        "tick": 23,
+        "generation": 1,
+        "arg0": 1,
+        "arg1": 279314435,
+        "slot": 1,
+        "event_type": 12
+      },
+      {
+        "sequence": 243,
+        "tick": 24,
+        "generation": 1,
+        "arg0": 1,
+        "arg1": 279314435,
+        "slot": 2,
+        "event_type": 12
+      },
+      {
+        "sequence": 256,
+        "tick": 25,
+        "generation": 1,
+        "arg0": 1,
+        "arg1": 273022979,
+        "slot": 0,
+        "event_type": 12
+      }
+    ],
+    "irq_explain": [
+      {
+        "kind": 12,
+        "primary_slot": 1,
+        "primary_generation": 1,
+        "primary_stale": 0,
+        "related_slot": 65535,
+        "related_generation": 0,
+        "related_stale": 0,
+        "previous_priority": 0,
+        "next_priority": 5,
+        "commit_class": 6,
+        "reason_flags": 0,
+        "aux_value": 0
+      },
+      {
+        "kind": 12,
+        "primary_slot": 1,
+        "primary_generation": 1,
+        "primary_stale": 0,
+        "related_slot": 65535,
+        "related_generation": 0,
+        "related_stale": 0,
+        "previous_priority": 0,
+        "next_priority": 5,
+        "commit_class": 6,
+        "reason_flags": 0,
+        "aux_value": 0
+      },
+      {
+        "kind": 12,
+        "primary_slot": 1,
+        "primary_generation": 1,
+        "primary_stale": 0,
+        "related_slot": 65535,
+        "related_generation": 0,
+        "related_stale": 0,
+        "previous_priority": 0,
+        "next_priority": 5,
+        "commit_class": 6,
+        "reason_flags": 0,
+        "aux_value": 0
+      },
+      {
+        "kind": 12,
+        "primary_slot": 1,
+        "primary_generation": 1,
+        "primary_stale": 0,
+        "related_slot": 65535,
+        "related_generation": 0,
+        "related_stale": 0,
+        "previous_priority": 0,
+        "next_priority": 5,
+        "commit_class": 6,
+        "reason_flags": 0,
+        "aux_value": 0
+      },
+      {
+        "kind": 12,
+        "primary_slot": 1,
+        "primary_generation": 1,
+        "primary_stale": 0,
+        "related_slot": 65535,
+        "related_generation": 0,
+        "related_stale": 0,
+        "previous_priority": 0,
+        "next_priority": 5,
+        "commit_class": 6,
+        "reason_flags": 0,
+        "aux_value": 0
+      },
+      {
+        "kind": 12,
+        "primary_slot": 1,
+        "primary_generation": 1,
+        "primary_stale": 0,
+        "related_slot": 65535,
+        "related_generation": 0,
+        "related_stale": 0,
+        "previous_priority": 0,
+        "next_priority": 5,
+        "commit_class": 6,
+        "reason_flags": 0,
+        "aux_value": 0
+      }
+    ],
+    "fifo_explain": [
+      {
+        "kind": 12,
+        "primary_slot": 1,
+        "primary_generation": 1,
+        "primary_stale": 0,
+        "related_slot": 3,
+        "related_generation": 1,
+        "related_stale": 0,
+        "previous_priority": 6,
+        "next_priority": 5,
+        "commit_class": 4,
+        "reason_flags": 0,
+        "aux_value": 0
+      },
+      {
+        "kind": 12,
+        "primary_slot": 2,
+        "primary_generation": 1,
+        "primary_stale": 0,
+        "related_slot": 3,
+        "related_generation": 1,
+        "related_stale": 0,
+        "previous_priority": 6,
+        "next_priority": 5,
+        "commit_class": 4,
+        "reason_flags": 0,
+        "aux_value": 0
+      },
+      {
+        "kind": 12,
+        "primary_slot": 0,
+        "primary_generation": 1,
+        "primary_stale": 0,
+        "related_slot": 3,
+        "related_generation": 1,
+        "related_stale": 0,
+        "previous_priority": 6,
+        "next_priority": 2,
+        "commit_class": 4,
+        "reason_flags": 0,
+        "aux_value": 0
+      }
+    ],
+    "takes": [
+      {
+        "worker": 1,
+        "tick": 2,
+        "ipsr": 0,
+        "irq_samples": 1,
+        "count": 0,
+        "take": 0
+      },
+      {
+        "worker": 1,
+        "tick": 5,
+        "ipsr": 0,
+        "irq_samples": 2,
+        "count": 0,
+        "take": 0
+      },
+      {
+        "worker": 1,
+        "tick": 8,
+        "ipsr": 0,
+        "irq_samples": 3,
+        "count": 0,
+        "take": 0
+      },
+      {
+        "worker": 1,
+        "tick": 11,
+        "ipsr": 0,
+        "irq_samples": 4,
+        "count": 0,
+        "take": 0
+      },
+      {
+        "worker": 1,
+        "tick": 14,
+        "ipsr": 0,
+        "irq_samples": 5,
+        "count": 0,
+        "take": 0
+      },
+      {
+        "worker": 1,
+        "tick": 19,
+        "ipsr": 0,
+        "irq_samples": 6,
+        "count": 0,
+        "take": 0
+      },
+      {
+        "worker": 1,
+        "tick": 23,
+        "ipsr": 0,
+        "irq_samples": 6,
+        "count": 0,
+        "take": 0
+      },
+      {
+        "worker": 2,
+        "tick": 24,
+        "ipsr": 0,
+        "irq_samples": 6,
+        "count": 0,
+        "take": 0
+      },
+      {
+        "worker": 0,
+        "tick": 25,
+        "ipsr": 0,
+        "irq_samples": 6,
+        "count": 0,
+        "take": 0
+      },
+      {
+        "worker": 1,
+        "tick": 30,
+        "ipsr": 0,
+        "irq_samples": 6,
+        "count": 0,
+        "take": 7
+      },
+      {
+        "worker": 2,
+        "tick": 32,
+        "ipsr": 0,
+        "irq_samples": 6,
+        "count": 0,
+        "take": 10
+      },
+      {
+        "worker": 0,
+        "tick": 0,
+        "ipsr": 0,
+        "irq_samples": 0,
+        "count": 0,
+        "take": 0
+      },
+      {
+        "worker": 0,
+        "tick": 0,
+        "ipsr": 0,
+        "irq_samples": 0,
+        "count": 0,
+        "take": 0
+      },
+      {
+        "worker": 0,
+        "tick": 0,
+        "ipsr": 0,
+        "irq_samples": 0,
+        "count": 0,
+        "take": 0
+      },
+      {
+        "worker": 0,
+        "tick": 0,
+        "ipsr": 0,
+        "irq_samples": 0,
+        "count": 0,
+        "take": 0
+      },
+      {
+        "worker": 0,
+        "tick": 0,
+        "ipsr": 0,
+        "irq_samples": 0,
+        "count": 0,
+        "take": 0
+      }
+    ],
+    "take_count": 11,
+    "count_checks": 22,
+    "timeout_index": 9,
+    "timeout_due": 30,
+    "cancelled_index": 10,
+    "counts": [
+      {
+        "code": 0,
+        "count": 0
+      },
+      {
+        "code": 0,
+        "count": 1
+      },
+      {
+        "code": 0,
+        "count": 2
+      },
+      {
+        "code": 0,
+        "count": 3
+      },
+      {
+        "code": 6,
+        "count": 3
+      },
+      {
+        "code": 0,
+        "count": 2
+      },
+      {
+        "code": 0,
+        "count": 1
+      },
+      {
+        "code": 0,
+        "count": 0
+      },
+      {
+        "code": 5,
+        "count": 0
+      },
+      {
+        "code": 4,
+        "count": 0
+      },
+      {
+        "code": 0,
+        "count": 1
+      },
+      {
+        "code": 6,
+        "count": 1
+      },
+      {
+        "code": 0,
+        "count": 0
+      },
+      {
+        "code": 5,
+        "count": 0
+      },
+      {
+        "code": 5,
+        "count": 0
+      },
+      {
+        "code": 5,
+        "count": 0
+      },
+      {
+        "code": 5,
+        "count": 0
+      },
+      {
+        "code": 5,
+        "count": 0
+      },
+      {
+        "code": 5,
+        "count": 0
+      },
+      {
+        "code": 0,
+        "count": 1
+      },
+      {
+        "code": 0,
+        "count": 0
+      },
+      {
+        "code": 5,
+        "count": 0
+      },
+      {
+        "code": 0,
+        "count": 0
+      },
+      {
+        "code": 0,
+        "count": 0
+      }
+    ]
+  },
+  "health": {
+    "state": 2,
+    "tick": 202,
+    "tim2_ms": 2026,
+    "assert_line": 0,
+    "faults": [
+      0,
+      0
+    ],
+    "guards": [
+      3735929054,
+      3735929054,
+      3735929054,
+      3735929054,
+      3735929054
+    ]
+  },
+  "status": "PASS"
+}

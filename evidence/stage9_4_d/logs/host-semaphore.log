@@ -1,0 +1,183 @@
+Test project /home/mythepsy92/program/codex/InsightRTOS/build-host-stage9_2
+      Start  49: host_stage4_1_queue_guards
+      Start 123: host_stage4_4_max_uint32
+      Start  43: host_stage4_1_context
+      Start 138: host_stage4_5_cycle
+      Start   4: host_stage4_3_one
+      Start  10: host_stage4_3_pending_timeout
+ 1/85 Test  #49: host_stage4_1_queue_guards ............   Passed    0.02 sec
+ 2/85 Test #123: host_stage4_4_max_uint32 ..............   Passed    0.01 sec
+ 3/85 Test  #43: host_stage4_1_context .................   Passed    0.01 sec
+ 4/85 Test #138: host_stage4_5_cycle ...................   Passed    0.01 sec
+ 5/85 Test   #4: host_stage4_3_one .....................   Passed    0.01 sec
+      Start  55: host_stage4_1_init_running
+      Start  40: host_stage4_1_initialization
+      Start 144: host_stage4_5_duplicate_ready
+      Start  11: host_stage4_3_early_grant
+      Start 120: host_stage4_4_masks
+ 6/85 Test  #10: host_stage4_3_pending_timeout .........   Passed    0.01 sec
+ 7/85 Test  #55: host_stage4_1_init_running ............   Passed    0.01 sec
+ 8/85 Test  #40: host_stage4_1_initialization ..........   Passed    0.01 sec
+ 9/85 Test #144: host_stage4_5_duplicate_ready .........   Passed    0.01 sec
+10/85 Test  #11: host_stage4_3_early_grant .............   Passed    0.01 sec
+      Start   6: host_stage4_3_forever
+      Start  44: host_stage4_1_block_single
+      Start 119: host_stage4_4_uninitialized
+      Start 134: host_stage4_4_tick_first
+      Start 124: host_stage4_4_systick
+11/85 Test #120: host_stage4_4_masks ...................   Passed    0.01 sec
+12/85 Test   #6: host_stage4_3_forever .................   Passed    0.01 sec
+13/85 Test  #44: host_stage4_1_block_single ............   Passed    0.01 sec
+14/85 Test #119: host_stage4_4_uninitialized ...........   Passed    0.01 sec
+15/85 Test #134: host_stage4_4_tick_first ..............   Passed    0.00 sec
+      Start  38: host_stage4_2_delay_isolation
+      Start  34: host_stage4_2_direct_grant
+      Start  15: host_stage4_3_priority_fifo
+      Start  37: host_stage4_2_context
+      Start  20: host_stage4_3_retry
+16/85 Test #124: host_stage4_4_systick .................   Passed    0.02 sec
+17/85 Test  #38: host_stage4_2_delay_isolation .........   Passed    0.01 sec
+18/85 Test  #34: host_stage4_2_direct_grant ............   Passed    0.01 sec
+19/85 Test  #15: host_stage4_3_priority_fifo ...........   Passed    0.01 sec
+20/85 Test  #37: host_stage4_2_context .................   Passed    0.01 sec
+      Start  22: host_stage4_3_wrap_after
+      Start 126: host_stage4_4_fifo
+      Start 135: host_stage4_4_tick_during
+      Start 121: host_stage4_4_counting
+      Start 127: host_stage4_4_priority
+21/85 Test  #20: host_stage4_3_retry ...................   Passed    0.01 sec
+22/85 Test  #22: host_stage4_3_wrap_after ..............   Passed    0.01 sec
+23/85 Test #126: host_stage4_4_fifo ....................   Passed    0.01 sec
+24/85 Test #135: host_stage4_4_tick_during .............   Passed    0.01 sec
+25/85 Test #121: host_stage4_4_counting ................   Passed    0.00 sec
+      Start  26: host_stage4_2_invalid_init
+      Start  21: host_stage4_3_wrap_before
+      Start  18: host_stage4_3_cancel_tail
+      Start 130: host_stage4_4_pending_permit
+      Start 118: host_stage4_4_null
+26/85 Test #127: host_stage4_4_priority ................   Passed    0.01 sec
+27/85 Test  #26: host_stage4_2_invalid_init ............   Passed    0.01 sec
+28/85 Test  #21: host_stage4_3_wrap_before .............   Passed    0.01 sec
+29/85 Test  #18: host_stage4_3_cancel_tail .............   Passed    0.01 sec
+30/85 Test #130: host_stage4_4_pending_permit ..........   Passed    0.00 sec
+      Start 131: host_stage4_4_duplicate
+      Start  32: host_stage4_2_priority
+      Start  30: host_stage4_2_uninitialized
+      Start  52: host_stage4_1_early_tick
+      Start  48: host_stage4_1_duplicate_give
+31/85 Test #118: host_stage4_4_null ....................   Passed    0.01 sec
+32/85 Test #131: host_stage4_4_duplicate ...............   Passed    0.01 sec
+33/85 Test  #32: host_stage4_2_priority ................   Passed    0.01 sec
+34/85 Test  #30: host_stage4_2_uninitialized ...........   Passed    0.01 sec
+35/85 Test  #52: host_stage4_1_early_tick ..............   Passed    0.00 sec
+      Start  17: host_stage4_3_cancel_middle
+      Start 132: host_stage4_4_grant_first
+      Start  16: host_stage4_3_mixed_delay
+      Start  29: host_stage4_2_cycle5
+      Start  51: host_stage4_1_early_grant
+36/85 Test  #48: host_stage4_1_duplicate_give ..........   Passed    0.01 sec
+37/85 Test  #17: host_stage4_3_cancel_middle ...........   Passed    0.01 sec
+38/85 Test #132: host_stage4_4_grant_first .............   Passed    0.01 sec
+39/85 Test  #16: host_stage4_3_mixed_delay .............   Passed    0.01 sec
+40/85 Test  #29: host_stage4_2_cycle5 ..................   Passed    0.01 sec
+      Start   1: host_stage4_3_poll
+      Start  27: host_stage4_2_full_initial
+      Start  19: host_stage4_3_timeout_middle
+      Start 140: host_stage4_5_count_overflow
+      Start  25: host_stage4_3_context
+41/85 Test  #51: host_stage4_1_early_grant .............   Passed    0.01 sec
+42/85 Test   #1: host_stage4_3_poll ....................   Passed    0.01 sec
+43/85 Test  #27: host_stage4_2_full_initial ............   Passed    0.01 sec
+44/85 Test  #19: host_stage4_3_timeout_middle ..........   Passed    0.01 sec
+45/85 Test #140: host_stage4_5_count_overflow ..........   Passed    0.01 sec
+      Start 136: host_stage4_4_delay_isolation
+      Start 115: host_stage4_4_prestart
+      Start 141: host_stage4_5_stored_with_waiter
+      Start 142: host_stage4_5_lost_delay
+      Start   7: host_stage4_3_grant_first
+46/85 Test  #25: host_stage4_3_context .................   Passed    0.01 sec
+47/85 Test #136: host_stage4_4_delay_isolation .........   Passed    0.01 sec
+48/85 Test #115: host_stage4_4_prestart ................   Passed    0.01 sec
+49/85 Test #141: host_stage4_5_stored_with_waiter ......   Passed    0.01 sec
+50/85 Test #142: host_stage4_5_lost_delay ..............   Passed    0.00 sec
+      Start 129: host_stage4_4_pending
+      Start 125: host_stage4_4_early
+      Start 122: host_stage4_4_binary
+      Start  39: host_stage4_2_binary_compat
+      Start  53: host_stage4_1_multiple_objects
+51/85 Test   #7: host_stage4_3_grant_first .............   Passed    0.01 sec
+52/85 Test #129: host_stage4_4_pending .................   Passed    0.01 sec
+53/85 Test #125: host_stage4_4_early ...................   Passed    0.01 sec
+54/85 Test #122: host_stage4_4_binary ..................   Passed    0.01 sec
+55/85 Test  #39: host_stage4_2_binary_compat ...........   Passed    0.01 sec
+      Start  45: host_stage4_1_priority
+      Start  46: host_stage4_1_fifo
+      Start 128: host_stage4_4_lower
+      Start  12: host_stage4_3_early_timeout
+      Start  36: host_stage4_2_tick_preemption
+56/85 Test  #53: host_stage4_1_multiple_objects ........   Passed    0.02 sec
+57/85 Test  #45: host_stage4_1_priority ................   Passed    0.01 sec
+58/85 Test  #46: host_stage4_1_fifo ....................   Passed    0.01 sec
+59/85 Test #128: host_stage4_4_lower ...................   Passed    0.01 sec
+60/85 Test  #12: host_stage4_3_early_timeout ...........   Passed    0.01 sec
+      Start 117: host_stage4_4_ordinary_isr
+      Start  33: host_stage4_2_fifo
+      Start  24: host_stage4_3_stale_completion
+      Start  42: host_stage4_1_unsupported
+      Start 116: host_stage4_4_contexts
+61/85 Test  #36: host_stage4_2_tick_preemption .........   Passed    0.01 sec
+62/85 Test #117: host_stage4_4_ordinary_isr ............   Passed    0.01 sec
+63/85 Test  #33: host_stage4_2_fifo ....................   Passed    0.01 sec
+64/85 Test  #24: host_stage4_3_stale_completion ........   Passed    0.01 sec
+65/85 Test  #42: host_stage4_1_unsupported .............   Passed    0.00 sec
+      Start  31: host_stage4_2_reinitialize
+      Start 143: host_stage4_5_stack_guard
+      Start  50: host_stage4_1_delay_isolation
+      Start  23: host_stage4_3_wrap_timeout
+      Start  13: host_stage4_3_different_deadlines
+66/85 Test #116: host_stage4_4_contexts ................   Passed    0.01 sec
+67/85 Test  #31: host_stage4_2_reinitialize ............   Passed    0.01 sec
+68/85 Test #143: host_stage4_5_stack_guard .............   Passed    0.01 sec
+69/85 Test  #50: host_stage4_1_delay_isolation .........   Passed    0.01 sec
+70/85 Test  #23: host_stage4_3_wrap_timeout ............   Passed    0.00 sec
+      Start 133: host_stage4_4_timeout_first
+      Start   2: host_stage4_3_available
+      Start 139: host_stage4_5_wrong_object
+      Start  47: host_stage4_1_direct_grant
+      Start  14: host_stage4_3_simultaneous_timeouts
+71/85 Test  #13: host_stage4_3_different_deadlines .....   Passed    0.02 sec
+72/85 Test #133: host_stage4_4_timeout_first ...........   Passed    0.01 sec
+73/85 Test   #2: host_stage4_3_available ...............   Passed    0.01 sec
+74/85 Test #139: host_stage4_5_wrong_object ............   Passed    0.01 sec
+75/85 Test  #47: host_stage4_1_direct_grant ............   Passed    0.01 sec
+      Start   8: host_stage4_3_timeout_first
+      Start 137: host_stage4_5_mixed
+      Start  35: host_stage4_2_pending_permit
+      Start  28: host_stage4_2_max_uint32
+      Start   3: host_stage4_3_invalid
+76/85 Test  #14: host_stage4_3_simultaneous_timeouts ...   Passed    0.01 sec
+77/85 Test   #8: host_stage4_3_timeout_first ...........   Passed    0.01 sec
+78/85 Test #137: host_stage4_5_mixed ...................   Passed    0.01 sec
+79/85 Test  #35: host_stage4_2_pending_permit ..........   Passed    0.01 sec
+80/85 Test  #28: host_stage4_2_max_uint32 ..............   Passed    0.00 sec
+      Start   5: host_stage4_3_maximum
+      Start  54: host_stage4_1_reinit_waiting
+      Start   9: host_stage4_3_pending_grant
+      Start  41: host_stage4_1_polling
+81/85 Test   #3: host_stage4_3_invalid .................   Passed    0.01 sec
+82/85 Test   #5: host_stage4_3_maximum .................   Passed    0.01 sec
+83/85 Test  #54: host_stage4_1_reinit_waiting ..........   Passed    0.01 sec
+84/85 Test   #9: host_stage4_3_pending_grant ...........   Passed    0.00 sec
+85/85 Test  #41: host_stage4_1_polling .................   Passed    0.00 sec
+
+100% tests passed, 0 tests failed out of 85
+
+Label Time Summary:
+host        =   0.80 sec*proc (85 tests)
+stage4_1    =   0.16 sec*proc (16 tests)
+stage4_2    =   0.12 sec*proc (14 tests)
+stage4_3    =   0.24 sec*proc (25 tests)
+stage4_4    =   0.22 sec*proc (22 tests)
+stage4_5    =   0.06 sec*proc (8 tests)
+
+Total Test time (real) =   0.21 sec

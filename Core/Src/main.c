@@ -27,6 +27,8 @@
 #include "app_lcd_test.h"
 #if defined(INSIGHT_TEST_MUTEX)
 #include "mutex_fixture.h"
+#elif defined(INSIGHT_TEST_SEMAPHORE)
+#include "semaphore_fixture.h"
 #endif
 #ifdef INSIGHT_RTOS_ENABLED
 #ifdef INSIGHT_DISPLAY_RTOS
@@ -114,6 +116,8 @@ int main(void)
   Timebase_Init(); /* Independent TIM2 1ms; SysTick belongs only to the RTOS. */
 #if defined(INSIGHT_TEST_MUTEX)
   mutex_fixture_start();
+#elif defined(INSIGHT_TEST_SEMAPHORE)
+  semaphore_fixture_start();
 #elif defined(INSIGHT_DISPLAY_RTOS)
   display_app_start();
 #else
