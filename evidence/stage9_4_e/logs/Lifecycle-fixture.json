@@ -1,0 +1,1466 @@
+{
+  "report": {
+    "state": 2,
+    "start": 0,
+    "end": 16,
+    "completed": 6,
+    "cases": [
+      {
+        "ref": {
+          "slot": 1,
+          "generation": 1
+        },
+        "self": {
+          "slot": 1,
+          "generation": 1
+        },
+        "stack": 536885128,
+        "psp": 536889184,
+        "control": 2,
+        "ipsr": 0,
+        "running": 2,
+        "started": 0,
+        "resumes": 1,
+        "resumed": 1,
+        "stop_initial": 0,
+        "stop_seen": 1,
+        "ready": 1,
+        "terminated": 3,
+        "guard": 3735929054,
+        "trace_count": 11,
+        "take": 10,
+        "give": 0,
+        "stop": 0,
+        "stop_after_exit": 2,
+        "old_snapshot": 0,
+        "old_stop": 0,
+        "no_permit": 5,
+        "before": {
+          "state": 4,
+          "reason": 1,
+          "result": 1,
+          "links": 34,
+          "wake": 20,
+          "count": 0,
+          "waiter": 2
+        },
+        "granted": {
+          "state": 0,
+          "reason": 0,
+          "result": 0,
+          "links": 0,
+          "wake": 0,
+          "count": 0,
+          "waiter": 0
+        },
+        "after": {
+          "state": 1,
+          "reason": 0,
+          "result": 4,
+          "links": 1,
+          "wake": 20,
+          "count": 0,
+          "waiter": 0
+        },
+        "before_due": {
+          "state": 0,
+          "reason": 0,
+          "result": 0,
+          "links": 0,
+          "wake": 0,
+          "count": 0,
+          "waiter": 0
+        },
+        "clean": {
+          "state": 3,
+          "reason": 0,
+          "result": 0,
+          "links": 0,
+          "wake": 20,
+          "count": 0,
+          "waiter": 0
+        },
+        "trace": [
+          {
+            "sequence": 3,
+            "tick": 0,
+            "generation": 1,
+            "arg0": 5,
+            "arg1": 0,
+            "slot": 1,
+            "event_type": 1
+          },
+          {
+            "sequence": 4,
+            "tick": 0,
+            "generation": 1,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 1,
+            "event_type": 2
+          },
+          {
+            "sequence": 6,
+            "tick": 0,
+            "generation": 1,
+            "arg0": 1,
+            "arg1": 4194304,
+            "slot": 1,
+            "event_type": 4
+          },
+          {
+            "sequence": 7,
+            "tick": 0,
+            "generation": 1,
+            "arg0": 1,
+            "arg1": 279314432,
+            "slot": 1,
+            "event_type": 12
+          },
+          {
+            "sequence": 8,
+            "tick": 0,
+            "generation": 1,
+            "arg0": 1,
+            "arg1": 20,
+            "slot": 1,
+            "event_type": 3
+          },
+          {
+            "sequence": 16,
+            "tick": 1,
+            "generation": 1,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 1,
+            "event_type": 7
+          },
+          {
+            "sequence": 17,
+            "tick": 1,
+            "generation": 1,
+            "arg0": 4,
+            "arg1": 1,
+            "slot": 1,
+            "event_type": 5
+          },
+          {
+            "sequence": 18,
+            "tick": 1,
+            "generation": 1,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 1,
+            "event_type": 2
+          },
+          {
+            "sequence": 20,
+            "tick": 1,
+            "generation": 1,
+            "arg0": 1,
+            "arg1": 4194304,
+            "slot": 1,
+            "event_type": 4
+          },
+          {
+            "sequence": 21,
+            "tick": 1,
+            "generation": 1,
+            "arg0": 1,
+            "arg1": 279314432,
+            "slot": 1,
+            "event_type": 12
+          },
+          {
+            "sequence": 22,
+            "tick": 1,
+            "generation": 1,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 1,
+            "event_type": 8
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          }
+        ]
+      },
+      {
+        "ref": {
+          "slot": 1,
+          "generation": 2
+        },
+        "self": {
+          "slot": 1,
+          "generation": 2
+        },
+        "stack": 536885128,
+        "psp": 536889184,
+        "control": 2,
+        "ipsr": 0,
+        "running": 2,
+        "started": 2,
+        "resumes": 1,
+        "resumed": 3,
+        "stop_initial": 0,
+        "stop_seen": 1,
+        "ready": 1,
+        "terminated": 3,
+        "guard": 3735929054,
+        "trace_count": 12,
+        "take": 0,
+        "give": 0,
+        "stop": 0,
+        "stop_after_exit": 2,
+        "old_snapshot": 9,
+        "old_stop": 9,
+        "no_permit": 5,
+        "before": {
+          "state": 4,
+          "reason": 1,
+          "result": 1,
+          "links": 34,
+          "wake": 22,
+          "count": 0,
+          "waiter": 2
+        },
+        "granted": {
+          "state": 1,
+          "reason": 0,
+          "result": 2,
+          "links": 1,
+          "wake": 22,
+          "count": 0,
+          "waiter": 0
+        },
+        "after": {
+          "state": 1,
+          "reason": 0,
+          "result": 2,
+          "links": 1,
+          "wake": 22,
+          "count": 0,
+          "waiter": 0
+        },
+        "before_due": {
+          "state": 0,
+          "reason": 0,
+          "result": 0,
+          "links": 0,
+          "wake": 0,
+          "count": 0,
+          "waiter": 0
+        },
+        "clean": {
+          "state": 3,
+          "reason": 0,
+          "result": 0,
+          "links": 0,
+          "wake": 22,
+          "count": 0,
+          "waiter": 0
+        },
+        "trace": [
+          {
+            "sequence": 30,
+            "tick": 2,
+            "generation": 1,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 1,
+            "event_type": 9
+          },
+          {
+            "sequence": 31,
+            "tick": 2,
+            "generation": 2,
+            "arg0": 5,
+            "arg1": 0,
+            "slot": 1,
+            "event_type": 1
+          },
+          {
+            "sequence": 32,
+            "tick": 2,
+            "generation": 2,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 1,
+            "event_type": 2
+          },
+          {
+            "sequence": 34,
+            "tick": 2,
+            "generation": 2,
+            "arg0": 1,
+            "arg1": 4194304,
+            "slot": 1,
+            "event_type": 4
+          },
+          {
+            "sequence": 35,
+            "tick": 2,
+            "generation": 2,
+            "arg0": 1,
+            "arg1": 279314432,
+            "slot": 1,
+            "event_type": 12
+          },
+          {
+            "sequence": 36,
+            "tick": 2,
+            "generation": 2,
+            "arg0": 1,
+            "arg1": 22,
+            "slot": 1,
+            "event_type": 3
+          },
+          {
+            "sequence": 44,
+            "tick": 3,
+            "generation": 2,
+            "arg0": 2,
+            "arg1": 1,
+            "slot": 1,
+            "event_type": 5
+          },
+          {
+            "sequence": 45,
+            "tick": 3,
+            "generation": 2,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 1,
+            "event_type": 2
+          },
+          {
+            "sequence": 46,
+            "tick": 3,
+            "generation": 2,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 1,
+            "event_type": 7
+          },
+          {
+            "sequence": 48,
+            "tick": 3,
+            "generation": 2,
+            "arg0": 1,
+            "arg1": 4194304,
+            "slot": 1,
+            "event_type": 4
+          },
+          {
+            "sequence": 49,
+            "tick": 3,
+            "generation": 2,
+            "arg0": 1,
+            "arg1": 279314432,
+            "slot": 1,
+            "event_type": 12
+          },
+          {
+            "sequence": 50,
+            "tick": 3,
+            "generation": 2,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 1,
+            "event_type": 8
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          }
+        ]
+      },
+      {
+        "ref": {
+          "slot": 1,
+          "generation": 3
+        },
+        "self": {
+          "slot": 1,
+          "generation": 3
+        },
+        "stack": 536885128,
+        "psp": 536889184,
+        "control": 2,
+        "ipsr": 0,
+        "running": 2,
+        "started": 4,
+        "resumes": 1,
+        "resumed": 4,
+        "stop_initial": 0,
+        "stop_seen": 0,
+        "ready": 1,
+        "terminated": 3,
+        "guard": 3735929054,
+        "trace_count": 6,
+        "take": 0,
+        "give": 0,
+        "stop": 0,
+        "stop_after_exit": 2,
+        "old_snapshot": 9,
+        "old_stop": 9,
+        "no_permit": 5,
+        "before": {
+          "state": 0,
+          "reason": 0,
+          "result": 0,
+          "links": 0,
+          "wake": 0,
+          "count": 0,
+          "waiter": 0
+        },
+        "granted": {
+          "state": 0,
+          "reason": 0,
+          "result": 0,
+          "links": 0,
+          "wake": 0,
+          "count": 0,
+          "waiter": 0
+        },
+        "after": {
+          "state": 0,
+          "reason": 0,
+          "result": 0,
+          "links": 0,
+          "wake": 0,
+          "count": 0,
+          "waiter": 0
+        },
+        "before_due": {
+          "state": 0,
+          "reason": 0,
+          "result": 0,
+          "links": 0,
+          "wake": 0,
+          "count": 0,
+          "waiter": 0
+        },
+        "clean": {
+          "state": 3,
+          "reason": 0,
+          "result": 0,
+          "links": 0,
+          "wake": 0,
+          "count": 0,
+          "waiter": 0
+        },
+        "trace": [
+          {
+            "sequence": 58,
+            "tick": 4,
+            "generation": 2,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 1,
+            "event_type": 9
+          },
+          {
+            "sequence": 59,
+            "tick": 4,
+            "generation": 3,
+            "arg0": 5,
+            "arg1": 0,
+            "slot": 1,
+            "event_type": 1
+          },
+          {
+            "sequence": 60,
+            "tick": 4,
+            "generation": 3,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 1,
+            "event_type": 2
+          },
+          {
+            "sequence": 62,
+            "tick": 4,
+            "generation": 3,
+            "arg0": 1,
+            "arg1": 4194304,
+            "slot": 1,
+            "event_type": 4
+          },
+          {
+            "sequence": 63,
+            "tick": 4,
+            "generation": 3,
+            "arg0": 1,
+            "arg1": 279314432,
+            "slot": 1,
+            "event_type": 12
+          },
+          {
+            "sequence": 64,
+            "tick": 4,
+            "generation": 3,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 1,
+            "event_type": 8
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          }
+        ]
+      },
+      {
+        "ref": {
+          "slot": 1,
+          "generation": 4
+        },
+        "self": {
+          "slot": 1,
+          "generation": 4
+        },
+        "stack": 536885128,
+        "psp": 536889184,
+        "control": 2,
+        "ipsr": 0,
+        "running": 2,
+        "started": 5,
+        "resumes": 1,
+        "resumed": 5,
+        "stop_initial": 0,
+        "stop_seen": 0,
+        "ready": 1,
+        "terminated": 3,
+        "guard": 3735929054,
+        "trace_count": 6,
+        "take": 0,
+        "give": 0,
+        "stop": 0,
+        "stop_after_exit": 2,
+        "old_snapshot": 9,
+        "old_stop": 9,
+        "no_permit": 5,
+        "before": {
+          "state": 0,
+          "reason": 0,
+          "result": 0,
+          "links": 0,
+          "wake": 0,
+          "count": 0,
+          "waiter": 0
+        },
+        "granted": {
+          "state": 0,
+          "reason": 0,
+          "result": 0,
+          "links": 0,
+          "wake": 0,
+          "count": 0,
+          "waiter": 0
+        },
+        "after": {
+          "state": 0,
+          "reason": 0,
+          "result": 0,
+          "links": 0,
+          "wake": 0,
+          "count": 0,
+          "waiter": 0
+        },
+        "before_due": {
+          "state": 0,
+          "reason": 0,
+          "result": 0,
+          "links": 0,
+          "wake": 0,
+          "count": 0,
+          "waiter": 0
+        },
+        "clean": {
+          "state": 3,
+          "reason": 0,
+          "result": 0,
+          "links": 0,
+          "wake": 0,
+          "count": 0,
+          "waiter": 0
+        },
+        "trace": [
+          {
+            "sequence": 72,
+            "tick": 5,
+            "generation": 3,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 1,
+            "event_type": 9
+          },
+          {
+            "sequence": 73,
+            "tick": 5,
+            "generation": 4,
+            "arg0": 5,
+            "arg1": 0,
+            "slot": 1,
+            "event_type": 1
+          },
+          {
+            "sequence": 74,
+            "tick": 5,
+            "generation": 4,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 1,
+            "event_type": 2
+          },
+          {
+            "sequence": 76,
+            "tick": 5,
+            "generation": 4,
+            "arg0": 1,
+            "arg1": 4194304,
+            "slot": 1,
+            "event_type": 4
+          },
+          {
+            "sequence": 77,
+            "tick": 5,
+            "generation": 4,
+            "arg0": 1,
+            "arg1": 279314432,
+            "slot": 1,
+            "event_type": 12
+          },
+          {
+            "sequence": 78,
+            "tick": 5,
+            "generation": 4,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 1,
+            "event_type": 8
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          }
+        ]
+      },
+      {
+        "ref": {
+          "slot": 1,
+          "generation": 5
+        },
+        "self": {
+          "slot": 1,
+          "generation": 5
+        },
+        "stack": 536885128,
+        "psp": 536889184,
+        "control": 2,
+        "ipsr": 0,
+        "running": 2,
+        "started": 6,
+        "resumes": 1,
+        "resumed": 6,
+        "stop_initial": 0,
+        "stop_seen": 0,
+        "ready": 1,
+        "terminated": 3,
+        "guard": 3735929054,
+        "trace_count": 6,
+        "take": 0,
+        "give": 0,
+        "stop": 0,
+        "stop_after_exit": 2,
+        "old_snapshot": 9,
+        "old_stop": 9,
+        "no_permit": 5,
+        "before": {
+          "state": 0,
+          "reason": 0,
+          "result": 0,
+          "links": 0,
+          "wake": 0,
+          "count": 0,
+          "waiter": 0
+        },
+        "granted": {
+          "state": 0,
+          "reason": 0,
+          "result": 0,
+          "links": 0,
+          "wake": 0,
+          "count": 0,
+          "waiter": 0
+        },
+        "after": {
+          "state": 0,
+          "reason": 0,
+          "result": 0,
+          "links": 0,
+          "wake": 0,
+          "count": 0,
+          "waiter": 0
+        },
+        "before_due": {
+          "state": 0,
+          "reason": 0,
+          "result": 0,
+          "links": 0,
+          "wake": 0,
+          "count": 0,
+          "waiter": 0
+        },
+        "clean": {
+          "state": 3,
+          "reason": 0,
+          "result": 0,
+          "links": 0,
+          "wake": 0,
+          "count": 0,
+          "waiter": 0
+        },
+        "trace": [
+          {
+            "sequence": 86,
+            "tick": 6,
+            "generation": 4,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 1,
+            "event_type": 9
+          },
+          {
+            "sequence": 87,
+            "tick": 6,
+            "generation": 5,
+            "arg0": 5,
+            "arg1": 0,
+            "slot": 1,
+            "event_type": 1
+          },
+          {
+            "sequence": 88,
+            "tick": 6,
+            "generation": 5,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 1,
+            "event_type": 2
+          },
+          {
+            "sequence": 90,
+            "tick": 6,
+            "generation": 5,
+            "arg0": 1,
+            "arg1": 4194304,
+            "slot": 1,
+            "event_type": 4
+          },
+          {
+            "sequence": 91,
+            "tick": 6,
+            "generation": 5,
+            "arg0": 1,
+            "arg1": 279314432,
+            "slot": 1,
+            "event_type": 12
+          },
+          {
+            "sequence": 92,
+            "tick": 6,
+            "generation": 5,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 1,
+            "event_type": 8
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          }
+        ]
+      },
+      {
+        "ref": {
+          "slot": 1,
+          "generation": 6
+        },
+        "self": {
+          "slot": 1,
+          "generation": 6
+        },
+        "stack": 536885128,
+        "psp": 536889184,
+        "control": 2,
+        "ipsr": 0,
+        "running": 2,
+        "started": 7,
+        "resumes": 1,
+        "resumed": 15,
+        "stop_initial": 0,
+        "stop_seen": 1,
+        "ready": 1,
+        "terminated": 3,
+        "guard": 3735929054,
+        "trace_count": 12,
+        "take": 0,
+        "give": 0,
+        "stop": 0,
+        "stop_after_exit": 2,
+        "old_snapshot": 9,
+        "old_stop": 9,
+        "no_permit": 5,
+        "before": {
+          "state": 4,
+          "reason": 0,
+          "result": 0,
+          "links": 2,
+          "wake": 15,
+          "count": 0,
+          "waiter": 0
+        },
+        "granted": {
+          "state": 0,
+          "reason": 0,
+          "result": 0,
+          "links": 0,
+          "wake": 0,
+          "count": 0,
+          "waiter": 0
+        },
+        "after": {
+          "state": 4,
+          "reason": 0,
+          "result": 0,
+          "links": 2,
+          "wake": 15,
+          "count": 0,
+          "waiter": 0
+        },
+        "before_due": {
+          "state": 4,
+          "reason": 0,
+          "result": 0,
+          "links": 2,
+          "wake": 15,
+          "count": 0,
+          "waiter": 0
+        },
+        "clean": {
+          "state": 3,
+          "reason": 0,
+          "result": 0,
+          "links": 0,
+          "wake": 15,
+          "count": 0,
+          "waiter": 0
+        },
+        "trace": [
+          {
+            "sequence": 100,
+            "tick": 7,
+            "generation": 5,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 1,
+            "event_type": 9
+          },
+          {
+            "sequence": 101,
+            "tick": 7,
+            "generation": 6,
+            "arg0": 5,
+            "arg1": 0,
+            "slot": 1,
+            "event_type": 1
+          },
+          {
+            "sequence": 102,
+            "tick": 7,
+            "generation": 6,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 1,
+            "event_type": 2
+          },
+          {
+            "sequence": 104,
+            "tick": 7,
+            "generation": 6,
+            "arg0": 1,
+            "arg1": 4194304,
+            "slot": 1,
+            "event_type": 4
+          },
+          {
+            "sequence": 105,
+            "tick": 7,
+            "generation": 6,
+            "arg0": 1,
+            "arg1": 279314432,
+            "slot": 1,
+            "event_type": 12
+          },
+          {
+            "sequence": 106,
+            "tick": 7,
+            "generation": 6,
+            "arg0": 0,
+            "arg1": 15,
+            "slot": 1,
+            "event_type": 3
+          },
+          {
+            "sequence": 114,
+            "tick": 8,
+            "generation": 6,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 1,
+            "event_type": 7
+          },
+          {
+            "sequence": 126,
+            "tick": 15,
+            "generation": 6,
+            "arg0": 15,
+            "arg1": 0,
+            "slot": 1,
+            "event_type": 10
+          },
+          {
+            "sequence": 127,
+            "tick": 15,
+            "generation": 6,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 1,
+            "event_type": 2
+          },
+          {
+            "sequence": 129,
+            "tick": 15,
+            "generation": 6,
+            "arg0": 0,
+            "arg1": 11075583,
+            "slot": 1,
+            "event_type": 4
+          },
+          {
+            "sequence": 130,
+            "tick": 15,
+            "generation": 6,
+            "arg0": 0,
+            "arg1": 413204479,
+            "slot": 1,
+            "event_type": 12
+          },
+          {
+            "sequence": 131,
+            "tick": 15,
+            "generation": 6,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 1,
+            "event_type": 8
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          },
+          {
+            "sequence": 0,
+            "tick": 0,
+            "generation": 0,
+            "arg0": 0,
+            "arg1": 0,
+            "slot": 0,
+            "event_type": 0
+          }
+        ]
+      }
+    ]
+  },
+  "health": {
+    "state": 2,
+    "tick": 199,
+    "tim2_ms": 1994,
+    "assert_line": 0,
+    "faults": [
+      0,
+      0
+    ],
+    "guards": [
+      3735929054,
+      3735929054,
+      3735929054
+    ]
+  },
+  "status": "PASS"
+}

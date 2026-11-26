@@ -1,0 +1,4 @@
+Lifecycle readback verified
+STM32 lifecycle PASS 6 Worker lifetimes
+IntegratedProd readback verified
+Integrated diagnostics hardware PASS IntegratedProd
