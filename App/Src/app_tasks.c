@@ -1,4 +1,7 @@
 #include "app_tasks.h"
+#ifdef INSIGHT_TEST_BACKPRESSURE
+#include "backpressure_fixture.h"
+#endif
 #if defined(INSIGHT_APP_INTEGRATED_DIAGNOSTICS)
 #include "app_diagnostics.h"
 #endif
@@ -101,10 +104,16 @@ static bool send_command(uint32_t *sequence, uint32_t id, uint32_t event, uint32
     if (status == RTOS_ERR_FULL) {
         ++g_display_statistics.command_overflows; /* Backpressure attempts, no drop */
         App_Events_RecordRetry();
+#ifdef INSIGHT_TEST_BACKPRESSURE
+        BP_CommandAttempt(&command, status, *sequence);
+#endif
         return false;
     }
     RTOS_ASSERT(status == RTOS_OK);
     *sequence = next;
+#ifdef INSIGHT_TEST_BACKPRESSURE
+    BP_CommandAttempt(&command, status, *sequence);
+#endif
     return true;
 }
 
@@ -141,6 +150,9 @@ static void controller_task(void *argument)
                 if (ack.id != 0U) {
                     App_Events_RecordAck(ack.id, ack.error, GetTick_ms());
                 }
+#ifdef INSIGHT_TEST_BACKPRESSURE
+                BP_Ack(&ack);
+#endif
             }
             if (ack.page != view.page) ++g_display_statistics.page_changes;
             view = ack;
@@ -233,12 +245,18 @@ static void lcd_task(void *argument)
         if (attempt < 2U) RTOS_ASSERT(rtos_delay(100U) == RTOS_OK);
     }
     if (ack.ready == 0U) g_display_statistics.display_fault = 1U;
+#ifdef INSIGHT_TEST_BACKPRESSURE
+    if (ack.ready != 0U) BP_GateConsumer();
+#endif
 
     for (;;) {
         display_command_t command;
         RTOS_ASSERT(App_IPC_ReceiveCommand(&command, RTOS_WAIT_FOREVER) == RTOS_OK);
         ++g_display_statistics.task_runs[2];
         Display_PagesExecute(&command, &ack);
+#ifdef INSIGHT_TEST_BACKPRESSURE
+        BP_Executed(&command);
+#endif
 
         if (command.event != KEY_EVENT_NONE) {
             App_Events_UpdateStage(command.id, EVENT_STAGE_CTRL, EVENT_STAGE_LCD);

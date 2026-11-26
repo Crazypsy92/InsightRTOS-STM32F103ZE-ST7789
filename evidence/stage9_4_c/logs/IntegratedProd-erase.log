@@ -1,0 +1,27 @@
+Open On-Chip Debugger 0.12.0
+Licensed under GNU GPL v2
+For bug reports, read
+	http://openocd.org/doc/doxygen/bugs.html
+Info : STLINK V2J45S7 (API v2) VID:PID 0483:3748
+Info : Target voltage: 3.279098
+Info : Unable to match requested speed 500 kHz, using 480 kHz
+Info : Unable to match requested speed 500 kHz, using 480 kHz
+Info : clock speed 480 kHz
+Info : stlink_dap_op_connect(connect)
+Info : SWD DPIDR 0x1ba01477
+Info : [stm32f1x.cpu] Cortex-M3 r1p1 processor detected
+Info : [stm32f1x.cpu] target has 6 breakpoints, 4 watchpoints
+Info : gdb port disabled
+IDENTITY_PASS IDCODE=0x10036414 CPUID=0x411FC231 FLASH_KIB=512 UID=31ffd8053031533628791143 OBR=0x03FFFFFC WRPR=0xFFFFFFFF
+Warn : [stm32f1x.cpu] target was in unknown state when halt was requested
+Info : device id = 0x10036414
+Info : flash size = 512 KiB
+BANK_LIST {name stm32f1x.flash driver stm32f1x base 134217728 size 524288 bus_width 0 chip_width 0 target stm32f1x.cpu}
+BANK_GEOMETRY_PASS bank=0 start=0x08000000 end_exclusive=0x08080000 pages=0-255 page_bytes=2048
+erased sectors 0 through 30 on flash bank 0 in 0.792223s
+
+BLANK_VERIFIED_63488
+wrote 53676 bytes from file /home/mythepsy92/program/codex/InsightRTOS/build/stage9_4_a_verified/DISPLAY_RTOS_O2_Integrated/insightrtos_display.bin to flash bank 0 at offset 0x00000000 in 1.944812s (26.953 KiB/s)
+
+WRITE_COMPLETE
+shutdown command invoked

@@ -167,6 +167,16 @@
             "cacheVariables": {"INSIGHT_TEST_MUTEX": "ON"}
         },
         {
+            "name": "DISPLAY_RTOS_O2_Backpressure",
+            "inherits": "DISPLAY_RTOS_O2_Integrated_Stress",
+            "cacheVariables": {"INSIGHT_TEST_BACKPRESSURE": "ON"}
+        },
+        {
+            "name": "DISPLAY_RTOS_Debug_Backpressure",
+            "inherits": "DISPLAY_RTOS_Debug_Trace",
+            "cacheVariables": {"INSIGHT_TEST_BACKPRESSURE": "ON", "INSIGHT_APP_INTEGRATED_DIAGNOSTICS": "ON", "INSIGHT_TEST_STRESS": "ON"}
+        },
+        {
             "name": "DISPLAY_RTOS_O2_Job",
             "inherits": "default",
             "cacheVariables": {
@@ -254,6 +264,14 @@
         {
             "name": "DISPLAY_RTOS_Debug_Mutex",
             "configurePreset": "DISPLAY_RTOS_Debug_Mutex"
+        },
+        {
+            "name": "DISPLAY_RTOS_O2_Backpressure",
+            "configurePreset": "DISPLAY_RTOS_O2_Backpressure"
+        },
+        {
+            "name": "DISPLAY_RTOS_Debug_Backpressure",
+            "configurePreset": "DISPLAY_RTOS_Debug_Backpressure"
         },
         {
             "name": "DISPLAY_RTOS_O2_Job",

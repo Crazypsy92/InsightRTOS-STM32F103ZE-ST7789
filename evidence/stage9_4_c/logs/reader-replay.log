@@ -1,0 +1,4 @@
+Invalid full_status rejected: event 33: FULL evidence
+Invalid ack_sequence rejected: event 33: sequence/ACK
+Invalid full_committed rejected: event 33: FULL evidence
+Real capture and three mutated copies: PASS
