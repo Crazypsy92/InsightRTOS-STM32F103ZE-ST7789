@@ -1,0 +1,208 @@
+{
+  "stage": "9.4-C",
+  "status": "PASS",
+  "base_sha": "ad5f271d4a5ab5992ba1d13964f9d333d04aec21",
+  "tools": [
+    "arm-none-eabi-gcc (15:14.2.rel1-1) 14.2.1 20241119",
+    "GNU ld (2.45.50.20251209-1ubuntu1+23build1) 2.45.50.20251209",
+    "cmake version 4.2.3",
+    "GNU gdb (Ubuntu 17.1-2ubuntu1) 17.1",
+    "Open On-Chip Debugger 0.12.0"
+  ],
+  "images": {
+    "DISPLAY_RTOS_O2_Backpressure": {
+      "flash_bytes": 54812,
+      "flash_end_exclusive": "0x800d61c",
+      "erasure_pages_from_zero": 27,
+      "sram_including_msp": 52928,
+      "sram_remaining": 12608,
+      "reset": "0x8000c09",
+      "msp": "0x20010000",
+      "sha256": {
+        "elf": "87e9d4aef27c0b1abf07a73e399a614783f2432d944eda318e39829f80dc7dd9",
+        "bin": "47e4227f5bd4a038d0ad691ef43819e9f2e496a56ec6faf10602f74aeb27a1f6",
+        "hex": "45085a37ea62d8aabc11dcf173f5f0a11c6f1c79589e3ce55e48bf09bf0d22d2",
+        "map": "f655f28523f4948a3fabafbdb41659b98effbf3d38387ef5610f595b473a9535"
+      },
+      "tcb_bytes": 72,
+      "hex_omitted_zero_padding_bytes": 4,
+      "sections": {
+        ".isr_vector": 484,
+        ".text": 37024,
+        ".rodata": 17188,
+        ".ARM": 8,
+        ".preinit_array": 0,
+        ".init_array": 4,
+        ".fini_array": 4,
+        ".data": 96,
+        ".tdata": 0,
+        ".tbss": 0,
+        ".bss": 15968,
+        ".user_stacks": 32768,
+        ".msp_stack": 4096
+      }
+    },
+    "DISPLAY_RTOS_Debug_Backpressure": {
+      "flash_bytes": 77408,
+      "flash_end_exclusive": "0x8012e60",
+      "erasure_pages_from_zero": 38,
+      "sram_including_msp": 52920,
+      "sram_remaining": 12616,
+      "reset": "0x8001211",
+      "msp": "0x20010000",
+      "sha256": {
+        "elf": "30732ca65e9aaedd1a28c7a4d1772128df4576d1bd942d91efe6b3250420ee6b",
+        "bin": "68b11199ee2c4415f48ad594a5d4f691d54bc2a740a4e028268c0973ca6a0d11",
+        "hex": "b65335c987fffb7e31bfbdd3158c72ecf1ddd1a53892a76b86634ac8f8e284fb",
+        "map": "b472506b66141936a38fe22f04b25966ae25df9056054eace6ad0da7344410d9"
+      },
+      "tcb_bytes": 72,
+      "hex_omitted_zero_padding_bytes": 0,
+      "sections": {
+        ".isr_vector": 484,
+        ".text": 56352,
+        ".rodata": 20460,
+        ".ARM": 8,
+        ".preinit_array": 0,
+        ".init_array": 4,
+        ".fini_array": 4,
+        ".data": 96,
+        ".tdata": 0,
+        ".tbss": 0,
+        ".bss": 15956,
+        ".user_stacks": 32768,
+        ".msp_stack": 4096
+      }
+    },
+    "Stage94A_Frozen_Production": {
+      "flash_bytes": 53676,
+      "flash_end_exclusive": "0x800d1ac",
+      "erasure_pages_from_zero": 27,
+      "sram_including_msp": 50376,
+      "sram_remaining": 15160,
+      "reset": "0x8000c09",
+      "msp": "0x20010000",
+      "sha256": {
+        "elf": "ffd1dc85b097e7cc5498343776bd813a7b018174afd619e92f1ec0c3b22fffeb",
+        "bin": "361d1a18fed3eccbb2d28eef4e2b6b16218ef99cc84fe4049ac82b7a40e73418",
+        "hex": "b4595fd2c59a2197416a0f77d0059ff2af8f9a457424d7e35e67aa725d28e432",
+        "map": "b15eff02f3e3b7575f0845a68ba67c993d964b642ec5bcd1c072daaf362e9498"
+      },
+      "tcb_bytes": 72,
+      "hex_omitted_zero_padding_bytes": 4,
+      "sections": {
+        ".isr_vector": 484,
+        ".text": 36344,
+        ".rodata": 16732,
+        ".ARM": 8,
+        ".preinit_array": 0,
+        ".init_array": 4,
+        ".fini_array": 4,
+        ".data": 96,
+        ".tdata": 0,
+        ".tbss": 0,
+        ".bss": 13416,
+        ".user_stacks": 32768,
+        ".msp_stack": 4096
+      }
+    }
+  },
+  "host": {
+    "app": 9,
+    "rt": 9,
+    "job": 77,
+    "clock_validity": 53,
+    "reader_replay": "PASS"
+  },
+  "hardware": {
+    "mcu": "STM32F103ZET6",
+    "st_link": "190057000D0000393333574E",
+    "idcode": "0x10036414",
+    "uid": "31ffd8053031533628791143",
+    "flash_pages": [
+      0,
+      30
+    ],
+    "readbacks": {
+      "Backpressure": {
+        "status": "PASS",
+        "sha256": "47e4227f5bd4a038d0ad691ef43819e9f2e496a56ec6faf10602f74aeb27a1f6",
+        "bytes": 54812,
+        "tail_ff": 8676,
+        "option_bytes_equal": true
+      },
+      "IntegratedProd": {
+        "status": "PASS",
+        "sha256": "361d1a18fed3eccbb2d28eef4e2b6b16218ef99cc84fe4049ac82b7a40e73418",
+        "bytes": 53676,
+        "tail_ff": 9812,
+        "option_bytes_equal": true
+      }
+    },
+    "recovery_seq": [
+      4,
+      8
+    ],
+    "fixture": {
+      "gate_start": 62,
+      "gate_deadline": 212,
+      "gate_end": 212,
+      "complete": 1,
+      "command_max_depth": 32,
+      "full_total": 223,
+      "sent": 48,
+      "executed": 48,
+      "acked": 48
+    },
+    "retry_chain": {
+      "event_id": 33,
+      "full_count": 117,
+      "full_tick": 96,
+      "full_depth": 32,
+      "full_sequence": 33,
+      "full_committed": 32,
+      "full_status": 6,
+      "sent_sequence": 33,
+      "sent_tick": 213,
+      "lcd_sequence": 33,
+      "lcd_tick": 444,
+      "ack_sequence": 33,
+      "ack_tick": 445,
+      "ack_error": 0
+    },
+    "final_ledgers": {
+      "latest_id": 48,
+      "confirmed_id": 48,
+      "latest_event": 1,
+      "completed_ms": 5500,
+      "success_count": 48,
+      "failure_count": 0,
+      "retry_count": 223,
+      "drop_count": 0,
+      "evicted_unacked_count": 40,
+      "orphaned_ack_count": 40,
+      "duplicate_ack_count": 0,
+      "rejected_ack_count": 0,
+      "pending_count": 0
+    },
+    "guards": [
+      3735929054,
+      3735929054,
+      3735929054,
+      3735929054,
+      3735929054
+    ],
+    "faults": [
+      0,
+      0
+    ],
+    "assert_line": 0
+  },
+  "not_tested": [
+    "LCD visual review",
+    "extended stability",
+    "repeated bursts",
+    "Debug HIL",
+    "QEMU"
+  ]
+}

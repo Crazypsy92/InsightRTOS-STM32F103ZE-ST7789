@@ -1,3 +1,6 @@
+#ifdef INSIGHT_TEST_BACKPRESSURE
+#include "backpressure_fixture.h"
+#endif
 /**
  * @file key_port.c
  * @brief 单按键驱动实现文件（KEY1 / PA15）
@@ -136,6 +139,17 @@ static uint32_t stress_ms;
 
 static void stress_sample_tick(void)
 {
+#ifdef INSIGHT_TEST_BACKPRESSURE
+    if (g_stress_request == 3U) {
+        if (++stress_ms == 10U) {
+            stress_ms = 0U;
+            Display_KeyFromISR(KEY_EVENT_SHORT);
+            ++g_stress_generated;
+            if (g_stress_generated == BP_EVENTS) g_stress_request = 0U;
+        }
+        return;
+    }
+#endif
     if (g_stress_request == 2U && g_stress_remaining == 0U) {
         for (unsigned int i = 0; i < APP_KEY_QUEUE_CAPACITY + 2U; ++i) {
             Display_KeyFromISR(KEY_EVENT_SHORT);
