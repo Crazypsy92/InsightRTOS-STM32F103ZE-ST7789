@@ -1,0 +1,2 @@
+PASS: DMA/CS/DC and transaction accounting, five negative cases
+PASS: full hardware capture and physical KEY event replay

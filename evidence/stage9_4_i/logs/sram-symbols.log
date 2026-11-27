@@ -1,0 +1,10 @@
+00000000 A _Min_Heap_Size
+20002110 0000011c b active_row
+20002230 0000019c b counters
+200039b0 00008000 b display_stacks
+20001ee8 000001e8 B g_lcd_panel_diag
+00000000 A _Min_Heap_Size
+20002080 0000011c b active_row
+20001ee4 0000019c b counters
+200039a8 00008000 b display_stacks
+200021dc 000001e8 B g_lcd_panel_diag

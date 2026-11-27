@@ -256,3 +256,16 @@ if(INSIGHT_TEST_SPI_DUPLEX)
     target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE tests/hardware)
     target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE INSIGHT_TEST_SPI_DUPLEX=1)
 endif()
+
+option(INSIGHT_TEST_LCD_PANEL "Observe real ST7789 transactions and draw diagnostic patterns" OFF)
+if(INSIGHT_TEST_LCD_PANEL)
+    if(NOT INSIGHT_DISPLAY_RTOS OR NOT INSIGHT_RTOS_ENABLED OR NOT INSIGHT_APP_INTEGRATED_DIAGNOSTICS
+       OR INSIGHT_TEST_STRESS OR INSIGHT_TEST_TIMING OR INSIGHT_TEST_MSP OR INSIGHT_TEST_JOB
+       OR INSIGHT_TEST_MUTEX OR INSIGHT_TEST_SEMAPHORE OR INSIGHT_TEST_LIFECYCLE
+       OR INSIGHT_TEST_BACKPRESSURE OR INSIGHT_TEST_IPC_CANCEL OR INSIGHT_TEST_SPI_DMA OR INSIGHT_TEST_SPI_DUPLEX)
+        message(FATAL_ERROR "LCD panel diagnostic requires the integrated display application without other fixtures")
+    endif()
+    target_sources(${CMAKE_PROJECT_NAME} PRIVATE tests/hardware/lcd_panel.c)
+    target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE tests/hardware)
+    target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE INSIGHT_TEST_LCD_PANEL=1)
+endif()

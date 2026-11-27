@@ -1,0 +1,167 @@
+{
+  "stage": "9.4-I",
+  "status": "PASS",
+  "base_sha": "19165af3601c1885873ec36f386112ff8909a31c",
+  "tools": "logs/tools.log",
+  "software": {
+    "host_count": 478,
+    "host_exit": 0,
+    "host_panel_exit": 0,
+    "capture_replay_exit": 0,
+    "arm_debug_exit": 0,
+    "arm_o2_exit": 0,
+    "production_build_exit": 0,
+    "production_symbol_check_exit": 0,
+    "images": {
+      "DISPLAY_RTOS_O2_LcdPanel": {
+        "flash_bytes": 56736,
+        "flash_end_exclusive": "0x800dda0",
+        "erasure_pages_from_zero": 28,
+        "sram_including_msp": 51632,
+        "sram_remaining": 13904,
+        "reset": "0x8000c09",
+        "msp": "0x20010000",
+        "sha256": {
+          "elf": "e958e1e154f2b802c9a2f32a269f0c34cbcb3512db70098af203d5c48a6a4955",
+          "bin": "0ce7976fd3cb2a00456c9cc6d448ade6ef0229b5d012bb772f82f0a10260072b",
+          "hex": "f2dee9288bab3ad67efa153645e383e17f38070d988d4869411b4becf87ca978",
+          "map": "01a9c55b5edc9494cab3531372a41fe39cc7a044004519924558997cafb4a6f0"
+        },
+        "tcb_bytes": 72,
+        "hex_omitted_zero_padding_bytes": 0,
+        "sections": {
+          ".isr_vector": 484,
+          ".text": 39372,
+          ".rodata": 16768,
+          ".ARM": 8,
+          ".preinit_array": 0,
+          ".init_array": 4,
+          ".fini_array": 4,
+          ".data": 96,
+          ".tdata": 0,
+          ".tbss": 0,
+          ".bss": 14672,
+          ".user_stacks": 32768,
+          ".msp_stack": 4096
+        }
+      },
+      "DISPLAY_RTOS_Debug_LcdPanel": {
+        "flash_bytes": 79824,
+        "flash_end_exclusive": "0x80137d0",
+        "erasure_pages_from_zero": 39,
+        "sram_including_msp": 51624,
+        "sram_remaining": 13912,
+        "reset": "0x8001211",
+        "msp": "0x20010000",
+        "sha256": {
+          "elf": "ef1a2f5c649a50e8ed842186a06954ca160f929ce04240384ca39acfab1eb154",
+          "bin": "6c37aeee9e22ed648a86eed2f9b92ba479eef811855848dea5a2ab36937be24e",
+          "hex": "b7729b2bb3cf7174b7352a590553a1d8bcd34eb35d1f7a553364c2ff74785bfc",
+          "map": "1b7a8634598e04eb2c656ac349d2e219af19d6092d91c15a2e8c46f05d3a358f"
+        },
+        "tcb_bytes": 72,
+        "hex_omitted_zero_padding_bytes": 0,
+        "sections": {
+          ".isr_vector": 484,
+          ".text": 59188,
+          ".rodata": 20040,
+          ".ARM": 8,
+          ".preinit_array": 0,
+          ".init_array": 4,
+          ".fini_array": 4,
+          ".data": 96,
+          ".tdata": 0,
+          ".tbss": 0,
+          ".bss": 14660,
+          ".user_stacks": 32768,
+          ".msp_stack": 4096
+        }
+      },
+      "Stage94A_Frozen_Production": {
+        "flash_bytes": 53676,
+        "flash_end_exclusive": "0x800d1ac",
+        "erasure_pages_from_zero": 27,
+        "sram_including_msp": 50376,
+        "sram_remaining": 15160,
+        "reset": "0x8000c09",
+        "msp": "0x20010000",
+        "sha256": {
+          "elf": "ffd1dc85b097e7cc5498343776bd813a7b018174afd619e92f1ec0c3b22fffeb",
+          "bin": "361d1a18fed3eccbb2d28eef4e2b6b16218ef99cc84fe4049ac82b7a40e73418",
+          "hex": "b4595fd2c59a2197416a0f77d0059ff2af8f9a457424d7e35e67aa725d28e432",
+          "map": "b15eff02f3e3b7575f0845a68ba67c993d964b642ec5bcd1c072daaf362e9498"
+        },
+        "tcb_bytes": 72,
+        "hex_omitted_zero_padding_bytes": 4,
+        "sections": {
+          ".isr_vector": 484,
+          ".text": 36344,
+          ".rodata": 16732,
+          ".ARM": 8,
+          ".preinit_array": 0,
+          ".init_array": 4,
+          ".fini_array": 4,
+          ".data": 96,
+          ".tdata": 0,
+          ".tbss": 0,
+          ".bss": 13416,
+          ".user_stacks": 32768,
+          ".msp_stack": 4096
+        }
+      }
+    },
+    "debug_flashable_under_current_authorization": false
+  },
+  "hardware": {
+    "probe": "190057000D0000393333574E",
+    "probe_firmware": "V2J45S7",
+    "adapter_khz": 100,
+    "idcode": "0x10036414",
+    "cpuid": "0x411fc231",
+    "uid": "31ffd8053031533628791143",
+    "flash_kib": 512,
+    "obr": "0x03fffffc",
+    "wrpr": "0xffffffff",
+    "loopback_removed_user_confirmed": true,
+    "option_bytes": "a55aff00ff00ff00ff00ff00ff00ff00",
+    "option_bytes_unchanged": true,
+    "erased_pages_inclusive": [
+      0,
+      30
+    ],
+    "authorized_range": [
+      "0x08000000",
+      "0x0800f800"
+    ],
+    "range_end_exclusive": true,
+    "restored_range_sha256": "2f6cf7b5270afb5079925e4783d1f29d8ef1c7f80cdfc5dbec96d4ba3a28b1be",
+    "monitor_sequence": [
+      4,
+      8
+    ],
+    "monitor_ticks": [
+      210,
+      550
+    ],
+    "duration_ms": 622160,
+    "host_elapsed_seconds": 630.4044634829997,
+    "complete_frames": 393,
+    "observed_window_frames": 392,
+    "observed_window_local_updates": 391,
+    "minute_samples": 12,
+    "physical_key_events": 3,
+    "initial_parser_failure": "assumed periodic KEY increments; retained raw trace and validated actual event-driven behavior",
+    "tx_dma_count": 235362,
+    "poll_count": 93206,
+    "max_queue_depths": [
+      0,
+      0,
+      0,
+      1,
+      1
+    ],
+    "spi_sck_configured_hz": 18000000,
+    "spi_sck_waveform": "NOT MEASURED",
+    "visual_confirmation_log": "logs/visual-confirmation.json"
+  }
+}
