@@ -1,0 +1,98 @@
+{
+  "DISPLAY_RTOS_O2_SpiDuplex": {
+    "flash_bytes": 26708,
+    "flash_end_exclusive": "0x8006854",
+    "erasure_pages_from_zero": 14,
+    "sram_including_msp": 59480,
+    "sram_remaining": 6056,
+    "reset": "0x80009f1",
+    "msp": "0x20010000",
+    "sha256": {
+      "elf": "a4fb3cc3c566e5ff76195ba88176e367217ecbfb882f86b36f485cda983a8b7a",
+      "bin": "742115c56570ed9dc0bd7b6cc74944aa69801602ade6a455a1612e318f2b700d",
+      "hex": "d75bb1bb6de725b4937d33ba9175c1435bc2176adb31bf01da056b8e4b656d2f",
+      "map": "1544b18a66c38d90b271603810809a7c659872c4b8fdf54c2377bda1bcae3dcf"
+    },
+    "tcb_bytes": 72,
+    "hex_omitted_zero_padding_bytes": 0,
+    "sections": {
+      ".isr_vector": 484,
+      ".text": 18256,
+      ".rodata": 7868,
+      ".ARM": 8,
+      ".preinit_array": 0,
+      ".init_array": 4,
+      ".fini_array": 4,
+      ".data": 84,
+      ".tdata": 0,
+      ".tbss": 0,
+      ".bss": 22528,
+      ".user_stacks": 32768,
+      ".msp_stack": 4096
+    }
+  },
+  "DISPLAY_RTOS_Debug_SpiDuplex": {
+    "flash_bytes": 41564,
+    "flash_end_exclusive": "0x800a25c",
+    "erasure_pages_from_zero": 21,
+    "sram_including_msp": 59480,
+    "sram_remaining": 6056,
+    "reset": "0x8000ff9",
+    "msp": "0x20010000",
+    "sha256": {
+      "elf": "fa1bde9c7ab3c589718d1d6c50bd96aed1c143dbf2b29a1ffe84da383cf007f5",
+      "bin": "bbfcc471f421379342735877b92494350047a3c4b7bf5b02b4e081ef3e580348",
+      "hex": "2d9f729a6efb3e636cb35c6460d7be96547b980a772c93ac3c2d7f56a9e2e22f",
+      "map": "99d40ad6f5ba91bd3a20a6e5928bd734fd28d445dcc44fd294ee3b6ef6af71f4"
+    },
+    "tcb_bytes": 72,
+    "hex_omitted_zero_padding_bytes": 0,
+    "sections": {
+      ".isr_vector": 484,
+      ".text": 28940,
+      ".rodata": 12040,
+      ".ARM": 8,
+      ".preinit_array": 0,
+      ".init_array": 4,
+      ".fini_array": 4,
+      ".data": 84,
+      ".tdata": 0,
+      ".tbss": 0,
+      ".bss": 22524,
+      ".user_stacks": 32768,
+      ".msp_stack": 4096
+    }
+  },
+  "Stage94A_Frozen_Production": {
+    "flash_bytes": 53676,
+    "flash_end_exclusive": "0x800d1ac",
+    "erasure_pages_from_zero": 27,
+    "sram_including_msp": 50376,
+    "sram_remaining": 15160,
+    "reset": "0x8000c09",
+    "msp": "0x20010000",
+    "sha256": {
+      "elf": "ffd1dc85b097e7cc5498343776bd813a7b018174afd619e92f1ec0c3b22fffeb",
+      "bin": "361d1a18fed3eccbb2d28eef4e2b6b16218ef99cc84fe4049ac82b7a40e73418",
+      "hex": "b4595fd2c59a2197416a0f77d0059ff2af8f9a457424d7e35e67aa725d28e432",
+      "map": "b15eff02f3e3b7575f0845a68ba67c993d964b642ec5bcd1c072daaf362e9498"
+    },
+    "tcb_bytes": 72,
+    "hex_omitted_zero_padding_bytes": 4,
+    "sections": {
+      ".isr_vector": 484,
+      ".text": 36344,
+      ".rodata": 16732,
+      ".ARM": 8,
+      ".preinit_array": 0,
+      ".init_array": 4,
+      ".fini_array": 4,
+      ".data": 96,
+      ".tdata": 0,
+      ".tbss": 0,
+      ".bss": 13416,
+      ".user_stacks": 32768,
+      ".msp_stack": 4096
+    }
+  }
+}

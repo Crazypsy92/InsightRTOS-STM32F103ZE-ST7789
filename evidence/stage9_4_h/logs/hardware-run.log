@@ -1,0 +1,4 @@
+SpiDuplex readback verified
+STM32 SPI duplex PASS: loopback, RX timeout and recovery
+IntegratedProd readback verified
+Integrated diagnostics hardware PASS IntegratedProd

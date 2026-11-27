@@ -197,6 +197,11 @@
             "cacheVariables": {"INSIGHT_TEST_SPI_DMA": "ON"}
         },
         {
+            "name": "DISPLAY_RTOS_O2_SpiDuplex",
+            "inherits": "DISPLAY_RTOS_O2_Trace",
+            "cacheVariables": {"INSIGHT_TEST_SPI_DUPLEX": "ON"}
+        },
+        {
             "name": "DISPLAY_RTOS_Debug_Semaphore",
             "inherits": "DISPLAY_RTOS_Debug_Trace",
             "cacheVariables": {"INSIGHT_TEST_SEMAPHORE": "ON"}
@@ -215,6 +220,11 @@
             "name": "DISPLAY_RTOS_Debug_SpiDma",
             "inherits": "DISPLAY_RTOS_Debug_Trace",
             "cacheVariables": {"INSIGHT_TEST_SPI_DMA": "ON"}
+        },
+        {
+            "name": "DISPLAY_RTOS_Debug_SpiDuplex",
+            "inherits": "DISPLAY_RTOS_Debug_Trace",
+            "cacheVariables": {"INSIGHT_TEST_SPI_DUPLEX": "ON"}
         },
         {
             "name": "DISPLAY_RTOS_O2_Job",
@@ -330,6 +340,10 @@
             "configurePreset": "DISPLAY_RTOS_O2_SpiDma"
         },
         {
+            "name": "DISPLAY_RTOS_O2_SpiDuplex",
+            "configurePreset": "DISPLAY_RTOS_O2_SpiDuplex"
+        },
+        {
             "name": "DISPLAY_RTOS_Debug_Semaphore",
             "configurePreset": "DISPLAY_RTOS_Debug_Semaphore"
         },
@@ -344,6 +358,10 @@
         {
             "name": "DISPLAY_RTOS_Debug_SpiDma",
             "configurePreset": "DISPLAY_RTOS_Debug_SpiDma"
+        },
+        {
+            "name": "DISPLAY_RTOS_Debug_SpiDuplex",
+            "configurePreset": "DISPLAY_RTOS_Debug_SpiDuplex"
         },
         {
             "name": "DISPLAY_RTOS_O2_Job",
