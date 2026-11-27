@@ -1,0 +1,32 @@
+LcdPanel readback verified
+minute 0 | frames 1 | DMA 6347 | monitor 2
+minute 1 | frames 40 | DMA 27970 | monitor 116
+minute 2 | frames 77 | DMA 49620 | monitor 232
+minute 3 | frames 115 | DMA 71003 | monitor 344
+minute 4 | frames 153 | DMA 92626 | monitor 462
+minute 5 | frames 191 | DMA 114020 | monitor 574
+minute 6 | frames 229 | DMA 135403 | monitor 688
+minute 7 | frames 267 | DMA 157293 | monitor 804
+minute 8 | frames 304 | DMA 178436 | monitor 918
+minute 9 | frames 342 | DMA 200059 | monitor 1034
+minute 10 | frames 380 | DMA 221709 | monitor 1148
+minute 11 | frames 393 | DMA 235362 | monitor 1202
+Traceback (most recent call last):
+  File "/tmp/insight-94i.RXp5BC/work/tests/hardware/read_lcd_panel.py", line 136, in <module>
+    main()
+    ~~~~^^
+  File "/tmp/insight-94i.RXp5BC/work/tests/hardware/read_lcd_panel.py", line 127, in main
+    elapsed = validate_series(samples)
+  File "/tmp/insight-94i.RXp5BC/work/tests/hardware/read_lcd_panel.py", line 70, in validate_series
+    require(b["diagnostics"]["seq_end"] > a["diagnostics"]["seq_end"] and
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            b["end_read_tick"] > a["end_read_tick"] and b["tim2_ms"] > a["tim2_ms"] and
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+            b["stats"]["ll_last_error"] == b["stats"]["ll_recover_count"] == 0,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            "task, LCD or Monitor did not advance")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/insight-94i.RXp5BC/work/tests/hardware/sample_stability.py", line 17, in require
+    raise RuntimeError(message)
+RuntimeError: task, LCD or Monitor did not advance

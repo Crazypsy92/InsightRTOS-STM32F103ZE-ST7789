@@ -2,6 +2,8 @@
 #include "spi_dma_fixture.h"
 #elif defined(INSIGHT_TEST_SPI_DUPLEX)
 #include "spi_duplex_fixture.h"
+#elif defined(INSIGHT_TEST_LCD_PANEL)
+#include "lcd_panel.h"
 #endif
 
 /**
@@ -404,6 +406,8 @@ static spi_bus_status_t ll_transfer_dma(spi_stm32_ll_t *ll,
         spi_dma_fixture_hook(ll, SPI_DMA_TEST_ARMED, offset, chunk, timeout, 0U, SPI_BUS_OK);
 #elif defined(INSIGHT_TEST_SPI_DUPLEX)
         spi_duplex_fixture_hook(ll, SPI_DUPLEX_ARMED, offset, chunk, timeout, 0U, SPI_BUS_OK);
+#elif defined(INSIGHT_TEST_LCD_PANEL)
+        LCDPanel_DMA(ll, PANEL_DMA_ARMED, chunk, status, rx == NULL);
 #endif
         const uint32_t start = ll_dwt_cycles();
         if (rx != NULL) {
@@ -426,6 +430,8 @@ static spi_bus_status_t ll_transfer_dma(spi_stm32_ll_t *ll,
         spi_dma_fixture_hook(ll, SPI_DMA_TEST_WAITED, offset, chunk, timeout, start, status);
 #elif defined(INSIGHT_TEST_SPI_DUPLEX)
         spi_duplex_fixture_hook(ll, SPI_DUPLEX_WAITED, offset, chunk, timeout, start, status);
+#elif defined(INSIGHT_TEST_LCD_PANEL)
+        LCDPanel_DMA(ll, PANEL_DMA_WAITED, chunk, status, rx == NULL);
 #endif
         if (status != SPI_BUS_OK) {
             break;
@@ -443,6 +449,8 @@ static spi_bus_status_t ll_transfer_dma(spi_stm32_ll_t *ll,
         spi_dma_fixture_hook(ll, SPI_DMA_TEST_DRAINED, offset, chunk, timeout, start, status);
 #elif defined(INSIGHT_TEST_SPI_DUPLEX)
         spi_duplex_fixture_hook(ll, SPI_DUPLEX_DRAINED, offset, chunk, timeout, start, status);
+#elif defined(INSIGHT_TEST_LCD_PANEL)
+        LCDPanel_DMA(ll, PANEL_DMA_DRAINED, chunk, status, rx == NULL);
 #endif
         spi_stop_dma(ll);
         if (rx == NULL && !spi_clear_rx(spi)) {
@@ -507,6 +515,9 @@ static int ll_transfer(spi_bus_t *bus, const uint8_t *tx, uint8_t *rx, uint32_t 
     if (ll->current.use_dma && ll->hw->dma != NULL && len >= SPI_DMA_MIN_LEN) {
         ret = (int)ll_transfer_dma(ll, tx, rx, len);
     } else {
+#ifdef INSIGHT_TEST_LCD_PANEL
+        LCDPanel_Poll(ll, len, rx == NULL);
+#endif
         ret = (int)ll_transfer_poll(ll, tx, rx, len);
     }
     ll->last_error = ret;

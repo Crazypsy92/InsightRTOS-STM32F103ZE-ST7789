@@ -2,6 +2,22 @@
     "version": 3,
     "configurePresets": [
         {
+            "name": "DISPLAY_RTOS_O2_LcdPanel",
+            "inherits": "DISPLAY_RTOS_O2_Trace",
+            "cacheVariables": {
+                "INSIGHT_APP_INTEGRATED_DIAGNOSTICS": "ON",
+                "INSIGHT_TEST_LCD_PANEL": "ON"
+            }
+        },
+        {
+            "name": "DISPLAY_RTOS_Debug_LcdPanel",
+            "inherits": "DISPLAY_RTOS_Debug_Trace",
+            "cacheVariables": {
+                "INSIGHT_APP_INTEGRATED_DIAGNOSTICS": "ON",
+                "INSIGHT_TEST_LCD_PANEL": "ON"
+            }
+        },
+        {
             "name": "default",
             "hidden": true,
             "generator": "Ninja",
@@ -243,6 +259,14 @@
         }
     ],
     "buildPresets": [
+        {
+            "name": "DISPLAY_RTOS_O2_LcdPanel",
+            "configurePreset": "DISPLAY_RTOS_O2_LcdPanel"
+        },
+        {
+            "name": "DISPLAY_RTOS_Debug_LcdPanel",
+            "configurePreset": "DISPLAY_RTOS_Debug_LcdPanel"
+        },
         {
             "name": "Debug",
             "configurePreset": "Debug"

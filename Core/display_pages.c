@@ -2,6 +2,9 @@
 #include "display_ui.h"
 #include "st7789_port.h"
 #include "delay.h"
+#ifdef INSIGHT_TEST_LCD_PANEL
+#include "lcd_panel.h"
+#endif
 
 static key_event_t staged_event;
 static uint32_t staged_consumptions;
@@ -42,6 +45,9 @@ void Display_PagesInit(display_ack_t *ack)
     s_page = 0U;
     s_auto_run = 0U;
     s_ready = 0U;
+#ifdef INSIGHT_TEST_LCD_PANEL
+    LCDPanel_PreInit();
+#endif
     if (ST7789_PortInit() == LCD_OK) {
         s_ready = 1U;
         Display_UIConsolidated(true, KEY_EVENT_NONE);
@@ -69,7 +75,15 @@ void Display_PagesExecute(const display_command_t *cmd, display_ack_t *ack)
     RTOS_ASSERT(staged_consumptions == before + 1U);
     RTOS_ASSERT(staged_event == KEY_EVENT_NONE);
 
+#ifdef INSIGHT_TEST_LCD_PANEL
+    bool entering = false;
+    if (!LCDPanel_Step(&entering)) {
+        Display_UIConsolidated(entering, (key_event_t)cmd->event);
+    }
+    LCDPanel_Publish();
+#else
     Display_UIConsolidated(false, (key_event_t)cmd->event);
+#endif
     s_last_frame_ms = GetTick_ms();
     ++refresh_count;
     snapshot(cmd->sequence, cmd->id, ack);

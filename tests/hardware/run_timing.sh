@@ -17,6 +17,7 @@ case "$mode" in
     IpcCancel) evidence=evidence/stage9_4_f ;;
     SpiDma) evidence=evidence/stage9_4_g ;;
     SpiDuplex) evidence=evidence/stage9_4_h ;;
+    LcdPanel) evidence=evidence/stage9_4_i ;;
 esac
 log="$evidence/logs"
 if [[ $mode == Mutex ]]; then log="$log/hardware"; fi
@@ -40,6 +41,7 @@ case "$mode" in
     IpcCancel) profiles=(IpcCancel IntegratedProd) ;;
     SpiDma) profiles=(SpiDma IntegratedProd) ;;
     SpiDuplex) profiles=(SpiDuplex IntegratedProd) ;;
+    LcdPanel) profiles=(LcdPanel IntegratedProd) ;;
     *) exit 2 ;;
 esac
 
@@ -56,8 +58,9 @@ for name in "${profiles[@]}"; do
         IpcCancel) profile=DISPLAY_RTOS_O2_IpcCancel ;;
         SpiDma) profile=DISPLAY_RTOS_O2_SpiDma ;;
         SpiDuplex) profile=DISPLAY_RTOS_O2_SpiDuplex ;;
+        LcdPanel) profile=DISPLAY_RTOS_O2_LcdPanel ;;
     esac
-    if [[ ( $mode == Mutex || $mode == Backpressure || $mode == Semaphore || $mode == Lifecycle || $mode == IpcCancel || $mode == SpiDma || $mode == SpiDuplex ) && $name == IntegratedProd ]]; then profile=Stage94A_Frozen_Production; fi
+    if [[ ( $mode == Mutex || $mode == Backpressure || $mode == Semaphore || $mode == Lifecycle || $mode == IpcCancel || $mode == SpiDma || $mode == SpiDuplex || $mode == LcdPanel ) && $name == IntegratedProd ]]; then profile=Stage94A_Frozen_Production; fi
     f=$(realpath "build/$profile/insightrtos_display.bin")
     bin="${f%.bin}"
     proof="$log/firmware-audit.json"
@@ -73,6 +76,11 @@ PY
     prefix="$log/$name"
     tmp="$scratch/$name"
     test ! -e "$prefix-erase.log"
+    if [[ $name == LcdPanel ]]; then
+        openocd -f "$cfg/memap.cfg" -f "$cfg/identity.tcl" \
+          -c 'set high 0; for {set n 0} {$n < 20} {incr n} {if {[lindex [read_memory 0x40011408 32 1] 0] & 0x800} {set high 1; break}; sleep 30}; if {!$high} {error "LCD CS idle high not observed"}; echo PD11_IDLE_HIGH; shutdown' > "$prefix-cs-preflight.log" 2>&1
+        rg -q '^PD11_IDLE_HIGH$' "$prefix-cs-preflight.log"
+    fi
     # Halt before inspecting Flash. Live MEM-AP reads can return
     # inconsistent Flash words while the CPU and DMA are active.
     openocd -f "$cfg/flash-target.tcl" -f "$cfg/identity.tcl" \
@@ -97,7 +105,7 @@ PY
     rg -q '^WRITE_COMPLETE$' "$prefix-erase.log"
     readback_cfg="$cfg/memap.cfg"
     readback_cmd=()
-    if [[ $mode == SpiDuplex ]]; then
+    if [[ $mode == SpiDuplex || $mode == LcdPanel ]]; then
         readback_cfg="$cfg/flash-target.tcl"
         readback_cmd=(-c 'halt; wait_halt 3000')
     fi
@@ -157,6 +165,9 @@ PY
     elif [[ $name == SpiDuplex ]]; then
         PYTHONDONTWRITEBYTECODE=1 python3 tests/hardware/read_spi_duplex.py --elf "$bin.elf" \
           --out "$prefix-fixture.json" | tee "$prefix-sampler.log"
+    elif [[ $name == LcdPanel ]]; then
+        PYTHONDONTWRITEBYTECODE=1 python3 tests/hardware/read_lcd_panel.py --elf "$bin.elf" \
+          --out "$prefix-panel.json" | tee "$prefix-sampler.log"
     elif [[ $name == Integrated || $name == IntegratedProd ]]; then
         PYTHONDONTWRITEBYTECODE=1 python3 tests/hardware/read_integrated.py --elf "$bin.elf" \
           --profile "$name" --out "$prefix-diag.json" | tee "$prefix-sampler.log"

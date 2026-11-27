@@ -1,0 +1,17 @@
+{
+  "observer": "现场开发板操作者（本对话用户）",
+  "method": "通电后及测试结束后的现场目视与对话确认",
+  "patterns_confirmed": true,
+  "normal_ui_restored": true,
+  "no_visual_anomaly": true,
+  "description": "现场确认纯色轮换、四色象限、横竖色条与下方帧号出现，10 分钟诊断期间未见错色、错位、花屏或残影。诊断退出及恢复冻结正式固件后均确认原 InsightRTOS 信息页显示正常。未采集照片。",
+  "raw_answers": {
+    "rewiring": "ok",
+    "first_observation": "图片放到第2张颜色是一样的，右下角会有一行字，其他的像你说的那样",
+    "local_text_clarification": "就是第一 张和第2张的颜色是一样的，就是下面多了一行字，不是说图片颜色直接变化的",
+    "full_cycle": "是的",
+    "diagnostic_finish_and_key": "正常",
+    "visual_anomaly": "没有",
+    "restored_ui": "是的"
+  }
+}

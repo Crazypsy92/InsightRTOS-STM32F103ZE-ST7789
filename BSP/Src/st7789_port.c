@@ -8,6 +8,9 @@
  *          SPI3 SCK=PB3 / MOSI=PB5，CS=PD11，DC=PD12，BL=PD13，无 RST。
  */
 #include "st7789_port.h"
+#ifdef INSIGHT_TEST_LCD_PANEL
+#include "lcd_panel.h"
+#endif
 #include "bsp_spi.h"
 #include "delay.h"
 #include <string.h>
@@ -89,6 +92,9 @@ static LCD_Result Port_Cs(void *ctx, uint8_t level)
             return LCD_ERROR_BUS;
         }
         LL_GPIO_ResetOutputPin(hw->cs_port, hw->cs_pin);
+#ifdef INSIGHT_TEST_LCD_PANEL
+    LCDPanel_Select(hw->bus, hw);
+#endif
         return LCD_OK;
     }
 
@@ -96,6 +102,9 @@ static LCD_Result Port_Cs(void *ctx, uint8_t level)
     int rel = spi_bus_release(hw->bus, hw);
     if (rel > 0) {
         LL_GPIO_SetOutputPin(hw->cs_port, hw->cs_pin);
+#ifdef INSIGHT_TEST_LCD_PANEL
+    LCDPanel_Release(hw->bus);
+#endif
         return LCD_OK;
     }
     return (rel == 0) ? LCD_OK : LCD_ERROR_BUS;
@@ -146,6 +155,9 @@ static LCD_Result Port_Write(void *ctx, const uint8_t *buf, uint16_t len)
         return LCD_ERROR_BUS;
     }
     int ret = spi_bus_transfer(hw->bus, hw, buf, NULL, len);
+#ifdef INSIGHT_TEST_LCD_PANEL
+    LCDPanel_WriteReturned(hw->bus, hw, ret);
+#endif
     if (ret == SPI_BUS_OK) {
         return LCD_OK;
     }

@@ -1,0 +1,18 @@
+Open On-Chip Debugger 0.12.0
+Licensed under GNU GPL v2
+For bug reports, read
+	http://openocd.org/doc/doxygen/bugs.html
+Info : STLINK V2J45S7 (API v2) VID:PID 0483:3748
+Info : Target voltage: 3.276923
+Info : clock speed 100 kHz
+Info : stlink_dap_op_connect(connect)
+Info : SWD DPIDR 0x1ba01477
+Info : [stm32f1x.cpu] Cortex-M3 r1p1 processor detected
+Info : [stm32f1x.cpu] target has 6 breakpoints, 4 watchpoints
+Info : gdb port disabled
+IDENTITY_PASS IDCODE=0x10036414 CPUID=0x411FC231 FLASH_KIB=512 UID=31ffd8053031533628791143 OBR=0x03FFFFFC WRPR=0xFFFFFFFF
+[stm32f1x.cpu] halted due to debug-request, current mode: Handler External Interrupt(28)
+xPSR: 0x0100002c pc: 0x08002ea0 msp: 0x20010000
+dumped 63488 bytes in 8.839525s (7.014 KiB/s)
+
+shutdown command invoked

@@ -1,0 +1,645 @@
+{
+  "tick": 67342,
+  "tim2_ms": 673430,
+  "stats": {
+    "task_runs": [
+      3,
+      67334,
+      2541,
+      1312
+    ],
+    "key_isr_events": 3,
+    "key_task_events": 3,
+    "controller_events": 3,
+    "lcd_events": 3,
+    "key_overflows": 0,
+    "command_overflows": 0,
+    "telemetry_overflows": 0,
+    "transport_errors": 0,
+    "initialization_errors": 0,
+    "lcd_refreshes": 2541,
+    "page_changes": 0,
+    "page": 0,
+    "automatic": 0,
+    "ready": 1,
+    "tick": 67300,
+    "key_short": 2,
+    "key_long": 0,
+    "key_double": 1,
+    "queue_depths": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "welcome_shows": 0,
+    "monitor_refreshes": 0,
+    "monitor_rows": 0,
+    "display_fault": 0,
+    "ll_recover_count": 0,
+    "last_lcd_error": 0,
+    "ll_last_error": 0,
+    "snapshots": [
+      {
+        "identity": {
+          "slot": 0,
+          "generation": 1
+        },
+        "state": 4,
+        "base_priority": 5,
+        "effective_priority": 5
+      },
+      {
+        "identity": {
+          "slot": 1,
+          "generation": 1
+        },
+        "state": 4,
+        "base_priority": 4,
+        "effective_priority": 4
+      },
+      {
+        "identity": {
+          "slot": 2,
+          "generation": 1
+        },
+        "state": 4,
+        "base_priority": 2,
+        "effective_priority": 2
+      },
+      {
+        "identity": {
+          "slot": 3,
+          "generation": 1
+        },
+        "state": 2,
+        "base_priority": 1,
+        "effective_priority": 1
+      }
+    ],
+    "key_attempts": 3,
+    "key_sent_ok": 3,
+    "key_queue_full": 0,
+    "key_wrong_context": 0,
+    "key_invalid_arg": 0,
+    "key_other_errors": 0
+  },
+  "tracker": {
+    "history": [
+      {
+        "id": 0,
+        "event": 0,
+        "stage": 0,
+        "timestamp_ms": 0,
+        "ack_ms": 0,
+        "error": 0
+      },
+      {
+        "id": 1,
+        "event": 1,
+        "stage": 5,
+        "timestamp_ms": 658030,
+        "ack_ms": 658130,
+        "error": 0
+      },
+      {
+        "id": 2,
+        "event": 1,
+        "stage": 5,
+        "timestamp_ms": 659655,
+        "ack_ms": 659760,
+        "error": 0
+      },
+      {
+        "id": 3,
+        "event": 2,
+        "stage": 5,
+        "timestamp_ms": 661385,
+        "ack_ms": 661470,
+        "error": 0
+      },
+      {
+        "id": 0,
+        "event": 0,
+        "stage": 0,
+        "timestamp_ms": 0,
+        "ack_ms": 0,
+        "error": 0
+      },
+      {
+        "id": 0,
+        "event": 0,
+        "stage": 0,
+        "timestamp_ms": 0,
+        "ack_ms": 0,
+        "error": 0
+      },
+      {
+        "id": 0,
+        "event": 0,
+        "stage": 0,
+        "timestamp_ms": 0,
+        "ack_ms": 0,
+        "error": 0
+      },
+      {
+        "id": 0,
+        "event": 0,
+        "stage": 0,
+        "timestamp_ms": 0,
+        "ack_ms": 0,
+        "error": 0
+      }
+    ],
+    "latest_id": 3,
+    "confirmed_id": 3,
+    "latest_event": 2,
+    "completed_ms": 661470,
+    "success_count": 3,
+    "failure_count": 0,
+    "retry_count": 0,
+    "drop_count": 0,
+    "evicted_unacked_count": 0,
+    "orphaned_ack_count": 0,
+    "duplicate_ack_count": 0,
+    "rejected_ack_count": 0,
+    "pending_count": 0
+  },
+  "faults": [
+    0,
+    0
+  ],
+  "guards": [
+    3735929054,
+    3735929054,
+    3735929054,
+    3735929054,
+    3735929054
+  ],
+  "assert_line": 0,
+  "end_read_tick": 67370,
+  "monotonic": 6195.970962647,
+  "diagnostics": {
+    "seq_begin": 1278,
+    "schema_version": 1,
+    "bytes": 936,
+    "begin_tick": 67300,
+    "end_tick": 67300,
+    "events_ms": 673000,
+    "queues_ms": 673000,
+    "queue_depths": [
+      0,
+      0,
+      0,
+      0,
+      1
+    ],
+    "events": {
+      "history": [
+        {
+          "id": 0,
+          "event": 0,
+          "stage": 0,
+          "timestamp_ms": 0,
+          "ack_ms": 0,
+          "error": 0
+        },
+        {
+          "id": 1,
+          "event": 1,
+          "stage": 5,
+          "timestamp_ms": 658030,
+          "ack_ms": 658130,
+          "error": 0
+        },
+        {
+          "id": 2,
+          "event": 1,
+          "stage": 5,
+          "timestamp_ms": 659655,
+          "ack_ms": 659760,
+          "error": 0
+        },
+        {
+          "id": 3,
+          "event": 2,
+          "stage": 5,
+          "timestamp_ms": 661385,
+          "ack_ms": 661470,
+          "error": 0
+        },
+        {
+          "id": 0,
+          "event": 0,
+          "stage": 0,
+          "timestamp_ms": 0,
+          "ack_ms": 0,
+          "error": 0
+        },
+        {
+          "id": 0,
+          "event": 0,
+          "stage": 0,
+          "timestamp_ms": 0,
+          "ack_ms": 0,
+          "error": 0
+        },
+        {
+          "id": 0,
+          "event": 0,
+          "stage": 0,
+          "timestamp_ms": 0,
+          "ack_ms": 0,
+          "error": 0
+        },
+        {
+          "id": 0,
+          "event": 0,
+          "stage": 0,
+          "timestamp_ms": 0,
+          "ack_ms": 0,
+          "error": 0
+        }
+      ],
+      "latest_id": 3,
+      "confirmed_id": 3,
+      "latest_event": 2,
+      "completed_ms": 661470,
+      "success_count": 3,
+      "failure_count": 0,
+      "retry_count": 0,
+      "drop_count": 0,
+      "evicted_unacked_count": 0,
+      "orphaned_ack_count": 0,
+      "duplicate_ack_count": 0,
+      "rejected_ack_count": 0,
+      "pending_count": 0
+    },
+    "ack": {
+      "valid": 1,
+      "id": 3,
+      "timestamp_ms": 661385,
+      "ack_ms": 661470,
+      "latency_ms": 85,
+      "error": 0
+    },
+    "trace_tick": 67300,
+    "trace_capacity": 128,
+    "trace_schema": 1,
+    "trace_event_set": 2,
+    "has_switch": 1,
+    "trace_status": 0,
+    "explain_status": 0,
+    "trace": {
+      "oldest_sequence": 567084,
+      "next_sequence": 567212,
+      "count": 128,
+      "copied": 8,
+      "overwritten": 567084,
+      "producer_dropped": 0,
+      "status": 0
+    },
+    "switch_record": {
+      "sequence": 567211,
+      "tick": 67300,
+      "generation": 1,
+      "arg0": 1,
+      "arg1": 270794753,
+      "slot": 3,
+      "event_type": 12
+    },
+    "switch_reason": {
+      "kind": 12,
+      "primary_slot": 3,
+      "primary_generation": 1,
+      "primary_stale": 0,
+      "related_slot": 1,
+      "related_generation": 1,
+      "related_stale": 0,
+      "previous_priority": 4,
+      "next_priority": 1,
+      "commit_class": 4,
+      "reason_flags": 0,
+      "aux_value": 0
+    },
+    "rt_begin_tick": 67300,
+    "rt_end_tick": 67300,
+    "rt_read_mask": 31,
+    "clock_status": 0,
+    "job_status": 0,
+    "clock": {
+      "clock_type": 2,
+      "frequency_hz": 72000000,
+      "tick_hz": 100,
+      "wrap_period_ticks": 5965,
+      "flags": 1
+    },
+    "tasks": [
+      {
+        "charged_cycles": 15913,
+        "last_ready_latency_cycles": 2123,
+        "max_ready_latency_cycles": 36869,
+        "ref": {
+          "slot": 0,
+          "generation": 1
+        },
+        "flags": 1,
+        "last_ready_latency_ticks": 0,
+        "max_ready_latency_ticks": 0,
+        "dispatch_count": 4,
+        "last_dispatch_tick": 66138,
+        "state": 4,
+        "base_priority": 5,
+        "effective_priority": 5
+      },
+      {
+        "charged_cycles": 280849069,
+        "last_ready_latency_cycles": 2043,
+        "max_ready_latency_cycles": 29533,
+        "ref": {
+          "slot": 1,
+          "generation": 1
+        },
+        "flags": 1,
+        "last_ready_latency_ticks": 0,
+        "max_ready_latency_ticks": 0,
+        "dispatch_count": 67301,
+        "last_dispatch_tick": 67300,
+        "state": 4,
+        "base_priority": 4,
+        "effective_priority": 4
+      },
+      {
+        "charged_cycles": 2393285409,
+        "last_ready_latency_cycles": 7130,
+        "max_ready_latency_cycles": 23053,
+        "ref": {
+          "slot": 2,
+          "generation": 1
+        },
+        "flags": 1,
+        "last_ready_latency_ticks": 0,
+        "max_ready_latency_ticks": 0,
+        "dispatch_count": 7932,
+        "last_dispatch_tick": 67288,
+        "state": 4,
+        "base_priority": 2,
+        "effective_priority": 2
+      },
+      {
+        "charged_cycles": 11613445,
+        "last_ready_latency_cycles": 8617,
+        "max_ready_latency_cycles": 4663346,
+        "ref": {
+          "slot": 3,
+          "generation": 1
+        },
+        "flags": 1,
+        "last_ready_latency_ticks": 0,
+        "max_ready_latency_ticks": 6,
+        "dispatch_count": 674,
+        "last_dispatch_tick": 67300,
+        "state": 2,
+        "base_priority": 1,
+        "effective_priority": 1
+      }
+    ],
+    "idle": {
+      "charged_cycles": 45770255118,
+      "last_ready_latency_cycles": 0,
+      "max_ready_latency_cycles": 0,
+      "ref": {
+        "slot": 8,
+        "generation": 1
+      },
+      "flags": 1,
+      "last_ready_latency_ticks": 0,
+      "max_ready_latency_ticks": 0,
+      "dispatch_count": 64453,
+      "last_dispatch_tick": 67299,
+      "state": 1,
+      "base_priority": 0,
+      "effective_priority": 0
+    },
+    "job": {
+      "flags": 29,
+      "active_job_id": 0,
+      "release_tick": 66139,
+      "last_first_dispatch_ticks": 0,
+      "max_first_dispatch_ticks": 0,
+      "last_finish_ticks": 0,
+      "max_finish_ticks": 0,
+      "last_budget_cycles": 2696,
+      "max_budget_cycles": 2696,
+      "completed_jobs": 3,
+      "deadline_misses": 0,
+      "budget_overruns": 0,
+      "aborted_jobs": 0,
+      "rejected_releases": 0,
+      "invalid_jobs": 0,
+      "stale_requests": 0,
+      "exhausted_ids": 0
+    },
+    "attempt": {
+      "event_id": 3,
+      "job_id": 3,
+      "command_sent": 1,
+      "configured": 0,
+      "release": 0,
+      "complete": 0
+    },
+    "job_pair_valid": 1,
+    "dl_capture_status": 0,
+    "dl_analyze_status": 0,
+    "dl_observation": 1,
+    "dl_header": {
+      "capture_tick": 67300,
+      "node_count": 4,
+      "edge_count": 0,
+      "mutex_count": 0,
+      "flags": 0,
+      "captured": 1,
+      "analyzed": 1,
+      "reserved0": 0,
+      "reserved1": [
+        0,
+        0
+      ]
+    },
+    "dl": {
+      "deadlock_detected": 0,
+      "cycle_length": 0,
+      "flags": 0,
+      "capture_tick": 67300,
+      "cycle_tasks": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "cycle_mutexes": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "earliest_due_tick": 0,
+      "finite_edge_count": 0,
+      "reserved": 0
+    },
+    "seq_end": 1278
+  },
+  "panel": {
+    "seq_begin": 5084,
+    "state": 2,
+    "hclk": 72000000,
+    "rcc_cfgr": 1901578,
+    "start_ms": 990,
+    "end_ms": 623150,
+    "now_ms": 673747,
+    "full_frames": 393,
+    "local_updates": 392,
+    "pattern_counts": [
+      57,
+      56,
+      56,
+      56,
+      56,
+      56,
+      56
+    ],
+    "preinit_pins": 6144,
+    "bus": {
+      "dma": 276203,
+      "poll": 115333,
+      "command_writes": 34876,
+      "data_writes": 356660,
+      "selects": 93016,
+      "releases": 93016,
+      "returns": 391536,
+      "dma_buckets": [
+        164096,
+        2688,
+        26880,
+        168,
+        81600,
+        771
+      ],
+      "natural_ovr": 276203,
+      "invariants": 0,
+      "failures": 0,
+      "active_since": 1265119064,
+      "maximum_transaction_cycles": 4218928,
+      "row": {
+        "length": 480,
+        "armed": {
+          "cmar": 536871592,
+          "cndtr": 480,
+          "ccr": 8336,
+          "rx_ccr": 0,
+          "isr": 0,
+          "cr1": 836,
+          "cr2": 0,
+          "sr": 2,
+          "pins": 4096,
+          "owner": 536872088,
+          "depth": 1,
+          "state": 2,
+          "recover": 0,
+          "last_error": 0
+        },
+        "waited": {
+          "cmar": 536871592,
+          "cndtr": 0,
+          "ccr": 8337,
+          "rx_ccr": 0,
+          "isr": 112,
+          "cr1": 836,
+          "cr2": 2,
+          "sr": 67,
+          "pins": 4096,
+          "owner": 536872088,
+          "depth": 1,
+          "state": 2,
+          "recover": 0,
+          "last_error": 0
+        },
+        "drained": {
+          "cmar": 536871592,
+          "cndtr": 0,
+          "ccr": 8337,
+          "rx_ccr": 0,
+          "isr": 112,
+          "cr1": 836,
+          "cr2": 2,
+          "sr": 67,
+          "pins": 4096,
+          "owner": 536872088,
+          "depth": 1,
+          "state": 2,
+          "recover": 0,
+          "last_error": 0
+        },
+        "returned": {
+          "cmar": 536871592,
+          "cndtr": 0,
+          "ccr": 8336,
+          "rx_ccr": 0,
+          "isr": 0,
+          "cr1": 836,
+          "cr2": 0,
+          "sr": 2,
+          "pins": 4096,
+          "owner": 536872088,
+          "depth": 1,
+          "state": 2,
+          "recover": 0,
+          "last_error": 0
+        },
+        "released": {
+          "cmar": 536871592,
+          "cndtr": 0,
+          "ccr": 8336,
+          "rx_ccr": 0,
+          "isr": 0,
+          "cr1": 836,
+          "cr2": 0,
+          "sr": 2,
+          "pins": 6144,
+          "owner": 0,
+          "depth": 0,
+          "state": 1,
+          "recover": 0,
+          "last_error": 0
+        }
+      },
+      "last_release": {
+        "cmar": 536871592,
+        "cndtr": 0,
+        "ccr": 8336,
+        "rx_ccr": 0,
+        "isr": 0,
+        "cr1": 836,
+        "cr2": 0,
+        "sr": 2,
+        "pins": 6144,
+        "owner": 0,
+        "depth": 0,
+        "state": 1,
+        "recover": 0,
+        "last_error": 0
+      }
+    },
+    "lcd_error": 0,
+    "seq_end": 5084
+  }
+}
