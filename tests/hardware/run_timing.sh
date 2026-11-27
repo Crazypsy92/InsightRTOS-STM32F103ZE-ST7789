@@ -16,6 +16,7 @@ case "$mode" in
     Lifecycle) evidence=evidence/stage9_4_e ;;
     IpcCancel) evidence=evidence/stage9_4_f ;;
     SpiDma) evidence=evidence/stage9_4_g ;;
+    SpiDuplex) evidence=evidence/stage9_4_h ;;
 esac
 log="$evidence/logs"
 if [[ $mode == Mutex ]]; then log="$log/hardware"; fi
@@ -38,6 +39,7 @@ case "$mode" in
     Lifecycle) profiles=(Lifecycle IntegratedProd) ;;
     IpcCancel) profiles=(IpcCancel IntegratedProd) ;;
     SpiDma) profiles=(SpiDma IntegratedProd) ;;
+    SpiDuplex) profiles=(SpiDuplex IntegratedProd) ;;
     *) exit 2 ;;
 esac
 
@@ -53,8 +55,9 @@ for name in "${profiles[@]}"; do
         Lifecycle) profile=DISPLAY_RTOS_O2_Lifecycle ;;
         IpcCancel) profile=DISPLAY_RTOS_O2_IpcCancel ;;
         SpiDma) profile=DISPLAY_RTOS_O2_SpiDma ;;
+        SpiDuplex) profile=DISPLAY_RTOS_O2_SpiDuplex ;;
     esac
-    if [[ ( $mode == Mutex || $mode == Backpressure || $mode == Semaphore || $mode == Lifecycle || $mode == IpcCancel || $mode == SpiDma ) && $name == IntegratedProd ]]; then profile=Stage94A_Frozen_Production; fi
+    if [[ ( $mode == Mutex || $mode == Backpressure || $mode == Semaphore || $mode == Lifecycle || $mode == IpcCancel || $mode == SpiDma || $mode == SpiDuplex ) && $name == IntegratedProd ]]; then profile=Stage94A_Frozen_Production; fi
     f=$(realpath "build/$profile/insightrtos_display.bin")
     bin="${f%.bin}"
     proof="$log/firmware-audit.json"
@@ -92,7 +95,13 @@ PY
     rg -q '^BANK_GEOMETRY_PASS' "$prefix-erase.log"
     rg -q '^BLANK_VERIFIED_63488$' "$prefix-erase.log"
     rg -q '^WRITE_COMPLETE$' "$prefix-erase.log"
-    openocd -f "$cfg/memap.cfg" -f "$cfg/identity.tcl" \
+    readback_cfg="$cfg/memap.cfg"
+    readback_cmd=()
+    if [[ $mode == SpiDuplex ]]; then
+        readback_cfg="$cfg/flash-target.tcl"
+        readback_cmd=(-c 'halt; wait_halt 3000')
+    fi
+    openocd -f "$readback_cfg" -f "$cfg/identity.tcl" "${readback_cmd[@]}" \
       -c "dump_image $tmp-after.bin 0x08000000 0xf800" \
       -c "dump_image $tmp-ob-after.bin 0x1ffff800 16; shutdown" > "$prefix-readback.log" 2>&1
     rg -q '^IDENTITY_PASS' "$prefix-readback.log"
@@ -144,6 +153,9 @@ PY
           --out "$prefix-fixture.json" | tee "$prefix-sampler.log"
     elif [[ $name == SpiDma ]]; then
         PYTHONDONTWRITEBYTECODE=1 python3 tests/hardware/read_spi_dma.py --elf "$bin.elf" \
+          --out "$prefix-fixture.json" | tee "$prefix-sampler.log"
+    elif [[ $name == SpiDuplex ]]; then
+        PYTHONDONTWRITEBYTECODE=1 python3 tests/hardware/read_spi_duplex.py --elf "$bin.elf" \
           --out "$prefix-fixture.json" | tee "$prefix-sampler.log"
     elif [[ $name == Integrated || $name == IntegratedProd ]]; then
         PYTHONDONTWRITEBYTECODE=1 python3 tests/hardware/read_integrated.py --elf "$bin.elf" \

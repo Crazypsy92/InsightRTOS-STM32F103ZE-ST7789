@@ -1,0 +1,987 @@
+Test project /tmp/insight-94h.hMj33s/host
+        Start   1: host_stage4_3_poll
+        Start   2: host_stage4_3_available
+        Start   3: host_stage4_3_invalid
+        Start   4: host_stage4_3_one
+        Start   5: host_stage4_3_maximum
+        Start   6: host_stage4_3_forever
+        Start   7: host_stage4_3_grant_first
+        Start   8: host_stage4_3_timeout_first
+  1/478 Test   #1: host_stage4_3_poll .......................   Passed    0.02 sec
+  2/478 Test   #2: host_stage4_3_available ..................   Passed    0.01 sec
+  3/478 Test   #3: host_stage4_3_invalid ....................   Passed    0.01 sec
+  4/478 Test   #4: host_stage4_3_one ........................   Passed    0.01 sec
+  5/478 Test   #5: host_stage4_3_maximum ....................   Passed    0.01 sec
+  6/478 Test   #6: host_stage4_3_forever ....................   Passed    0.01 sec
+  7/478 Test   #7: host_stage4_3_grant_first ................   Passed    0.00 sec
+        Start   9: host_stage4_3_pending_grant
+        Start  10: host_stage4_3_pending_timeout
+        Start  11: host_stage4_3_early_grant
+        Start  12: host_stage4_3_early_timeout
+        Start  13: host_stage4_3_different_deadlines
+        Start  14: host_stage4_3_simultaneous_timeouts
+        Start  15: host_stage4_3_priority_fifo
+  8/478 Test   #8: host_stage4_3_timeout_first ..............   Passed    0.01 sec
+  9/478 Test   #9: host_stage4_3_pending_grant ..............   Passed    0.01 sec
+ 10/478 Test  #10: host_stage4_3_pending_timeout ............   Passed    0.01 sec
+ 11/478 Test  #11: host_stage4_3_early_grant ................   Passed    0.01 sec
+ 12/478 Test  #12: host_stage4_3_early_timeout ..............   Passed    0.01 sec
+ 13/478 Test  #13: host_stage4_3_different_deadlines ........   Passed    0.01 sec
+ 14/478 Test  #14: host_stage4_3_simultaneous_timeouts ......   Passed    0.00 sec
+        Start  16: host_stage4_3_mixed_delay
+        Start  17: host_stage4_3_cancel_middle
+        Start  18: host_stage4_3_cancel_tail
+        Start  19: host_stage4_3_timeout_middle
+        Start  20: host_stage4_3_retry
+        Start  21: host_stage4_3_wrap_before
+        Start  22: host_stage4_3_wrap_after
+ 15/478 Test  #15: host_stage4_3_priority_fifo ..............   Passed    0.02 sec
+ 16/478 Test  #16: host_stage4_3_mixed_delay ................   Passed    0.01 sec
+ 17/478 Test  #17: host_stage4_3_cancel_middle ..............   Passed    0.01 sec
+ 18/478 Test  #18: host_stage4_3_cancel_tail ................   Passed    0.01 sec
+ 19/478 Test  #19: host_stage4_3_timeout_middle .............   Passed    0.01 sec
+ 20/478 Test  #20: host_stage4_3_retry ......................   Passed    0.01 sec
+ 21/478 Test  #21: host_stage4_3_wrap_before ................   Passed    0.01 sec
+        Start  23: host_stage4_3_wrap_timeout
+        Start  24: host_stage4_3_stale_completion
+        Start  25: host_stage4_3_context
+        Start  26: host_stage4_2_invalid_init
+        Start  27: host_stage4_2_full_initial
+        Start  28: host_stage4_2_max_uint32
+        Start  29: host_stage4_2_cycle5
+ 22/478 Test  #22: host_stage4_3_wrap_after .................   Passed    0.01 sec
+ 23/478 Test  #23: host_stage4_3_wrap_timeout ...............   Passed    0.01 sec
+ 24/478 Test  #24: host_stage4_3_stale_completion ...........   Passed    0.01 sec
+ 25/478 Test  #25: host_stage4_3_context ....................   Passed    0.01 sec
+ 26/478 Test  #26: host_stage4_2_invalid_init ...............   Passed    0.01 sec
+ 27/478 Test  #27: host_stage4_2_full_initial ...............   Passed    0.01 sec
+ 28/478 Test  #28: host_stage4_2_max_uint32 .................   Passed    0.00 sec
+        Start  30: host_stage4_2_uninitialized
+        Start  31: host_stage4_2_reinitialize
+        Start  32: host_stage4_2_priority
+        Start  33: host_stage4_2_fifo
+        Start  34: host_stage4_2_direct_grant
+        Start  35: host_stage4_2_pending_permit
+        Start  36: host_stage4_2_tick_preemption
+ 29/478 Test  #29: host_stage4_2_cycle5 .....................   Passed    0.02 sec
+ 30/478 Test  #30: host_stage4_2_uninitialized ..............   Passed    0.01 sec
+ 31/478 Test  #31: host_stage4_2_reinitialize ...............   Passed    0.01 sec
+ 32/478 Test  #32: host_stage4_2_priority ...................   Passed    0.01 sec
+ 33/478 Test  #33: host_stage4_2_fifo .......................   Passed    0.01 sec
+ 34/478 Test  #34: host_stage4_2_direct_grant ...............   Passed    0.01 sec
+ 35/478 Test  #35: host_stage4_2_pending_permit .............   Passed    0.00 sec
+        Start  37: host_stage4_2_context
+        Start  38: host_stage4_2_delay_isolation
+        Start  39: host_stage4_2_binary_compat
+        Start  40: host_stage4_1_initialization
+        Start  41: host_stage4_1_polling
+        Start  42: host_stage4_1_unsupported
+        Start  43: host_stage4_1_context
+ 36/478 Test  #36: host_stage4_2_tick_preemption ............   Passed    0.02 sec
+ 37/478 Test  #37: host_stage4_2_context ....................   Passed    0.01 sec
+ 38/478 Test  #38: host_stage4_2_delay_isolation ............   Passed    0.01 sec
+ 39/478 Test  #39: host_stage4_2_binary_compat ..............   Passed    0.01 sec
+ 40/478 Test  #40: host_stage4_1_initialization .............   Passed    0.01 sec
+ 41/478 Test  #41: host_stage4_1_polling ....................   Passed    0.01 sec
+ 42/478 Test  #42: host_stage4_1_unsupported ................   Passed    0.00 sec
+        Start  44: host_stage4_1_block_single
+        Start  45: host_stage4_1_priority
+        Start  46: host_stage4_1_fifo
+        Start  47: host_stage4_1_direct_grant
+        Start  48: host_stage4_1_duplicate_give
+        Start  49: host_stage4_1_queue_guards
+        Start  50: host_stage4_1_delay_isolation
+ 43/478 Test  #43: host_stage4_1_context ....................   Passed    0.02 sec
+ 44/478 Test  #44: host_stage4_1_block_single ...............   Passed    0.01 sec
+ 45/478 Test  #45: host_stage4_1_priority ...................   Passed    0.01 sec
+ 46/478 Test  #46: host_stage4_1_fifo .......................   Passed    0.01 sec
+ 47/478 Test  #47: host_stage4_1_direct_grant ...............   Passed    0.01 sec
+ 48/478 Test  #48: host_stage4_1_duplicate_give .............   Passed    0.01 sec
+ 49/478 Test  #49: host_stage4_1_queue_guards ...............   Passed    0.00 sec
+        Start  51: host_stage4_1_early_grant
+        Start  52: host_stage4_1_early_tick
+        Start  53: host_stage4_1_multiple_objects
+        Start  54: host_stage4_1_reinit_waiting
+        Start  55: host_stage4_1_init_running
+        Start  56: host_ready_queue
+        Start  57: host_create_validation
+ 50/478 Test  #50: host_stage4_1_delay_isolation ............   Passed    0.02 sec
+ 51/478 Test  #51: host_stage4_1_early_grant ................   Passed    0.01 sec
+ 52/478 Test  #52: host_stage4_1_early_tick .................   Passed    0.01 sec
+ 53/478 Test  #53: host_stage4_1_multiple_objects ...........   Passed    0.01 sec
+ 54/478 Test  #54: host_stage4_1_reinit_waiting .............   Passed    0.01 sec
+ 55/478 Test  #55: host_stage4_1_init_running ...............   Passed    0.00 sec
+ 56/478 Test  #56: host_ready_queue .........................   Passed    0.00 sec
+        Start  58: host_scheduler_round_robin
+        Start  59: host_exit_and_idle
+        Start  60: host_empty_start
+        Start  61: host_context_assertions
+        Start  62: host_stack_checks
+        Start  63: host_stage3_same_priority_wake_1
+        Start  64: host_stage3_wake_budget_1
+ 57/478 Test  #57: host_create_validation ...................   Passed    0.01 sec
+ 58/478 Test  #58: host_scheduler_round_robin ...............   Passed    0.01 sec
+ 59/478 Test  #59: host_exit_and_idle .......................   Passed    0.01 sec
+ 60/478 Test  #60: host_empty_start .........................   Passed    0.01 sec
+ 61/478 Test  #61: host_context_assertions ..................   Passed    0.01 sec
+ 62/478 Test  #62: host_stack_checks ........................   Passed    0.01 sec
+ 63/478 Test  #63: host_stage3_same_priority_wake_1 .........   Passed    0.00 sec
+        Start  65: host_stage3_pending_slice_wake_1
+        Start  66: host_stage3_same_priority_wake_2
+        Start  67: host_stage3_wake_budget_2
+        Start  68: host_stage3_pending_slice_wake_2
+        Start  69: host_stage3_same_priority_wake_5
+        Start  70: host_stage3_wake_budget_5
+        Start  71: host_stage3_pending_slice_wake_5
+ 64/478 Test  #64: host_stage3_wake_budget_1 ................   Passed    0.02 sec
+ 65/478 Test  #65: host_stage3_pending_slice_wake_1 .........   Passed    0.01 sec
+ 66/478 Test  #66: host_stage3_same_priority_wake_2 .........   Passed    0.01 sec
+ 67/478 Test  #67: host_stage3_wake_budget_2 ................   Passed    0.01 sec
+ 68/478 Test  #68: host_stage3_pending_slice_wake_2 .........   Passed    0.01 sec
+ 69/478 Test  #69: host_stage3_same_priority_wake_5 .........   Passed    0.01 sec
+ 70/478 Test  #70: host_stage3_wake_budget_5 ................   Passed    0.01 sec
+        Start  72: host_stage3_queue_order
+        Start  73: host_stage3_queue_guards
+        Start  74: host_stage3_queue_wrap
+        Start  75: host_stage3_delay_zero
+        Start  76: host_stage3_delay_basic
+        Start  77: host_stage3_delay_small
+        Start  78: host_stage3_delay_max
+ 71/478 Test  #71: host_stage3_pending_slice_wake_5 .........   Passed    0.01 sec
+ 72/478 Test  #72: host_stage3_queue_order ..................   Passed    0.01 sec
+ 73/478 Test  #73: host_stage3_queue_guards .................   Passed    0.01 sec
+ 74/478 Test  #74: host_stage3_queue_wrap ...................   Passed    0.01 sec
+ 75/478 Test  #75: host_stage3_delay_zero ...................   Passed    0.01 sec
+ 76/478 Test  #76: host_stage3_delay_basic ..................   Passed    0.01 sec
+ 77/478 Test  #77: host_stage3_delay_small ..................   Passed    0.00 sec
+        Start  79: host_stage3_context_boundaries
+        Start  80: host_stage3_until_validation
+        Start  81: host_stage3_until_future
+        Start  82: host_stage3_until_catchup
+        Start  83: host_stage3_until_wrap
+        Start  84: host_stage3_all_blocked
+        Start  85: host_stage3_wake_fifo
+ 78/478 Test  #78: host_stage3_delay_max ....................   Passed    0.02 sec
+ 79/478 Test  #79: host_stage3_context_boundaries ...........   Passed    0.01 sec
+ 80/478 Test  #80: host_stage3_until_validation .............   Passed    0.01 sec
+ 81/478 Test  #81: host_stage3_until_future .................   Passed    0.01 sec
+ 82/478 Test  #82: host_stage3_until_catchup ................   Passed    0.01 sec
+ 83/478 Test  #83: host_stage3_until_wrap ...................   Passed    0.01 sec
+ 84/478 Test  #84: host_stage3_all_blocked ..................   Passed    0.00 sec
+        Start  86: host_stage3_wake_priorities
+        Start  87: host_stage3_lower_wake
+        Start  88: host_stage3_pending_block_wake
+        Start  89: host_stage3_pending_block_slice_wake
+        Start  90: host_stage3_pending_multiwake
+        Start  91: host_stage3_terminated_rejected
+        Start  92: host_stage3_controlled_time
+ 85/478 Test  #85: host_stage3_wake_fifo ....................   Passed    0.02 sec
+ 86/478 Test  #86: host_stage3_wake_priorities ..............   Passed    0.01 sec
+ 87/478 Test  #87: host_stage3_lower_wake ...................   Passed    0.01 sec
+ 88/478 Test  #88: host_stage3_pending_block_wake ...........   Passed    0.01 sec
+ 89/478 Test  #89: host_stage3_pending_block_slice_wake .....   Passed    0.01 sec
+ 90/478 Test  #90: host_stage3_pending_multiwake ............   Passed    0.00 sec
+ 91/478 Test  #91: host_stage3_terminated_rejected ..........   Passed    0.00 sec
+        Start  93: host_stage2_time_slice_1
+        Start  94: host_stage2_pending_coalescing_1
+        Start  95: host_stage2_pending_higher_and_slice_1
+        Start  96: host_stage2_budget_preservation_1
+        Start  97: host_stage2_time_slice_2
+        Start  98: host_stage2_pending_coalescing_2
+        Start  99: host_stage2_pending_higher_and_slice_2
+ 92/478 Test  #92: host_stage3_controlled_time ..............   Passed    0.02 sec
+ 93/478 Test  #93: host_stage2_time_slice_1 .................   Passed    0.01 sec
+ 94/478 Test  #94: host_stage2_pending_coalescing_1 .........   Passed    0.01 sec
+ 95/478 Test  #95: host_stage2_pending_higher_and_slice_1 ...   Passed    0.01 sec
+ 96/478 Test  #96: host_stage2_budget_preservation_1 ........   Passed    0.01 sec
+ 97/478 Test  #97: host_stage2_time_slice_2 .................   Passed    0.01 sec
+ 98/478 Test  #98: host_stage2_pending_coalescing_2 .........   Passed    0.00 sec
+        Start 100: host_stage2_budget_preservation_2
+        Start 101: host_stage2_time_slice_5
+        Start 102: host_stage2_pending_coalescing_5
+        Start 103: host_stage2_pending_higher_and_slice_5
+        Start 104: host_stage2_budget_preservation_5
+        Start 105: host_stage2_tick_initialization
+        Start 106: host_stage2_reload_boundaries
+ 99/478 Test  #99: host_stage2_pending_higher_and_slice_2 ...   Passed    0.02 sec
+100/478 Test #100: host_stage2_budget_preservation_2 ........   Passed    0.01 sec
+101/478 Test #101: host_stage2_time_slice_5 .................   Passed    0.01 sec
+102/478 Test #102: host_stage2_pending_coalescing_5 .........   Passed    0.01 sec
+103/478 Test #103: host_stage2_pending_higher_and_slice_5 ...   Passed    0.01 sec
+104/478 Test #104: host_stage2_budget_preservation_5 ........   Passed    0.01 sec
+105/478 Test #105: host_stage2_tick_initialization ..........   Passed    0.00 sec
+        Start 107: host_stage2_priority
+        Start 108: host_stage2_create_preemption
+        Start 109: host_stage2_critical_preemption
+        Start 110: host_stage2_tick_wrap
+        Start 111: host_stage2_idle_tick
+        Start 112: host_stage2_context_boundaries
+        Start 113: host_stage2_creation_reservation
+106/478 Test #106: host_stage2_reload_boundaries ............   Passed    0.01 sec
+107/478 Test #107: host_stage2_priority .....................   Passed    0.01 sec
+108/478 Test #108: host_stage2_create_preemption ............   Passed    0.01 sec
+109/478 Test #109: host_stage2_critical_preemption ..........   Passed    0.01 sec
+110/478 Test #110: host_stage2_tick_wrap ....................   Passed    0.01 sec
+111/478 Test #111: host_stage2_idle_tick ....................   Passed    0.01 sec
+112/478 Test #112: host_stage2_context_boundaries ...........   Passed    0.00 sec
+        Start 114: host_stage2_stale_pendsv
+        Start 115: host_stage4_4_prestart
+        Start 116: host_stage4_4_contexts
+        Start 117: host_stage4_4_ordinary_isr
+        Start 118: host_stage4_4_null
+        Start 119: host_stage4_4_uninitialized
+        Start 120: host_stage4_4_masks
+113/478 Test #113: host_stage2_creation_reservation .........   Passed    0.02 sec
+114/478 Test #114: host_stage2_stale_pendsv .................   Passed    0.01 sec
+115/478 Test #115: host_stage4_4_prestart ...................   Passed    0.01 sec
+116/478 Test #116: host_stage4_4_contexts ...................   Passed    0.01 sec
+117/478 Test #117: host_stage4_4_ordinary_isr ...............   Passed    0.01 sec
+118/478 Test #118: host_stage4_4_null .......................   Passed    0.01 sec
+119/478 Test #119: host_stage4_4_uninitialized ..............   Passed    0.00 sec
+        Start 121: host_stage4_4_counting
+        Start 122: host_stage4_4_binary
+        Start 123: host_stage4_4_max_uint32
+        Start 124: host_stage4_4_systick
+        Start 125: host_stage4_4_early
+        Start 126: host_stage4_4_fifo
+        Start 127: host_stage4_4_priority
+120/478 Test #120: host_stage4_4_masks ......................   Passed    0.02 sec
+121/478 Test #121: host_stage4_4_counting ...................   Passed    0.01 sec
+122/478 Test #122: host_stage4_4_binary .....................   Passed    0.01 sec
+123/478 Test #123: host_stage4_4_max_uint32 .................   Passed    0.01 sec
+124/478 Test #124: host_stage4_4_systick ....................   Passed    0.01 sec
+125/478 Test #125: host_stage4_4_early ......................   Passed    0.01 sec
+126/478 Test #126: host_stage4_4_fifo .......................   Passed    0.00 sec
+        Start 128: host_stage4_4_lower
+        Start 129: host_stage4_4_pending
+        Start 130: host_stage4_4_pending_permit
+        Start 131: host_stage4_4_duplicate
+        Start 132: host_stage4_4_grant_first
+        Start 133: host_stage4_4_timeout_first
+        Start 134: host_stage4_4_tick_first
+127/478 Test #127: host_stage4_4_priority ...................   Passed    0.02 sec
+128/478 Test #128: host_stage4_4_lower ......................   Passed    0.02 sec
+129/478 Test #129: host_stage4_4_pending ....................   Passed    0.02 sec
+130/478 Test #130: host_stage4_4_pending_permit .............   Passed    0.01 sec
+131/478 Test #131: host_stage4_4_duplicate ..................   Passed    0.01 sec
+132/478 Test #132: host_stage4_4_grant_first ................   Passed    0.01 sec
+133/478 Test #133: host_stage4_4_timeout_first ..............   Passed    0.01 sec
+        Start 135: host_stage4_4_tick_during
+        Start 136: host_stage4_4_delay_isolation
+        Start 137: host_stage4_5_mixed
+        Start 138: host_stage4_5_cycle
+        Start 139: host_stage4_5_wrong_object
+        Start 140: host_stage4_5_count_overflow
+        Start 141: host_stage4_5_stored_with_waiter
+134/478 Test #134: host_stage4_4_tick_first .................   Passed    0.02 sec
+135/478 Test #135: host_stage4_4_tick_during ................   Passed    0.01 sec
+136/478 Test #136: host_stage4_4_delay_isolation ............   Passed    0.01 sec
+137/478 Test #137: host_stage4_5_mixed ......................   Passed    0.01 sec
+138/478 Test #138: host_stage4_5_cycle ......................   Passed    0.01 sec
+139/478 Test #139: host_stage4_5_wrong_object ...............   Passed    0.01 sec
+140/478 Test #140: host_stage4_5_count_overflow .............   Passed    0.00 sec
+        Start 142: host_stage4_5_lost_delay
+        Start 143: host_stage4_5_stack_guard
+        Start 144: host_stage4_5_duplicate_ready
+        Start 145: host_stage5_1_initialization
+        Start 146: host_stage5_1_prestart
+        Start 147: host_stage5_1_contexts
+        Start 148: host_stage5_1_masks
+141/478 Test #141: host_stage4_5_stored_with_waiter .........   Passed    0.02 sec
+142/478 Test #142: host_stage4_5_lost_delay .................   Passed    0.01 sec
+143/478 Test #143: host_stage4_5_stack_guard ................   Passed    0.01 sec
+144/478 Test #144: host_stage4_5_duplicate_ready ............   Passed    0.01 sec
+145/478 Test #145: host_stage5_1_initialization .............   Passed    0.01 sec
+146/478 Test #146: host_stage5_1_prestart ...................   Passed    0.01 sec
+147/478 Test #147: host_stage5_1_contexts ...................   Passed    0.00 sec
+        Start 149: host_stage5_1_parameters
+        Start 150: host_stage5_1_uninitialized
+        Start 151: host_stage5_1_self
+        Start 152: host_stage5_1_unlocked
+        Start 153: host_stage5_1_immediate
+        Start 154: host_stage5_1_init_running
+        Start 155: host_stage5_1_multiple
+148/478 Test #148: host_stage5_1_masks ......................   Passed    0.02 sec
+149/478 Test #149: host_stage5_1_parameters .................   Passed    0.01 sec
+150/478 Test #150: host_stage5_1_uninitialized ..............   Passed    0.01 sec
+151/478 Test #151: host_stage5_1_self .......................   Passed    0.01 sec
+152/478 Test #152: host_stage5_1_unlocked ...................   Passed    0.01 sec
+153/478 Test #153: host_stage5_1_immediate ..................   Passed    0.01 sec
+154/478 Test #154: host_stage5_1_init_running ...............   Passed    0.00 sec
+        Start 156: host_stage5_1_exit_owned
+        Start 157: host_stage5_1_exit_clean
+        Start 158: host_stage5_1_priority
+        Start 159: host_stage5_1_fifo
+        Start 160: host_stage5_1_sem_isolation
+        Start 161: host_stage5_1_delay_isolation
+        Start 162: host_stage5_1_handoff_pending
+155/478 Test #155: host_stage5_1_multiple ...................   Passed    0.02 sec
+156/478 Test #156: host_stage5_1_exit_owned .................   Passed    0.02 sec
+157/478 Test #157: host_stage5_1_exit_clean .................   Passed    0.01 sec
+158/478 Test #158: host_stage5_1_priority ...................   Passed    0.01 sec
+159/478 Test #159: host_stage5_1_fifo .......................   Passed    0.01 sec
+160/478 Test #160: host_stage5_1_sem_isolation ..............   Passed    0.01 sec
+161/478 Test #161: host_stage5_1_delay_isolation ............   Passed    0.01 sec
+        Start 163: host_stage5_1_no_steal
+        Start 164: host_stage5_1_poll
+        Start 165: host_stage5_1_nonowner
+        Start 166: host_stage5_1_block
+        Start 167: host_stage5_1_stale
+        Start 168: host_stage5_1_reinit_waiting
+        Start 169: host_stage5_1_transfer_multiple
+162/478 Test #162: host_stage5_1_handoff_pending ............   Passed    0.02 sec
+163/478 Test #163: host_stage5_1_no_steal ...................   Passed    0.01 sec
+164/478 Test #164: host_stage5_1_poll .......................   Passed    0.01 sec
+165/478 Test #165: host_stage5_1_nonowner ...................   Passed    0.01 sec
+166/478 Test #166: host_stage5_1_block ......................   Passed    0.01 sec
+167/478 Test #167: host_stage5_1_stale ......................   Passed    0.01 sec
+168/478 Test #168: host_stage5_1_reinit_waiting .............   Passed    0.00 sec
+        Start 170: host_stage5_2_ready_requeue
+        Start 171: host_stage5_2_running_update
+        Start 172: host_stage5_2_errors
+        Start 173: host_stage5_2_contexts
+        Start 174: host_stage5_2_delay_owner
+        Start 175: host_stage5_2_sem_owner
+        Start 176: host_stage5_2_sem_reorder
+169/478 Test #169: host_stage5_1_transfer_multiple ..........   Passed    0.01 sec
+170/478 Test #170: host_stage5_2_ready_requeue ..............   Passed    0.01 sec
+171/478 Test #171: host_stage5_2_running_update .............   Passed    0.01 sec
+172/478 Test #172: host_stage5_2_errors .....................   Passed    0.01 sec
+173/478 Test #173: host_stage5_2_contexts ...................   Passed    0.01 sec
+174/478 Test #174: host_stage5_2_delay_owner ................   Passed    0.01 sec
+175/478 Test #175: host_stage5_2_sem_owner ..................   Passed    0.01 sec
+        Start 177: host_stage5_2_multiple_ab
+        Start 178: host_stage5_2_multiple_ba
+        Start 179: host_stage5_2_new_owner
+        Start 180: host_stage5_2_chain_boundary
+        Start 181: host_stage5_2_fifo
+        Start 182: host_stage5_2_ready_owner
+        Start 183: host_stage5_2_budget
+176/478 Test #176: host_stage5_2_sem_reorder ................   Passed    0.02 sec
+177/478 Test #177: host_stage5_2_multiple_ab ................   Passed    0.02 sec
+178/478 Test #178: host_stage5_2_multiple_ba ................   Passed    0.01 sec
+179/478 Test #179: host_stage5_2_new_owner ..................   Passed    0.01 sec
+180/478 Test #180: host_stage5_2_chain_boundary .............   Passed    0.01 sec
+181/478 Test #181: host_stage5_2_fifo .......................   Passed    0.01 sec
+182/478 Test #182: host_stage5_2_ready_owner ................   Passed    0.01 sec
+        Start 184: host_stage5_2_restore
+        Start 185: host_stage5_2_pending
+        Start 186: host_stage5_3_long_chain
+        Start 187: host_stage5_3_chain3
+        Start 188: host_stage5_3_minimum_maximum
+        Start 189: host_stage5_3_reverse_ids
+        Start 190: host_stage5_3_cycle
+183/478 Test #183: host_stage5_2_budget .....................   Passed    0.02 sec
+184/478 Test #184: host_stage5_2_restore ....................   Passed    0.01 sec
+185/478 Test #185: host_stage5_2_pending ....................   Passed    0.01 sec
+186/478 Test #186: host_stage5_3_long_chain .................   Passed    0.01 sec
+187/478 Test #187: host_stage5_3_chain3 .....................   Passed    0.01 sec
+188/478 Test #188: host_stage5_3_minimum_maximum ............   Passed    0.01 sec
+189/478 Test #189: host_stage5_3_reverse_ids ................   Passed    0.00 sec
+        Start 191: host_stage5_3_cycle_revoke
+        Start 192: host_stage5_3_branches_revoke
+        Start 193: host_stage5_3_ready_lower
+        Start 194: host_stage5_3_legal_ab
+        Start 195: host_stage5_3_legal_ba
+        Start 196: host_stage5_3_semaphore
+        Start 197: host_stage5_3_independent
+190/478 Test #190: host_stage5_3_cycle ......................   Passed    0.01 sec
+191/478 Test #191: host_stage5_3_cycle_revoke ...............   Passed    0.01 sec
+192/478 Test #192: host_stage5_3_branches_revoke ............   Passed    0.01 sec
+193/478 Test #193: host_stage5_3_ready_lower ................   Passed    0.01 sec
+194/478 Test #194: host_stage5_3_legal_ab ...................   Passed    0.01 sec
+195/478 Test #195: host_stage5_3_legal_ba ...................   Passed    0.00 sec
+196/478 Test #196: host_stage5_3_semaphore ..................   Passed    0.00 sec
+        Start 198: host_stage5_3_errors
+        Start 199: host_stage5_3_no_edges
+        Start 200: host_stage5_4_parameters
+        Start 201: host_stage5_4_immediate
+        Start 202: host_stage5_4_contexts
+        Start 203: host_stage5_4_timeout
+        Start 204: host_stage5_4_one
+197/478 Test #197: host_stage5_3_independent ................   Passed    0.02 sec
+198/478 Test #198: host_stage5_3_errors .....................   Passed    0.01 sec
+199/478 Test #199: host_stage5_3_no_edges ...................   Passed    0.01 sec
+200/478 Test #200: host_stage5_4_parameters .................   Passed    0.01 sec
+201/478 Test #201: host_stage5_4_immediate ..................   Passed    0.01 sec
+202/478 Test #202: host_stage5_4_contexts ...................   Passed    0.01 sec
+203/478 Test #203: host_stage5_4_timeout ....................   Passed    0.00 sec
+        Start 205: host_stage5_4_maximum
+        Start 206: host_stage5_4_grant
+        Start 207: host_stage5_4_race_grant
+        Start 208: host_stage5_4_race_timeout
+        Start 209: host_stage5_4_wrap_before
+        Start 210: host_stage5_4_wrap_after
+        Start 211: host_stage5_4_wrap_timeout
+204/478 Test #204: host_stage5_4_one ........................   Passed    0.01 sec
+205/478 Test #205: host_stage5_4_maximum ....................   Passed    0.01 sec
+206/478 Test #206: host_stage5_4_grant ......................   Passed    0.01 sec
+207/478 Test #207: host_stage5_4_race_grant .................   Passed    0.01 sec
+208/478 Test #208: host_stage5_4_race_timeout ...............   Passed    0.01 sec
+209/478 Test #209: host_stage5_4_wrap_before ................   Passed    0.01 sec
+210/478 Test #210: host_stage5_4_wrap_after .................   Passed    0.00 sec
+        Start 212: host_stage5_4_early
+        Start 213: host_stage5_4_pending_grant
+        Start 214: host_stage5_4_retry
+        Start 215: host_stage5_4_chain
+        Start 216: host_stage5_4_long_chain
+        Start 217: host_stage5_4_cut_middle
+        Start 218: host_stage5_4_branches
+211/478 Test #211: host_stage5_4_wrap_timeout ...............   Passed    0.01 sec
+212/478 Test #212: host_stage5_4_early ......................   Passed    0.01 sec
+213/478 Test #213: host_stage5_4_pending_grant ..............   Passed    0.01 sec
+214/478 Test #214: host_stage5_4_retry ......................   Passed    0.01 sec
+215/478 Test #215: host_stage5_4_chain ......................   Passed    0.01 sec
+216/478 Test #216: host_stage5_4_long_chain .................   Passed    0.01 sec
+217/478 Test #217: host_stage5_4_cut_middle .................   Passed    0.00 sec
+        Start 219: host_stage5_4_reverse
+        Start 220: host_stage5_4_same_tick
+        Start 221: host_stage5_4_same_mutex
+        Start 222: host_stage5_4_upstream
+        Start 223: host_stage5_4_cycle
+        Start 224: host_stage5_4_sem_owner
+        Start 225: host_stage5_4_mixed
+218/478 Test #218: host_stage5_4_branches ...................   Passed    0.02 sec
+219/478 Test #219: host_stage5_4_reverse ....................   Passed    0.01 sec
+220/478 Test #220: host_stage5_4_same_tick ..................   Passed    0.01 sec
+221/478 Test #221: host_stage5_4_same_mutex .................   Passed    0.01 sec
+222/478 Test #222: host_stage5_4_upstream ...................   Passed    0.01 sec
+223/478 Test #223: host_stage5_4_cycle ......................   Passed    0.01 sec
+224/478 Test #224: host_stage5_4_sem_owner ..................   Passed    0.00 sec
+        Start 226: host_stage5_4_isr_mix
+        Start 227: host_stage5_4_fifo
+        Start 228: host_stage5_4_burst7
+        Start 229: host_stage5_4_cycle8
+        Start 230: host_stage5_4_running_drop
+        Start 231: host_stage5_4_held_timeout
+        Start 232: host_stage5_5_valid
+225/478 Test #225: host_stage5_4_mixed ......................   Passed    0.02 sec
+226/478 Test #226: host_stage5_4_isr_mix ....................   Passed    0.01 sec
+227/478 Test #227: host_stage5_4_fifo .......................   Passed    0.01 sec
+228/478 Test #228: host_stage5_4_burst7 .....................   Passed    0.01 sec
+229/478 Test #229: host_stage5_4_cycle8 .....................   Passed    0.01 sec
+230/478 Test #230: host_stage5_4_running_drop ...............   Passed    0.01 sec
+231/478 Test #231: host_stage5_4_held_timeout ...............   Passed    0.00 sec
+        Start 233: host_stage5_5_duplicate
+        Start 234: host_stage5_5_ownership
+        Start 235: host_stage5_5_stale
+        Start 236: host_stage5_5_priority
+        Start 237: host_stage6_1_fifo1
+        Start 238: host_stage6_1_fifo2
+        Start 239: host_stage6_1_fifo3
+232/478 Test #232: host_stage5_5_valid ......................   Passed    0.02 sec
+233/478 Test #233: host_stage5_5_duplicate ..................   Passed    0.01 sec
+234/478 Test #234: host_stage5_5_ownership ..................   Passed    0.01 sec
+235/478 Test #235: host_stage5_5_stale ......................   Passed    0.01 sec
+236/478 Test #236: host_stage5_5_priority ...................   Passed    0.01 sec
+237/478 Test #237: host_stage6_1_fifo1 ......................   Passed    0.01 sec
+238/478 Test #238: host_stage6_1_fifo2 ......................   Passed    0.00 sec
+        Start 240: host_stage6_1_fifo5
+        Start 241: host_stage6_1_fifo8
+        Start 242: host_stage6_1_initialization
+        Start 243: host_stage6_1_arithmetic
+        Start 244: host_stage6_1_reinitialize
+        Start 245: host_stage6_1_uninitialized
+        Start 246: host_stage6_1_copy
+239/478 Test #239: host_stage6_1_fifo3 ......................   Passed    0.02 sec
+240/478 Test #240: host_stage6_1_fifo5 ......................   Passed    0.01 sec
+241/478 Test #241: host_stage6_1_fifo8 ......................   Passed    0.01 sec
+242/478 Test #242: host_stage6_1_initialization .............   Passed    0.01 sec
+243/478 Test #243: host_stage6_1_arithmetic .................   Passed    0.01 sec
+244/478 Test #244: host_stage6_1_reinitialize ...............   Passed    0.01 sec
+245/478 Test #245: host_stage6_1_uninitialized ..............   Passed    0.00 sec
+        Start 247: host_stage6_1_bounds
+        Start 248: host_stage6_1_limit
+        Start 249: host_stage6_1_timeout
+        Start 250: host_stage6_1_null
+        Start 251: host_stage6_1_overlap
+        Start 252: host_stage6_1_failures
+        Start 253: host_stage6_1_contexts
+246/478 Test #246: host_stage6_1_copy .......................   Passed    0.02 sec
+247/478 Test #247: host_stage6_1_bounds .....................   Passed    0.01 sec
+248/478 Test #248: host_stage6_1_limit ......................   Passed    0.01 sec
+249/478 Test #249: host_stage6_1_timeout ....................   Passed    0.01 sec
+250/478 Test #250: host_stage6_1_null .......................   Passed    0.01 sec
+251/478 Test #251: host_stage6_1_overlap ....................   Passed    0.01 sec
+252/478 Test #252: host_stage6_1_failures ...................   Passed    0.00 sec
+        Start 254: host_stage6_1_masks
+        Start 255: host_stage6_1_checker
+        Start 256: host_stage6_1_preemption
+        Start 257: host_stage6_2_immediate
+        Start 258: host_stage6_2_receive
+        Start 259: host_stage6_2_send
+        Start 260: host_stage6_2_receive_priority
+253/478 Test #253: host_stage6_1_contexts ...................   Passed    0.02 sec
+254/478 Test #254: host_stage6_1_masks ......................   Passed    0.02 sec
+255/478 Test #255: host_stage6_1_checker ....................   Passed    0.01 sec
+256/478 Test #256: host_stage6_1_preemption .................   Passed    0.01 sec
+257/478 Test #257: host_stage6_2_immediate ..................   Passed    0.01 sec
+258/478 Test #258: host_stage6_2_receive ....................   Passed    0.01 sec
+259/478 Test #259: host_stage6_2_send .......................   Passed    0.01 sec
+        Start 261: host_stage6_2_send_priority
+        Start 262: host_stage6_2_receive_fifo
+        Start 263: host_stage6_2_send_fifo
+        Start 264: host_stage6_2_send_pi
+        Start 265: host_stage6_2_receive_pi
+        Start 266: host_stage6_2_send_revoke
+        Start 267: host_stage6_2_receive_revoke
+260/478 Test #260: host_stage6_2_receive_priority ...........   Passed    0.02 sec
+261/478 Test #261: host_stage6_2_send_priority ..............   Passed    0.02 sec
+262/478 Test #262: host_stage6_2_receive_fifo ...............   Passed    0.01 sec
+263/478 Test #263: host_stage6_2_send_fifo ..................   Passed    0.01 sec
+264/478 Test #264: host_stage6_2_send_pi ....................   Passed    0.01 sec
+265/478 Test #265: host_stage6_2_receive_pi .................   Passed    0.01 sec
+266/478 Test #266: host_stage6_2_send_revoke ................   Passed    0.00 sec
+        Start 268: host_stage6_2_max64
+        Start 269: host_stage6_2_capacity3_send
+        Start 270: host_stage6_2_max64_send
+        Start 271: host_stage6_2_early_receive
+        Start 272: host_stage6_2_early_send
+        Start 273: host_stage6_2_pending_receive
+        Start 274: host_stage6_2_pending_send
+267/478 Test #267: host_stage6_2_receive_revoke .............   Passed    0.02 sec
+268/478 Test #268: host_stage6_2_max64 ......................   Passed    0.02 sec
+269/478 Test #269: host_stage6_2_capacity3_send .............   Passed    0.01 sec
+270/478 Test #270: host_stage6_2_max64_send .................   Passed    0.01 sec
+271/478 Test #271: host_stage6_2_early_receive ..............   Passed    0.01 sec
+272/478 Test #272: host_stage6_2_early_send .................   Passed    0.01 sec
+273/478 Test #273: host_stage6_2_pending_receive ............   Passed    0.01 sec
+        Start 275: host_stage6_2_overlap_receive
+        Start 276: host_stage6_2_overlap_send
+        Start 277: host_stage6_2_invalid
+        Start 278: host_stage6_2_contexts
+        Start 279: host_stage6_2_checker
+        Start 280: host_stage6_3_forever_pi
+        Start 281: host_stage6_3_immediate
+274/478 Test #274: host_stage6_2_pending_send ...............   Passed    0.02 sec
+275/478 Test #275: host_stage6_2_overlap_receive ............   Passed    0.01 sec
+276/478 Test #276: host_stage6_2_overlap_send ...............   Passed    0.01 sec
+277/478 Test #277: host_stage6_2_invalid ....................   Passed    0.01 sec
+278/478 Test #278: host_stage6_2_contexts ...................   Passed    0.01 sec
+279/478 Test #279: host_stage6_2_checker ....................   Passed    0.01 sec
+280/478 Test #280: host_stage6_3_forever_pi .................   Passed    0.00 sec
+        Start 282: host_stage6_3_parameters
+        Start 283: host_stage6_3_contexts
+        Start 284: host_stage6_3_receive_timeout
+        Start 285: host_stage6_3_send_timeout
+        Start 286: host_stage6_3_receive_grant
+        Start 287: host_stage6_3_send_grant
+        Start 288: host_stage6_3_receive_grant_first
+281/478 Test #281: host_stage6_3_immediate ..................   Passed    0.02 sec
+282/478 Test #282: host_stage6_3_parameters .................   Passed    0.01 sec
+283/478 Test #283: host_stage6_3_contexts ...................   Passed    0.01 sec
+284/478 Test #284: host_stage6_3_receive_timeout ............   Passed    0.01 sec
+285/478 Test #285: host_stage6_3_send_timeout ...............   Passed    0.01 sec
+286/478 Test #286: host_stage6_3_receive_grant ..............   Passed    0.01 sec
+287/478 Test #287: host_stage6_3_send_grant .................   Passed    0.00 sec
+        Start 289: host_stage6_3_send_grant_first
+        Start 290: host_stage6_3_receive_timeout_first
+        Start 291: host_stage6_3_send_timeout_first
+        Start 292: host_stage6_3_receive_early_grant
+        Start 293: host_stage6_3_send_early_grant
+        Start 294: host_stage6_3_receive_early_timeout
+        Start 295: host_stage6_3_send_early_timeout
+288/478 Test #288: host_stage6_3_receive_grant_first ........   Passed    0.02 sec
+289/478 Test #289: host_stage6_3_send_grant_first ...........   Passed    0.01 sec
+290/478 Test #290: host_stage6_3_receive_timeout_first ......   Passed    0.01 sec
+291/478 Test #291: host_stage6_3_send_timeout_first .........   Passed    0.01 sec
+292/478 Test #292: host_stage6_3_receive_early_grant ........   Passed    0.01 sec
+293/478 Test #293: host_stage6_3_send_early_grant ...........   Passed    0.01 sec
+294/478 Test #294: host_stage6_3_receive_early_timeout ......   Passed    0.00 sec
+        Start 296: host_stage6_3_receive_max
+        Start 297: host_stage6_3_send_max
+        Start 298: host_stage6_3_receive_wrap
+        Start 299: host_stage6_3_send_wrap
+        Start 300: host_stage6_3_receive_multi
+        Start 301: host_stage6_3_send_multi
+        Start 302: host_stage6_3_receive_same
+295/478 Test #295: host_stage6_3_send_early_timeout .........   Passed    0.02 sec
+296/478 Test #296: host_stage6_3_receive_max ................   Passed    0.01 sec
+297/478 Test #297: host_stage6_3_send_max ...................   Passed    0.01 sec
+298/478 Test #298: host_stage6_3_receive_wrap ...............   Passed    0.01 sec
+299/478 Test #299: host_stage6_3_send_wrap ..................   Passed    0.01 sec
+300/478 Test #300: host_stage6_3_receive_multi ..............   Passed    0.01 sec
+301/478 Test #301: host_stage6_3_send_multi .................   Passed    0.00 sec
+        Start 303: host_stage6_3_send_same
+        Start 304: host_stage6_3_receive_pi
+        Start 305: host_stage6_3_send_pi
+        Start 306: host_stage6_3_receive_reuse
+        Start 307: host_stage6_3_send_reuse
+        Start 308: host_stage6_3_receive_64
+        Start 309: host_stage6_3_send_64
+302/478 Test #302: host_stage6_3_receive_same ...............   Passed    0.01 sec
+303/478 Test #303: host_stage6_3_send_same ..................   Passed    0.01 sec
+304/478 Test #304: host_stage6_3_receive_pi .................   Passed    0.01 sec
+305/478 Test #305: host_stage6_3_send_pi ....................   Passed    0.01 sec
+306/478 Test #306: host_stage6_3_receive_reuse ..............   Passed    0.01 sec
+307/478 Test #307: host_stage6_3_send_reuse .................   Passed    0.01 sec
+308/478 Test #308: host_stage6_3_receive_64 .................   Passed    0.00 sec
+        Start 310: host_stage6_4_contexts
+        Start 311: host_stage6_4_prestart
+        Start 312: host_stage6_4_parameters
+        Start 313: host_stage6_4_masks
+        Start 314: host_stage6_4_fifo1
+        Start 315: host_stage6_4_fifo3
+        Start 316: host_stage6_4_fifo8
+309/478 Test #309: host_stage6_3_send_64 ....................   Passed    0.02 sec
+310/478 Test #310: host_stage6_4_contexts ...................   Passed    0.01 sec
+311/478 Test #311: host_stage6_4_prestart ...................   Passed    0.01 sec
+312/478 Test #312: host_stage6_4_parameters .................   Passed    0.01 sec
+313/478 Test #313: host_stage6_4_masks ......................   Passed    0.01 sec
+314/478 Test #314: host_stage6_4_fifo1 ......................   Passed    0.01 sec
+315/478 Test #315: host_stage6_4_fifo3 ......................   Passed    0.01 sec
+        Start 317: host_stage6_4_copy64
+        Start 318: host_stage6_4_full_sender
+        Start 319: host_stage6_4_direct_forever
+        Start 320: host_stage6_4_direct_finite
+        Start 321: host_stage6_4_priority
+        Start 322: host_stage6_4_fifo_receivers
+        Start 323: host_stage6_4_irq_first
+316/478 Test #316: host_stage6_4_fifo8 ......................   Passed    0.02 sec
+317/478 Test #317: host_stage6_4_copy64 .....................   Passed    0.01 sec
+318/478 Test #318: host_stage6_4_full_sender ................   Passed    0.01 sec
+319/478 Test #319: host_stage6_4_direct_forever .............   Passed    0.01 sec
+320/478 Test #320: host_stage6_4_direct_finite ..............   Passed    0.01 sec
+321/478 Test #321: host_stage6_4_priority ...................   Passed    0.01 sec
+322/478 Test #322: host_stage6_4_fifo_receivers .............   Passed    0.00 sec
+        Start 324: host_stage6_4_timeout_first
+        Start 325: host_stage6_4_early
+        Start 326: host_stage6_4_pending_grant
+        Start 327: host_stage6_4_pending_timeout
+        Start 328: host_stage6_4_mixed
+        Start 329: host_stage6_4_systick
+        Start 330: host_stage6_5_grant_first
+323/478 Test #323: host_stage6_4_irq_first ..................   Passed    0.02 sec
+324/478 Test #324: host_stage6_4_timeout_first ..............   Passed    0.01 sec
+325/478 Test #325: host_stage6_4_early ......................   Passed    0.01 sec
+326/478 Test #326: host_stage6_4_pending_grant ..............   Passed    0.01 sec
+327/478 Test #327: host_stage6_4_pending_timeout ............   Passed    0.01 sec
+328/478 Test #328: host_stage6_4_mixed ......................   Passed    0.01 sec
+329/478 Test #329: host_stage6_4_systick ....................   Passed    0.00 sec
+        Start 331: host_stage6_5_timeout_first
+        Start 332: host_stage6_5_wrap
+        Start 333: host_stage6_5_maximum
+        Start 334: host_stage6_5_fault_queue
+        Start 335: host_stage6_5_fault_deadline
+        Start 336: host_stage6_5_fault_buffer
+        Start 337: host_stage6_5_fault_priority
+330/478 Test #330: host_stage6_5_grant_first ................   Passed    0.02 sec
+331/478 Test #331: host_stage6_5_timeout_first ..............   Passed    0.01 sec
+332/478 Test #332: host_stage6_5_wrap .......................   Passed    0.01 sec
+333/478 Test #333: host_stage6_5_maximum ....................   Passed    0.01 sec
+334/478 Test #334: host_stage6_5_fault_queue ................   Passed    0.01 sec
+335/478 Test #335: host_stage6_5_fault_deadline .............   Passed    0.01 sec
+336/478 Test #336: host_stage6_5_fault_buffer ...............   Passed    0.01 sec
+        Start 338: host_stage6_5_fault_owner
+        Start 339: host_stage7_1_reuse
+        Start 340: host_stage7_1_generation
+        Start 341: host_stage7_1_reservation
+        Start 342: host_stage7_1_saturation
+        Start 343: host_stage7_1_stress
+        Start 344: host_stage7_1_capacity
+337/478 Test #337: host_stage6_5_fault_priority .............   Passed    0.02 sec
+338/478 Test #338: host_stage6_5_fault_owner ................   Passed    0.01 sec
+339/478 Test #339: host_stage7_1_reuse ......................   Passed    0.01 sec
+340/478 Test #340: host_stage7_1_generation .................   Passed    0.01 sec
+341/478 Test #341: host_stage7_1_reservation ................   Passed    0.01 sec
+342/478 Test #342: host_stage7_1_saturation .................   Passed    0.01 sec
+343/478 Test #343: host_stage7_1_stress .....................   Passed    0.00 sec
+        Start 345: host_stage7_1_full_reclaim
+        Start 346: host_stage7_1_contexts
+        Start 347: host_stage7_1_invalid
+        Start 348: host_stage7_1_incomplete
+        Start 349: host_stage7_1_identity_bounds
+        Start 350: host_stage7_1_running
+        Start 351: host_stage7_1_ready
+344/478 Test #344: host_stage7_1_capacity ...................   Passed    0.02 sec
+345/478 Test #345: host_stage7_1_full_reclaim ...............   Passed    0.01 sec
+346/478 Test #346: host_stage7_1_contexts ...................   Passed    0.01 sec
+347/478 Test #347: host_stage7_1_invalid ....................   Passed    0.01 sec
+348/478 Test #348: host_stage7_1_incomplete .................   Passed    0.01 sec
+349/478 Test #349: host_stage7_1_identity_bounds ............   Passed    0.01 sec
+350/478 Test #350: host_stage7_1_running ....................   Passed    0.01 sec
+        Start 352: host_stage7_1_blocked
+        Start 353: host_stage7_1_pending_exit
+        Start 354: host_stage7_1_ready_node
+        Start 355: host_stage7_1_delay_node
+        Start 356: host_stage7_1_wait_node
+        Start 357: host_stage7_1_wait_object
+        Start 358: host_stage7_1_wait_result
+351/478 Test #351: host_stage7_1_ready ......................   Passed    0.02 sec
+352/478 Test #352: host_stage7_1_blocked ....................   Passed    0.02 sec
+353/478 Test #353: host_stage7_1_pending_exit ...............   Passed    0.01 sec
+354/478 Test #354: host_stage7_1_ready_node .................   Passed    0.01 sec
+355/478 Test #355: host_stage7_1_delay_node .................   Passed    0.01 sec
+356/478 Test #356: host_stage7_1_wait_node ..................   Passed    0.01 sec
+357/478 Test #357: host_stage7_1_wait_object ................   Passed    0.00 sec
+        Start 359: host_stage7_1_buffer
+        Start 360: host_stage7_1_owner
+        Start 361: host_stage7_1_pi
+        Start 362: host_stage7_2_invalid
+        Start 363: host_stage7_2_prestart
+        Start 364: host_stage7_2_capacity
+        Start 365: host_stage7_2_contexts
+358/478 Test #358: host_stage7_1_wait_result ................   Passed    0.02 sec
+359/478 Test #359: host_stage7_1_buffer .....................   Passed    0.01 sec
+360/478 Test #360: host_stage7_1_owner ......................   Passed    0.01 sec
+361/478 Test #361: host_stage7_1_pi .........................   Passed    0.01 sec
+362/478 Test #362: host_stage7_2_invalid ....................   Passed    0.01 sec
+363/478 Test #363: host_stage7_2_prestart ...................   Passed    0.01 sec
+364/478 Test #364: host_stage7_2_capacity ...................   Passed    0.00 sec
+        Start 366: host_stage7_2_self
+        Start 367: host_stage7_2_running
+        Start 368: host_stage7_2_ready
+        Start 369: host_stage7_2_preemption
+        Start 370: host_stage7_2_alias
+        Start 371: host_stage7_2_masked
+        Start 372: host_stage7_2_readonly
+365/478 Test #365: host_stage7_2_contexts ...................   Passed    0.02 sec
+366/478 Test #366: host_stage7_2_self .......................   Passed    0.01 sec
+367/478 Test #367: host_stage7_2_running ....................   Passed    0.01 sec
+368/478 Test #368: host_stage7_2_ready ......................   Passed    0.01 sec
+369/478 Test #369: host_stage7_2_preemption .................   Passed    0.01 sec
+370/478 Test #370: host_stage7_2_alias ......................   Passed    0.01 sec
+371/478 Test #371: host_stage7_2_masked .....................   Passed    0.00 sec
+        Start 373: host_stage7_2_invalid_state
+        Start 374: host_stage7_2_failure
+        Start 375: host_stage7_2_delay
+        Start 376: host_stage7_2_semaphore
+        Start 377: host_stage7_2_queue_receive
+        Start 378: host_stage7_2_queue_send
+        Start 379: host_stage7_2_pi
+372/478 Test #372: host_stage7_2_readonly ...................   Passed    0.02 sec
+373/478 Test #373: host_stage7_2_invalid_state ..............   Passed    0.01 sec
+374/478 Test #374: host_stage7_2_failure ....................   Passed    0.01 sec
+375/478 Test #375: host_stage7_2_delay ......................   Passed    0.01 sec
+376/478 Test #376: host_stage7_2_semaphore ..................   Passed    0.01 sec
+377/478 Test #377: host_stage7_2_queue_receive ..............   Passed    0.01 sec
+378/478 Test #378: host_stage7_2_queue_send .................   Passed    0.01 sec
+        Start 380: host_stage7_2_idle
+        Start 381: host_stage7_2_generation
+        Start 382: host_stage7_2_terminated
+        Start 383: host_stage7_2_exit
+        Start 384: host_stage7_2_stale
+        Start 385: host_stage7_2_init_window
+        Start 386: host_stage7_2_stress
+379/478 Test #379: host_stage7_2_pi .........................   Passed    0.02 sec
+380/478 Test #380: host_stage7_2_idle .......................   Passed    0.01 sec
+381/478 Test #381: host_stage7_2_generation .................   Passed    0.01 sec
+382/478 Test #382: host_stage7_2_terminated .................   Passed    0.01 sec
+383/478 Test #383: host_stage7_2_exit .......................   Passed    0.01 sec
+384/478 Test #384: host_stage7_2_stale ......................   Passed    0.01 sec
+385/478 Test #385: host_stage7_2_init_window ................   Passed    0.00 sec
+        Start 387: host_stage7_3_cancel_0
+        Start 388: host_stage7_3_forever_0
+        Start 389: host_stage7_3_grant_0
+        Start 390: host_stage7_3_grant_forever_0
+        Start 391: host_stage7_3_timeout_0
+        Start 392: host_stage7_3_invalid_0
+        Start 393: host_stage7_3_wrap_0
+386/478 Test #386: host_stage7_2_stress .....................   Passed    0.02 sec
+387/478 Test #387: host_stage7_3_cancel_0 ...................   Passed    0.02 sec
+388/478 Test #388: host_stage7_3_forever_0 ..................   Passed    0.01 sec
+389/478 Test #389: host_stage7_3_grant_0 ....................   Passed    0.01 sec
+390/478 Test #390: host_stage7_3_grant_forever_0 ............   Passed    0.01 sec
+391/478 Test #391: host_stage7_3_timeout_0 ..................   Passed    0.01 sec
+392/478 Test #392: host_stage7_3_invalid_0 ..................   Passed    0.00 sec
+        Start 394: host_stage7_3_fifo_0
+        Start 395: host_stage7_3_cancel_1
+        Start 396: host_stage7_3_forever_1
+        Start 397: host_stage7_3_grant_1
+        Start 398: host_stage7_3_grant_forever_1
+        Start 399: host_stage7_3_timeout_1
+        Start 400: host_stage7_3_invalid_1
+393/478 Test #393: host_stage7_3_wrap_0 .....................   Passed    0.02 sec
+394/478 Test #394: host_stage7_3_fifo_0 .....................   Passed    0.02 sec
+395/478 Test #395: host_stage7_3_cancel_1 ...................   Passed    0.01 sec
+396/478 Test #396: host_stage7_3_forever_1 ..................   Passed    0.01 sec
+397/478 Test #397: host_stage7_3_grant_1 ....................   Passed    0.01 sec
+398/478 Test #398: host_stage7_3_grant_forever_1 ............   Passed    0.01 sec
+399/478 Test #399: host_stage7_3_timeout_1 ..................   Passed    0.00 sec
+        Start 401: host_stage7_3_wrap_1
+        Start 402: host_stage7_3_fifo_1
+        Start 403: host_stage7_3_cancel_2
+        Start 404: host_stage7_3_forever_2
+        Start 405: host_stage7_3_grant_2
+        Start 406: host_stage7_3_grant_forever_2
+        Start 407: host_stage7_3_timeout_2
+400/478 Test #400: host_stage7_3_invalid_1 ..................   Passed    0.02 sec
+401/478 Test #401: host_stage7_3_wrap_1 .....................   Passed    0.01 sec
+402/478 Test #402: host_stage7_3_fifo_1 .....................   Passed    0.01 sec
+403/478 Test #403: host_stage7_3_cancel_2 ...................   Passed    0.01 sec
+404/478 Test #404: host_stage7_3_forever_2 ..................   Passed    0.01 sec
+405/478 Test #405: host_stage7_3_grant_2 ....................   Passed    0.01 sec
+406/478 Test #406: host_stage7_3_grant_forever_2 ............   Passed    0.01 sec
+        Start 408: host_stage7_3_invalid_2
+        Start 409: host_stage7_3_wrap_2
+        Start 410: host_stage7_3_fifo_2
+        Start 411: host_stage7_3_cancel_3
+        Start 412: host_stage7_3_forever_3
+        Start 413: host_stage7_3_grant_3
+        Start 414: host_stage7_3_grant_forever_3
+407/478 Test #407: host_stage7_3_timeout_2 ..................   Passed    0.02 sec
+408/478 Test #408: host_stage7_3_invalid_2 ..................   Passed    0.01 sec
+409/478 Test #409: host_stage7_3_wrap_2 .....................   Passed    0.01 sec
+410/478 Test #410: host_stage7_3_fifo_2 .....................   Passed    0.01 sec
+411/478 Test #411: host_stage7_3_cancel_3 ...................   Passed    0.01 sec
+412/478 Test #412: host_stage7_3_forever_3 ..................   Passed    0.01 sec
+413/478 Test #413: host_stage7_3_grant_3 ....................   Passed    0.00 sec
+        Start 415: host_stage7_3_timeout_3
+        Start 416: host_stage7_3_invalid_3
+        Start 417: host_stage7_3_wrap_3
+        Start 418: host_stage7_3_fifo_3
+        Start 419: host_stage7_3_context
+        Start 420: host_stage7_3_oracle
+        Start 421: host_stage7_3_stale
+414/478 Test #414: host_stage7_3_grant_forever_3 ............   Passed    0.02 sec
+415/478 Test #415: host_stage7_3_timeout_3 ..................   Passed    0.01 sec
+416/478 Test #416: host_stage7_3_invalid_3 ..................   Passed    0.01 sec
+417/478 Test #417: host_stage7_3_wrap_3 .....................   Passed    0.01 sec
+418/478 Test #418: host_stage7_3_fifo_3 .....................   Passed    0.01 sec
+419/478 Test #419: host_stage7_3_context ....................   Passed    0.01 sec
+420/478 Test #420: host_stage7_3_oracle .....................   Passed    0.00 sec
+        Start 422: host_stage7_3_delay
+        Start 423: host_stage7_3_idle
+        Start 424: host_stage7_3_pending
+        Start 425: host_stage7_3_pi
+        Start 426: host_stage7_3_middle
+        Start 427: host_stage7_4_stop_0
+        Start 428: host_stage7_4_forever_0
+421/478 Test #421: host_stage7_3_stale ......................   Passed    0.02 sec
+422/478 Test #422: host_stage7_3_delay ......................   Passed    0.02 sec
+423/478 Test #423: host_stage7_3_idle .......................   Passed    0.01 sec
+424/478 Test #424: host_stage7_3_pending ....................   Passed    0.01 sec
+425/478 Test #425: host_stage7_3_pi .........................   Passed    0.01 sec
+426/478 Test #426: host_stage7_3_middle .....................   Passed    0.01 sec
+427/478 Test #427: host_stage7_4_stop_0 .....................   Passed    0.01 sec
+        Start 429: host_stage7_4_grant_0
+        Start 430: host_stage7_4_timeout_0
+        Start 431: host_stage7_4_cancelled_0
+        Start 432: host_stage7_4_admit_0
+        Start 433: host_stage7_4_admit_finite_0
+        Start 434: host_stage7_4_invalid_0
+        Start 435: host_stage7_4_stop_1
+428/478 Test #428: host_stage7_4_forever_0 ..................   Passed    0.02 sec
+429/478 Test #429: host_stage7_4_grant_0 ....................   Passed    0.02 sec
+430/478 Test #430: host_stage7_4_timeout_0 ..................   Passed    0.01 sec
+431/478 Test #431: host_stage7_4_cancelled_0 ................   Passed    0.01 sec
+432/478 Test #432: host_stage7_4_admit_0 ....................   Passed    0.01 sec
+433/478 Test #433: host_stage7_4_admit_finite_0 .............   Passed    0.01 sec
+434/478 Test #434: host_stage7_4_invalid_0 ..................   Passed    0.00 sec
+        Start 436: host_stage7_4_forever_1
+        Start 437: host_stage7_4_grant_1
+        Start 438: host_stage7_4_timeout_1
+        Start 439: host_stage7_4_cancelled_1
+        Start 440: host_stage7_4_admit_1
+        Start 441: host_stage7_4_admit_finite_1
+        Start 442: host_stage7_4_invalid_1
+435/478 Test #435: host_stage7_4_stop_1 .....................   Passed    0.02 sec
+436/478 Test #436: host_stage7_4_forever_1 ..................   Passed    0.01 sec
+437/478 Test #437: host_stage7_4_grant_1 ....................   Passed    0.01 sec
+438/478 Test #438: host_stage7_4_timeout_1 ..................   Passed    0.01 sec
+439/478 Test #439: host_stage7_4_cancelled_1 ................   Passed    0.01 sec
+440/478 Test #440: host_stage7_4_admit_1 ....................   Passed    0.01 sec
+441/478 Test #441: host_stage7_4_admit_finite_1 .............   Passed    0.00 sec
+        Start 443: host_stage7_4_stop_2
+        Start 444: host_stage7_4_forever_2
+        Start 445: host_stage7_4_grant_2
+        Start 446: host_stage7_4_timeout_2
+        Start 447: host_stage7_4_cancelled_2
+        Start 448: host_stage7_4_admit_2
+        Start 449: host_stage7_4_admit_finite_2
+442/478 Test #442: host_stage7_4_invalid_1 ..................   Passed    0.02 sec
+443/478 Test #443: host_stage7_4_stop_2 .....................   Passed    0.01 sec
+444/478 Test #444: host_stage7_4_forever_2 ..................   Passed    0.01 sec
+445/478 Test #445: host_stage7_4_grant_2 ....................   Passed    0.01 sec
+446/478 Test #446: host_stage7_4_timeout_2 ..................   Passed    0.01 sec
+447/478 Test #447: host_stage7_4_cancelled_2 ................   Passed    0.01 sec
+448/478 Test #448: host_stage7_4_admit_2 ....................   Passed    0.00 sec
+        Start 450: host_stage7_4_invalid_2
+        Start 451: host_stage7_4_stop_3
+        Start 452: host_stage7_4_forever_3
+        Start 453: host_stage7_4_grant_3
+        Start 454: host_stage7_4_timeout_3
+        Start 455: host_stage7_4_cancelled_3
+        Start 456: host_stage7_4_admit_3
+449/478 Test #449: host_stage7_4_admit_finite_2 .............   Passed    0.02 sec
+450/478 Test #450: host_stage7_4_invalid_2 ..................   Passed    0.01 sec
+451/478 Test #451: host_stage7_4_stop_3 .....................   Passed    0.01 sec
+452/478 Test #452: host_stage7_4_forever_3 ..................   Passed    0.01 sec
+453/478 Test #453: host_stage7_4_grant_3 ....................   Passed    0.01 sec
+454/478 Test #454: host_stage7_4_timeout_3 ..................   Passed    0.01 sec
+455/478 Test #455: host_stage7_4_cancelled_3 ................   Passed    0.01 sec
+        Start 457: host_stage7_4_admit_finite_3
+        Start 458: host_stage7_4_invalid_3
+        Start 459: host_stage7_4_context
+        Start 460: host_stage7_4_self
+        Start 461: host_stage7_4_query
+        Start 462: host_stage7_4_idle
+        Start 463: host_stage7_4_delay
+456/478 Test #456: host_stage7_4_admit_3 ....................   Passed    0.02 sec
+457/478 Test #457: host_stage7_4_admit_finite_3 .............   Passed    0.01 sec
+458/478 Test #458: host_stage7_4_invalid_3 ..................   Passed    0.01 sec
+459/478 Test #459: host_stage7_4_context ....................   Passed    0.01 sec
+460/478 Test #460: host_stage7_4_self .......................   Passed    0.01 sec
+461/478 Test #461: host_stage7_4_query ......................   Passed    0.01 sec
+462/478 Test #462: host_stage7_4_idle .......................   Passed    0.00 sec
+        Start 464: host_stage7_4_reuse
+        Start 465: host_stage7_4_oracle
+        Start 466: host_stage7_4_wrap
+        Start 467: host_stage7_4_pi
+        Start 468: host_stage7_4_middle
+        Start 469: host_stage7_5_classification
+        Start 470: host_stage7_5_generation
+463/478 Test #463: host_stage7_4_delay ......................   Passed    0.02 sec
+464/478 Test #464: host_stage7_4_reuse ......................   Passed    0.02 sec
+465/478 Test #465: host_stage7_4_oracle .....................   Passed    0.01 sec
+466/478 Test #466: host_stage7_4_wrap .......................   Passed    0.01 sec
+467/478 Test #467: host_stage7_4_pi .........................   Passed    0.01 sec
+468/478 Test #468: host_stage7_4_middle .....................   Passed    0.01 sec
+469/478 Test #469: host_stage7_5_classification .............   Passed    0.01 sec
+        Start 471: host_stage7_5_duplicate
+        Start 472: host_stage7_5_stop_leak
+        Start 473: host_stage7_5_deadline
+        Start 474: host_stage7_5_buffer
+        Start 475: host_stage7_5_owner
+        Start 476: host_stage7_5_stack
+        Start 477: host_stage7_5_wrap
+470/478 Test #470: host_stage7_5_generation .................   Passed    0.02 sec
+471/478 Test #471: host_stage7_5_duplicate ..................   Passed    0.01 sec
+472/478 Test #472: host_stage7_5_stop_leak ..................   Passed    0.01 sec
+473/478 Test #473: host_stage7_5_deadline ...................   Passed    0.01 sec
+474/478 Test #474: host_stage7_5_buffer .....................   Passed    0.01 sec
+475/478 Test #475: host_stage7_5_owner ......................   Passed    0.01 sec
+476/478 Test #476: host_stage7_5_stack ......................   Passed    0.00 sec
+        Start 478: host_stage7_5_maximum
+477/478 Test #477: host_stage7_5_wrap .......................   Passed    0.01 sec
+478/478 Test #478: host_stage7_5_maximum ....................   Passed    0.00 sec
+
+100% tests passed, 0 tests failed out of 478
+
+Label Time Summary:
+host        =   3.46 sec*proc (338 tests)
+stage1      =   0.06 sec*proc (7 tests)
+stage2      =   0.23 sec*proc (22 tests)
+stage3      =   0.29 sec*proc (30 tests)
+stage4_1    =   0.15 sec*proc (16 tests)
+stage4_2    =   0.14 sec*proc (14 tests)
+stage4_3    =   0.26 sec*proc (25 tests)
+stage4_4    =   0.24 sec*proc (22 tests)
+stage4_5    =   0.08 sec*proc (8 tests)
+stage5_1    =   0.26 sec*proc (25 tests)
+stage5_2    =   0.17 sec*proc (16 tests)
+stage5_3    =   0.13 sec*proc (14 tests)
+stage5_4    =   0.31 sec*proc (32 tests)
+stage5_5    =   0.06 sec*proc (5 tests)
+stage6_1    =   0.21 sec*proc (20 tests)
+stage6_2    =   0.25 sec*proc (23 tests)
+stage6_3    =   0.30 sec*proc (30 tests)
+stage6_4    =   0.20 sec*proc (20 tests)
+stage6_5    =   0.10 sec*proc (9 tests)
+stage7_1    =   0.24 sec*proc (23 tests)
+stage7_2    =   0.26 sec*proc (25 tests)
+stage7_3    =   0.44 sec*proc (40 tests)
+stage7_4    =   0.44 sec*proc (42 tests)
+stage7_5    =   0.08 sec*proc (10 tests)
+
+Total Test time (real) =   1.00 sec

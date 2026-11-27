@@ -1,0 +1,2 @@
+PASS: 12 C buffer/CRC cases independently checked by Python
+PASS: captured frame replay and three corrupted-result rejection cases
