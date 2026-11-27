@@ -1,0 +1,164 @@
+{
+  "stage": "9.4-G",
+  "status": "PASS",
+  "base_sha": "4d146b1559ede1ed3a4bfff77dcf8d5682de9e9f",
+  "tools": "logs/tools.log",
+  "software": {
+    "host_count": 478,
+    "host_exit": 0,
+    "arm_debug_exit": 0,
+    "arm_o2_exit": 0,
+    "production_build_exit": 0,
+    "production_symbol_gate_exit": 0,
+    "arm_images": {
+      "DISPLAY_RTOS_O2_SpiDma": {
+        "flash_bytes": 26268,
+        "flash_end_exclusive": "0x800669c",
+        "erasure_pages_from_zero": 13,
+        "sram_including_msp": 48312,
+        "sram_remaining": 17224,
+        "reset": "0x80009f1",
+        "msp": "0x20010000",
+        "sha256": {
+          "elf": "6e323f2326bb982262fbb1ebf37cc340c06f4373db46f61a2c82b745c1d7c0fe",
+          "bin": "b4cd9e0a59f749c95676af868053d8567c97ada70367bcfe70348c2d85eb490b",
+          "hex": "5d0c2a829df13afc1c2f419206c20eec1afa16ff0e1fd8f50980f9232db83e31",
+          "map": "02c96a61b252722a0a939edd545790cb94a52ef62df33bf0686b610982f2f27b"
+        },
+        "tcb_bytes": 72,
+        "hex_omitted_zero_padding_bytes": 0,
+        "sections": {
+          ".isr_vector": 484,
+          ".text": 17596,
+          ".rodata": 8088,
+          ".ARM": 8,
+          ".preinit_array": 0,
+          ".init_array": 4,
+          ".fini_array": 4,
+          ".data": 84,
+          ".tdata": 0,
+          ".tbss": 0,
+          ".bss": 11360,
+          ".user_stacks": 32768,
+          ".msp_stack": 4096
+        }
+      },
+      "DISPLAY_RTOS_Debug_SpiDma": {
+        "flash_bytes": 40904,
+        "flash_end_exclusive": "0x8009fc8",
+        "erasure_pages_from_zero": 20,
+        "sram_including_msp": 48312,
+        "sram_remaining": 17224,
+        "reset": "0x8000ff9",
+        "msp": "0x20010000",
+        "sha256": {
+          "elf": "3e3604f43d3e1f8b605342d5c70b2c759c4169e4cc0e2db50b3f5d00807c23b5",
+          "bin": "b4db525be7c7978fc8e3ed2e50f986faa667c0a4af4019a1656cfdfa2ceafd07",
+          "hex": "75fe46cd1f5a39f96d4c89beef8e10858a075b5e487451b57b4944ce5e8fee90",
+          "map": "a991b71251774fef38b63e213f2d527d006aa33117878fa78ffc054dcd522c98"
+        },
+        "tcb_bytes": 72,
+        "hex_omitted_zero_padding_bytes": 0,
+        "sections": {
+          ".isr_vector": 484,
+          ".text": 28076,
+          ".rodata": 12244,
+          ".ARM": 8,
+          ".preinit_array": 0,
+          ".init_array": 4,
+          ".fini_array": 4,
+          ".data": 84,
+          ".tdata": 0,
+          ".tbss": 0,
+          ".bss": 11356,
+          ".user_stacks": 32768,
+          ".msp_stack": 4096
+        }
+      },
+      "Stage94A_Frozen_Production": {
+        "flash_bytes": 53676,
+        "flash_end_exclusive": "0x800d1ac",
+        "erasure_pages_from_zero": 27,
+        "sram_including_msp": 50376,
+        "sram_remaining": 15160,
+        "reset": "0x8000c09",
+        "msp": "0x20010000",
+        "sha256": {
+          "elf": "ffd1dc85b097e7cc5498343776bd813a7b018174afd619e92f1ec0c3b22fffeb",
+          "bin": "361d1a18fed3eccbb2d28eef4e2b6b16218ef99cc84fe4049ac82b7a40e73418",
+          "hex": "b4595fd2c59a2197416a0f77d0059ff2af8f9a457424d7e35e67aa725d28e432",
+          "map": "b15eff02f3e3b7575f0845a68ba67c993d964b642ec5bcd1c072daaf362e9498"
+        },
+        "tcb_bytes": 72,
+        "hex_omitted_zero_padding_bytes": 4,
+        "sections": {
+          ".isr_vector": 484,
+          ".text": 36344,
+          ".rodata": 16732,
+          ".ARM": 8,
+          ".preinit_array": 0,
+          ".init_array": 4,
+          ".fini_array": 4,
+          ".data": 96,
+          ".tdata": 0,
+          ".tbss": 0,
+          ".bss": 13416,
+          ".user_stacks": 32768,
+          ".msp_stack": 4096
+        }
+      }
+    }
+  },
+  "hardware": {
+    "probe": "190057000D0000393333574E",
+    "probe_firmware": "V2J45S7",
+    "idcode": "0x10036414",
+    "cpuid": "0x411fc231",
+    "uid": "31ffd8053031533628791143",
+    "flash_kib": 512,
+    "obr": "0x03fffffc",
+    "wrpr": "0xffffffff",
+    "option_bytes": "a55aff00ff00ff00ff00ff00ff00ff00",
+    "option_bytes_unchanged": true,
+    "erase_pages_inclusive": [
+      0,
+      30
+    ],
+    "authorized_flash_range": [
+      "0x08000000",
+      "0x0800f800"
+    ],
+    "range_end_exclusive": true,
+    "restored_range_sha256": "2f6cf7b5270afb5079925e4783d1f29d8ef1c7f80cdfc5dbec96d4ba3a28b1be",
+    "source_range": [
+      "0x08010000",
+      "0x0802fffe"
+    ],
+    "initial_live_read_mismatch_address": "0x08027b34",
+    "source_word_independently_verified": "0xffffffff",
+    "source_sha256_before_after": "d5893ddd7278de70e9c508cd8e445887544162dcabada4cc5d913be883f8219d",
+    "source_bytes": 131070,
+    "source_all_ff": true,
+    "spi3_sck_configured_hz": 18000000,
+    "spi3_sck_waveform": "NOT MEASURED",
+    "monitor_sequence": [
+      4,
+      8
+    ],
+    "monitor_ticks": [
+      209,
+      549
+    ],
+    "fixture_readback_retry_adapter_khz": 100,
+    "recover_before_fault_after_retry": [
+      0,
+      1,
+      2
+    ],
+    "not_tested": [
+      "physical TEIF",
+      "permanent BSY",
+      "unclearable physical OVR"
+    ]
+  }
+}

@@ -1,0 +1,1644 @@
+{
+  "report": {
+    "state": 2,
+    "current": 7,
+    "completed": 8,
+    "hclk": 72000000,
+    "pclk": 36000000,
+    "rcc_cfgr": 1901578,
+    "dwt_ctrl": 1073741825,
+    "runs": [
+      {
+        "source": 134283264,
+        "length": 16,
+        "chunks": 1,
+        "cycles": 2300,
+        "acquire": 0,
+        "transfer": 0,
+        "release": 1,
+        "acquired": {
+          "regs": {
+            "cr1": 836,
+            "cr2": 0,
+            "sr": 2,
+            "isr": 0,
+            "tx_ccr": 0,
+            "rx_ccr": 0,
+            "cmar": 0,
+            "cndtr": 0,
+            "cs": 2048,
+            "cycles": 16291
+          },
+          "state": 2,
+          "owner": 536871552,
+          "depth": 1,
+          "recover": 0,
+          "error": 0
+        },
+        "transferred": {
+          "regs": {
+            "cr1": 836,
+            "cr2": 0,
+            "sr": 2,
+            "isr": 0,
+            "tx_ccr": 8336,
+            "rx_ccr": 0,
+            "cmar": 134283264,
+            "cndtr": 0,
+            "cs": 2048,
+            "cycles": 18843
+          },
+          "state": 2,
+          "owner": 536871552,
+          "depth": 1,
+          "recover": 0,
+          "error": 0
+        },
+        "released": {
+          "regs": {
+            "cr1": 836,
+            "cr2": 0,
+            "sr": 2,
+            "isr": 0,
+            "tx_ccr": 8336,
+            "rx_ccr": 0,
+            "cmar": 134283264,
+            "cndtr": 0,
+            "cs": 2048,
+            "cycles": 19089
+          },
+          "state": 1,
+          "owner": 0,
+          "depth": 0,
+          "recover": 0,
+          "error": 0
+        },
+        "chunk": [
+          {
+            "initial": {
+              "cr1": 836,
+              "cr2": 0,
+              "sr": 2,
+              "isr": 0,
+              "tx_ccr": 8336,
+              "rx_ccr": 0,
+              "cmar": 134283264,
+              "cndtr": 16,
+              "cs": 2048,
+              "cycles": 17358
+            },
+            "waited": {
+              "cr1": 836,
+              "cr2": 2,
+              "sr": 67,
+              "isr": 112,
+              "tx_ccr": 8337,
+              "rx_ccr": 0,
+              "cmar": 134283264,
+              "cndtr": 0,
+              "cs": 2048,
+              "cycles": 18193
+            },
+            "drained": {
+              "cr1": 836,
+              "cr2": 2,
+              "sr": 67,
+              "isr": 112,
+              "tx_ccr": 8337,
+              "rx_ccr": 0,
+              "cmar": 134283264,
+              "cndtr": 0,
+              "cs": 2048,
+              "cycles": 18505
+            },
+            "injection": {
+              "cr1": 0,
+              "cr2": 0,
+              "sr": 0,
+              "isr": 0,
+              "tx_ccr": 0,
+              "rx_ccr": 0,
+              "cmar": 0,
+              "cndtr": 0,
+              "cs": 0,
+              "cycles": 0
+            },
+            "stopped": {
+              "cr1": 0,
+              "cr2": 0,
+              "sr": 0,
+              "isr": 0,
+              "tx_ccr": 0,
+              "rx_ccr": 0,
+              "cmar": 0,
+              "cndtr": 0,
+              "cs": 0,
+              "cycles": 0
+            },
+            "offset": 0,
+            "length": 16,
+            "budget": 1440640,
+            "elapsed": 770,
+            "status": 0
+          },
+          {
+            "initial": {
+              "cr1": 0,
+              "cr2": 0,
+              "sr": 0,
+              "isr": 0,
+              "tx_ccr": 0,
+              "rx_ccr": 0,
+              "cmar": 0,
+              "cndtr": 0,
+              "cs": 0,
+              "cycles": 0
+            },
+            "waited": {
+              "cr1": 0,
+              "cr2": 0,
+              "sr": 0,
+              "isr": 0,
+              "tx_ccr": 0,
+              "rx_ccr": 0,
+              "cmar": 0,
+              "cndtr": 0,
+              "cs": 0,
+              "cycles": 0
+            },
+            "drained": {
+              "cr1": 0,
+              "cr2": 0,
+              "sr": 0,
+              "isr": 0,
+              "tx_ccr": 0,
+              "rx_ccr": 0,
+              "cmar": 0,
+              "cndtr": 0,
+              "cs": 0,
+              "cycles": 0
+            },
+            "injection": {
+              "cr1": 0,
+              "cr2": 0,
+              "sr": 0,
+              "isr": 0,
+              "tx_ccr": 0,
+              "rx_ccr": 0,
+              "cmar": 0,
+              "cndtr": 0,
+              "cs": 0,
+              "cycles": 0
+            },
+            "stopped": {
+              "cr1": 0,
+              "cr2": 0,
+              "sr": 0,
+              "isr": 0,
+              "tx_ccr": 0,
+              "rx_ccr": 0,
+              "cmar": 0,
+              "cndtr": 0,
+              "cs": 0,
+              "cycles": 0
+            },
+            "offset": 0,
+            "length": 0,
+            "budget": 0,
+            "elapsed": 0,
+            "status": 0
+          }
+        ]
+      },
+      {
+        "source": 134283264,
+        "length": 15,
+        "chunks": 0,
+        "cycles": 2044,
+        "acquire": 0,
+        "transfer": 0,
+        "release": 1,
+        "acquired": {
+          "regs": {
+            "cr1": 836,
+            "cr2": 0,
+            "sr": 2,
+            "isr": 0,
+            "tx_ccr": 8336,
+            "rx_ccr": 0,
+            "cmar": 134283264,
+            "cndtr": 0,
+            "cs": 2048,
+            "cycles": 19781
+          },
+          "state": 2,
+          "owner": 536871552,
+          "depth": 1,
+          "recover": 0,
+          "error": 0
+        },
+        "transferred": {
+          "regs": {
+            "cr1": 836,
+            "cr2": 0,
+            "sr": 2,
+            "isr": 0,
+            "tx_ccr": 8336,
+            "rx_ccr": 0,
+            "cmar": 134283264,
+            "cndtr": 0,
+            "cs": 2048,
+            "cycles": 22077
+          },
+          "state": 2,
+          "owner": 536871552,
+          "depth": 1,
+          "recover": 0,
+          "error": 0
+        },
+        "released": {
+          "regs": {
+            "cr1": 836,
+            "cr2": 0,
+            "sr": 2,
+            "isr": 0,
+            "tx_ccr": 8336,
+            "rx_ccr": 0,
+            "cmar": 134283264,
+            "cndtr": 0,
+            "cs": 2048,
+            "cycles": 22323
+          },
+          "state": 1,
+          "owner": 0,
+          "depth": 0,
+          "recover": 0,
+          "error": 0
+        },
+        "chunk": [
+          {
+            "initial": {
+              "cr1": 0,
+              "cr2": 0,
+              "sr": 0,
+              "isr": 0,
+              "tx_ccr": 0,
+              "rx_ccr": 0,
+              "cmar": 0,
+              "cndtr": 0,
+              "cs": 0,
+              "cycles": 0
+            },
+            "waited": {
+              "cr1": 0,
+              "cr2": 0,
+              "sr": 0,
+              "isr": 0,
+              "tx_ccr": 0,
+              "rx_ccr": 0,
+              "cmar": 0,
+              "cndtr": 0,
+              "cs": 0,
+              "cycles": 0
+            },
+            "drained": {
+              "cr1": 0,
+              "cr2": 0,
+              "sr": 0,
+              "isr": 0,
+              "tx_ccr": 0,
+              "rx_ccr": 0,
+              "cmar": 0,
+              "cndtr": 0,
+              "cs": 0,
+              "cycles": 0
+            },
+            "injection": {
+              "cr1": 0,
+              "cr2": 0,
+              "sr": 0,
+              "isr": 0,
+              "tx_ccr": 0,
+              "rx_ccr": 0,
+              "cmar": 0,
+              "cndtr": 0,
+              "cs": 0,
+              "cycles": 0
+            },
+            "stopped": {
+              "cr1": 0,
+              "cr2": 0,
+              "sr": 0,
+              "isr": 0,
+              "tx_ccr": 0,
+              "rx_ccr": 0,
+              "cmar": 0,
+              "cndtr": 0,
+              "cs": 0,
+              "cycles": 0
+            },
+            "offset": 0,
+            "length": 0,
+            "budget": 0,
+            "elapsed": 0,
+            "status": 0
+          },
+          {
+            "initial": {
+              "cr1": 0,
+              "cr2": 0,
+              "sr": 0,
+              "isr": 0,
+              "tx_ccr": 0,
+              "rx_ccr": 0,
+              "cmar": 0,
+              "cndtr": 0,
+              "cs": 0,
+              "cycles": 0
+            },
+            "waited": {
+              "cr1": 0,
+              "cr2": 0,
+              "sr": 0,
+              "isr": 0,
+              "tx_ccr": 0,
+              "rx_ccr": 0,
+              "cmar": 0,
+              "cndtr": 0,
+              "cs": 0,
+              "cycles": 0
+            },
+            "drained": {
+              "cr1": 0,
+              "cr2": 0,
+              "sr": 0,
+              "isr": 0,
+              "tx_ccr": 0,
+              "rx_ccr": 0,
+              "cmar": 0,
+              "cndtr": 0,
+              "cs": 0,
+              "cycles": 0
+            },
+            "injection": {
+              "cr1": 0,
+              "cr2": 0,
+              "sr": 0,
+              "isr": 0,
+              "tx_ccr": 0,
+              "rx_ccr": 0,
+              "cmar": 0,
+              "cndtr": 0,
+              "cs": 0,
+              "cycles": 0
+            },
+            "stopped": {
+              "cr1": 0,
+              "cr2": 0,
+              "sr": 0,
+              "isr": 0,
+              "tx_ccr": 0,
+              "rx_ccr": 0,
+              "cmar": 0,
+              "cndtr": 0,
+              "cs": 0,
+              "cycles": 0
+            },
+            "offset": 0,
+            "length": 0,
+            "budget": 0,
+            "elapsed": 0,
+            "status": 0
+          }
+        ]
+      },
+      {
+        "source": 134283264,
+        "length": 16,
+        "chunks": 1,
+        "cycles": 2300,
+        "acquire": 0,
+        "transfer": 0,
+        "release": 1,
+        "acquired": {
+          "regs": {
+            "cr1": 836,
+            "cr2": 0,
+            "sr": 2,
+            "isr": 0,
+            "tx_ccr": 8336,
+            "rx_ccr": 0,
+            "cmar": 134283264,
+            "cndtr": 0,
+            "cs": 2048,
+            "cycles": 22981
+          },
+          "state": 2,
+          "owner": 536871552,
+          "depth": 1,
+          "recover": 0,
+          "error": 0
+        },
+        "transferred": {
+          "regs": {
+            "cr1": 836,
+            "cr2": 0,
+            "sr": 2,
+            "isr": 0,
+            "tx_ccr": 8336,
+            "rx_ccr": 0,
+            "cmar": 134283264,
+            "cndtr": 0,
+            "cs": 2048,
+            "cycles": 25533
+          },
+          "state": 2,
+          "owner": 536871552,
+          "depth": 1,
+          "recover": 0,
+          "error": 0
+        },
+        "released": {
+          "regs": {
+            "cr1": 836,
+            "cr2": 0,
+            "sr": 2,
+            "isr": 0,
+            "tx_ccr": 8336,
+            "rx_ccr": 0,
+            "cmar": 134283264,
+            "cndtr": 0,
+            "cs": 2048,
+            "cycles": 25779
+          },
+          "state": 1,
+          "owner": 0,
+          "depth": 0,
+          "recover": 0,
+          "error": 0
+        },
+        "chunk": [
+          {
+            "initial": {
+              "cr1": 836,
+              "cr2": 0,
+              "sr": 2,
+              "isr": 0,
+              "tx_ccr": 8336,
+              "rx_ccr": 0,
+              "cmar": 134283264,
+              "cndtr": 16,
+              "cs": 2048,
+              "cycles": 24048
+            },
+            "waited": {
+              "cr1": 836,
+              "cr2": 2,
+              "sr": 67,
+              "isr": 112,
+              "tx_ccr": 8337,
+              "rx_ccr": 0,
+              "cmar": 134283264,
+              "cndtr": 0,
+              "cs": 2048,
+              "cycles": 24883
+            },
+            "drained": {
+              "cr1": 836,
+              "cr2": 2,
+              "sr": 67,
+              "isr": 112,
+              "tx_ccr": 8337,
+              "rx_ccr": 0,
+              "cmar": 134283264,
+              "cndtr": 0,
+              "cs": 2048,
+              "cycles": 25195
+            },
+            "injection": {
+              "cr1": 0,
+              "cr2": 0,
+              "sr": 0,
+              "isr": 0,
+              "tx_ccr": 0,
+              "rx_ccr": 0,
+              "cmar": 0,
+              "cndtr": 0,
+              "cs": 0,
+              "cycles": 0
+            },
+            "stopped": {
+              "cr1": 0,
+              "cr2": 0,
+              "sr": 0,
+              "isr": 0,
+              "tx_ccr": 0,
+              "rx_ccr": 0,
+              "cmar": 0,
+              "cndtr": 0,
+              "cs": 0,
+              "cycles": 0
+            },
+            "offset": 0,
+            "length": 16,
+            "budget": 1440640,
+            "elapsed": 770,
+            "status": 0
+          },
+          {
+            "initial": {
+              "cr1": 0,
+              "cr2": 0,
+              "sr": 0,
+              "isr": 0,
+              "tx_ccr": 0,
+              "rx_ccr": 0,
+              "cmar": 0,
+              "cndtr": 0,
+              "cs": 0,
+              "cycles": 0
+            },
+            "waited": {
+              "cr1": 0,
+              "cr2": 0,
+              "sr": 0,
+              "isr": 0,
+              "tx_ccr": 0,
+              "rx_ccr": 0,
+              "cmar": 0,
+              "cndtr": 0,
+              "cs": 0,
+              "cycles": 0
+            },
+            "drained": {
+              "cr1": 0,
+              "cr2": 0,
+              "sr": 0,
+              "isr": 0,
+              "tx_ccr": 0,
+              "rx_ccr": 0,
+              "cmar": 0,
+              "cndtr": 0,
+              "cs": 0,
+              "cycles": 0
+            },
+            "injection": {
+              "cr1": 0,
+              "cr2": 0,
+              "sr": 0,
+              "isr": 0,
+              "tx_ccr": 0,
+              "rx_ccr": 0,
+              "cmar": 0,
+              "cndtr": 0,
+              "cs": 0,
+              "cycles": 0
+            },
+            "stopped": {
+              "cr1": 0,
+              "cr2": 0,
+              "sr": 0,
+              "isr": 0,
+              "tx_ccr": 0,
+              "rx_ccr": 0,
+              "cmar": 0,
+              "cndtr": 0,
+              "cs": 0,
+              "cycles": 0
+            },
+            "offset": 0,
+            "length": 0,
+            "budget": 0,
+            "elapsed": 0,
+            "status": 0
+          }
+        ]
+      },
+      {
+        "source": 134283264,
+        "length": 65535,
+        "chunks": 1,
+        "cycles": 2098902,
+        "acquire": 0,
+        "transfer": 0,
+        "release": 1,
+        "acquired": {
+          "regs": {
+            "cr1": 836,
+            "cr2": 0,
+            "sr": 2,
+            "isr": 0,
+            "tx_ccr": 8336,
+            "rx_ccr": 0,
+            "cmar": 134283264,
+            "cndtr": 0,
+            "cs": 2048,
+            "cycles": 26437
+          },
+          "state": 2,
+          "owner": 536871552,
+          "depth": 1,
+          "recover": 0,
+          "error": 0
+        },
+        "transferred": {
+          "regs": {
+            "cr1": 836,
+            "cr2": 0,
+            "sr": 2,
+            "isr": 0,
+            "tx_ccr": 8336,
+            "rx_ccr": 0,
+            "cmar": 134283264,
+            "cndtr": 0,
+            "cs": 2048,
+            "cycles": 2125591
+          },
+          "state": 2,
+          "owner": 536871552,
+          "depth": 1,
+          "recover": 0,
+          "error": 0
+        },
+        "released": {
+          "regs": {
+            "cr1": 836,
+            "cr2": 0,
+            "sr": 2,
+            "isr": 0,
+            "tx_ccr": 8336,
+            "rx_ccr": 0,
+            "cmar": 134283264,
+            "cndtr": 0,
+            "cs": 2048,
+            "cycles": 2125837
+          },
+          "state": 1,
+          "owner": 0,
+          "depth": 0,
+          "recover": 0,
+          "error": 0
+        },
+        "chunk": [
+          {
+            "initial": {
+              "cr1": 836,
+              "cr2": 0,
+              "sr": 2,
+              "isr": 0,
+              "tx_ccr": 8336,
+              "rx_ccr": 0,
+              "cmar": 134283264,
+              "cndtr": 65535,
+              "cs": 2048,
+              "cycles": 27510
+            },
+            "waited": {
+              "cr1": 836,
+              "cr2": 2,
+              "sr": 67,
+              "isr": 112,
+              "tx_ccr": 8337,
+              "rx_ccr": 0,
+              "cmar": 134283264,
+              "cndtr": 0,
+              "cs": 2048,
+              "cycles": 2124941
+            },
+            "drained": {
+              "cr1": 836,
+              "cr2": 2,
+              "sr": 67,
+              "isr": 112,
+              "tx_ccr": 8337,
+              "rx_ccr": 0,
+              "cmar": 134283264,
+              "cndtr": 0,
+              "cs": 2048,
+              "cycles": 2125253
+            },
+            "injection": {
+              "cr1": 0,
+              "cr2": 0,
+              "sr": 0,
+              "isr": 0,
+              "tx_ccr": 0,
+              "rx_ccr": 0,
+              "cmar": 0,
+              "cndtr": 0,
+              "cs": 0,
+              "cycles": 0
+            },
+            "stopped": {
+              "cr1": 0,
+              "cr2": 0,
+              "sr": 0,
+              "isr": 0,
+              "tx_ccr": 0,
+              "rx_ccr": 0,
+              "cmar": 0,
+              "cndtr": 0,
+              "cs": 0,
+              "cycles": 0
+            },
+            "offset": 0,
+            "length": 65535,
+            "budget": 4061400,
+            "elapsed": 2097366,
+            "status": 0
+          },
+          {
+            "initial": {
+              "cr1": 0,
+              "cr2": 0,
+              "sr": 0,
+              "isr": 0,
+              "tx_ccr": 0,
+              "rx_ccr": 0,
+              "cmar": 0,
+              "cndtr": 0,
+              "cs": 0,
+              "cycles": 0
+            },
+            "waited": {
+              "cr1": 0,
+              "cr2": 0,
+              "sr": 0,
+              "isr": 0,
+              "tx_ccr": 0,
+              "rx_ccr": 0,
+              "cmar": 0,
+              "cndtr": 0,
+              "cs": 0,
+              "cycles": 0
+            },
+            "drained": {
+              "cr1": 0,
+              "cr2": 0,
+              "sr": 0,
+              "isr": 0,
+              "tx_ccr": 0,
+              "rx_ccr": 0,
+              "cmar": 0,
+              "cndtr": 0,
+              "cs": 0,
+              "cycles": 0
+            },
+            "injection": {
+              "cr1": 0,
+              "cr2": 0,
+              "sr": 0,
+              "isr": 0,
+              "tx_ccr": 0,
+              "rx_ccr": 0,
+              "cmar": 0,
+              "cndtr": 0,
+              "cs": 0,
+              "cycles": 0
+            },
+            "stopped": {
+              "cr1": 0,
+              "cr2": 0,
+              "sr": 0,
+              "isr": 0,
+              "tx_ccr": 0,
+              "rx_ccr": 0,
+              "cmar": 0,
+              "cndtr": 0,
+              "cs": 0,
+              "cycles": 0
+            },
+            "offset": 0,
+            "length": 0,
+            "budget": 0,
+            "elapsed": 0,
+            "status": 0
+          }
+        ]
+      },
+      {
+        "source": 134283264,
+        "length": 65536,
+        "chunks": 2,
+        "cycles": 2100670,
+        "acquire": 0,
+        "transfer": 0,
+        "release": 1,
+        "acquired": {
+          "regs": {
+            "cr1": 836,
+            "cr2": 0,
+            "sr": 2,
+            "isr": 0,
+            "tx_ccr": 8336,
+            "rx_ccr": 0,
+            "cmar": 134283264,
+            "cndtr": 0,
+            "cs": 2048,
+            "cycles": 2126495
+          },
+          "state": 2,
+          "owner": 536871552,
+          "depth": 1,
+          "recover": 0,
+          "error": 0
+        },
+        "transferred": {
+          "regs": {
+            "cr1": 836,
+            "cr2": 0,
+            "sr": 2,
+            "isr": 0,
+            "tx_ccr": 8336,
+            "rx_ccr": 0,
+            "cmar": 134348799,
+            "cndtr": 0,
+            "cs": 2048,
+            "cycles": 4227417
+          },
+          "state": 2,
+          "owner": 536871552,
+          "depth": 1,
+          "recover": 0,
+          "error": 0
+        },
+        "released": {
+          "regs": {
+            "cr1": 836,
+            "cr2": 0,
+            "sr": 2,
+            "isr": 0,
+            "tx_ccr": 8336,
+            "rx_ccr": 0,
+            "cmar": 134348799,
+            "cndtr": 0,
+            "cs": 2048,
+            "cycles": 4227663
+          },
+          "state": 1,
+          "owner": 0,
+          "depth": 0,
+          "recover": 0,
+          "error": 0
+        },
+        "chunk": [
+          {
+            "initial": {
+              "cr1": 836,
+              "cr2": 0,
+              "sr": 2,
+              "isr": 0,
+              "tx_ccr": 8336,
+              "rx_ccr": 0,
+              "cmar": 134283264,
+              "cndtr": 65535,
+              "cs": 2048,
+              "cycles": 2127568
+            },
+            "waited": {
+              "cr1": 836,
+              "cr2": 2,
+              "sr": 67,
+              "isr": 112,
+              "tx_ccr": 8337,
+              "rx_ccr": 0,
+              "cmar": 134283264,
+              "cndtr": 0,
+              "cs": 2048,
+              "cycles": 4225011
+            },
+            "drained": {
+              "cr1": 836,
+              "cr2": 2,
+              "sr": 67,
+              "isr": 112,
+              "tx_ccr": 8337,
+              "rx_ccr": 0,
+              "cmar": 134283264,
+              "cndtr": 0,
+              "cs": 2048,
+              "cycles": 4225323
+            },
+            "injection": {
+              "cr1": 0,
+              "cr2": 0,
+              "sr": 0,
+              "isr": 0,
+              "tx_ccr": 0,
+              "rx_ccr": 0,
+              "cmar": 0,
+              "cndtr": 0,
+              "cs": 0,
+              "cycles": 0
+            },
+            "stopped": {
+              "cr1": 0,
+              "cr2": 0,
+              "sr": 0,
+              "isr": 0,
+              "tx_ccr": 0,
+              "rx_ccr": 0,
+              "cmar": 0,
+              "cndtr": 0,
+              "cs": 0,
+              "cycles": 0
+            },
+            "offset": 0,
+            "length": 65535,
+            "budget": 4061400,
+            "elapsed": 2097378,
+            "status": 0
+          },
+          {
+            "initial": {
+              "cr1": 836,
+              "cr2": 0,
+              "sr": 2,
+              "isr": 0,
+              "tx_ccr": 8336,
+              "rx_ccr": 0,
+              "cmar": 134348799,
+              "cndtr": 1,
+              "cs": 2048,
+              "cycles": 4226260
+            },
+            "waited": {
+              "cr1": 836,
+              "cr2": 2,
+              "sr": 3,
+              "isr": 112,
+              "tx_ccr": 8337,
+              "rx_ccr": 0,
+              "cmar": 134348799,
+              "cndtr": 0,
+              "cs": 2048,
+              "cycles": 4226767
+            },
+            "drained": {
+              "cr1": 836,
+              "cr2": 2,
+              "sr": 3,
+              "isr": 112,
+              "tx_ccr": 8337,
+              "rx_ccr": 0,
+              "cmar": 134348799,
+              "cndtr": 0,
+              "cs": 2048,
+              "cycles": 4227079
+            },
+            "injection": {
+              "cr1": 0,
+              "cr2": 0,
+              "sr": 0,
+              "isr": 0,
+              "tx_ccr": 0,
+              "rx_ccr": 0,
+              "cmar": 0,
+              "cndtr": 0,
+              "cs": 0,
+              "cycles": 0
+            },
+            "stopped": {
+              "cr1": 0,
+              "cr2": 0,
+              "sr": 0,
+              "isr": 0,
+              "tx_ccr": 0,
+              "rx_ccr": 0,
+              "cmar": 0,
+              "cndtr": 0,
+              "cs": 0,
+              "cycles": 0
+            },
+            "offset": 65535,
+            "length": 1,
+            "budget": 1440040,
+            "elapsed": 442,
+            "status": 0
+          }
+        ]
+      },
+      {
+        "source": 134283264,
+        "length": 131070,
+        "chunks": 2,
+        "cycles": 4197592,
+        "acquire": 0,
+        "transfer": 0,
+        "release": 1,
+        "acquired": {
+          "regs": {
+            "cr1": 836,
+            "cr2": 0,
+            "sr": 2,
+            "isr": 0,
+            "tx_ccr": 8336,
+            "rx_ccr": 0,
+            "cmar": 134348799,
+            "cndtr": 0,
+            "cs": 2048,
+            "cycles": 4228321
+          },
+          "state": 2,
+          "owner": 536871552,
+          "depth": 1,
+          "recover": 0,
+          "error": 0
+        },
+        "transferred": {
+          "regs": {
+            "cr1": 836,
+            "cr2": 0,
+            "sr": 2,
+            "isr": 0,
+            "tx_ccr": 8336,
+            "rx_ccr": 0,
+            "cmar": 134348799,
+            "cndtr": 0,
+            "cs": 2048,
+            "cycles": 8426165
+          },
+          "state": 2,
+          "owner": 536871552,
+          "depth": 1,
+          "recover": 0,
+          "error": 0
+        },
+        "released": {
+          "regs": {
+            "cr1": 836,
+            "cr2": 0,
+            "sr": 2,
+            "isr": 0,
+            "tx_ccr": 8336,
+            "rx_ccr": 0,
+            "cmar": 134348799,
+            "cndtr": 0,
+            "cs": 2048,
+            "cycles": 8426411
+          },
+          "state": 1,
+          "owner": 0,
+          "depth": 0,
+          "recover": 0,
+          "error": 0
+        },
+        "chunk": [
+          {
+            "initial": {
+              "cr1": 836,
+              "cr2": 0,
+              "sr": 2,
+              "isr": 0,
+              "tx_ccr": 8336,
+              "rx_ccr": 0,
+              "cmar": 134283264,
+              "cndtr": 65535,
+              "cs": 2048,
+              "cycles": 4229394
+            },
+            "waited": {
+              "cr1": 836,
+              "cr2": 2,
+              "sr": 67,
+              "isr": 112,
+              "tx_ccr": 8337,
+              "rx_ccr": 0,
+              "cmar": 134283264,
+              "cndtr": 0,
+              "cs": 2048,
+              "cycles": 6326827
+            },
+            "drained": {
+              "cr1": 836,
+              "cr2": 2,
+              "sr": 67,
+              "isr": 112,
+              "tx_ccr": 8337,
+              "rx_ccr": 0,
+              "cmar": 134283264,
+              "cndtr": 0,
+              "cs": 2048,
+              "cycles": 6327139
+            },
+            "injection": {
+              "cr1": 0,
+              "cr2": 0,
+              "sr": 0,
+              "isr": 0,
+              "tx_ccr": 0,
+              "rx_ccr": 0,
+              "cmar": 0,
+              "cndtr": 0,
+              "cs": 0,
+              "cycles": 0
+            },
+            "stopped": {
+              "cr1": 0,
+              "cr2": 0,
+              "sr": 0,
+              "isr": 0,
+              "tx_ccr": 0,
+              "rx_ccr": 0,
+              "cmar": 0,
+              "cndtr": 0,
+              "cs": 0,
+              "cycles": 0
+            },
+            "offset": 0,
+            "length": 65535,
+            "budget": 4061400,
+            "elapsed": 2097368,
+            "status": 0
+          },
+          {
+            "initial": {
+              "cr1": 836,
+              "cr2": 0,
+              "sr": 2,
+              "isr": 0,
+              "tx_ccr": 8336,
+              "rx_ccr": 0,
+              "cmar": 134348799,
+              "cndtr": 65535,
+              "cs": 2048,
+              "cycles": 6328082
+            },
+            "waited": {
+              "cr1": 836,
+              "cr2": 2,
+              "sr": 67,
+              "isr": 112,
+              "tx_ccr": 8337,
+              "rx_ccr": 0,
+              "cmar": 134348799,
+              "cndtr": 0,
+              "cs": 2048,
+              "cycles": 8425515
+            },
+            "drained": {
+              "cr1": 836,
+              "cr2": 2,
+              "sr": 67,
+              "isr": 112,
+              "tx_ccr": 8337,
+              "rx_ccr": 0,
+              "cmar": 134348799,
+              "cndtr": 0,
+              "cs": 2048,
+              "cycles": 8425827
+            },
+            "injection": {
+              "cr1": 0,
+              "cr2": 0,
+              "sr": 0,
+              "isr": 0,
+              "tx_ccr": 0,
+              "rx_ccr": 0,
+              "cmar": 0,
+              "cndtr": 0,
+              "cs": 0,
+              "cycles": 0
+            },
+            "stopped": {
+              "cr1": 0,
+              "cr2": 0,
+              "sr": 0,
+              "isr": 0,
+              "tx_ccr": 0,
+              "rx_ccr": 0,
+              "cmar": 0,
+              "cndtr": 0,
+              "cs": 0,
+              "cycles": 0
+            },
+            "offset": 65535,
+            "length": 65535,
+            "budget": 4061400,
+            "elapsed": 2097368,
+            "status": 0
+          }
+        ]
+      },
+      {
+        "source": 134283264,
+        "length": 8192,
+        "chunks": 1,
+        "cycles": 1769531,
+        "acquire": 0,
+        "transfer": -2,
+        "release": 1,
+        "acquired": {
+          "regs": {
+            "cr1": 836,
+            "cr2": 0,
+            "sr": 2,
+            "isr": 0,
+            "tx_ccr": 8336,
+            "rx_ccr": 0,
+            "cmar": 134348799,
+            "cndtr": 0,
+            "cs": 2048,
+            "cycles": 8427069
+          },
+          "state": 2,
+          "owner": 536871552,
+          "depth": 1,
+          "recover": 0,
+          "error": 0
+        },
+        "transferred": {
+          "regs": {
+            "cr1": 836,
+            "cr2": 0,
+            "sr": 2,
+            "isr": 0,
+            "tx_ccr": 8336,
+            "rx_ccr": 0,
+            "cmar": 134283264,
+            "cndtr": 8058,
+            "cs": 2048,
+            "cycles": 10196853
+          },
+          "state": 3,
+          "owner": 536871552,
+          "depth": 1,
+          "recover": 1,
+          "error": -2
+        },
+        "released": {
+          "regs": {
+            "cr1": 836,
+            "cr2": 0,
+            "sr": 2,
+            "isr": 0,
+            "tx_ccr": 8336,
+            "rx_ccr": 0,
+            "cmar": 134283264,
+            "cndtr": 8058,
+            "cs": 2048,
+            "cycles": 10197099
+          },
+          "state": 3,
+          "owner": 0,
+          "depth": 0,
+          "recover": 1,
+          "error": -2
+        },
+        "chunk": [
+          {
+            "initial": {
+              "cr1": 836,
+              "cr2": 0,
+              "sr": 2,
+              "isr": 0,
+              "tx_ccr": 8336,
+              "rx_ccr": 0,
+              "cmar": 134283264,
+              "cndtr": 8192,
+              "cs": 2048,
+              "cycles": 8428136
+            },
+            "waited": {
+              "cr1": 836,
+              "cr2": 2,
+              "sr": 67,
+              "isr": 0,
+              "tx_ccr": 8336,
+              "rx_ccr": 0,
+              "cmar": 134283264,
+              "cndtr": 8058,
+              "cs": 2048,
+              "cycles": 10196127
+            },
+            "drained": {
+              "cr1": 0,
+              "cr2": 0,
+              "sr": 0,
+              "isr": 0,
+              "tx_ccr": 0,
+              "rx_ccr": 0,
+              "cmar": 0,
+              "cndtr": 0,
+              "cs": 0,
+              "cycles": 0
+            },
+            "injection": {
+              "cr1": 836,
+              "cr2": 2,
+              "sr": 195,
+              "isr": 0,
+              "tx_ccr": 8337,
+              "rx_ccr": 0,
+              "cmar": 134283264,
+              "cndtr": 8062,
+              "cs": 2048,
+              "cycles": 8432405
+            },
+            "stopped": {
+              "cr1": 836,
+              "cr2": 2,
+              "sr": 195,
+              "isr": 0,
+              "tx_ccr": 8336,
+              "rx_ccr": 0,
+              "cmar": 134283264,
+              "cndtr": 8058,
+              "cs": 2048,
+              "cycles": 8432539
+            },
+            "offset": 0,
+            "length": 8192,
+            "budget": 1767680,
+            "elapsed": 1767926,
+            "status": -2
+          },
+          {
+            "initial": {
+              "cr1": 0,
+              "cr2": 0,
+              "sr": 0,
+              "isr": 0,
+              "tx_ccr": 0,
+              "rx_ccr": 0,
+              "cmar": 0,
+              "cndtr": 0,
+              "cs": 0,
+              "cycles": 0
+            },
+            "waited": {
+              "cr1": 0,
+              "cr2": 0,
+              "sr": 0,
+              "isr": 0,
+              "tx_ccr": 0,
+              "rx_ccr": 0,
+              "cmar": 0,
+              "cndtr": 0,
+              "cs": 0,
+              "cycles": 0
+            },
+            "drained": {
+              "cr1": 0,
+              "cr2": 0,
+              "sr": 0,
+              "isr": 0,
+              "tx_ccr": 0,
+              "rx_ccr": 0,
+              "cmar": 0,
+              "cndtr": 0,
+              "cs": 0,
+              "cycles": 0
+            },
+            "injection": {
+              "cr1": 0,
+              "cr2": 0,
+              "sr": 0,
+              "isr": 0,
+              "tx_ccr": 0,
+              "rx_ccr": 0,
+              "cmar": 0,
+              "cndtr": 0,
+              "cs": 0,
+              "cycles": 0
+            },
+            "stopped": {
+              "cr1": 0,
+              "cr2": 0,
+              "sr": 0,
+              "isr": 0,
+              "tx_ccr": 0,
+              "rx_ccr": 0,
+              "cmar": 0,
+              "cndtr": 0,
+              "cs": 0,
+              "cycles": 0
+            },
+            "offset": 0,
+            "length": 0,
+            "budget": 0,
+            "elapsed": 0,
+            "status": 0
+          }
+        ]
+      },
+      {
+        "source": 134283264,
+        "length": 16,
+        "chunks": 1,
+        "cycles": 2300,
+        "acquire": 0,
+        "transfer": 0,
+        "release": 1,
+        "acquired": {
+          "regs": {
+            "cr1": 836,
+            "cr2": 0,
+            "sr": 2,
+            "isr": 0,
+            "tx_ccr": 8336,
+            "rx_ccr": 0,
+            "cmar": 134283264,
+            "cndtr": 8058,
+            "cs": 2048,
+            "cycles": 10198341
+          },
+          "state": 2,
+          "owner": 536871552,
+          "depth": 1,
+          "recover": 2,
+          "error": 0
+        },
+        "transferred": {
+          "regs": {
+            "cr1": 836,
+            "cr2": 0,
+            "sr": 2,
+            "isr": 0,
+            "tx_ccr": 8336,
+            "rx_ccr": 0,
+            "cmar": 134283264,
+            "cndtr": 0,
+            "cs": 2048,
+            "cycles": 10200893
+          },
+          "state": 2,
+          "owner": 536871552,
+          "depth": 1,
+          "recover": 2,
+          "error": 0
+        },
+        "released": {
+          "regs": {
+            "cr1": 836,
+            "cr2": 0,
+            "sr": 2,
+            "isr": 0,
+            "tx_ccr": 8336,
+            "rx_ccr": 0,
+            "cmar": 134283264,
+            "cndtr": 0,
+            "cs": 2048,
+            "cycles": 10201139
+          },
+          "state": 1,
+          "owner": 0,
+          "depth": 0,
+          "recover": 2,
+          "error": 0
+        },
+        "chunk": [
+          {
+            "initial": {
+              "cr1": 836,
+              "cr2": 0,
+              "sr": 2,
+              "isr": 0,
+              "tx_ccr": 8336,
+              "rx_ccr": 0,
+              "cmar": 134283264,
+              "cndtr": 16,
+              "cs": 2048,
+              "cycles": 10199408
+            },
+            "waited": {
+              "cr1": 836,
+              "cr2": 2,
+              "sr": 67,
+              "isr": 112,
+              "tx_ccr": 8337,
+              "rx_ccr": 0,
+              "cmar": 134283264,
+              "cndtr": 0,
+              "cs": 2048,
+              "cycles": 10200243
+            },
+            "drained": {
+              "cr1": 836,
+              "cr2": 2,
+              "sr": 67,
+              "isr": 112,
+              "tx_ccr": 8337,
+              "rx_ccr": 0,
+              "cmar": 134283264,
+              "cndtr": 0,
+              "cs": 2048,
+              "cycles": 10200555
+            },
+            "injection": {
+              "cr1": 0,
+              "cr2": 0,
+              "sr": 0,
+              "isr": 0,
+              "tx_ccr": 0,
+              "rx_ccr": 0,
+              "cmar": 0,
+              "cndtr": 0,
+              "cs": 0,
+              "cycles": 0
+            },
+            "stopped": {
+              "cr1": 0,
+              "cr2": 0,
+              "sr": 0,
+              "isr": 0,
+              "tx_ccr": 0,
+              "rx_ccr": 0,
+              "cmar": 0,
+              "cndtr": 0,
+              "cs": 0,
+              "cycles": 0
+            },
+            "offset": 0,
+            "length": 16,
+            "budget": 1440640,
+            "elapsed": 770,
+            "status": 0
+          },
+          {
+            "initial": {
+              "cr1": 0,
+              "cr2": 0,
+              "sr": 0,
+              "isr": 0,
+              "tx_ccr": 0,
+              "rx_ccr": 0,
+              "cmar": 0,
+              "cndtr": 0,
+              "cs": 0,
+              "cycles": 0
+            },
+            "waited": {
+              "cr1": 0,
+              "cr2": 0,
+              "sr": 0,
+              "isr": 0,
+              "tx_ccr": 0,
+              "rx_ccr": 0,
+              "cmar": 0,
+              "cndtr": 0,
+              "cs": 0,
+              "cycles": 0
+            },
+            "drained": {
+              "cr1": 0,
+              "cr2": 0,
+              "sr": 0,
+              "isr": 0,
+              "tx_ccr": 0,
+              "rx_ccr": 0,
+              "cmar": 0,
+              "cndtr": 0,
+              "cs": 0,
+              "cycles": 0
+            },
+            "injection": {
+              "cr1": 0,
+              "cr2": 0,
+              "sr": 0,
+              "isr": 0,
+              "tx_ccr": 0,
+              "rx_ccr": 0,
+              "cmar": 0,
+              "cndtr": 0,
+              "cs": 0,
+              "cycles": 0
+            },
+            "stopped": {
+              "cr1": 0,
+              "cr2": 0,
+              "sr": 0,
+              "isr": 0,
+              "tx_ccr": 0,
+              "rx_ccr": 0,
+              "cmar": 0,
+              "cndtr": 0,
+              "cs": 0,
+              "cycles": 0
+            },
+            "offset": 0,
+            "length": 0,
+            "budget": 0,
+            "elapsed": 0,
+            "status": 0
+          }
+        ]
+      }
+    ]
+  },
+  "health": {
+    "state": 2,
+    "tick": 200,
+    "tim2_ms": 2012,
+    "assert_line": 0,
+    "faults": [
+      0,
+      0
+    ],
+    "guards": [
+      3735929054,
+      3735929054
+    ]
+  },
+  "status": "PASS"
+}
