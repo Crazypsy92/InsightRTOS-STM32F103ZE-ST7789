@@ -211,3 +211,18 @@ if(INSIGHT_TEST_LIFECYCLE)
     target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE tests/hardware)
     target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE INSIGHT_TEST_LIFECYCLE=1)
 endif()
+
+option(INSIGHT_TEST_IPC_CANCEL "Build isolated hardware IPC cancellation fixture" OFF)
+if(INSIGHT_TEST_IPC_CANCEL)
+    if(NOT INSIGHT_DISPLAY_RTOS OR NOT INSIGHT_RTOS_ENABLED OR NOT INSIGHT_DIAG_EXPLAIN OR
+       INSIGHT_APP_INTEGRATED_DIAGNOSTICS OR INSIGHT_TEST_MUTEX OR INSIGHT_TEST_JOB OR
+       INSIGHT_TEST_TIMING OR INSIGHT_TEST_MSP OR INSIGHT_TEST_STRESS OR INSIGHT_TEST_BACKPRESSURE OR INSIGHT_TEST_SEMAPHORE OR INSIGHT_TEST_LIFECYCLE OR NOT INSIGHT_DIAG_DL)
+        message(FATAL_ERROR "IPC cancellation fixture requires the display target with Explain and no other fixture")
+    endif()
+    get_target_property(ipc_cancel_sources ${CMAKE_PROJECT_NAME} SOURCES)
+    list(FILTER ipc_cancel_sources EXCLUDE REGEX "/app_tasks[.]c$")
+    set_property(TARGET ${CMAKE_PROJECT_NAME} PROPERTY SOURCES "${ipc_cancel_sources}")
+    target_sources(${CMAKE_PROJECT_NAME} PRIVATE tests/hardware/ipc_cancel_fixture.c)
+    target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE tests/hardware)
+    target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE INSIGHT_TEST_IPC_CANCEL=1)
+endif()

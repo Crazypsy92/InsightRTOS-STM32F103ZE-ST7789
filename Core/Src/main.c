@@ -31,6 +31,8 @@
 #include "semaphore_fixture.h"
 #elif defined(INSIGHT_TEST_LIFECYCLE)
 #include "lifecycle_fixture.h"
+#elif defined(INSIGHT_TEST_IPC_CANCEL)
+#include "ipc_cancel_fixture.h"
 #endif
 #ifdef INSIGHT_RTOS_ENABLED
 #ifdef INSIGHT_DISPLAY_RTOS
@@ -122,6 +124,8 @@ int main(void)
   semaphore_fixture_start();
 #elif defined(INSIGHT_TEST_LIFECYCLE)
   lifecycle_fixture_start();
+#elif defined(INSIGHT_TEST_IPC_CANCEL)
+  ipc_cancel_fixture_start();
 #elif defined(INSIGHT_DISPLAY_RTOS)
   display_app_start();
 #else
