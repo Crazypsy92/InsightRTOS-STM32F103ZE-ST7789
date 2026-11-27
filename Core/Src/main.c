@@ -33,6 +33,8 @@
 #include "lifecycle_fixture.h"
 #elif defined(INSIGHT_TEST_IPC_CANCEL)
 #include "ipc_cancel_fixture.h"
+#elif defined(INSIGHT_TEST_SPI_DMA)
+#include "spi_dma_fixture.h"
 #endif
 #ifdef INSIGHT_RTOS_ENABLED
 #ifdef INSIGHT_DISPLAY_RTOS
@@ -126,6 +128,8 @@ int main(void)
   lifecycle_fixture_start();
 #elif defined(INSIGHT_TEST_IPC_CANCEL)
   ipc_cancel_fixture_start();
+#elif defined(INSIGHT_TEST_SPI_DMA)
+  spi_dma_fixture_start();
 #elif defined(INSIGHT_DISPLAY_RTOS)
   display_app_start();
 #else

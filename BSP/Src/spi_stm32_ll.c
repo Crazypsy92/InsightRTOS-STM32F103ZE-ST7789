@@ -1,3 +1,7 @@
+#if defined(INSIGHT_TEST_SPI_DMA)
+#include "spi_dma_fixture.h"
+#endif
+
 /**
  * @file    spi_stm32_ll.c
  * @brief   SPI 总线的 STM32F1 LL 实现
@@ -394,6 +398,9 @@ static spi_bus_status_t ll_transfer_dma(spi_stm32_ll_t *ll,
         dma_setup_channel(dma, txc, tx + offset, LL_SPI_DMA_GetRegAddr(spi),
                           LL_DMA_DIRECTION_MEMORY_TO_PERIPH, chunk);
 
+#if defined(INSIGHT_TEST_SPI_DMA)
+        spi_dma_fixture_hook(ll, SPI_DMA_TEST_ARMED, offset, chunk, timeout, 0U, SPI_BUS_OK);
+#endif
         const uint32_t start = ll_dwt_cycles();
         if (rx != NULL) {
             LL_SPI_EnableDMAReq_RX(spi);
@@ -401,8 +408,14 @@ static spi_bus_status_t ll_transfer_dma(spi_stm32_ll_t *ll,
         }
         LL_SPI_EnableDMAReq_TX(spi);
         LL_DMA_EnableChannel(dma, txc);
+#if defined(INSIGHT_TEST_SPI_DMA)
+        spi_dma_fixture_hook(ll, SPI_DMA_TEST_ACTIVE, offset, chunk, timeout, start, SPI_BUS_OK);
+#endif
 
         status = dma_wait(dma, tc_mask, te_mask, start, timeout);
+#if defined(INSIGHT_TEST_SPI_DMA)
+        spi_dma_fixture_hook(ll, SPI_DMA_TEST_WAITED, offset, chunk, timeout, start, status);
+#endif
         if (status != SPI_BUS_OK) {
             break;
         }
@@ -415,6 +428,9 @@ static spi_bus_status_t ll_transfer_dma(spi_stm32_ll_t *ll,
             break;
         }
 
+#if defined(INSIGHT_TEST_SPI_DMA)
+        spi_dma_fixture_hook(ll, SPI_DMA_TEST_DRAINED, offset, chunk, timeout, start, status);
+#endif
         spi_stop_dma(ll);
         if (rx == NULL && !spi_clear_rx(spi)) {
             status = SPI_BUS_ERR_TIMEOUT;

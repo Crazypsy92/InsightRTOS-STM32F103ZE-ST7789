@@ -1,0 +1,31 @@
+Open On-Chip Debugger 0.12.0
+Licensed under GNU GPL v2
+For bug reports, read
+	http://openocd.org/doc/doxygen/bugs.html
+Info : STLINK V2J45S7 (API v2) VID:PID 0483:3748
+Info : Target voltage: 3.279098
+Info : Unable to match requested speed 500 kHz, using 480 kHz
+Info : Unable to match requested speed 500 kHz, using 480 kHz
+Info : clock speed 480 kHz
+Info : stlink_dap_op_connect(connect)
+Info : SWD DPIDR 0x1ba01477
+Info : [stm32f1x.cpu] Cortex-M3 r1p1 processor detected
+Error: Fail reading CTRL/STAT register. Force reconnect
+Error: Failed to write memory and, additionally, failed to find out where
+Error: Fail reading CTRL/STAT register. Force reconnect
+Error: Fail reading CTRL/STAT register. Force reconnect
+Error: Failed to write memory and, additionally, failed to find out where
+Error: Fail reading CTRL/STAT register. Force reconnect
+Error: Fail reading CTRL/STAT register. Force reconnect
+Error: Failed to read memory and, additionally, failed to find out where
+Info : [stm32f1x.cpu] target has 6 breakpoints, 0 watchpoints
+Info : gdb port disabled
+Error: Fail reading CTRL/STAT register. Force reconnect
+Error: Fail reading CTRL/STAT register. Force reconnect
+Error: Failed to read memory and, additionally, failed to find out where
+Error: read_memory: read at 0xe0042000 with width=32 and count=1 failed
+tests/hardware/timing_openocd/identity.tcl:1: Error: read_memory: failed to read memory
+Traceback (most recent call last):
+  File "tests/hardware/timing_openocd/identity.tcl", line 1, in script
+    read_memory 0xE0042000 32 1
+Error: Error closing APs

@@ -1,0 +1,6 @@
+SpiDma readback verified
+STM32 SPI DMA PASS: threshold, long blocks, timeout and recovery
+IntegratedProd readback verified
+Integrated diagnostics hardware PASS IntegratedProd
+/tmp/insight-94g.GvwTg1/readback/spi-source-before.bin /tmp/insight-94g.GvwTg1/readback/spi-source-after.bin differ: byte 97077, line 1
+PASS: independent halted source read matches the pre-programming source, plus separate MEM-AP word confirmation.

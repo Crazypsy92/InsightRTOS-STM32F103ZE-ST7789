@@ -15,6 +15,7 @@ case "$mode" in
     Semaphore) evidence=evidence/stage9_4_d ;;
     Lifecycle) evidence=evidence/stage9_4_e ;;
     IpcCancel) evidence=evidence/stage9_4_f ;;
+    SpiDma) evidence=evidence/stage9_4_g ;;
 esac
 log="$evidence/logs"
 if [[ $mode == Mutex ]]; then log="$log/hardware"; fi
@@ -36,6 +37,7 @@ case "$mode" in
     Semaphore) profiles=(Semaphore IntegratedProd) ;;
     Lifecycle) profiles=(Lifecycle IntegratedProd) ;;
     IpcCancel) profiles=(IpcCancel IntegratedProd) ;;
+    SpiDma) profiles=(SpiDma IntegratedProd) ;;
     *) exit 2 ;;
 esac
 
@@ -50,8 +52,9 @@ for name in "${profiles[@]}"; do
         Semaphore) profile=DISPLAY_RTOS_O2_Semaphore ;;
         Lifecycle) profile=DISPLAY_RTOS_O2_Lifecycle ;;
         IpcCancel) profile=DISPLAY_RTOS_O2_IpcCancel ;;
+        SpiDma) profile=DISPLAY_RTOS_O2_SpiDma ;;
     esac
-    if [[ ( $mode == Mutex || $mode == Backpressure || $mode == Semaphore || $mode == Lifecycle || $mode == IpcCancel ) && $name == IntegratedProd ]]; then profile=Stage94A_Frozen_Production; fi
+    if [[ ( $mode == Mutex || $mode == Backpressure || $mode == Semaphore || $mode == Lifecycle || $mode == IpcCancel || $mode == SpiDma ) && $name == IntegratedProd ]]; then profile=Stage94A_Frozen_Production; fi
     f=$(realpath "build/$profile/insightrtos_display.bin")
     bin="${f%.bin}"
     proof="$log/firmware-audit.json"
@@ -75,6 +78,12 @@ PY
       -c "dump_image $tmp-ob-before.bin 0x1ffff800 16; shutdown" > "$prefix-preflight.log" 2>&1
     rg -q '^IDENTITY_PASS' "$prefix-preflight.log"
     cmp "$previous" "$tmp-before.bin"
+    if [[ $mode == SpiDma && $name == SpiDma ]]; then
+        openocd -f "$cfg/memap.cfg" -f "$cfg/identity.tcl" \
+          -c "dump_image $scratch/spi-source-before.bin 0x08010000 0x1fffe; shutdown" > "$log/spi-source-before.log" 2>&1
+        test "$(stat -c %s "$scratch/spi-source-before.bin")" -eq 131070
+        sha256sum "$scratch/spi-source-before.bin" > "$log/spi-source-before.sha256"
+    fi
     openocd -f "$cfg/flash-target.tcl" -f "$cfg/flash-bank.tcl" \
       -c 'flash erase_sector 0 0 30' \
       -c 'for {set addr 0x08000000} {$addr < 0x0800f800} {incr addr 2048} {foreach word [read_memory $addr 32 512] {if {$word != 0xffffffff} {error "Blank check failed"}}}' \
@@ -133,6 +142,9 @@ PY
     elif [[ $name == IpcCancel ]]; then
         PYTHONDONTWRITEBYTECODE=1 python3 tests/hardware/read_ipc_cancel.py --elf "$bin.elf" \
           --out "$prefix-fixture.json" | tee "$prefix-sampler.log"
+    elif [[ $name == SpiDma ]]; then
+        PYTHONDONTWRITEBYTECODE=1 python3 tests/hardware/read_spi_dma.py --elf "$bin.elf" \
+          --out "$prefix-fixture.json" | tee "$prefix-sampler.log"
     elif [[ $name == Integrated || $name == IntegratedProd ]]; then
         PYTHONDONTWRITEBYTECODE=1 python3 tests/hardware/read_integrated.py --elf "$bin.elf" \
           --profile "$name" --out "$prefix-diag.json" | tee "$prefix-sampler.log"
@@ -145,3 +157,12 @@ PY
     trap - EXIT
     previous="$tmp-after.bin"
 done
+
+if [[ $mode == SpiDma ]]; then
+    openocd -f "$cfg/flash-target.tcl" -f "$cfg/identity.tcl" \
+      -c "halt; wait_halt 3000" \
+      -c "dump_image $scratch/spi-source-after.bin 0x08010000 0x1fffe; resume; shutdown" > "$log/spi-source-after.log" 2>&1
+    test "$(stat -c %s "$scratch/spi-source-after.bin")" -eq 131070
+    sha256sum "$scratch/spi-source-after.bin" > "$log/spi-source-after.sha256"
+    cmp "$scratch/spi-source-before.bin" "$scratch/spi-source-after.bin"
+fi
