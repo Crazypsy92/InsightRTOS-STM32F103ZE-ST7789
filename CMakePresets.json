@@ -187,6 +187,11 @@
             "cacheVariables": {"INSIGHT_TEST_LIFECYCLE": "ON"}
         },
         {
+            "name": "DISPLAY_RTOS_O2_IpcCancel",
+            "inherits": "DISPLAY_RTOS_O2_Trace",
+            "cacheVariables": {"INSIGHT_TEST_IPC_CANCEL": "ON", "INSIGHT_DIAG_DL": "ON"}
+        },
+        {
             "name": "DISPLAY_RTOS_Debug_Semaphore",
             "inherits": "DISPLAY_RTOS_Debug_Trace",
             "cacheVariables": {"INSIGHT_TEST_SEMAPHORE": "ON"}
@@ -195,6 +200,11 @@
             "name": "DISPLAY_RTOS_Debug_Lifecycle",
             "inherits": "DISPLAY_RTOS_Debug_Trace",
             "cacheVariables": {"INSIGHT_TEST_LIFECYCLE": "ON"}
+        },
+        {
+            "name": "DISPLAY_RTOS_Debug_IpcCancel",
+            "inherits": "DISPLAY_RTOS_Debug_Trace",
+            "cacheVariables": {"INSIGHT_TEST_IPC_CANCEL": "ON", "INSIGHT_DIAG_DL": "ON"}
         },
         {
             "name": "DISPLAY_RTOS_O2_Job",
@@ -302,12 +312,20 @@
             "configurePreset": "DISPLAY_RTOS_O2_Lifecycle"
         },
         {
+            "name": "DISPLAY_RTOS_O2_IpcCancel",
+            "configurePreset": "DISPLAY_RTOS_O2_IpcCancel"
+        },
+        {
             "name": "DISPLAY_RTOS_Debug_Semaphore",
             "configurePreset": "DISPLAY_RTOS_Debug_Semaphore"
         },
         {
             "name": "DISPLAY_RTOS_Debug_Lifecycle",
             "configurePreset": "DISPLAY_RTOS_Debug_Lifecycle"
+        },
+        {
+            "name": "DISPLAY_RTOS_Debug_IpcCancel",
+            "configurePreset": "DISPLAY_RTOS_Debug_IpcCancel"
         },
         {
             "name": "DISPLAY_RTOS_O2_Job",

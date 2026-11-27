@@ -14,6 +14,7 @@ case "$mode" in
     Backpressure) evidence=evidence/stage9_4_c ;;
     Semaphore) evidence=evidence/stage9_4_d ;;
     Lifecycle) evidence=evidence/stage9_4_e ;;
+    IpcCancel) evidence=evidence/stage9_4_f ;;
 esac
 log="$evidence/logs"
 if [[ $mode == Mutex ]]; then log="$log/hardware"; fi
@@ -34,6 +35,7 @@ case "$mode" in
     Backpressure) profiles=(Backpressure IntegratedProd) ;;
     Semaphore) profiles=(Semaphore IntegratedProd) ;;
     Lifecycle) profiles=(Lifecycle IntegratedProd) ;;
+    IpcCancel) profiles=(IpcCancel IntegratedProd) ;;
     *) exit 2 ;;
 esac
 
@@ -47,8 +49,9 @@ for name in "${profiles[@]}"; do
         Backpressure) profile=DISPLAY_RTOS_O2_Backpressure ;;
         Semaphore) profile=DISPLAY_RTOS_O2_Semaphore ;;
         Lifecycle) profile=DISPLAY_RTOS_O2_Lifecycle ;;
+        IpcCancel) profile=DISPLAY_RTOS_O2_IpcCancel ;;
     esac
-    if [[ ( $mode == Mutex || $mode == Backpressure || $mode == Semaphore || $mode == Lifecycle ) && $name == IntegratedProd ]]; then profile=Stage94A_Frozen_Production; fi
+    if [[ ( $mode == Mutex || $mode == Backpressure || $mode == Semaphore || $mode == Lifecycle || $mode == IpcCancel ) && $name == IntegratedProd ]]; then profile=Stage94A_Frozen_Production; fi
     f=$(realpath "build/$profile/insightrtos_display.bin")
     bin="${f%.bin}"
     proof="$log/firmware-audit.json"
@@ -126,6 +129,9 @@ PY
           --out "$prefix-fixture.json" | tee "$prefix-sampler.log"
     elif [[ $name == Lifecycle ]]; then
         PYTHONDONTWRITEBYTECODE=1 python3 tests/hardware/read_lifecycle.py --elf "$bin.elf" \
+          --out "$prefix-fixture.json" | tee "$prefix-sampler.log"
+    elif [[ $name == IpcCancel ]]; then
+        PYTHONDONTWRITEBYTECODE=1 python3 tests/hardware/read_ipc_cancel.py --elf "$bin.elf" \
           --out "$prefix-fixture.json" | tee "$prefix-sampler.log"
     elif [[ $name == Integrated || $name == IntegratedProd ]]; then
         PYTHONDONTWRITEBYTECODE=1 python3 tests/hardware/read_integrated.py --elf "$bin.elf" \
